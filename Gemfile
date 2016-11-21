@@ -1,6 +1,7 @@
 source "https://rubygems.org"
 
 gem "semver", "~> 1"
+gem "fxruby", "~> 1.6"
 
 group :development do
   gem "rspec", "~> 2.8.0"

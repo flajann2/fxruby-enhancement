@@ -23,8 +23,18 @@ Juwelier::Tasks.new do |gem|
   gem.name = "fxruby-enhancement"
   gem.homepage = "http://github.com/flajann2/fxruby-enhancement"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{fxruby enhancements}
+  gem.description = %Q{The fxruby library is an excellent wrapper for the FOX toolkit. However, it reflects the
+  C++-ness of FOX, rather than being more Ruby-like. As such, creating composed objects with
+  it tends to be rather ugly and cumbersome.
+
+  fxruby-enhancement is a wrapper for the wrapper, to "rubyfy" it and make it more easy to 
+  use for Rubyists. 
+
+  fxruby-enhancement is basically a DSL of sorts, and every effort has been taken to make 
+  it intuitive to use. Once you get the hang of it, you should be able to look at the FXRuby
+  API documentation and infer the DSL construct for fxruby-enhancement.}
+  
   gem.email = "fred.mitchell@gmx.de"
   gem.authors = ["Fred Mitchell"]
   gem.version = s_version
