@@ -12,7 +12,6 @@ module Fox
       klass.extend ClassMethods
       klass.class_eval do
         def initialize
-          require 'pry'; binding.pry #DEBUGGING
           super application,
                 self.class.app_title,
                 width: self.class.win_width,
