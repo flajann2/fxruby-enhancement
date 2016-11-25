@@ -13,6 +13,14 @@ TEMPLATE = File.expand_path("api-mapper.rb.erb", File.dirname(TARGET))
 
 files = Dir.entries(SOURCES)
         .select{ |f| /^FX.*\.rb$/ =~ f  }
+        .sort
         .map{ |f| File.expand_path(f, SOURCES) }
+        .map{ |f| File.open(f, "r").readlines }
+        .flatten
+        .reject{ |s| /^\s*#/ =~ s }
+        .map{ |s| s
+              .split(/#|;/).first
+              .split('def').last
+              .strip }
+        .select{ |s| /class|initialize/ =~ s }
 puts files
-
