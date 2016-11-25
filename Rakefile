@@ -2,6 +2,7 @@
 
 require 'rubygems'
 require 'bundler'
+
 begin
   Bundler.setup(:default, :development)
 rescue Bundler::BundlerError => e
@@ -57,6 +58,11 @@ task :simplecov do
 end
 
 task :default => :spec
+
+desc "Convert rdoc-sources to a static introspection for DSL."
+task :scrape do
+  ruby "build/scrape-rdoc.rb"
+end
 
 require 'yard'
 YARD::Rake::YardocTask.new
