@@ -1,0 +1,3 @@
+[submodule "fxruby"]
+	path = fxruby
+	url = git@github.com:larskanis/fxruby.git
