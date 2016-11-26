@@ -1,3 +1,4 @@
+# coding: utf-8
 =begin rdoc
 = Scrape RDoc from FXRuby
 We need to scrape that and convert it to a form
@@ -6,6 +7,7 @@ API, with the implied parameters and their defaults
 for the many classes in FXRuby
 =end
 require "erb" 
+require 'pp'
 
 SOURCES = File.expand_path("../fxruby/rdoc-sources", File.dirname(__FILE__))
 TARGET = File.expand_path("../lib/fxruby-enhancement/api-mapper.rb", File.dirname(__FILE__))
@@ -22,5 +24,28 @@ files = Dir.entries(SOURCES)
               .split(/#|;/).first
               .split('def').last
               .strip }
-        .select{ |s| /class|initialize/ =~ s }
-puts files
+        .select{ |s| /class|initialize(?!d)/ =~ s }
+        .map{ |s| s.split(/ |\(/, 2) }
+        .map{ |type, rest| [type.to_sym, rest] }
+        .map{ |type, rest| case type
+                           when :class
+                             [type, rest.split(/\b*<\b*/)]
+                           when :initialize
+                             [type,
+                              (rest.nil?) ? nil
+                              : rest.chomp.split(',')
+                                .map{ |s| s
+                                      .strip
+                                      .split('=')}]
+                           else
+                             raise "unknown type #{type} for #{rest}"
+                           end }
+        .map{ |type, inf| [type,
+                           case type
+                           when :class
+                             inf.map{ |s| s.to_sym}
+                           when :initialize
+                             inf.map{ |var, deft|
+                               [var.to_sym, deft] } unless inf.nil?
+                           end] }
+pp files
