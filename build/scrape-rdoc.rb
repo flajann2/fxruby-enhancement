@@ -22,7 +22,7 @@ api = Dir.entries(SOURCES)
       .flatten
       .reject{ |s| /^\s*#/ =~ s }
       .map{ |s| s
-            .split(/#|;/).first
+            .split(/#|;|\)/).first
             .split('def').last
             .strip }
       .select{ |s| /class|initialize(?!d)/ =~ s }
@@ -34,7 +34,7 @@ api = Dir.entries(SOURCES)
                          when :initialize
                            [type,
                             (rest.nil?) ? nil
-                            : rest.chomp.split(',')
+                            : rest.split(',')
                               .map{ |s| s
                                     .strip
                                     .split('=')}]
