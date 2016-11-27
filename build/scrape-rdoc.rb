@@ -6,7 +6,7 @@ suitable for static introspection of the FXRuby
 API, with the implied parameters and their defaults
 for the many classes in FXRuby
 =end
-require "erb" 
+require 'erb'
 require 'pp'
 
 SOURCES = File.expand_path("../fxruby/rdoc-sources", File.dirname(__FILE__))
@@ -83,4 +83,20 @@ pp API
 # done worse. :p I aplogize for the apperent "ugliness"
 # in this approach, but desperate times call for desperate
 # measures...
+#
+# NOTE WELL
+#   Please bear in mind that in the API structure, you will
+#   see both nil and "nil" listed as default parameters. The
+#   nil indicates a required parameter, whereas "nil" indicates
+#   a default value for a parameter. Perhaps I should've gone
+#   through the extra step of slapping in :required for
+#   the nil entries, but getting the logic above was tricky
+#   enough, and only those maintaning THIS code will ever
+#   need be concerned about the distinctions.
 
+File.open(TEMPLATE, 'r') do |template|
+  File.open(TARGET, 'w') do |target|
+    @api = API
+    target.write ERB.new(template.read).result(binding)
+  end
+end
