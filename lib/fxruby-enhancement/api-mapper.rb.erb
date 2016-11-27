@@ -5,6 +5,10 @@ Do NOT modify this file. Modify the template
 file instead!!!!
 =end
 
+<% for @class, @details in @api %>
+   <%= @class %> < <%= @details[:class][1] %>
+<% end %>
+
 module Fox
   module Enhancement
     module Mapper

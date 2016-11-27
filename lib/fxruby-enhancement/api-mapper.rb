@@ -5,6 +5,472 @@ Do NOT modify this file. Modify the template
 file instead!!!!
 =end
 
+
+   FX4Splitter < FXComposite
+
+   FX7Segment < FXFrame
+
+   FXAccelTable < FXObject
+
+   FXEvent < 
+
+   FXApp < FXObject
+
+   FXArrowButton < FXFrame
+
+   FXBMPIcon < FXIcon
+
+   FXBMPImage < FXImage
+
+   FXBitmap < FXDrawable
+
+   FXBitmapFrame < FXFrame
+
+   FXBitmapView < FXScrollArea
+
+   FXButton < FXLabel
+
+   FXCURCursor < FXCursor
+
+   FXCanvas < FXWindow
+
+   FXCheckButton < FXLabel
+
+   FXChoiceBox < FXDialogBox
+
+   FXColorBar < FXFrame
+
+   FXColorDialog < FXDialogBox
+
+   FXColorItem < FXListItem
+
+   FXColorList < FXList
+
+   FXColorRing < FXFrame
+
+   FXColorSelector < FXPacker
+
+   FXColorWell < FXFrame
+
+   FXColorWheel < FXFrame
+
+   FXComboBox < FXPacker
+
+   FXComposite < FXWindow
+
+   FXCursor < FXId
+
+   FXSegment < 
+
+   FXArc < 
+
+   FXDC < 
+
+   FXPSBounds < 
+
+   FXPrinter < 
+
+   FXDCPrint < FXDC
+
+   FXDCWindow < FXDC
+
+   FXDataTarget < FXObject
+
+   FXDebugTarget < FXObject
+
+   FXDelegator < FXObject
+
+   FXDial < FXFrame
+
+   FXDialogBox < FXTopWindow
+
+   FXDict < FXObject
+
+   FXDirBox < FXTreeListBox
+
+   FXDirDialog < FXDialogBox
+
+   FXDirItem < FXTreeItem
+
+   FXDirList < FXTreeList
+
+   FXDirSelector < FXPacker
+
+   FXDockBar < FXPacker
+
+   FXDockHandler < FXFrame
+
+   FXDockSite < FXPacker
+
+   FXDockTitle < FXDockHandler
+
+   FXDocument < FXObject
+
+   FXDragCorner < FXWindow
+
+   FXDrawable < FXId
+
+   FXDriveBox < FXListBox
+
+   FXExtentd < 
+
+   FXExtentf < 
+
+   FXFileDialog < FXDialogBox
+
+   FXFileAssoc < 
+
+   FXFileDict < FXDict
+
+   FXFileItem < FXIconItem
+
+   FXFileList < FXIconList
+
+   FXFileSelector < FXPacker
+
+   FXFileStream < FXStream
+
+   FXFoldingItem < FXObject
+
+   FXFoldingList < FXScrollArea
+
+   FXFontDesc < 
+
+   FXFont < FXId
+
+   FXFontDialog < FXDialogBox
+
+   FXFontSelector < FXPacker
+
+   FXFrame < FXWindow
+
+   FXGIFCursor < FXCursor
+
+   FXGIFIcon < FXIcon
+
+   FXGIFImage < FXImage
+
+   FXGLCanvas < FXCanvas
+
+   FXGLContext < FXId
+
+   FXGLObject < FXObject
+
+   FXGLShape < FXGLObject
+
+   FXViewport < 
+
+   FXLight < 
+
+   FXMaterial < 
+
+   FXGLViewer < FXGLCanvas
+
+   FXGLVisual < FXVisual
+
+   FXGradient < 
+
+   FXGradientBar < FXFrame
+
+   FXGroupBox < FXPacker
+
+   FXHeaderItem < FXObject
+
+   FXHeader < FXFrame
+
+   FXHorizontalFrame < FXPacker
+
+   FXICOIcon < FXIcon
+
+   FXICOImage < FXImage
+
+   FXIcon < FXImage
+
+   FXIconDict < FXDict
+
+   FXIconItem < FXObject
+
+   FXIconList < FXScrollArea
+
+   FXIconSource < FXObject
+
+   FXId < FXObject
+
+   FXImage < FXDrawable
+
+   FXImageFrame < FXFrame
+
+   FXImageView < FXScrollArea
+
+   FXInputDialog < FXDialogBox
+
+   FXJPGIcon < FXIcon
+
+   FXJPGImage < FXImage
+
+   FXKnob < FXFrame
+
+   FXLabel < FXFrame
+
+   FXListItem < FXObject
+
+   FXList < FXScrollArea
+
+   FXListBox < FXPacker
+
+   FXMDIDeleteButton < FXButton
+
+   FXMDIRestoreButton < FXButton
+
+   FXMDIMaximizeButton < FXButton
+
+   FXMDIMinimizeButton < FXButton
+
+   FXMDIWindowButton < FXMenuButton
+
+   FXMDIMenu < FXMenuPane
+
+   FXMDIChild < FXComposite
+
+   FXMDIClient < FXComposite
+
+   FXMainWindow < FXTopWindow
+
+   FXMatrix < FXPacker
+
+   FXMemoryBuffer < 
+
+   FXMemoryStream < FXStream
+
+   FXMenuBar < FXToolBar
+
+   FXMenuButton < FXLabel
+
+   FXMenuCaption < FXWindow
+
+   FXMenuCascade < FXMenuCaption
+
+   FXMenuCheck < FXMenuCommand
+
+   FXMenuCommand < FXMenuCaption
+
+   FXMenuPane < FXPopup
+
+   FXMenuRadio < FXMenuCommand
+
+   FXMenuSeparator < FXWindow
+
+   FXMenuTitle < FXMenuCaption
+
+   FXMessageBox < FXDialogBox
+
+   FXObject < 
+
+   FXOption < FXLabel
+
+   FXOptionMenu < FXLabel
+
+   FXPCXIcon < FXIcon
+
+   FXPCXImage < FXImage
+
+   FXPNGIcon < FXIcon
+
+   FXPNGImage < FXImage
+
+   FXPPMIcon < FXIcon
+
+   FXPPMImage < FXImage
+
+   FXPacker < FXComposite
+
+   FXPicker < FXButton
+
+   FXPopup < FXShell
+
+   FXPrintDialog < FXDialogBox
+
+   FXProgressBar < FXFrame
+
+   FXProgressDialog < FXDialogBox
+
+   FXQuatd < FXVec4d
+
+   FXQuatf < FXVec4f
+
+   FXRGBIcon < FXIcon
+
+   FXRGBImage < FXImage
+
+   FXRadioButton < FXLabel
+
+   FXRanged < 
+
+   FXRangef < 
+
+   FXRealSlider < FXFrame
+
+   FXRealSpinner < FXPacker
+
+   FXRecentFiles < FXObject
+
+   FXRectangle < 
+
+   FXRegion < 
+
+   FXRegistry < FXSettings
+
+   FXReplaceDialog < FXDialogBox
+
+   FXRootWindow < FXComposite
+
+   FXRuler < FXFrame
+
+   FXRulerView < FXScrollArea
+
+   NotifyHeader < 
+
+   SCNotification < 
+
+   TextRange < 
+
+   FXScintilla < FXScrollArea
+
+   FXScrollArea < FXComposite
+
+   FXScrollBar < FXWindow
+
+   FXScrollCorner < FXWindow
+
+   FXScrollPane < FXMenuPane
+
+   FXScrollWindow < FXScrollArea
+
+   FXSearchDialog < FXReplaceDialog
+
+   FXSeparator < FXFrame
+
+   FXHorizontalSeparator < FXSeparator
+
+   FXVerticalSeparator < FXSeparator
+
+   FXSettings < FXDict
+
+   FXShell < FXComposite
+
+   FXShutterItem < FXVerticalFrame
+
+   FXShutter < FXVerticalFrame
+
+   FXSize < 
+
+   FXSlider < FXFrame
+
+   FXSphered < 
+
+   FXSpheref < 
+
+   FXSpinner < FXPacker
+
+   FXSplashWindow < FXTopWindow
+
+   FXSplitter < FXComposite
+
+   FXSpring < FXPacker
+
+   FXStatusBar < FXHorizontalFrame
+
+   FXStatusLine < FXFrame
+
+   FXStream < 
+
+   FXStringDict < FXDict
+
+   FXSwitcher < FXPacker
+
+   FXTGAIcon < FXIcon
+
+   FXTGAImage < FXImage
+
+   FXTIFIcon < FXIcon
+
+   FXTIFImage < FXImage
+
+   FXTabBar < FXPacker
+
+   FXTabBook < FXTabBar
+
+   FXTabItem < FXLabel
+
+   FXTablePos < 
+
+   FXTableRange < 
+
+   FXTableItem < FXObject
+
+   FXTable < FXScrollArea
+
+   FXHiliteStyle < 
+
+   FXTextChange < 
+
+   FXText < FXScrollArea
+
+   FXTextField < FXFrame
+
+   FXToggleButton < FXLabel
+
+   FXToolBar < FXDockBar
+
+   FXToolBarGrip < FXDockHandler
+
+   FXToolBarShell < FXTopWindow
+
+   FXToolBarTab < FXFrame
+
+   FXToolTip < FXShell
+
+   FXTopWindow < FXShell
+
+   FXTranslator < 
+
+   FXTreeItem < FXObject
+
+   FXTreeList < FXScrollArea
+
+   FXTreeListBox < FXPacker
+
+   FXTriStateButton < FXToggleButton
+
+   FXVec2d < 
+
+   FXVec2f < 
+
+   FXVec3d < 
+
+   FXVec3f < 
+
+   FXVec4d < 
+
+   FXVec4f < 
+
+   FXVerticalFrame < FXPacker
+
+   FXVisual < FXId
+
+   FXWindow < FXDrawable
+
+   FXWizard < FXDialogBox
+
+   FXXBMIcon < FXIcon
+
+   FXXBMImage < FXImage
+
+   FXXPMIcon < FXIcon
+
+   FXXPMImage < FXImage
+
+
 module Fox
   module Enhancement
     module Mapper
