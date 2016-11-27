@@ -13,8 +13,15 @@ SOURCES = File.expand_path("../fxruby/rdoc-sources", File.dirname(__FILE__))
 TARGET = File.expand_path("../lib/fxruby-enhancement/api-mapper.rb", File.dirname(__FILE__))
 TEMPLATE = File.expand_path("api-mapper.rb.erb", File.dirname(TARGET))
 
+# Indeed we parse the rdoc-sources to glean the actual API
+# for FXRuby, since live introspection of the actual API
+# is underdeterimed, being a wrapper for the underlying C++
+# library, which does things, unsurpringly, in a very C++
+# way. And so, I fight evil with evil here. So let the evil
+# begin. 
+
 last_class = nil
-api = Dir.entries(SOURCES)                   
+API = Dir.entries(SOURCES)                   
       .select{ |f| /^FX.*\.rb$/ =~ f  }
       .sort
       .map{ |f| File.expand_path(f, SOURCES) }
@@ -67,4 +74,13 @@ api = Dir.entries(SOURCES)
                              ]}
       .to_h
 
-pp api
+pp API
+
+# Now that we have the entire FXRuby API description,
+# we now rely on the template to flesh out and create
+# the DSL. Total insanity that I would attempt to use
+# metaprograming to autogeneate a DSL. No worries. I've
+# done worse. :p I aplogize for the apperent "ugliness"
+# in this approach, but desperate times call for desperate
+# measures...
+
