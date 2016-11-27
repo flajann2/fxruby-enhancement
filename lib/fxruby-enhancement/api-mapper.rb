@@ -7,468 +7,1716 @@ file instead!!!!
 
 
    FX4Splitter < FXComposite
+   
+      
+         {:p=>nil, :opts=>"FOURSPLITTER_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}   
+      
+         {:p=>nil, :tgt=>nil, :sel=>nil, :opts=>"FOURSPLITTER_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}   
+      
+   
 
    FX7Segment < FXFrame
+   
+      
+         {:p=>nil, :text=>nil, :opts=>"SEVENSEGMENT_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_PAD", :padRight=>"DEFAULT_PAD", :padTop=>"DEFAULT_PAD", :padBottom=>"DEFAULT_PAD"}   
+      
+   
 
    FXAccelTable < FXObject
+   
+      
+            
+      
+   
 
    FXEvent < 
+   
+      No initializer
+   
 
    FXApp < FXObject
+   
+      
+         {:appName=>"\"Application\"", :vendorName=>"\"FoxDefault\""}   
+      
+   
 
    FXArrowButton < FXFrame
+   
+      
+         {:parent=>nil, :target=>"nil", :selector=>"0", :opts=>"ARROW_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_PAD", :padRight=>"DEFAULT_PAD", :padTop=>"DEFAULT_PAD", :padBottom=>"DEFAULT_PAD"}   
+      
+   
 
    FXBMPIcon < FXIcon
+   
+      
+         {:a=>nil, :pix=>"nil", :clr=>"Fox.FXRGB(192", :"192"=>nil}   
+      
+   
 
    FXBMPImage < FXImage
+   
+      
+         {:a=>nil, :pix=>"nil", :opts=>"0", :width=>"1", :height=>"1"}   
+      
+   
 
    FXBitmap < FXDrawable
+   
+      
+         {:app=>nil, :pixels=>"nil", :opts=>"0", :width=>"1", :height=>"1"}   
+      
+   
 
    FXBitmapFrame < FXFrame
+   
+      
+         {:p=>nil, :bmp=>nil, :opts=>"FRAME_SUNKEN|FRAME_THICK", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"0", :padRight=>"0", :padTop=>"0", :padBottom=>"0"}   
+      
+   
 
    FXBitmapView < FXScrollArea
+   
+      
+         {:p=>nil, :bmp=>"nil", :target=>"nil", :selector=>"0", :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}   
+      
+   
 
    FXButton < FXLabel
+   
+      
+         {:parent=>nil, :text=>nil, :icon=>"nil", :target=>"nil", :selector=>"0", :opts=>"BUTTON_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_PAD", :padRight=>"DEFAULT_PAD", :padTop=>"DEFAULT_PAD", :padBottom=>"DEFAULT_PAD"}   
+      
+   
 
    FXCURCursor < FXCursor
+   
+      
+         {:app=>nil, :pixels=>nil}   
+      
+   
 
    FXCanvas < FXWindow
+   
+      
+         {:parent=>nil, :target=>"nil", :selector=>"0", :opts=>"FRAME_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}   
+      
+   
 
    FXCheckButton < FXLabel
+   
+      
+         {:parent=>nil, :text=>nil, :target=>"nil", :selector=>"0", :opts=>"CHECKBUTTON_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_PAD", :padRight=>"DEFAULT_PAD", :padTop=>"DEFAULT_PAD", :padBottom=>"DEFAULT_PAD"}   
+      
+   
 
    FXChoiceBox < FXDialogBox
+   
+      
+         {:owner=>nil, :caption=>nil, :text=>nil, :icon=>nil, :choices=>nil, :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}   
+      
+   
 
    FXColorBar < FXFrame
+   
+      
+         {:parent=>nil, :target=>"nil", :selector=>"0", :opts=>"FRAME_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_PAD", :padRight=>"DEFAULT_PAD", :padTop=>"DEFAULT_PAD", :padBottom=>"DEFAULT_PAD"}   
+      
+   
 
    FXColorDialog < FXDialogBox
+   
+      
+         {:owner=>nil, :title=>nil, :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}   
+      
+   
 
    FXColorItem < FXListItem
+   
+      
+         {:text=>nil, :clr=>nil, :data=>"nil"}   
+      
+   
 
    FXColorList < FXList
+   
+      
+         {:p=>nil, :target=>"nil", :selector=>"0", :opts=>"LIST_BROWSESELECT", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}   
+      
+   
 
    FXColorRing < FXFrame
+   
+      
+         {:p=>nil, :target=>"nil", :selector=>"0", :opts=>"FRAME_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_PAD", :padRight=>"DEFAULT_PAD", :padTop=>"DEFAULT_PAD", :padBottom=>"DEFAULT_PAD"}   
+      
+   
 
    FXColorSelector < FXPacker
+   
+      
+         {:parent=>nil, :target=>"nil", :selector=>"0", :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}   
+      
+   
 
    FXColorWell < FXFrame
+   
+      
+         {:parent=>nil, :color=>"0", :target=>"nil", :selector=>"0", :opts=>"COLORWELL_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_PAD", :padRight=>"DEFAULT_PAD", :padTop=>"DEFAULT_PAD", :padBottom=>"DEFAULT_PAD"}   
+      
+   
 
    FXColorWheel < FXFrame
+   
+      
+         {:p=>nil, :target=>"nil", :selector=>"0", :opts=>"FRAME_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_PAD", :padRight=>"DEFAULT_PAD", :padTop=>"DEFAULT_PAD", :padBottom=>"DEFAULT_PAD"}   
+      
+   
 
    FXComboBox < FXPacker
+   
+      
+         {:p=>nil, :cols=>nil, :target=>"nil", :selector=>"0", :opts=>"COMBOBOX_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_PAD", :padRight=>"DEFAULT_PAD", :padTop=>"DEFAULT_PAD", :padBottom=>"DEFAULT_PAD"}   
+      
+   
 
    FXComposite < FXWindow
+   
+      
+         {:parent=>nil, :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}   
+      
+   
 
    FXCursor < FXId
+   
+      
+         {:a=>nil, :curid=>"CURSOR_ARROW"}   
+      
+         {:a=>nil, :pix=>nil, :width=>"32", :height=>"32", :hotX=>"-1", :hotY=>"-1"}   
+      
+         {:a=>nil, :pixels=>nil, :width=>"32", :height=>"32", :hotX=>"-1", :hotY=>"-1"}   
+      
+   
 
    FXSegment < 
+   
+      No initializer
+   
 
    FXArc < 
+   
+      No initializer
+   
 
    FXDC < 
+   
+      
+         {:app=>nil}   
+      
+   
 
    FXPSBounds < 
+   
+      
+            
+      
+   
 
    FXPrinter < 
+   
+      
+            
+      
+   
 
    FXDCPrint < FXDC
+   
+      
+         {:app=>nil}   
+      
+   
 
    FXDCWindow < FXDC
+   
+      
+         {:drawable=>nil, :event=>"nil"}   
+      
+   
 
    FXDataTarget < FXObject
+   
+      
+         {:value=>"nil", :target=>"nil", :selector=>"0"}   
+      
+   
 
    FXDebugTarget < FXObject
+   
+      
+            
+      
+   
 
    FXDelegator < FXObject
+   
+      
+         {:delegate=>"nil"}   
+      
+   
 
    FXDial < FXFrame
+   
+      
+         {:p=>nil, :target=>"nil", :selector=>"0", :opts=>"DIAL_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_PAD", :padRight=>"DEFAULT_PAD", :padTop=>"DEFAULT_PAD", :padBottom=>"DEFAULT_PAD"}   
+      
+   
 
    FXDialogBox < FXTopWindow
+   
+      
+         {:owner=>nil, :title=>nil, :opts=>"DECOR_TITLE|DECOR_BORDER", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"10", :padRight=>"10", :padTop=>"10", :padBottom=>"10", :hSpacing=>"4", :vSpacing=>"4"}   
+      
+   
 
    FXDict < FXObject
+   
+      
+            
+      
+   
 
    FXDirBox < FXTreeListBox
+   
+      
+         {:p=>nil, :target=>"nil", :selector=>"0", :opts=>"FRAME_SUNKEN|FRAME_THICK|TREELISTBOX_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_PAD", :padRight=>"DEFAULT_PAD", :padTop=>"DEFAULT_PAD", :padBottom=>"DEFAULT_PAD"}   
+      
+   
 
    FXDirDialog < FXDialogBox
+   
+      
+         {:owner=>nil, :name=>nil, :opts=>"0", :x=>"0", :y=>"0", :width=>"500", :height=>"300"}   
+      
+   
 
    FXDirItem < FXTreeItem
+   
+      
+         {:text=>nil, :oi=>"nil", :ci=>"nil", :data=>"nil"}   
+      
+   
 
    FXDirList < FXTreeList
+   
+      
+         {:p=>nil, :target=>"nil", :selector=>"0", :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}   
+      
+   
 
    FXDirSelector < FXPacker
+   
+      
+         {:p=>nil, :target=>"nil", :selector=>"0", :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}   
+      
+   
 
    FXDockBar < FXPacker
+   
+      
+         {:p=>nil, :q=>nil, :opts=>"LAYOUT_TOP|LAYOUT_LEFT|LAYOUT_FILL_X", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"3", :padRight=>"3", :padTop=>"2", :padBottom=>"2", :hSpacing=>"DEFAULT_SPACING", :vSpacing=>"DEFAULT_SPACING"}   
+      
+         {:p=>nil, :opts=>"LAYOUT_TOP|LAYOUT_LEFT|LAYOUT_FILL_X", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"3", :padRight=>"3", :padTop=>"2", :padBottom=>"2", :hSpacing=>"DEFAULT_SPACING", :vSpacing=>"DEFAULT_SPACING"}   
+      
+   
 
    FXDockHandler < FXFrame
+   
+      
+         {:p=>nil, :tgt=>nil, :sel=>nil, :opts=>nil, :x=>nil, :y=>nil, :w=>nil, :h=>nil, :pl=>nil, :pr=>nil, :pt=>nil, :pb=>nil}   
+      
+   
 
    FXDockSite < FXPacker
+   
+      
+         {:p=>nil, :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"0", :padRight=>"0", :padTop=>"0", :padBottom=>"0", :hSpacing=>"0", :vSpacing=>"0"}   
+      
+   
 
    FXDockTitle < FXDockHandler
+   
+      
+         {:p=>nil, :text=>nil, :target=>"nil", :selector=>"0", :opts=>"FRAME_NORMAL|JUSTIFY_CENTER_X|JUSTIFY_CENTER_Y", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"0", :padRight=>"0", :padTop=>"0", :padBottom=>"0"}   
+      
+   
 
    FXDocument < FXObject
+   
+      
+            
+      
+   
 
    FXDragCorner < FXWindow
+   
+      
+         {:p=>nil}   
+      
+   
 
    FXDrawable < FXId
+   
+      No initializer
+   
 
    FXDriveBox < FXListBox
+   
+      
+         {:p=>nil, :target=>"nil", :selector=>"0", :opts=>"FRAME_SUNKEN|FRAME_THICK|LISTBOX_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_PAD", :padRight=>"DEFAULT_PAD", :padTop=>"DEFAULT_PAD", :padBottom=>"DEFAULT_PAD"}   
+      
+   
 
    FXExtentd < 
+   
+      
+            
+      
+         {:ext=>nil}   
+      
+         {:lo=>nil, :hi=>nil}   
+      
+         {:xlo=>nil, :xhi=>nil, :ylo=>nil, :yhi=>nil}   
+      
+   
 
    FXExtentf < 
+   
+      
+            
+      
+         {:ext=>nil}   
+      
+         {:lo=>nil, :hi=>nil}   
+      
+         {:xlo=>nil, :xhi=>nil, :ylo=>nil, :yhi=>nil}   
+      
+   
 
    FXFileDialog < FXDialogBox
+   
+      
+         {:owner=>nil, :name=>nil, :opts=>"0", :x=>"0", :y=>"0", :width=>"500", :height=>"300"}   
+      
+   
 
    FXFileAssoc < 
+   
+      
+            
+      
+   
 
    FXFileDict < FXDict
+   
+      
+         {:app=>nil, :db=>"nil"}   
+      
+   
 
    FXFileItem < FXIconItem
+   
+      
+         {:text=>nil, :bi=>"nil", :mi=>"nil", :ptr=>"nil"}   
+      
+   
 
    FXFileList < FXIconList
+   
+      
+         {:p=>nil, :target=>"nil", :selector=>"0", :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}   
+      
+   
 
    FXFileSelector < FXPacker
+   
+      
+         {:p=>nil, :target=>"nil", :selector=>"0", :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}   
+      
+   
 
    FXFileStream < FXStream
+   
+      
+         {:cont=>"nil"}   
+      
+   
 
    FXFoldingItem < FXObject
+   
+      
+         {:text=>nil, :openIcon=>"nil", :closedIcon=>"nil", :data=>"nil"}   
+      
+   
 
    FXFoldingList < FXScrollArea
+   
+      
+         {:p=>nil, :target=>"nil", :selector=>"0", :opts=>"TREELIST_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}   
+      
+   
 
    FXFontDesc < 
+   
+      
+            
+      
+   
 
    FXFont < FXId
+   
+      
+         {:a=>nil, :fontDesc=>nil}   
+      
+         {:a=>nil, :face=>nil, :size=>nil, :weight=>"FXFont::Normal", :slant=>"Font::Straight", :encoding=>"FONTENCODING_DEFAULT", :setWidth=>"FXFont::NonExpanded", :hints=>"0"}   
+      
+         {:a=>nil, :string=>nil}   
+      
+   
 
    FXFontDialog < FXDialogBox
+   
+      
+         {:owner=>nil, :name=>nil, :opts=>"0", :x=>"0", :y=>"0", :width=>"600", :height=>"380"}   
+      
+   
 
    FXFontSelector < FXPacker
+   
+      
+         {:p=>nil, :target=>"nil", :selector=>"0", :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}   
+      
+   
 
    FXFrame < FXWindow
+   
+      
+         {:parent=>nil, :opts=>"FRAME_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_PAD", :padRight=>"DEFAULT_PAD", :padTop=>"DEFAULT_PAD", :padBottom=>"DEFAULT_PAD"}   
+      
+   
 
    FXGIFCursor < FXCursor
+   
+      
+         {:a=>nil, :pix=>nil, :hx=>"-1", :hy=>"-1"}   
+      
+   
 
    FXGIFIcon < FXIcon
+   
+      
+         {:a=>nil, :pix=>"nil", :clr=>"0", :opts=>"0", :width=>"1", :height=>"1"}   
+      
+   
 
    FXGIFImage < FXImage
+   
+      
+         {:a=>nil, :pix=>"nil", :opts=>"0", :width=>"1", :height=>"1"}   
+      
+   
 
    FXGLCanvas < FXCanvas
+   
+      
+         {:parent=>nil, :vis=>nil, :target=>"nil", :selector=>"0", :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}   
+      
+         {:parent=>nil, :vis=>nil, :sharegroup=>nil, :target=>"nil", :selector=>"0", :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}   
+      
+   
 
    FXGLContext < FXId
+   
+      
+         {:app=>nil, :visual=>nil, :other=>"nil"}   
+      
+   
 
    FXGLObject < FXObject
+   
+      
+            
+      
+   
 
    FXGLShape < FXGLObject
+   
+      
+         {:x=>nil, :y=>nil, :z=>nil, :opts=>nil, :front=>"nil", :back=>"nil"}   
+      
+   
 
    FXViewport < 
+   
+      
+            
+      
+   
 
    FXLight < 
+   
+      
+            
+      
+   
 
    FXMaterial < 
+   
+      
+            
+      
+   
 
    FXGLViewer < FXGLCanvas
+   
+      
+         {:p=>nil, :vis=>nil, :target=>"nil", :selector=>"0", :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}   
+      
+         {:p=>nil, :vis=>nil, :sharegroup=>nil, :target=>"nil", :selector=>"0", :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}   
+      
+   
 
    FXGLVisual < FXVisual
+   
+      
+         {:app=>nil, :flags=>nil}   
+      
+   
 
    FXGradient < 
+   
+      No initializer
+   
 
    FXGradientBar < FXFrame
+   
+      
+         {:p=>nil, :target=>"nil", :selector=>"0", :opts=>"FRAME_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_PAD", :padRight=>"DEFAULT_PAD", :padTop=>"DEFAULT_PAD", :padBottom=>"DEFAULT_PAD"}   
+      
+   
 
    FXGroupBox < FXPacker
+   
+      
+         {:parent=>nil, :text=>nil, :opts=>"GROUPBOX_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_SPACING", :padRight=>"DEFAULT_SPACING", :padTop=>"DEFAULT_SPACING", :padBottom=>"DEFAULT_SPACING", :hSpacing=>"DEFAULT_SPACING", :vSpacing=>"DEFAULT_SPACING"}   
+      
+   
 
    FXHeaderItem < FXObject
+   
+      
+         {:text=>nil, :ic=>"nil", :s=>"0", :ptr=>"nil"}   
+      
+   
 
    FXHeader < FXFrame
+   
+      
+         {:p=>nil, :target=>"nil", :selector=>"0", :opts=>"HEADER_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_PAD", :padRight=>"DEFAULT_PAD", :padTop=>"DEFAULT_PAD", :padBottom=>"DEFAULT_PAD"}   
+      
+   
 
    FXHorizontalFrame < FXPacker
+   
+      
+         {:p=>nil, :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_SPACING", :padRight=>"DEFAULT_SPACING", :padTop=>"DEFAULT_SPACING", :padBottom=>"DEFAULT_SPACING", :hSpacing=>"DEFAULT_SPACING", :vSpacing=>"DEFAULT_SPACING"}   
+      
+   
 
    FXICOIcon < FXIcon
+   
+      
+         {:a=>nil, :pix=>"nil", :clr=>"0", :opts=>"0", :width=>"1", :height=>"1"}   
+      
+   
 
    FXICOImage < FXImage
+   
+      
+         {:a=>nil, :pix=>"nil", :opts=>"0", :width=>"1", :height=>"1"}   
+      
+   
 
    FXIcon < FXImage
+   
+      
+         {:app=>nil, :pix=>"nil", :clr=>"0", :opts=>"0", :width=>"1", :height=>"1"}   
+      
+   
 
    FXIconDict < FXDict
+   
+      No initializer
+   
 
    FXIconItem < FXObject
+   
+      
+         {:text=>nil, :bigIcon=>"nil", :miniIcon=>"nil", :data=>"nil"}   
+      
+   
 
    FXIconList < FXScrollArea
+   
+      
+         {:p=>nil, :target=>"nil", :selector=>"0", :opts=>"ICONLIST_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}   
+      
+   
 
    FXIconSource < FXObject
+   
+      
+         {:app=>nil}   
+      
+   
 
    FXId < FXObject
+   
+      No initializer
+   
 
    FXImage < FXDrawable
+   
+      
+         {:a=>nil, :pixels=>"nil", :opts=>"0", :width=>"1", :height=>"1"}   
+      
+   
 
    FXImageFrame < FXFrame
+   
+      
+         {:p=>nil, :img=>nil, :opts=>"FRAME_SUNKEN|FRAME_THICK", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"0", :padRight=>"0", :padTop=>"0", :padBottom=>"0"}   
+      
+   
 
    FXImageView < FXScrollArea
+   
+      
+         {:p=>nil, :img=>"nil", :target=>"nil", :selector=>"0", :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}   
+      
+   
 
    FXInputDialog < FXDialogBox
+   
+      
+         {:owner=>nil, :caption=>nil, :label=>nil, :icon=>"nil", :opts=>"INPUTDIALOG_STRING", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}   
+      
+   
 
    FXJPGIcon < FXIcon
+   
+      
+         {:a=>nil, :pix=>"nil", :clr=>"0", :opts=>"0", :width=>"1", :height=>"1", :quality=>"75"}   
+      
+   
 
    FXJPGImage < FXImage
+   
+      
+         {:a=>nil, :pix=>"nil", :opts=>"0", :width=>"1", :height=>"1", :quality=>"75"}   
+      
+   
 
    FXKnob < FXFrame
+   
+      
+         {:p=>nil, :target=>"nil", :selector=>"0", :opts=>"KNOB_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_PAD", :padRight=>"DEFAULT_PAD", :padTop=>"DEFAULT_PAD", :padBottom=>"DEFAULT_PAD"}   
+      
+   
 
    FXLabel < FXFrame
+   
+      
+         {:parent=>nil, :text=>nil, :icon=>"nil", :opts=>"LABEL_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_PAD", :padRight=>"DEFAULT_PAD", :padTop=>"DEFAULT_PAD", :padBottom=>"DEFAULT_PAD"}   
+      
+   
 
    FXListItem < FXObject
+   
+      
+         {:text=>nil, :icon=>"nil", :data=>"nil"}   
+      
+   
 
    FXList < FXScrollArea
+   
+      
+         {:p=>nil, :target=>"nil", :selector=>"0", :opts=>"LIST_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}   
+      
+   
 
    FXListBox < FXPacker
+   
+      
+         {:p=>nil, :target=>"nil", :selector=>"0", :opts=>"FRAME_SUNKEN|FRAME_THICK|LISTBOX_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_PAD", :padRight=>"DEFAULT_PAD", :padTop=>"DEFAULT_PAD", :padBottom=>"DEFAULT_PAD"}   
+      
+   
 
    FXMDIDeleteButton < FXButton
+   
+      
+         {:p=>nil, :target=>"nil", :selector=>"0", :opts=>"FRAME_RAISED", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}   
+      
+   
 
    FXMDIRestoreButton < FXButton
+   
+      
+         {:p=>nil, :target=>"nil", :selector=>"0", :opts=>"FRAME_RAISED", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}   
+      
+   
 
    FXMDIMaximizeButton < FXButton
+   
+      
+         {:p=>nil, :target=>"nil", :selector=>"0", :opts=>"FRAME_RAISED", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}   
+      
+   
 
    FXMDIMinimizeButton < FXButton
+   
+      
+         {:p=>nil, :target=>"nil", :selector=>"0", :opts=>"FRAME_RAISED", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}   
+      
+   
 
    FXMDIWindowButton < FXMenuButton
+   
+      
+         {:p=>nil, :pup=>nil, :target=>"nil", :selector=>"0", :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}   
+      
+   
 
    FXMDIMenu < FXMenuPane
+   
+      
+         {:owner=>nil, :target=>"nil"}   
+      
+   
 
    FXMDIChild < FXComposite
+   
+      
+         {:p=>nil, :name=>nil, :ic=>"nil", :pup=>"nil", :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}   
+      
+   
 
    FXMDIClient < FXComposite
+   
+      
+         {:p=>nil, :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}   
+      
+   
 
    FXMainWindow < FXTopWindow
+   
+      
+         {:app=>nil, :title=>nil, :icon=>"nil", :miniIcon=>"nil", :opts=>"DECOR_ALL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"0", :padRight=>"0", :padTop=>"0", :padBottom=>"0", :hSpacing=>"4", :vSpacing=>"4"}   
+      
+   
 
    FXMatrix < FXPacker
+   
+      
+         {:parent=>nil, :n=>"1", :opts=>"MATRIX_BY_ROWS", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_SPACING", :padRight=>"DEFAULT_SPACING", :padTop=>"DEFAULT_SPACING", :padBottom=>"DEFAULT_SPACING", :hSpacing=>"DEFAULT_SPACING", :vSpacing=>"DEFAULT_SPACING"}   
+      
+   
 
    FXMemoryBuffer < 
+   
+      
+         {:data=>nil}   
+      
+   
 
    FXMemoryStream < FXStream
+   
+      
+         {:cont=>"nil"}   
+      
+   
 
    FXMenuBar < FXToolBar
+   
+      
+         {:p=>nil, :q=>nil, :opts=>"LAYOUT_TOP|LAYOUT_LEFT|LAYOUT_FILL_X", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"3", :padRight=>"3", :padTop=>"2", :padBottom=>"2", :hSpacing=>"DEFAULT_SPACING", :vSpacing=>"DEFAULT_SPACING"}   
+      
+         {:p=>nil, :opts=>nil, :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"3", :padRight=>"3", :padTop=>"2", :padBottom=>"2", :hSpacing=>"DEFAULT_SPACING", :vSpacing=>"DEFAULT_SPACING"}   
+      
+   
 
    FXMenuButton < FXLabel
+   
+      
+         {:parent=>nil, :text=>nil, :icon=>"nil", :popupMenu=>"nil", :opts=>"JUSTIFY_NORMAL|ICON_BEFORE_TEXT|MENUBUTTON_DOWN", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_SPACING", :padRight=>"DEFAULT_SPACING", :padTop=>"DEFAULT_SPACING", :padBottom=>"DEFAULT_SPACING"}   
+      
+   
 
    FXMenuCaption < FXWindow
+   
+      
+         {:parent=>nil, :text=>nil, :icon=>"nil", :opts=>"0"}   
+      
+   
 
    FXMenuCascade < FXMenuCaption
+   
+      
+         {:parent=>nil, :text=>nil, :icon=>"nil", :popupMenu=>"nil", :opts=>"0"}   
+      
+   
 
    FXMenuCheck < FXMenuCommand
+   
+      
+         {:p=>nil, :text=>nil, :target=>"nil", :selector=>"0", :opts=>"0"}   
+      
+   
 
    FXMenuCommand < FXMenuCaption
+   
+      
+         {:p=>nil, :text=>nil, :ic=>"nil", :target=>"nil", :selector=>"0", :opts=>"0"}   
+      
+   
 
    FXMenuPane < FXPopup
+   
+      
+         {:owner=>nil, :opts=>"0"}   
+      
+   
 
    FXMenuRadio < FXMenuCommand
+   
+      
+         {:p=>nil, :text=>nil, :target=>"nil", :selector=>"0", :opts=>"0"}   
+      
+   
 
    FXMenuSeparator < FXWindow
+   
+      
+         {:parent=>nil, :opts=>"0"}   
+      
+   
 
    FXMenuTitle < FXMenuCaption
+   
+      
+         {:parent=>nil, :text=>nil, :icon=>"nil", :popupMenu=>"nil", :opts=>"0"}   
+      
+   
 
    FXMessageBox < FXDialogBox
+   
+      
+         {:owner=>nil, :caption=>nil, :text=>nil, :ic=>"nil", :opts=>"0", :x=>"0", :y=>"0"}   
+      
+   
 
    FXObject < 
+   
+      No initializer
+   
 
    FXOption < FXLabel
+   
+      
+         {:p=>nil, :text=>nil, :ic=>"nil", :target=>"nil", :selector=>"0", :opts=>"JUSTIFY_NORMAL|ICON_BEFORE_TEXT", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_PAD", :padRight=>"DEFAULT_PAD", :padTop=>"DEFAULT_PAD", :padBottom=>"DEFAULT_PAD"}   
+      
+   
 
    FXOptionMenu < FXLabel
+   
+      
+         {:p=>nil, :pup=>"nil", :opts=>"JUSTIFY_NORMAL|ICON_BEFORE_TEXT", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_PAD", :padRight=>"DEFAULT_PAD", :padTop=>"DEFAULT_PAD", :padBottom=>"DEFAULT_PAD"}   
+      
+   
 
    FXPCXIcon < FXIcon
+   
+      
+         {:a=>nil, :pix=>"nil", :clr=>"0", :opts=>"0", :width=>"1", :height=>"1"}   
+      
+   
 
    FXPCXImage < FXImage
+   
+      
+         {:a=>nil, :pix=>"nil", :opts=>"0", :width=>"1", :height=>"1"}   
+      
+   
 
    FXPNGIcon < FXIcon
+   
+      
+         {:a=>nil, :pix=>"nil", :clr=>"0", :opts=>"0", :width=>"1", :height=>"1"}   
+      
+   
 
    FXPNGImage < FXImage
+   
+      
+         {:a=>nil, :pix=>"nil", :opts=>"0", :width=>"1", :height=>"1"}   
+      
+   
 
    FXPPMIcon < FXIcon
+   
+      
+         {:a=>nil, :pix=>"nil", :clr=>"0", :opts=>"0", :width=>"1", :height=>"1"}   
+      
+   
 
    FXPPMImage < FXImage
+   
+      
+         {:a=>nil, :pix=>"nil", :opts=>"0", :width=>"1", :height=>"1"}   
+      
+   
 
    FXPacker < FXComposite
+   
+      
+         {:parent=>nil, :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_SPACING", :padRight=>"DEFAULT_SPACING", :padTop=>"DEFAULT_SPACING", :padBottom=>"DEFAULT_SPACING", :hSpacing=>"DEFAULT_SPACING", :vSpacing=>"DEFAULT_SPACING"}   
+      
+   
 
    FXPicker < FXButton
+   
+      
+         {:p=>nil, :text=>nil, :ic=>"nil", :target=>"nil", :selector=>"0", :opts=>"BUTTON_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_PAD", :padRight=>"DEFAULT_PAD", :padTop=>"DEFAULT_PAD", :padBottom=>"DEFAULT_PAD"}   
+      
+   
 
    FXPopup < FXShell
+   
+      
+         {:owner=>nil, :opts=>"POPUP_VERTICAL|FRAME_RAISED|FRAME_THICK", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}   
+      
+   
 
    FXPrintDialog < FXDialogBox
+   
+      
+         {:owner=>nil, :name=>nil, :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}   
+      
+   
 
    FXProgressBar < FXFrame
+   
+      
+         {:p=>nil, :target=>"nil", :selector=>"0", :opts=>"PROGRESSBAR_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_PAD", :padRight=>"DEFAULT_PAD", :padTop=>"DEFAULT_PAD", :padBottom=>"DEFAULT_PAD"}   
+      
+   
 
    FXProgressDialog < FXDialogBox
+   
+      
+         {:owner=>nil, :caption=>nil, :label=>nil, :opts=>"PROGRESSDIALOG_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}   
+      
+   
 
    FXQuatd < FXVec4d
+   
+      
+            
+      
+         {:axis=>nil, :phi=>"0.0"}   
+      
+         {:x=>nil, :y=>nil, :z=>nil, :w=>nil}   
+      
+         {:floats=>nil}   
+      
+         {:roll=>nil, :pitch=>nil, :yaw=>nil}   
+      
+         {:ex=>nil, :ey=>nil, :ez=>nil}   
+      
+   
 
    FXQuatf < FXVec4f
+   
+      
+            
+      
+         {:axis=>nil, :phi=>"0.0"}   
+      
+         {:roll=>nil, :pitch=>nil, :yaw=>nil}   
+      
+         {:ex=>nil, :ey=>nil, :ez=>nil}   
+      
+         {:mat=>nil}   
+      
+         {:x=>nil, :y=>nil, :z=>nil, :w=>nil}   
+      
+   
 
    FXRGBIcon < FXIcon
+   
+      
+         {:a=>nil, :pix=>"nil", :clr=>"0", :opts=>"0", :width=>"1", :height=>"1"}   
+      
+   
 
    FXRGBImage < FXImage
+   
+      
+         {:a=>nil, :pix=>"nil", :opts=>"0", :width=>"1", :height=>"1"}   
+      
+   
 
    FXRadioButton < FXLabel
+   
+      
+         {:parent=>nil, :text=>nil, :target=>"nil", :selector=>"0", :opts=>"RADIOBUTTON_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_PAD", :padRight=>"DEFAULT_PAD", :padTop=>"DEFAULT_PAD", :padBottom=>"DEFAULT_PAD"}   
+      
+   
 
    FXRanged < 
+   
+      
+         {:xlo=>"0.0", :xhi=>"0.0", :ylo=>"0.0", :yhi=>"0.0", :zlo=>"0.0", :zhi=>"0.0"}   
+      
+         {:bounds=>nil}   
+      
+         {:sphere=>nil}   
+      
+   
 
    FXRangef < 
+   
+      
+         {:xlo=>"0.0", :xhi=>"0.0", :ylo=>"0.0", :yhi=>"0.0", :zlo=>"0.0", :zhi=>"0.0"}   
+      
+         {:bounds=>nil}   
+      
+         {:sphere=>nil}   
+      
+   
 
    FXRealSlider < FXFrame
+   
+      
+         {:p=>nil, :target=>"nil", :selector=>"0", :opts=>"REALSLIDER_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"0", :padRight=>"0", :padTop=>"0", :padBottom=>"0"}   
+      
+   
 
    FXRealSpinner < FXPacker
+   
+      
+         {:p=>nil, :cols=>nil, :target=>"nil", :selector=>"0", :opts=>"REALSPIN_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_PAD", :padRight=>"DEFAULT_PAD", :padTop=>"DEFAULT_PAD", :padBottom=>"DEFAULT_PAD"}   
+      
+   
 
    FXRecentFiles < FXObject
+   
+      
+            
+      
+         {:a=>nil}   
+      
+         {:a=>nil, :gp=>nil, :target=>"nil", :selector=>"0"}   
+      
+   
 
    FXRectangle < 
+   
+      
+            
+      
+         {:xx=>nil, :yy=>nil, :ww=>nil, :hh=>nil}   
+      
+         {:p=>nil, :s=>nil}   
+      
+         {:topleft=>nil, :bottomright=>nil}   
+      
+   
 
    FXRegion < 
+   
+      
+            
+      
+         {:r=>nil}   
+      
+         {:rect=>nil}   
+      
+         {:x=>nil, :y=>nil, :w=>nil, :h=>nil}   
+      
+         {:points=>nil, :winding=>"false"}   
+      
+   
 
    FXRegistry < FXSettings
+   
+      
+         {:appKey=>"\"\"", :vendorKey=>"\"\""}   
+      
+   
 
    FXReplaceDialog < FXDialogBox
+   
+      
+         {:owner=>nil, :caption=>nil, :ic=>"nil", :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}   
+      
+   
 
    FXRootWindow < FXComposite
+   
+      
+         {:a=>nil, :vis=>nil}   
+      
+   
 
    FXRuler < FXFrame
+   
+      
+         {:p=>nil, :target=>"nil", :selector=>"0", :opts=>"RULER_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_PAD", :padRight=>"DEFAULT_PAD", :padTop=>"DEFAULT_PAD", :padBottom=>"DEFAULT_PAD"}   
+      
+   
 
    FXRulerView < FXScrollArea
+   
+      
+         {:p=>nil, :target=>"nil", :selector=>"0", :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}   
+      
+   
 
    NotifyHeader < 
+   
+      No initializer
+   
 
    SCNotification < 
+   
+      No initializer
+   
 
    TextRange < 
+   
+      
+         {:start=>nil, :last=>nil, :size=>nil}   
+      
+   
 
    FXScintilla < FXScrollArea
+   
+      
+         {:p=>nil, :target=>"nil", :selector=>"0", :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}   
+      
+   
 
    FXScrollArea < FXComposite
+   
+      
+         {:parent=>nil, :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}   
+      
+   
 
    FXScrollBar < FXWindow
+   
+      
+         {:p=>nil, :target=>"nil", :selector=>"0", :opts=>"SCROLLBAR_VERTICAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}   
+      
+   
 
    FXScrollCorner < FXWindow
+   
+      
+         {:p=>nil}   
+      
+   
 
    FXScrollPane < FXMenuPane
+   
+      
+         {:owner=>nil, :nvis=>nil, :opts=>"0"}   
+      
+   
 
    FXScrollWindow < FXScrollArea
+   
+      
+         {:p=>nil, :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}   
+      
+   
 
    FXSearchDialog < FXReplaceDialog
+   
+      
+         {:owner=>nil, :caption=>nil, :ic=>"nil", :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}   
+      
+   
 
    FXSeparator < FXFrame
+   
+      
+         {:p=>nil, :opts=>"SEPARATOR_GROOVE|LAYOUT_FILL_X", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"0", :padRight=>"0", :padTop=>"0", :padBottom=>"0"}   
+      
+   
 
    FXHorizontalSeparator < FXSeparator
+   
+      
+         {:p=>nil, :opts=>"SEPARATOR_GROOVE|LAYOUT_FILL_X", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"1", :padRight=>"1", :padTop=>"0", :padBottom=>"0"}   
+      
+   
 
    FXVerticalSeparator < FXSeparator
+   
+      
+         {:p=>nil, :opts=>"SEPARATOR_GROOVE|LAYOUT_FILL_Y", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"0", :padRight=>"0", :padTop=>"1", :padBottom=>"1"}   
+      
+   
 
    FXSettings < FXDict
+   
+      
+            
+      
+   
 
    FXShell < FXComposite
+   
+      No initializer
+   
 
    FXShutterItem < FXVerticalFrame
+   
+      
+         {:p=>nil, :text=>"\"\"", :icon=>"nil", :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_SPACING", :padRight=>"DEFAULT_SPACING", :padTop=>"DEFAULT_SPACING", :padBottom=>"DEFAULT_SPACING", :hSpacing=>"DEFAULT_SPACING", :vSpacing=>"DEFAULT_SPACING"}   
+      
+   
 
    FXShutter < FXVerticalFrame
+   
+      
+         {:p=>nil, :target=>"nil", :selector=>"0", :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_SPACING", :padRight=>"DEFAULT_SPACING", :padTop=>"DEFAULT_SPACING", :padBottom=>"DEFAULT_SPACING", :hSpacing=>"DEFAULT_SPACING", :vSpacing=>"DEFAULT_SPACING"}   
+      
+   
 
    FXSize < 
+   
+      
+            
+      
+         {:s=>nil}   
+      
+         {:ww=>nil, :hh=>nil}   
+      
+   
 
    FXSlider < FXFrame
+   
+      
+         {:p=>nil, :target=>"nil", :selector=>"0", :opts=>"SLIDER_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"0", :padRight=>"0", :padTop=>"0", :padBottom=>"0"}   
+      
+   
 
    FXSphered < 
+   
+      
+            
+      
+         {:otherSphere=>nil}   
+      
+         {:cen=>nil, :rad=>"0.0"}   
+      
+         {:x=>nil, :y=>nil, :z=>nil, :rad=>"0.0"}   
+      
+         {:bounds=>nil}   
+      
+   
 
    FXSpheref < 
+   
+      
+            
+      
+         {:otherSphere=>nil}   
+      
+         {:cen=>nil, :rad=>"0.0"}   
+      
+         {:x=>nil, :y=>nil, :z=>nil, :rad=>"0.0"}   
+      
+         {:bounds=>nil}   
+      
+   
 
    FXSpinner < FXPacker
+   
+      
+         {:p=>nil, :cols=>nil, :target=>"nil", :selector=>"0", :opts=>"SPIN_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_PAD", :padRight=>"DEFAULT_PAD", :padTop=>"DEFAULT_PAD", :padBottom=>"DEFAULT_PAD"}   
+      
+   
 
    FXSplashWindow < FXTopWindow
+   
+      
+         {:owner=>nil, :icon=>nil, :opts=>"SPLASH_SIMPLE", :ms=>"5000"}   
+      
+   
 
    FXSplitter < FXComposite
+   
+      
+         {:p=>nil, :opts=>"SPLITTER_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}   
+      
+         {:p=>nil, :tgt=>nil, :sel=>nil, :opts=>"SPLITTER_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}   
+      
+   
 
    FXSpring < FXPacker
+   
+      
+         {:p=>nil, :opts=>"0", :relw=>"0", :relh=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_SPACING", :padRight=>"DEFAULT_SPACING", :padTop=>"DEFAULT_SPACING", :padBottom=>"DEFAULT_SPACING", :hSpacing=>"DEFAULT_SPACING", :vSpacing=>"DEFAULT_SPACING"}   
+      
+   
 
    FXStatusBar < FXHorizontalFrame
+   
+      
+         {:p=>nil, :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"3", :padRight=>"3", :padTop=>"2", :padBottom=>"2", :hSpacing=>"4", :vSpacing=>"0"}   
+      
+   
 
    FXStatusLine < FXFrame
+   
+      
+         {:p=>nil, :target=>"nil", :selector=>"0"}   
+      
+   
 
    FXStream < 
+   
+      
+         {:cont=>"nil"}   
+      
+   
 
    FXStringDict < FXDict
+   
+      
+            
+      
+   
 
    FXSwitcher < FXPacker
+   
+      
+         {:p=>nil, :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_SPACING", :padRight=>"DEFAULT_SPACING", :padTop=>"DEFAULT_SPACING", :padBottom=>"DEFAULT_SPACING"}   
+      
+   
 
    FXTGAIcon < FXIcon
+   
+      
+         {:a=>nil, :pix=>"nil", :clr=>"0", :opts=>"0", :width=>"1", :height=>"1"}   
+      
+   
 
    FXTGAImage < FXImage
+   
+      
+         {:a=>nil, :pix=>"nil", :opts=>"0", :width=>"1", :height=>"1"}   
+      
+   
 
    FXTIFIcon < FXIcon
+   
+      
+         {:a=>nil, :pix=>"nil", :clr=>"0", :opts=>"0", :width=>"1", :height=>"1"}   
+      
+   
 
    FXTIFImage < FXImage
+   
+      
+         {:a=>nil, :pix=>"nil", :opts=>"0", :width=>"1", :height=>"1"}   
+      
+   
 
    FXTabBar < FXPacker
+   
+      
+         {:p=>nil, :target=>"nil", :selector=>"0", :opts=>"TABBOOK_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_SPACING", :padRight=>"DEFAULT_SPACING", :padTop=>"DEFAULT_SPACING", :padBottom=>"DEFAULT_SPACING"}   
+      
+   
 
    FXTabBook < FXTabBar
+   
+      
+         {:p=>nil, :target=>"nil", :selector=>"0", :opts=>"TABBOOK_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_SPACING", :padRight=>"DEFAULT_SPACING", :padTop=>"DEFAULT_SPACING", :padBottom=>"DEFAULT_SPACING"}   
+      
+   
 
    FXTabItem < FXLabel
+   
+      
+         {:p=>nil, :text=>nil, :ic=>"nil", :opts=>"TAB_TOP_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_PAD", :padRight=>"DEFAULT_PAD", :padTop=>"DEFAULT_PAD", :padBottom=>"DEFAULT_PAD"}   
+      
+   
 
    FXTablePos < 
+   
+      
+            
+      
+   
 
    FXTableRange < 
+   
+      
+            
+      
+   
 
    FXTableItem < FXObject
+   
+      
+         {:text=>nil, :icon=>"nil", :data=>"nil"}   
+      
+   
 
    FXTable < FXScrollArea
+   
+      
+         {:p=>nil, :target=>"nil", :selector=>"0", :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_MARGIN", :padRight=>"DEFAULT_MARGIN", :padTop=>"DEFAULT_MARGIN", :padBottom=>"DEFAULT_MARGIN"}   
+      
+   
 
    FXHiliteStyle < 
+   
+      No initializer
+   
 
    FXTextChange < 
+   
+      No initializer
+   
 
    FXText < FXScrollArea
+   
+      
+         {:p=>nil, :target=>"nil", :selector=>"0", :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"3", :padRight=>"3", :padTop=>"2", :padBottom=>"2"}   
+      
+   
 
    FXTextField < FXFrame
+   
+      
+         {:p=>nil, :ncols=>nil, :target=>"nil", :selector=>"0", :opts=>"TEXTFIELD_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_PAD", :padRight=>"DEFAULT_PAD", :padTop=>"DEFAULT_PAD", :padBottom=>"DEFAULT_PAD"}   
+      
+   
 
    FXToggleButton < FXLabel
+   
+      
+         {:p=>nil, :text1=>nil, :text2=>nil, :icon1=>"nil", :icon2=>"nil", :target=>"nil", :selector=>"0", :opts=>"TOGGLEBUTTON_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_PAD", :padRight=>"DEFAULT_PAD", :padTop=>"DEFAULT_PAD", :padBottom=>"DEFAULT_PAD"}   
+      
+   
 
    FXToolBar < FXDockBar
+   
+      
+         {:p=>nil, :q=>nil, :opts=>"LAYOUT_TOP|LAYOUT_LEFT|LAYOUT_FILL_X", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"3", :padRight=>"3", :padTop=>"2", :padBottom=>"2", :hSpacing=>"DEFAULT_SPACING", :vSpacing=>"DEFAULT_SPACING"}   
+      
+         {:p=>nil, :opts=>"LAYOUT_TOP|LAYOUT_LEFT|LAYOUT_FILL_X", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"3", :padRight=>"3", :padTop=>"2", :padBottom=>"2", :hSpacing=>"DEFAULT_SPACING", :vSpacing=>"DEFAULT_SPACING"}   
+      
+   
 
    FXToolBarGrip < FXDockHandler
+   
+      
+         {:p=>nil, :target=>"nil", :selector=>"0", :opts=>"TOOLBARGRIP_SINGLE", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}   
+      
+   
 
    FXToolBarShell < FXTopWindow
+   
+      
+         {:owner=>nil, :opts=>"FRAME_RAISED|FRAME_THICK", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :hSpacing=>"4", :vSpacing=>"4"}   
+      
+   
 
    FXToolBarTab < FXFrame
+   
+      
+         {:p=>nil, :target=>"nil", :selector=>"0", :opts=>"FRAME_RAISED", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}   
+      
+   
 
    FXToolTip < FXShell
+   
+      
+         {:app=>nil, :opts=>"TOOLTIP_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}   
+      
+   
 
    FXTopWindow < FXShell
+   
+      No initializer
+   
 
    FXTranslator < 
+   
+      
+         {:a=>nil}   
+      
+   
 
    FXTreeItem < FXObject
+   
+      
+         {:text=>nil, :openIcon=>"nil", :closedIcon=>"nil", :data=>"nil"}   
+      
+   
 
    FXTreeList < FXScrollArea
+   
+      
+         {:p=>nil, :target=>"nil", :selector=>"0", :opts=>"TREELIST_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}   
+      
+   
 
    FXTreeListBox < FXPacker
+   
+      
+         {:p=>nil, :target=>"nil", :selector=>"0", :opts=>"FRAME_SUNKEN|FRAME_THICK|TREELISTBOX_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_PAD", :padRight=>"DEFAULT_PAD", :padTop=>"DEFAULT_PAD", :padBottom=>"DEFAULT_PAD"}   
+      
+   
 
    FXTriStateButton < FXToggleButton
+   
+      
+         {:p=>nil, :text1=>nil, :text2=>nil, :text3=>nil, :icon1=>"nil", :icon2=>"nil", :icon3=>"nil", :target=>"nil", :selector=>"0", :opts=>"TOGGLEBUTTON_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_PAD", :padRight=>"DEFAULT_PAD", :padTop=>"DEFAULT_PAD", :padBottom=>"DEFAULT_PAD"}   
+      
+   
 
    FXVec2d < 
+   
+      
+         {:xx=>"0.0", :yy=>"0.0"}   
+      
+   
 
    FXVec2f < 
+   
+      
+         {:xx=>"0.0", :yy=>"0.0"}   
+      
+   
 
    FXVec3d < 
+   
+      
+            
+      
+         {:xx=>nil, :yy=>nil, :zz=>"1.0"}   
+      
+   
 
    FXVec3f < 
+   
+      
+            
+      
+         {:xx=>nil, :yy=>nil, :zz=>"1.0"}   
+      
+   
 
    FXVec4d < 
+   
+      
+            
+      
+         {:xx=>nil, :yy=>nil, :zz=>nil, :ww=>"1.0"}   
+      
+         {:vec3d=>nil, :ww=>"1.0"}   
+      
+   
 
    FXVec4f < 
+   
+      
+            
+      
+         {:xx=>nil, :yy=>nil, :zz=>nil, :ww=>"1.0"}   
+      
+         {:vec3f=>nil, :ww=>"1.0"}   
+      
+   
 
    FXVerticalFrame < FXPacker
+   
+      
+         {:p=>nil, :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_SPACING", :padRight=>"DEFAULT_SPACING", :padTop=>"DEFAULT_SPACING", :padBottom=>"DEFAULT_SPACING", :hSpacing=>"DEFAULT_SPACING", :vSpacing=>"DEFAULT_SPACING"}   
+      
+   
 
    FXVisual < FXId
+   
+      
+         {:a=>nil, :flgs=>nil, :d=>"32"}   
+      
+   
 
    FXWindow < FXDrawable
+   
+      
+         {:p=>nil, :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}   
+      
+         {:a=>nil, :vis=>nil}   
+      
+         {:a=>nil, :own=>nil, :opts=>nil, :x=>nil, :y=>nil, :w=>nil, :h=>nil}   
+      
+   
 
    FXWizard < FXDialogBox
+   
+      
+         {:owner=>nil, :name=>nil, :image=>nil, :opts=>"DECOR_TITLE|DECOR_BORDER|DECOR_RESIZE", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"10", :padRight=>"10", :padTop=>"10", :padBottom=>"10", :hSpacing=>"10", :vSpacing=>"10"}   
+      
+   
 
    FXXBMIcon < FXIcon
+   
+      
+         {:a=>nil, :pixels=>"nil", :mask=>"nil", :clr=>"0", :opts=>"0", :width=>"1", :height=>"1"}   
+      
+   
 
    FXXBMImage < FXImage
+   
+      
+         {:a=>nil, :pixels=>"nil", :mask=>"nil", :opts=>"0", :width=>"1", :height=>"1"}   
+      
+   
 
    FXXPMIcon < FXIcon
+   
+      
+         {:a=>nil, :pix=>"nil", :clr=>"0", :opts=>"0", :width=>"1", :height=>"1"}   
+      
+   
 
    FXXPMImage < FXImage
+   
+      
+         {:a=>nil, :pix=>"nil", :opts=>"0", :width=>"1", :height=>"1"}   
+      
+   
 
 
 module Fox
