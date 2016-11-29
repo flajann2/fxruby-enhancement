@@ -6,13 +6,13 @@ file instead!!!!
 =end
 
 <% for @class, @details in @api %>
-   <%= @class %> < <%= @details[:class][1] %>
+   #<%= @class %> < <%= @details[:class][1] %>
    <% unless @details[:initialize].nil? %>
       <% for @iniparams in @details[:initialize] %>
-         <%= @iniparams %>   
+         #<%= @iniparams %>   
       <% end %>
    <% else %>
-      No initializer
+      #No initializer
    <% end %>
 <% end %>
 
@@ -53,4 +53,11 @@ module Fox
       end
     end
   end
+
+# Here we include enhancements to all FXRuby classes
+<% for @class, @details in @api %>
+   class <%= @class %>
+     include Enhancement
+   end
+<% end %>
 end

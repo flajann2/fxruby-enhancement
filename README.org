@@ -11,8 +11,42 @@
   it intuitive to use. Once you get the hang of it, you should be able to look at the FXRuby
   API documentation and infer the DSL construct for fxruby-enhancement.
 
-** TODO Examples
-** TODO Documentation
+** Documentation
+*** Examples
+    #+begin_src ruby
+    class Main < FXMainWindow
+      include Enhancement
+
+      composing :my_window do
+        title "RubyNEAT Panel"
+        show PLACEMENT_SCREEN
+        width 700
+        height 400
+        fx_tab_book :my_book do |tab_book_ob|
+          x 0
+          y 0
+          width 500
+          height 100
+          pad_bottom 10
+          fx_text :my_text1, :my_window { |text_ob|
+            width 200
+            height 100
+            text_ob.target my_window: :on_click
+          }
+          fx_text :my_text2, :my_window { |text_ob|
+            width 200
+            height 100
+            text_ob { |t| puts "called after object initialization" }
+          }
+        end
+      end
+
+      def on_click
+        ...
+      end
+    end    
+    #+end_src
+
 ** TODO Release Notes
 ** TODO Known Issues
 

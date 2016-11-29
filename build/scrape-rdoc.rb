@@ -1,4 +1,5 @@
 # coding: utf-8
+
 =begin rdoc
 = Scrape RDoc from FXRuby
 We need to scrape that and convert it to a form
@@ -6,6 +7,7 @@ suitable for static introspection of the FXRuby
 API, with the implied parameters and their defaults
 for the many classes in FXRuby
 =end
+
 require 'erb'
 require 'pp'
 
