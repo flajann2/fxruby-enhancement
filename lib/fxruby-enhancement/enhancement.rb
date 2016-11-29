@@ -5,14 +5,15 @@ module Fox
   # this up.
   module Enhancement
     def self.included(klass)
+      puts "enhancing class #{klass}"
       klass.extend ClassMethods
       klass.class_eval do
-        def initialize
-          super application,
-                self.class.app_title,
-                width: self.class.win_width,
-                height: self.class.win_height
-        end
+        #def initialize
+        #  super application,
+        #        self.class.app_title,
+        #        width: self.class.win_width,
+        #        height: self.class.win_height
+        #end
       end
     end
 
@@ -32,7 +33,12 @@ module Fox
 
     # class level
     module ClassMethods
-      def window &block #DSL
+      def compose &block #DSL
+        @compusure = block
+      end
+      
+      def _compose &block #DSL
+        @compusure = block
         
         def title t
           @app_title = t
@@ -62,7 +68,7 @@ module Fox
     
 
     # instance level
-   
+    
     def app_set name, vendor
       Enhancement.app_set name, vendor
     end
