@@ -60,6 +60,11 @@ module Fox
 <% for @class, @details in @api %>
    class <%= @class %>
      include Enhancement
+     attr_accessor :_o     
+   end
+   def <%= @class.snake %> name = nil, &block
+     o = OStruct.new
+
    end
 <% end %>
-end
+end 

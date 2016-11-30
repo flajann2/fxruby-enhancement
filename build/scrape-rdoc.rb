@@ -8,6 +8,10 @@ API, with the implied parameters and their defaults
 for the many classes in FXRuby
 =end
 
+$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
+$LOAD_PATH.unshift(File.dirname(__FILE__))
+
+require 'fxruby-enhancement'
 require 'erb'
 require 'pp'
 
