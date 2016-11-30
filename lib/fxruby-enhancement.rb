@@ -13,3 +13,9 @@ class String
       .downcase
   end
 end
+
+class Symbol
+  def to_snake
+    self.to_s.to_snake.to_sym
+  end
+end

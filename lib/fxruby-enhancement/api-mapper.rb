@@ -2595,16 +2595,16 @@ module Fox
 
    def fx_tool_bar name, &block
      o = OStruct.new
-     o.title ="default title"
+     o.title = "default title"
      
-     def title o.t
+     def o.title t 
        @title = t
      end    
 
      def o.instance a, &block
        o.instance_time_block = block
      end
-     FXToolBar.new ....
+     FXToolBar.new
    end
    
    class FXToolBarGrip
