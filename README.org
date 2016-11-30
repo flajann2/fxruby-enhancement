@@ -86,6 +86,35 @@
 
 ** TODO Release Notes
 ** TODO Known Issues
+** The Scratchpad
+   These are my personal notes, not meant for anyone else.
+   You may see some interesting tidbits here, but I am not
+   gauranteeing anything to be useful or reliable in this
+   section. YOU HAVE BEEN WARNED.
+*** Genesis of the meta-meta programming, whereby brain goes boom
+    #+begin_src ruby
+    class FXToolBar # monkey patch
+      include Enhancement
+      attr_accessor :_o
+    end
+
+    def fx_tool_bar name, &block # DSL
+      o = OStruct.new
+      o.title = "default title"
+      ...
+
+      def o.title t 
+        @title = t
+      end    
+
+      def o.instance a, &block
+        o.instance_time_block = block
+      end
+      f = FXToolBar.new ...
+      f._o = o
+    end
+
+    #+end_src
 
 ** Contributing to fxruby-enhancement
  
