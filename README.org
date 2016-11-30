@@ -114,6 +114,16 @@
       f._o = o
     end
 
+<% for @class, @details in @api %>
+   #<%= @class %> < <%= @details[:class][1] %>
+   <% unless @details[:initialize].nil? %>
+      <% for @iniparams in @details[:initialize] %>
+         #<%= @iniparams %>   
+      <% end %>
+   <% else %>
+      #No initializer
+   <% end %>
+<% end %>
     #+end_src
 
 ** Contributing to fxruby-enhancement
