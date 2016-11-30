@@ -6,7 +6,7 @@ gem "fxruby", "~> 1.6"
 group :development do
   gem "rspec", "~> 2.8.0"
   gem "yard", "~> 0.7"
-  gem "rdoc", "~> 3.12"
+  gem "rdoc", "~> 5"
   gem "bundler", "~> 1.0"
   gem "juwelier", "~> 2"
   gem "simplecov", ">= 0"

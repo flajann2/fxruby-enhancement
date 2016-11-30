@@ -26,7 +26,7 @@ GEM
     hashie (3.4.6)
     highline (1.7.8)
     interception (0.5)
-    json (1.8.3)
+    json (2.0.2)
     juwelier (2.2.3)
       builder
       bundler (>= 1.13)
@@ -75,8 +75,7 @@ GEM
     psych (2.2.1)
     rack (2.0.1)
     rake (11.3.0)
-    rdoc (3.12.2)
-      json (~> 1.4)
+    rdoc (5.0.0)
     rspec (2.8.0)
       rspec-core (~> 2.8.0)
       rspec-expectations (~> 2.8.0)
@@ -108,7 +107,7 @@ DEPENDENCIES
   pry-remote (~> 0)
   pry-rescue (~> 1)
   pry-stack_explorer (~> 0)
-  rdoc (~> 3.12)
+  rdoc (~> 5)
   rspec (~> 2.8.0)
   semver (~> 1)
   simplecov

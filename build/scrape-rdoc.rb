@@ -11,13 +11,15 @@ for the many classes in FXRuby
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 $LOAD_PATH.unshift(File.dirname(__FILE__))
 
-require 'fxruby-enhancement'
-require 'erb'
-require 'pp'
-
 SOURCES = File.expand_path("../fxruby/rdoc-sources", File.dirname(__FILE__))
 TARGET = File.expand_path("../lib/fxruby-enhancement/api-mapper.rb", File.dirname(__FILE__))
 TEMPLATE = File.expand_path("api-mapper.rb.erb", File.dirname(TARGET))
+File.delete TARGET unless not File.exists? TARGET
+File.open(TARGET, 'w') {}
+
+require 'fxruby-enhancement'
+require 'erb'
+require 'pp'
 
 # Indeed we parse the rdoc-sources to glean the actual API
 # for FXRuby, since live introspection of the actual API
