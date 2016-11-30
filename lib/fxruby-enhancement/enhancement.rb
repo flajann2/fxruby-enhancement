@@ -5,7 +5,6 @@ module Fox
   # this up.
   module Enhancement
     def self.included(klass)
-      puts "enhancing class #{klass}"
       klass.extend ClassMethods
       klass.class_eval do
         #def initialize
