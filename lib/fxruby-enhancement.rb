@@ -1,5 +1,6 @@
-# coding: utf-8
 require 'fox16'
+require 'ostruct'
+
 require_relative 'fxruby-enhancement/enhancement'
 require_relative 'fxruby-enhancement/api-mapper'
 

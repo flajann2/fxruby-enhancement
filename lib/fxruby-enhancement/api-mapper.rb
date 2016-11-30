@@ -2593,6 +2593,20 @@ module Fox
      include Enhancement
    end
 
+   def fx_tool_bar name, &block
+     o = OStruct.new
+     o.title ="default title"
+     
+     def title o.t
+       @title = t
+     end    
+
+     def o.instance a, &block
+       o.instance_time_block = block
+     end
+     FXToolBar.new ....
+   end
+   
    class FXToolBarGrip
      include Enhancement
    end
