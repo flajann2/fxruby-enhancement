@@ -25,7 +25,9 @@ describe "DSL" do
         title "test window"
         width 500
         height 300
-        instance :foo_instance { |mw| mw.vSpacing = 2 }
+        instance :foo_instance do |mw|
+          mw.vSpacing = 2
+        end
       end
     end
   end

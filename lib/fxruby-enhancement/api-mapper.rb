@@ -56,35 +56,28 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:p=>nil, :opts=>"FOURSPLITTER_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}
+         @op[0] = OpenStruct.new({:p => :required, :opts => FOURSPLITTER_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0})
          
-           @op[0].p = :required
            def p var
              @op[@ii].p = var
            end
          
-           @op[0].opts = FOURSPLITTER_NORMAL
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
@@ -94,45 +87,36 @@ module Fox
             @op[@ii].instance_block = block
          end
      
-         @op[1] = OpenStruct.new
-         #{:p=>nil, :tgt=>nil, :sel=>nil, :opts=>"FOURSPLITTER_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}
+         @op[1] = OpenStruct.new({:p => :required, :tgt => :required, :sel => :required, :opts => FOURSPLITTER_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0})
          
-           @op[1].p = :required
            def p var
              @op[@ii].p = var
            end
          
-           @op[1].tgt = :required
            def tgt var
              @op[@ii].tgt = var
            end
          
-           @op[1].sel = :required
            def sel var
              @op[@ii].sel = var
            end
          
-           @op[1].opts = FOURSPLITTER_NORMAL
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[1].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[1].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[1].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[1].height = 0
            def height var
              @op[@ii].height = var
            end
@@ -156,60 +140,48 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:p=>nil, :text=>nil, :opts=>"SEVENSEGMENT_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_PAD", :padRight=>"DEFAULT_PAD", :padTop=>"DEFAULT_PAD", :padBottom=>"DEFAULT_PAD"}
+         @op[0] = OpenStruct.new({:p => :required, :text => :required, :opts => SEVENSEGMENT_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
          
-           @op[0].p = :required
            def p var
              @op[@ii].p = var
            end
          
-           @op[0].text = :required
            def text var
              @op[@ii].text = var
            end
          
-           @op[0].opts = SEVENSEGMENT_NORMAL
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
          
-           @op[0].padLeft = DEFAULT_PAD
            def pad_left var
              @op[@ii].padLeft = var
            end
          
-           @op[0].padRight = DEFAULT_PAD
            def pad_right var
              @op[@ii].padRight = var
            end
          
-           @op[0].padTop = DEFAULT_PAD
            def pad_top var
              @op[@ii].padTop = var
            end
          
-           @op[0].padBottom = DEFAULT_PAD
            def pad_bottom var
              @op[@ii].padBottom = var
            end
@@ -261,15 +233,12 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:appName=>"\"Application\"", :vendorName=>"\"FoxDefault\""}
+         @op[0] = OpenStruct.new({:appName => "Application", :vendorName => "FoxDefault"})
          
-           @op[0].appName = "Application"
            def app_name var
              @op[@ii].appName = var
            end
          
-           @op[0].vendorName = "FoxDefault"
            def vendor_name var
              @op[@ii].vendorName = var
            end
@@ -293,65 +262,52 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:parent=>nil, :target=>"nil", :selector=>"0", :opts=>"ARROW_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_PAD", :padRight=>"DEFAULT_PAD", :padTop=>"DEFAULT_PAD", :padBottom=>"DEFAULT_PAD"}
+         @op[0] = OpenStruct.new({:parent => :required, :target => nil, :selector => 0, :opts => ARROW_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
          
-           @op[0].parent = :required
            def parent var
              @op[@ii].parent = var
            end
          
-           @op[0].target = nil
            def target var
              @op[@ii].target = var
            end
          
-           @op[0].selector = 0
            def selector var
              @op[@ii].selector = var
            end
          
-           @op[0].opts = ARROW_NORMAL
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
          
-           @op[0].padLeft = DEFAULT_PAD
            def pad_left var
              @op[@ii].padLeft = var
            end
          
-           @op[0].padRight = DEFAULT_PAD
            def pad_right var
              @op[@ii].padRight = var
            end
          
-           @op[0].padTop = DEFAULT_PAD
            def pad_top var
              @op[@ii].padTop = var
            end
          
-           @op[0].padBottom = DEFAULT_PAD
            def pad_bottom var
              @op[@ii].padBottom = var
            end
@@ -375,35 +331,28 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:a=>nil, :pix=>"nil", :clr=>"Fox.FXRGB(192,192,192)", :opts=>"0", :width=>"1", :height=>"1"}
+         @op[0] = OpenStruct.new({:a => :required, :pix => nil, :clr => Fox.FXRGB(192,192,192), :opts => 0, :width => 1, :height => 1})
          
-           @op[0].a = :required
            def a var
              @op[@ii].a = var
            end
          
-           @op[0].pix = nil
            def pix var
              @op[@ii].pix = var
            end
          
-           @op[0].clr = Fox.FXRGB(192,192,192)
            def clr var
              @op[@ii].clr = var
            end
          
-           @op[0].opts = 0
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].width = 1
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 1
            def height var
              @op[@ii].height = var
            end
@@ -427,30 +376,24 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:a=>nil, :pix=>"nil", :opts=>"0", :width=>"1", :height=>"1"}
+         @op[0] = OpenStruct.new({:a => :required, :pix => nil, :opts => 0, :width => 1, :height => 1})
          
-           @op[0].a = :required
            def a var
              @op[@ii].a = var
            end
          
-           @op[0].pix = nil
            def pix var
              @op[@ii].pix = var
            end
          
-           @op[0].opts = 0
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].width = 1
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 1
            def height var
              @op[@ii].height = var
            end
@@ -474,30 +417,24 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:app=>nil, :pixels=>"nil", :opts=>"0", :width=>"1", :height=>"1"}
+         @op[0] = OpenStruct.new({:app => :required, :pixels => nil, :opts => 0, :width => 1, :height => 1})
          
-           @op[0].app = :required
            def app var
              @op[@ii].app = var
            end
          
-           @op[0].pixels = nil
            def pixels var
              @op[@ii].pixels = var
            end
          
-           @op[0].opts = 0
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].width = 1
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 1
            def height var
              @op[@ii].height = var
            end
@@ -521,60 +458,48 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:p=>nil, :bmp=>nil, :opts=>"FRAME_SUNKEN|FRAME_THICK", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"0", :padRight=>"0", :padTop=>"0", :padBottom=>"0"}
+         @op[0] = OpenStruct.new({:p => :required, :bmp => :required, :opts => FRAME_SUNKEN|FRAME_THICK, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 0, :padRight => 0, :padTop => 0, :padBottom => 0})
          
-           @op[0].p = :required
            def p var
              @op[@ii].p = var
            end
          
-           @op[0].bmp = :required
            def bmp var
              @op[@ii].bmp = var
            end
          
-           @op[0].opts = FRAME_SUNKEN|FRAME_THICK
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
          
-           @op[0].padLeft = 0
            def pad_left var
              @op[@ii].padLeft = var
            end
          
-           @op[0].padRight = 0
            def pad_right var
              @op[@ii].padRight = var
            end
          
-           @op[0].padTop = 0
            def pad_top var
              @op[@ii].padTop = var
            end
          
-           @op[0].padBottom = 0
            def pad_bottom var
              @op[@ii].padBottom = var
            end
@@ -598,50 +523,40 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:p=>nil, :bmp=>"nil", :target=>"nil", :selector=>"0", :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}
+         @op[0] = OpenStruct.new({:p => :required, :bmp => nil, :target => nil, :selector => 0, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
          
-           @op[0].p = :required
            def p var
              @op[@ii].p = var
            end
          
-           @op[0].bmp = nil
            def bmp var
              @op[@ii].bmp = var
            end
          
-           @op[0].target = nil
            def target var
              @op[@ii].target = var
            end
          
-           @op[0].selector = 0
            def selector var
              @op[@ii].selector = var
            end
          
-           @op[0].opts = 0
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
@@ -665,75 +580,60 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:parent=>nil, :text=>nil, :icon=>"nil", :target=>"nil", :selector=>"0", :opts=>"BUTTON_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_PAD", :padRight=>"DEFAULT_PAD", :padTop=>"DEFAULT_PAD", :padBottom=>"DEFAULT_PAD"}
+         @op[0] = OpenStruct.new({:parent => :required, :text => :required, :icon => nil, :target => nil, :selector => 0, :opts => BUTTON_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
          
-           @op[0].parent = :required
            def parent var
              @op[@ii].parent = var
            end
          
-           @op[0].text = :required
            def text var
              @op[@ii].text = var
            end
          
-           @op[0].icon = nil
            def icon var
              @op[@ii].icon = var
            end
          
-           @op[0].target = nil
            def target var
              @op[@ii].target = var
            end
          
-           @op[0].selector = 0
            def selector var
              @op[@ii].selector = var
            end
          
-           @op[0].opts = BUTTON_NORMAL
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
          
-           @op[0].padLeft = DEFAULT_PAD
            def pad_left var
              @op[@ii].padLeft = var
            end
          
-           @op[0].padRight = DEFAULT_PAD
            def pad_right var
              @op[@ii].padRight = var
            end
          
-           @op[0].padTop = DEFAULT_PAD
            def pad_top var
              @op[@ii].padTop = var
            end
          
-           @op[0].padBottom = DEFAULT_PAD
            def pad_bottom var
              @op[@ii].padBottom = var
            end
@@ -757,15 +657,12 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:app=>nil, :pixels=>nil}
+         @op[0] = OpenStruct.new({:app => :required, :pixels => :required})
          
-           @op[0].app = :required
            def app var
              @op[@ii].app = var
            end
          
-           @op[0].pixels = :required
            def pixels var
              @op[@ii].pixels = var
            end
@@ -789,45 +686,36 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:parent=>nil, :target=>"nil", :selector=>"0", :opts=>"FRAME_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}
+         @op[0] = OpenStruct.new({:parent => :required, :target => nil, :selector => 0, :opts => FRAME_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0})
          
-           @op[0].parent = :required
            def parent var
              @op[@ii].parent = var
            end
          
-           @op[0].target = nil
            def target var
              @op[@ii].target = var
            end
          
-           @op[0].selector = 0
            def selector var
              @op[@ii].selector = var
            end
          
-           @op[0].opts = FRAME_NORMAL
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
@@ -851,70 +739,56 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:parent=>nil, :text=>nil, :target=>"nil", :selector=>"0", :opts=>"CHECKBUTTON_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_PAD", :padRight=>"DEFAULT_PAD", :padTop=>"DEFAULT_PAD", :padBottom=>"DEFAULT_PAD"}
+         @op[0] = OpenStruct.new({:parent => :required, :text => :required, :target => nil, :selector => 0, :opts => CHECKBUTTON_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
          
-           @op[0].parent = :required
            def parent var
              @op[@ii].parent = var
            end
          
-           @op[0].text = :required
            def text var
              @op[@ii].text = var
            end
          
-           @op[0].target = nil
            def target var
              @op[@ii].target = var
            end
          
-           @op[0].selector = 0
            def selector var
              @op[@ii].selector = var
            end
          
-           @op[0].opts = CHECKBUTTON_NORMAL
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
          
-           @op[0].padLeft = DEFAULT_PAD
            def pad_left var
              @op[@ii].padLeft = var
            end
          
-           @op[0].padRight = DEFAULT_PAD
            def pad_right var
              @op[@ii].padRight = var
            end
          
-           @op[0].padTop = DEFAULT_PAD
            def pad_top var
              @op[@ii].padTop = var
            end
          
-           @op[0].padBottom = DEFAULT_PAD
            def pad_bottom var
              @op[@ii].padBottom = var
            end
@@ -938,55 +812,44 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:owner=>nil, :caption=>nil, :text=>nil, :icon=>nil, :choices=>nil, :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}
+         @op[0] = OpenStruct.new({:owner => :required, :caption => :required, :text => :required, :icon => :required, :choices => :required, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
          
-           @op[0].owner = :required
            def owner var
              @op[@ii].owner = var
            end
          
-           @op[0].caption = :required
            def caption var
              @op[@ii].caption = var
            end
          
-           @op[0].text = :required
            def text var
              @op[@ii].text = var
            end
          
-           @op[0].icon = :required
            def icon var
              @op[@ii].icon = var
            end
          
-           @op[0].choices = :required
            def choices var
              @op[@ii].choices = var
            end
          
-           @op[0].opts = 0
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
@@ -1010,65 +873,52 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:parent=>nil, :target=>"nil", :selector=>"0", :opts=>"FRAME_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_PAD", :padRight=>"DEFAULT_PAD", :padTop=>"DEFAULT_PAD", :padBottom=>"DEFAULT_PAD"}
+         @op[0] = OpenStruct.new({:parent => :required, :target => nil, :selector => 0, :opts => FRAME_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
          
-           @op[0].parent = :required
            def parent var
              @op[@ii].parent = var
            end
          
-           @op[0].target = nil
            def target var
              @op[@ii].target = var
            end
          
-           @op[0].selector = 0
            def selector var
              @op[@ii].selector = var
            end
          
-           @op[0].opts = FRAME_NORMAL
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
          
-           @op[0].padLeft = DEFAULT_PAD
            def pad_left var
              @op[@ii].padLeft = var
            end
          
-           @op[0].padRight = DEFAULT_PAD
            def pad_right var
              @op[@ii].padRight = var
            end
          
-           @op[0].padTop = DEFAULT_PAD
            def pad_top var
              @op[@ii].padTop = var
            end
          
-           @op[0].padBottom = DEFAULT_PAD
            def pad_bottom var
              @op[@ii].padBottom = var
            end
@@ -1092,40 +942,32 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:owner=>nil, :title=>nil, :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}
+         @op[0] = OpenStruct.new({:owner => :required, :title => :required, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
          
-           @op[0].owner = :required
            def owner var
              @op[@ii].owner = var
            end
          
-           @op[0].title = :required
            def title var
              @op[@ii].title = var
            end
          
-           @op[0].opts = 0
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
@@ -1149,20 +991,16 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:text=>nil, :clr=>nil, :data=>"nil"}
+         @op[0] = OpenStruct.new({:text => :required, :clr => :required, :data => nil})
          
-           @op[0].text = :required
            def text var
              @op[@ii].text = var
            end
          
-           @op[0].clr = :required
            def clr var
              @op[@ii].clr = var
            end
          
-           @op[0].data = nil
            def data var
              @op[@ii].data = var
            end
@@ -1186,45 +1024,36 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:p=>nil, :target=>"nil", :selector=>"0", :opts=>"LIST_BROWSESELECT", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}
+         @op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => LIST_BROWSESELECT, :x => 0, :y => 0, :width => 0, :height => 0})
          
-           @op[0].p = :required
            def p var
              @op[@ii].p = var
            end
          
-           @op[0].target = nil
            def target var
              @op[@ii].target = var
            end
          
-           @op[0].selector = 0
            def selector var
              @op[@ii].selector = var
            end
          
-           @op[0].opts = LIST_BROWSESELECT
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
@@ -1248,65 +1077,52 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:p=>nil, :target=>"nil", :selector=>"0", :opts=>"FRAME_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_PAD", :padRight=>"DEFAULT_PAD", :padTop=>"DEFAULT_PAD", :padBottom=>"DEFAULT_PAD"}
+         @op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => FRAME_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
          
-           @op[0].p = :required
            def p var
              @op[@ii].p = var
            end
          
-           @op[0].target = nil
            def target var
              @op[@ii].target = var
            end
          
-           @op[0].selector = 0
            def selector var
              @op[@ii].selector = var
            end
          
-           @op[0].opts = FRAME_NORMAL
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
          
-           @op[0].padLeft = DEFAULT_PAD
            def pad_left var
              @op[@ii].padLeft = var
            end
          
-           @op[0].padRight = DEFAULT_PAD
            def pad_right var
              @op[@ii].padRight = var
            end
          
-           @op[0].padTop = DEFAULT_PAD
            def pad_top var
              @op[@ii].padTop = var
            end
          
-           @op[0].padBottom = DEFAULT_PAD
            def pad_bottom var
              @op[@ii].padBottom = var
            end
@@ -1330,45 +1146,36 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:parent=>nil, :target=>"nil", :selector=>"0", :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}
+         @op[0] = OpenStruct.new({:parent => :required, :target => nil, :selector => 0, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
          
-           @op[0].parent = :required
            def parent var
              @op[@ii].parent = var
            end
          
-           @op[0].target = nil
            def target var
              @op[@ii].target = var
            end
          
-           @op[0].selector = 0
            def selector var
              @op[@ii].selector = var
            end
          
-           @op[0].opts = 0
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
@@ -1392,70 +1199,56 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:parent=>nil, :color=>"0", :target=>"nil", :selector=>"0", :opts=>"COLORWELL_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_PAD", :padRight=>"DEFAULT_PAD", :padTop=>"DEFAULT_PAD", :padBottom=>"DEFAULT_PAD"}
+         @op[0] = OpenStruct.new({:parent => :required, :color => 0, :target => nil, :selector => 0, :opts => COLORWELL_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
          
-           @op[0].parent = :required
            def parent var
              @op[@ii].parent = var
            end
          
-           @op[0].color = 0
            def color var
              @op[@ii].color = var
            end
          
-           @op[0].target = nil
            def target var
              @op[@ii].target = var
            end
          
-           @op[0].selector = 0
            def selector var
              @op[@ii].selector = var
            end
          
-           @op[0].opts = COLORWELL_NORMAL
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
          
-           @op[0].padLeft = DEFAULT_PAD
            def pad_left var
              @op[@ii].padLeft = var
            end
          
-           @op[0].padRight = DEFAULT_PAD
            def pad_right var
              @op[@ii].padRight = var
            end
          
-           @op[0].padTop = DEFAULT_PAD
            def pad_top var
              @op[@ii].padTop = var
            end
          
-           @op[0].padBottom = DEFAULT_PAD
            def pad_bottom var
              @op[@ii].padBottom = var
            end
@@ -1479,65 +1272,52 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:p=>nil, :target=>"nil", :selector=>"0", :opts=>"FRAME_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_PAD", :padRight=>"DEFAULT_PAD", :padTop=>"DEFAULT_PAD", :padBottom=>"DEFAULT_PAD"}
+         @op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => FRAME_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
          
-           @op[0].p = :required
            def p var
              @op[@ii].p = var
            end
          
-           @op[0].target = nil
            def target var
              @op[@ii].target = var
            end
          
-           @op[0].selector = 0
            def selector var
              @op[@ii].selector = var
            end
          
-           @op[0].opts = FRAME_NORMAL
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
          
-           @op[0].padLeft = DEFAULT_PAD
            def pad_left var
              @op[@ii].padLeft = var
            end
          
-           @op[0].padRight = DEFAULT_PAD
            def pad_right var
              @op[@ii].padRight = var
            end
          
-           @op[0].padTop = DEFAULT_PAD
            def pad_top var
              @op[@ii].padTop = var
            end
          
-           @op[0].padBottom = DEFAULT_PAD
            def pad_bottom var
              @op[@ii].padBottom = var
            end
@@ -1561,70 +1341,56 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:p=>nil, :cols=>nil, :target=>"nil", :selector=>"0", :opts=>"COMBOBOX_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_PAD", :padRight=>"DEFAULT_PAD", :padTop=>"DEFAULT_PAD", :padBottom=>"DEFAULT_PAD"}
+         @op[0] = OpenStruct.new({:p => :required, :cols => :required, :target => nil, :selector => 0, :opts => COMBOBOX_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
          
-           @op[0].p = :required
            def p var
              @op[@ii].p = var
            end
          
-           @op[0].cols = :required
            def cols var
              @op[@ii].cols = var
            end
          
-           @op[0].target = nil
            def target var
              @op[@ii].target = var
            end
          
-           @op[0].selector = 0
            def selector var
              @op[@ii].selector = var
            end
          
-           @op[0].opts = COMBOBOX_NORMAL
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
          
-           @op[0].padLeft = DEFAULT_PAD
            def pad_left var
              @op[@ii].padLeft = var
            end
          
-           @op[0].padRight = DEFAULT_PAD
            def pad_right var
              @op[@ii].padRight = var
            end
          
-           @op[0].padTop = DEFAULT_PAD
            def pad_top var
              @op[@ii].padTop = var
            end
          
-           @op[0].padBottom = DEFAULT_PAD
            def pad_bottom var
              @op[@ii].padBottom = var
            end
@@ -1648,35 +1414,28 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:parent=>nil, :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}
+         @op[0] = OpenStruct.new({:parent => :required, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
          
-           @op[0].parent = :required
            def parent var
              @op[@ii].parent = var
            end
          
-           @op[0].opts = 0
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
@@ -1700,15 +1459,12 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:a=>nil, :curid=>"CURSOR_ARROW"}
+         @op[0] = OpenStruct.new({:a => :required, :curid => CURSOR_ARROW})
          
-           @op[0].a = :required
            def a var
              @op[@ii].a = var
            end
          
-           @op[0].curid = CURSOR_ARROW
            def curid var
              @op[@ii].curid = var
            end
@@ -1718,35 +1474,28 @@ module Fox
             @op[@ii].instance_block = block
          end
      
-         @op[1] = OpenStruct.new
-         #{:a=>nil, :pix=>nil, :width=>"32", :height=>"32", :hotX=>"-1", :hotY=>"-1"}
+         @op[1] = OpenStruct.new({:a => :required, :pix => :required, :width => 32, :height => 32, :hotX => -1, :hotY => -1})
          
-           @op[1].a = :required
            def a var
              @op[@ii].a = var
            end
          
-           @op[1].pix = :required
            def pix var
              @op[@ii].pix = var
            end
          
-           @op[1].width = 32
            def width var
              @op[@ii].width = var
            end
          
-           @op[1].height = 32
            def height var
              @op[@ii].height = var
            end
          
-           @op[1].hotX = -1
            def hot_x var
              @op[@ii].hotX = var
            end
          
-           @op[1].hotY = -1
            def hot_y var
              @op[@ii].hotY = var
            end
@@ -1756,35 +1505,28 @@ module Fox
             @op[@ii].instance_block = block
          end
      
-         @op[2] = OpenStruct.new
-         #{:a=>nil, :pixels=>nil, :width=>"32", :height=>"32", :hotX=>"-1", :hotY=>"-1"}
+         @op[2] = OpenStruct.new({:a => :required, :pixels => :required, :width => 32, :height => 32, :hotX => -1, :hotY => -1})
          
-           @op[2].a = :required
            def a var
              @op[@ii].a = var
            end
          
-           @op[2].pixels = :required
            def pixels var
              @op[@ii].pixels = var
            end
          
-           @op[2].width = 32
            def width var
              @op[@ii].width = var
            end
          
-           @op[2].height = 32
            def height var
              @op[@ii].height = var
            end
          
-           @op[2].hotX = -1
            def hot_x var
              @op[@ii].hotX = var
            end
          
-           @op[2].hotY = -1
            def hot_y var
              @op[@ii].hotY = var
            end
@@ -1836,10 +1578,8 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:app=>nil}
+         @op[0] = OpenStruct.new({:app => :required})
          
-           @op[0].app = :required
            def app var
              @op[@ii].app = var
            end
@@ -1891,10 +1631,8 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:app=>nil}
+         @op[0] = OpenStruct.new({:app => :required})
          
-           @op[0].app = :required
            def app var
              @op[@ii].app = var
            end
@@ -1918,15 +1656,12 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:drawable=>nil, :event=>"nil"}
+         @op[0] = OpenStruct.new({:drawable => :required, :event => nil})
          
-           @op[0].drawable = :required
            def drawable var
              @op[@ii].drawable = var
            end
          
-           @op[0].event = nil
            def event var
              @op[@ii].event = var
            end
@@ -1950,20 +1685,16 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:value=>"nil", :target=>"nil", :selector=>"0"}
+         @op[0] = OpenStruct.new({:value => nil, :target => nil, :selector => 0})
          
-           @op[0].value = nil
            def value var
              @op[@ii].value = var
            end
          
-           @op[0].target = nil
            def target var
              @op[@ii].target = var
            end
          
-           @op[0].selector = 0
            def selector var
              @op[@ii].selector = var
            end
@@ -2001,10 +1732,8 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:delegate=>"nil"}
+         @op[0] = OpenStruct.new({:delegate => nil})
          
-           @op[0].delegate = nil
            def delegate var
              @op[@ii].delegate = var
            end
@@ -2028,65 +1757,52 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:p=>nil, :target=>"nil", :selector=>"0", :opts=>"DIAL_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_PAD", :padRight=>"DEFAULT_PAD", :padTop=>"DEFAULT_PAD", :padBottom=>"DEFAULT_PAD"}
+         @op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => DIAL_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
          
-           @op[0].p = :required
            def p var
              @op[@ii].p = var
            end
          
-           @op[0].target = nil
            def target var
              @op[@ii].target = var
            end
          
-           @op[0].selector = 0
            def selector var
              @op[@ii].selector = var
            end
          
-           @op[0].opts = DIAL_NORMAL
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
          
-           @op[0].padLeft = DEFAULT_PAD
            def pad_left var
              @op[@ii].padLeft = var
            end
          
-           @op[0].padRight = DEFAULT_PAD
            def pad_right var
              @op[@ii].padRight = var
            end
          
-           @op[0].padTop = DEFAULT_PAD
            def pad_top var
              @op[@ii].padTop = var
            end
          
-           @op[0].padBottom = DEFAULT_PAD
            def pad_bottom var
              @op[@ii].padBottom = var
            end
@@ -2110,70 +1826,56 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:owner=>nil, :title=>nil, :opts=>"DECOR_TITLE|DECOR_BORDER", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"10", :padRight=>"10", :padTop=>"10", :padBottom=>"10", :hSpacing=>"4", :vSpacing=>"4"}
+         @op[0] = OpenStruct.new({:owner => :required, :title => :required, :opts => DECOR_TITLE|DECOR_BORDER, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 10, :padRight => 10, :padTop => 10, :padBottom => 10, :hSpacing => 4, :vSpacing => 4})
          
-           @op[0].owner = :required
            def owner var
              @op[@ii].owner = var
            end
          
-           @op[0].title = :required
            def title var
              @op[@ii].title = var
            end
          
-           @op[0].opts = DECOR_TITLE|DECOR_BORDER
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
          
-           @op[0].padLeft = 10
            def pad_left var
              @op[@ii].padLeft = var
            end
          
-           @op[0].padRight = 10
            def pad_right var
              @op[@ii].padRight = var
            end
          
-           @op[0].padTop = 10
            def pad_top var
              @op[@ii].padTop = var
            end
          
-           @op[0].padBottom = 10
            def pad_bottom var
              @op[@ii].padBottom = var
            end
          
-           @op[0].hSpacing = 4
            def h_spacing var
              @op[@ii].hSpacing = var
            end
          
-           @op[0].vSpacing = 4
            def v_spacing var
              @op[@ii].vSpacing = var
            end
@@ -2211,65 +1913,52 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:p=>nil, :target=>"nil", :selector=>"0", :opts=>"FRAME_SUNKEN|FRAME_THICK|TREELISTBOX_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_PAD", :padRight=>"DEFAULT_PAD", :padTop=>"DEFAULT_PAD", :padBottom=>"DEFAULT_PAD"}
+         @op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => FRAME_SUNKEN|FRAME_THICK|TREELISTBOX_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
          
-           @op[0].p = :required
            def p var
              @op[@ii].p = var
            end
          
-           @op[0].target = nil
            def target var
              @op[@ii].target = var
            end
          
-           @op[0].selector = 0
            def selector var
              @op[@ii].selector = var
            end
          
-           @op[0].opts = FRAME_SUNKEN|FRAME_THICK|TREELISTBOX_NORMAL
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
          
-           @op[0].padLeft = DEFAULT_PAD
            def pad_left var
              @op[@ii].padLeft = var
            end
          
-           @op[0].padRight = DEFAULT_PAD
            def pad_right var
              @op[@ii].padRight = var
            end
          
-           @op[0].padTop = DEFAULT_PAD
            def pad_top var
              @op[@ii].padTop = var
            end
          
-           @op[0].padBottom = DEFAULT_PAD
            def pad_bottom var
              @op[@ii].padBottom = var
            end
@@ -2293,40 +1982,32 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:owner=>nil, :name=>nil, :opts=>"0", :x=>"0", :y=>"0", :width=>"500", :height=>"300"}
+         @op[0] = OpenStruct.new({:owner => :required, :name => :required, :opts => 0, :x => 0, :y => 0, :width => 500, :height => 300})
          
-           @op[0].owner = :required
            def owner var
              @op[@ii].owner = var
            end
          
-           @op[0].name = :required
            def name var
              @op[@ii].name = var
            end
          
-           @op[0].opts = 0
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 500
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 300
            def height var
              @op[@ii].height = var
            end
@@ -2350,25 +2031,20 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:text=>nil, :oi=>"nil", :ci=>"nil", :data=>"nil"}
+         @op[0] = OpenStruct.new({:text => :required, :oi => nil, :ci => nil, :data => nil})
          
-           @op[0].text = :required
            def text var
              @op[@ii].text = var
            end
          
-           @op[0].oi = nil
            def oi var
              @op[@ii].oi = var
            end
          
-           @op[0].ci = nil
            def ci var
              @op[@ii].ci = var
            end
          
-           @op[0].data = nil
            def data var
              @op[@ii].data = var
            end
@@ -2392,45 +2068,36 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:p=>nil, :target=>"nil", :selector=>"0", :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}
+         @op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
          
-           @op[0].p = :required
            def p var
              @op[@ii].p = var
            end
          
-           @op[0].target = nil
            def target var
              @op[@ii].target = var
            end
          
-           @op[0].selector = 0
            def selector var
              @op[@ii].selector = var
            end
          
-           @op[0].opts = 0
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
@@ -2454,45 +2121,36 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:p=>nil, :target=>"nil", :selector=>"0", :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}
+         @op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
          
-           @op[0].p = :required
            def p var
              @op[@ii].p = var
            end
          
-           @op[0].target = nil
            def target var
              @op[@ii].target = var
            end
          
-           @op[0].selector = 0
            def selector var
              @op[@ii].selector = var
            end
          
-           @op[0].opts = 0
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
@@ -2516,70 +2174,56 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:p=>nil, :q=>nil, :opts=>"LAYOUT_TOP|LAYOUT_LEFT|LAYOUT_FILL_X", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"3", :padRight=>"3", :padTop=>"2", :padBottom=>"2", :hSpacing=>"DEFAULT_SPACING", :vSpacing=>"DEFAULT_SPACING"}
+         @op[0] = OpenStruct.new({:p => :required, :q => :required, :opts => LAYOUT_TOP|LAYOUT_LEFT|LAYOUT_FILL_X, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 3, :padRight => 3, :padTop => 2, :padBottom => 2, :hSpacing => DEFAULT_SPACING, :vSpacing => DEFAULT_SPACING})
          
-           @op[0].p = :required
            def p var
              @op[@ii].p = var
            end
          
-           @op[0].q = :required
            def q var
              @op[@ii].q = var
            end
          
-           @op[0].opts = LAYOUT_TOP|LAYOUT_LEFT|LAYOUT_FILL_X
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
          
-           @op[0].padLeft = 3
            def pad_left var
              @op[@ii].padLeft = var
            end
          
-           @op[0].padRight = 3
            def pad_right var
              @op[@ii].padRight = var
            end
          
-           @op[0].padTop = 2
            def pad_top var
              @op[@ii].padTop = var
            end
          
-           @op[0].padBottom = 2
            def pad_bottom var
              @op[@ii].padBottom = var
            end
          
-           @op[0].hSpacing = DEFAULT_SPACING
            def h_spacing var
              @op[@ii].hSpacing = var
            end
          
-           @op[0].vSpacing = DEFAULT_SPACING
            def v_spacing var
              @op[@ii].vSpacing = var
            end
@@ -2589,65 +2233,52 @@ module Fox
             @op[@ii].instance_block = block
          end
      
-         @op[1] = OpenStruct.new
-         #{:p=>nil, :opts=>"LAYOUT_TOP|LAYOUT_LEFT|LAYOUT_FILL_X", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"3", :padRight=>"3", :padTop=>"2", :padBottom=>"2", :hSpacing=>"DEFAULT_SPACING", :vSpacing=>"DEFAULT_SPACING"}
+         @op[1] = OpenStruct.new({:p => :required, :opts => LAYOUT_TOP|LAYOUT_LEFT|LAYOUT_FILL_X, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 3, :padRight => 3, :padTop => 2, :padBottom => 2, :hSpacing => DEFAULT_SPACING, :vSpacing => DEFAULT_SPACING})
          
-           @op[1].p = :required
            def p var
              @op[@ii].p = var
            end
          
-           @op[1].opts = LAYOUT_TOP|LAYOUT_LEFT|LAYOUT_FILL_X
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[1].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[1].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[1].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[1].height = 0
            def height var
              @op[@ii].height = var
            end
          
-           @op[1].padLeft = 3
            def pad_left var
              @op[@ii].padLeft = var
            end
          
-           @op[1].padRight = 3
            def pad_right var
              @op[@ii].padRight = var
            end
          
-           @op[1].padTop = 2
            def pad_top var
              @op[@ii].padTop = var
            end
          
-           @op[1].padBottom = 2
            def pad_bottom var
              @op[@ii].padBottom = var
            end
          
-           @op[1].hSpacing = DEFAULT_SPACING
            def h_spacing var
              @op[@ii].hSpacing = var
            end
          
-           @op[1].vSpacing = DEFAULT_SPACING
            def v_spacing var
              @op[@ii].vSpacing = var
            end
@@ -2671,65 +2302,52 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:p=>nil, :tgt=>nil, :sel=>nil, :opts=>nil, :x=>nil, :y=>nil, :w=>nil, :h=>nil, :pl=>nil, :pr=>nil, :pt=>nil, :pb=>nil}
+         @op[0] = OpenStruct.new({:p => :required, :tgt => :required, :sel => :required, :opts => :required, :x => :required, :y => :required, :w => :required, :h => :required, :pl => :required, :pr => :required, :pt => :required, :pb => :required})
          
-           @op[0].p = :required
            def p var
              @op[@ii].p = var
            end
          
-           @op[0].tgt = :required
            def tgt var
              @op[@ii].tgt = var
            end
          
-           @op[0].sel = :required
            def sel var
              @op[@ii].sel = var
            end
          
-           @op[0].opts = :required
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = :required
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = :required
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].w = :required
            def w var
              @op[@ii].w = var
            end
          
-           @op[0].h = :required
            def h var
              @op[@ii].h = var
            end
          
-           @op[0].pl = :required
            def pl var
              @op[@ii].pl = var
            end
          
-           @op[0].pr = :required
            def pr var
              @op[@ii].pr = var
            end
          
-           @op[0].pt = :required
            def pt var
              @op[@ii].pt = var
            end
          
-           @op[0].pb = :required
            def pb var
              @op[@ii].pb = var
            end
@@ -2753,65 +2371,52 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:p=>nil, :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"0", :padRight=>"0", :padTop=>"0", :padBottom=>"0", :hSpacing=>"0", :vSpacing=>"0"}
+         @op[0] = OpenStruct.new({:p => :required, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 0, :padRight => 0, :padTop => 0, :padBottom => 0, :hSpacing => 0, :vSpacing => 0})
          
-           @op[0].p = :required
            def p var
              @op[@ii].p = var
            end
          
-           @op[0].opts = 0
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
          
-           @op[0].padLeft = 0
            def pad_left var
              @op[@ii].padLeft = var
            end
          
-           @op[0].padRight = 0
            def pad_right var
              @op[@ii].padRight = var
            end
          
-           @op[0].padTop = 0
            def pad_top var
              @op[@ii].padTop = var
            end
          
-           @op[0].padBottom = 0
            def pad_bottom var
              @op[@ii].padBottom = var
            end
          
-           @op[0].hSpacing = 0
            def h_spacing var
              @op[@ii].hSpacing = var
            end
          
-           @op[0].vSpacing = 0
            def v_spacing var
              @op[@ii].vSpacing = var
            end
@@ -2835,70 +2440,56 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:p=>nil, :text=>nil, :target=>"nil", :selector=>"0", :opts=>"FRAME_NORMAL|JUSTIFY_CENTER_X|JUSTIFY_CENTER_Y", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"0", :padRight=>"0", :padTop=>"0", :padBottom=>"0"}
+         @op[0] = OpenStruct.new({:p => :required, :text => :required, :target => nil, :selector => 0, :opts => FRAME_NORMAL|JUSTIFY_CENTER_X|JUSTIFY_CENTER_Y, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 0, :padRight => 0, :padTop => 0, :padBottom => 0})
          
-           @op[0].p = :required
            def p var
              @op[@ii].p = var
            end
          
-           @op[0].text = :required
            def text var
              @op[@ii].text = var
            end
          
-           @op[0].target = nil
            def target var
              @op[@ii].target = var
            end
          
-           @op[0].selector = 0
            def selector var
              @op[@ii].selector = var
            end
          
-           @op[0].opts = FRAME_NORMAL|JUSTIFY_CENTER_X|JUSTIFY_CENTER_Y
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
          
-           @op[0].padLeft = 0
            def pad_left var
              @op[@ii].padLeft = var
            end
          
-           @op[0].padRight = 0
            def pad_right var
              @op[@ii].padRight = var
            end
          
-           @op[0].padTop = 0
            def pad_top var
              @op[@ii].padTop = var
            end
          
-           @op[0].padBottom = 0
            def pad_bottom var
              @op[@ii].padBottom = var
            end
@@ -2936,10 +2527,8 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:p=>nil}
+         @op[0] = OpenStruct.new({:p => :required})
          
-           @op[0].p = :required
            def p var
              @op[@ii].p = var
            end
@@ -2977,65 +2566,52 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:p=>nil, :target=>"nil", :selector=>"0", :opts=>"FRAME_SUNKEN|FRAME_THICK|LISTBOX_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_PAD", :padRight=>"DEFAULT_PAD", :padTop=>"DEFAULT_PAD", :padBottom=>"DEFAULT_PAD"}
+         @op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => FRAME_SUNKEN|FRAME_THICK|LISTBOX_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
          
-           @op[0].p = :required
            def p var
              @op[@ii].p = var
            end
          
-           @op[0].target = nil
            def target var
              @op[@ii].target = var
            end
          
-           @op[0].selector = 0
            def selector var
              @op[@ii].selector = var
            end
          
-           @op[0].opts = FRAME_SUNKEN|FRAME_THICK|LISTBOX_NORMAL
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
          
-           @op[0].padLeft = DEFAULT_PAD
            def pad_left var
              @op[@ii].padLeft = var
            end
          
-           @op[0].padRight = DEFAULT_PAD
            def pad_right var
              @op[@ii].padRight = var
            end
          
-           @op[0].padTop = DEFAULT_PAD
            def pad_top var
              @op[@ii].padTop = var
            end
          
-           @op[0].padBottom = DEFAULT_PAD
            def pad_bottom var
              @op[@ii].padBottom = var
            end
@@ -3059,10 +2635,8 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:ext=>nil}
+         @op[0] = OpenStruct.new({:ext => :required})
          
-           @op[0].ext = :required
            def ext var
              @op[@ii].ext = var
            end
@@ -3072,15 +2646,12 @@ module Fox
             @op[@ii].instance_block = block
          end
      
-         @op[1] = OpenStruct.new
-         #{:lo=>nil, :hi=>nil}
+         @op[1] = OpenStruct.new({:lo => :required, :hi => :required})
          
-           @op[1].lo = :required
            def lo var
              @op[@ii].lo = var
            end
          
-           @op[1].hi = :required
            def hi var
              @op[@ii].hi = var
            end
@@ -3090,25 +2661,20 @@ module Fox
             @op[@ii].instance_block = block
          end
      
-         @op[2] = OpenStruct.new
-         #{:xlo=>nil, :xhi=>nil, :ylo=>nil, :yhi=>nil}
+         @op[2] = OpenStruct.new({:xlo => :required, :xhi => :required, :ylo => :required, :yhi => :required})
          
-           @op[2].xlo = :required
            def xlo var
              @op[@ii].xlo = var
            end
          
-           @op[2].xhi = :required
            def xhi var
              @op[@ii].xhi = var
            end
          
-           @op[2].ylo = :required
            def ylo var
              @op[@ii].ylo = var
            end
          
-           @op[2].yhi = :required
            def yhi var
              @op[@ii].yhi = var
            end
@@ -3132,10 +2698,8 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:ext=>nil}
+         @op[0] = OpenStruct.new({:ext => :required})
          
-           @op[0].ext = :required
            def ext var
              @op[@ii].ext = var
            end
@@ -3145,15 +2709,12 @@ module Fox
             @op[@ii].instance_block = block
          end
      
-         @op[1] = OpenStruct.new
-         #{:lo=>nil, :hi=>nil}
+         @op[1] = OpenStruct.new({:lo => :required, :hi => :required})
          
-           @op[1].lo = :required
            def lo var
              @op[@ii].lo = var
            end
          
-           @op[1].hi = :required
            def hi var
              @op[@ii].hi = var
            end
@@ -3163,25 +2724,20 @@ module Fox
             @op[@ii].instance_block = block
          end
      
-         @op[2] = OpenStruct.new
-         #{:xlo=>nil, :xhi=>nil, :ylo=>nil, :yhi=>nil}
+         @op[2] = OpenStruct.new({:xlo => :required, :xhi => :required, :ylo => :required, :yhi => :required})
          
-           @op[2].xlo = :required
            def xlo var
              @op[@ii].xlo = var
            end
          
-           @op[2].xhi = :required
            def xhi var
              @op[@ii].xhi = var
            end
          
-           @op[2].ylo = :required
            def ylo var
              @op[@ii].ylo = var
            end
          
-           @op[2].yhi = :required
            def yhi var
              @op[@ii].yhi = var
            end
@@ -3205,40 +2761,32 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:owner=>nil, :name=>nil, :opts=>"0", :x=>"0", :y=>"0", :width=>"500", :height=>"300"}
+         @op[0] = OpenStruct.new({:owner => :required, :name => :required, :opts => 0, :x => 0, :y => 0, :width => 500, :height => 300})
          
-           @op[0].owner = :required
            def owner var
              @op[@ii].owner = var
            end
          
-           @op[0].name = :required
            def name var
              @op[@ii].name = var
            end
          
-           @op[0].opts = 0
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 500
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 300
            def height var
              @op[@ii].height = var
            end
@@ -3276,15 +2824,12 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:app=>nil, :db=>"nil"}
+         @op[0] = OpenStruct.new({:app => :required, :db => nil})
          
-           @op[0].app = :required
            def app var
              @op[@ii].app = var
            end
          
-           @op[0].db = nil
            def db var
              @op[@ii].db = var
            end
@@ -3308,25 +2853,20 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:text=>nil, :bi=>"nil", :mi=>"nil", :ptr=>"nil"}
+         @op[0] = OpenStruct.new({:text => :required, :bi => nil, :mi => nil, :ptr => nil})
          
-           @op[0].text = :required
            def text var
              @op[@ii].text = var
            end
          
-           @op[0].bi = nil
            def bi var
              @op[@ii].bi = var
            end
          
-           @op[0].mi = nil
            def mi var
              @op[@ii].mi = var
            end
          
-           @op[0].ptr = nil
            def ptr var
              @op[@ii].ptr = var
            end
@@ -3350,45 +2890,36 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:p=>nil, :target=>"nil", :selector=>"0", :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}
+         @op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
          
-           @op[0].p = :required
            def p var
              @op[@ii].p = var
            end
          
-           @op[0].target = nil
            def target var
              @op[@ii].target = var
            end
          
-           @op[0].selector = 0
            def selector var
              @op[@ii].selector = var
            end
          
-           @op[0].opts = 0
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
@@ -3412,45 +2943,36 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:p=>nil, :target=>"nil", :selector=>"0", :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}
+         @op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
          
-           @op[0].p = :required
            def p var
              @op[@ii].p = var
            end
          
-           @op[0].target = nil
            def target var
              @op[@ii].target = var
            end
          
-           @op[0].selector = 0
            def selector var
              @op[@ii].selector = var
            end
          
-           @op[0].opts = 0
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
@@ -3474,10 +2996,8 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:cont=>"nil"}
+         @op[0] = OpenStruct.new({:cont => nil})
          
-           @op[0].cont = nil
            def cont var
              @op[@ii].cont = var
            end
@@ -3501,25 +3021,20 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:text=>nil, :openIcon=>"nil", :closedIcon=>"nil", :data=>"nil"}
+         @op[0] = OpenStruct.new({:text => :required, :openIcon => nil, :closedIcon => nil, :data => nil})
          
-           @op[0].text = :required
            def text var
              @op[@ii].text = var
            end
          
-           @op[0].openIcon = nil
            def open_icon var
              @op[@ii].openIcon = var
            end
          
-           @op[0].closedIcon = nil
            def closed_icon var
              @op[@ii].closedIcon = var
            end
          
-           @op[0].data = nil
            def data var
              @op[@ii].data = var
            end
@@ -3543,45 +3058,36 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:p=>nil, :target=>"nil", :selector=>"0", :opts=>"TREELIST_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}
+         @op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => TREELIST_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0})
          
-           @op[0].p = :required
            def p var
              @op[@ii].p = var
            end
          
-           @op[0].target = nil
            def target var
              @op[@ii].target = var
            end
          
-           @op[0].selector = 0
            def selector var
              @op[@ii].selector = var
            end
          
-           @op[0].opts = TREELIST_NORMAL
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
@@ -3619,15 +3125,12 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:a=>nil, :fontDesc=>nil}
+         @op[0] = OpenStruct.new({:a => :required, :fontDesc => :required})
          
-           @op[0].a = :required
            def a var
              @op[@ii].a = var
            end
          
-           @op[0].fontDesc = :required
            def font_desc var
              @op[@ii].fontDesc = var
            end
@@ -3637,45 +3140,36 @@ module Fox
             @op[@ii].instance_block = block
          end
      
-         @op[1] = OpenStruct.new
-         #{:a=>nil, :face=>nil, :size=>nil, :weight=>"FXFont::Normal", :slant=>"Font::Straight", :encoding=>"FONTENCODING_DEFAULT", :setWidth=>"FXFont::NonExpanded", :hints=>"0"}
+         @op[1] = OpenStruct.new({:a => :required, :face => :required, :size => :required, :weight => FXFont::Normal, :slant => Font::Straight, :encoding => FONTENCODING_DEFAULT, :setWidth => FXFont::NonExpanded, :hints => 0})
          
-           @op[1].a = :required
            def a var
              @op[@ii].a = var
            end
          
-           @op[1].face = :required
            def face var
              @op[@ii].face = var
            end
          
-           @op[1].size = :required
            def size var
              @op[@ii].size = var
            end
          
-           @op[1].weight = FXFont::Normal
            def weight var
              @op[@ii].weight = var
            end
          
-           @op[1].slant = Font::Straight
            def slant var
              @op[@ii].slant = var
            end
          
-           @op[1].encoding = FONTENCODING_DEFAULT
            def encoding var
              @op[@ii].encoding = var
            end
          
-           @op[1].setWidth = FXFont::NonExpanded
            def set_width var
              @op[@ii].setWidth = var
            end
          
-           @op[1].hints = 0
            def hints var
              @op[@ii].hints = var
            end
@@ -3685,15 +3179,12 @@ module Fox
             @op[@ii].instance_block = block
          end
      
-         @op[2] = OpenStruct.new
-         #{:a=>nil, :string=>nil}
+         @op[2] = OpenStruct.new({:a => :required, :string => :required})
          
-           @op[2].a = :required
            def a var
              @op[@ii].a = var
            end
          
-           @op[2].string = :required
            def string var
              @op[@ii].string = var
            end
@@ -3717,40 +3208,32 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:owner=>nil, :name=>nil, :opts=>"0", :x=>"0", :y=>"0", :width=>"600", :height=>"380"}
+         @op[0] = OpenStruct.new({:owner => :required, :name => :required, :opts => 0, :x => 0, :y => 0, :width => 600, :height => 380})
          
-           @op[0].owner = :required
            def owner var
              @op[@ii].owner = var
            end
          
-           @op[0].name = :required
            def name var
              @op[@ii].name = var
            end
          
-           @op[0].opts = 0
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 600
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 380
            def height var
              @op[@ii].height = var
            end
@@ -3774,45 +3257,36 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:p=>nil, :target=>"nil", :selector=>"0", :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}
+         @op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
          
-           @op[0].p = :required
            def p var
              @op[@ii].p = var
            end
          
-           @op[0].target = nil
            def target var
              @op[@ii].target = var
            end
          
-           @op[0].selector = 0
            def selector var
              @op[@ii].selector = var
            end
          
-           @op[0].opts = 0
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
@@ -3836,55 +3310,44 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:parent=>nil, :opts=>"FRAME_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_PAD", :padRight=>"DEFAULT_PAD", :padTop=>"DEFAULT_PAD", :padBottom=>"DEFAULT_PAD"}
+         @op[0] = OpenStruct.new({:parent => :required, :opts => FRAME_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
          
-           @op[0].parent = :required
            def parent var
              @op[@ii].parent = var
            end
          
-           @op[0].opts = FRAME_NORMAL
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
          
-           @op[0].padLeft = DEFAULT_PAD
            def pad_left var
              @op[@ii].padLeft = var
            end
          
-           @op[0].padRight = DEFAULT_PAD
            def pad_right var
              @op[@ii].padRight = var
            end
          
-           @op[0].padTop = DEFAULT_PAD
            def pad_top var
              @op[@ii].padTop = var
            end
          
-           @op[0].padBottom = DEFAULT_PAD
            def pad_bottom var
              @op[@ii].padBottom = var
            end
@@ -3908,25 +3371,20 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:a=>nil, :pix=>nil, :hx=>"-1", :hy=>"-1"}
+         @op[0] = OpenStruct.new({:a => :required, :pix => :required, :hx => -1, :hy => -1})
          
-           @op[0].a = :required
            def a var
              @op[@ii].a = var
            end
          
-           @op[0].pix = :required
            def pix var
              @op[@ii].pix = var
            end
          
-           @op[0].hx = -1
            def hx var
              @op[@ii].hx = var
            end
          
-           @op[0].hy = -1
            def hy var
              @op[@ii].hy = var
            end
@@ -3950,35 +3408,28 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:a=>nil, :pix=>"nil", :clr=>"0", :opts=>"0", :width=>"1", :height=>"1"}
+         @op[0] = OpenStruct.new({:a => :required, :pix => nil, :clr => 0, :opts => 0, :width => 1, :height => 1})
          
-           @op[0].a = :required
            def a var
              @op[@ii].a = var
            end
          
-           @op[0].pix = nil
            def pix var
              @op[@ii].pix = var
            end
          
-           @op[0].clr = 0
            def clr var
              @op[@ii].clr = var
            end
          
-           @op[0].opts = 0
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].width = 1
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 1
            def height var
              @op[@ii].height = var
            end
@@ -4002,30 +3453,24 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:a=>nil, :pix=>"nil", :opts=>"0", :width=>"1", :height=>"1"}
+         @op[0] = OpenStruct.new({:a => :required, :pix => nil, :opts => 0, :width => 1, :height => 1})
          
-           @op[0].a = :required
            def a var
              @op[@ii].a = var
            end
          
-           @op[0].pix = nil
            def pix var
              @op[@ii].pix = var
            end
          
-           @op[0].opts = 0
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].width = 1
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 1
            def height var
              @op[@ii].height = var
            end
@@ -4049,50 +3494,40 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:parent=>nil, :vis=>nil, :target=>"nil", :selector=>"0", :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}
+         @op[0] = OpenStruct.new({:parent => :required, :vis => :required, :target => nil, :selector => 0, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
          
-           @op[0].parent = :required
            def parent var
              @op[@ii].parent = var
            end
          
-           @op[0].vis = :required
            def vis var
              @op[@ii].vis = var
            end
          
-           @op[0].target = nil
            def target var
              @op[@ii].target = var
            end
          
-           @op[0].selector = 0
            def selector var
              @op[@ii].selector = var
            end
          
-           @op[0].opts = 0
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
@@ -4102,55 +3537,44 @@ module Fox
             @op[@ii].instance_block = block
          end
      
-         @op[1] = OpenStruct.new
-         #{:parent=>nil, :vis=>nil, :sharegroup=>nil, :target=>"nil", :selector=>"0", :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}
+         @op[1] = OpenStruct.new({:parent => :required, :vis => :required, :sharegroup => :required, :target => nil, :selector => 0, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
          
-           @op[1].parent = :required
            def parent var
              @op[@ii].parent = var
            end
          
-           @op[1].vis = :required
            def vis var
              @op[@ii].vis = var
            end
          
-           @op[1].sharegroup = :required
            def sharegroup var
              @op[@ii].sharegroup = var
            end
          
-           @op[1].target = nil
            def target var
              @op[@ii].target = var
            end
          
-           @op[1].selector = 0
            def selector var
              @op[@ii].selector = var
            end
          
-           @op[1].opts = 0
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[1].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[1].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[1].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[1].height = 0
            def height var
              @op[@ii].height = var
            end
@@ -4174,20 +3598,16 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:app=>nil, :visual=>nil, :other=>"nil"}
+         @op[0] = OpenStruct.new({:app => :required, :visual => :required, :other => nil})
          
-           @op[0].app = :required
            def app var
              @op[@ii].app = var
            end
          
-           @op[0].visual = :required
            def visual var
              @op[@ii].visual = var
            end
          
-           @op[0].other = nil
            def other var
              @op[@ii].other = var
            end
@@ -4225,35 +3645,28 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:x=>nil, :y=>nil, :z=>nil, :opts=>nil, :front=>"nil", :back=>"nil"}
+         @op[0] = OpenStruct.new({:x => :required, :y => :required, :z => :required, :opts => :required, :front => nil, :back => nil})
          
-           @op[0].x = :required
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = :required
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].z = :required
            def z var
              @op[@ii].z = var
            end
          
-           @op[0].opts = :required
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].front = nil
            def front var
              @op[@ii].front = var
            end
          
-           @op[0].back = nil
            def back var
              @op[@ii].back = var
            end
@@ -4319,50 +3732,40 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:p=>nil, :vis=>nil, :target=>"nil", :selector=>"0", :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}
+         @op[0] = OpenStruct.new({:p => :required, :vis => :required, :target => nil, :selector => 0, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
          
-           @op[0].p = :required
            def p var
              @op[@ii].p = var
            end
          
-           @op[0].vis = :required
            def vis var
              @op[@ii].vis = var
            end
          
-           @op[0].target = nil
            def target var
              @op[@ii].target = var
            end
          
-           @op[0].selector = 0
            def selector var
              @op[@ii].selector = var
            end
          
-           @op[0].opts = 0
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
@@ -4372,55 +3775,44 @@ module Fox
             @op[@ii].instance_block = block
          end
      
-         @op[1] = OpenStruct.new
-         #{:p=>nil, :vis=>nil, :sharegroup=>nil, :target=>"nil", :selector=>"0", :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}
+         @op[1] = OpenStruct.new({:p => :required, :vis => :required, :sharegroup => :required, :target => nil, :selector => 0, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
          
-           @op[1].p = :required
            def p var
              @op[@ii].p = var
            end
          
-           @op[1].vis = :required
            def vis var
              @op[@ii].vis = var
            end
          
-           @op[1].sharegroup = :required
            def sharegroup var
              @op[@ii].sharegroup = var
            end
          
-           @op[1].target = nil
            def target var
              @op[@ii].target = var
            end
          
-           @op[1].selector = 0
            def selector var
              @op[@ii].selector = var
            end
          
-           @op[1].opts = 0
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[1].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[1].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[1].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[1].height = 0
            def height var
              @op[@ii].height = var
            end
@@ -4444,15 +3836,12 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:app=>nil, :flags=>nil}
+         @op[0] = OpenStruct.new({:app => :required, :flags => :required})
          
-           @op[0].app = :required
            def app var
              @op[@ii].app = var
            end
          
-           @op[0].flags = :required
            def flags var
              @op[@ii].flags = var
            end
@@ -4490,65 +3879,52 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:p=>nil, :target=>"nil", :selector=>"0", :opts=>"FRAME_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_PAD", :padRight=>"DEFAULT_PAD", :padTop=>"DEFAULT_PAD", :padBottom=>"DEFAULT_PAD"}
+         @op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => FRAME_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
          
-           @op[0].p = :required
            def p var
              @op[@ii].p = var
            end
          
-           @op[0].target = nil
            def target var
              @op[@ii].target = var
            end
          
-           @op[0].selector = 0
            def selector var
              @op[@ii].selector = var
            end
          
-           @op[0].opts = FRAME_NORMAL
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
          
-           @op[0].padLeft = DEFAULT_PAD
            def pad_left var
              @op[@ii].padLeft = var
            end
          
-           @op[0].padRight = DEFAULT_PAD
            def pad_right var
              @op[@ii].padRight = var
            end
          
-           @op[0].padTop = DEFAULT_PAD
            def pad_top var
              @op[@ii].padTop = var
            end
          
-           @op[0].padBottom = DEFAULT_PAD
            def pad_bottom var
              @op[@ii].padBottom = var
            end
@@ -4572,70 +3948,56 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:parent=>nil, :text=>nil, :opts=>"GROUPBOX_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_SPACING", :padRight=>"DEFAULT_SPACING", :padTop=>"DEFAULT_SPACING", :padBottom=>"DEFAULT_SPACING", :hSpacing=>"DEFAULT_SPACING", :vSpacing=>"DEFAULT_SPACING"}
+         @op[0] = OpenStruct.new({:parent => :required, :text => :required, :opts => GROUPBOX_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_SPACING, :padRight => DEFAULT_SPACING, :padTop => DEFAULT_SPACING, :padBottom => DEFAULT_SPACING, :hSpacing => DEFAULT_SPACING, :vSpacing => DEFAULT_SPACING})
          
-           @op[0].parent = :required
            def parent var
              @op[@ii].parent = var
            end
          
-           @op[0].text = :required
            def text var
              @op[@ii].text = var
            end
          
-           @op[0].opts = GROUPBOX_NORMAL
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
          
-           @op[0].padLeft = DEFAULT_SPACING
            def pad_left var
              @op[@ii].padLeft = var
            end
          
-           @op[0].padRight = DEFAULT_SPACING
            def pad_right var
              @op[@ii].padRight = var
            end
          
-           @op[0].padTop = DEFAULT_SPACING
            def pad_top var
              @op[@ii].padTop = var
            end
          
-           @op[0].padBottom = DEFAULT_SPACING
            def pad_bottom var
              @op[@ii].padBottom = var
            end
          
-           @op[0].hSpacing = DEFAULT_SPACING
            def h_spacing var
              @op[@ii].hSpacing = var
            end
          
-           @op[0].vSpacing = DEFAULT_SPACING
            def v_spacing var
              @op[@ii].vSpacing = var
            end
@@ -4659,25 +4021,20 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:text=>nil, :ic=>"nil", :s=>"0", :ptr=>"nil"}
+         @op[0] = OpenStruct.new({:text => :required, :ic => nil, :s => 0, :ptr => nil})
          
-           @op[0].text = :required
            def text var
              @op[@ii].text = var
            end
          
-           @op[0].ic = nil
            def ic var
              @op[@ii].ic = var
            end
          
-           @op[0].s = 0
            def s var
              @op[@ii].s = var
            end
          
-           @op[0].ptr = nil
            def ptr var
              @op[@ii].ptr = var
            end
@@ -4701,65 +4058,52 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:p=>nil, :target=>"nil", :selector=>"0", :opts=>"HEADER_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_PAD", :padRight=>"DEFAULT_PAD", :padTop=>"DEFAULT_PAD", :padBottom=>"DEFAULT_PAD"}
+         @op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => HEADER_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
          
-           @op[0].p = :required
            def p var
              @op[@ii].p = var
            end
          
-           @op[0].target = nil
            def target var
              @op[@ii].target = var
            end
          
-           @op[0].selector = 0
            def selector var
              @op[@ii].selector = var
            end
          
-           @op[0].opts = HEADER_NORMAL
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
          
-           @op[0].padLeft = DEFAULT_PAD
            def pad_left var
              @op[@ii].padLeft = var
            end
          
-           @op[0].padRight = DEFAULT_PAD
            def pad_right var
              @op[@ii].padRight = var
            end
          
-           @op[0].padTop = DEFAULT_PAD
            def pad_top var
              @op[@ii].padTop = var
            end
          
-           @op[0].padBottom = DEFAULT_PAD
            def pad_bottom var
              @op[@ii].padBottom = var
            end
@@ -4783,65 +4127,52 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:p=>nil, :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_SPACING", :padRight=>"DEFAULT_SPACING", :padTop=>"DEFAULT_SPACING", :padBottom=>"DEFAULT_SPACING", :hSpacing=>"DEFAULT_SPACING", :vSpacing=>"DEFAULT_SPACING"}
+         @op[0] = OpenStruct.new({:p => :required, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_SPACING, :padRight => DEFAULT_SPACING, :padTop => DEFAULT_SPACING, :padBottom => DEFAULT_SPACING, :hSpacing => DEFAULT_SPACING, :vSpacing => DEFAULT_SPACING})
          
-           @op[0].p = :required
            def p var
              @op[@ii].p = var
            end
          
-           @op[0].opts = 0
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
          
-           @op[0].padLeft = DEFAULT_SPACING
            def pad_left var
              @op[@ii].padLeft = var
            end
          
-           @op[0].padRight = DEFAULT_SPACING
            def pad_right var
              @op[@ii].padRight = var
            end
          
-           @op[0].padTop = DEFAULT_SPACING
            def pad_top var
              @op[@ii].padTop = var
            end
          
-           @op[0].padBottom = DEFAULT_SPACING
            def pad_bottom var
              @op[@ii].padBottom = var
            end
          
-           @op[0].hSpacing = DEFAULT_SPACING
            def h_spacing var
              @op[@ii].hSpacing = var
            end
          
-           @op[0].vSpacing = DEFAULT_SPACING
            def v_spacing var
              @op[@ii].vSpacing = var
            end
@@ -4865,35 +4196,28 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:a=>nil, :pix=>"nil", :clr=>"0", :opts=>"0", :width=>"1", :height=>"1"}
+         @op[0] = OpenStruct.new({:a => :required, :pix => nil, :clr => 0, :opts => 0, :width => 1, :height => 1})
          
-           @op[0].a = :required
            def a var
              @op[@ii].a = var
            end
          
-           @op[0].pix = nil
            def pix var
              @op[@ii].pix = var
            end
          
-           @op[0].clr = 0
            def clr var
              @op[@ii].clr = var
            end
          
-           @op[0].opts = 0
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].width = 1
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 1
            def height var
              @op[@ii].height = var
            end
@@ -4917,30 +4241,24 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:a=>nil, :pix=>"nil", :opts=>"0", :width=>"1", :height=>"1"}
+         @op[0] = OpenStruct.new({:a => :required, :pix => nil, :opts => 0, :width => 1, :height => 1})
          
-           @op[0].a = :required
            def a var
              @op[@ii].a = var
            end
          
-           @op[0].pix = nil
            def pix var
              @op[@ii].pix = var
            end
          
-           @op[0].opts = 0
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].width = 1
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 1
            def height var
              @op[@ii].height = var
            end
@@ -4964,35 +4282,28 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:app=>nil, :pix=>"nil", :clr=>"0", :opts=>"0", :width=>"1", :height=>"1"}
+         @op[0] = OpenStruct.new({:app => :required, :pix => nil, :clr => 0, :opts => 0, :width => 1, :height => 1})
          
-           @op[0].app = :required
            def app var
              @op[@ii].app = var
            end
          
-           @op[0].pix = nil
            def pix var
              @op[@ii].pix = var
            end
          
-           @op[0].clr = 0
            def clr var
              @op[@ii].clr = var
            end
          
-           @op[0].opts = 0
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].width = 1
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 1
            def height var
              @op[@ii].height = var
            end
@@ -5030,25 +4341,20 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:text=>nil, :bigIcon=>"nil", :miniIcon=>"nil", :data=>"nil"}
+         @op[0] = OpenStruct.new({:text => :required, :bigIcon => nil, :miniIcon => nil, :data => nil})
          
-           @op[0].text = :required
            def text var
              @op[@ii].text = var
            end
          
-           @op[0].bigIcon = nil
            def big_icon var
              @op[@ii].bigIcon = var
            end
          
-           @op[0].miniIcon = nil
            def mini_icon var
              @op[@ii].miniIcon = var
            end
          
-           @op[0].data = nil
            def data var
              @op[@ii].data = var
            end
@@ -5072,45 +4378,36 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:p=>nil, :target=>"nil", :selector=>"0", :opts=>"ICONLIST_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}
+         @op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => ICONLIST_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0})
          
-           @op[0].p = :required
            def p var
              @op[@ii].p = var
            end
          
-           @op[0].target = nil
            def target var
              @op[@ii].target = var
            end
          
-           @op[0].selector = 0
            def selector var
              @op[@ii].selector = var
            end
          
-           @op[0].opts = ICONLIST_NORMAL
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
@@ -5134,10 +4431,8 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:app=>nil}
+         @op[0] = OpenStruct.new({:app => :required})
          
-           @op[0].app = :required
            def app var
              @op[@ii].app = var
            end
@@ -5175,30 +4470,24 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:a=>nil, :pixels=>"nil", :opts=>"0", :width=>"1", :height=>"1"}
+         @op[0] = OpenStruct.new({:a => :required, :pixels => nil, :opts => 0, :width => 1, :height => 1})
          
-           @op[0].a = :required
            def a var
              @op[@ii].a = var
            end
          
-           @op[0].pixels = nil
            def pixels var
              @op[@ii].pixels = var
            end
          
-           @op[0].opts = 0
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].width = 1
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 1
            def height var
              @op[@ii].height = var
            end
@@ -5222,60 +4511,48 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:p=>nil, :img=>nil, :opts=>"FRAME_SUNKEN|FRAME_THICK", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"0", :padRight=>"0", :padTop=>"0", :padBottom=>"0"}
+         @op[0] = OpenStruct.new({:p => :required, :img => :required, :opts => FRAME_SUNKEN|FRAME_THICK, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 0, :padRight => 0, :padTop => 0, :padBottom => 0})
          
-           @op[0].p = :required
            def p var
              @op[@ii].p = var
            end
          
-           @op[0].img = :required
            def img var
              @op[@ii].img = var
            end
          
-           @op[0].opts = FRAME_SUNKEN|FRAME_THICK
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
          
-           @op[0].padLeft = 0
            def pad_left var
              @op[@ii].padLeft = var
            end
          
-           @op[0].padRight = 0
            def pad_right var
              @op[@ii].padRight = var
            end
          
-           @op[0].padTop = 0
            def pad_top var
              @op[@ii].padTop = var
            end
          
-           @op[0].padBottom = 0
            def pad_bottom var
              @op[@ii].padBottom = var
            end
@@ -5299,50 +4576,40 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:p=>nil, :img=>"nil", :target=>"nil", :selector=>"0", :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}
+         @op[0] = OpenStruct.new({:p => :required, :img => nil, :target => nil, :selector => 0, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
          
-           @op[0].p = :required
            def p var
              @op[@ii].p = var
            end
          
-           @op[0].img = nil
            def img var
              @op[@ii].img = var
            end
          
-           @op[0].target = nil
            def target var
              @op[@ii].target = var
            end
          
-           @op[0].selector = 0
            def selector var
              @op[@ii].selector = var
            end
          
-           @op[0].opts = 0
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
@@ -5366,50 +4633,40 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:owner=>nil, :caption=>nil, :label=>nil, :icon=>"nil", :opts=>"INPUTDIALOG_STRING", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}
+         @op[0] = OpenStruct.new({:owner => :required, :caption => :required, :label => :required, :icon => nil, :opts => INPUTDIALOG_STRING, :x => 0, :y => 0, :width => 0, :height => 0})
          
-           @op[0].owner = :required
            def owner var
              @op[@ii].owner = var
            end
          
-           @op[0].caption = :required
            def caption var
              @op[@ii].caption = var
            end
          
-           @op[0].label = :required
            def label var
              @op[@ii].label = var
            end
          
-           @op[0].icon = nil
            def icon var
              @op[@ii].icon = var
            end
          
-           @op[0].opts = INPUTDIALOG_STRING
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
@@ -5433,40 +4690,32 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:a=>nil, :pix=>"nil", :clr=>"0", :opts=>"0", :width=>"1", :height=>"1", :quality=>"75"}
+         @op[0] = OpenStruct.new({:a => :required, :pix => nil, :clr => 0, :opts => 0, :width => 1, :height => 1, :quality => 75})
          
-           @op[0].a = :required
            def a var
              @op[@ii].a = var
            end
          
-           @op[0].pix = nil
            def pix var
              @op[@ii].pix = var
            end
          
-           @op[0].clr = 0
            def clr var
              @op[@ii].clr = var
            end
          
-           @op[0].opts = 0
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].width = 1
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 1
            def height var
              @op[@ii].height = var
            end
          
-           @op[0].quality = 75
            def quality var
              @op[@ii].quality = var
            end
@@ -5490,35 +4739,28 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:a=>nil, :pix=>"nil", :opts=>"0", :width=>"1", :height=>"1", :quality=>"75"}
+         @op[0] = OpenStruct.new({:a => :required, :pix => nil, :opts => 0, :width => 1, :height => 1, :quality => 75})
          
-           @op[0].a = :required
            def a var
              @op[@ii].a = var
            end
          
-           @op[0].pix = nil
            def pix var
              @op[@ii].pix = var
            end
          
-           @op[0].opts = 0
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].width = 1
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 1
            def height var
              @op[@ii].height = var
            end
          
-           @op[0].quality = 75
            def quality var
              @op[@ii].quality = var
            end
@@ -5542,65 +4784,52 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:p=>nil, :target=>"nil", :selector=>"0", :opts=>"KNOB_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_PAD", :padRight=>"DEFAULT_PAD", :padTop=>"DEFAULT_PAD", :padBottom=>"DEFAULT_PAD"}
+         @op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => KNOB_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
          
-           @op[0].p = :required
            def p var
              @op[@ii].p = var
            end
          
-           @op[0].target = nil
            def target var
              @op[@ii].target = var
            end
          
-           @op[0].selector = 0
            def selector var
              @op[@ii].selector = var
            end
          
-           @op[0].opts = KNOB_NORMAL
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
          
-           @op[0].padLeft = DEFAULT_PAD
            def pad_left var
              @op[@ii].padLeft = var
            end
          
-           @op[0].padRight = DEFAULT_PAD
            def pad_right var
              @op[@ii].padRight = var
            end
          
-           @op[0].padTop = DEFAULT_PAD
            def pad_top var
              @op[@ii].padTop = var
            end
          
-           @op[0].padBottom = DEFAULT_PAD
            def pad_bottom var
              @op[@ii].padBottom = var
            end
@@ -5624,65 +4853,52 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:parent=>nil, :text=>nil, :icon=>"nil", :opts=>"LABEL_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_PAD", :padRight=>"DEFAULT_PAD", :padTop=>"DEFAULT_PAD", :padBottom=>"DEFAULT_PAD"}
+         @op[0] = OpenStruct.new({:parent => :required, :text => :required, :icon => nil, :opts => LABEL_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
          
-           @op[0].parent = :required
            def parent var
              @op[@ii].parent = var
            end
          
-           @op[0].text = :required
            def text var
              @op[@ii].text = var
            end
          
-           @op[0].icon = nil
            def icon var
              @op[@ii].icon = var
            end
          
-           @op[0].opts = LABEL_NORMAL
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
          
-           @op[0].padLeft = DEFAULT_PAD
            def pad_left var
              @op[@ii].padLeft = var
            end
          
-           @op[0].padRight = DEFAULT_PAD
            def pad_right var
              @op[@ii].padRight = var
            end
          
-           @op[0].padTop = DEFAULT_PAD
            def pad_top var
              @op[@ii].padTop = var
            end
          
-           @op[0].padBottom = DEFAULT_PAD
            def pad_bottom var
              @op[@ii].padBottom = var
            end
@@ -5706,20 +4922,16 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:text=>nil, :icon=>"nil", :data=>"nil"}
+         @op[0] = OpenStruct.new({:text => :required, :icon => nil, :data => nil})
          
-           @op[0].text = :required
            def text var
              @op[@ii].text = var
            end
          
-           @op[0].icon = nil
            def icon var
              @op[@ii].icon = var
            end
          
-           @op[0].data = nil
            def data var
              @op[@ii].data = var
            end
@@ -5743,45 +4955,36 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:p=>nil, :target=>"nil", :selector=>"0", :opts=>"LIST_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}
+         @op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => LIST_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0})
          
-           @op[0].p = :required
            def p var
              @op[@ii].p = var
            end
          
-           @op[0].target = nil
            def target var
              @op[@ii].target = var
            end
          
-           @op[0].selector = 0
            def selector var
              @op[@ii].selector = var
            end
          
-           @op[0].opts = LIST_NORMAL
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
@@ -5805,65 +5008,52 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:p=>nil, :target=>"nil", :selector=>"0", :opts=>"FRAME_SUNKEN|FRAME_THICK|LISTBOX_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_PAD", :padRight=>"DEFAULT_PAD", :padTop=>"DEFAULT_PAD", :padBottom=>"DEFAULT_PAD"}
+         @op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => FRAME_SUNKEN|FRAME_THICK|LISTBOX_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
          
-           @op[0].p = :required
            def p var
              @op[@ii].p = var
            end
          
-           @op[0].target = nil
            def target var
              @op[@ii].target = var
            end
          
-           @op[0].selector = 0
            def selector var
              @op[@ii].selector = var
            end
          
-           @op[0].opts = FRAME_SUNKEN|FRAME_THICK|LISTBOX_NORMAL
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
          
-           @op[0].padLeft = DEFAULT_PAD
            def pad_left var
              @op[@ii].padLeft = var
            end
          
-           @op[0].padRight = DEFAULT_PAD
            def pad_right var
              @op[@ii].padRight = var
            end
          
-           @op[0].padTop = DEFAULT_PAD
            def pad_top var
              @op[@ii].padTop = var
            end
          
-           @op[0].padBottom = DEFAULT_PAD
            def pad_bottom var
              @op[@ii].padBottom = var
            end
@@ -5887,45 +5077,36 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:p=>nil, :target=>"nil", :selector=>"0", :opts=>"FRAME_RAISED", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}
+         @op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => FRAME_RAISED, :x => 0, :y => 0, :width => 0, :height => 0})
          
-           @op[0].p = :required
            def p var
              @op[@ii].p = var
            end
          
-           @op[0].target = nil
            def target var
              @op[@ii].target = var
            end
          
-           @op[0].selector = 0
            def selector var
              @op[@ii].selector = var
            end
          
-           @op[0].opts = FRAME_RAISED
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
@@ -5949,45 +5130,36 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:p=>nil, :target=>"nil", :selector=>"0", :opts=>"FRAME_RAISED", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}
+         @op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => FRAME_RAISED, :x => 0, :y => 0, :width => 0, :height => 0})
          
-           @op[0].p = :required
            def p var
              @op[@ii].p = var
            end
          
-           @op[0].target = nil
            def target var
              @op[@ii].target = var
            end
          
-           @op[0].selector = 0
            def selector var
              @op[@ii].selector = var
            end
          
-           @op[0].opts = FRAME_RAISED
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
@@ -6011,45 +5183,36 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:p=>nil, :target=>"nil", :selector=>"0", :opts=>"FRAME_RAISED", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}
+         @op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => FRAME_RAISED, :x => 0, :y => 0, :width => 0, :height => 0})
          
-           @op[0].p = :required
            def p var
              @op[@ii].p = var
            end
          
-           @op[0].target = nil
            def target var
              @op[@ii].target = var
            end
          
-           @op[0].selector = 0
            def selector var
              @op[@ii].selector = var
            end
          
-           @op[0].opts = FRAME_RAISED
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
@@ -6073,45 +5236,36 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:p=>nil, :target=>"nil", :selector=>"0", :opts=>"FRAME_RAISED", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}
+         @op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => FRAME_RAISED, :x => 0, :y => 0, :width => 0, :height => 0})
          
-           @op[0].p = :required
            def p var
              @op[@ii].p = var
            end
          
-           @op[0].target = nil
            def target var
              @op[@ii].target = var
            end
          
-           @op[0].selector = 0
            def selector var
              @op[@ii].selector = var
            end
          
-           @op[0].opts = FRAME_RAISED
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
@@ -6135,50 +5289,40 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:p=>nil, :pup=>nil, :target=>"nil", :selector=>"0", :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}
+         @op[0] = OpenStruct.new({:p => :required, :pup => :required, :target => nil, :selector => 0, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
          
-           @op[0].p = :required
            def p var
              @op[@ii].p = var
            end
          
-           @op[0].pup = :required
            def pup var
              @op[@ii].pup = var
            end
          
-           @op[0].target = nil
            def target var
              @op[@ii].target = var
            end
          
-           @op[0].selector = 0
            def selector var
              @op[@ii].selector = var
            end
          
-           @op[0].opts = 0
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
@@ -6202,15 +5346,12 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:owner=>nil, :target=>"nil"}
+         @op[0] = OpenStruct.new({:owner => :required, :target => nil})
          
-           @op[0].owner = :required
            def owner var
              @op[@ii].owner = var
            end
          
-           @op[0].target = nil
            def target var
              @op[@ii].target = var
            end
@@ -6234,50 +5375,40 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:p=>nil, :name=>nil, :ic=>"nil", :pup=>"nil", :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}
+         @op[0] = OpenStruct.new({:p => :required, :name => :required, :ic => nil, :pup => nil, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
          
-           @op[0].p = :required
            def p var
              @op[@ii].p = var
            end
          
-           @op[0].name = :required
            def name var
              @op[@ii].name = var
            end
          
-           @op[0].ic = nil
            def ic var
              @op[@ii].ic = var
            end
          
-           @op[0].pup = nil
            def pup var
              @op[@ii].pup = var
            end
          
-           @op[0].opts = 0
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
@@ -6301,35 +5432,28 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:p=>nil, :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}
+         @op[0] = OpenStruct.new({:p => :required, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
          
-           @op[0].p = :required
            def p var
              @op[@ii].p = var
            end
          
-           @op[0].opts = 0
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
@@ -6353,80 +5477,64 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:app=>nil, :title=>nil, :icon=>"nil", :miniIcon=>"nil", :opts=>"DECOR_ALL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"0", :padRight=>"0", :padTop=>"0", :padBottom=>"0", :hSpacing=>"4", :vSpacing=>"4"}
+         @op[0] = OpenStruct.new({:app => :required, :title => :required, :icon => nil, :miniIcon => nil, :opts => DECOR_ALL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 0, :padRight => 0, :padTop => 0, :padBottom => 0, :hSpacing => 4, :vSpacing => 4})
          
-           @op[0].app = :required
            def app var
              @op[@ii].app = var
            end
          
-           @op[0].title = :required
            def title var
              @op[@ii].title = var
            end
          
-           @op[0].icon = nil
            def icon var
              @op[@ii].icon = var
            end
          
-           @op[0].miniIcon = nil
            def mini_icon var
              @op[@ii].miniIcon = var
            end
          
-           @op[0].opts = DECOR_ALL
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
          
-           @op[0].padLeft = 0
            def pad_left var
              @op[@ii].padLeft = var
            end
          
-           @op[0].padRight = 0
            def pad_right var
              @op[@ii].padRight = var
            end
          
-           @op[0].padTop = 0
            def pad_top var
              @op[@ii].padTop = var
            end
          
-           @op[0].padBottom = 0
            def pad_bottom var
              @op[@ii].padBottom = var
            end
          
-           @op[0].hSpacing = 4
            def h_spacing var
              @op[@ii].hSpacing = var
            end
          
-           @op[0].vSpacing = 4
            def v_spacing var
              @op[@ii].vSpacing = var
            end
@@ -6450,70 +5558,56 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:parent=>nil, :n=>"1", :opts=>"MATRIX_BY_ROWS", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_SPACING", :padRight=>"DEFAULT_SPACING", :padTop=>"DEFAULT_SPACING", :padBottom=>"DEFAULT_SPACING", :hSpacing=>"DEFAULT_SPACING", :vSpacing=>"DEFAULT_SPACING"}
+         @op[0] = OpenStruct.new({:parent => :required, :n => 1, :opts => MATRIX_BY_ROWS, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_SPACING, :padRight => DEFAULT_SPACING, :padTop => DEFAULT_SPACING, :padBottom => DEFAULT_SPACING, :hSpacing => DEFAULT_SPACING, :vSpacing => DEFAULT_SPACING})
          
-           @op[0].parent = :required
            def parent var
              @op[@ii].parent = var
            end
          
-           @op[0].n = 1
            def n var
              @op[@ii].n = var
            end
          
-           @op[0].opts = MATRIX_BY_ROWS
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
          
-           @op[0].padLeft = DEFAULT_SPACING
            def pad_left var
              @op[@ii].padLeft = var
            end
          
-           @op[0].padRight = DEFAULT_SPACING
            def pad_right var
              @op[@ii].padRight = var
            end
          
-           @op[0].padTop = DEFAULT_SPACING
            def pad_top var
              @op[@ii].padTop = var
            end
          
-           @op[0].padBottom = DEFAULT_SPACING
            def pad_bottom var
              @op[@ii].padBottom = var
            end
          
-           @op[0].hSpacing = DEFAULT_SPACING
            def h_spacing var
              @op[@ii].hSpacing = var
            end
          
-           @op[0].vSpacing = DEFAULT_SPACING
            def v_spacing var
              @op[@ii].vSpacing = var
            end
@@ -6537,10 +5631,8 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:data=>nil}
+         @op[0] = OpenStruct.new({:data => :required})
          
-           @op[0].data = :required
            def data var
              @op[@ii].data = var
            end
@@ -6564,10 +5656,8 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:cont=>"nil"}
+         @op[0] = OpenStruct.new({:cont => nil})
          
-           @op[0].cont = nil
            def cont var
              @op[@ii].cont = var
            end
@@ -6591,70 +5681,56 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:p=>nil, :q=>nil, :opts=>"LAYOUT_TOP|LAYOUT_LEFT|LAYOUT_FILL_X", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"3", :padRight=>"3", :padTop=>"2", :padBottom=>"2", :hSpacing=>"DEFAULT_SPACING", :vSpacing=>"DEFAULT_SPACING"}
+         @op[0] = OpenStruct.new({:p => :required, :q => :required, :opts => LAYOUT_TOP|LAYOUT_LEFT|LAYOUT_FILL_X, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 3, :padRight => 3, :padTop => 2, :padBottom => 2, :hSpacing => DEFAULT_SPACING, :vSpacing => DEFAULT_SPACING})
          
-           @op[0].p = :required
            def p var
              @op[@ii].p = var
            end
          
-           @op[0].q = :required
            def q var
              @op[@ii].q = var
            end
          
-           @op[0].opts = LAYOUT_TOP|LAYOUT_LEFT|LAYOUT_FILL_X
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
          
-           @op[0].padLeft = 3
            def pad_left var
              @op[@ii].padLeft = var
            end
          
-           @op[0].padRight = 3
            def pad_right var
              @op[@ii].padRight = var
            end
          
-           @op[0].padTop = 2
            def pad_top var
              @op[@ii].padTop = var
            end
          
-           @op[0].padBottom = 2
            def pad_bottom var
              @op[@ii].padBottom = var
            end
          
-           @op[0].hSpacing = DEFAULT_SPACING
            def h_spacing var
              @op[@ii].hSpacing = var
            end
          
-           @op[0].vSpacing = DEFAULT_SPACING
            def v_spacing var
              @op[@ii].vSpacing = var
            end
@@ -6664,65 +5740,52 @@ module Fox
             @op[@ii].instance_block = block
          end
      
-         @op[1] = OpenStruct.new
-         #{:p=>nil, :opts=>nil, :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"3", :padRight=>"3", :padTop=>"2", :padBottom=>"2", :hSpacing=>"DEFAULT_SPACING", :vSpacing=>"DEFAULT_SPACING"}
+         @op[1] = OpenStruct.new({:p => :required, :opts => :required, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 3, :padRight => 3, :padTop => 2, :padBottom => 2, :hSpacing => DEFAULT_SPACING, :vSpacing => DEFAULT_SPACING})
          
-           @op[1].p = :required
            def p var
              @op[@ii].p = var
            end
          
-           @op[1].opts = :required
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[1].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[1].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[1].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[1].height = 0
            def height var
              @op[@ii].height = var
            end
          
-           @op[1].padLeft = 3
            def pad_left var
              @op[@ii].padLeft = var
            end
          
-           @op[1].padRight = 3
            def pad_right var
              @op[@ii].padRight = var
            end
          
-           @op[1].padTop = 2
            def pad_top var
              @op[@ii].padTop = var
            end
          
-           @op[1].padBottom = 2
            def pad_bottom var
              @op[@ii].padBottom = var
            end
          
-           @op[1].hSpacing = DEFAULT_SPACING
            def h_spacing var
              @op[@ii].hSpacing = var
            end
          
-           @op[1].vSpacing = DEFAULT_SPACING
            def v_spacing var
              @op[@ii].vSpacing = var
            end
@@ -6746,70 +5809,56 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:parent=>nil, :text=>nil, :icon=>"nil", :popupMenu=>"nil", :opts=>"JUSTIFY_NORMAL|ICON_BEFORE_TEXT|MENUBUTTON_DOWN", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_SPACING", :padRight=>"DEFAULT_SPACING", :padTop=>"DEFAULT_SPACING", :padBottom=>"DEFAULT_SPACING"}
+         @op[0] = OpenStruct.new({:parent => :required, :text => :required, :icon => nil, :popupMenu => nil, :opts => JUSTIFY_NORMAL|ICON_BEFORE_TEXT|MENUBUTTON_DOWN, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_SPACING, :padRight => DEFAULT_SPACING, :padTop => DEFAULT_SPACING, :padBottom => DEFAULT_SPACING})
          
-           @op[0].parent = :required
            def parent var
              @op[@ii].parent = var
            end
          
-           @op[0].text = :required
            def text var
              @op[@ii].text = var
            end
          
-           @op[0].icon = nil
            def icon var
              @op[@ii].icon = var
            end
          
-           @op[0].popupMenu = nil
            def popup_menu var
              @op[@ii].popupMenu = var
            end
          
-           @op[0].opts = JUSTIFY_NORMAL|ICON_BEFORE_TEXT|MENUBUTTON_DOWN
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
          
-           @op[0].padLeft = DEFAULT_SPACING
            def pad_left var
              @op[@ii].padLeft = var
            end
          
-           @op[0].padRight = DEFAULT_SPACING
            def pad_right var
              @op[@ii].padRight = var
            end
          
-           @op[0].padTop = DEFAULT_SPACING
            def pad_top var
              @op[@ii].padTop = var
            end
          
-           @op[0].padBottom = DEFAULT_SPACING
            def pad_bottom var
              @op[@ii].padBottom = var
            end
@@ -6833,25 +5882,20 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:parent=>nil, :text=>nil, :icon=>"nil", :opts=>"0"}
+         @op[0] = OpenStruct.new({:parent => :required, :text => :required, :icon => nil, :opts => 0})
          
-           @op[0].parent = :required
            def parent var
              @op[@ii].parent = var
            end
          
-           @op[0].text = :required
            def text var
              @op[@ii].text = var
            end
          
-           @op[0].icon = nil
            def icon var
              @op[@ii].icon = var
            end
          
-           @op[0].opts = 0
            def opts var
              @op[@ii].opts = var
            end
@@ -6875,30 +5919,24 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:parent=>nil, :text=>nil, :icon=>"nil", :popupMenu=>"nil", :opts=>"0"}
+         @op[0] = OpenStruct.new({:parent => :required, :text => :required, :icon => nil, :popupMenu => nil, :opts => 0})
          
-           @op[0].parent = :required
            def parent var
              @op[@ii].parent = var
            end
          
-           @op[0].text = :required
            def text var
              @op[@ii].text = var
            end
          
-           @op[0].icon = nil
            def icon var
              @op[@ii].icon = var
            end
          
-           @op[0].popupMenu = nil
            def popup_menu var
              @op[@ii].popupMenu = var
            end
          
-           @op[0].opts = 0
            def opts var
              @op[@ii].opts = var
            end
@@ -6922,30 +5960,24 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:p=>nil, :text=>nil, :target=>"nil", :selector=>"0", :opts=>"0"}
+         @op[0] = OpenStruct.new({:p => :required, :text => :required, :target => nil, :selector => 0, :opts => 0})
          
-           @op[0].p = :required
            def p var
              @op[@ii].p = var
            end
          
-           @op[0].text = :required
            def text var
              @op[@ii].text = var
            end
          
-           @op[0].target = nil
            def target var
              @op[@ii].target = var
            end
          
-           @op[0].selector = 0
            def selector var
              @op[@ii].selector = var
            end
          
-           @op[0].opts = 0
            def opts var
              @op[@ii].opts = var
            end
@@ -6969,35 +6001,28 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:p=>nil, :text=>nil, :ic=>"nil", :target=>"nil", :selector=>"0", :opts=>"0"}
+         @op[0] = OpenStruct.new({:p => :required, :text => :required, :ic => nil, :target => nil, :selector => 0, :opts => 0})
          
-           @op[0].p = :required
            def p var
              @op[@ii].p = var
            end
          
-           @op[0].text = :required
            def text var
              @op[@ii].text = var
            end
          
-           @op[0].ic = nil
            def ic var
              @op[@ii].ic = var
            end
          
-           @op[0].target = nil
            def target var
              @op[@ii].target = var
            end
          
-           @op[0].selector = 0
            def selector var
              @op[@ii].selector = var
            end
          
-           @op[0].opts = 0
            def opts var
              @op[@ii].opts = var
            end
@@ -7021,15 +6046,12 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:owner=>nil, :opts=>"0"}
+         @op[0] = OpenStruct.new({:owner => :required, :opts => 0})
          
-           @op[0].owner = :required
            def owner var
              @op[@ii].owner = var
            end
          
-           @op[0].opts = 0
            def opts var
              @op[@ii].opts = var
            end
@@ -7053,30 +6075,24 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:p=>nil, :text=>nil, :target=>"nil", :selector=>"0", :opts=>"0"}
+         @op[0] = OpenStruct.new({:p => :required, :text => :required, :target => nil, :selector => 0, :opts => 0})
          
-           @op[0].p = :required
            def p var
              @op[@ii].p = var
            end
          
-           @op[0].text = :required
            def text var
              @op[@ii].text = var
            end
          
-           @op[0].target = nil
            def target var
              @op[@ii].target = var
            end
          
-           @op[0].selector = 0
            def selector var
              @op[@ii].selector = var
            end
          
-           @op[0].opts = 0
            def opts var
              @op[@ii].opts = var
            end
@@ -7100,15 +6116,12 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:parent=>nil, :opts=>"0"}
+         @op[0] = OpenStruct.new({:parent => :required, :opts => 0})
          
-           @op[0].parent = :required
            def parent var
              @op[@ii].parent = var
            end
          
-           @op[0].opts = 0
            def opts var
              @op[@ii].opts = var
            end
@@ -7132,30 +6145,24 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:parent=>nil, :text=>nil, :icon=>"nil", :popupMenu=>"nil", :opts=>"0"}
+         @op[0] = OpenStruct.new({:parent => :required, :text => :required, :icon => nil, :popupMenu => nil, :opts => 0})
          
-           @op[0].parent = :required
            def parent var
              @op[@ii].parent = var
            end
          
-           @op[0].text = :required
            def text var
              @op[@ii].text = var
            end
          
-           @op[0].icon = nil
            def icon var
              @op[@ii].icon = var
            end
          
-           @op[0].popupMenu = nil
            def popup_menu var
              @op[@ii].popupMenu = var
            end
          
-           @op[0].opts = 0
            def opts var
              @op[@ii].opts = var
            end
@@ -7179,40 +6186,32 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:owner=>nil, :caption=>nil, :text=>nil, :ic=>"nil", :opts=>"0", :x=>"0", :y=>"0"}
+         @op[0] = OpenStruct.new({:owner => :required, :caption => :required, :text => :required, :ic => nil, :opts => 0, :x => 0, :y => 0})
          
-           @op[0].owner = :required
            def owner var
              @op[@ii].owner = var
            end
          
-           @op[0].caption = :required
            def caption var
              @op[@ii].caption = var
            end
          
-           @op[0].text = :required
            def text var
              @op[@ii].text = var
            end
          
-           @op[0].ic = nil
            def ic var
              @op[@ii].ic = var
            end
          
-           @op[0].opts = 0
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
@@ -7250,75 +6249,60 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:p=>nil, :text=>nil, :ic=>"nil", :target=>"nil", :selector=>"0", :opts=>"JUSTIFY_NORMAL|ICON_BEFORE_TEXT", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_PAD", :padRight=>"DEFAULT_PAD", :padTop=>"DEFAULT_PAD", :padBottom=>"DEFAULT_PAD"}
+         @op[0] = OpenStruct.new({:p => :required, :text => :required, :ic => nil, :target => nil, :selector => 0, :opts => JUSTIFY_NORMAL|ICON_BEFORE_TEXT, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
          
-           @op[0].p = :required
            def p var
              @op[@ii].p = var
            end
          
-           @op[0].text = :required
            def text var
              @op[@ii].text = var
            end
          
-           @op[0].ic = nil
            def ic var
              @op[@ii].ic = var
            end
          
-           @op[0].target = nil
            def target var
              @op[@ii].target = var
            end
          
-           @op[0].selector = 0
            def selector var
              @op[@ii].selector = var
            end
          
-           @op[0].opts = JUSTIFY_NORMAL|ICON_BEFORE_TEXT
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
          
-           @op[0].padLeft = DEFAULT_PAD
            def pad_left var
              @op[@ii].padLeft = var
            end
          
-           @op[0].padRight = DEFAULT_PAD
            def pad_right var
              @op[@ii].padRight = var
            end
          
-           @op[0].padTop = DEFAULT_PAD
            def pad_top var
              @op[@ii].padTop = var
            end
          
-           @op[0].padBottom = DEFAULT_PAD
            def pad_bottom var
              @op[@ii].padBottom = var
            end
@@ -7342,60 +6326,48 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:p=>nil, :pup=>"nil", :opts=>"JUSTIFY_NORMAL|ICON_BEFORE_TEXT", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_PAD", :padRight=>"DEFAULT_PAD", :padTop=>"DEFAULT_PAD", :padBottom=>"DEFAULT_PAD"}
+         @op[0] = OpenStruct.new({:p => :required, :pup => nil, :opts => JUSTIFY_NORMAL|ICON_BEFORE_TEXT, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
          
-           @op[0].p = :required
            def p var
              @op[@ii].p = var
            end
          
-           @op[0].pup = nil
            def pup var
              @op[@ii].pup = var
            end
          
-           @op[0].opts = JUSTIFY_NORMAL|ICON_BEFORE_TEXT
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
          
-           @op[0].padLeft = DEFAULT_PAD
            def pad_left var
              @op[@ii].padLeft = var
            end
          
-           @op[0].padRight = DEFAULT_PAD
            def pad_right var
              @op[@ii].padRight = var
            end
          
-           @op[0].padTop = DEFAULT_PAD
            def pad_top var
              @op[@ii].padTop = var
            end
          
-           @op[0].padBottom = DEFAULT_PAD
            def pad_bottom var
              @op[@ii].padBottom = var
            end
@@ -7419,35 +6391,28 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:a=>nil, :pix=>"nil", :clr=>"0", :opts=>"0", :width=>"1", :height=>"1"}
+         @op[0] = OpenStruct.new({:a => :required, :pix => nil, :clr => 0, :opts => 0, :width => 1, :height => 1})
          
-           @op[0].a = :required
            def a var
              @op[@ii].a = var
            end
          
-           @op[0].pix = nil
            def pix var
              @op[@ii].pix = var
            end
          
-           @op[0].clr = 0
            def clr var
              @op[@ii].clr = var
            end
          
-           @op[0].opts = 0
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].width = 1
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 1
            def height var
              @op[@ii].height = var
            end
@@ -7471,30 +6436,24 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:a=>nil, :pix=>"nil", :opts=>"0", :width=>"1", :height=>"1"}
+         @op[0] = OpenStruct.new({:a => :required, :pix => nil, :opts => 0, :width => 1, :height => 1})
          
-           @op[0].a = :required
            def a var
              @op[@ii].a = var
            end
          
-           @op[0].pix = nil
            def pix var
              @op[@ii].pix = var
            end
          
-           @op[0].opts = 0
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].width = 1
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 1
            def height var
              @op[@ii].height = var
            end
@@ -7518,35 +6477,28 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:a=>nil, :pix=>"nil", :clr=>"0", :opts=>"0", :width=>"1", :height=>"1"}
+         @op[0] = OpenStruct.new({:a => :required, :pix => nil, :clr => 0, :opts => 0, :width => 1, :height => 1})
          
-           @op[0].a = :required
            def a var
              @op[@ii].a = var
            end
          
-           @op[0].pix = nil
            def pix var
              @op[@ii].pix = var
            end
          
-           @op[0].clr = 0
            def clr var
              @op[@ii].clr = var
            end
          
-           @op[0].opts = 0
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].width = 1
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 1
            def height var
              @op[@ii].height = var
            end
@@ -7570,30 +6522,24 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:a=>nil, :pix=>"nil", :opts=>"0", :width=>"1", :height=>"1"}
+         @op[0] = OpenStruct.new({:a => :required, :pix => nil, :opts => 0, :width => 1, :height => 1})
          
-           @op[0].a = :required
            def a var
              @op[@ii].a = var
            end
          
-           @op[0].pix = nil
            def pix var
              @op[@ii].pix = var
            end
          
-           @op[0].opts = 0
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].width = 1
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 1
            def height var
              @op[@ii].height = var
            end
@@ -7617,35 +6563,28 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:a=>nil, :pix=>"nil", :clr=>"0", :opts=>"0", :width=>"1", :height=>"1"}
+         @op[0] = OpenStruct.new({:a => :required, :pix => nil, :clr => 0, :opts => 0, :width => 1, :height => 1})
          
-           @op[0].a = :required
            def a var
              @op[@ii].a = var
            end
          
-           @op[0].pix = nil
            def pix var
              @op[@ii].pix = var
            end
          
-           @op[0].clr = 0
            def clr var
              @op[@ii].clr = var
            end
          
-           @op[0].opts = 0
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].width = 1
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 1
            def height var
              @op[@ii].height = var
            end
@@ -7669,30 +6608,24 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:a=>nil, :pix=>"nil", :opts=>"0", :width=>"1", :height=>"1"}
+         @op[0] = OpenStruct.new({:a => :required, :pix => nil, :opts => 0, :width => 1, :height => 1})
          
-           @op[0].a = :required
            def a var
              @op[@ii].a = var
            end
          
-           @op[0].pix = nil
            def pix var
              @op[@ii].pix = var
            end
          
-           @op[0].opts = 0
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].width = 1
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 1
            def height var
              @op[@ii].height = var
            end
@@ -7716,65 +6649,52 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:parent=>nil, :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_SPACING", :padRight=>"DEFAULT_SPACING", :padTop=>"DEFAULT_SPACING", :padBottom=>"DEFAULT_SPACING", :hSpacing=>"DEFAULT_SPACING", :vSpacing=>"DEFAULT_SPACING"}
+         @op[0] = OpenStruct.new({:parent => :required, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_SPACING, :padRight => DEFAULT_SPACING, :padTop => DEFAULT_SPACING, :padBottom => DEFAULT_SPACING, :hSpacing => DEFAULT_SPACING, :vSpacing => DEFAULT_SPACING})
          
-           @op[0].parent = :required
            def parent var
              @op[@ii].parent = var
            end
          
-           @op[0].opts = 0
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
          
-           @op[0].padLeft = DEFAULT_SPACING
            def pad_left var
              @op[@ii].padLeft = var
            end
          
-           @op[0].padRight = DEFAULT_SPACING
            def pad_right var
              @op[@ii].padRight = var
            end
          
-           @op[0].padTop = DEFAULT_SPACING
            def pad_top var
              @op[@ii].padTop = var
            end
          
-           @op[0].padBottom = DEFAULT_SPACING
            def pad_bottom var
              @op[@ii].padBottom = var
            end
          
-           @op[0].hSpacing = DEFAULT_SPACING
            def h_spacing var
              @op[@ii].hSpacing = var
            end
          
-           @op[0].vSpacing = DEFAULT_SPACING
            def v_spacing var
              @op[@ii].vSpacing = var
            end
@@ -7798,75 +6718,60 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:p=>nil, :text=>nil, :ic=>"nil", :target=>"nil", :selector=>"0", :opts=>"BUTTON_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_PAD", :padRight=>"DEFAULT_PAD", :padTop=>"DEFAULT_PAD", :padBottom=>"DEFAULT_PAD"}
+         @op[0] = OpenStruct.new({:p => :required, :text => :required, :ic => nil, :target => nil, :selector => 0, :opts => BUTTON_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
          
-           @op[0].p = :required
            def p var
              @op[@ii].p = var
            end
          
-           @op[0].text = :required
            def text var
              @op[@ii].text = var
            end
          
-           @op[0].ic = nil
            def ic var
              @op[@ii].ic = var
            end
          
-           @op[0].target = nil
            def target var
              @op[@ii].target = var
            end
          
-           @op[0].selector = 0
            def selector var
              @op[@ii].selector = var
            end
          
-           @op[0].opts = BUTTON_NORMAL
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
          
-           @op[0].padLeft = DEFAULT_PAD
            def pad_left var
              @op[@ii].padLeft = var
            end
          
-           @op[0].padRight = DEFAULT_PAD
            def pad_right var
              @op[@ii].padRight = var
            end
          
-           @op[0].padTop = DEFAULT_PAD
            def pad_top var
              @op[@ii].padTop = var
            end
          
-           @op[0].padBottom = DEFAULT_PAD
            def pad_bottom var
              @op[@ii].padBottom = var
            end
@@ -7890,35 +6795,28 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:owner=>nil, :opts=>"POPUP_VERTICAL|FRAME_RAISED|FRAME_THICK", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}
+         @op[0] = OpenStruct.new({:owner => :required, :opts => POPUP_VERTICAL|FRAME_RAISED|FRAME_THICK, :x => 0, :y => 0, :width => 0, :height => 0})
          
-           @op[0].owner = :required
            def owner var
              @op[@ii].owner = var
            end
          
-           @op[0].opts = POPUP_VERTICAL|FRAME_RAISED|FRAME_THICK
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
@@ -7942,40 +6840,32 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:owner=>nil, :name=>nil, :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}
+         @op[0] = OpenStruct.new({:owner => :required, :name => :required, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
          
-           @op[0].owner = :required
            def owner var
              @op[@ii].owner = var
            end
          
-           @op[0].name = :required
            def name var
              @op[@ii].name = var
            end
          
-           @op[0].opts = 0
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
@@ -7999,65 +6889,52 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:p=>nil, :target=>"nil", :selector=>"0", :opts=>"PROGRESSBAR_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_PAD", :padRight=>"DEFAULT_PAD", :padTop=>"DEFAULT_PAD", :padBottom=>"DEFAULT_PAD"}
+         @op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => PROGRESSBAR_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
          
-           @op[0].p = :required
            def p var
              @op[@ii].p = var
            end
          
-           @op[0].target = nil
            def target var
              @op[@ii].target = var
            end
          
-           @op[0].selector = 0
            def selector var
              @op[@ii].selector = var
            end
          
-           @op[0].opts = PROGRESSBAR_NORMAL
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
          
-           @op[0].padLeft = DEFAULT_PAD
            def pad_left var
              @op[@ii].padLeft = var
            end
          
-           @op[0].padRight = DEFAULT_PAD
            def pad_right var
              @op[@ii].padRight = var
            end
          
-           @op[0].padTop = DEFAULT_PAD
            def pad_top var
              @op[@ii].padTop = var
            end
          
-           @op[0].padBottom = DEFAULT_PAD
            def pad_bottom var
              @op[@ii].padBottom = var
            end
@@ -8081,45 +6958,36 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:owner=>nil, :caption=>nil, :label=>nil, :opts=>"PROGRESSDIALOG_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}
+         @op[0] = OpenStruct.new({:owner => :required, :caption => :required, :label => :required, :opts => PROGRESSDIALOG_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0})
          
-           @op[0].owner = :required
            def owner var
              @op[@ii].owner = var
            end
          
-           @op[0].caption = :required
            def caption var
              @op[@ii].caption = var
            end
          
-           @op[0].label = :required
            def label var
              @op[@ii].label = var
            end
          
-           @op[0].opts = PROGRESSDIALOG_NORMAL
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
@@ -8143,15 +7011,12 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:axis=>nil, :phi=>"0.0"}
+         @op[0] = OpenStruct.new({:axis => :required, :phi => 0.0})
          
-           @op[0].axis = :required
            def axis var
              @op[@ii].axis = var
            end
          
-           @op[0].phi = 0.0
            def phi var
              @op[@ii].phi = var
            end
@@ -8161,25 +7026,20 @@ module Fox
             @op[@ii].instance_block = block
          end
      
-         @op[1] = OpenStruct.new
-         #{:x=>nil, :y=>nil, :z=>nil, :w=>nil}
+         @op[1] = OpenStruct.new({:x => :required, :y => :required, :z => :required, :w => :required})
          
-           @op[1].x = :required
            def x var
              @op[@ii].x = var
            end
          
-           @op[1].y = :required
            def y var
              @op[@ii].y = var
            end
          
-           @op[1].z = :required
            def z var
              @op[@ii].z = var
            end
          
-           @op[1].w = :required
            def w var
              @op[@ii].w = var
            end
@@ -8189,10 +7049,8 @@ module Fox
             @op[@ii].instance_block = block
          end
      
-         @op[2] = OpenStruct.new
-         #{:floats=>nil}
+         @op[2] = OpenStruct.new({:floats => :required})
          
-           @op[2].floats = :required
            def floats var
              @op[@ii].floats = var
            end
@@ -8202,20 +7060,16 @@ module Fox
             @op[@ii].instance_block = block
          end
      
-         @op[3] = OpenStruct.new
-         #{:roll=>nil, :pitch=>nil, :yaw=>nil}
+         @op[3] = OpenStruct.new({:roll => :required, :pitch => :required, :yaw => :required})
          
-           @op[3].roll = :required
            def roll var
              @op[@ii].roll = var
            end
          
-           @op[3].pitch = :required
            def pitch var
              @op[@ii].pitch = var
            end
          
-           @op[3].yaw = :required
            def yaw var
              @op[@ii].yaw = var
            end
@@ -8225,20 +7079,16 @@ module Fox
             @op[@ii].instance_block = block
          end
      
-         @op[4] = OpenStruct.new
-         #{:ex=>nil, :ey=>nil, :ez=>nil}
+         @op[4] = OpenStruct.new({:ex => :required, :ey => :required, :ez => :required})
          
-           @op[4].ex = :required
            def ex var
              @op[@ii].ex = var
            end
          
-           @op[4].ey = :required
            def ey var
              @op[@ii].ey = var
            end
          
-           @op[4].ez = :required
            def ez var
              @op[@ii].ez = var
            end
@@ -8262,15 +7112,12 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:axis=>nil, :phi=>"0.0"}
+         @op[0] = OpenStruct.new({:axis => :required, :phi => 0.0})
          
-           @op[0].axis = :required
            def axis var
              @op[@ii].axis = var
            end
          
-           @op[0].phi = 0.0
            def phi var
              @op[@ii].phi = var
            end
@@ -8280,20 +7127,16 @@ module Fox
             @op[@ii].instance_block = block
          end
      
-         @op[1] = OpenStruct.new
-         #{:roll=>nil, :pitch=>nil, :yaw=>nil}
+         @op[1] = OpenStruct.new({:roll => :required, :pitch => :required, :yaw => :required})
          
-           @op[1].roll = :required
            def roll var
              @op[@ii].roll = var
            end
          
-           @op[1].pitch = :required
            def pitch var
              @op[@ii].pitch = var
            end
          
-           @op[1].yaw = :required
            def yaw var
              @op[@ii].yaw = var
            end
@@ -8303,20 +7146,16 @@ module Fox
             @op[@ii].instance_block = block
          end
      
-         @op[2] = OpenStruct.new
-         #{:ex=>nil, :ey=>nil, :ez=>nil}
+         @op[2] = OpenStruct.new({:ex => :required, :ey => :required, :ez => :required})
          
-           @op[2].ex = :required
            def ex var
              @op[@ii].ex = var
            end
          
-           @op[2].ey = :required
            def ey var
              @op[@ii].ey = var
            end
          
-           @op[2].ez = :required
            def ez var
              @op[@ii].ez = var
            end
@@ -8326,10 +7165,8 @@ module Fox
             @op[@ii].instance_block = block
          end
      
-         @op[3] = OpenStruct.new
-         #{:mat=>nil}
+         @op[3] = OpenStruct.new({:mat => :required})
          
-           @op[3].mat = :required
            def mat var
              @op[@ii].mat = var
            end
@@ -8339,25 +7176,20 @@ module Fox
             @op[@ii].instance_block = block
          end
      
-         @op[4] = OpenStruct.new
-         #{:x=>nil, :y=>nil, :z=>nil, :w=>nil}
+         @op[4] = OpenStruct.new({:x => :required, :y => :required, :z => :required, :w => :required})
          
-           @op[4].x = :required
            def x var
              @op[@ii].x = var
            end
          
-           @op[4].y = :required
            def y var
              @op[@ii].y = var
            end
          
-           @op[4].z = :required
            def z var
              @op[@ii].z = var
            end
          
-           @op[4].w = :required
            def w var
              @op[@ii].w = var
            end
@@ -8381,35 +7213,28 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:a=>nil, :pix=>"nil", :clr=>"0", :opts=>"0", :width=>"1", :height=>"1"}
+         @op[0] = OpenStruct.new({:a => :required, :pix => nil, :clr => 0, :opts => 0, :width => 1, :height => 1})
          
-           @op[0].a = :required
            def a var
              @op[@ii].a = var
            end
          
-           @op[0].pix = nil
            def pix var
              @op[@ii].pix = var
            end
          
-           @op[0].clr = 0
            def clr var
              @op[@ii].clr = var
            end
          
-           @op[0].opts = 0
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].width = 1
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 1
            def height var
              @op[@ii].height = var
            end
@@ -8433,30 +7258,24 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:a=>nil, :pix=>"nil", :opts=>"0", :width=>"1", :height=>"1"}
+         @op[0] = OpenStruct.new({:a => :required, :pix => nil, :opts => 0, :width => 1, :height => 1})
          
-           @op[0].a = :required
            def a var
              @op[@ii].a = var
            end
          
-           @op[0].pix = nil
            def pix var
              @op[@ii].pix = var
            end
          
-           @op[0].opts = 0
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].width = 1
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 1
            def height var
              @op[@ii].height = var
            end
@@ -8480,70 +7299,56 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:parent=>nil, :text=>nil, :target=>"nil", :selector=>"0", :opts=>"RADIOBUTTON_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_PAD", :padRight=>"DEFAULT_PAD", :padTop=>"DEFAULT_PAD", :padBottom=>"DEFAULT_PAD"}
+         @op[0] = OpenStruct.new({:parent => :required, :text => :required, :target => nil, :selector => 0, :opts => RADIOBUTTON_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
          
-           @op[0].parent = :required
            def parent var
              @op[@ii].parent = var
            end
          
-           @op[0].text = :required
            def text var
              @op[@ii].text = var
            end
          
-           @op[0].target = nil
            def target var
              @op[@ii].target = var
            end
          
-           @op[0].selector = 0
            def selector var
              @op[@ii].selector = var
            end
          
-           @op[0].opts = RADIOBUTTON_NORMAL
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
          
-           @op[0].padLeft = DEFAULT_PAD
            def pad_left var
              @op[@ii].padLeft = var
            end
          
-           @op[0].padRight = DEFAULT_PAD
            def pad_right var
              @op[@ii].padRight = var
            end
          
-           @op[0].padTop = DEFAULT_PAD
            def pad_top var
              @op[@ii].padTop = var
            end
          
-           @op[0].padBottom = DEFAULT_PAD
            def pad_bottom var
              @op[@ii].padBottom = var
            end
@@ -8567,35 +7372,28 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:xlo=>"0.0", :xhi=>"0.0", :ylo=>"0.0", :yhi=>"0.0", :zlo=>"0.0", :zhi=>"0.0"}
+         @op[0] = OpenStruct.new({:xlo => 0.0, :xhi => 0.0, :ylo => 0.0, :yhi => 0.0, :zlo => 0.0, :zhi => 0.0})
          
-           @op[0].xlo = 0.0
            def xlo var
              @op[@ii].xlo = var
            end
          
-           @op[0].xhi = 0.0
            def xhi var
              @op[@ii].xhi = var
            end
          
-           @op[0].ylo = 0.0
            def ylo var
              @op[@ii].ylo = var
            end
          
-           @op[0].yhi = 0.0
            def yhi var
              @op[@ii].yhi = var
            end
          
-           @op[0].zlo = 0.0
            def zlo var
              @op[@ii].zlo = var
            end
          
-           @op[0].zhi = 0.0
            def zhi var
              @op[@ii].zhi = var
            end
@@ -8605,10 +7403,8 @@ module Fox
             @op[@ii].instance_block = block
          end
      
-         @op[1] = OpenStruct.new
-         #{:bounds=>nil}
+         @op[1] = OpenStruct.new({:bounds => :required})
          
-           @op[1].bounds = :required
            def bounds var
              @op[@ii].bounds = var
            end
@@ -8618,10 +7414,8 @@ module Fox
             @op[@ii].instance_block = block
          end
      
-         @op[2] = OpenStruct.new
-         #{:sphere=>nil}
+         @op[2] = OpenStruct.new({:sphere => :required})
          
-           @op[2].sphere = :required
            def sphere var
              @op[@ii].sphere = var
            end
@@ -8645,35 +7439,28 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:xlo=>"0.0", :xhi=>"0.0", :ylo=>"0.0", :yhi=>"0.0", :zlo=>"0.0", :zhi=>"0.0"}
+         @op[0] = OpenStruct.new({:xlo => 0.0, :xhi => 0.0, :ylo => 0.0, :yhi => 0.0, :zlo => 0.0, :zhi => 0.0})
          
-           @op[0].xlo = 0.0
            def xlo var
              @op[@ii].xlo = var
            end
          
-           @op[0].xhi = 0.0
            def xhi var
              @op[@ii].xhi = var
            end
          
-           @op[0].ylo = 0.0
            def ylo var
              @op[@ii].ylo = var
            end
          
-           @op[0].yhi = 0.0
            def yhi var
              @op[@ii].yhi = var
            end
          
-           @op[0].zlo = 0.0
            def zlo var
              @op[@ii].zlo = var
            end
          
-           @op[0].zhi = 0.0
            def zhi var
              @op[@ii].zhi = var
            end
@@ -8683,10 +7470,8 @@ module Fox
             @op[@ii].instance_block = block
          end
      
-         @op[1] = OpenStruct.new
-         #{:bounds=>nil}
+         @op[1] = OpenStruct.new({:bounds => :required})
          
-           @op[1].bounds = :required
            def bounds var
              @op[@ii].bounds = var
            end
@@ -8696,10 +7481,8 @@ module Fox
             @op[@ii].instance_block = block
          end
      
-         @op[2] = OpenStruct.new
-         #{:sphere=>nil}
+         @op[2] = OpenStruct.new({:sphere => :required})
          
-           @op[2].sphere = :required
            def sphere var
              @op[@ii].sphere = var
            end
@@ -8723,65 +7506,52 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:p=>nil, :target=>"nil", :selector=>"0", :opts=>"REALSLIDER_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"0", :padRight=>"0", :padTop=>"0", :padBottom=>"0"}
+         @op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => REALSLIDER_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 0, :padRight => 0, :padTop => 0, :padBottom => 0})
          
-           @op[0].p = :required
            def p var
              @op[@ii].p = var
            end
          
-           @op[0].target = nil
            def target var
              @op[@ii].target = var
            end
          
-           @op[0].selector = 0
            def selector var
              @op[@ii].selector = var
            end
          
-           @op[0].opts = REALSLIDER_NORMAL
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
          
-           @op[0].padLeft = 0
            def pad_left var
              @op[@ii].padLeft = var
            end
          
-           @op[0].padRight = 0
            def pad_right var
              @op[@ii].padRight = var
            end
          
-           @op[0].padTop = 0
            def pad_top var
              @op[@ii].padTop = var
            end
          
-           @op[0].padBottom = 0
            def pad_bottom var
              @op[@ii].padBottom = var
            end
@@ -8805,70 +7575,56 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:p=>nil, :cols=>nil, :target=>"nil", :selector=>"0", :opts=>"REALSPIN_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_PAD", :padRight=>"DEFAULT_PAD", :padTop=>"DEFAULT_PAD", :padBottom=>"DEFAULT_PAD"}
+         @op[0] = OpenStruct.new({:p => :required, :cols => :required, :target => nil, :selector => 0, :opts => REALSPIN_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
          
-           @op[0].p = :required
            def p var
              @op[@ii].p = var
            end
          
-           @op[0].cols = :required
            def cols var
              @op[@ii].cols = var
            end
          
-           @op[0].target = nil
            def target var
              @op[@ii].target = var
            end
          
-           @op[0].selector = 0
            def selector var
              @op[@ii].selector = var
            end
          
-           @op[0].opts = REALSPIN_NORMAL
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
          
-           @op[0].padLeft = DEFAULT_PAD
            def pad_left var
              @op[@ii].padLeft = var
            end
          
-           @op[0].padRight = DEFAULT_PAD
            def pad_right var
              @op[@ii].padRight = var
            end
          
-           @op[0].padTop = DEFAULT_PAD
            def pad_top var
              @op[@ii].padTop = var
            end
          
-           @op[0].padBottom = DEFAULT_PAD
            def pad_bottom var
              @op[@ii].padBottom = var
            end
@@ -8892,10 +7648,8 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:a=>nil}
+         @op[0] = OpenStruct.new({:a => :required})
          
-           @op[0].a = :required
            def a var
              @op[@ii].a = var
            end
@@ -8905,25 +7659,20 @@ module Fox
             @op[@ii].instance_block = block
          end
      
-         @op[1] = OpenStruct.new
-         #{:a=>nil, :gp=>nil, :target=>"nil", :selector=>"0"}
+         @op[1] = OpenStruct.new({:a => :required, :gp => :required, :target => nil, :selector => 0})
          
-           @op[1].a = :required
            def a var
              @op[@ii].a = var
            end
          
-           @op[1].gp = :required
            def gp var
              @op[@ii].gp = var
            end
          
-           @op[1].target = nil
            def target var
              @op[@ii].target = var
            end
          
-           @op[1].selector = 0
            def selector var
              @op[@ii].selector = var
            end
@@ -8947,25 +7696,20 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:xx=>nil, :yy=>nil, :ww=>nil, :hh=>nil}
+         @op[0] = OpenStruct.new({:xx => :required, :yy => :required, :ww => :required, :hh => :required})
          
-           @op[0].xx = :required
            def xx var
              @op[@ii].xx = var
            end
          
-           @op[0].yy = :required
            def yy var
              @op[@ii].yy = var
            end
          
-           @op[0].ww = :required
            def ww var
              @op[@ii].ww = var
            end
          
-           @op[0].hh = :required
            def hh var
              @op[@ii].hh = var
            end
@@ -8975,15 +7719,12 @@ module Fox
             @op[@ii].instance_block = block
          end
      
-         @op[1] = OpenStruct.new
-         #{:p=>nil, :s=>nil}
+         @op[1] = OpenStruct.new({:p => :required, :s => :required})
          
-           @op[1].p = :required
            def p var
              @op[@ii].p = var
            end
          
-           @op[1].s = :required
            def s var
              @op[@ii].s = var
            end
@@ -8993,15 +7734,12 @@ module Fox
             @op[@ii].instance_block = block
          end
      
-         @op[2] = OpenStruct.new
-         #{:topleft=>nil, :bottomright=>nil}
+         @op[2] = OpenStruct.new({:topleft => :required, :bottomright => :required})
          
-           @op[2].topleft = :required
            def topleft var
              @op[@ii].topleft = var
            end
          
-           @op[2].bottomright = :required
            def bottomright var
              @op[@ii].bottomright = var
            end
@@ -9025,10 +7763,8 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:r=>nil}
+         @op[0] = OpenStruct.new({:r => :required})
          
-           @op[0].r = :required
            def r var
              @op[@ii].r = var
            end
@@ -9038,10 +7774,8 @@ module Fox
             @op[@ii].instance_block = block
          end
      
-         @op[1] = OpenStruct.new
-         #{:rect=>nil}
+         @op[1] = OpenStruct.new({:rect => :required})
          
-           @op[1].rect = :required
            def rect var
              @op[@ii].rect = var
            end
@@ -9051,25 +7785,20 @@ module Fox
             @op[@ii].instance_block = block
          end
      
-         @op[2] = OpenStruct.new
-         #{:x=>nil, :y=>nil, :w=>nil, :h=>nil}
+         @op[2] = OpenStruct.new({:x => :required, :y => :required, :w => :required, :h => :required})
          
-           @op[2].x = :required
            def x var
              @op[@ii].x = var
            end
          
-           @op[2].y = :required
            def y var
              @op[@ii].y = var
            end
          
-           @op[2].w = :required
            def w var
              @op[@ii].w = var
            end
          
-           @op[2].h = :required
            def h var
              @op[@ii].h = var
            end
@@ -9079,15 +7808,12 @@ module Fox
             @op[@ii].instance_block = block
          end
      
-         @op[3] = OpenStruct.new
-         #{:points=>nil, :winding=>"false"}
+         @op[3] = OpenStruct.new({:points => :required, :winding => false})
          
-           @op[3].points = :required
            def points var
              @op[@ii].points = var
            end
          
-           @op[3].winding = false
            def winding var
              @op[@ii].winding = var
            end
@@ -9111,15 +7837,12 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:appKey=>"\"\"", :vendorKey=>"\"\""}
+         @op[0] = OpenStruct.new({:appKey => "", :vendorKey => ""})
          
-           @op[0].appKey = ""
            def app_key var
              @op[@ii].appKey = var
            end
          
-           @op[0].vendorKey = ""
            def vendor_key var
              @op[@ii].vendorKey = var
            end
@@ -9143,45 +7866,36 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:owner=>nil, :caption=>nil, :ic=>"nil", :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}
+         @op[0] = OpenStruct.new({:owner => :required, :caption => :required, :ic => nil, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
          
-           @op[0].owner = :required
            def owner var
              @op[@ii].owner = var
            end
          
-           @op[0].caption = :required
            def caption var
              @op[@ii].caption = var
            end
          
-           @op[0].ic = nil
            def ic var
              @op[@ii].ic = var
            end
          
-           @op[0].opts = 0
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
@@ -9205,15 +7919,12 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:a=>nil, :vis=>nil}
+         @op[0] = OpenStruct.new({:a => :required, :vis => :required})
          
-           @op[0].a = :required
            def a var
              @op[@ii].a = var
            end
          
-           @op[0].vis = :required
            def vis var
              @op[@ii].vis = var
            end
@@ -9237,65 +7948,52 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:p=>nil, :target=>"nil", :selector=>"0", :opts=>"RULER_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_PAD", :padRight=>"DEFAULT_PAD", :padTop=>"DEFAULT_PAD", :padBottom=>"DEFAULT_PAD"}
+         @op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => RULER_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
          
-           @op[0].p = :required
            def p var
              @op[@ii].p = var
            end
          
-           @op[0].target = nil
            def target var
              @op[@ii].target = var
            end
          
-           @op[0].selector = 0
            def selector var
              @op[@ii].selector = var
            end
          
-           @op[0].opts = RULER_NORMAL
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
          
-           @op[0].padLeft = DEFAULT_PAD
            def pad_left var
              @op[@ii].padLeft = var
            end
          
-           @op[0].padRight = DEFAULT_PAD
            def pad_right var
              @op[@ii].padRight = var
            end
          
-           @op[0].padTop = DEFAULT_PAD
            def pad_top var
              @op[@ii].padTop = var
            end
          
-           @op[0].padBottom = DEFAULT_PAD
            def pad_bottom var
              @op[@ii].padBottom = var
            end
@@ -9319,45 +8017,36 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:p=>nil, :target=>"nil", :selector=>"0", :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}
+         @op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
          
-           @op[0].p = :required
            def p var
              @op[@ii].p = var
            end
          
-           @op[0].target = nil
            def target var
              @op[@ii].target = var
            end
          
-           @op[0].selector = 0
            def selector var
              @op[@ii].selector = var
            end
          
-           @op[0].opts = 0
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
@@ -9409,20 +8098,16 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:start=>nil, :last=>nil, :size=>nil}
+         @op[0] = OpenStruct.new({:start => :required, :last => :required, :size => :required})
          
-           @op[0].start = :required
            def start var
              @op[@ii].start = var
            end
          
-           @op[0].last = :required
            def last var
              @op[@ii].last = var
            end
          
-           @op[0].size = :required
            def size var
              @op[@ii].size = var
            end
@@ -9446,45 +8131,36 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:p=>nil, :target=>"nil", :selector=>"0", :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}
+         @op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
          
-           @op[0].p = :required
            def p var
              @op[@ii].p = var
            end
          
-           @op[0].target = nil
            def target var
              @op[@ii].target = var
            end
          
-           @op[0].selector = 0
            def selector var
              @op[@ii].selector = var
            end
          
-           @op[0].opts = 0
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
@@ -9508,35 +8184,28 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:parent=>nil, :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}
+         @op[0] = OpenStruct.new({:parent => :required, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
          
-           @op[0].parent = :required
            def parent var
              @op[@ii].parent = var
            end
          
-           @op[0].opts = 0
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
@@ -9560,45 +8229,36 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:p=>nil, :target=>"nil", :selector=>"0", :opts=>"SCROLLBAR_VERTICAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}
+         @op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => SCROLLBAR_VERTICAL, :x => 0, :y => 0, :width => 0, :height => 0})
          
-           @op[0].p = :required
            def p var
              @op[@ii].p = var
            end
          
-           @op[0].target = nil
            def target var
              @op[@ii].target = var
            end
          
-           @op[0].selector = 0
            def selector var
              @op[@ii].selector = var
            end
          
-           @op[0].opts = SCROLLBAR_VERTICAL
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
@@ -9622,10 +8282,8 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:p=>nil}
+         @op[0] = OpenStruct.new({:p => :required})
          
-           @op[0].p = :required
            def p var
              @op[@ii].p = var
            end
@@ -9649,20 +8307,16 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:owner=>nil, :nvis=>nil, :opts=>"0"}
+         @op[0] = OpenStruct.new({:owner => :required, :nvis => :required, :opts => 0})
          
-           @op[0].owner = :required
            def owner var
              @op[@ii].owner = var
            end
          
-           @op[0].nvis = :required
            def nvis var
              @op[@ii].nvis = var
            end
          
-           @op[0].opts = 0
            def opts var
              @op[@ii].opts = var
            end
@@ -9686,35 +8340,28 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:p=>nil, :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}
+         @op[0] = OpenStruct.new({:p => :required, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
          
-           @op[0].p = :required
            def p var
              @op[@ii].p = var
            end
          
-           @op[0].opts = 0
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
@@ -9738,45 +8385,36 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:owner=>nil, :caption=>nil, :ic=>"nil", :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}
+         @op[0] = OpenStruct.new({:owner => :required, :caption => :required, :ic => nil, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
          
-           @op[0].owner = :required
            def owner var
              @op[@ii].owner = var
            end
          
-           @op[0].caption = :required
            def caption var
              @op[@ii].caption = var
            end
          
-           @op[0].ic = nil
            def ic var
              @op[@ii].ic = var
            end
          
-           @op[0].opts = 0
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
@@ -9800,55 +8438,44 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:p=>nil, :opts=>"SEPARATOR_GROOVE|LAYOUT_FILL_X", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"0", :padRight=>"0", :padTop=>"0", :padBottom=>"0"}
+         @op[0] = OpenStruct.new({:p => :required, :opts => SEPARATOR_GROOVE|LAYOUT_FILL_X, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 0, :padRight => 0, :padTop => 0, :padBottom => 0})
          
-           @op[0].p = :required
            def p var
              @op[@ii].p = var
            end
          
-           @op[0].opts = SEPARATOR_GROOVE|LAYOUT_FILL_X
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
          
-           @op[0].padLeft = 0
            def pad_left var
              @op[@ii].padLeft = var
            end
          
-           @op[0].padRight = 0
            def pad_right var
              @op[@ii].padRight = var
            end
          
-           @op[0].padTop = 0
            def pad_top var
              @op[@ii].padTop = var
            end
          
-           @op[0].padBottom = 0
            def pad_bottom var
              @op[@ii].padBottom = var
            end
@@ -9872,55 +8499,44 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:p=>nil, :opts=>"SEPARATOR_GROOVE|LAYOUT_FILL_X", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"1", :padRight=>"1", :padTop=>"0", :padBottom=>"0"}
+         @op[0] = OpenStruct.new({:p => :required, :opts => SEPARATOR_GROOVE|LAYOUT_FILL_X, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 1, :padRight => 1, :padTop => 0, :padBottom => 0})
          
-           @op[0].p = :required
            def p var
              @op[@ii].p = var
            end
          
-           @op[0].opts = SEPARATOR_GROOVE|LAYOUT_FILL_X
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
          
-           @op[0].padLeft = 1
            def pad_left var
              @op[@ii].padLeft = var
            end
          
-           @op[0].padRight = 1
            def pad_right var
              @op[@ii].padRight = var
            end
          
-           @op[0].padTop = 0
            def pad_top var
              @op[@ii].padTop = var
            end
          
-           @op[0].padBottom = 0
            def pad_bottom var
              @op[@ii].padBottom = var
            end
@@ -9944,55 +8560,44 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:p=>nil, :opts=>"SEPARATOR_GROOVE|LAYOUT_FILL_Y", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"0", :padRight=>"0", :padTop=>"1", :padBottom=>"1"}
+         @op[0] = OpenStruct.new({:p => :required, :opts => SEPARATOR_GROOVE|LAYOUT_FILL_Y, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 0, :padRight => 0, :padTop => 1, :padBottom => 1})
          
-           @op[0].p = :required
            def p var
              @op[@ii].p = var
            end
          
-           @op[0].opts = SEPARATOR_GROOVE|LAYOUT_FILL_Y
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
          
-           @op[0].padLeft = 0
            def pad_left var
              @op[@ii].padLeft = var
            end
          
-           @op[0].padRight = 0
            def pad_right var
              @op[@ii].padRight = var
            end
          
-           @op[0].padTop = 1
            def pad_top var
              @op[@ii].padTop = var
            end
          
-           @op[0].padBottom = 1
            def pad_bottom var
              @op[@ii].padBottom = var
            end
@@ -10044,75 +8649,60 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:p=>nil, :text=>"\"\"", :icon=>"nil", :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_SPACING", :padRight=>"DEFAULT_SPACING", :padTop=>"DEFAULT_SPACING", :padBottom=>"DEFAULT_SPACING", :hSpacing=>"DEFAULT_SPACING", :vSpacing=>"DEFAULT_SPACING"}
+         @op[0] = OpenStruct.new({:p => :required, :text => "", :icon => nil, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_SPACING, :padRight => DEFAULT_SPACING, :padTop => DEFAULT_SPACING, :padBottom => DEFAULT_SPACING, :hSpacing => DEFAULT_SPACING, :vSpacing => DEFAULT_SPACING})
          
-           @op[0].p = :required
            def p var
              @op[@ii].p = var
            end
          
-           @op[0].text = ""
            def text var
              @op[@ii].text = var
            end
          
-           @op[0].icon = nil
            def icon var
              @op[@ii].icon = var
            end
          
-           @op[0].opts = 0
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
          
-           @op[0].padLeft = DEFAULT_SPACING
            def pad_left var
              @op[@ii].padLeft = var
            end
          
-           @op[0].padRight = DEFAULT_SPACING
            def pad_right var
              @op[@ii].padRight = var
            end
          
-           @op[0].padTop = DEFAULT_SPACING
            def pad_top var
              @op[@ii].padTop = var
            end
          
-           @op[0].padBottom = DEFAULT_SPACING
            def pad_bottom var
              @op[@ii].padBottom = var
            end
          
-           @op[0].hSpacing = DEFAULT_SPACING
            def h_spacing var
              @op[@ii].hSpacing = var
            end
          
-           @op[0].vSpacing = DEFAULT_SPACING
            def v_spacing var
              @op[@ii].vSpacing = var
            end
@@ -10136,75 +8726,60 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:p=>nil, :target=>"nil", :selector=>"0", :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_SPACING", :padRight=>"DEFAULT_SPACING", :padTop=>"DEFAULT_SPACING", :padBottom=>"DEFAULT_SPACING", :hSpacing=>"DEFAULT_SPACING", :vSpacing=>"DEFAULT_SPACING"}
+         @op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_SPACING, :padRight => DEFAULT_SPACING, :padTop => DEFAULT_SPACING, :padBottom => DEFAULT_SPACING, :hSpacing => DEFAULT_SPACING, :vSpacing => DEFAULT_SPACING})
          
-           @op[0].p = :required
            def p var
              @op[@ii].p = var
            end
          
-           @op[0].target = nil
            def target var
              @op[@ii].target = var
            end
          
-           @op[0].selector = 0
            def selector var
              @op[@ii].selector = var
            end
          
-           @op[0].opts = 0
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
          
-           @op[0].padLeft = DEFAULT_SPACING
            def pad_left var
              @op[@ii].padLeft = var
            end
          
-           @op[0].padRight = DEFAULT_SPACING
            def pad_right var
              @op[@ii].padRight = var
            end
          
-           @op[0].padTop = DEFAULT_SPACING
            def pad_top var
              @op[@ii].padTop = var
            end
          
-           @op[0].padBottom = DEFAULT_SPACING
            def pad_bottom var
              @op[@ii].padBottom = var
            end
          
-           @op[0].hSpacing = DEFAULT_SPACING
            def h_spacing var
              @op[@ii].hSpacing = var
            end
          
-           @op[0].vSpacing = DEFAULT_SPACING
            def v_spacing var
              @op[@ii].vSpacing = var
            end
@@ -10228,10 +8803,8 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:s=>nil}
+         @op[0] = OpenStruct.new({:s => :required})
          
-           @op[0].s = :required
            def s var
              @op[@ii].s = var
            end
@@ -10241,15 +8814,12 @@ module Fox
             @op[@ii].instance_block = block
          end
      
-         @op[1] = OpenStruct.new
-         #{:ww=>nil, :hh=>nil}
+         @op[1] = OpenStruct.new({:ww => :required, :hh => :required})
          
-           @op[1].ww = :required
            def ww var
              @op[@ii].ww = var
            end
          
-           @op[1].hh = :required
            def hh var
              @op[@ii].hh = var
            end
@@ -10273,65 +8843,52 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:p=>nil, :target=>"nil", :selector=>"0", :opts=>"SLIDER_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"0", :padRight=>"0", :padTop=>"0", :padBottom=>"0"}
+         @op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => SLIDER_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 0, :padRight => 0, :padTop => 0, :padBottom => 0})
          
-           @op[0].p = :required
            def p var
              @op[@ii].p = var
            end
          
-           @op[0].target = nil
            def target var
              @op[@ii].target = var
            end
          
-           @op[0].selector = 0
            def selector var
              @op[@ii].selector = var
            end
          
-           @op[0].opts = SLIDER_NORMAL
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
          
-           @op[0].padLeft = 0
            def pad_left var
              @op[@ii].padLeft = var
            end
          
-           @op[0].padRight = 0
            def pad_right var
              @op[@ii].padRight = var
            end
          
-           @op[0].padTop = 0
            def pad_top var
              @op[@ii].padTop = var
            end
          
-           @op[0].padBottom = 0
            def pad_bottom var
              @op[@ii].padBottom = var
            end
@@ -10355,10 +8912,8 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:otherSphere=>nil}
+         @op[0] = OpenStruct.new({:otherSphere => :required})
          
-           @op[0].otherSphere = :required
            def other_sphere var
              @op[@ii].otherSphere = var
            end
@@ -10368,15 +8923,12 @@ module Fox
             @op[@ii].instance_block = block
          end
      
-         @op[1] = OpenStruct.new
-         #{:cen=>nil, :rad=>"0.0"}
+         @op[1] = OpenStruct.new({:cen => :required, :rad => 0.0})
          
-           @op[1].cen = :required
            def cen var
              @op[@ii].cen = var
            end
          
-           @op[1].rad = 0.0
            def rad var
              @op[@ii].rad = var
            end
@@ -10386,25 +8938,20 @@ module Fox
             @op[@ii].instance_block = block
          end
      
-         @op[2] = OpenStruct.new
-         #{:x=>nil, :y=>nil, :z=>nil, :rad=>"0.0"}
+         @op[2] = OpenStruct.new({:x => :required, :y => :required, :z => :required, :rad => 0.0})
          
-           @op[2].x = :required
            def x var
              @op[@ii].x = var
            end
          
-           @op[2].y = :required
            def y var
              @op[@ii].y = var
            end
          
-           @op[2].z = :required
            def z var
              @op[@ii].z = var
            end
          
-           @op[2].rad = 0.0
            def rad var
              @op[@ii].rad = var
            end
@@ -10414,10 +8961,8 @@ module Fox
             @op[@ii].instance_block = block
          end
      
-         @op[3] = OpenStruct.new
-         #{:bounds=>nil}
+         @op[3] = OpenStruct.new({:bounds => :required})
          
-           @op[3].bounds = :required
            def bounds var
              @op[@ii].bounds = var
            end
@@ -10441,10 +8986,8 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:otherSphere=>nil}
+         @op[0] = OpenStruct.new({:otherSphere => :required})
          
-           @op[0].otherSphere = :required
            def other_sphere var
              @op[@ii].otherSphere = var
            end
@@ -10454,15 +8997,12 @@ module Fox
             @op[@ii].instance_block = block
          end
      
-         @op[1] = OpenStruct.new
-         #{:cen=>nil, :rad=>"0.0"}
+         @op[1] = OpenStruct.new({:cen => :required, :rad => 0.0})
          
-           @op[1].cen = :required
            def cen var
              @op[@ii].cen = var
            end
          
-           @op[1].rad = 0.0
            def rad var
              @op[@ii].rad = var
            end
@@ -10472,25 +9012,20 @@ module Fox
             @op[@ii].instance_block = block
          end
      
-         @op[2] = OpenStruct.new
-         #{:x=>nil, :y=>nil, :z=>nil, :rad=>"0.0"}
+         @op[2] = OpenStruct.new({:x => :required, :y => :required, :z => :required, :rad => 0.0})
          
-           @op[2].x = :required
            def x var
              @op[@ii].x = var
            end
          
-           @op[2].y = :required
            def y var
              @op[@ii].y = var
            end
          
-           @op[2].z = :required
            def z var
              @op[@ii].z = var
            end
          
-           @op[2].rad = 0.0
            def rad var
              @op[@ii].rad = var
            end
@@ -10500,10 +9035,8 @@ module Fox
             @op[@ii].instance_block = block
          end
      
-         @op[3] = OpenStruct.new
-         #{:bounds=>nil}
+         @op[3] = OpenStruct.new({:bounds => :required})
          
-           @op[3].bounds = :required
            def bounds var
              @op[@ii].bounds = var
            end
@@ -10527,70 +9060,56 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:p=>nil, :cols=>nil, :target=>"nil", :selector=>"0", :opts=>"SPIN_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_PAD", :padRight=>"DEFAULT_PAD", :padTop=>"DEFAULT_PAD", :padBottom=>"DEFAULT_PAD"}
+         @op[0] = OpenStruct.new({:p => :required, :cols => :required, :target => nil, :selector => 0, :opts => SPIN_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
          
-           @op[0].p = :required
            def p var
              @op[@ii].p = var
            end
          
-           @op[0].cols = :required
            def cols var
              @op[@ii].cols = var
            end
          
-           @op[0].target = nil
            def target var
              @op[@ii].target = var
            end
          
-           @op[0].selector = 0
            def selector var
              @op[@ii].selector = var
            end
          
-           @op[0].opts = SPIN_NORMAL
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
          
-           @op[0].padLeft = DEFAULT_PAD
            def pad_left var
              @op[@ii].padLeft = var
            end
          
-           @op[0].padRight = DEFAULT_PAD
            def pad_right var
              @op[@ii].padRight = var
            end
          
-           @op[0].padTop = DEFAULT_PAD
            def pad_top var
              @op[@ii].padTop = var
            end
          
-           @op[0].padBottom = DEFAULT_PAD
            def pad_bottom var
              @op[@ii].padBottom = var
            end
@@ -10614,25 +9133,20 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:owner=>nil, :icon=>nil, :opts=>"SPLASH_SIMPLE", :ms=>"5000"}
+         @op[0] = OpenStruct.new({:owner => :required, :icon => :required, :opts => SPLASH_SIMPLE, :ms => 5000})
          
-           @op[0].owner = :required
            def owner var
              @op[@ii].owner = var
            end
          
-           @op[0].icon = :required
            def icon var
              @op[@ii].icon = var
            end
          
-           @op[0].opts = SPLASH_SIMPLE
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].ms = 5000
            def ms var
              @op[@ii].ms = var
            end
@@ -10656,35 +9170,28 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:p=>nil, :opts=>"SPLITTER_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}
+         @op[0] = OpenStruct.new({:p => :required, :opts => SPLITTER_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0})
          
-           @op[0].p = :required
            def p var
              @op[@ii].p = var
            end
          
-           @op[0].opts = SPLITTER_NORMAL
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
@@ -10694,45 +9201,36 @@ module Fox
             @op[@ii].instance_block = block
          end
      
-         @op[1] = OpenStruct.new
-         #{:p=>nil, :tgt=>nil, :sel=>nil, :opts=>"SPLITTER_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}
+         @op[1] = OpenStruct.new({:p => :required, :tgt => :required, :sel => :required, :opts => SPLITTER_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0})
          
-           @op[1].p = :required
            def p var
              @op[@ii].p = var
            end
          
-           @op[1].tgt = :required
            def tgt var
              @op[@ii].tgt = var
            end
          
-           @op[1].sel = :required
            def sel var
              @op[@ii].sel = var
            end
          
-           @op[1].opts = SPLITTER_NORMAL
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[1].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[1].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[1].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[1].height = 0
            def height var
              @op[@ii].height = var
            end
@@ -10756,75 +9254,60 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:p=>nil, :opts=>"0", :relw=>"0", :relh=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_SPACING", :padRight=>"DEFAULT_SPACING", :padTop=>"DEFAULT_SPACING", :padBottom=>"DEFAULT_SPACING", :hSpacing=>"DEFAULT_SPACING", :vSpacing=>"DEFAULT_SPACING"}
+         @op[0] = OpenStruct.new({:p => :required, :opts => 0, :relw => 0, :relh => 0, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_SPACING, :padRight => DEFAULT_SPACING, :padTop => DEFAULT_SPACING, :padBottom => DEFAULT_SPACING, :hSpacing => DEFAULT_SPACING, :vSpacing => DEFAULT_SPACING})
          
-           @op[0].p = :required
            def p var
              @op[@ii].p = var
            end
          
-           @op[0].opts = 0
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].relw = 0
            def relw var
              @op[@ii].relw = var
            end
          
-           @op[0].relh = 0
            def relh var
              @op[@ii].relh = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
          
-           @op[0].padLeft = DEFAULT_SPACING
            def pad_left var
              @op[@ii].padLeft = var
            end
          
-           @op[0].padRight = DEFAULT_SPACING
            def pad_right var
              @op[@ii].padRight = var
            end
          
-           @op[0].padTop = DEFAULT_SPACING
            def pad_top var
              @op[@ii].padTop = var
            end
          
-           @op[0].padBottom = DEFAULT_SPACING
            def pad_bottom var
              @op[@ii].padBottom = var
            end
          
-           @op[0].hSpacing = DEFAULT_SPACING
            def h_spacing var
              @op[@ii].hSpacing = var
            end
          
-           @op[0].vSpacing = DEFAULT_SPACING
            def v_spacing var
              @op[@ii].vSpacing = var
            end
@@ -10848,65 +9331,52 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:p=>nil, :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"3", :padRight=>"3", :padTop=>"2", :padBottom=>"2", :hSpacing=>"4", :vSpacing=>"0"}
+         @op[0] = OpenStruct.new({:p => :required, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 3, :padRight => 3, :padTop => 2, :padBottom => 2, :hSpacing => 4, :vSpacing => 0})
          
-           @op[0].p = :required
            def p var
              @op[@ii].p = var
            end
          
-           @op[0].opts = 0
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
          
-           @op[0].padLeft = 3
            def pad_left var
              @op[@ii].padLeft = var
            end
          
-           @op[0].padRight = 3
            def pad_right var
              @op[@ii].padRight = var
            end
          
-           @op[0].padTop = 2
            def pad_top var
              @op[@ii].padTop = var
            end
          
-           @op[0].padBottom = 2
            def pad_bottom var
              @op[@ii].padBottom = var
            end
          
-           @op[0].hSpacing = 4
            def h_spacing var
              @op[@ii].hSpacing = var
            end
          
-           @op[0].vSpacing = 0
            def v_spacing var
              @op[@ii].vSpacing = var
            end
@@ -10930,20 +9400,16 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:p=>nil, :target=>"nil", :selector=>"0"}
+         @op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0})
          
-           @op[0].p = :required
            def p var
              @op[@ii].p = var
            end
          
-           @op[0].target = nil
            def target var
              @op[@ii].target = var
            end
          
-           @op[0].selector = 0
            def selector var
              @op[@ii].selector = var
            end
@@ -10967,10 +9433,8 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:cont=>"nil"}
+         @op[0] = OpenStruct.new({:cont => nil})
          
-           @op[0].cont = nil
            def cont var
              @op[@ii].cont = var
            end
@@ -11008,55 +9472,44 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:p=>nil, :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_SPACING", :padRight=>"DEFAULT_SPACING", :padTop=>"DEFAULT_SPACING", :padBottom=>"DEFAULT_SPACING"}
+         @op[0] = OpenStruct.new({:p => :required, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_SPACING, :padRight => DEFAULT_SPACING, :padTop => DEFAULT_SPACING, :padBottom => DEFAULT_SPACING})
          
-           @op[0].p = :required
            def p var
              @op[@ii].p = var
            end
          
-           @op[0].opts = 0
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
          
-           @op[0].padLeft = DEFAULT_SPACING
            def pad_left var
              @op[@ii].padLeft = var
            end
          
-           @op[0].padRight = DEFAULT_SPACING
            def pad_right var
              @op[@ii].padRight = var
            end
          
-           @op[0].padTop = DEFAULT_SPACING
            def pad_top var
              @op[@ii].padTop = var
            end
          
-           @op[0].padBottom = DEFAULT_SPACING
            def pad_bottom var
              @op[@ii].padBottom = var
            end
@@ -11080,35 +9533,28 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:a=>nil, :pix=>"nil", :clr=>"0", :opts=>"0", :width=>"1", :height=>"1"}
+         @op[0] = OpenStruct.new({:a => :required, :pix => nil, :clr => 0, :opts => 0, :width => 1, :height => 1})
          
-           @op[0].a = :required
            def a var
              @op[@ii].a = var
            end
          
-           @op[0].pix = nil
            def pix var
              @op[@ii].pix = var
            end
          
-           @op[0].clr = 0
            def clr var
              @op[@ii].clr = var
            end
          
-           @op[0].opts = 0
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].width = 1
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 1
            def height var
              @op[@ii].height = var
            end
@@ -11132,30 +9578,24 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:a=>nil, :pix=>"nil", :opts=>"0", :width=>"1", :height=>"1"}
+         @op[0] = OpenStruct.new({:a => :required, :pix => nil, :opts => 0, :width => 1, :height => 1})
          
-           @op[0].a = :required
            def a var
              @op[@ii].a = var
            end
          
-           @op[0].pix = nil
            def pix var
              @op[@ii].pix = var
            end
          
-           @op[0].opts = 0
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].width = 1
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 1
            def height var
              @op[@ii].height = var
            end
@@ -11179,35 +9619,28 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:a=>nil, :pix=>"nil", :clr=>"0", :opts=>"0", :width=>"1", :height=>"1"}
+         @op[0] = OpenStruct.new({:a => :required, :pix => nil, :clr => 0, :opts => 0, :width => 1, :height => 1})
          
-           @op[0].a = :required
            def a var
              @op[@ii].a = var
            end
          
-           @op[0].pix = nil
            def pix var
              @op[@ii].pix = var
            end
          
-           @op[0].clr = 0
            def clr var
              @op[@ii].clr = var
            end
          
-           @op[0].opts = 0
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].width = 1
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 1
            def height var
              @op[@ii].height = var
            end
@@ -11231,30 +9664,24 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:a=>nil, :pix=>"nil", :opts=>"0", :width=>"1", :height=>"1"}
+         @op[0] = OpenStruct.new({:a => :required, :pix => nil, :opts => 0, :width => 1, :height => 1})
          
-           @op[0].a = :required
            def a var
              @op[@ii].a = var
            end
          
-           @op[0].pix = nil
            def pix var
              @op[@ii].pix = var
            end
          
-           @op[0].opts = 0
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].width = 1
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 1
            def height var
              @op[@ii].height = var
            end
@@ -11278,65 +9705,52 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:p=>nil, :target=>"nil", :selector=>"0", :opts=>"TABBOOK_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_SPACING", :padRight=>"DEFAULT_SPACING", :padTop=>"DEFAULT_SPACING", :padBottom=>"DEFAULT_SPACING"}
+         @op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => TABBOOK_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_SPACING, :padRight => DEFAULT_SPACING, :padTop => DEFAULT_SPACING, :padBottom => DEFAULT_SPACING})
          
-           @op[0].p = :required
            def p var
              @op[@ii].p = var
            end
          
-           @op[0].target = nil
            def target var
              @op[@ii].target = var
            end
          
-           @op[0].selector = 0
            def selector var
              @op[@ii].selector = var
            end
          
-           @op[0].opts = TABBOOK_NORMAL
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
          
-           @op[0].padLeft = DEFAULT_SPACING
            def pad_left var
              @op[@ii].padLeft = var
            end
          
-           @op[0].padRight = DEFAULT_SPACING
            def pad_right var
              @op[@ii].padRight = var
            end
          
-           @op[0].padTop = DEFAULT_SPACING
            def pad_top var
              @op[@ii].padTop = var
            end
          
-           @op[0].padBottom = DEFAULT_SPACING
            def pad_bottom var
              @op[@ii].padBottom = var
            end
@@ -11360,65 +9774,52 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:p=>nil, :target=>"nil", :selector=>"0", :opts=>"TABBOOK_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_SPACING", :padRight=>"DEFAULT_SPACING", :padTop=>"DEFAULT_SPACING", :padBottom=>"DEFAULT_SPACING"}
+         @op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => TABBOOK_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_SPACING, :padRight => DEFAULT_SPACING, :padTop => DEFAULT_SPACING, :padBottom => DEFAULT_SPACING})
          
-           @op[0].p = :required
            def p var
              @op[@ii].p = var
            end
          
-           @op[0].target = nil
            def target var
              @op[@ii].target = var
            end
          
-           @op[0].selector = 0
            def selector var
              @op[@ii].selector = var
            end
          
-           @op[0].opts = TABBOOK_NORMAL
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
          
-           @op[0].padLeft = DEFAULT_SPACING
            def pad_left var
              @op[@ii].padLeft = var
            end
          
-           @op[0].padRight = DEFAULT_SPACING
            def pad_right var
              @op[@ii].padRight = var
            end
          
-           @op[0].padTop = DEFAULT_SPACING
            def pad_top var
              @op[@ii].padTop = var
            end
          
-           @op[0].padBottom = DEFAULT_SPACING
            def pad_bottom var
              @op[@ii].padBottom = var
            end
@@ -11442,65 +9843,52 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:p=>nil, :text=>nil, :ic=>"nil", :opts=>"TAB_TOP_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_PAD", :padRight=>"DEFAULT_PAD", :padTop=>"DEFAULT_PAD", :padBottom=>"DEFAULT_PAD"}
+         @op[0] = OpenStruct.new({:p => :required, :text => :required, :ic => nil, :opts => TAB_TOP_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
          
-           @op[0].p = :required
            def p var
              @op[@ii].p = var
            end
          
-           @op[0].text = :required
            def text var
              @op[@ii].text = var
            end
          
-           @op[0].ic = nil
            def ic var
              @op[@ii].ic = var
            end
          
-           @op[0].opts = TAB_TOP_NORMAL
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
          
-           @op[0].padLeft = DEFAULT_PAD
            def pad_left var
              @op[@ii].padLeft = var
            end
          
-           @op[0].padRight = DEFAULT_PAD
            def pad_right var
              @op[@ii].padRight = var
            end
          
-           @op[0].padTop = DEFAULT_PAD
            def pad_top var
              @op[@ii].padTop = var
            end
          
-           @op[0].padBottom = DEFAULT_PAD
            def pad_bottom var
              @op[@ii].padBottom = var
            end
@@ -11552,20 +9940,16 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:text=>nil, :icon=>"nil", :data=>"nil"}
+         @op[0] = OpenStruct.new({:text => :required, :icon => nil, :data => nil})
          
-           @op[0].text = :required
            def text var
              @op[@ii].text = var
            end
          
-           @op[0].icon = nil
            def icon var
              @op[@ii].icon = var
            end
          
-           @op[0].data = nil
            def data var
              @op[@ii].data = var
            end
@@ -11589,65 +9973,52 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:p=>nil, :target=>"nil", :selector=>"0", :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_MARGIN", :padRight=>"DEFAULT_MARGIN", :padTop=>"DEFAULT_MARGIN", :padBottom=>"DEFAULT_MARGIN"}
+         @op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_MARGIN, :padRight => DEFAULT_MARGIN, :padTop => DEFAULT_MARGIN, :padBottom => DEFAULT_MARGIN})
          
-           @op[0].p = :required
            def p var
              @op[@ii].p = var
            end
          
-           @op[0].target = nil
            def target var
              @op[@ii].target = var
            end
          
-           @op[0].selector = 0
            def selector var
              @op[@ii].selector = var
            end
          
-           @op[0].opts = 0
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
          
-           @op[0].padLeft = DEFAULT_MARGIN
            def pad_left var
              @op[@ii].padLeft = var
            end
          
-           @op[0].padRight = DEFAULT_MARGIN
            def pad_right var
              @op[@ii].padRight = var
            end
          
-           @op[0].padTop = DEFAULT_MARGIN
            def pad_top var
              @op[@ii].padTop = var
            end
          
-           @op[0].padBottom = DEFAULT_MARGIN
            def pad_bottom var
              @op[@ii].padBottom = var
            end
@@ -11699,65 +10070,52 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:p=>nil, :target=>"nil", :selector=>"0", :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"3", :padRight=>"3", :padTop=>"2", :padBottom=>"2"}
+         @op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 3, :padRight => 3, :padTop => 2, :padBottom => 2})
          
-           @op[0].p = :required
            def p var
              @op[@ii].p = var
            end
          
-           @op[0].target = nil
            def target var
              @op[@ii].target = var
            end
          
-           @op[0].selector = 0
            def selector var
              @op[@ii].selector = var
            end
          
-           @op[0].opts = 0
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
          
-           @op[0].padLeft = 3
            def pad_left var
              @op[@ii].padLeft = var
            end
          
-           @op[0].padRight = 3
            def pad_right var
              @op[@ii].padRight = var
            end
          
-           @op[0].padTop = 2
            def pad_top var
              @op[@ii].padTop = var
            end
          
-           @op[0].padBottom = 2
            def pad_bottom var
              @op[@ii].padBottom = var
            end
@@ -11781,70 +10139,56 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:p=>nil, :ncols=>nil, :target=>"nil", :selector=>"0", :opts=>"TEXTFIELD_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_PAD", :padRight=>"DEFAULT_PAD", :padTop=>"DEFAULT_PAD", :padBottom=>"DEFAULT_PAD"}
+         @op[0] = OpenStruct.new({:p => :required, :ncols => :required, :target => nil, :selector => 0, :opts => TEXTFIELD_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
          
-           @op[0].p = :required
            def p var
              @op[@ii].p = var
            end
          
-           @op[0].ncols = :required
            def ncols var
              @op[@ii].ncols = var
            end
          
-           @op[0].target = nil
            def target var
              @op[@ii].target = var
            end
          
-           @op[0].selector = 0
            def selector var
              @op[@ii].selector = var
            end
          
-           @op[0].opts = TEXTFIELD_NORMAL
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
          
-           @op[0].padLeft = DEFAULT_PAD
            def pad_left var
              @op[@ii].padLeft = var
            end
          
-           @op[0].padRight = DEFAULT_PAD
            def pad_right var
              @op[@ii].padRight = var
            end
          
-           @op[0].padTop = DEFAULT_PAD
            def pad_top var
              @op[@ii].padTop = var
            end
          
-           @op[0].padBottom = DEFAULT_PAD
            def pad_bottom var
              @op[@ii].padBottom = var
            end
@@ -11868,85 +10212,68 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:p=>nil, :text1=>nil, :text2=>nil, :icon1=>"nil", :icon2=>"nil", :target=>"nil", :selector=>"0", :opts=>"TOGGLEBUTTON_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_PAD", :padRight=>"DEFAULT_PAD", :padTop=>"DEFAULT_PAD", :padBottom=>"DEFAULT_PAD"}
+         @op[0] = OpenStruct.new({:p => :required, :text1 => :required, :text2 => :required, :icon1 => nil, :icon2 => nil, :target => nil, :selector => 0, :opts => TOGGLEBUTTON_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
          
-           @op[0].p = :required
            def p var
              @op[@ii].p = var
            end
          
-           @op[0].text1 = :required
            def text1 var
              @op[@ii].text1 = var
            end
          
-           @op[0].text2 = :required
            def text2 var
              @op[@ii].text2 = var
            end
          
-           @op[0].icon1 = nil
            def icon1 var
              @op[@ii].icon1 = var
            end
          
-           @op[0].icon2 = nil
            def icon2 var
              @op[@ii].icon2 = var
            end
          
-           @op[0].target = nil
            def target var
              @op[@ii].target = var
            end
          
-           @op[0].selector = 0
            def selector var
              @op[@ii].selector = var
            end
          
-           @op[0].opts = TOGGLEBUTTON_NORMAL
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
          
-           @op[0].padLeft = DEFAULT_PAD
            def pad_left var
              @op[@ii].padLeft = var
            end
          
-           @op[0].padRight = DEFAULT_PAD
            def pad_right var
              @op[@ii].padRight = var
            end
          
-           @op[0].padTop = DEFAULT_PAD
            def pad_top var
              @op[@ii].padTop = var
            end
          
-           @op[0].padBottom = DEFAULT_PAD
            def pad_bottom var
              @op[@ii].padBottom = var
            end
@@ -11970,70 +10297,56 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:p=>nil, :q=>nil, :opts=>"LAYOUT_TOP|LAYOUT_LEFT|LAYOUT_FILL_X", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"3", :padRight=>"3", :padTop=>"2", :padBottom=>"2", :hSpacing=>"DEFAULT_SPACING", :vSpacing=>"DEFAULT_SPACING"}
+         @op[0] = OpenStruct.new({:p => :required, :q => :required, :opts => LAYOUT_TOP|LAYOUT_LEFT|LAYOUT_FILL_X, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 3, :padRight => 3, :padTop => 2, :padBottom => 2, :hSpacing => DEFAULT_SPACING, :vSpacing => DEFAULT_SPACING})
          
-           @op[0].p = :required
            def p var
              @op[@ii].p = var
            end
          
-           @op[0].q = :required
            def q var
              @op[@ii].q = var
            end
          
-           @op[0].opts = LAYOUT_TOP|LAYOUT_LEFT|LAYOUT_FILL_X
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
          
-           @op[0].padLeft = 3
            def pad_left var
              @op[@ii].padLeft = var
            end
          
-           @op[0].padRight = 3
            def pad_right var
              @op[@ii].padRight = var
            end
          
-           @op[0].padTop = 2
            def pad_top var
              @op[@ii].padTop = var
            end
          
-           @op[0].padBottom = 2
            def pad_bottom var
              @op[@ii].padBottom = var
            end
          
-           @op[0].hSpacing = DEFAULT_SPACING
            def h_spacing var
              @op[@ii].hSpacing = var
            end
          
-           @op[0].vSpacing = DEFAULT_SPACING
            def v_spacing var
              @op[@ii].vSpacing = var
            end
@@ -12043,65 +10356,52 @@ module Fox
             @op[@ii].instance_block = block
          end
      
-         @op[1] = OpenStruct.new
-         #{:p=>nil, :opts=>"LAYOUT_TOP|LAYOUT_LEFT|LAYOUT_FILL_X", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"3", :padRight=>"3", :padTop=>"2", :padBottom=>"2", :hSpacing=>"DEFAULT_SPACING", :vSpacing=>"DEFAULT_SPACING"}
+         @op[1] = OpenStruct.new({:p => :required, :opts => LAYOUT_TOP|LAYOUT_LEFT|LAYOUT_FILL_X, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 3, :padRight => 3, :padTop => 2, :padBottom => 2, :hSpacing => DEFAULT_SPACING, :vSpacing => DEFAULT_SPACING})
          
-           @op[1].p = :required
            def p var
              @op[@ii].p = var
            end
          
-           @op[1].opts = LAYOUT_TOP|LAYOUT_LEFT|LAYOUT_FILL_X
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[1].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[1].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[1].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[1].height = 0
            def height var
              @op[@ii].height = var
            end
          
-           @op[1].padLeft = 3
            def pad_left var
              @op[@ii].padLeft = var
            end
          
-           @op[1].padRight = 3
            def pad_right var
              @op[@ii].padRight = var
            end
          
-           @op[1].padTop = 2
            def pad_top var
              @op[@ii].padTop = var
            end
          
-           @op[1].padBottom = 2
            def pad_bottom var
              @op[@ii].padBottom = var
            end
          
-           @op[1].hSpacing = DEFAULT_SPACING
            def h_spacing var
              @op[@ii].hSpacing = var
            end
          
-           @op[1].vSpacing = DEFAULT_SPACING
            def v_spacing var
              @op[@ii].vSpacing = var
            end
@@ -12125,45 +10425,36 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:p=>nil, :target=>"nil", :selector=>"0", :opts=>"TOOLBARGRIP_SINGLE", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}
+         @op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => TOOLBARGRIP_SINGLE, :x => 0, :y => 0, :width => 0, :height => 0})
          
-           @op[0].p = :required
            def p var
              @op[@ii].p = var
            end
          
-           @op[0].target = nil
            def target var
              @op[@ii].target = var
            end
          
-           @op[0].selector = 0
            def selector var
              @op[@ii].selector = var
            end
          
-           @op[0].opts = TOOLBARGRIP_SINGLE
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
@@ -12187,45 +10478,36 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:owner=>nil, :opts=>"FRAME_RAISED|FRAME_THICK", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :hSpacing=>"4", :vSpacing=>"4"}
+         @op[0] = OpenStruct.new({:owner => :required, :opts => FRAME_RAISED|FRAME_THICK, :x => 0, :y => 0, :width => 0, :height => 0, :hSpacing => 4, :vSpacing => 4})
          
-           @op[0].owner = :required
            def owner var
              @op[@ii].owner = var
            end
          
-           @op[0].opts = FRAME_RAISED|FRAME_THICK
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
          
-           @op[0].hSpacing = 4
            def h_spacing var
              @op[@ii].hSpacing = var
            end
          
-           @op[0].vSpacing = 4
            def v_spacing var
              @op[@ii].vSpacing = var
            end
@@ -12249,45 +10531,36 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:p=>nil, :target=>"nil", :selector=>"0", :opts=>"FRAME_RAISED", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}
+         @op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => FRAME_RAISED, :x => 0, :y => 0, :width => 0, :height => 0})
          
-           @op[0].p = :required
            def p var
              @op[@ii].p = var
            end
          
-           @op[0].target = nil
            def target var
              @op[@ii].target = var
            end
          
-           @op[0].selector = 0
            def selector var
              @op[@ii].selector = var
            end
          
-           @op[0].opts = FRAME_RAISED
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
@@ -12311,35 +10584,28 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:app=>nil, :opts=>"TOOLTIP_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}
+         @op[0] = OpenStruct.new({:app => :required, :opts => TOOLTIP_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0})
          
-           @op[0].app = :required
            def app var
              @op[@ii].app = var
            end
          
-           @op[0].opts = TOOLTIP_NORMAL
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
@@ -12377,10 +10643,8 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:a=>nil}
+         @op[0] = OpenStruct.new({:a => :required})
          
-           @op[0].a = :required
            def a var
              @op[@ii].a = var
            end
@@ -12404,25 +10668,20 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:text=>nil, :openIcon=>"nil", :closedIcon=>"nil", :data=>"nil"}
+         @op[0] = OpenStruct.new({:text => :required, :openIcon => nil, :closedIcon => nil, :data => nil})
          
-           @op[0].text = :required
            def text var
              @op[@ii].text = var
            end
          
-           @op[0].openIcon = nil
            def open_icon var
              @op[@ii].openIcon = var
            end
          
-           @op[0].closedIcon = nil
            def closed_icon var
              @op[@ii].closedIcon = var
            end
          
-           @op[0].data = nil
            def data var
              @op[@ii].data = var
            end
@@ -12446,45 +10705,36 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:p=>nil, :target=>"nil", :selector=>"0", :opts=>"TREELIST_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}
+         @op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => TREELIST_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0})
          
-           @op[0].p = :required
            def p var
              @op[@ii].p = var
            end
          
-           @op[0].target = nil
            def target var
              @op[@ii].target = var
            end
          
-           @op[0].selector = 0
            def selector var
              @op[@ii].selector = var
            end
          
-           @op[0].opts = TREELIST_NORMAL
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
@@ -12508,65 +10758,52 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:p=>nil, :target=>"nil", :selector=>"0", :opts=>"FRAME_SUNKEN|FRAME_THICK|TREELISTBOX_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_PAD", :padRight=>"DEFAULT_PAD", :padTop=>"DEFAULT_PAD", :padBottom=>"DEFAULT_PAD"}
+         @op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => FRAME_SUNKEN|FRAME_THICK|TREELISTBOX_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
          
-           @op[0].p = :required
            def p var
              @op[@ii].p = var
            end
          
-           @op[0].target = nil
            def target var
              @op[@ii].target = var
            end
          
-           @op[0].selector = 0
            def selector var
              @op[@ii].selector = var
            end
          
-           @op[0].opts = FRAME_SUNKEN|FRAME_THICK|TREELISTBOX_NORMAL
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
          
-           @op[0].padLeft = DEFAULT_PAD
            def pad_left var
              @op[@ii].padLeft = var
            end
          
-           @op[0].padRight = DEFAULT_PAD
            def pad_right var
              @op[@ii].padRight = var
            end
          
-           @op[0].padTop = DEFAULT_PAD
            def pad_top var
              @op[@ii].padTop = var
            end
          
-           @op[0].padBottom = DEFAULT_PAD
            def pad_bottom var
              @op[@ii].padBottom = var
            end
@@ -12590,95 +10827,76 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:p=>nil, :text1=>nil, :text2=>nil, :text3=>nil, :icon1=>"nil", :icon2=>"nil", :icon3=>"nil", :target=>"nil", :selector=>"0", :opts=>"TOGGLEBUTTON_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_PAD", :padRight=>"DEFAULT_PAD", :padTop=>"DEFAULT_PAD", :padBottom=>"DEFAULT_PAD"}
+         @op[0] = OpenStruct.new({:p => :required, :text1 => :required, :text2 => :required, :text3 => :required, :icon1 => nil, :icon2 => nil, :icon3 => nil, :target => nil, :selector => 0, :opts => TOGGLEBUTTON_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
          
-           @op[0].p = :required
            def p var
              @op[@ii].p = var
            end
          
-           @op[0].text1 = :required
            def text1 var
              @op[@ii].text1 = var
            end
          
-           @op[0].text2 = :required
            def text2 var
              @op[@ii].text2 = var
            end
          
-           @op[0].text3 = :required
            def text3 var
              @op[@ii].text3 = var
            end
          
-           @op[0].icon1 = nil
            def icon1 var
              @op[@ii].icon1 = var
            end
          
-           @op[0].icon2 = nil
            def icon2 var
              @op[@ii].icon2 = var
            end
          
-           @op[0].icon3 = nil
            def icon3 var
              @op[@ii].icon3 = var
            end
          
-           @op[0].target = nil
            def target var
              @op[@ii].target = var
            end
          
-           @op[0].selector = 0
            def selector var
              @op[@ii].selector = var
            end
          
-           @op[0].opts = TOGGLEBUTTON_NORMAL
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
          
-           @op[0].padLeft = DEFAULT_PAD
            def pad_left var
              @op[@ii].padLeft = var
            end
          
-           @op[0].padRight = DEFAULT_PAD
            def pad_right var
              @op[@ii].padRight = var
            end
          
-           @op[0].padTop = DEFAULT_PAD
            def pad_top var
              @op[@ii].padTop = var
            end
          
-           @op[0].padBottom = DEFAULT_PAD
            def pad_bottom var
              @op[@ii].padBottom = var
            end
@@ -12702,15 +10920,12 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:xx=>"0.0", :yy=>"0.0"}
+         @op[0] = OpenStruct.new({:xx => 0.0, :yy => 0.0})
          
-           @op[0].xx = 0.0
            def xx var
              @op[@ii].xx = var
            end
          
-           @op[0].yy = 0.0
            def yy var
              @op[@ii].yy = var
            end
@@ -12734,15 +10949,12 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:xx=>"0.0", :yy=>"0.0"}
+         @op[0] = OpenStruct.new({:xx => 0.0, :yy => 0.0})
          
-           @op[0].xx = 0.0
            def xx var
              @op[@ii].xx = var
            end
          
-           @op[0].yy = 0.0
            def yy var
              @op[@ii].yy = var
            end
@@ -12766,20 +10978,16 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:xx=>nil, :yy=>nil, :zz=>"1.0"}
+         @op[0] = OpenStruct.new({:xx => :required, :yy => :required, :zz => 1.0})
          
-           @op[0].xx = :required
            def xx var
              @op[@ii].xx = var
            end
          
-           @op[0].yy = :required
            def yy var
              @op[@ii].yy = var
            end
          
-           @op[0].zz = 1.0
            def zz var
              @op[@ii].zz = var
            end
@@ -12803,20 +11011,16 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:xx=>nil, :yy=>nil, :zz=>"1.0"}
+         @op[0] = OpenStruct.new({:xx => :required, :yy => :required, :zz => 1.0})
          
-           @op[0].xx = :required
            def xx var
              @op[@ii].xx = var
            end
          
-           @op[0].yy = :required
            def yy var
              @op[@ii].yy = var
            end
          
-           @op[0].zz = 1.0
            def zz var
              @op[@ii].zz = var
            end
@@ -12840,25 +11044,20 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:xx=>nil, :yy=>nil, :zz=>nil, :ww=>"1.0"}
+         @op[0] = OpenStruct.new({:xx => :required, :yy => :required, :zz => :required, :ww => 1.0})
          
-           @op[0].xx = :required
            def xx var
              @op[@ii].xx = var
            end
          
-           @op[0].yy = :required
            def yy var
              @op[@ii].yy = var
            end
          
-           @op[0].zz = :required
            def zz var
              @op[@ii].zz = var
            end
          
-           @op[0].ww = 1.0
            def ww var
              @op[@ii].ww = var
            end
@@ -12868,15 +11067,12 @@ module Fox
             @op[@ii].instance_block = block
          end
      
-         @op[1] = OpenStruct.new
-         #{:vec3d=>nil, :ww=>"1.0"}
+         @op[1] = OpenStruct.new({:vec3d => :required, :ww => 1.0})
          
-           @op[1].vec3d = :required
            def vec3d var
              @op[@ii].vec3d = var
            end
          
-           @op[1].ww = 1.0
            def ww var
              @op[@ii].ww = var
            end
@@ -12900,25 +11096,20 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:xx=>nil, :yy=>nil, :zz=>nil, :ww=>"1.0"}
+         @op[0] = OpenStruct.new({:xx => :required, :yy => :required, :zz => :required, :ww => 1.0})
          
-           @op[0].xx = :required
            def xx var
              @op[@ii].xx = var
            end
          
-           @op[0].yy = :required
            def yy var
              @op[@ii].yy = var
            end
          
-           @op[0].zz = :required
            def zz var
              @op[@ii].zz = var
            end
          
-           @op[0].ww = 1.0
            def ww var
              @op[@ii].ww = var
            end
@@ -12928,15 +11119,12 @@ module Fox
             @op[@ii].instance_block = block
          end
      
-         @op[1] = OpenStruct.new
-         #{:vec3f=>nil, :ww=>"1.0"}
+         @op[1] = OpenStruct.new({:vec3f => :required, :ww => 1.0})
          
-           @op[1].vec3f = :required
            def vec3f var
              @op[@ii].vec3f = var
            end
          
-           @op[1].ww = 1.0
            def ww var
              @op[@ii].ww = var
            end
@@ -12960,65 +11148,52 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:p=>nil, :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_SPACING", :padRight=>"DEFAULT_SPACING", :padTop=>"DEFAULT_SPACING", :padBottom=>"DEFAULT_SPACING", :hSpacing=>"DEFAULT_SPACING", :vSpacing=>"DEFAULT_SPACING"}
+         @op[0] = OpenStruct.new({:p => :required, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_SPACING, :padRight => DEFAULT_SPACING, :padTop => DEFAULT_SPACING, :padBottom => DEFAULT_SPACING, :hSpacing => DEFAULT_SPACING, :vSpacing => DEFAULT_SPACING})
          
-           @op[0].p = :required
            def p var
              @op[@ii].p = var
            end
          
-           @op[0].opts = 0
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
          
-           @op[0].padLeft = DEFAULT_SPACING
            def pad_left var
              @op[@ii].padLeft = var
            end
          
-           @op[0].padRight = DEFAULT_SPACING
            def pad_right var
              @op[@ii].padRight = var
            end
          
-           @op[0].padTop = DEFAULT_SPACING
            def pad_top var
              @op[@ii].padTop = var
            end
          
-           @op[0].padBottom = DEFAULT_SPACING
            def pad_bottom var
              @op[@ii].padBottom = var
            end
          
-           @op[0].hSpacing = DEFAULT_SPACING
            def h_spacing var
              @op[@ii].hSpacing = var
            end
          
-           @op[0].vSpacing = DEFAULT_SPACING
            def v_spacing var
              @op[@ii].vSpacing = var
            end
@@ -13042,20 +11217,16 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:a=>nil, :flgs=>nil, :d=>"32"}
+         @op[0] = OpenStruct.new({:a => :required, :flgs => :required, :d => 32})
          
-           @op[0].a = :required
            def a var
              @op[@ii].a = var
            end
          
-           @op[0].flgs = :required
            def flgs var
              @op[@ii].flgs = var
            end
          
-           @op[0].d = 32
            def d var
              @op[@ii].d = var
            end
@@ -13079,35 +11250,28 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:p=>nil, :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}
+         @op[0] = OpenStruct.new({:p => :required, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
          
-           @op[0].p = :required
            def p var
              @op[@ii].p = var
            end
          
-           @op[0].opts = 0
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
@@ -13117,15 +11281,12 @@ module Fox
             @op[@ii].instance_block = block
          end
      
-         @op[1] = OpenStruct.new
-         #{:a=>nil, :vis=>nil}
+         @op[1] = OpenStruct.new({:a => :required, :vis => :required})
          
-           @op[1].a = :required
            def a var
              @op[@ii].a = var
            end
          
-           @op[1].vis = :required
            def vis var
              @op[@ii].vis = var
            end
@@ -13135,40 +11296,32 @@ module Fox
             @op[@ii].instance_block = block
          end
      
-         @op[2] = OpenStruct.new
-         #{:a=>nil, :own=>nil, :opts=>nil, :x=>nil, :y=>nil, :w=>nil, :h=>nil}
+         @op[2] = OpenStruct.new({:a => :required, :own => :required, :opts => :required, :x => :required, :y => :required, :w => :required, :h => :required})
          
-           @op[2].a = :required
            def a var
              @op[@ii].a = var
            end
          
-           @op[2].own = :required
            def own var
              @op[@ii].own = var
            end
          
-           @op[2].opts = :required
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[2].x = :required
            def x var
              @op[@ii].x = var
            end
          
-           @op[2].y = :required
            def y var
              @op[@ii].y = var
            end
          
-           @op[2].w = :required
            def w var
              @op[@ii].w = var
            end
          
-           @op[2].h = :required
            def h var
              @op[@ii].h = var
            end
@@ -13192,75 +11345,60 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:owner=>nil, :name=>nil, :image=>nil, :opts=>"DECOR_TITLE|DECOR_BORDER|DECOR_RESIZE", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"10", :padRight=>"10", :padTop=>"10", :padBottom=>"10", :hSpacing=>"10", :vSpacing=>"10"}
+         @op[0] = OpenStruct.new({:owner => :required, :name => :required, :image => :required, :opts => DECOR_TITLE|DECOR_BORDER|DECOR_RESIZE, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 10, :padRight => 10, :padTop => 10, :padBottom => 10, :hSpacing => 10, :vSpacing => 10})
          
-           @op[0].owner = :required
            def owner var
              @op[@ii].owner = var
            end
          
-           @op[0].name = :required
            def name var
              @op[@ii].name = var
            end
          
-           @op[0].image = :required
            def image var
              @op[@ii].image = var
            end
          
-           @op[0].opts = DECOR_TITLE|DECOR_BORDER|DECOR_RESIZE
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].x = 0
            def x var
              @op[@ii].x = var
            end
          
-           @op[0].y = 0
            def y var
              @op[@ii].y = var
            end
          
-           @op[0].width = 0
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 0
            def height var
              @op[@ii].height = var
            end
          
-           @op[0].padLeft = 10
            def pad_left var
              @op[@ii].padLeft = var
            end
          
-           @op[0].padRight = 10
            def pad_right var
              @op[@ii].padRight = var
            end
          
-           @op[0].padTop = 10
            def pad_top var
              @op[@ii].padTop = var
            end
          
-           @op[0].padBottom = 10
            def pad_bottom var
              @op[@ii].padBottom = var
            end
          
-           @op[0].hSpacing = 10
            def h_spacing var
              @op[@ii].hSpacing = var
            end
          
-           @op[0].vSpacing = 10
            def v_spacing var
              @op[@ii].vSpacing = var
            end
@@ -13284,40 +11422,32 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:a=>nil, :pixels=>"nil", :mask=>"nil", :clr=>"0", :opts=>"0", :width=>"1", :height=>"1"}
+         @op[0] = OpenStruct.new({:a => :required, :pixels => nil, :mask => nil, :clr => 0, :opts => 0, :width => 1, :height => 1})
          
-           @op[0].a = :required
            def a var
              @op[@ii].a = var
            end
          
-           @op[0].pixels = nil
            def pixels var
              @op[@ii].pixels = var
            end
          
-           @op[0].mask = nil
            def mask var
              @op[@ii].mask = var
            end
          
-           @op[0].clr = 0
            def clr var
              @op[@ii].clr = var
            end
          
-           @op[0].opts = 0
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].width = 1
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 1
            def height var
              @op[@ii].height = var
            end
@@ -13341,35 +11471,28 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:a=>nil, :pixels=>"nil", :mask=>"nil", :opts=>"0", :width=>"1", :height=>"1"}
+         @op[0] = OpenStruct.new({:a => :required, :pixels => nil, :mask => nil, :opts => 0, :width => 1, :height => 1})
          
-           @op[0].a = :required
            def a var
              @op[@ii].a = var
            end
          
-           @op[0].pixels = nil
            def pixels var
              @op[@ii].pixels = var
            end
          
-           @op[0].mask = nil
            def mask var
              @op[@ii].mask = var
            end
          
-           @op[0].opts = 0
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].width = 1
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 1
            def height var
              @op[@ii].height = var
            end
@@ -13393,35 +11516,28 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:a=>nil, :pix=>"nil", :clr=>"0", :opts=>"0", :width=>"1", :height=>"1"}
+         @op[0] = OpenStruct.new({:a => :required, :pix => nil, :clr => 0, :opts => 0, :width => 1, :height => 1})
          
-           @op[0].a = :required
            def a var
              @op[@ii].a = var
            end
          
-           @op[0].pix = nil
            def pix var
              @op[@ii].pix = var
            end
          
-           @op[0].clr = 0
            def clr var
              @op[@ii].clr = var
            end
          
-           @op[0].opts = 0
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].width = 1
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 1
            def height var
              @op[@ii].height = var
            end
@@ -13445,30 +11561,24 @@ module Fox
      @ii = ii
      
      
-         @op[0] = OpenStruct.new
-         #{:a=>nil, :pix=>"nil", :opts=>"0", :width=>"1", :height=>"1"}
+         @op[0] = OpenStruct.new({:a => :required, :pix => nil, :opts => 0, :width => 1, :height => 1})
          
-           @op[0].a = :required
            def a var
              @op[@ii].a = var
            end
          
-           @op[0].pix = nil
            def pix var
              @op[@ii].pix = var
            end
          
-           @op[0].opts = 0
            def opts var
              @op[@ii].opts = var
            end
          
-           @op[0].width = 1
            def width var
              @op[@ii].width = var
            end
          
-           @op[0].height = 1
            def height var
              @op[@ii].height = var
            end

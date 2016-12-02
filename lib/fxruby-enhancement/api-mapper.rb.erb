@@ -56,10 +56,10 @@ module Fox
      @ii = ii
      <% @i=0 %>
      <% for @iniparams in @details[:initialize].compact %>
-         <%= "@op[#{@i}]" %> = OpenStruct.new
-         #<%= @iniparams %>
+         <%= "@op[#{@i}]" %> = OpenStruct.new({<%= @iniparams.map{ |p,d| [p, d ? d : ":required"] }
+                                                             .map{ |p,d| ":#{p} => #{d}"}
+                                                             .join(', ') %>})
          <% for @param, @default in @iniparams %>
-           <%= "@op[#{@i}].#{@param}" %> = <%= (@default) ? @default : ":required" %>
            def <%= "#{@param.snake}" %> var
              @op[@ii].<%= "#{@param}" %> = var
            end
