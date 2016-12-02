@@ -52,25 +52,22 @@ module Fox
      attr_accessor :_o     
    end
    def <%= @class.snake %> name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: <%= @class %>, op: [], ii: ii, fx: nil, kinder: []))
      <% @i=0 %>
      <% for @iniparams in @details[:initialize].compact %>
-         <%= "@op[#{@i}]" %> = OpenStruct.new({<%= @iniparams.map{ |p,d| [p, d ? d : ":required"] }
+         <%= "@os.op[#{@i}]" %> = OpenStruct.new({<%= @iniparams.map{ |p,d| [p, d ? d : ":required"] }
                                                              .map{ |p,d| ":#{p} => #{d}"}
                                                              .join(', ') %>})
          <% for @param, @default in @iniparams %>
-           def <%= "#{@param.snake}" %> var
-             @op[@ii].<%= "#{@param}" %> = var
-           end
+         def <%= "#{@param.snake}" %> var; @os.op[@op.ii].<%= "#{@param}" %> = var; end
          <% end %>
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
      <% @i+=1; end unless @details[:initialize].nil? %>     
      self.instance_eval &block
-     Enhancement.stack << <%= @class %>.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << <%= @class %>.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 <% end %>

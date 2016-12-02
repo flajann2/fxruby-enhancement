@@ -52,82 +52,53 @@ module Fox
      attr_accessor :_o     
    end
    def fx4_splitter name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FX4Splitter, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:p => :required, :opts => FOURSPLITTER_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0})
+         @os.op[0] = OpenStruct.new({:p => :required, :opts => FOURSPLITTER_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0})
          
-           def p var
-             @op[@ii].p = var
-           end
+         def p var; @os.op[@op.ii].p = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
      
-         @op[1] = OpenStruct.new({:p => :required, :tgt => :required, :sel => :required, :opts => FOURSPLITTER_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0})
+         @os.op[1] = OpenStruct.new({:p => :required, :tgt => :required, :sel => :required, :opts => FOURSPLITTER_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0})
          
-           def p var
-             @op[@ii].p = var
-           end
+         def p var; @os.op[@op.ii].p = var; end
          
-           def tgt var
-             @op[@ii].tgt = var
-           end
+         def tgt var; @os.op[@op.ii].tgt = var; end
          
-           def sel var
-             @op[@ii].sel = var
-           end
+         def sel var; @os.op[@op.ii].sel = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FX4Splitter.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FX4Splitter.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -136,63 +107,40 @@ module Fox
      attr_accessor :_o     
    end
    def fx7_segment name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FX7Segment, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:p => :required, :text => :required, :opts => SEVENSEGMENT_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
+         @os.op[0] = OpenStruct.new({:p => :required, :text => :required, :opts => SEVENSEGMENT_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
          
-           def p var
-             @op[@ii].p = var
-           end
+         def p var; @os.op[@op.ii].p = var; end
          
-           def text var
-             @op[@ii].text = var
-           end
+         def text var; @os.op[@op.ii].text = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
-           def pad_left var
-             @op[@ii].padLeft = var
-           end
+         def pad_left var; @os.op[@op.ii].padLeft = var; end
          
-           def pad_right var
-             @op[@ii].padRight = var
-           end
+         def pad_right var; @os.op[@op.ii].padRight = var; end
          
-           def pad_top var
-             @op[@ii].padTop = var
-           end
+         def pad_top var; @os.op[@op.ii].padTop = var; end
          
-           def pad_bottom var
-             @op[@ii].padBottom = var
-           end
+         def pad_bottom var; @os.op[@op.ii].padBottom = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FX7Segment.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FX7Segment.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -201,12 +149,11 @@ module Fox
      attr_accessor :_o     
    end
    def fx_accel_table name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXAccelTable, op: [], ii: ii, fx: nil, kinder: []))
      
           
      self.instance_eval &block
-     Enhancement.stack << FXAccelTable.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXAccelTable.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -215,12 +162,11 @@ module Fox
      attr_accessor :_o     
    end
    def fx_event name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXEvent, op: [], ii: ii, fx: nil, kinder: []))
      
           
      self.instance_eval &block
-     Enhancement.stack << FXEvent.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXEvent.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -229,27 +175,22 @@ module Fox
      attr_accessor :_o     
    end
    def fx_app name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXApp, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:appName => "Application", :vendorName => "FoxDefault"})
+         @os.op[0] = OpenStruct.new({:appName => "Application", :vendorName => "FoxDefault"})
          
-           def app_name var
-             @op[@ii].appName = var
-           end
+         def app_name var; @os.op[@op.ii].appName = var; end
          
-           def vendor_name var
-             @op[@ii].vendorName = var
-           end
+         def vendor_name var; @os.op[@op.ii].vendorName = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXApp.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXApp.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -258,67 +199,42 @@ module Fox
      attr_accessor :_o     
    end
    def fx_arrow_button name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXArrowButton, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:parent => :required, :target => nil, :selector => 0, :opts => ARROW_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
+         @os.op[0] = OpenStruct.new({:parent => :required, :target => nil, :selector => 0, :opts => ARROW_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
          
-           def parent var
-             @op[@ii].parent = var
-           end
+         def parent var; @os.op[@op.ii].parent = var; end
          
-           def target var
-             @op[@ii].target = var
-           end
+         def target var; @os.op[@op.ii].target = var; end
          
-           def selector var
-             @op[@ii].selector = var
-           end
+         def selector var; @os.op[@op.ii].selector = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
-           def pad_left var
-             @op[@ii].padLeft = var
-           end
+         def pad_left var; @os.op[@op.ii].padLeft = var; end
          
-           def pad_right var
-             @op[@ii].padRight = var
-           end
+         def pad_right var; @os.op[@op.ii].padRight = var; end
          
-           def pad_top var
-             @op[@ii].padTop = var
-           end
+         def pad_top var; @os.op[@op.ii].padTop = var; end
          
-           def pad_bottom var
-             @op[@ii].padBottom = var
-           end
+         def pad_bottom var; @os.op[@op.ii].padBottom = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXArrowButton.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXArrowButton.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -327,43 +243,30 @@ module Fox
      attr_accessor :_o     
    end
    def fxbmp_icon name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXBMPIcon, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:a => :required, :pix => nil, :clr => Fox.FXRGB(192,192,192), :opts => 0, :width => 1, :height => 1})
+         @os.op[0] = OpenStruct.new({:a => :required, :pix => nil, :clr => Fox.FXRGB(192,192,192), :opts => 0, :width => 1, :height => 1})
          
-           def a var
-             @op[@ii].a = var
-           end
+         def a var; @os.op[@op.ii].a = var; end
          
-           def pix var
-             @op[@ii].pix = var
-           end
+         def pix var; @os.op[@op.ii].pix = var; end
          
-           def clr var
-             @op[@ii].clr = var
-           end
+         def clr var; @os.op[@op.ii].clr = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXBMPIcon.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXBMPIcon.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -372,39 +275,28 @@ module Fox
      attr_accessor :_o     
    end
    def fxbmp_image name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXBMPImage, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:a => :required, :pix => nil, :opts => 0, :width => 1, :height => 1})
+         @os.op[0] = OpenStruct.new({:a => :required, :pix => nil, :opts => 0, :width => 1, :height => 1})
          
-           def a var
-             @op[@ii].a = var
-           end
+         def a var; @os.op[@op.ii].a = var; end
          
-           def pix var
-             @op[@ii].pix = var
-           end
+         def pix var; @os.op[@op.ii].pix = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXBMPImage.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXBMPImage.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -413,39 +305,28 @@ module Fox
      attr_accessor :_o     
    end
    def fx_bitmap name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXBitmap, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:app => :required, :pixels => nil, :opts => 0, :width => 1, :height => 1})
+         @os.op[0] = OpenStruct.new({:app => :required, :pixels => nil, :opts => 0, :width => 1, :height => 1})
          
-           def app var
-             @op[@ii].app = var
-           end
+         def app var; @os.op[@op.ii].app = var; end
          
-           def pixels var
-             @op[@ii].pixels = var
-           end
+         def pixels var; @os.op[@op.ii].pixels = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXBitmap.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXBitmap.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -454,63 +335,40 @@ module Fox
      attr_accessor :_o     
    end
    def fx_bitmap_frame name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXBitmapFrame, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:p => :required, :bmp => :required, :opts => FRAME_SUNKEN|FRAME_THICK, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 0, :padRight => 0, :padTop => 0, :padBottom => 0})
+         @os.op[0] = OpenStruct.new({:p => :required, :bmp => :required, :opts => FRAME_SUNKEN|FRAME_THICK, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 0, :padRight => 0, :padTop => 0, :padBottom => 0})
          
-           def p var
-             @op[@ii].p = var
-           end
+         def p var; @os.op[@op.ii].p = var; end
          
-           def bmp var
-             @op[@ii].bmp = var
-           end
+         def bmp var; @os.op[@op.ii].bmp = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
-           def pad_left var
-             @op[@ii].padLeft = var
-           end
+         def pad_left var; @os.op[@op.ii].padLeft = var; end
          
-           def pad_right var
-             @op[@ii].padRight = var
-           end
+         def pad_right var; @os.op[@op.ii].padRight = var; end
          
-           def pad_top var
-             @op[@ii].padTop = var
-           end
+         def pad_top var; @os.op[@op.ii].padTop = var; end
          
-           def pad_bottom var
-             @op[@ii].padBottom = var
-           end
+         def pad_bottom var; @os.op[@op.ii].padBottom = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXBitmapFrame.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXBitmapFrame.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -519,55 +377,36 @@ module Fox
      attr_accessor :_o     
    end
    def fx_bitmap_view name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXBitmapView, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:p => :required, :bmp => nil, :target => nil, :selector => 0, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
+         @os.op[0] = OpenStruct.new({:p => :required, :bmp => nil, :target => nil, :selector => 0, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
          
-           def p var
-             @op[@ii].p = var
-           end
+         def p var; @os.op[@op.ii].p = var; end
          
-           def bmp var
-             @op[@ii].bmp = var
-           end
+         def bmp var; @os.op[@op.ii].bmp = var; end
          
-           def target var
-             @op[@ii].target = var
-           end
+         def target var; @os.op[@op.ii].target = var; end
          
-           def selector var
-             @op[@ii].selector = var
-           end
+         def selector var; @os.op[@op.ii].selector = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXBitmapView.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXBitmapView.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -576,75 +415,46 @@ module Fox
      attr_accessor :_o     
    end
    def fx_button name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXButton, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:parent => :required, :text => :required, :icon => nil, :target => nil, :selector => 0, :opts => BUTTON_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
+         @os.op[0] = OpenStruct.new({:parent => :required, :text => :required, :icon => nil, :target => nil, :selector => 0, :opts => BUTTON_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
          
-           def parent var
-             @op[@ii].parent = var
-           end
+         def parent var; @os.op[@op.ii].parent = var; end
          
-           def text var
-             @op[@ii].text = var
-           end
+         def text var; @os.op[@op.ii].text = var; end
          
-           def icon var
-             @op[@ii].icon = var
-           end
+         def icon var; @os.op[@op.ii].icon = var; end
          
-           def target var
-             @op[@ii].target = var
-           end
+         def target var; @os.op[@op.ii].target = var; end
          
-           def selector var
-             @op[@ii].selector = var
-           end
+         def selector var; @os.op[@op.ii].selector = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
-           def pad_left var
-             @op[@ii].padLeft = var
-           end
+         def pad_left var; @os.op[@op.ii].padLeft = var; end
          
-           def pad_right var
-             @op[@ii].padRight = var
-           end
+         def pad_right var; @os.op[@op.ii].padRight = var; end
          
-           def pad_top var
-             @op[@ii].padTop = var
-           end
+         def pad_top var; @os.op[@op.ii].padTop = var; end
          
-           def pad_bottom var
-             @op[@ii].padBottom = var
-           end
+         def pad_bottom var; @os.op[@op.ii].padBottom = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXButton.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXButton.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -653,27 +463,22 @@ module Fox
      attr_accessor :_o     
    end
    def fxcur_cursor name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXCURCursor, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:app => :required, :pixels => :required})
+         @os.op[0] = OpenStruct.new({:app => :required, :pixels => :required})
          
-           def app var
-             @op[@ii].app = var
-           end
+         def app var; @os.op[@op.ii].app = var; end
          
-           def pixels var
-             @op[@ii].pixels = var
-           end
+         def pixels var; @os.op[@op.ii].pixels = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXCURCursor.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXCURCursor.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -682,51 +487,34 @@ module Fox
      attr_accessor :_o     
    end
    def fx_canvas name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXCanvas, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:parent => :required, :target => nil, :selector => 0, :opts => FRAME_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0})
+         @os.op[0] = OpenStruct.new({:parent => :required, :target => nil, :selector => 0, :opts => FRAME_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0})
          
-           def parent var
-             @op[@ii].parent = var
-           end
+         def parent var; @os.op[@op.ii].parent = var; end
          
-           def target var
-             @op[@ii].target = var
-           end
+         def target var; @os.op[@op.ii].target = var; end
          
-           def selector var
-             @op[@ii].selector = var
-           end
+         def selector var; @os.op[@op.ii].selector = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXCanvas.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXCanvas.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -735,71 +523,44 @@ module Fox
      attr_accessor :_o     
    end
    def fx_check_button name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXCheckButton, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:parent => :required, :text => :required, :target => nil, :selector => 0, :opts => CHECKBUTTON_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
+         @os.op[0] = OpenStruct.new({:parent => :required, :text => :required, :target => nil, :selector => 0, :opts => CHECKBUTTON_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
          
-           def parent var
-             @op[@ii].parent = var
-           end
+         def parent var; @os.op[@op.ii].parent = var; end
          
-           def text var
-             @op[@ii].text = var
-           end
+         def text var; @os.op[@op.ii].text = var; end
          
-           def target var
-             @op[@ii].target = var
-           end
+         def target var; @os.op[@op.ii].target = var; end
          
-           def selector var
-             @op[@ii].selector = var
-           end
+         def selector var; @os.op[@op.ii].selector = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
-           def pad_left var
-             @op[@ii].padLeft = var
-           end
+         def pad_left var; @os.op[@op.ii].padLeft = var; end
          
-           def pad_right var
-             @op[@ii].padRight = var
-           end
+         def pad_right var; @os.op[@op.ii].padRight = var; end
          
-           def pad_top var
-             @op[@ii].padTop = var
-           end
+         def pad_top var; @os.op[@op.ii].padTop = var; end
          
-           def pad_bottom var
-             @op[@ii].padBottom = var
-           end
+         def pad_bottom var; @os.op[@op.ii].padBottom = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXCheckButton.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXCheckButton.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -808,59 +569,38 @@ module Fox
      attr_accessor :_o     
    end
    def fx_choice_box name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXChoiceBox, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:owner => :required, :caption => :required, :text => :required, :icon => :required, :choices => :required, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
+         @os.op[0] = OpenStruct.new({:owner => :required, :caption => :required, :text => :required, :icon => :required, :choices => :required, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
          
-           def owner var
-             @op[@ii].owner = var
-           end
+         def owner var; @os.op[@op.ii].owner = var; end
          
-           def caption var
-             @op[@ii].caption = var
-           end
+         def caption var; @os.op[@op.ii].caption = var; end
          
-           def text var
-             @op[@ii].text = var
-           end
+         def text var; @os.op[@op.ii].text = var; end
          
-           def icon var
-             @op[@ii].icon = var
-           end
+         def icon var; @os.op[@op.ii].icon = var; end
          
-           def choices var
-             @op[@ii].choices = var
-           end
+         def choices var; @os.op[@op.ii].choices = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXChoiceBox.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXChoiceBox.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -869,67 +609,42 @@ module Fox
      attr_accessor :_o     
    end
    def fx_color_bar name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXColorBar, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:parent => :required, :target => nil, :selector => 0, :opts => FRAME_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
+         @os.op[0] = OpenStruct.new({:parent => :required, :target => nil, :selector => 0, :opts => FRAME_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
          
-           def parent var
-             @op[@ii].parent = var
-           end
+         def parent var; @os.op[@op.ii].parent = var; end
          
-           def target var
-             @op[@ii].target = var
-           end
+         def target var; @os.op[@op.ii].target = var; end
          
-           def selector var
-             @op[@ii].selector = var
-           end
+         def selector var; @os.op[@op.ii].selector = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
-           def pad_left var
-             @op[@ii].padLeft = var
-           end
+         def pad_left var; @os.op[@op.ii].padLeft = var; end
          
-           def pad_right var
-             @op[@ii].padRight = var
-           end
+         def pad_right var; @os.op[@op.ii].padRight = var; end
          
-           def pad_top var
-             @op[@ii].padTop = var
-           end
+         def pad_top var; @os.op[@op.ii].padTop = var; end
          
-           def pad_bottom var
-             @op[@ii].padBottom = var
-           end
+         def pad_bottom var; @os.op[@op.ii].padBottom = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXColorBar.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXColorBar.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -938,47 +653,32 @@ module Fox
      attr_accessor :_o     
    end
    def fx_color_dialog name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXColorDialog, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:owner => :required, :title => :required, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
+         @os.op[0] = OpenStruct.new({:owner => :required, :title => :required, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
          
-           def owner var
-             @op[@ii].owner = var
-           end
+         def owner var; @os.op[@op.ii].owner = var; end
          
-           def title var
-             @op[@ii].title = var
-           end
+         def title var; @os.op[@op.ii].title = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXColorDialog.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXColorDialog.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -987,31 +687,24 @@ module Fox
      attr_accessor :_o     
    end
    def fx_color_item name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXColorItem, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:text => :required, :clr => :required, :data => nil})
+         @os.op[0] = OpenStruct.new({:text => :required, :clr => :required, :data => nil})
          
-           def text var
-             @op[@ii].text = var
-           end
+         def text var; @os.op[@op.ii].text = var; end
          
-           def clr var
-             @op[@ii].clr = var
-           end
+         def clr var; @os.op[@op.ii].clr = var; end
          
-           def data var
-             @op[@ii].data = var
-           end
+         def data var; @os.op[@op.ii].data = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXColorItem.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXColorItem.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -1020,51 +713,34 @@ module Fox
      attr_accessor :_o     
    end
    def fx_color_list name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXColorList, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => LIST_BROWSESELECT, :x => 0, :y => 0, :width => 0, :height => 0})
+         @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => LIST_BROWSESELECT, :x => 0, :y => 0, :width => 0, :height => 0})
          
-           def p var
-             @op[@ii].p = var
-           end
+         def p var; @os.op[@op.ii].p = var; end
          
-           def target var
-             @op[@ii].target = var
-           end
+         def target var; @os.op[@op.ii].target = var; end
          
-           def selector var
-             @op[@ii].selector = var
-           end
+         def selector var; @os.op[@op.ii].selector = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXColorList.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXColorList.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -1073,67 +749,42 @@ module Fox
      attr_accessor :_o     
    end
    def fx_color_ring name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXColorRing, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => FRAME_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
+         @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => FRAME_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
          
-           def p var
-             @op[@ii].p = var
-           end
+         def p var; @os.op[@op.ii].p = var; end
          
-           def target var
-             @op[@ii].target = var
-           end
+         def target var; @os.op[@op.ii].target = var; end
          
-           def selector var
-             @op[@ii].selector = var
-           end
+         def selector var; @os.op[@op.ii].selector = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
-           def pad_left var
-             @op[@ii].padLeft = var
-           end
+         def pad_left var; @os.op[@op.ii].padLeft = var; end
          
-           def pad_right var
-             @op[@ii].padRight = var
-           end
+         def pad_right var; @os.op[@op.ii].padRight = var; end
          
-           def pad_top var
-             @op[@ii].padTop = var
-           end
+         def pad_top var; @os.op[@op.ii].padTop = var; end
          
-           def pad_bottom var
-             @op[@ii].padBottom = var
-           end
+         def pad_bottom var; @os.op[@op.ii].padBottom = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXColorRing.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXColorRing.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -1142,51 +793,34 @@ module Fox
      attr_accessor :_o     
    end
    def fx_color_selector name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXColorSelector, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:parent => :required, :target => nil, :selector => 0, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
+         @os.op[0] = OpenStruct.new({:parent => :required, :target => nil, :selector => 0, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
          
-           def parent var
-             @op[@ii].parent = var
-           end
+         def parent var; @os.op[@op.ii].parent = var; end
          
-           def target var
-             @op[@ii].target = var
-           end
+         def target var; @os.op[@op.ii].target = var; end
          
-           def selector var
-             @op[@ii].selector = var
-           end
+         def selector var; @os.op[@op.ii].selector = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXColorSelector.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXColorSelector.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -1195,71 +829,44 @@ module Fox
      attr_accessor :_o     
    end
    def fx_color_well name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXColorWell, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:parent => :required, :color => 0, :target => nil, :selector => 0, :opts => COLORWELL_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
+         @os.op[0] = OpenStruct.new({:parent => :required, :color => 0, :target => nil, :selector => 0, :opts => COLORWELL_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
          
-           def parent var
-             @op[@ii].parent = var
-           end
+         def parent var; @os.op[@op.ii].parent = var; end
          
-           def color var
-             @op[@ii].color = var
-           end
+         def color var; @os.op[@op.ii].color = var; end
          
-           def target var
-             @op[@ii].target = var
-           end
+         def target var; @os.op[@op.ii].target = var; end
          
-           def selector var
-             @op[@ii].selector = var
-           end
+         def selector var; @os.op[@op.ii].selector = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
-           def pad_left var
-             @op[@ii].padLeft = var
-           end
+         def pad_left var; @os.op[@op.ii].padLeft = var; end
          
-           def pad_right var
-             @op[@ii].padRight = var
-           end
+         def pad_right var; @os.op[@op.ii].padRight = var; end
          
-           def pad_top var
-             @op[@ii].padTop = var
-           end
+         def pad_top var; @os.op[@op.ii].padTop = var; end
          
-           def pad_bottom var
-             @op[@ii].padBottom = var
-           end
+         def pad_bottom var; @os.op[@op.ii].padBottom = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXColorWell.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXColorWell.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -1268,67 +875,42 @@ module Fox
      attr_accessor :_o     
    end
    def fx_color_wheel name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXColorWheel, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => FRAME_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
+         @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => FRAME_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
          
-           def p var
-             @op[@ii].p = var
-           end
+         def p var; @os.op[@op.ii].p = var; end
          
-           def target var
-             @op[@ii].target = var
-           end
+         def target var; @os.op[@op.ii].target = var; end
          
-           def selector var
-             @op[@ii].selector = var
-           end
+         def selector var; @os.op[@op.ii].selector = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
-           def pad_left var
-             @op[@ii].padLeft = var
-           end
+         def pad_left var; @os.op[@op.ii].padLeft = var; end
          
-           def pad_right var
-             @op[@ii].padRight = var
-           end
+         def pad_right var; @os.op[@op.ii].padRight = var; end
          
-           def pad_top var
-             @op[@ii].padTop = var
-           end
+         def pad_top var; @os.op[@op.ii].padTop = var; end
          
-           def pad_bottom var
-             @op[@ii].padBottom = var
-           end
+         def pad_bottom var; @os.op[@op.ii].padBottom = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXColorWheel.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXColorWheel.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -1337,71 +919,44 @@ module Fox
      attr_accessor :_o     
    end
    def fx_combo_box name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXComboBox, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:p => :required, :cols => :required, :target => nil, :selector => 0, :opts => COMBOBOX_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
+         @os.op[0] = OpenStruct.new({:p => :required, :cols => :required, :target => nil, :selector => 0, :opts => COMBOBOX_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
          
-           def p var
-             @op[@ii].p = var
-           end
+         def p var; @os.op[@op.ii].p = var; end
          
-           def cols var
-             @op[@ii].cols = var
-           end
+         def cols var; @os.op[@op.ii].cols = var; end
          
-           def target var
-             @op[@ii].target = var
-           end
+         def target var; @os.op[@op.ii].target = var; end
          
-           def selector var
-             @op[@ii].selector = var
-           end
+         def selector var; @os.op[@op.ii].selector = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
-           def pad_left var
-             @op[@ii].padLeft = var
-           end
+         def pad_left var; @os.op[@op.ii].padLeft = var; end
          
-           def pad_right var
-             @op[@ii].padRight = var
-           end
+         def pad_right var; @os.op[@op.ii].padRight = var; end
          
-           def pad_top var
-             @op[@ii].padTop = var
-           end
+         def pad_top var; @os.op[@op.ii].padTop = var; end
          
-           def pad_bottom var
-             @op[@ii].padBottom = var
-           end
+         def pad_bottom var; @os.op[@op.ii].padBottom = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXComboBox.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXComboBox.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -1410,43 +965,30 @@ module Fox
      attr_accessor :_o     
    end
    def fx_composite name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXComposite, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:parent => :required, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
+         @os.op[0] = OpenStruct.new({:parent => :required, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
          
-           def parent var
-             @op[@ii].parent = var
-           end
+         def parent var; @os.op[@op.ii].parent = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXComposite.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXComposite.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -1455,89 +997,60 @@ module Fox
      attr_accessor :_o     
    end
    def fx_cursor name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXCursor, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:a => :required, :curid => CURSOR_ARROW})
+         @os.op[0] = OpenStruct.new({:a => :required, :curid => CURSOR_ARROW})
          
-           def a var
-             @op[@ii].a = var
-           end
+         def a var; @os.op[@op.ii].a = var; end
          
-           def curid var
-             @op[@ii].curid = var
-           end
+         def curid var; @os.op[@op.ii].curid = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
      
-         @op[1] = OpenStruct.new({:a => :required, :pix => :required, :width => 32, :height => 32, :hotX => -1, :hotY => -1})
+         @os.op[1] = OpenStruct.new({:a => :required, :pix => :required, :width => 32, :height => 32, :hotX => -1, :hotY => -1})
          
-           def a var
-             @op[@ii].a = var
-           end
+         def a var; @os.op[@op.ii].a = var; end
          
-           def pix var
-             @op[@ii].pix = var
-           end
+         def pix var; @os.op[@op.ii].pix = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
-           def hot_x var
-             @op[@ii].hotX = var
-           end
+         def hot_x var; @os.op[@op.ii].hotX = var; end
          
-           def hot_y var
-             @op[@ii].hotY = var
-           end
+         def hot_y var; @os.op[@op.ii].hotY = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
      
-         @op[2] = OpenStruct.new({:a => :required, :pixels => :required, :width => 32, :height => 32, :hotX => -1, :hotY => -1})
+         @os.op[2] = OpenStruct.new({:a => :required, :pixels => :required, :width => 32, :height => 32, :hotX => -1, :hotY => -1})
          
-           def a var
-             @op[@ii].a = var
-           end
+         def a var; @os.op[@op.ii].a = var; end
          
-           def pixels var
-             @op[@ii].pixels = var
-           end
+         def pixels var; @os.op[@op.ii].pixels = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
-           def hot_x var
-             @op[@ii].hotX = var
-           end
+         def hot_x var; @os.op[@op.ii].hotX = var; end
          
-           def hot_y var
-             @op[@ii].hotY = var
-           end
+         def hot_y var; @os.op[@op.ii].hotY = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXCursor.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXCursor.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -1546,12 +1059,11 @@ module Fox
      attr_accessor :_o     
    end
    def fx_segment name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXSegment, op: [], ii: ii, fx: nil, kinder: []))
      
           
      self.instance_eval &block
-     Enhancement.stack << FXSegment.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXSegment.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -1560,12 +1072,11 @@ module Fox
      attr_accessor :_o     
    end
    def fx_arc name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXArc, op: [], ii: ii, fx: nil, kinder: []))
      
           
      self.instance_eval &block
-     Enhancement.stack << FXArc.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXArc.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -1574,23 +1085,20 @@ module Fox
      attr_accessor :_o     
    end
    def fxdc name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXDC, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:app => :required})
+         @os.op[0] = OpenStruct.new({:app => :required})
          
-           def app var
-             @op[@ii].app = var
-           end
+         def app var; @os.op[@op.ii].app = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXDC.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXDC.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -1599,12 +1107,11 @@ module Fox
      attr_accessor :_o     
    end
    def fxps_bounds name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXPSBounds, op: [], ii: ii, fx: nil, kinder: []))
      
           
      self.instance_eval &block
-     Enhancement.stack << FXPSBounds.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXPSBounds.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -1613,12 +1120,11 @@ module Fox
      attr_accessor :_o     
    end
    def fx_printer name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXPrinter, op: [], ii: ii, fx: nil, kinder: []))
      
           
      self.instance_eval &block
-     Enhancement.stack << FXPrinter.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXPrinter.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -1627,23 +1133,20 @@ module Fox
      attr_accessor :_o     
    end
    def fxdc_print name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXDCPrint, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:app => :required})
+         @os.op[0] = OpenStruct.new({:app => :required})
          
-           def app var
-             @op[@ii].app = var
-           end
+         def app var; @os.op[@op.ii].app = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXDCPrint.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXDCPrint.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -1652,27 +1155,22 @@ module Fox
      attr_accessor :_o     
    end
    def fxdc_window name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXDCWindow, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:drawable => :required, :event => nil})
+         @os.op[0] = OpenStruct.new({:drawable => :required, :event => nil})
          
-           def drawable var
-             @op[@ii].drawable = var
-           end
+         def drawable var; @os.op[@op.ii].drawable = var; end
          
-           def event var
-             @op[@ii].event = var
-           end
+         def event var; @os.op[@op.ii].event = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXDCWindow.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXDCWindow.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -1681,31 +1179,24 @@ module Fox
      attr_accessor :_o     
    end
    def fx_data_target name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXDataTarget, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:value => nil, :target => nil, :selector => 0})
+         @os.op[0] = OpenStruct.new({:value => nil, :target => nil, :selector => 0})
          
-           def value var
-             @op[@ii].value = var
-           end
+         def value var; @os.op[@op.ii].value = var; end
          
-           def target var
-             @op[@ii].target = var
-           end
+         def target var; @os.op[@op.ii].target = var; end
          
-           def selector var
-             @op[@ii].selector = var
-           end
+         def selector var; @os.op[@op.ii].selector = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXDataTarget.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXDataTarget.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -1714,12 +1205,11 @@ module Fox
      attr_accessor :_o     
    end
    def fx_debug_target name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXDebugTarget, op: [], ii: ii, fx: nil, kinder: []))
      
           
      self.instance_eval &block
-     Enhancement.stack << FXDebugTarget.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXDebugTarget.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -1728,23 +1218,20 @@ module Fox
      attr_accessor :_o     
    end
    def fx_delegator name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXDelegator, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:delegate => nil})
+         @os.op[0] = OpenStruct.new({:delegate => nil})
          
-           def delegate var
-             @op[@ii].delegate = var
-           end
+         def delegate var; @os.op[@op.ii].delegate = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXDelegator.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXDelegator.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -1753,67 +1240,42 @@ module Fox
      attr_accessor :_o     
    end
    def fx_dial name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXDial, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => DIAL_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
+         @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => DIAL_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
          
-           def p var
-             @op[@ii].p = var
-           end
+         def p var; @os.op[@op.ii].p = var; end
          
-           def target var
-             @op[@ii].target = var
-           end
+         def target var; @os.op[@op.ii].target = var; end
          
-           def selector var
-             @op[@ii].selector = var
-           end
+         def selector var; @os.op[@op.ii].selector = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
-           def pad_left var
-             @op[@ii].padLeft = var
-           end
+         def pad_left var; @os.op[@op.ii].padLeft = var; end
          
-           def pad_right var
-             @op[@ii].padRight = var
-           end
+         def pad_right var; @os.op[@op.ii].padRight = var; end
          
-           def pad_top var
-             @op[@ii].padTop = var
-           end
+         def pad_top var; @os.op[@op.ii].padTop = var; end
          
-           def pad_bottom var
-             @op[@ii].padBottom = var
-           end
+         def pad_bottom var; @os.op[@op.ii].padBottom = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXDial.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXDial.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -1822,71 +1284,44 @@ module Fox
      attr_accessor :_o     
    end
    def fx_dialog_box name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXDialogBox, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:owner => :required, :title => :required, :opts => DECOR_TITLE|DECOR_BORDER, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 10, :padRight => 10, :padTop => 10, :padBottom => 10, :hSpacing => 4, :vSpacing => 4})
+         @os.op[0] = OpenStruct.new({:owner => :required, :title => :required, :opts => DECOR_TITLE|DECOR_BORDER, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 10, :padRight => 10, :padTop => 10, :padBottom => 10, :hSpacing => 4, :vSpacing => 4})
          
-           def owner var
-             @op[@ii].owner = var
-           end
+         def owner var; @os.op[@op.ii].owner = var; end
          
-           def title var
-             @op[@ii].title = var
-           end
+         def title var; @os.op[@op.ii].title = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
-           def pad_left var
-             @op[@ii].padLeft = var
-           end
+         def pad_left var; @os.op[@op.ii].padLeft = var; end
          
-           def pad_right var
-             @op[@ii].padRight = var
-           end
+         def pad_right var; @os.op[@op.ii].padRight = var; end
          
-           def pad_top var
-             @op[@ii].padTop = var
-           end
+         def pad_top var; @os.op[@op.ii].padTop = var; end
          
-           def pad_bottom var
-             @op[@ii].padBottom = var
-           end
+         def pad_bottom var; @os.op[@op.ii].padBottom = var; end
          
-           def h_spacing var
-             @op[@ii].hSpacing = var
-           end
+         def h_spacing var; @os.op[@op.ii].hSpacing = var; end
          
-           def v_spacing var
-             @op[@ii].vSpacing = var
-           end
+         def v_spacing var; @os.op[@op.ii].vSpacing = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXDialogBox.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXDialogBox.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -1895,12 +1330,11 @@ module Fox
      attr_accessor :_o     
    end
    def fx_dict name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXDict, op: [], ii: ii, fx: nil, kinder: []))
      
           
      self.instance_eval &block
-     Enhancement.stack << FXDict.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXDict.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -1909,67 +1343,42 @@ module Fox
      attr_accessor :_o     
    end
    def fx_dir_box name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXDirBox, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => FRAME_SUNKEN|FRAME_THICK|TREELISTBOX_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
+         @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => FRAME_SUNKEN|FRAME_THICK|TREELISTBOX_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
          
-           def p var
-             @op[@ii].p = var
-           end
+         def p var; @os.op[@op.ii].p = var; end
          
-           def target var
-             @op[@ii].target = var
-           end
+         def target var; @os.op[@op.ii].target = var; end
          
-           def selector var
-             @op[@ii].selector = var
-           end
+         def selector var; @os.op[@op.ii].selector = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
-           def pad_left var
-             @op[@ii].padLeft = var
-           end
+         def pad_left var; @os.op[@op.ii].padLeft = var; end
          
-           def pad_right var
-             @op[@ii].padRight = var
-           end
+         def pad_right var; @os.op[@op.ii].padRight = var; end
          
-           def pad_top var
-             @op[@ii].padTop = var
-           end
+         def pad_top var; @os.op[@op.ii].padTop = var; end
          
-           def pad_bottom var
-             @op[@ii].padBottom = var
-           end
+         def pad_bottom var; @os.op[@op.ii].padBottom = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXDirBox.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXDirBox.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -1978,47 +1387,32 @@ module Fox
      attr_accessor :_o     
    end
    def fx_dir_dialog name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXDirDialog, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:owner => :required, :name => :required, :opts => 0, :x => 0, :y => 0, :width => 500, :height => 300})
+         @os.op[0] = OpenStruct.new({:owner => :required, :name => :required, :opts => 0, :x => 0, :y => 0, :width => 500, :height => 300})
          
-           def owner var
-             @op[@ii].owner = var
-           end
+         def owner var; @os.op[@op.ii].owner = var; end
          
-           def name var
-             @op[@ii].name = var
-           end
+         def name var; @os.op[@op.ii].name = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXDirDialog.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXDirDialog.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -2027,35 +1421,26 @@ module Fox
      attr_accessor :_o     
    end
    def fx_dir_item name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXDirItem, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:text => :required, :oi => nil, :ci => nil, :data => nil})
+         @os.op[0] = OpenStruct.new({:text => :required, :oi => nil, :ci => nil, :data => nil})
          
-           def text var
-             @op[@ii].text = var
-           end
+         def text var; @os.op[@op.ii].text = var; end
          
-           def oi var
-             @op[@ii].oi = var
-           end
+         def oi var; @os.op[@op.ii].oi = var; end
          
-           def ci var
-             @op[@ii].ci = var
-           end
+         def ci var; @os.op[@op.ii].ci = var; end
          
-           def data var
-             @op[@ii].data = var
-           end
+         def data var; @os.op[@op.ii].data = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXDirItem.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXDirItem.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -2064,51 +1449,34 @@ module Fox
      attr_accessor :_o     
    end
    def fx_dir_list name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXDirList, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
+         @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
          
-           def p var
-             @op[@ii].p = var
-           end
+         def p var; @os.op[@op.ii].p = var; end
          
-           def target var
-             @op[@ii].target = var
-           end
+         def target var; @os.op[@op.ii].target = var; end
          
-           def selector var
-             @op[@ii].selector = var
-           end
+         def selector var; @os.op[@op.ii].selector = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXDirList.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXDirList.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -2117,51 +1485,34 @@ module Fox
      attr_accessor :_o     
    end
    def fx_dir_selector name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXDirSelector, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
+         @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
          
-           def p var
-             @op[@ii].p = var
-           end
+         def p var; @os.op[@op.ii].p = var; end
          
-           def target var
-             @op[@ii].target = var
-           end
+         def target var; @os.op[@op.ii].target = var; end
          
-           def selector var
-             @op[@ii].selector = var
-           end
+         def selector var; @os.op[@op.ii].selector = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXDirSelector.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXDirSelector.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -2170,126 +1521,75 @@ module Fox
      attr_accessor :_o     
    end
    def fx_dock_bar name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXDockBar, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:p => :required, :q => :required, :opts => LAYOUT_TOP|LAYOUT_LEFT|LAYOUT_FILL_X, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 3, :padRight => 3, :padTop => 2, :padBottom => 2, :hSpacing => DEFAULT_SPACING, :vSpacing => DEFAULT_SPACING})
+         @os.op[0] = OpenStruct.new({:p => :required, :q => :required, :opts => LAYOUT_TOP|LAYOUT_LEFT|LAYOUT_FILL_X, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 3, :padRight => 3, :padTop => 2, :padBottom => 2, :hSpacing => DEFAULT_SPACING, :vSpacing => DEFAULT_SPACING})
          
-           def p var
-             @op[@ii].p = var
-           end
+         def p var; @os.op[@op.ii].p = var; end
          
-           def q var
-             @op[@ii].q = var
-           end
+         def q var; @os.op[@op.ii].q = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
-           def pad_left var
-             @op[@ii].padLeft = var
-           end
+         def pad_left var; @os.op[@op.ii].padLeft = var; end
          
-           def pad_right var
-             @op[@ii].padRight = var
-           end
+         def pad_right var; @os.op[@op.ii].padRight = var; end
          
-           def pad_top var
-             @op[@ii].padTop = var
-           end
+         def pad_top var; @os.op[@op.ii].padTop = var; end
          
-           def pad_bottom var
-             @op[@ii].padBottom = var
-           end
+         def pad_bottom var; @os.op[@op.ii].padBottom = var; end
          
-           def h_spacing var
-             @op[@ii].hSpacing = var
-           end
+         def h_spacing var; @os.op[@op.ii].hSpacing = var; end
          
-           def v_spacing var
-             @op[@ii].vSpacing = var
-           end
+         def v_spacing var; @os.op[@op.ii].vSpacing = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
      
-         @op[1] = OpenStruct.new({:p => :required, :opts => LAYOUT_TOP|LAYOUT_LEFT|LAYOUT_FILL_X, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 3, :padRight => 3, :padTop => 2, :padBottom => 2, :hSpacing => DEFAULT_SPACING, :vSpacing => DEFAULT_SPACING})
+         @os.op[1] = OpenStruct.new({:p => :required, :opts => LAYOUT_TOP|LAYOUT_LEFT|LAYOUT_FILL_X, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 3, :padRight => 3, :padTop => 2, :padBottom => 2, :hSpacing => DEFAULT_SPACING, :vSpacing => DEFAULT_SPACING})
          
-           def p var
-             @op[@ii].p = var
-           end
+         def p var; @os.op[@op.ii].p = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
-           def pad_left var
-             @op[@ii].padLeft = var
-           end
+         def pad_left var; @os.op[@op.ii].padLeft = var; end
          
-           def pad_right var
-             @op[@ii].padRight = var
-           end
+         def pad_right var; @os.op[@op.ii].padRight = var; end
          
-           def pad_top var
-             @op[@ii].padTop = var
-           end
+         def pad_top var; @os.op[@op.ii].padTop = var; end
          
-           def pad_bottom var
-             @op[@ii].padBottom = var
-           end
+         def pad_bottom var; @os.op[@op.ii].padBottom = var; end
          
-           def h_spacing var
-             @op[@ii].hSpacing = var
-           end
+         def h_spacing var; @os.op[@op.ii].hSpacing = var; end
          
-           def v_spacing var
-             @op[@ii].vSpacing = var
-           end
+         def v_spacing var; @os.op[@op.ii].vSpacing = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXDockBar.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXDockBar.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -2298,67 +1598,42 @@ module Fox
      attr_accessor :_o     
    end
    def fx_dock_handler name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXDockHandler, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:p => :required, :tgt => :required, :sel => :required, :opts => :required, :x => :required, :y => :required, :w => :required, :h => :required, :pl => :required, :pr => :required, :pt => :required, :pb => :required})
+         @os.op[0] = OpenStruct.new({:p => :required, :tgt => :required, :sel => :required, :opts => :required, :x => :required, :y => :required, :w => :required, :h => :required, :pl => :required, :pr => :required, :pt => :required, :pb => :required})
          
-           def p var
-             @op[@ii].p = var
-           end
+         def p var; @os.op[@op.ii].p = var; end
          
-           def tgt var
-             @op[@ii].tgt = var
-           end
+         def tgt var; @os.op[@op.ii].tgt = var; end
          
-           def sel var
-             @op[@ii].sel = var
-           end
+         def sel var; @os.op[@op.ii].sel = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def w var
-             @op[@ii].w = var
-           end
+         def w var; @os.op[@op.ii].w = var; end
          
-           def h var
-             @op[@ii].h = var
-           end
+         def h var; @os.op[@op.ii].h = var; end
          
-           def pl var
-             @op[@ii].pl = var
-           end
+         def pl var; @os.op[@op.ii].pl = var; end
          
-           def pr var
-             @op[@ii].pr = var
-           end
+         def pr var; @os.op[@op.ii].pr = var; end
          
-           def pt var
-             @op[@ii].pt = var
-           end
+         def pt var; @os.op[@op.ii].pt = var; end
          
-           def pb var
-             @op[@ii].pb = var
-           end
+         def pb var; @os.op[@op.ii].pb = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXDockHandler.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXDockHandler.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -2367,67 +1642,42 @@ module Fox
      attr_accessor :_o     
    end
    def fx_dock_site name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXDockSite, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:p => :required, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 0, :padRight => 0, :padTop => 0, :padBottom => 0, :hSpacing => 0, :vSpacing => 0})
+         @os.op[0] = OpenStruct.new({:p => :required, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 0, :padRight => 0, :padTop => 0, :padBottom => 0, :hSpacing => 0, :vSpacing => 0})
          
-           def p var
-             @op[@ii].p = var
-           end
+         def p var; @os.op[@op.ii].p = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
-           def pad_left var
-             @op[@ii].padLeft = var
-           end
+         def pad_left var; @os.op[@op.ii].padLeft = var; end
          
-           def pad_right var
-             @op[@ii].padRight = var
-           end
+         def pad_right var; @os.op[@op.ii].padRight = var; end
          
-           def pad_top var
-             @op[@ii].padTop = var
-           end
+         def pad_top var; @os.op[@op.ii].padTop = var; end
          
-           def pad_bottom var
-             @op[@ii].padBottom = var
-           end
+         def pad_bottom var; @os.op[@op.ii].padBottom = var; end
          
-           def h_spacing var
-             @op[@ii].hSpacing = var
-           end
+         def h_spacing var; @os.op[@op.ii].hSpacing = var; end
          
-           def v_spacing var
-             @op[@ii].vSpacing = var
-           end
+         def v_spacing var; @os.op[@op.ii].vSpacing = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXDockSite.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXDockSite.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -2436,71 +1686,44 @@ module Fox
      attr_accessor :_o     
    end
    def fx_dock_title name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXDockTitle, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:p => :required, :text => :required, :target => nil, :selector => 0, :opts => FRAME_NORMAL|JUSTIFY_CENTER_X|JUSTIFY_CENTER_Y, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 0, :padRight => 0, :padTop => 0, :padBottom => 0})
+         @os.op[0] = OpenStruct.new({:p => :required, :text => :required, :target => nil, :selector => 0, :opts => FRAME_NORMAL|JUSTIFY_CENTER_X|JUSTIFY_CENTER_Y, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 0, :padRight => 0, :padTop => 0, :padBottom => 0})
          
-           def p var
-             @op[@ii].p = var
-           end
+         def p var; @os.op[@op.ii].p = var; end
          
-           def text var
-             @op[@ii].text = var
-           end
+         def text var; @os.op[@op.ii].text = var; end
          
-           def target var
-             @op[@ii].target = var
-           end
+         def target var; @os.op[@op.ii].target = var; end
          
-           def selector var
-             @op[@ii].selector = var
-           end
+         def selector var; @os.op[@op.ii].selector = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
-           def pad_left var
-             @op[@ii].padLeft = var
-           end
+         def pad_left var; @os.op[@op.ii].padLeft = var; end
          
-           def pad_right var
-             @op[@ii].padRight = var
-           end
+         def pad_right var; @os.op[@op.ii].padRight = var; end
          
-           def pad_top var
-             @op[@ii].padTop = var
-           end
+         def pad_top var; @os.op[@op.ii].padTop = var; end
          
-           def pad_bottom var
-             @op[@ii].padBottom = var
-           end
+         def pad_bottom var; @os.op[@op.ii].padBottom = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXDockTitle.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXDockTitle.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -2509,12 +1732,11 @@ module Fox
      attr_accessor :_o     
    end
    def fx_document name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXDocument, op: [], ii: ii, fx: nil, kinder: []))
      
           
      self.instance_eval &block
-     Enhancement.stack << FXDocument.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXDocument.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -2523,23 +1745,20 @@ module Fox
      attr_accessor :_o     
    end
    def fx_drag_corner name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXDragCorner, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:p => :required})
+         @os.op[0] = OpenStruct.new({:p => :required})
          
-           def p var
-             @op[@ii].p = var
-           end
+         def p var; @os.op[@op.ii].p = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXDragCorner.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXDragCorner.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -2548,12 +1767,11 @@ module Fox
      attr_accessor :_o     
    end
    def fx_drawable name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXDrawable, op: [], ii: ii, fx: nil, kinder: []))
      
           
      self.instance_eval &block
-     Enhancement.stack << FXDrawable.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXDrawable.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -2562,67 +1780,42 @@ module Fox
      attr_accessor :_o     
    end
    def fx_drive_box name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXDriveBox, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => FRAME_SUNKEN|FRAME_THICK|LISTBOX_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
+         @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => FRAME_SUNKEN|FRAME_THICK|LISTBOX_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
          
-           def p var
-             @op[@ii].p = var
-           end
+         def p var; @os.op[@op.ii].p = var; end
          
-           def target var
-             @op[@ii].target = var
-           end
+         def target var; @os.op[@op.ii].target = var; end
          
-           def selector var
-             @op[@ii].selector = var
-           end
+         def selector var; @os.op[@op.ii].selector = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
-           def pad_left var
-             @op[@ii].padLeft = var
-           end
+         def pad_left var; @os.op[@op.ii].padLeft = var; end
          
-           def pad_right var
-             @op[@ii].padRight = var
-           end
+         def pad_right var; @os.op[@op.ii].padRight = var; end
          
-           def pad_top var
-             @op[@ii].padTop = var
-           end
+         def pad_top var; @os.op[@op.ii].padTop = var; end
          
-           def pad_bottom var
-             @op[@ii].padBottom = var
-           end
+         def pad_bottom var; @os.op[@op.ii].padBottom = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXDriveBox.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXDriveBox.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -2631,61 +1824,46 @@ module Fox
      attr_accessor :_o     
    end
    def fx_extentd name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXExtentd, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:ext => :required})
+         @os.op[0] = OpenStruct.new({:ext => :required})
          
-           def ext var
-             @op[@ii].ext = var
-           end
+         def ext var; @os.op[@op.ii].ext = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
      
-         @op[1] = OpenStruct.new({:lo => :required, :hi => :required})
+         @os.op[1] = OpenStruct.new({:lo => :required, :hi => :required})
          
-           def lo var
-             @op[@ii].lo = var
-           end
+         def lo var; @os.op[@op.ii].lo = var; end
          
-           def hi var
-             @op[@ii].hi = var
-           end
+         def hi var; @os.op[@op.ii].hi = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
      
-         @op[2] = OpenStruct.new({:xlo => :required, :xhi => :required, :ylo => :required, :yhi => :required})
+         @os.op[2] = OpenStruct.new({:xlo => :required, :xhi => :required, :ylo => :required, :yhi => :required})
          
-           def xlo var
-             @op[@ii].xlo = var
-           end
+         def xlo var; @os.op[@op.ii].xlo = var; end
          
-           def xhi var
-             @op[@ii].xhi = var
-           end
+         def xhi var; @os.op[@op.ii].xhi = var; end
          
-           def ylo var
-             @op[@ii].ylo = var
-           end
+         def ylo var; @os.op[@op.ii].ylo = var; end
          
-           def yhi var
-             @op[@ii].yhi = var
-           end
+         def yhi var; @os.op[@op.ii].yhi = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXExtentd.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXExtentd.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -2694,61 +1872,46 @@ module Fox
      attr_accessor :_o     
    end
    def fx_extentf name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXExtentf, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:ext => :required})
+         @os.op[0] = OpenStruct.new({:ext => :required})
          
-           def ext var
-             @op[@ii].ext = var
-           end
+         def ext var; @os.op[@op.ii].ext = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
      
-         @op[1] = OpenStruct.new({:lo => :required, :hi => :required})
+         @os.op[1] = OpenStruct.new({:lo => :required, :hi => :required})
          
-           def lo var
-             @op[@ii].lo = var
-           end
+         def lo var; @os.op[@op.ii].lo = var; end
          
-           def hi var
-             @op[@ii].hi = var
-           end
+         def hi var; @os.op[@op.ii].hi = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
      
-         @op[2] = OpenStruct.new({:xlo => :required, :xhi => :required, :ylo => :required, :yhi => :required})
+         @os.op[2] = OpenStruct.new({:xlo => :required, :xhi => :required, :ylo => :required, :yhi => :required})
          
-           def xlo var
-             @op[@ii].xlo = var
-           end
+         def xlo var; @os.op[@op.ii].xlo = var; end
          
-           def xhi var
-             @op[@ii].xhi = var
-           end
+         def xhi var; @os.op[@op.ii].xhi = var; end
          
-           def ylo var
-             @op[@ii].ylo = var
-           end
+         def ylo var; @os.op[@op.ii].ylo = var; end
          
-           def yhi var
-             @op[@ii].yhi = var
-           end
+         def yhi var; @os.op[@op.ii].yhi = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXExtentf.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXExtentf.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -2757,47 +1920,32 @@ module Fox
      attr_accessor :_o     
    end
    def fx_file_dialog name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXFileDialog, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:owner => :required, :name => :required, :opts => 0, :x => 0, :y => 0, :width => 500, :height => 300})
+         @os.op[0] = OpenStruct.new({:owner => :required, :name => :required, :opts => 0, :x => 0, :y => 0, :width => 500, :height => 300})
          
-           def owner var
-             @op[@ii].owner = var
-           end
+         def owner var; @os.op[@op.ii].owner = var; end
          
-           def name var
-             @op[@ii].name = var
-           end
+         def name var; @os.op[@op.ii].name = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXFileDialog.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXFileDialog.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -2806,12 +1954,11 @@ module Fox
      attr_accessor :_o     
    end
    def fx_file_assoc name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXFileAssoc, op: [], ii: ii, fx: nil, kinder: []))
      
           
      self.instance_eval &block
-     Enhancement.stack << FXFileAssoc.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXFileAssoc.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -2820,27 +1967,22 @@ module Fox
      attr_accessor :_o     
    end
    def fx_file_dict name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXFileDict, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:app => :required, :db => nil})
+         @os.op[0] = OpenStruct.new({:app => :required, :db => nil})
          
-           def app var
-             @op[@ii].app = var
-           end
+         def app var; @os.op[@op.ii].app = var; end
          
-           def db var
-             @op[@ii].db = var
-           end
+         def db var; @os.op[@op.ii].db = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXFileDict.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXFileDict.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -2849,35 +1991,26 @@ module Fox
      attr_accessor :_o     
    end
    def fx_file_item name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXFileItem, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:text => :required, :bi => nil, :mi => nil, :ptr => nil})
+         @os.op[0] = OpenStruct.new({:text => :required, :bi => nil, :mi => nil, :ptr => nil})
          
-           def text var
-             @op[@ii].text = var
-           end
+         def text var; @os.op[@op.ii].text = var; end
          
-           def bi var
-             @op[@ii].bi = var
-           end
+         def bi var; @os.op[@op.ii].bi = var; end
          
-           def mi var
-             @op[@ii].mi = var
-           end
+         def mi var; @os.op[@op.ii].mi = var; end
          
-           def ptr var
-             @op[@ii].ptr = var
-           end
+         def ptr var; @os.op[@op.ii].ptr = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXFileItem.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXFileItem.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -2886,51 +2019,34 @@ module Fox
      attr_accessor :_o     
    end
    def fx_file_list name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXFileList, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
+         @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
          
-           def p var
-             @op[@ii].p = var
-           end
+         def p var; @os.op[@op.ii].p = var; end
          
-           def target var
-             @op[@ii].target = var
-           end
+         def target var; @os.op[@op.ii].target = var; end
          
-           def selector var
-             @op[@ii].selector = var
-           end
+         def selector var; @os.op[@op.ii].selector = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXFileList.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXFileList.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -2939,51 +2055,34 @@ module Fox
      attr_accessor :_o     
    end
    def fx_file_selector name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXFileSelector, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
+         @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
          
-           def p var
-             @op[@ii].p = var
-           end
+         def p var; @os.op[@op.ii].p = var; end
          
-           def target var
-             @op[@ii].target = var
-           end
+         def target var; @os.op[@op.ii].target = var; end
          
-           def selector var
-             @op[@ii].selector = var
-           end
+         def selector var; @os.op[@op.ii].selector = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXFileSelector.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXFileSelector.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -2992,23 +2091,20 @@ module Fox
      attr_accessor :_o     
    end
    def fx_file_stream name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXFileStream, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:cont => nil})
+         @os.op[0] = OpenStruct.new({:cont => nil})
          
-           def cont var
-             @op[@ii].cont = var
-           end
+         def cont var; @os.op[@op.ii].cont = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXFileStream.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXFileStream.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -3017,35 +2113,26 @@ module Fox
      attr_accessor :_o     
    end
    def fx_folding_item name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXFoldingItem, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:text => :required, :openIcon => nil, :closedIcon => nil, :data => nil})
+         @os.op[0] = OpenStruct.new({:text => :required, :openIcon => nil, :closedIcon => nil, :data => nil})
          
-           def text var
-             @op[@ii].text = var
-           end
+         def text var; @os.op[@op.ii].text = var; end
          
-           def open_icon var
-             @op[@ii].openIcon = var
-           end
+         def open_icon var; @os.op[@op.ii].openIcon = var; end
          
-           def closed_icon var
-             @op[@ii].closedIcon = var
-           end
+         def closed_icon var; @os.op[@op.ii].closedIcon = var; end
          
-           def data var
-             @op[@ii].data = var
-           end
+         def data var; @os.op[@op.ii].data = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXFoldingItem.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXFoldingItem.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -3054,51 +2141,34 @@ module Fox
      attr_accessor :_o     
    end
    def fx_folding_list name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXFoldingList, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => TREELIST_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0})
+         @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => TREELIST_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0})
          
-           def p var
-             @op[@ii].p = var
-           end
+         def p var; @os.op[@op.ii].p = var; end
          
-           def target var
-             @op[@ii].target = var
-           end
+         def target var; @os.op[@op.ii].target = var; end
          
-           def selector var
-             @op[@ii].selector = var
-           end
+         def selector var; @os.op[@op.ii].selector = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXFoldingList.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXFoldingList.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -3107,12 +2177,11 @@ module Fox
      attr_accessor :_o     
    end
    def fx_font_desc name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXFontDesc, op: [], ii: ii, fx: nil, kinder: []))
      
           
      self.instance_eval &block
-     Enhancement.stack << FXFontDesc.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXFontDesc.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -3121,81 +2190,56 @@ module Fox
      attr_accessor :_o     
    end
    def fx_font name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXFont, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:a => :required, :fontDesc => :required})
+         @os.op[0] = OpenStruct.new({:a => :required, :fontDesc => :required})
          
-           def a var
-             @op[@ii].a = var
-           end
+         def a var; @os.op[@op.ii].a = var; end
          
-           def font_desc var
-             @op[@ii].fontDesc = var
-           end
+         def font_desc var; @os.op[@op.ii].fontDesc = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
      
-         @op[1] = OpenStruct.new({:a => :required, :face => :required, :size => :required, :weight => FXFont::Normal, :slant => Font::Straight, :encoding => FONTENCODING_DEFAULT, :setWidth => FXFont::NonExpanded, :hints => 0})
+         @os.op[1] = OpenStruct.new({:a => :required, :face => :required, :size => :required, :weight => FXFont::Normal, :slant => Font::Straight, :encoding => FONTENCODING_DEFAULT, :setWidth => FXFont::NonExpanded, :hints => 0})
          
-           def a var
-             @op[@ii].a = var
-           end
+         def a var; @os.op[@op.ii].a = var; end
          
-           def face var
-             @op[@ii].face = var
-           end
+         def face var; @os.op[@op.ii].face = var; end
          
-           def size var
-             @op[@ii].size = var
-           end
+         def size var; @os.op[@op.ii].size = var; end
          
-           def weight var
-             @op[@ii].weight = var
-           end
+         def weight var; @os.op[@op.ii].weight = var; end
          
-           def slant var
-             @op[@ii].slant = var
-           end
+         def slant var; @os.op[@op.ii].slant = var; end
          
-           def encoding var
-             @op[@ii].encoding = var
-           end
+         def encoding var; @os.op[@op.ii].encoding = var; end
          
-           def set_width var
-             @op[@ii].setWidth = var
-           end
+         def set_width var; @os.op[@op.ii].setWidth = var; end
          
-           def hints var
-             @op[@ii].hints = var
-           end
+         def hints var; @os.op[@op.ii].hints = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
      
-         @op[2] = OpenStruct.new({:a => :required, :string => :required})
+         @os.op[2] = OpenStruct.new({:a => :required, :string => :required})
          
-           def a var
-             @op[@ii].a = var
-           end
+         def a var; @os.op[@op.ii].a = var; end
          
-           def string var
-             @op[@ii].string = var
-           end
+         def string var; @os.op[@op.ii].string = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXFont.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXFont.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -3204,47 +2248,32 @@ module Fox
      attr_accessor :_o     
    end
    def fx_font_dialog name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXFontDialog, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:owner => :required, :name => :required, :opts => 0, :x => 0, :y => 0, :width => 600, :height => 380})
+         @os.op[0] = OpenStruct.new({:owner => :required, :name => :required, :opts => 0, :x => 0, :y => 0, :width => 600, :height => 380})
          
-           def owner var
-             @op[@ii].owner = var
-           end
+         def owner var; @os.op[@op.ii].owner = var; end
          
-           def name var
-             @op[@ii].name = var
-           end
+         def name var; @os.op[@op.ii].name = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXFontDialog.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXFontDialog.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -3253,51 +2282,34 @@ module Fox
      attr_accessor :_o     
    end
    def fx_font_selector name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXFontSelector, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
+         @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
          
-           def p var
-             @op[@ii].p = var
-           end
+         def p var; @os.op[@op.ii].p = var; end
          
-           def target var
-             @op[@ii].target = var
-           end
+         def target var; @os.op[@op.ii].target = var; end
          
-           def selector var
-             @op[@ii].selector = var
-           end
+         def selector var; @os.op[@op.ii].selector = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXFontSelector.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXFontSelector.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -3306,59 +2318,38 @@ module Fox
      attr_accessor :_o     
    end
    def fx_frame name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXFrame, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:parent => :required, :opts => FRAME_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
+         @os.op[0] = OpenStruct.new({:parent => :required, :opts => FRAME_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
          
-           def parent var
-             @op[@ii].parent = var
-           end
+         def parent var; @os.op[@op.ii].parent = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
-           def pad_left var
-             @op[@ii].padLeft = var
-           end
+         def pad_left var; @os.op[@op.ii].padLeft = var; end
          
-           def pad_right var
-             @op[@ii].padRight = var
-           end
+         def pad_right var; @os.op[@op.ii].padRight = var; end
          
-           def pad_top var
-             @op[@ii].padTop = var
-           end
+         def pad_top var; @os.op[@op.ii].padTop = var; end
          
-           def pad_bottom var
-             @op[@ii].padBottom = var
-           end
+         def pad_bottom var; @os.op[@op.ii].padBottom = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXFrame.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXFrame.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -3367,35 +2358,26 @@ module Fox
      attr_accessor :_o     
    end
    def fxgif_cursor name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXGIFCursor, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:a => :required, :pix => :required, :hx => -1, :hy => -1})
+         @os.op[0] = OpenStruct.new({:a => :required, :pix => :required, :hx => -1, :hy => -1})
          
-           def a var
-             @op[@ii].a = var
-           end
+         def a var; @os.op[@op.ii].a = var; end
          
-           def pix var
-             @op[@ii].pix = var
-           end
+         def pix var; @os.op[@op.ii].pix = var; end
          
-           def hx var
-             @op[@ii].hx = var
-           end
+         def hx var; @os.op[@op.ii].hx = var; end
          
-           def hy var
-             @op[@ii].hy = var
-           end
+         def hy var; @os.op[@op.ii].hy = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXGIFCursor.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXGIFCursor.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -3404,43 +2386,30 @@ module Fox
      attr_accessor :_o     
    end
    def fxgif_icon name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXGIFIcon, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:a => :required, :pix => nil, :clr => 0, :opts => 0, :width => 1, :height => 1})
+         @os.op[0] = OpenStruct.new({:a => :required, :pix => nil, :clr => 0, :opts => 0, :width => 1, :height => 1})
          
-           def a var
-             @op[@ii].a = var
-           end
+         def a var; @os.op[@op.ii].a = var; end
          
-           def pix var
-             @op[@ii].pix = var
-           end
+         def pix var; @os.op[@op.ii].pix = var; end
          
-           def clr var
-             @op[@ii].clr = var
-           end
+         def clr var; @os.op[@op.ii].clr = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXGIFIcon.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXGIFIcon.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -3449,39 +2418,28 @@ module Fox
      attr_accessor :_o     
    end
    def fxgif_image name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXGIFImage, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:a => :required, :pix => nil, :opts => 0, :width => 1, :height => 1})
+         @os.op[0] = OpenStruct.new({:a => :required, :pix => nil, :opts => 0, :width => 1, :height => 1})
          
-           def a var
-             @op[@ii].a = var
-           end
+         def a var; @os.op[@op.ii].a = var; end
          
-           def pix var
-             @op[@ii].pix = var
-           end
+         def pix var; @os.op[@op.ii].pix = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXGIFImage.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXGIFImage.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -3490,102 +2448,63 @@ module Fox
      attr_accessor :_o     
    end
    def fxgl_canvas name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXGLCanvas, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:parent => :required, :vis => :required, :target => nil, :selector => 0, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
+         @os.op[0] = OpenStruct.new({:parent => :required, :vis => :required, :target => nil, :selector => 0, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
          
-           def parent var
-             @op[@ii].parent = var
-           end
+         def parent var; @os.op[@op.ii].parent = var; end
          
-           def vis var
-             @op[@ii].vis = var
-           end
+         def vis var; @os.op[@op.ii].vis = var; end
          
-           def target var
-             @op[@ii].target = var
-           end
+         def target var; @os.op[@op.ii].target = var; end
          
-           def selector var
-             @op[@ii].selector = var
-           end
+         def selector var; @os.op[@op.ii].selector = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
      
-         @op[1] = OpenStruct.new({:parent => :required, :vis => :required, :sharegroup => :required, :target => nil, :selector => 0, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
+         @os.op[1] = OpenStruct.new({:parent => :required, :vis => :required, :sharegroup => :required, :target => nil, :selector => 0, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
          
-           def parent var
-             @op[@ii].parent = var
-           end
+         def parent var; @os.op[@op.ii].parent = var; end
          
-           def vis var
-             @op[@ii].vis = var
-           end
+         def vis var; @os.op[@op.ii].vis = var; end
          
-           def sharegroup var
-             @op[@ii].sharegroup = var
-           end
+         def sharegroup var; @os.op[@op.ii].sharegroup = var; end
          
-           def target var
-             @op[@ii].target = var
-           end
+         def target var; @os.op[@op.ii].target = var; end
          
-           def selector var
-             @op[@ii].selector = var
-           end
+         def selector var; @os.op[@op.ii].selector = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXGLCanvas.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXGLCanvas.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -3594,31 +2513,24 @@ module Fox
      attr_accessor :_o     
    end
    def fxgl_context name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXGLContext, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:app => :required, :visual => :required, :other => nil})
+         @os.op[0] = OpenStruct.new({:app => :required, :visual => :required, :other => nil})
          
-           def app var
-             @op[@ii].app = var
-           end
+         def app var; @os.op[@op.ii].app = var; end
          
-           def visual var
-             @op[@ii].visual = var
-           end
+         def visual var; @os.op[@op.ii].visual = var; end
          
-           def other var
-             @op[@ii].other = var
-           end
+         def other var; @os.op[@op.ii].other = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXGLContext.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXGLContext.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -3627,12 +2539,11 @@ module Fox
      attr_accessor :_o     
    end
    def fxgl_object name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXGLObject, op: [], ii: ii, fx: nil, kinder: []))
      
           
      self.instance_eval &block
-     Enhancement.stack << FXGLObject.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXGLObject.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -3641,43 +2552,30 @@ module Fox
      attr_accessor :_o     
    end
    def fxgl_shape name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXGLShape, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:x => :required, :y => :required, :z => :required, :opts => :required, :front => nil, :back => nil})
+         @os.op[0] = OpenStruct.new({:x => :required, :y => :required, :z => :required, :opts => :required, :front => nil, :back => nil})
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def z var
-             @op[@ii].z = var
-           end
+         def z var; @os.op[@op.ii].z = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def front var
-             @op[@ii].front = var
-           end
+         def front var; @os.op[@op.ii].front = var; end
          
-           def back var
-             @op[@ii].back = var
-           end
+         def back var; @os.op[@op.ii].back = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXGLShape.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXGLShape.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -3686,12 +2584,11 @@ module Fox
      attr_accessor :_o     
    end
    def fx_viewport name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXViewport, op: [], ii: ii, fx: nil, kinder: []))
      
           
      self.instance_eval &block
-     Enhancement.stack << FXViewport.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXViewport.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -3700,12 +2597,11 @@ module Fox
      attr_accessor :_o     
    end
    def fx_light name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXLight, op: [], ii: ii, fx: nil, kinder: []))
      
           
      self.instance_eval &block
-     Enhancement.stack << FXLight.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXLight.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -3714,12 +2610,11 @@ module Fox
      attr_accessor :_o     
    end
    def fx_material name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXMaterial, op: [], ii: ii, fx: nil, kinder: []))
      
           
      self.instance_eval &block
-     Enhancement.stack << FXMaterial.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXMaterial.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -3728,102 +2623,63 @@ module Fox
      attr_accessor :_o     
    end
    def fxgl_viewer name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXGLViewer, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:p => :required, :vis => :required, :target => nil, :selector => 0, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
+         @os.op[0] = OpenStruct.new({:p => :required, :vis => :required, :target => nil, :selector => 0, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
          
-           def p var
-             @op[@ii].p = var
-           end
+         def p var; @os.op[@op.ii].p = var; end
          
-           def vis var
-             @op[@ii].vis = var
-           end
+         def vis var; @os.op[@op.ii].vis = var; end
          
-           def target var
-             @op[@ii].target = var
-           end
+         def target var; @os.op[@op.ii].target = var; end
          
-           def selector var
-             @op[@ii].selector = var
-           end
+         def selector var; @os.op[@op.ii].selector = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
      
-         @op[1] = OpenStruct.new({:p => :required, :vis => :required, :sharegroup => :required, :target => nil, :selector => 0, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
+         @os.op[1] = OpenStruct.new({:p => :required, :vis => :required, :sharegroup => :required, :target => nil, :selector => 0, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
          
-           def p var
-             @op[@ii].p = var
-           end
+         def p var; @os.op[@op.ii].p = var; end
          
-           def vis var
-             @op[@ii].vis = var
-           end
+         def vis var; @os.op[@op.ii].vis = var; end
          
-           def sharegroup var
-             @op[@ii].sharegroup = var
-           end
+         def sharegroup var; @os.op[@op.ii].sharegroup = var; end
          
-           def target var
-             @op[@ii].target = var
-           end
+         def target var; @os.op[@op.ii].target = var; end
          
-           def selector var
-             @op[@ii].selector = var
-           end
+         def selector var; @os.op[@op.ii].selector = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXGLViewer.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXGLViewer.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -3832,27 +2688,22 @@ module Fox
      attr_accessor :_o     
    end
    def fxgl_visual name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXGLVisual, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:app => :required, :flags => :required})
+         @os.op[0] = OpenStruct.new({:app => :required, :flags => :required})
          
-           def app var
-             @op[@ii].app = var
-           end
+         def app var; @os.op[@op.ii].app = var; end
          
-           def flags var
-             @op[@ii].flags = var
-           end
+         def flags var; @os.op[@op.ii].flags = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXGLVisual.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXGLVisual.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -3861,12 +2712,11 @@ module Fox
      attr_accessor :_o     
    end
    def fx_gradient name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXGradient, op: [], ii: ii, fx: nil, kinder: []))
      
           
      self.instance_eval &block
-     Enhancement.stack << FXGradient.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXGradient.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -3875,67 +2725,42 @@ module Fox
      attr_accessor :_o     
    end
    def fx_gradient_bar name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXGradientBar, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => FRAME_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
+         @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => FRAME_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
          
-           def p var
-             @op[@ii].p = var
-           end
+         def p var; @os.op[@op.ii].p = var; end
          
-           def target var
-             @op[@ii].target = var
-           end
+         def target var; @os.op[@op.ii].target = var; end
          
-           def selector var
-             @op[@ii].selector = var
-           end
+         def selector var; @os.op[@op.ii].selector = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
-           def pad_left var
-             @op[@ii].padLeft = var
-           end
+         def pad_left var; @os.op[@op.ii].padLeft = var; end
          
-           def pad_right var
-             @op[@ii].padRight = var
-           end
+         def pad_right var; @os.op[@op.ii].padRight = var; end
          
-           def pad_top var
-             @op[@ii].padTop = var
-           end
+         def pad_top var; @os.op[@op.ii].padTop = var; end
          
-           def pad_bottom var
-             @op[@ii].padBottom = var
-           end
+         def pad_bottom var; @os.op[@op.ii].padBottom = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXGradientBar.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXGradientBar.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -3944,71 +2769,44 @@ module Fox
      attr_accessor :_o     
    end
    def fx_group_box name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXGroupBox, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:parent => :required, :text => :required, :opts => GROUPBOX_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_SPACING, :padRight => DEFAULT_SPACING, :padTop => DEFAULT_SPACING, :padBottom => DEFAULT_SPACING, :hSpacing => DEFAULT_SPACING, :vSpacing => DEFAULT_SPACING})
+         @os.op[0] = OpenStruct.new({:parent => :required, :text => :required, :opts => GROUPBOX_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_SPACING, :padRight => DEFAULT_SPACING, :padTop => DEFAULT_SPACING, :padBottom => DEFAULT_SPACING, :hSpacing => DEFAULT_SPACING, :vSpacing => DEFAULT_SPACING})
          
-           def parent var
-             @op[@ii].parent = var
-           end
+         def parent var; @os.op[@op.ii].parent = var; end
          
-           def text var
-             @op[@ii].text = var
-           end
+         def text var; @os.op[@op.ii].text = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
-           def pad_left var
-             @op[@ii].padLeft = var
-           end
+         def pad_left var; @os.op[@op.ii].padLeft = var; end
          
-           def pad_right var
-             @op[@ii].padRight = var
-           end
+         def pad_right var; @os.op[@op.ii].padRight = var; end
          
-           def pad_top var
-             @op[@ii].padTop = var
-           end
+         def pad_top var; @os.op[@op.ii].padTop = var; end
          
-           def pad_bottom var
-             @op[@ii].padBottom = var
-           end
+         def pad_bottom var; @os.op[@op.ii].padBottom = var; end
          
-           def h_spacing var
-             @op[@ii].hSpacing = var
-           end
+         def h_spacing var; @os.op[@op.ii].hSpacing = var; end
          
-           def v_spacing var
-             @op[@ii].vSpacing = var
-           end
+         def v_spacing var; @os.op[@op.ii].vSpacing = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXGroupBox.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXGroupBox.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -4017,35 +2815,26 @@ module Fox
      attr_accessor :_o     
    end
    def fx_header_item name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXHeaderItem, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:text => :required, :ic => nil, :s => 0, :ptr => nil})
+         @os.op[0] = OpenStruct.new({:text => :required, :ic => nil, :s => 0, :ptr => nil})
          
-           def text var
-             @op[@ii].text = var
-           end
+         def text var; @os.op[@op.ii].text = var; end
          
-           def ic var
-             @op[@ii].ic = var
-           end
+         def ic var; @os.op[@op.ii].ic = var; end
          
-           def s var
-             @op[@ii].s = var
-           end
+         def s var; @os.op[@op.ii].s = var; end
          
-           def ptr var
-             @op[@ii].ptr = var
-           end
+         def ptr var; @os.op[@op.ii].ptr = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXHeaderItem.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXHeaderItem.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -4054,67 +2843,42 @@ module Fox
      attr_accessor :_o     
    end
    def fx_header name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXHeader, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => HEADER_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
+         @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => HEADER_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
          
-           def p var
-             @op[@ii].p = var
-           end
+         def p var; @os.op[@op.ii].p = var; end
          
-           def target var
-             @op[@ii].target = var
-           end
+         def target var; @os.op[@op.ii].target = var; end
          
-           def selector var
-             @op[@ii].selector = var
-           end
+         def selector var; @os.op[@op.ii].selector = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
-           def pad_left var
-             @op[@ii].padLeft = var
-           end
+         def pad_left var; @os.op[@op.ii].padLeft = var; end
          
-           def pad_right var
-             @op[@ii].padRight = var
-           end
+         def pad_right var; @os.op[@op.ii].padRight = var; end
          
-           def pad_top var
-             @op[@ii].padTop = var
-           end
+         def pad_top var; @os.op[@op.ii].padTop = var; end
          
-           def pad_bottom var
-             @op[@ii].padBottom = var
-           end
+         def pad_bottom var; @os.op[@op.ii].padBottom = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXHeader.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXHeader.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -4123,67 +2887,42 @@ module Fox
      attr_accessor :_o     
    end
    def fx_horizontal_frame name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXHorizontalFrame, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:p => :required, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_SPACING, :padRight => DEFAULT_SPACING, :padTop => DEFAULT_SPACING, :padBottom => DEFAULT_SPACING, :hSpacing => DEFAULT_SPACING, :vSpacing => DEFAULT_SPACING})
+         @os.op[0] = OpenStruct.new({:p => :required, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_SPACING, :padRight => DEFAULT_SPACING, :padTop => DEFAULT_SPACING, :padBottom => DEFAULT_SPACING, :hSpacing => DEFAULT_SPACING, :vSpacing => DEFAULT_SPACING})
          
-           def p var
-             @op[@ii].p = var
-           end
+         def p var; @os.op[@op.ii].p = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
-           def pad_left var
-             @op[@ii].padLeft = var
-           end
+         def pad_left var; @os.op[@op.ii].padLeft = var; end
          
-           def pad_right var
-             @op[@ii].padRight = var
-           end
+         def pad_right var; @os.op[@op.ii].padRight = var; end
          
-           def pad_top var
-             @op[@ii].padTop = var
-           end
+         def pad_top var; @os.op[@op.ii].padTop = var; end
          
-           def pad_bottom var
-             @op[@ii].padBottom = var
-           end
+         def pad_bottom var; @os.op[@op.ii].padBottom = var; end
          
-           def h_spacing var
-             @op[@ii].hSpacing = var
-           end
+         def h_spacing var; @os.op[@op.ii].hSpacing = var; end
          
-           def v_spacing var
-             @op[@ii].vSpacing = var
-           end
+         def v_spacing var; @os.op[@op.ii].vSpacing = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXHorizontalFrame.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXHorizontalFrame.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -4192,43 +2931,30 @@ module Fox
      attr_accessor :_o     
    end
    def fxico_icon name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXICOIcon, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:a => :required, :pix => nil, :clr => 0, :opts => 0, :width => 1, :height => 1})
+         @os.op[0] = OpenStruct.new({:a => :required, :pix => nil, :clr => 0, :opts => 0, :width => 1, :height => 1})
          
-           def a var
-             @op[@ii].a = var
-           end
+         def a var; @os.op[@op.ii].a = var; end
          
-           def pix var
-             @op[@ii].pix = var
-           end
+         def pix var; @os.op[@op.ii].pix = var; end
          
-           def clr var
-             @op[@ii].clr = var
-           end
+         def clr var; @os.op[@op.ii].clr = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXICOIcon.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXICOIcon.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -4237,39 +2963,28 @@ module Fox
      attr_accessor :_o     
    end
    def fxico_image name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXICOImage, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:a => :required, :pix => nil, :opts => 0, :width => 1, :height => 1})
+         @os.op[0] = OpenStruct.new({:a => :required, :pix => nil, :opts => 0, :width => 1, :height => 1})
          
-           def a var
-             @op[@ii].a = var
-           end
+         def a var; @os.op[@op.ii].a = var; end
          
-           def pix var
-             @op[@ii].pix = var
-           end
+         def pix var; @os.op[@op.ii].pix = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXICOImage.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXICOImage.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -4278,43 +2993,30 @@ module Fox
      attr_accessor :_o     
    end
    def fx_icon name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXIcon, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:app => :required, :pix => nil, :clr => 0, :opts => 0, :width => 1, :height => 1})
+         @os.op[0] = OpenStruct.new({:app => :required, :pix => nil, :clr => 0, :opts => 0, :width => 1, :height => 1})
          
-           def app var
-             @op[@ii].app = var
-           end
+         def app var; @os.op[@op.ii].app = var; end
          
-           def pix var
-             @op[@ii].pix = var
-           end
+         def pix var; @os.op[@op.ii].pix = var; end
          
-           def clr var
-             @op[@ii].clr = var
-           end
+         def clr var; @os.op[@op.ii].clr = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXIcon.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXIcon.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -4323,12 +3025,11 @@ module Fox
      attr_accessor :_o     
    end
    def fx_icon_dict name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXIconDict, op: [], ii: ii, fx: nil, kinder: []))
      
           
      self.instance_eval &block
-     Enhancement.stack << FXIconDict.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXIconDict.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -4337,35 +3038,26 @@ module Fox
      attr_accessor :_o     
    end
    def fx_icon_item name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXIconItem, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:text => :required, :bigIcon => nil, :miniIcon => nil, :data => nil})
+         @os.op[0] = OpenStruct.new({:text => :required, :bigIcon => nil, :miniIcon => nil, :data => nil})
          
-           def text var
-             @op[@ii].text = var
-           end
+         def text var; @os.op[@op.ii].text = var; end
          
-           def big_icon var
-             @op[@ii].bigIcon = var
-           end
+         def big_icon var; @os.op[@op.ii].bigIcon = var; end
          
-           def mini_icon var
-             @op[@ii].miniIcon = var
-           end
+         def mini_icon var; @os.op[@op.ii].miniIcon = var; end
          
-           def data var
-             @op[@ii].data = var
-           end
+         def data var; @os.op[@op.ii].data = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXIconItem.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXIconItem.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -4374,51 +3066,34 @@ module Fox
      attr_accessor :_o     
    end
    def fx_icon_list name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXIconList, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => ICONLIST_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0})
+         @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => ICONLIST_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0})
          
-           def p var
-             @op[@ii].p = var
-           end
+         def p var; @os.op[@op.ii].p = var; end
          
-           def target var
-             @op[@ii].target = var
-           end
+         def target var; @os.op[@op.ii].target = var; end
          
-           def selector var
-             @op[@ii].selector = var
-           end
+         def selector var; @os.op[@op.ii].selector = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXIconList.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXIconList.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -4427,23 +3102,20 @@ module Fox
      attr_accessor :_o     
    end
    def fx_icon_source name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXIconSource, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:app => :required})
+         @os.op[0] = OpenStruct.new({:app => :required})
          
-           def app var
-             @op[@ii].app = var
-           end
+         def app var; @os.op[@op.ii].app = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXIconSource.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXIconSource.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -4452,12 +3124,11 @@ module Fox
      attr_accessor :_o     
    end
    def fx_id name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXId, op: [], ii: ii, fx: nil, kinder: []))
      
           
      self.instance_eval &block
-     Enhancement.stack << FXId.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXId.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -4466,39 +3137,28 @@ module Fox
      attr_accessor :_o     
    end
    def fx_image name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXImage, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:a => :required, :pixels => nil, :opts => 0, :width => 1, :height => 1})
+         @os.op[0] = OpenStruct.new({:a => :required, :pixels => nil, :opts => 0, :width => 1, :height => 1})
          
-           def a var
-             @op[@ii].a = var
-           end
+         def a var; @os.op[@op.ii].a = var; end
          
-           def pixels var
-             @op[@ii].pixels = var
-           end
+         def pixels var; @os.op[@op.ii].pixels = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXImage.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXImage.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -4507,63 +3167,40 @@ module Fox
      attr_accessor :_o     
    end
    def fx_image_frame name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXImageFrame, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:p => :required, :img => :required, :opts => FRAME_SUNKEN|FRAME_THICK, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 0, :padRight => 0, :padTop => 0, :padBottom => 0})
+         @os.op[0] = OpenStruct.new({:p => :required, :img => :required, :opts => FRAME_SUNKEN|FRAME_THICK, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 0, :padRight => 0, :padTop => 0, :padBottom => 0})
          
-           def p var
-             @op[@ii].p = var
-           end
+         def p var; @os.op[@op.ii].p = var; end
          
-           def img var
-             @op[@ii].img = var
-           end
+         def img var; @os.op[@op.ii].img = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
-           def pad_left var
-             @op[@ii].padLeft = var
-           end
+         def pad_left var; @os.op[@op.ii].padLeft = var; end
          
-           def pad_right var
-             @op[@ii].padRight = var
-           end
+         def pad_right var; @os.op[@op.ii].padRight = var; end
          
-           def pad_top var
-             @op[@ii].padTop = var
-           end
+         def pad_top var; @os.op[@op.ii].padTop = var; end
          
-           def pad_bottom var
-             @op[@ii].padBottom = var
-           end
+         def pad_bottom var; @os.op[@op.ii].padBottom = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXImageFrame.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXImageFrame.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -4572,55 +3209,36 @@ module Fox
      attr_accessor :_o     
    end
    def fx_image_view name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXImageView, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:p => :required, :img => nil, :target => nil, :selector => 0, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
+         @os.op[0] = OpenStruct.new({:p => :required, :img => nil, :target => nil, :selector => 0, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
          
-           def p var
-             @op[@ii].p = var
-           end
+         def p var; @os.op[@op.ii].p = var; end
          
-           def img var
-             @op[@ii].img = var
-           end
+         def img var; @os.op[@op.ii].img = var; end
          
-           def target var
-             @op[@ii].target = var
-           end
+         def target var; @os.op[@op.ii].target = var; end
          
-           def selector var
-             @op[@ii].selector = var
-           end
+         def selector var; @os.op[@op.ii].selector = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXImageView.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXImageView.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -4629,55 +3247,36 @@ module Fox
      attr_accessor :_o     
    end
    def fx_input_dialog name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXInputDialog, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:owner => :required, :caption => :required, :label => :required, :icon => nil, :opts => INPUTDIALOG_STRING, :x => 0, :y => 0, :width => 0, :height => 0})
+         @os.op[0] = OpenStruct.new({:owner => :required, :caption => :required, :label => :required, :icon => nil, :opts => INPUTDIALOG_STRING, :x => 0, :y => 0, :width => 0, :height => 0})
          
-           def owner var
-             @op[@ii].owner = var
-           end
+         def owner var; @os.op[@op.ii].owner = var; end
          
-           def caption var
-             @op[@ii].caption = var
-           end
+         def caption var; @os.op[@op.ii].caption = var; end
          
-           def label var
-             @op[@ii].label = var
-           end
+         def label var; @os.op[@op.ii].label = var; end
          
-           def icon var
-             @op[@ii].icon = var
-           end
+         def icon var; @os.op[@op.ii].icon = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXInputDialog.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXInputDialog.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -4686,47 +3285,32 @@ module Fox
      attr_accessor :_o     
    end
    def fxjpg_icon name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXJPGIcon, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:a => :required, :pix => nil, :clr => 0, :opts => 0, :width => 1, :height => 1, :quality => 75})
+         @os.op[0] = OpenStruct.new({:a => :required, :pix => nil, :clr => 0, :opts => 0, :width => 1, :height => 1, :quality => 75})
          
-           def a var
-             @op[@ii].a = var
-           end
+         def a var; @os.op[@op.ii].a = var; end
          
-           def pix var
-             @op[@ii].pix = var
-           end
+         def pix var; @os.op[@op.ii].pix = var; end
          
-           def clr var
-             @op[@ii].clr = var
-           end
+         def clr var; @os.op[@op.ii].clr = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
-           def quality var
-             @op[@ii].quality = var
-           end
+         def quality var; @os.op[@op.ii].quality = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXJPGIcon.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXJPGIcon.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -4735,43 +3319,30 @@ module Fox
      attr_accessor :_o     
    end
    def fxjpg_image name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXJPGImage, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:a => :required, :pix => nil, :opts => 0, :width => 1, :height => 1, :quality => 75})
+         @os.op[0] = OpenStruct.new({:a => :required, :pix => nil, :opts => 0, :width => 1, :height => 1, :quality => 75})
          
-           def a var
-             @op[@ii].a = var
-           end
+         def a var; @os.op[@op.ii].a = var; end
          
-           def pix var
-             @op[@ii].pix = var
-           end
+         def pix var; @os.op[@op.ii].pix = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
-           def quality var
-             @op[@ii].quality = var
-           end
+         def quality var; @os.op[@op.ii].quality = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXJPGImage.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXJPGImage.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -4780,67 +3351,42 @@ module Fox
      attr_accessor :_o     
    end
    def fx_knob name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXKnob, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => KNOB_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
+         @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => KNOB_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
          
-           def p var
-             @op[@ii].p = var
-           end
+         def p var; @os.op[@op.ii].p = var; end
          
-           def target var
-             @op[@ii].target = var
-           end
+         def target var; @os.op[@op.ii].target = var; end
          
-           def selector var
-             @op[@ii].selector = var
-           end
+         def selector var; @os.op[@op.ii].selector = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
-           def pad_left var
-             @op[@ii].padLeft = var
-           end
+         def pad_left var; @os.op[@op.ii].padLeft = var; end
          
-           def pad_right var
-             @op[@ii].padRight = var
-           end
+         def pad_right var; @os.op[@op.ii].padRight = var; end
          
-           def pad_top var
-             @op[@ii].padTop = var
-           end
+         def pad_top var; @os.op[@op.ii].padTop = var; end
          
-           def pad_bottom var
-             @op[@ii].padBottom = var
-           end
+         def pad_bottom var; @os.op[@op.ii].padBottom = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXKnob.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXKnob.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -4849,67 +3395,42 @@ module Fox
      attr_accessor :_o     
    end
    def fx_label name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXLabel, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:parent => :required, :text => :required, :icon => nil, :opts => LABEL_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
+         @os.op[0] = OpenStruct.new({:parent => :required, :text => :required, :icon => nil, :opts => LABEL_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
          
-           def parent var
-             @op[@ii].parent = var
-           end
+         def parent var; @os.op[@op.ii].parent = var; end
          
-           def text var
-             @op[@ii].text = var
-           end
+         def text var; @os.op[@op.ii].text = var; end
          
-           def icon var
-             @op[@ii].icon = var
-           end
+         def icon var; @os.op[@op.ii].icon = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
-           def pad_left var
-             @op[@ii].padLeft = var
-           end
+         def pad_left var; @os.op[@op.ii].padLeft = var; end
          
-           def pad_right var
-             @op[@ii].padRight = var
-           end
+         def pad_right var; @os.op[@op.ii].padRight = var; end
          
-           def pad_top var
-             @op[@ii].padTop = var
-           end
+         def pad_top var; @os.op[@op.ii].padTop = var; end
          
-           def pad_bottom var
-             @op[@ii].padBottom = var
-           end
+         def pad_bottom var; @os.op[@op.ii].padBottom = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXLabel.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXLabel.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -4918,31 +3439,24 @@ module Fox
      attr_accessor :_o     
    end
    def fx_list_item name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXListItem, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:text => :required, :icon => nil, :data => nil})
+         @os.op[0] = OpenStruct.new({:text => :required, :icon => nil, :data => nil})
          
-           def text var
-             @op[@ii].text = var
-           end
+         def text var; @os.op[@op.ii].text = var; end
          
-           def icon var
-             @op[@ii].icon = var
-           end
+         def icon var; @os.op[@op.ii].icon = var; end
          
-           def data var
-             @op[@ii].data = var
-           end
+         def data var; @os.op[@op.ii].data = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXListItem.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXListItem.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -4951,51 +3465,34 @@ module Fox
      attr_accessor :_o     
    end
    def fx_list name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXList, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => LIST_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0})
+         @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => LIST_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0})
          
-           def p var
-             @op[@ii].p = var
-           end
+         def p var; @os.op[@op.ii].p = var; end
          
-           def target var
-             @op[@ii].target = var
-           end
+         def target var; @os.op[@op.ii].target = var; end
          
-           def selector var
-             @op[@ii].selector = var
-           end
+         def selector var; @os.op[@op.ii].selector = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXList.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXList.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -5004,67 +3501,42 @@ module Fox
      attr_accessor :_o     
    end
    def fx_list_box name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXListBox, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => FRAME_SUNKEN|FRAME_THICK|LISTBOX_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
+         @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => FRAME_SUNKEN|FRAME_THICK|LISTBOX_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
          
-           def p var
-             @op[@ii].p = var
-           end
+         def p var; @os.op[@op.ii].p = var; end
          
-           def target var
-             @op[@ii].target = var
-           end
+         def target var; @os.op[@op.ii].target = var; end
          
-           def selector var
-             @op[@ii].selector = var
-           end
+         def selector var; @os.op[@op.ii].selector = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
-           def pad_left var
-             @op[@ii].padLeft = var
-           end
+         def pad_left var; @os.op[@op.ii].padLeft = var; end
          
-           def pad_right var
-             @op[@ii].padRight = var
-           end
+         def pad_right var; @os.op[@op.ii].padRight = var; end
          
-           def pad_top var
-             @op[@ii].padTop = var
-           end
+         def pad_top var; @os.op[@op.ii].padTop = var; end
          
-           def pad_bottom var
-             @op[@ii].padBottom = var
-           end
+         def pad_bottom var; @os.op[@op.ii].padBottom = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXListBox.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXListBox.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -5073,51 +3545,34 @@ module Fox
      attr_accessor :_o     
    end
    def fxmdi_delete_button name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXMDIDeleteButton, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => FRAME_RAISED, :x => 0, :y => 0, :width => 0, :height => 0})
+         @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => FRAME_RAISED, :x => 0, :y => 0, :width => 0, :height => 0})
          
-           def p var
-             @op[@ii].p = var
-           end
+         def p var; @os.op[@op.ii].p = var; end
          
-           def target var
-             @op[@ii].target = var
-           end
+         def target var; @os.op[@op.ii].target = var; end
          
-           def selector var
-             @op[@ii].selector = var
-           end
+         def selector var; @os.op[@op.ii].selector = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXMDIDeleteButton.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXMDIDeleteButton.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -5126,51 +3581,34 @@ module Fox
      attr_accessor :_o     
    end
    def fxmdi_restore_button name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXMDIRestoreButton, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => FRAME_RAISED, :x => 0, :y => 0, :width => 0, :height => 0})
+         @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => FRAME_RAISED, :x => 0, :y => 0, :width => 0, :height => 0})
          
-           def p var
-             @op[@ii].p = var
-           end
+         def p var; @os.op[@op.ii].p = var; end
          
-           def target var
-             @op[@ii].target = var
-           end
+         def target var; @os.op[@op.ii].target = var; end
          
-           def selector var
-             @op[@ii].selector = var
-           end
+         def selector var; @os.op[@op.ii].selector = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXMDIRestoreButton.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXMDIRestoreButton.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -5179,51 +3617,34 @@ module Fox
      attr_accessor :_o     
    end
    def fxmdi_maximize_button name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXMDIMaximizeButton, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => FRAME_RAISED, :x => 0, :y => 0, :width => 0, :height => 0})
+         @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => FRAME_RAISED, :x => 0, :y => 0, :width => 0, :height => 0})
          
-           def p var
-             @op[@ii].p = var
-           end
+         def p var; @os.op[@op.ii].p = var; end
          
-           def target var
-             @op[@ii].target = var
-           end
+         def target var; @os.op[@op.ii].target = var; end
          
-           def selector var
-             @op[@ii].selector = var
-           end
+         def selector var; @os.op[@op.ii].selector = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXMDIMaximizeButton.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXMDIMaximizeButton.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -5232,51 +3653,34 @@ module Fox
      attr_accessor :_o     
    end
    def fxmdi_minimize_button name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXMDIMinimizeButton, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => FRAME_RAISED, :x => 0, :y => 0, :width => 0, :height => 0})
+         @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => FRAME_RAISED, :x => 0, :y => 0, :width => 0, :height => 0})
          
-           def p var
-             @op[@ii].p = var
-           end
+         def p var; @os.op[@op.ii].p = var; end
          
-           def target var
-             @op[@ii].target = var
-           end
+         def target var; @os.op[@op.ii].target = var; end
          
-           def selector var
-             @op[@ii].selector = var
-           end
+         def selector var; @os.op[@op.ii].selector = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXMDIMinimizeButton.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXMDIMinimizeButton.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -5285,55 +3689,36 @@ module Fox
      attr_accessor :_o     
    end
    def fxmdi_window_button name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXMDIWindowButton, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:p => :required, :pup => :required, :target => nil, :selector => 0, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
+         @os.op[0] = OpenStruct.new({:p => :required, :pup => :required, :target => nil, :selector => 0, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
          
-           def p var
-             @op[@ii].p = var
-           end
+         def p var; @os.op[@op.ii].p = var; end
          
-           def pup var
-             @op[@ii].pup = var
-           end
+         def pup var; @os.op[@op.ii].pup = var; end
          
-           def target var
-             @op[@ii].target = var
-           end
+         def target var; @os.op[@op.ii].target = var; end
          
-           def selector var
-             @op[@ii].selector = var
-           end
+         def selector var; @os.op[@op.ii].selector = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXMDIWindowButton.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXMDIWindowButton.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -5342,27 +3727,22 @@ module Fox
      attr_accessor :_o     
    end
    def fxmdi_menu name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXMDIMenu, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:owner => :required, :target => nil})
+         @os.op[0] = OpenStruct.new({:owner => :required, :target => nil})
          
-           def owner var
-             @op[@ii].owner = var
-           end
+         def owner var; @os.op[@op.ii].owner = var; end
          
-           def target var
-             @op[@ii].target = var
-           end
+         def target var; @os.op[@op.ii].target = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXMDIMenu.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXMDIMenu.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -5371,55 +3751,36 @@ module Fox
      attr_accessor :_o     
    end
    def fxmdi_child name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXMDIChild, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:p => :required, :name => :required, :ic => nil, :pup => nil, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
+         @os.op[0] = OpenStruct.new({:p => :required, :name => :required, :ic => nil, :pup => nil, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
          
-           def p var
-             @op[@ii].p = var
-           end
+         def p var; @os.op[@op.ii].p = var; end
          
-           def name var
-             @op[@ii].name = var
-           end
+         def name var; @os.op[@op.ii].name = var; end
          
-           def ic var
-             @op[@ii].ic = var
-           end
+         def ic var; @os.op[@op.ii].ic = var; end
          
-           def pup var
-             @op[@ii].pup = var
-           end
+         def pup var; @os.op[@op.ii].pup = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXMDIChild.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXMDIChild.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -5428,43 +3789,30 @@ module Fox
      attr_accessor :_o     
    end
    def fxmdi_client name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXMDIClient, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:p => :required, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
+         @os.op[0] = OpenStruct.new({:p => :required, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
          
-           def p var
-             @op[@ii].p = var
-           end
+         def p var; @os.op[@op.ii].p = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXMDIClient.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXMDIClient.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -5473,79 +3821,48 @@ module Fox
      attr_accessor :_o     
    end
    def fx_main_window name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXMainWindow, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:app => :required, :title => :required, :icon => nil, :miniIcon => nil, :opts => DECOR_ALL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 0, :padRight => 0, :padTop => 0, :padBottom => 0, :hSpacing => 4, :vSpacing => 4})
+         @os.op[0] = OpenStruct.new({:app => :required, :title => :required, :icon => nil, :miniIcon => nil, :opts => DECOR_ALL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 0, :padRight => 0, :padTop => 0, :padBottom => 0, :hSpacing => 4, :vSpacing => 4})
          
-           def app var
-             @op[@ii].app = var
-           end
+         def app var; @os.op[@op.ii].app = var; end
          
-           def title var
-             @op[@ii].title = var
-           end
+         def title var; @os.op[@op.ii].title = var; end
          
-           def icon var
-             @op[@ii].icon = var
-           end
+         def icon var; @os.op[@op.ii].icon = var; end
          
-           def mini_icon var
-             @op[@ii].miniIcon = var
-           end
+         def mini_icon var; @os.op[@op.ii].miniIcon = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
-           def pad_left var
-             @op[@ii].padLeft = var
-           end
+         def pad_left var; @os.op[@op.ii].padLeft = var; end
          
-           def pad_right var
-             @op[@ii].padRight = var
-           end
+         def pad_right var; @os.op[@op.ii].padRight = var; end
          
-           def pad_top var
-             @op[@ii].padTop = var
-           end
+         def pad_top var; @os.op[@op.ii].padTop = var; end
          
-           def pad_bottom var
-             @op[@ii].padBottom = var
-           end
+         def pad_bottom var; @os.op[@op.ii].padBottom = var; end
          
-           def h_spacing var
-             @op[@ii].hSpacing = var
-           end
+         def h_spacing var; @os.op[@op.ii].hSpacing = var; end
          
-           def v_spacing var
-             @op[@ii].vSpacing = var
-           end
+         def v_spacing var; @os.op[@op.ii].vSpacing = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXMainWindow.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXMainWindow.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -5554,71 +3871,44 @@ module Fox
      attr_accessor :_o     
    end
    def fx_matrix name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXMatrix, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:parent => :required, :n => 1, :opts => MATRIX_BY_ROWS, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_SPACING, :padRight => DEFAULT_SPACING, :padTop => DEFAULT_SPACING, :padBottom => DEFAULT_SPACING, :hSpacing => DEFAULT_SPACING, :vSpacing => DEFAULT_SPACING})
+         @os.op[0] = OpenStruct.new({:parent => :required, :n => 1, :opts => MATRIX_BY_ROWS, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_SPACING, :padRight => DEFAULT_SPACING, :padTop => DEFAULT_SPACING, :padBottom => DEFAULT_SPACING, :hSpacing => DEFAULT_SPACING, :vSpacing => DEFAULT_SPACING})
          
-           def parent var
-             @op[@ii].parent = var
-           end
+         def parent var; @os.op[@op.ii].parent = var; end
          
-           def n var
-             @op[@ii].n = var
-           end
+         def n var; @os.op[@op.ii].n = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
-           def pad_left var
-             @op[@ii].padLeft = var
-           end
+         def pad_left var; @os.op[@op.ii].padLeft = var; end
          
-           def pad_right var
-             @op[@ii].padRight = var
-           end
+         def pad_right var; @os.op[@op.ii].padRight = var; end
          
-           def pad_top var
-             @op[@ii].padTop = var
-           end
+         def pad_top var; @os.op[@op.ii].padTop = var; end
          
-           def pad_bottom var
-             @op[@ii].padBottom = var
-           end
+         def pad_bottom var; @os.op[@op.ii].padBottom = var; end
          
-           def h_spacing var
-             @op[@ii].hSpacing = var
-           end
+         def h_spacing var; @os.op[@op.ii].hSpacing = var; end
          
-           def v_spacing var
-             @op[@ii].vSpacing = var
-           end
+         def v_spacing var; @os.op[@op.ii].vSpacing = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXMatrix.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXMatrix.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -5627,23 +3917,20 @@ module Fox
      attr_accessor :_o     
    end
    def fx_memory_buffer name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXMemoryBuffer, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:data => :required})
+         @os.op[0] = OpenStruct.new({:data => :required})
          
-           def data var
-             @op[@ii].data = var
-           end
+         def data var; @os.op[@op.ii].data = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXMemoryBuffer.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXMemoryBuffer.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -5652,23 +3939,20 @@ module Fox
      attr_accessor :_o     
    end
    def fx_memory_stream name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXMemoryStream, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:cont => nil})
+         @os.op[0] = OpenStruct.new({:cont => nil})
          
-           def cont var
-             @op[@ii].cont = var
-           end
+         def cont var; @os.op[@op.ii].cont = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXMemoryStream.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXMemoryStream.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -5677,126 +3961,75 @@ module Fox
      attr_accessor :_o     
    end
    def fx_menu_bar name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXMenuBar, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:p => :required, :q => :required, :opts => LAYOUT_TOP|LAYOUT_LEFT|LAYOUT_FILL_X, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 3, :padRight => 3, :padTop => 2, :padBottom => 2, :hSpacing => DEFAULT_SPACING, :vSpacing => DEFAULT_SPACING})
+         @os.op[0] = OpenStruct.new({:p => :required, :q => :required, :opts => LAYOUT_TOP|LAYOUT_LEFT|LAYOUT_FILL_X, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 3, :padRight => 3, :padTop => 2, :padBottom => 2, :hSpacing => DEFAULT_SPACING, :vSpacing => DEFAULT_SPACING})
          
-           def p var
-             @op[@ii].p = var
-           end
+         def p var; @os.op[@op.ii].p = var; end
          
-           def q var
-             @op[@ii].q = var
-           end
+         def q var; @os.op[@op.ii].q = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
-           def pad_left var
-             @op[@ii].padLeft = var
-           end
+         def pad_left var; @os.op[@op.ii].padLeft = var; end
          
-           def pad_right var
-             @op[@ii].padRight = var
-           end
+         def pad_right var; @os.op[@op.ii].padRight = var; end
          
-           def pad_top var
-             @op[@ii].padTop = var
-           end
+         def pad_top var; @os.op[@op.ii].padTop = var; end
          
-           def pad_bottom var
-             @op[@ii].padBottom = var
-           end
+         def pad_bottom var; @os.op[@op.ii].padBottom = var; end
          
-           def h_spacing var
-             @op[@ii].hSpacing = var
-           end
+         def h_spacing var; @os.op[@op.ii].hSpacing = var; end
          
-           def v_spacing var
-             @op[@ii].vSpacing = var
-           end
+         def v_spacing var; @os.op[@op.ii].vSpacing = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
      
-         @op[1] = OpenStruct.new({:p => :required, :opts => :required, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 3, :padRight => 3, :padTop => 2, :padBottom => 2, :hSpacing => DEFAULT_SPACING, :vSpacing => DEFAULT_SPACING})
+         @os.op[1] = OpenStruct.new({:p => :required, :opts => :required, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 3, :padRight => 3, :padTop => 2, :padBottom => 2, :hSpacing => DEFAULT_SPACING, :vSpacing => DEFAULT_SPACING})
          
-           def p var
-             @op[@ii].p = var
-           end
+         def p var; @os.op[@op.ii].p = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
-           def pad_left var
-             @op[@ii].padLeft = var
-           end
+         def pad_left var; @os.op[@op.ii].padLeft = var; end
          
-           def pad_right var
-             @op[@ii].padRight = var
-           end
+         def pad_right var; @os.op[@op.ii].padRight = var; end
          
-           def pad_top var
-             @op[@ii].padTop = var
-           end
+         def pad_top var; @os.op[@op.ii].padTop = var; end
          
-           def pad_bottom var
-             @op[@ii].padBottom = var
-           end
+         def pad_bottom var; @os.op[@op.ii].padBottom = var; end
          
-           def h_spacing var
-             @op[@ii].hSpacing = var
-           end
+         def h_spacing var; @os.op[@op.ii].hSpacing = var; end
          
-           def v_spacing var
-             @op[@ii].vSpacing = var
-           end
+         def v_spacing var; @os.op[@op.ii].vSpacing = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXMenuBar.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXMenuBar.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -5805,71 +4038,44 @@ module Fox
      attr_accessor :_o     
    end
    def fx_menu_button name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXMenuButton, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:parent => :required, :text => :required, :icon => nil, :popupMenu => nil, :opts => JUSTIFY_NORMAL|ICON_BEFORE_TEXT|MENUBUTTON_DOWN, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_SPACING, :padRight => DEFAULT_SPACING, :padTop => DEFAULT_SPACING, :padBottom => DEFAULT_SPACING})
+         @os.op[0] = OpenStruct.new({:parent => :required, :text => :required, :icon => nil, :popupMenu => nil, :opts => JUSTIFY_NORMAL|ICON_BEFORE_TEXT|MENUBUTTON_DOWN, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_SPACING, :padRight => DEFAULT_SPACING, :padTop => DEFAULT_SPACING, :padBottom => DEFAULT_SPACING})
          
-           def parent var
-             @op[@ii].parent = var
-           end
+         def parent var; @os.op[@op.ii].parent = var; end
          
-           def text var
-             @op[@ii].text = var
-           end
+         def text var; @os.op[@op.ii].text = var; end
          
-           def icon var
-             @op[@ii].icon = var
-           end
+         def icon var; @os.op[@op.ii].icon = var; end
          
-           def popup_menu var
-             @op[@ii].popupMenu = var
-           end
+         def popup_menu var; @os.op[@op.ii].popupMenu = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
-           def pad_left var
-             @op[@ii].padLeft = var
-           end
+         def pad_left var; @os.op[@op.ii].padLeft = var; end
          
-           def pad_right var
-             @op[@ii].padRight = var
-           end
+         def pad_right var; @os.op[@op.ii].padRight = var; end
          
-           def pad_top var
-             @op[@ii].padTop = var
-           end
+         def pad_top var; @os.op[@op.ii].padTop = var; end
          
-           def pad_bottom var
-             @op[@ii].padBottom = var
-           end
+         def pad_bottom var; @os.op[@op.ii].padBottom = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXMenuButton.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXMenuButton.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -5878,35 +4084,26 @@ module Fox
      attr_accessor :_o     
    end
    def fx_menu_caption name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXMenuCaption, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:parent => :required, :text => :required, :icon => nil, :opts => 0})
+         @os.op[0] = OpenStruct.new({:parent => :required, :text => :required, :icon => nil, :opts => 0})
          
-           def parent var
-             @op[@ii].parent = var
-           end
+         def parent var; @os.op[@op.ii].parent = var; end
          
-           def text var
-             @op[@ii].text = var
-           end
+         def text var; @os.op[@op.ii].text = var; end
          
-           def icon var
-             @op[@ii].icon = var
-           end
+         def icon var; @os.op[@op.ii].icon = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXMenuCaption.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXMenuCaption.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -5915,39 +4112,28 @@ module Fox
      attr_accessor :_o     
    end
    def fx_menu_cascade name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXMenuCascade, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:parent => :required, :text => :required, :icon => nil, :popupMenu => nil, :opts => 0})
+         @os.op[0] = OpenStruct.new({:parent => :required, :text => :required, :icon => nil, :popupMenu => nil, :opts => 0})
          
-           def parent var
-             @op[@ii].parent = var
-           end
+         def parent var; @os.op[@op.ii].parent = var; end
          
-           def text var
-             @op[@ii].text = var
-           end
+         def text var; @os.op[@op.ii].text = var; end
          
-           def icon var
-             @op[@ii].icon = var
-           end
+         def icon var; @os.op[@op.ii].icon = var; end
          
-           def popup_menu var
-             @op[@ii].popupMenu = var
-           end
+         def popup_menu var; @os.op[@op.ii].popupMenu = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXMenuCascade.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXMenuCascade.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -5956,39 +4142,28 @@ module Fox
      attr_accessor :_o     
    end
    def fx_menu_check name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXMenuCheck, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:p => :required, :text => :required, :target => nil, :selector => 0, :opts => 0})
+         @os.op[0] = OpenStruct.new({:p => :required, :text => :required, :target => nil, :selector => 0, :opts => 0})
          
-           def p var
-             @op[@ii].p = var
-           end
+         def p var; @os.op[@op.ii].p = var; end
          
-           def text var
-             @op[@ii].text = var
-           end
+         def text var; @os.op[@op.ii].text = var; end
          
-           def target var
-             @op[@ii].target = var
-           end
+         def target var; @os.op[@op.ii].target = var; end
          
-           def selector var
-             @op[@ii].selector = var
-           end
+         def selector var; @os.op[@op.ii].selector = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXMenuCheck.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXMenuCheck.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -5997,43 +4172,30 @@ module Fox
      attr_accessor :_o     
    end
    def fx_menu_command name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXMenuCommand, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:p => :required, :text => :required, :ic => nil, :target => nil, :selector => 0, :opts => 0})
+         @os.op[0] = OpenStruct.new({:p => :required, :text => :required, :ic => nil, :target => nil, :selector => 0, :opts => 0})
          
-           def p var
-             @op[@ii].p = var
-           end
+         def p var; @os.op[@op.ii].p = var; end
          
-           def text var
-             @op[@ii].text = var
-           end
+         def text var; @os.op[@op.ii].text = var; end
          
-           def ic var
-             @op[@ii].ic = var
-           end
+         def ic var; @os.op[@op.ii].ic = var; end
          
-           def target var
-             @op[@ii].target = var
-           end
+         def target var; @os.op[@op.ii].target = var; end
          
-           def selector var
-             @op[@ii].selector = var
-           end
+         def selector var; @os.op[@op.ii].selector = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXMenuCommand.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXMenuCommand.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -6042,27 +4204,22 @@ module Fox
      attr_accessor :_o     
    end
    def fx_menu_pane name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXMenuPane, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:owner => :required, :opts => 0})
+         @os.op[0] = OpenStruct.new({:owner => :required, :opts => 0})
          
-           def owner var
-             @op[@ii].owner = var
-           end
+         def owner var; @os.op[@op.ii].owner = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXMenuPane.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXMenuPane.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -6071,39 +4228,28 @@ module Fox
      attr_accessor :_o     
    end
    def fx_menu_radio name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXMenuRadio, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:p => :required, :text => :required, :target => nil, :selector => 0, :opts => 0})
+         @os.op[0] = OpenStruct.new({:p => :required, :text => :required, :target => nil, :selector => 0, :opts => 0})
          
-           def p var
-             @op[@ii].p = var
-           end
+         def p var; @os.op[@op.ii].p = var; end
          
-           def text var
-             @op[@ii].text = var
-           end
+         def text var; @os.op[@op.ii].text = var; end
          
-           def target var
-             @op[@ii].target = var
-           end
+         def target var; @os.op[@op.ii].target = var; end
          
-           def selector var
-             @op[@ii].selector = var
-           end
+         def selector var; @os.op[@op.ii].selector = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXMenuRadio.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXMenuRadio.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -6112,27 +4258,22 @@ module Fox
      attr_accessor :_o     
    end
    def fx_menu_separator name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXMenuSeparator, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:parent => :required, :opts => 0})
+         @os.op[0] = OpenStruct.new({:parent => :required, :opts => 0})
          
-           def parent var
-             @op[@ii].parent = var
-           end
+         def parent var; @os.op[@op.ii].parent = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXMenuSeparator.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXMenuSeparator.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -6141,39 +4282,28 @@ module Fox
      attr_accessor :_o     
    end
    def fx_menu_title name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXMenuTitle, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:parent => :required, :text => :required, :icon => nil, :popupMenu => nil, :opts => 0})
+         @os.op[0] = OpenStruct.new({:parent => :required, :text => :required, :icon => nil, :popupMenu => nil, :opts => 0})
          
-           def parent var
-             @op[@ii].parent = var
-           end
+         def parent var; @os.op[@op.ii].parent = var; end
          
-           def text var
-             @op[@ii].text = var
-           end
+         def text var; @os.op[@op.ii].text = var; end
          
-           def icon var
-             @op[@ii].icon = var
-           end
+         def icon var; @os.op[@op.ii].icon = var; end
          
-           def popup_menu var
-             @op[@ii].popupMenu = var
-           end
+         def popup_menu var; @os.op[@op.ii].popupMenu = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXMenuTitle.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXMenuTitle.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -6182,47 +4312,32 @@ module Fox
      attr_accessor :_o     
    end
    def fx_message_box name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXMessageBox, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:owner => :required, :caption => :required, :text => :required, :ic => nil, :opts => 0, :x => 0, :y => 0})
+         @os.op[0] = OpenStruct.new({:owner => :required, :caption => :required, :text => :required, :ic => nil, :opts => 0, :x => 0, :y => 0})
          
-           def owner var
-             @op[@ii].owner = var
-           end
+         def owner var; @os.op[@op.ii].owner = var; end
          
-           def caption var
-             @op[@ii].caption = var
-           end
+         def caption var; @os.op[@op.ii].caption = var; end
          
-           def text var
-             @op[@ii].text = var
-           end
+         def text var; @os.op[@op.ii].text = var; end
          
-           def ic var
-             @op[@ii].ic = var
-           end
+         def ic var; @os.op[@op.ii].ic = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXMessageBox.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXMessageBox.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -6231,12 +4346,11 @@ module Fox
      attr_accessor :_o     
    end
    def fx_object name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXObject, op: [], ii: ii, fx: nil, kinder: []))
      
           
      self.instance_eval &block
-     Enhancement.stack << FXObject.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXObject.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -6245,75 +4359,46 @@ module Fox
      attr_accessor :_o     
    end
    def fx_option name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXOption, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:p => :required, :text => :required, :ic => nil, :target => nil, :selector => 0, :opts => JUSTIFY_NORMAL|ICON_BEFORE_TEXT, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
+         @os.op[0] = OpenStruct.new({:p => :required, :text => :required, :ic => nil, :target => nil, :selector => 0, :opts => JUSTIFY_NORMAL|ICON_BEFORE_TEXT, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
          
-           def p var
-             @op[@ii].p = var
-           end
+         def p var; @os.op[@op.ii].p = var; end
          
-           def text var
-             @op[@ii].text = var
-           end
+         def text var; @os.op[@op.ii].text = var; end
          
-           def ic var
-             @op[@ii].ic = var
-           end
+         def ic var; @os.op[@op.ii].ic = var; end
          
-           def target var
-             @op[@ii].target = var
-           end
+         def target var; @os.op[@op.ii].target = var; end
          
-           def selector var
-             @op[@ii].selector = var
-           end
+         def selector var; @os.op[@op.ii].selector = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
-           def pad_left var
-             @op[@ii].padLeft = var
-           end
+         def pad_left var; @os.op[@op.ii].padLeft = var; end
          
-           def pad_right var
-             @op[@ii].padRight = var
-           end
+         def pad_right var; @os.op[@op.ii].padRight = var; end
          
-           def pad_top var
-             @op[@ii].padTop = var
-           end
+         def pad_top var; @os.op[@op.ii].padTop = var; end
          
-           def pad_bottom var
-             @op[@ii].padBottom = var
-           end
+         def pad_bottom var; @os.op[@op.ii].padBottom = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXOption.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXOption.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -6322,63 +4407,40 @@ module Fox
      attr_accessor :_o     
    end
    def fx_option_menu name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXOptionMenu, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:p => :required, :pup => nil, :opts => JUSTIFY_NORMAL|ICON_BEFORE_TEXT, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
+         @os.op[0] = OpenStruct.new({:p => :required, :pup => nil, :opts => JUSTIFY_NORMAL|ICON_BEFORE_TEXT, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
          
-           def p var
-             @op[@ii].p = var
-           end
+         def p var; @os.op[@op.ii].p = var; end
          
-           def pup var
-             @op[@ii].pup = var
-           end
+         def pup var; @os.op[@op.ii].pup = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
-           def pad_left var
-             @op[@ii].padLeft = var
-           end
+         def pad_left var; @os.op[@op.ii].padLeft = var; end
          
-           def pad_right var
-             @op[@ii].padRight = var
-           end
+         def pad_right var; @os.op[@op.ii].padRight = var; end
          
-           def pad_top var
-             @op[@ii].padTop = var
-           end
+         def pad_top var; @os.op[@op.ii].padTop = var; end
          
-           def pad_bottom var
-             @op[@ii].padBottom = var
-           end
+         def pad_bottom var; @os.op[@op.ii].padBottom = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXOptionMenu.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXOptionMenu.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -6387,43 +4449,30 @@ module Fox
      attr_accessor :_o     
    end
    def fxpcx_icon name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXPCXIcon, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:a => :required, :pix => nil, :clr => 0, :opts => 0, :width => 1, :height => 1})
+         @os.op[0] = OpenStruct.new({:a => :required, :pix => nil, :clr => 0, :opts => 0, :width => 1, :height => 1})
          
-           def a var
-             @op[@ii].a = var
-           end
+         def a var; @os.op[@op.ii].a = var; end
          
-           def pix var
-             @op[@ii].pix = var
-           end
+         def pix var; @os.op[@op.ii].pix = var; end
          
-           def clr var
-             @op[@ii].clr = var
-           end
+         def clr var; @os.op[@op.ii].clr = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXPCXIcon.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXPCXIcon.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -6432,39 +4481,28 @@ module Fox
      attr_accessor :_o     
    end
    def fxpcx_image name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXPCXImage, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:a => :required, :pix => nil, :opts => 0, :width => 1, :height => 1})
+         @os.op[0] = OpenStruct.new({:a => :required, :pix => nil, :opts => 0, :width => 1, :height => 1})
          
-           def a var
-             @op[@ii].a = var
-           end
+         def a var; @os.op[@op.ii].a = var; end
          
-           def pix var
-             @op[@ii].pix = var
-           end
+         def pix var; @os.op[@op.ii].pix = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXPCXImage.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXPCXImage.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -6473,43 +4511,30 @@ module Fox
      attr_accessor :_o     
    end
    def fxpng_icon name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXPNGIcon, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:a => :required, :pix => nil, :clr => 0, :opts => 0, :width => 1, :height => 1})
+         @os.op[0] = OpenStruct.new({:a => :required, :pix => nil, :clr => 0, :opts => 0, :width => 1, :height => 1})
          
-           def a var
-             @op[@ii].a = var
-           end
+         def a var; @os.op[@op.ii].a = var; end
          
-           def pix var
-             @op[@ii].pix = var
-           end
+         def pix var; @os.op[@op.ii].pix = var; end
          
-           def clr var
-             @op[@ii].clr = var
-           end
+         def clr var; @os.op[@op.ii].clr = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXPNGIcon.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXPNGIcon.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -6518,39 +4543,28 @@ module Fox
      attr_accessor :_o     
    end
    def fxpng_image name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXPNGImage, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:a => :required, :pix => nil, :opts => 0, :width => 1, :height => 1})
+         @os.op[0] = OpenStruct.new({:a => :required, :pix => nil, :opts => 0, :width => 1, :height => 1})
          
-           def a var
-             @op[@ii].a = var
-           end
+         def a var; @os.op[@op.ii].a = var; end
          
-           def pix var
-             @op[@ii].pix = var
-           end
+         def pix var; @os.op[@op.ii].pix = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXPNGImage.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXPNGImage.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -6559,43 +4573,30 @@ module Fox
      attr_accessor :_o     
    end
    def fxppm_icon name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXPPMIcon, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:a => :required, :pix => nil, :clr => 0, :opts => 0, :width => 1, :height => 1})
+         @os.op[0] = OpenStruct.new({:a => :required, :pix => nil, :clr => 0, :opts => 0, :width => 1, :height => 1})
          
-           def a var
-             @op[@ii].a = var
-           end
+         def a var; @os.op[@op.ii].a = var; end
          
-           def pix var
-             @op[@ii].pix = var
-           end
+         def pix var; @os.op[@op.ii].pix = var; end
          
-           def clr var
-             @op[@ii].clr = var
-           end
+         def clr var; @os.op[@op.ii].clr = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXPPMIcon.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXPPMIcon.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -6604,39 +4605,28 @@ module Fox
      attr_accessor :_o     
    end
    def fxppm_image name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXPPMImage, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:a => :required, :pix => nil, :opts => 0, :width => 1, :height => 1})
+         @os.op[0] = OpenStruct.new({:a => :required, :pix => nil, :opts => 0, :width => 1, :height => 1})
          
-           def a var
-             @op[@ii].a = var
-           end
+         def a var; @os.op[@op.ii].a = var; end
          
-           def pix var
-             @op[@ii].pix = var
-           end
+         def pix var; @os.op[@op.ii].pix = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXPPMImage.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXPPMImage.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -6645,67 +4635,42 @@ module Fox
      attr_accessor :_o     
    end
    def fx_packer name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXPacker, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:parent => :required, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_SPACING, :padRight => DEFAULT_SPACING, :padTop => DEFAULT_SPACING, :padBottom => DEFAULT_SPACING, :hSpacing => DEFAULT_SPACING, :vSpacing => DEFAULT_SPACING})
+         @os.op[0] = OpenStruct.new({:parent => :required, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_SPACING, :padRight => DEFAULT_SPACING, :padTop => DEFAULT_SPACING, :padBottom => DEFAULT_SPACING, :hSpacing => DEFAULT_SPACING, :vSpacing => DEFAULT_SPACING})
          
-           def parent var
-             @op[@ii].parent = var
-           end
+         def parent var; @os.op[@op.ii].parent = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
-           def pad_left var
-             @op[@ii].padLeft = var
-           end
+         def pad_left var; @os.op[@op.ii].padLeft = var; end
          
-           def pad_right var
-             @op[@ii].padRight = var
-           end
+         def pad_right var; @os.op[@op.ii].padRight = var; end
          
-           def pad_top var
-             @op[@ii].padTop = var
-           end
+         def pad_top var; @os.op[@op.ii].padTop = var; end
          
-           def pad_bottom var
-             @op[@ii].padBottom = var
-           end
+         def pad_bottom var; @os.op[@op.ii].padBottom = var; end
          
-           def h_spacing var
-             @op[@ii].hSpacing = var
-           end
+         def h_spacing var; @os.op[@op.ii].hSpacing = var; end
          
-           def v_spacing var
-             @op[@ii].vSpacing = var
-           end
+         def v_spacing var; @os.op[@op.ii].vSpacing = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXPacker.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXPacker.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -6714,75 +4679,46 @@ module Fox
      attr_accessor :_o     
    end
    def fx_picker name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXPicker, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:p => :required, :text => :required, :ic => nil, :target => nil, :selector => 0, :opts => BUTTON_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
+         @os.op[0] = OpenStruct.new({:p => :required, :text => :required, :ic => nil, :target => nil, :selector => 0, :opts => BUTTON_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
          
-           def p var
-             @op[@ii].p = var
-           end
+         def p var; @os.op[@op.ii].p = var; end
          
-           def text var
-             @op[@ii].text = var
-           end
+         def text var; @os.op[@op.ii].text = var; end
          
-           def ic var
-             @op[@ii].ic = var
-           end
+         def ic var; @os.op[@op.ii].ic = var; end
          
-           def target var
-             @op[@ii].target = var
-           end
+         def target var; @os.op[@op.ii].target = var; end
          
-           def selector var
-             @op[@ii].selector = var
-           end
+         def selector var; @os.op[@op.ii].selector = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
-           def pad_left var
-             @op[@ii].padLeft = var
-           end
+         def pad_left var; @os.op[@op.ii].padLeft = var; end
          
-           def pad_right var
-             @op[@ii].padRight = var
-           end
+         def pad_right var; @os.op[@op.ii].padRight = var; end
          
-           def pad_top var
-             @op[@ii].padTop = var
-           end
+         def pad_top var; @os.op[@op.ii].padTop = var; end
          
-           def pad_bottom var
-             @op[@ii].padBottom = var
-           end
+         def pad_bottom var; @os.op[@op.ii].padBottom = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXPicker.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXPicker.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -6791,43 +4727,30 @@ module Fox
      attr_accessor :_o     
    end
    def fx_popup name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXPopup, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:owner => :required, :opts => POPUP_VERTICAL|FRAME_RAISED|FRAME_THICK, :x => 0, :y => 0, :width => 0, :height => 0})
+         @os.op[0] = OpenStruct.new({:owner => :required, :opts => POPUP_VERTICAL|FRAME_RAISED|FRAME_THICK, :x => 0, :y => 0, :width => 0, :height => 0})
          
-           def owner var
-             @op[@ii].owner = var
-           end
+         def owner var; @os.op[@op.ii].owner = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXPopup.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXPopup.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -6836,47 +4759,32 @@ module Fox
      attr_accessor :_o     
    end
    def fx_print_dialog name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXPrintDialog, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:owner => :required, :name => :required, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
+         @os.op[0] = OpenStruct.new({:owner => :required, :name => :required, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
          
-           def owner var
-             @op[@ii].owner = var
-           end
+         def owner var; @os.op[@op.ii].owner = var; end
          
-           def name var
-             @op[@ii].name = var
-           end
+         def name var; @os.op[@op.ii].name = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXPrintDialog.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXPrintDialog.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -6885,67 +4793,42 @@ module Fox
      attr_accessor :_o     
    end
    def fx_progress_bar name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXProgressBar, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => PROGRESSBAR_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
+         @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => PROGRESSBAR_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
          
-           def p var
-             @op[@ii].p = var
-           end
+         def p var; @os.op[@op.ii].p = var; end
          
-           def target var
-             @op[@ii].target = var
-           end
+         def target var; @os.op[@op.ii].target = var; end
          
-           def selector var
-             @op[@ii].selector = var
-           end
+         def selector var; @os.op[@op.ii].selector = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
-           def pad_left var
-             @op[@ii].padLeft = var
-           end
+         def pad_left var; @os.op[@op.ii].padLeft = var; end
          
-           def pad_right var
-             @op[@ii].padRight = var
-           end
+         def pad_right var; @os.op[@op.ii].padRight = var; end
          
-           def pad_top var
-             @op[@ii].padTop = var
-           end
+         def pad_top var; @os.op[@op.ii].padTop = var; end
          
-           def pad_bottom var
-             @op[@ii].padBottom = var
-           end
+         def pad_bottom var; @os.op[@op.ii].padBottom = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXProgressBar.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXProgressBar.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -6954,51 +4837,34 @@ module Fox
      attr_accessor :_o     
    end
    def fx_progress_dialog name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXProgressDialog, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:owner => :required, :caption => :required, :label => :required, :opts => PROGRESSDIALOG_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0})
+         @os.op[0] = OpenStruct.new({:owner => :required, :caption => :required, :label => :required, :opts => PROGRESSDIALOG_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0})
          
-           def owner var
-             @op[@ii].owner = var
-           end
+         def owner var; @os.op[@op.ii].owner = var; end
          
-           def caption var
-             @op[@ii].caption = var
-           end
+         def caption var; @os.op[@op.ii].caption = var; end
          
-           def label var
-             @op[@ii].label = var
-           end
+         def label var; @os.op[@op.ii].label = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXProgressDialog.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXProgressDialog.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -7007,99 +4873,72 @@ module Fox
      attr_accessor :_o     
    end
    def fx_quatd name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXQuatd, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:axis => :required, :phi => 0.0})
+         @os.op[0] = OpenStruct.new({:axis => :required, :phi => 0.0})
          
-           def axis var
-             @op[@ii].axis = var
-           end
+         def axis var; @os.op[@op.ii].axis = var; end
          
-           def phi var
-             @op[@ii].phi = var
-           end
+         def phi var; @os.op[@op.ii].phi = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
      
-         @op[1] = OpenStruct.new({:x => :required, :y => :required, :z => :required, :w => :required})
+         @os.op[1] = OpenStruct.new({:x => :required, :y => :required, :z => :required, :w => :required})
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def z var
-             @op[@ii].z = var
-           end
+         def z var; @os.op[@op.ii].z = var; end
          
-           def w var
-             @op[@ii].w = var
-           end
+         def w var; @os.op[@op.ii].w = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
      
-         @op[2] = OpenStruct.new({:floats => :required})
+         @os.op[2] = OpenStruct.new({:floats => :required})
          
-           def floats var
-             @op[@ii].floats = var
-           end
+         def floats var; @os.op[@op.ii].floats = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
      
-         @op[3] = OpenStruct.new({:roll => :required, :pitch => :required, :yaw => :required})
+         @os.op[3] = OpenStruct.new({:roll => :required, :pitch => :required, :yaw => :required})
          
-           def roll var
-             @op[@ii].roll = var
-           end
+         def roll var; @os.op[@op.ii].roll = var; end
          
-           def pitch var
-             @op[@ii].pitch = var
-           end
+         def pitch var; @os.op[@op.ii].pitch = var; end
          
-           def yaw var
-             @op[@ii].yaw = var
-           end
+         def yaw var; @os.op[@op.ii].yaw = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
      
-         @op[4] = OpenStruct.new({:ex => :required, :ey => :required, :ez => :required})
+         @os.op[4] = OpenStruct.new({:ex => :required, :ey => :required, :ez => :required})
          
-           def ex var
-             @op[@ii].ex = var
-           end
+         def ex var; @os.op[@op.ii].ex = var; end
          
-           def ey var
-             @op[@ii].ey = var
-           end
+         def ey var; @os.op[@op.ii].ey = var; end
          
-           def ez var
-             @op[@ii].ez = var
-           end
+         def ez var; @os.op[@op.ii].ez = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXQuatd.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXQuatd.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -7108,99 +4947,72 @@ module Fox
      attr_accessor :_o     
    end
    def fx_quatf name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXQuatf, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:axis => :required, :phi => 0.0})
+         @os.op[0] = OpenStruct.new({:axis => :required, :phi => 0.0})
          
-           def axis var
-             @op[@ii].axis = var
-           end
+         def axis var; @os.op[@op.ii].axis = var; end
          
-           def phi var
-             @op[@ii].phi = var
-           end
+         def phi var; @os.op[@op.ii].phi = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
      
-         @op[1] = OpenStruct.new({:roll => :required, :pitch => :required, :yaw => :required})
+         @os.op[1] = OpenStruct.new({:roll => :required, :pitch => :required, :yaw => :required})
          
-           def roll var
-             @op[@ii].roll = var
-           end
+         def roll var; @os.op[@op.ii].roll = var; end
          
-           def pitch var
-             @op[@ii].pitch = var
-           end
+         def pitch var; @os.op[@op.ii].pitch = var; end
          
-           def yaw var
-             @op[@ii].yaw = var
-           end
+         def yaw var; @os.op[@op.ii].yaw = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
      
-         @op[2] = OpenStruct.new({:ex => :required, :ey => :required, :ez => :required})
+         @os.op[2] = OpenStruct.new({:ex => :required, :ey => :required, :ez => :required})
          
-           def ex var
-             @op[@ii].ex = var
-           end
+         def ex var; @os.op[@op.ii].ex = var; end
          
-           def ey var
-             @op[@ii].ey = var
-           end
+         def ey var; @os.op[@op.ii].ey = var; end
          
-           def ez var
-             @op[@ii].ez = var
-           end
+         def ez var; @os.op[@op.ii].ez = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
      
-         @op[3] = OpenStruct.new({:mat => :required})
+         @os.op[3] = OpenStruct.new({:mat => :required})
          
-           def mat var
-             @op[@ii].mat = var
-           end
+         def mat var; @os.op[@op.ii].mat = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
      
-         @op[4] = OpenStruct.new({:x => :required, :y => :required, :z => :required, :w => :required})
+         @os.op[4] = OpenStruct.new({:x => :required, :y => :required, :z => :required, :w => :required})
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def z var
-             @op[@ii].z = var
-           end
+         def z var; @os.op[@op.ii].z = var; end
          
-           def w var
-             @op[@ii].w = var
-           end
+         def w var; @os.op[@op.ii].w = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXQuatf.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXQuatf.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -7209,43 +5021,30 @@ module Fox
      attr_accessor :_o     
    end
    def fxrgb_icon name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXRGBIcon, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:a => :required, :pix => nil, :clr => 0, :opts => 0, :width => 1, :height => 1})
+         @os.op[0] = OpenStruct.new({:a => :required, :pix => nil, :clr => 0, :opts => 0, :width => 1, :height => 1})
          
-           def a var
-             @op[@ii].a = var
-           end
+         def a var; @os.op[@op.ii].a = var; end
          
-           def pix var
-             @op[@ii].pix = var
-           end
+         def pix var; @os.op[@op.ii].pix = var; end
          
-           def clr var
-             @op[@ii].clr = var
-           end
+         def clr var; @os.op[@op.ii].clr = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXRGBIcon.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXRGBIcon.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -7254,39 +5053,28 @@ module Fox
      attr_accessor :_o     
    end
    def fxrgb_image name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXRGBImage, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:a => :required, :pix => nil, :opts => 0, :width => 1, :height => 1})
+         @os.op[0] = OpenStruct.new({:a => :required, :pix => nil, :opts => 0, :width => 1, :height => 1})
          
-           def a var
-             @op[@ii].a = var
-           end
+         def a var; @os.op[@op.ii].a = var; end
          
-           def pix var
-             @op[@ii].pix = var
-           end
+         def pix var; @os.op[@op.ii].pix = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXRGBImage.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXRGBImage.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -7295,71 +5083,44 @@ module Fox
      attr_accessor :_o     
    end
    def fx_radio_button name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXRadioButton, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:parent => :required, :text => :required, :target => nil, :selector => 0, :opts => RADIOBUTTON_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
+         @os.op[0] = OpenStruct.new({:parent => :required, :text => :required, :target => nil, :selector => 0, :opts => RADIOBUTTON_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
          
-           def parent var
-             @op[@ii].parent = var
-           end
+         def parent var; @os.op[@op.ii].parent = var; end
          
-           def text var
-             @op[@ii].text = var
-           end
+         def text var; @os.op[@op.ii].text = var; end
          
-           def target var
-             @op[@ii].target = var
-           end
+         def target var; @os.op[@op.ii].target = var; end
          
-           def selector var
-             @op[@ii].selector = var
-           end
+         def selector var; @os.op[@op.ii].selector = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
-           def pad_left var
-             @op[@ii].padLeft = var
-           end
+         def pad_left var; @os.op[@op.ii].padLeft = var; end
          
-           def pad_right var
-             @op[@ii].padRight = var
-           end
+         def pad_right var; @os.op[@op.ii].padRight = var; end
          
-           def pad_top var
-             @op[@ii].padTop = var
-           end
+         def pad_top var; @os.op[@op.ii].padTop = var; end
          
-           def pad_bottom var
-             @op[@ii].padBottom = var
-           end
+         def pad_bottom var; @os.op[@op.ii].padBottom = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXRadioButton.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXRadioButton.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -7368,65 +5129,48 @@ module Fox
      attr_accessor :_o     
    end
    def fx_ranged name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXRanged, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:xlo => 0.0, :xhi => 0.0, :ylo => 0.0, :yhi => 0.0, :zlo => 0.0, :zhi => 0.0})
+         @os.op[0] = OpenStruct.new({:xlo => 0.0, :xhi => 0.0, :ylo => 0.0, :yhi => 0.0, :zlo => 0.0, :zhi => 0.0})
          
-           def xlo var
-             @op[@ii].xlo = var
-           end
+         def xlo var; @os.op[@op.ii].xlo = var; end
          
-           def xhi var
-             @op[@ii].xhi = var
-           end
+         def xhi var; @os.op[@op.ii].xhi = var; end
          
-           def ylo var
-             @op[@ii].ylo = var
-           end
+         def ylo var; @os.op[@op.ii].ylo = var; end
          
-           def yhi var
-             @op[@ii].yhi = var
-           end
+         def yhi var; @os.op[@op.ii].yhi = var; end
          
-           def zlo var
-             @op[@ii].zlo = var
-           end
+         def zlo var; @os.op[@op.ii].zlo = var; end
          
-           def zhi var
-             @op[@ii].zhi = var
-           end
+         def zhi var; @os.op[@op.ii].zhi = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
      
-         @op[1] = OpenStruct.new({:bounds => :required})
+         @os.op[1] = OpenStruct.new({:bounds => :required})
          
-           def bounds var
-             @op[@ii].bounds = var
-           end
+         def bounds var; @os.op[@op.ii].bounds = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
      
-         @op[2] = OpenStruct.new({:sphere => :required})
+         @os.op[2] = OpenStruct.new({:sphere => :required})
          
-           def sphere var
-             @op[@ii].sphere = var
-           end
+         def sphere var; @os.op[@op.ii].sphere = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXRanged.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXRanged.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -7435,65 +5179,48 @@ module Fox
      attr_accessor :_o     
    end
    def fx_rangef name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXRangef, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:xlo => 0.0, :xhi => 0.0, :ylo => 0.0, :yhi => 0.0, :zlo => 0.0, :zhi => 0.0})
+         @os.op[0] = OpenStruct.new({:xlo => 0.0, :xhi => 0.0, :ylo => 0.0, :yhi => 0.0, :zlo => 0.0, :zhi => 0.0})
          
-           def xlo var
-             @op[@ii].xlo = var
-           end
+         def xlo var; @os.op[@op.ii].xlo = var; end
          
-           def xhi var
-             @op[@ii].xhi = var
-           end
+         def xhi var; @os.op[@op.ii].xhi = var; end
          
-           def ylo var
-             @op[@ii].ylo = var
-           end
+         def ylo var; @os.op[@op.ii].ylo = var; end
          
-           def yhi var
-             @op[@ii].yhi = var
-           end
+         def yhi var; @os.op[@op.ii].yhi = var; end
          
-           def zlo var
-             @op[@ii].zlo = var
-           end
+         def zlo var; @os.op[@op.ii].zlo = var; end
          
-           def zhi var
-             @op[@ii].zhi = var
-           end
+         def zhi var; @os.op[@op.ii].zhi = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
      
-         @op[1] = OpenStruct.new({:bounds => :required})
+         @os.op[1] = OpenStruct.new({:bounds => :required})
          
-           def bounds var
-             @op[@ii].bounds = var
-           end
+         def bounds var; @os.op[@op.ii].bounds = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
      
-         @op[2] = OpenStruct.new({:sphere => :required})
+         @os.op[2] = OpenStruct.new({:sphere => :required})
          
-           def sphere var
-             @op[@ii].sphere = var
-           end
+         def sphere var; @os.op[@op.ii].sphere = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXRangef.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXRangef.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -7502,67 +5229,42 @@ module Fox
      attr_accessor :_o     
    end
    def fx_real_slider name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXRealSlider, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => REALSLIDER_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 0, :padRight => 0, :padTop => 0, :padBottom => 0})
+         @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => REALSLIDER_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 0, :padRight => 0, :padTop => 0, :padBottom => 0})
          
-           def p var
-             @op[@ii].p = var
-           end
+         def p var; @os.op[@op.ii].p = var; end
          
-           def target var
-             @op[@ii].target = var
-           end
+         def target var; @os.op[@op.ii].target = var; end
          
-           def selector var
-             @op[@ii].selector = var
-           end
+         def selector var; @os.op[@op.ii].selector = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
-           def pad_left var
-             @op[@ii].padLeft = var
-           end
+         def pad_left var; @os.op[@op.ii].padLeft = var; end
          
-           def pad_right var
-             @op[@ii].padRight = var
-           end
+         def pad_right var; @os.op[@op.ii].padRight = var; end
          
-           def pad_top var
-             @op[@ii].padTop = var
-           end
+         def pad_top var; @os.op[@op.ii].padTop = var; end
          
-           def pad_bottom var
-             @op[@ii].padBottom = var
-           end
+         def pad_bottom var; @os.op[@op.ii].padBottom = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXRealSlider.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXRealSlider.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -7571,71 +5273,44 @@ module Fox
      attr_accessor :_o     
    end
    def fx_real_spinner name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXRealSpinner, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:p => :required, :cols => :required, :target => nil, :selector => 0, :opts => REALSPIN_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
+         @os.op[0] = OpenStruct.new({:p => :required, :cols => :required, :target => nil, :selector => 0, :opts => REALSPIN_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
          
-           def p var
-             @op[@ii].p = var
-           end
+         def p var; @os.op[@op.ii].p = var; end
          
-           def cols var
-             @op[@ii].cols = var
-           end
+         def cols var; @os.op[@op.ii].cols = var; end
          
-           def target var
-             @op[@ii].target = var
-           end
+         def target var; @os.op[@op.ii].target = var; end
          
-           def selector var
-             @op[@ii].selector = var
-           end
+         def selector var; @os.op[@op.ii].selector = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
-           def pad_left var
-             @op[@ii].padLeft = var
-           end
+         def pad_left var; @os.op[@op.ii].padLeft = var; end
          
-           def pad_right var
-             @op[@ii].padRight = var
-           end
+         def pad_right var; @os.op[@op.ii].padRight = var; end
          
-           def pad_top var
-             @op[@ii].padTop = var
-           end
+         def pad_top var; @os.op[@op.ii].padTop = var; end
          
-           def pad_bottom var
-             @op[@ii].padBottom = var
-           end
+         def pad_bottom var; @os.op[@op.ii].padBottom = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXRealSpinner.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXRealSpinner.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -7644,46 +5319,35 @@ module Fox
      attr_accessor :_o     
    end
    def fx_recent_files name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXRecentFiles, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:a => :required})
+         @os.op[0] = OpenStruct.new({:a => :required})
          
-           def a var
-             @op[@ii].a = var
-           end
+         def a var; @os.op[@op.ii].a = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
      
-         @op[1] = OpenStruct.new({:a => :required, :gp => :required, :target => nil, :selector => 0})
+         @os.op[1] = OpenStruct.new({:a => :required, :gp => :required, :target => nil, :selector => 0})
          
-           def a var
-             @op[@ii].a = var
-           end
+         def a var; @os.op[@op.ii].a = var; end
          
-           def gp var
-             @op[@ii].gp = var
-           end
+         def gp var; @os.op[@op.ii].gp = var; end
          
-           def target var
-             @op[@ii].target = var
-           end
+         def target var; @os.op[@op.ii].target = var; end
          
-           def selector var
-             @op[@ii].selector = var
-           end
+         def selector var; @os.op[@op.ii].selector = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXRecentFiles.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXRecentFiles.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -7692,65 +5356,48 @@ module Fox
      attr_accessor :_o     
    end
    def fx_rectangle name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXRectangle, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:xx => :required, :yy => :required, :ww => :required, :hh => :required})
+         @os.op[0] = OpenStruct.new({:xx => :required, :yy => :required, :ww => :required, :hh => :required})
          
-           def xx var
-             @op[@ii].xx = var
-           end
+         def xx var; @os.op[@op.ii].xx = var; end
          
-           def yy var
-             @op[@ii].yy = var
-           end
+         def yy var; @os.op[@op.ii].yy = var; end
          
-           def ww var
-             @op[@ii].ww = var
-           end
+         def ww var; @os.op[@op.ii].ww = var; end
          
-           def hh var
-             @op[@ii].hh = var
-           end
+         def hh var; @os.op[@op.ii].hh = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
      
-         @op[1] = OpenStruct.new({:p => :required, :s => :required})
+         @os.op[1] = OpenStruct.new({:p => :required, :s => :required})
          
-           def p var
-             @op[@ii].p = var
-           end
+         def p var; @os.op[@op.ii].p = var; end
          
-           def s var
-             @op[@ii].s = var
-           end
+         def s var; @os.op[@op.ii].s = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
      
-         @op[2] = OpenStruct.new({:topleft => :required, :bottomright => :required})
+         @os.op[2] = OpenStruct.new({:topleft => :required, :bottomright => :required})
          
-           def topleft var
-             @op[@ii].topleft = var
-           end
+         def topleft var; @os.op[@op.ii].topleft = var; end
          
-           def bottomright var
-             @op[@ii].bottomright = var
-           end
+         def bottomright var; @os.op[@op.ii].bottomright = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXRectangle.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXRectangle.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -7759,72 +5406,55 @@ module Fox
      attr_accessor :_o     
    end
    def fx_region name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXRegion, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:r => :required})
+         @os.op[0] = OpenStruct.new({:r => :required})
          
-           def r var
-             @op[@ii].r = var
-           end
+         def r var; @os.op[@op.ii].r = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
      
-         @op[1] = OpenStruct.new({:rect => :required})
+         @os.op[1] = OpenStruct.new({:rect => :required})
          
-           def rect var
-             @op[@ii].rect = var
-           end
+         def rect var; @os.op[@op.ii].rect = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
      
-         @op[2] = OpenStruct.new({:x => :required, :y => :required, :w => :required, :h => :required})
+         @os.op[2] = OpenStruct.new({:x => :required, :y => :required, :w => :required, :h => :required})
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def w var
-             @op[@ii].w = var
-           end
+         def w var; @os.op[@op.ii].w = var; end
          
-           def h var
-             @op[@ii].h = var
-           end
+         def h var; @os.op[@op.ii].h = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
      
-         @op[3] = OpenStruct.new({:points => :required, :winding => false})
+         @os.op[3] = OpenStruct.new({:points => :required, :winding => false})
          
-           def points var
-             @op[@ii].points = var
-           end
+         def points var; @os.op[@op.ii].points = var; end
          
-           def winding var
-             @op[@ii].winding = var
-           end
+         def winding var; @os.op[@op.ii].winding = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXRegion.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXRegion.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -7833,27 +5463,22 @@ module Fox
      attr_accessor :_o     
    end
    def fx_registry name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXRegistry, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:appKey => "", :vendorKey => ""})
+         @os.op[0] = OpenStruct.new({:appKey => "", :vendorKey => ""})
          
-           def app_key var
-             @op[@ii].appKey = var
-           end
+         def app_key var; @os.op[@op.ii].appKey = var; end
          
-           def vendor_key var
-             @op[@ii].vendorKey = var
-           end
+         def vendor_key var; @os.op[@op.ii].vendorKey = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXRegistry.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXRegistry.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -7862,51 +5487,34 @@ module Fox
      attr_accessor :_o     
    end
    def fx_replace_dialog name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXReplaceDialog, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:owner => :required, :caption => :required, :ic => nil, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
+         @os.op[0] = OpenStruct.new({:owner => :required, :caption => :required, :ic => nil, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
          
-           def owner var
-             @op[@ii].owner = var
-           end
+         def owner var; @os.op[@op.ii].owner = var; end
          
-           def caption var
-             @op[@ii].caption = var
-           end
+         def caption var; @os.op[@op.ii].caption = var; end
          
-           def ic var
-             @op[@ii].ic = var
-           end
+         def ic var; @os.op[@op.ii].ic = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXReplaceDialog.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXReplaceDialog.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -7915,27 +5523,22 @@ module Fox
      attr_accessor :_o     
    end
    def fx_root_window name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXRootWindow, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:a => :required, :vis => :required})
+         @os.op[0] = OpenStruct.new({:a => :required, :vis => :required})
          
-           def a var
-             @op[@ii].a = var
-           end
+         def a var; @os.op[@op.ii].a = var; end
          
-           def vis var
-             @op[@ii].vis = var
-           end
+         def vis var; @os.op[@op.ii].vis = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXRootWindow.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXRootWindow.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -7944,67 +5547,42 @@ module Fox
      attr_accessor :_o     
    end
    def fx_ruler name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXRuler, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => RULER_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
+         @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => RULER_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
          
-           def p var
-             @op[@ii].p = var
-           end
+         def p var; @os.op[@op.ii].p = var; end
          
-           def target var
-             @op[@ii].target = var
-           end
+         def target var; @os.op[@op.ii].target = var; end
          
-           def selector var
-             @op[@ii].selector = var
-           end
+         def selector var; @os.op[@op.ii].selector = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
-           def pad_left var
-             @op[@ii].padLeft = var
-           end
+         def pad_left var; @os.op[@op.ii].padLeft = var; end
          
-           def pad_right var
-             @op[@ii].padRight = var
-           end
+         def pad_right var; @os.op[@op.ii].padRight = var; end
          
-           def pad_top var
-             @op[@ii].padTop = var
-           end
+         def pad_top var; @os.op[@op.ii].padTop = var; end
          
-           def pad_bottom var
-             @op[@ii].padBottom = var
-           end
+         def pad_bottom var; @os.op[@op.ii].padBottom = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXRuler.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXRuler.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -8013,51 +5591,34 @@ module Fox
      attr_accessor :_o     
    end
    def fx_ruler_view name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXRulerView, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
+         @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
          
-           def p var
-             @op[@ii].p = var
-           end
+         def p var; @os.op[@op.ii].p = var; end
          
-           def target var
-             @op[@ii].target = var
-           end
+         def target var; @os.op[@op.ii].target = var; end
          
-           def selector var
-             @op[@ii].selector = var
-           end
+         def selector var; @os.op[@op.ii].selector = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXRulerView.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXRulerView.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -8066,12 +5627,11 @@ module Fox
      attr_accessor :_o     
    end
    def notify_header name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: NotifyHeader, op: [], ii: ii, fx: nil, kinder: []))
      
           
      self.instance_eval &block
-     Enhancement.stack << NotifyHeader.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << NotifyHeader.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -8080,12 +5640,11 @@ module Fox
      attr_accessor :_o     
    end
    def sc_notification name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: SCNotification, op: [], ii: ii, fx: nil, kinder: []))
      
           
      self.instance_eval &block
-     Enhancement.stack << SCNotification.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << SCNotification.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -8094,31 +5653,24 @@ module Fox
      attr_accessor :_o     
    end
    def text_range name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: TextRange, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:start => :required, :last => :required, :size => :required})
+         @os.op[0] = OpenStruct.new({:start => :required, :last => :required, :size => :required})
          
-           def start var
-             @op[@ii].start = var
-           end
+         def start var; @os.op[@op.ii].start = var; end
          
-           def last var
-             @op[@ii].last = var
-           end
+         def last var; @os.op[@op.ii].last = var; end
          
-           def size var
-             @op[@ii].size = var
-           end
+         def size var; @os.op[@op.ii].size = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << TextRange.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << TextRange.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -8127,51 +5679,34 @@ module Fox
      attr_accessor :_o     
    end
    def fx_scintilla name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXScintilla, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
+         @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
          
-           def p var
-             @op[@ii].p = var
-           end
+         def p var; @os.op[@op.ii].p = var; end
          
-           def target var
-             @op[@ii].target = var
-           end
+         def target var; @os.op[@op.ii].target = var; end
          
-           def selector var
-             @op[@ii].selector = var
-           end
+         def selector var; @os.op[@op.ii].selector = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXScintilla.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXScintilla.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -8180,43 +5715,30 @@ module Fox
      attr_accessor :_o     
    end
    def fx_scroll_area name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXScrollArea, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:parent => :required, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
+         @os.op[0] = OpenStruct.new({:parent => :required, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
          
-           def parent var
-             @op[@ii].parent = var
-           end
+         def parent var; @os.op[@op.ii].parent = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXScrollArea.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXScrollArea.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -8225,51 +5747,34 @@ module Fox
      attr_accessor :_o     
    end
    def fx_scroll_bar name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXScrollBar, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => SCROLLBAR_VERTICAL, :x => 0, :y => 0, :width => 0, :height => 0})
+         @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => SCROLLBAR_VERTICAL, :x => 0, :y => 0, :width => 0, :height => 0})
          
-           def p var
-             @op[@ii].p = var
-           end
+         def p var; @os.op[@op.ii].p = var; end
          
-           def target var
-             @op[@ii].target = var
-           end
+         def target var; @os.op[@op.ii].target = var; end
          
-           def selector var
-             @op[@ii].selector = var
-           end
+         def selector var; @os.op[@op.ii].selector = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXScrollBar.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXScrollBar.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -8278,23 +5783,20 @@ module Fox
      attr_accessor :_o     
    end
    def fx_scroll_corner name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXScrollCorner, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:p => :required})
+         @os.op[0] = OpenStruct.new({:p => :required})
          
-           def p var
-             @op[@ii].p = var
-           end
+         def p var; @os.op[@op.ii].p = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXScrollCorner.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXScrollCorner.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -8303,31 +5805,24 @@ module Fox
      attr_accessor :_o     
    end
    def fx_scroll_pane name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXScrollPane, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:owner => :required, :nvis => :required, :opts => 0})
+         @os.op[0] = OpenStruct.new({:owner => :required, :nvis => :required, :opts => 0})
          
-           def owner var
-             @op[@ii].owner = var
-           end
+         def owner var; @os.op[@op.ii].owner = var; end
          
-           def nvis var
-             @op[@ii].nvis = var
-           end
+         def nvis var; @os.op[@op.ii].nvis = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXScrollPane.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXScrollPane.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -8336,43 +5831,30 @@ module Fox
      attr_accessor :_o     
    end
    def fx_scroll_window name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXScrollWindow, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:p => :required, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
+         @os.op[0] = OpenStruct.new({:p => :required, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
          
-           def p var
-             @op[@ii].p = var
-           end
+         def p var; @os.op[@op.ii].p = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXScrollWindow.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXScrollWindow.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -8381,51 +5863,34 @@ module Fox
      attr_accessor :_o     
    end
    def fx_search_dialog name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXSearchDialog, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:owner => :required, :caption => :required, :ic => nil, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
+         @os.op[0] = OpenStruct.new({:owner => :required, :caption => :required, :ic => nil, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
          
-           def owner var
-             @op[@ii].owner = var
-           end
+         def owner var; @os.op[@op.ii].owner = var; end
          
-           def caption var
-             @op[@ii].caption = var
-           end
+         def caption var; @os.op[@op.ii].caption = var; end
          
-           def ic var
-             @op[@ii].ic = var
-           end
+         def ic var; @os.op[@op.ii].ic = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXSearchDialog.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXSearchDialog.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -8434,59 +5899,38 @@ module Fox
      attr_accessor :_o     
    end
    def fx_separator name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXSeparator, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:p => :required, :opts => SEPARATOR_GROOVE|LAYOUT_FILL_X, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 0, :padRight => 0, :padTop => 0, :padBottom => 0})
+         @os.op[0] = OpenStruct.new({:p => :required, :opts => SEPARATOR_GROOVE|LAYOUT_FILL_X, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 0, :padRight => 0, :padTop => 0, :padBottom => 0})
          
-           def p var
-             @op[@ii].p = var
-           end
+         def p var; @os.op[@op.ii].p = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
-           def pad_left var
-             @op[@ii].padLeft = var
-           end
+         def pad_left var; @os.op[@op.ii].padLeft = var; end
          
-           def pad_right var
-             @op[@ii].padRight = var
-           end
+         def pad_right var; @os.op[@op.ii].padRight = var; end
          
-           def pad_top var
-             @op[@ii].padTop = var
-           end
+         def pad_top var; @os.op[@op.ii].padTop = var; end
          
-           def pad_bottom var
-             @op[@ii].padBottom = var
-           end
+         def pad_bottom var; @os.op[@op.ii].padBottom = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXSeparator.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXSeparator.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -8495,59 +5939,38 @@ module Fox
      attr_accessor :_o     
    end
    def fx_horizontal_separator name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXHorizontalSeparator, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:p => :required, :opts => SEPARATOR_GROOVE|LAYOUT_FILL_X, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 1, :padRight => 1, :padTop => 0, :padBottom => 0})
+         @os.op[0] = OpenStruct.new({:p => :required, :opts => SEPARATOR_GROOVE|LAYOUT_FILL_X, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 1, :padRight => 1, :padTop => 0, :padBottom => 0})
          
-           def p var
-             @op[@ii].p = var
-           end
+         def p var; @os.op[@op.ii].p = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
-           def pad_left var
-             @op[@ii].padLeft = var
-           end
+         def pad_left var; @os.op[@op.ii].padLeft = var; end
          
-           def pad_right var
-             @op[@ii].padRight = var
-           end
+         def pad_right var; @os.op[@op.ii].padRight = var; end
          
-           def pad_top var
-             @op[@ii].padTop = var
-           end
+         def pad_top var; @os.op[@op.ii].padTop = var; end
          
-           def pad_bottom var
-             @op[@ii].padBottom = var
-           end
+         def pad_bottom var; @os.op[@op.ii].padBottom = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXHorizontalSeparator.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXHorizontalSeparator.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -8556,59 +5979,38 @@ module Fox
      attr_accessor :_o     
    end
    def fx_vertical_separator name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXVerticalSeparator, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:p => :required, :opts => SEPARATOR_GROOVE|LAYOUT_FILL_Y, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 0, :padRight => 0, :padTop => 1, :padBottom => 1})
+         @os.op[0] = OpenStruct.new({:p => :required, :opts => SEPARATOR_GROOVE|LAYOUT_FILL_Y, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 0, :padRight => 0, :padTop => 1, :padBottom => 1})
          
-           def p var
-             @op[@ii].p = var
-           end
+         def p var; @os.op[@op.ii].p = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
-           def pad_left var
-             @op[@ii].padLeft = var
-           end
+         def pad_left var; @os.op[@op.ii].padLeft = var; end
          
-           def pad_right var
-             @op[@ii].padRight = var
-           end
+         def pad_right var; @os.op[@op.ii].padRight = var; end
          
-           def pad_top var
-             @op[@ii].padTop = var
-           end
+         def pad_top var; @os.op[@op.ii].padTop = var; end
          
-           def pad_bottom var
-             @op[@ii].padBottom = var
-           end
+         def pad_bottom var; @os.op[@op.ii].padBottom = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXVerticalSeparator.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXVerticalSeparator.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -8617,12 +6019,11 @@ module Fox
      attr_accessor :_o     
    end
    def fx_settings name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXSettings, op: [], ii: ii, fx: nil, kinder: []))
      
           
      self.instance_eval &block
-     Enhancement.stack << FXSettings.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXSettings.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -8631,12 +6032,11 @@ module Fox
      attr_accessor :_o     
    end
    def fx_shell name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXShell, op: [], ii: ii, fx: nil, kinder: []))
      
           
      self.instance_eval &block
-     Enhancement.stack << FXShell.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXShell.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -8645,75 +6045,46 @@ module Fox
      attr_accessor :_o     
    end
    def fx_shutter_item name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXShutterItem, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:p => :required, :text => "", :icon => nil, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_SPACING, :padRight => DEFAULT_SPACING, :padTop => DEFAULT_SPACING, :padBottom => DEFAULT_SPACING, :hSpacing => DEFAULT_SPACING, :vSpacing => DEFAULT_SPACING})
+         @os.op[0] = OpenStruct.new({:p => :required, :text => "", :icon => nil, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_SPACING, :padRight => DEFAULT_SPACING, :padTop => DEFAULT_SPACING, :padBottom => DEFAULT_SPACING, :hSpacing => DEFAULT_SPACING, :vSpacing => DEFAULT_SPACING})
          
-           def p var
-             @op[@ii].p = var
-           end
+         def p var; @os.op[@op.ii].p = var; end
          
-           def text var
-             @op[@ii].text = var
-           end
+         def text var; @os.op[@op.ii].text = var; end
          
-           def icon var
-             @op[@ii].icon = var
-           end
+         def icon var; @os.op[@op.ii].icon = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
-           def pad_left var
-             @op[@ii].padLeft = var
-           end
+         def pad_left var; @os.op[@op.ii].padLeft = var; end
          
-           def pad_right var
-             @op[@ii].padRight = var
-           end
+         def pad_right var; @os.op[@op.ii].padRight = var; end
          
-           def pad_top var
-             @op[@ii].padTop = var
-           end
+         def pad_top var; @os.op[@op.ii].padTop = var; end
          
-           def pad_bottom var
-             @op[@ii].padBottom = var
-           end
+         def pad_bottom var; @os.op[@op.ii].padBottom = var; end
          
-           def h_spacing var
-             @op[@ii].hSpacing = var
-           end
+         def h_spacing var; @os.op[@op.ii].hSpacing = var; end
          
-           def v_spacing var
-             @op[@ii].vSpacing = var
-           end
+         def v_spacing var; @os.op[@op.ii].vSpacing = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXShutterItem.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXShutterItem.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -8722,75 +6093,46 @@ module Fox
      attr_accessor :_o     
    end
    def fx_shutter name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXShutter, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_SPACING, :padRight => DEFAULT_SPACING, :padTop => DEFAULT_SPACING, :padBottom => DEFAULT_SPACING, :hSpacing => DEFAULT_SPACING, :vSpacing => DEFAULT_SPACING})
+         @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_SPACING, :padRight => DEFAULT_SPACING, :padTop => DEFAULT_SPACING, :padBottom => DEFAULT_SPACING, :hSpacing => DEFAULT_SPACING, :vSpacing => DEFAULT_SPACING})
          
-           def p var
-             @op[@ii].p = var
-           end
+         def p var; @os.op[@op.ii].p = var; end
          
-           def target var
-             @op[@ii].target = var
-           end
+         def target var; @os.op[@op.ii].target = var; end
          
-           def selector var
-             @op[@ii].selector = var
-           end
+         def selector var; @os.op[@op.ii].selector = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
-           def pad_left var
-             @op[@ii].padLeft = var
-           end
+         def pad_left var; @os.op[@op.ii].padLeft = var; end
          
-           def pad_right var
-             @op[@ii].padRight = var
-           end
+         def pad_right var; @os.op[@op.ii].padRight = var; end
          
-           def pad_top var
-             @op[@ii].padTop = var
-           end
+         def pad_top var; @os.op[@op.ii].padTop = var; end
          
-           def pad_bottom var
-             @op[@ii].padBottom = var
-           end
+         def pad_bottom var; @os.op[@op.ii].padBottom = var; end
          
-           def h_spacing var
-             @op[@ii].hSpacing = var
-           end
+         def h_spacing var; @os.op[@op.ii].hSpacing = var; end
          
-           def v_spacing var
-             @op[@ii].vSpacing = var
-           end
+         def v_spacing var; @os.op[@op.ii].vSpacing = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXShutter.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXShutter.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -8799,38 +6141,31 @@ module Fox
      attr_accessor :_o     
    end
    def fx_size name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXSize, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:s => :required})
+         @os.op[0] = OpenStruct.new({:s => :required})
          
-           def s var
-             @op[@ii].s = var
-           end
+         def s var; @os.op[@op.ii].s = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
      
-         @op[1] = OpenStruct.new({:ww => :required, :hh => :required})
+         @os.op[1] = OpenStruct.new({:ww => :required, :hh => :required})
          
-           def ww var
-             @op[@ii].ww = var
-           end
+         def ww var; @os.op[@op.ii].ww = var; end
          
-           def hh var
-             @op[@ii].hh = var
-           end
+         def hh var; @os.op[@op.ii].hh = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXSize.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXSize.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -8839,67 +6174,42 @@ module Fox
      attr_accessor :_o     
    end
    def fx_slider name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXSlider, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => SLIDER_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 0, :padRight => 0, :padTop => 0, :padBottom => 0})
+         @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => SLIDER_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 0, :padRight => 0, :padTop => 0, :padBottom => 0})
          
-           def p var
-             @op[@ii].p = var
-           end
+         def p var; @os.op[@op.ii].p = var; end
          
-           def target var
-             @op[@ii].target = var
-           end
+         def target var; @os.op[@op.ii].target = var; end
          
-           def selector var
-             @op[@ii].selector = var
-           end
+         def selector var; @os.op[@op.ii].selector = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
-           def pad_left var
-             @op[@ii].padLeft = var
-           end
+         def pad_left var; @os.op[@op.ii].padLeft = var; end
          
-           def pad_right var
-             @op[@ii].padRight = var
-           end
+         def pad_right var; @os.op[@op.ii].padRight = var; end
          
-           def pad_top var
-             @op[@ii].padTop = var
-           end
+         def pad_top var; @os.op[@op.ii].padTop = var; end
          
-           def pad_bottom var
-             @op[@ii].padBottom = var
-           end
+         def pad_bottom var; @os.op[@op.ii].padBottom = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXSlider.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXSlider.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -8908,72 +6218,55 @@ module Fox
      attr_accessor :_o     
    end
    def fx_sphered name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXSphered, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:otherSphere => :required})
+         @os.op[0] = OpenStruct.new({:otherSphere => :required})
          
-           def other_sphere var
-             @op[@ii].otherSphere = var
-           end
+         def other_sphere var; @os.op[@op.ii].otherSphere = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
      
-         @op[1] = OpenStruct.new({:cen => :required, :rad => 0.0})
+         @os.op[1] = OpenStruct.new({:cen => :required, :rad => 0.0})
          
-           def cen var
-             @op[@ii].cen = var
-           end
+         def cen var; @os.op[@op.ii].cen = var; end
          
-           def rad var
-             @op[@ii].rad = var
-           end
+         def rad var; @os.op[@op.ii].rad = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
      
-         @op[2] = OpenStruct.new({:x => :required, :y => :required, :z => :required, :rad => 0.0})
+         @os.op[2] = OpenStruct.new({:x => :required, :y => :required, :z => :required, :rad => 0.0})
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def z var
-             @op[@ii].z = var
-           end
+         def z var; @os.op[@op.ii].z = var; end
          
-           def rad var
-             @op[@ii].rad = var
-           end
+         def rad var; @os.op[@op.ii].rad = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
      
-         @op[3] = OpenStruct.new({:bounds => :required})
+         @os.op[3] = OpenStruct.new({:bounds => :required})
          
-           def bounds var
-             @op[@ii].bounds = var
-           end
+         def bounds var; @os.op[@op.ii].bounds = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXSphered.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXSphered.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -8982,72 +6275,55 @@ module Fox
      attr_accessor :_o     
    end
    def fx_spheref name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXSpheref, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:otherSphere => :required})
+         @os.op[0] = OpenStruct.new({:otherSphere => :required})
          
-           def other_sphere var
-             @op[@ii].otherSphere = var
-           end
+         def other_sphere var; @os.op[@op.ii].otherSphere = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
      
-         @op[1] = OpenStruct.new({:cen => :required, :rad => 0.0})
+         @os.op[1] = OpenStruct.new({:cen => :required, :rad => 0.0})
          
-           def cen var
-             @op[@ii].cen = var
-           end
+         def cen var; @os.op[@op.ii].cen = var; end
          
-           def rad var
-             @op[@ii].rad = var
-           end
+         def rad var; @os.op[@op.ii].rad = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
      
-         @op[2] = OpenStruct.new({:x => :required, :y => :required, :z => :required, :rad => 0.0})
+         @os.op[2] = OpenStruct.new({:x => :required, :y => :required, :z => :required, :rad => 0.0})
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def z var
-             @op[@ii].z = var
-           end
+         def z var; @os.op[@op.ii].z = var; end
          
-           def rad var
-             @op[@ii].rad = var
-           end
+         def rad var; @os.op[@op.ii].rad = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
      
-         @op[3] = OpenStruct.new({:bounds => :required})
+         @os.op[3] = OpenStruct.new({:bounds => :required})
          
-           def bounds var
-             @op[@ii].bounds = var
-           end
+         def bounds var; @os.op[@op.ii].bounds = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXSpheref.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXSpheref.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -9056,71 +6332,44 @@ module Fox
      attr_accessor :_o     
    end
    def fx_spinner name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXSpinner, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:p => :required, :cols => :required, :target => nil, :selector => 0, :opts => SPIN_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
+         @os.op[0] = OpenStruct.new({:p => :required, :cols => :required, :target => nil, :selector => 0, :opts => SPIN_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
          
-           def p var
-             @op[@ii].p = var
-           end
+         def p var; @os.op[@op.ii].p = var; end
          
-           def cols var
-             @op[@ii].cols = var
-           end
+         def cols var; @os.op[@op.ii].cols = var; end
          
-           def target var
-             @op[@ii].target = var
-           end
+         def target var; @os.op[@op.ii].target = var; end
          
-           def selector var
-             @op[@ii].selector = var
-           end
+         def selector var; @os.op[@op.ii].selector = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
-           def pad_left var
-             @op[@ii].padLeft = var
-           end
+         def pad_left var; @os.op[@op.ii].padLeft = var; end
          
-           def pad_right var
-             @op[@ii].padRight = var
-           end
+         def pad_right var; @os.op[@op.ii].padRight = var; end
          
-           def pad_top var
-             @op[@ii].padTop = var
-           end
+         def pad_top var; @os.op[@op.ii].padTop = var; end
          
-           def pad_bottom var
-             @op[@ii].padBottom = var
-           end
+         def pad_bottom var; @os.op[@op.ii].padBottom = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXSpinner.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXSpinner.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -9129,35 +6378,26 @@ module Fox
      attr_accessor :_o     
    end
    def fx_splash_window name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXSplashWindow, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:owner => :required, :icon => :required, :opts => SPLASH_SIMPLE, :ms => 5000})
+         @os.op[0] = OpenStruct.new({:owner => :required, :icon => :required, :opts => SPLASH_SIMPLE, :ms => 5000})
          
-           def owner var
-             @op[@ii].owner = var
-           end
+         def owner var; @os.op[@op.ii].owner = var; end
          
-           def icon var
-             @op[@ii].icon = var
-           end
+         def icon var; @os.op[@op.ii].icon = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def ms var
-             @op[@ii].ms = var
-           end
+         def ms var; @os.op[@op.ii].ms = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXSplashWindow.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXSplashWindow.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -9166,82 +6406,53 @@ module Fox
      attr_accessor :_o     
    end
    def fx_splitter name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXSplitter, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:p => :required, :opts => SPLITTER_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0})
+         @os.op[0] = OpenStruct.new({:p => :required, :opts => SPLITTER_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0})
          
-           def p var
-             @op[@ii].p = var
-           end
+         def p var; @os.op[@op.ii].p = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
      
-         @op[1] = OpenStruct.new({:p => :required, :tgt => :required, :sel => :required, :opts => SPLITTER_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0})
+         @os.op[1] = OpenStruct.new({:p => :required, :tgt => :required, :sel => :required, :opts => SPLITTER_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0})
          
-           def p var
-             @op[@ii].p = var
-           end
+         def p var; @os.op[@op.ii].p = var; end
          
-           def tgt var
-             @op[@ii].tgt = var
-           end
+         def tgt var; @os.op[@op.ii].tgt = var; end
          
-           def sel var
-             @op[@ii].sel = var
-           end
+         def sel var; @os.op[@op.ii].sel = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXSplitter.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXSplitter.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -9250,75 +6461,46 @@ module Fox
      attr_accessor :_o     
    end
    def fx_spring name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXSpring, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:p => :required, :opts => 0, :relw => 0, :relh => 0, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_SPACING, :padRight => DEFAULT_SPACING, :padTop => DEFAULT_SPACING, :padBottom => DEFAULT_SPACING, :hSpacing => DEFAULT_SPACING, :vSpacing => DEFAULT_SPACING})
+         @os.op[0] = OpenStruct.new({:p => :required, :opts => 0, :relw => 0, :relh => 0, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_SPACING, :padRight => DEFAULT_SPACING, :padTop => DEFAULT_SPACING, :padBottom => DEFAULT_SPACING, :hSpacing => DEFAULT_SPACING, :vSpacing => DEFAULT_SPACING})
          
-           def p var
-             @op[@ii].p = var
-           end
+         def p var; @os.op[@op.ii].p = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def relw var
-             @op[@ii].relw = var
-           end
+         def relw var; @os.op[@op.ii].relw = var; end
          
-           def relh var
-             @op[@ii].relh = var
-           end
+         def relh var; @os.op[@op.ii].relh = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
-           def pad_left var
-             @op[@ii].padLeft = var
-           end
+         def pad_left var; @os.op[@op.ii].padLeft = var; end
          
-           def pad_right var
-             @op[@ii].padRight = var
-           end
+         def pad_right var; @os.op[@op.ii].padRight = var; end
          
-           def pad_top var
-             @op[@ii].padTop = var
-           end
+         def pad_top var; @os.op[@op.ii].padTop = var; end
          
-           def pad_bottom var
-             @op[@ii].padBottom = var
-           end
+         def pad_bottom var; @os.op[@op.ii].padBottom = var; end
          
-           def h_spacing var
-             @op[@ii].hSpacing = var
-           end
+         def h_spacing var; @os.op[@op.ii].hSpacing = var; end
          
-           def v_spacing var
-             @op[@ii].vSpacing = var
-           end
+         def v_spacing var; @os.op[@op.ii].vSpacing = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXSpring.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXSpring.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -9327,67 +6509,42 @@ module Fox
      attr_accessor :_o     
    end
    def fx_status_bar name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXStatusBar, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:p => :required, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 3, :padRight => 3, :padTop => 2, :padBottom => 2, :hSpacing => 4, :vSpacing => 0})
+         @os.op[0] = OpenStruct.new({:p => :required, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 3, :padRight => 3, :padTop => 2, :padBottom => 2, :hSpacing => 4, :vSpacing => 0})
          
-           def p var
-             @op[@ii].p = var
-           end
+         def p var; @os.op[@op.ii].p = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
-           def pad_left var
-             @op[@ii].padLeft = var
-           end
+         def pad_left var; @os.op[@op.ii].padLeft = var; end
          
-           def pad_right var
-             @op[@ii].padRight = var
-           end
+         def pad_right var; @os.op[@op.ii].padRight = var; end
          
-           def pad_top var
-             @op[@ii].padTop = var
-           end
+         def pad_top var; @os.op[@op.ii].padTop = var; end
          
-           def pad_bottom var
-             @op[@ii].padBottom = var
-           end
+         def pad_bottom var; @os.op[@op.ii].padBottom = var; end
          
-           def h_spacing var
-             @op[@ii].hSpacing = var
-           end
+         def h_spacing var; @os.op[@op.ii].hSpacing = var; end
          
-           def v_spacing var
-             @op[@ii].vSpacing = var
-           end
+         def v_spacing var; @os.op[@op.ii].vSpacing = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXStatusBar.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXStatusBar.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -9396,31 +6553,24 @@ module Fox
      attr_accessor :_o     
    end
    def fx_status_line name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXStatusLine, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0})
+         @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0})
          
-           def p var
-             @op[@ii].p = var
-           end
+         def p var; @os.op[@op.ii].p = var; end
          
-           def target var
-             @op[@ii].target = var
-           end
+         def target var; @os.op[@op.ii].target = var; end
          
-           def selector var
-             @op[@ii].selector = var
-           end
+         def selector var; @os.op[@op.ii].selector = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXStatusLine.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXStatusLine.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -9429,23 +6579,20 @@ module Fox
      attr_accessor :_o     
    end
    def fx_stream name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXStream, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:cont => nil})
+         @os.op[0] = OpenStruct.new({:cont => nil})
          
-           def cont var
-             @op[@ii].cont = var
-           end
+         def cont var; @os.op[@op.ii].cont = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXStream.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXStream.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -9454,12 +6601,11 @@ module Fox
      attr_accessor :_o     
    end
    def fx_string_dict name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXStringDict, op: [], ii: ii, fx: nil, kinder: []))
      
           
      self.instance_eval &block
-     Enhancement.stack << FXStringDict.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXStringDict.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -9468,59 +6614,38 @@ module Fox
      attr_accessor :_o     
    end
    def fx_switcher name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXSwitcher, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:p => :required, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_SPACING, :padRight => DEFAULT_SPACING, :padTop => DEFAULT_SPACING, :padBottom => DEFAULT_SPACING})
+         @os.op[0] = OpenStruct.new({:p => :required, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_SPACING, :padRight => DEFAULT_SPACING, :padTop => DEFAULT_SPACING, :padBottom => DEFAULT_SPACING})
          
-           def p var
-             @op[@ii].p = var
-           end
+         def p var; @os.op[@op.ii].p = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
-           def pad_left var
-             @op[@ii].padLeft = var
-           end
+         def pad_left var; @os.op[@op.ii].padLeft = var; end
          
-           def pad_right var
-             @op[@ii].padRight = var
-           end
+         def pad_right var; @os.op[@op.ii].padRight = var; end
          
-           def pad_top var
-             @op[@ii].padTop = var
-           end
+         def pad_top var; @os.op[@op.ii].padTop = var; end
          
-           def pad_bottom var
-             @op[@ii].padBottom = var
-           end
+         def pad_bottom var; @os.op[@op.ii].padBottom = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXSwitcher.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXSwitcher.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -9529,43 +6654,30 @@ module Fox
      attr_accessor :_o     
    end
    def fxtga_icon name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXTGAIcon, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:a => :required, :pix => nil, :clr => 0, :opts => 0, :width => 1, :height => 1})
+         @os.op[0] = OpenStruct.new({:a => :required, :pix => nil, :clr => 0, :opts => 0, :width => 1, :height => 1})
          
-           def a var
-             @op[@ii].a = var
-           end
+         def a var; @os.op[@op.ii].a = var; end
          
-           def pix var
-             @op[@ii].pix = var
-           end
+         def pix var; @os.op[@op.ii].pix = var; end
          
-           def clr var
-             @op[@ii].clr = var
-           end
+         def clr var; @os.op[@op.ii].clr = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXTGAIcon.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXTGAIcon.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -9574,39 +6686,28 @@ module Fox
      attr_accessor :_o     
    end
    def fxtga_image name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXTGAImage, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:a => :required, :pix => nil, :opts => 0, :width => 1, :height => 1})
+         @os.op[0] = OpenStruct.new({:a => :required, :pix => nil, :opts => 0, :width => 1, :height => 1})
          
-           def a var
-             @op[@ii].a = var
-           end
+         def a var; @os.op[@op.ii].a = var; end
          
-           def pix var
-             @op[@ii].pix = var
-           end
+         def pix var; @os.op[@op.ii].pix = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXTGAImage.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXTGAImage.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -9615,43 +6716,30 @@ module Fox
      attr_accessor :_o     
    end
    def fxtif_icon name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXTIFIcon, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:a => :required, :pix => nil, :clr => 0, :opts => 0, :width => 1, :height => 1})
+         @os.op[0] = OpenStruct.new({:a => :required, :pix => nil, :clr => 0, :opts => 0, :width => 1, :height => 1})
          
-           def a var
-             @op[@ii].a = var
-           end
+         def a var; @os.op[@op.ii].a = var; end
          
-           def pix var
-             @op[@ii].pix = var
-           end
+         def pix var; @os.op[@op.ii].pix = var; end
          
-           def clr var
-             @op[@ii].clr = var
-           end
+         def clr var; @os.op[@op.ii].clr = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXTIFIcon.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXTIFIcon.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -9660,39 +6748,28 @@ module Fox
      attr_accessor :_o     
    end
    def fxtif_image name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXTIFImage, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:a => :required, :pix => nil, :opts => 0, :width => 1, :height => 1})
+         @os.op[0] = OpenStruct.new({:a => :required, :pix => nil, :opts => 0, :width => 1, :height => 1})
          
-           def a var
-             @op[@ii].a = var
-           end
+         def a var; @os.op[@op.ii].a = var; end
          
-           def pix var
-             @op[@ii].pix = var
-           end
+         def pix var; @os.op[@op.ii].pix = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXTIFImage.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXTIFImage.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -9701,67 +6778,42 @@ module Fox
      attr_accessor :_o     
    end
    def fx_tab_bar name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXTabBar, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => TABBOOK_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_SPACING, :padRight => DEFAULT_SPACING, :padTop => DEFAULT_SPACING, :padBottom => DEFAULT_SPACING})
+         @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => TABBOOK_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_SPACING, :padRight => DEFAULT_SPACING, :padTop => DEFAULT_SPACING, :padBottom => DEFAULT_SPACING})
          
-           def p var
-             @op[@ii].p = var
-           end
+         def p var; @os.op[@op.ii].p = var; end
          
-           def target var
-             @op[@ii].target = var
-           end
+         def target var; @os.op[@op.ii].target = var; end
          
-           def selector var
-             @op[@ii].selector = var
-           end
+         def selector var; @os.op[@op.ii].selector = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
-           def pad_left var
-             @op[@ii].padLeft = var
-           end
+         def pad_left var; @os.op[@op.ii].padLeft = var; end
          
-           def pad_right var
-             @op[@ii].padRight = var
-           end
+         def pad_right var; @os.op[@op.ii].padRight = var; end
          
-           def pad_top var
-             @op[@ii].padTop = var
-           end
+         def pad_top var; @os.op[@op.ii].padTop = var; end
          
-           def pad_bottom var
-             @op[@ii].padBottom = var
-           end
+         def pad_bottom var; @os.op[@op.ii].padBottom = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXTabBar.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXTabBar.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -9770,67 +6822,42 @@ module Fox
      attr_accessor :_o     
    end
    def fx_tab_book name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXTabBook, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => TABBOOK_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_SPACING, :padRight => DEFAULT_SPACING, :padTop => DEFAULT_SPACING, :padBottom => DEFAULT_SPACING})
+         @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => TABBOOK_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_SPACING, :padRight => DEFAULT_SPACING, :padTop => DEFAULT_SPACING, :padBottom => DEFAULT_SPACING})
          
-           def p var
-             @op[@ii].p = var
-           end
+         def p var; @os.op[@op.ii].p = var; end
          
-           def target var
-             @op[@ii].target = var
-           end
+         def target var; @os.op[@op.ii].target = var; end
          
-           def selector var
-             @op[@ii].selector = var
-           end
+         def selector var; @os.op[@op.ii].selector = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
-           def pad_left var
-             @op[@ii].padLeft = var
-           end
+         def pad_left var; @os.op[@op.ii].padLeft = var; end
          
-           def pad_right var
-             @op[@ii].padRight = var
-           end
+         def pad_right var; @os.op[@op.ii].padRight = var; end
          
-           def pad_top var
-             @op[@ii].padTop = var
-           end
+         def pad_top var; @os.op[@op.ii].padTop = var; end
          
-           def pad_bottom var
-             @op[@ii].padBottom = var
-           end
+         def pad_bottom var; @os.op[@op.ii].padBottom = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXTabBook.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXTabBook.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -9839,67 +6866,42 @@ module Fox
      attr_accessor :_o     
    end
    def fx_tab_item name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXTabItem, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:p => :required, :text => :required, :ic => nil, :opts => TAB_TOP_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
+         @os.op[0] = OpenStruct.new({:p => :required, :text => :required, :ic => nil, :opts => TAB_TOP_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
          
-           def p var
-             @op[@ii].p = var
-           end
+         def p var; @os.op[@op.ii].p = var; end
          
-           def text var
-             @op[@ii].text = var
-           end
+         def text var; @os.op[@op.ii].text = var; end
          
-           def ic var
-             @op[@ii].ic = var
-           end
+         def ic var; @os.op[@op.ii].ic = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
-           def pad_left var
-             @op[@ii].padLeft = var
-           end
+         def pad_left var; @os.op[@op.ii].padLeft = var; end
          
-           def pad_right var
-             @op[@ii].padRight = var
-           end
+         def pad_right var; @os.op[@op.ii].padRight = var; end
          
-           def pad_top var
-             @op[@ii].padTop = var
-           end
+         def pad_top var; @os.op[@op.ii].padTop = var; end
          
-           def pad_bottom var
-             @op[@ii].padBottom = var
-           end
+         def pad_bottom var; @os.op[@op.ii].padBottom = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXTabItem.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXTabItem.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -9908,12 +6910,11 @@ module Fox
      attr_accessor :_o     
    end
    def fx_table_pos name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXTablePos, op: [], ii: ii, fx: nil, kinder: []))
      
           
      self.instance_eval &block
-     Enhancement.stack << FXTablePos.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXTablePos.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -9922,12 +6923,11 @@ module Fox
      attr_accessor :_o     
    end
    def fx_table_range name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXTableRange, op: [], ii: ii, fx: nil, kinder: []))
      
           
      self.instance_eval &block
-     Enhancement.stack << FXTableRange.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXTableRange.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -9936,31 +6936,24 @@ module Fox
      attr_accessor :_o     
    end
    def fx_table_item name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXTableItem, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:text => :required, :icon => nil, :data => nil})
+         @os.op[0] = OpenStruct.new({:text => :required, :icon => nil, :data => nil})
          
-           def text var
-             @op[@ii].text = var
-           end
+         def text var; @os.op[@op.ii].text = var; end
          
-           def icon var
-             @op[@ii].icon = var
-           end
+         def icon var; @os.op[@op.ii].icon = var; end
          
-           def data var
-             @op[@ii].data = var
-           end
+         def data var; @os.op[@op.ii].data = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXTableItem.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXTableItem.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -9969,67 +6962,42 @@ module Fox
      attr_accessor :_o     
    end
    def fx_table name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXTable, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_MARGIN, :padRight => DEFAULT_MARGIN, :padTop => DEFAULT_MARGIN, :padBottom => DEFAULT_MARGIN})
+         @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_MARGIN, :padRight => DEFAULT_MARGIN, :padTop => DEFAULT_MARGIN, :padBottom => DEFAULT_MARGIN})
          
-           def p var
-             @op[@ii].p = var
-           end
+         def p var; @os.op[@op.ii].p = var; end
          
-           def target var
-             @op[@ii].target = var
-           end
+         def target var; @os.op[@op.ii].target = var; end
          
-           def selector var
-             @op[@ii].selector = var
-           end
+         def selector var; @os.op[@op.ii].selector = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
-           def pad_left var
-             @op[@ii].padLeft = var
-           end
+         def pad_left var; @os.op[@op.ii].padLeft = var; end
          
-           def pad_right var
-             @op[@ii].padRight = var
-           end
+         def pad_right var; @os.op[@op.ii].padRight = var; end
          
-           def pad_top var
-             @op[@ii].padTop = var
-           end
+         def pad_top var; @os.op[@op.ii].padTop = var; end
          
-           def pad_bottom var
-             @op[@ii].padBottom = var
-           end
+         def pad_bottom var; @os.op[@op.ii].padBottom = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXTable.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXTable.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -10038,12 +7006,11 @@ module Fox
      attr_accessor :_o     
    end
    def fx_hilite_style name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXHiliteStyle, op: [], ii: ii, fx: nil, kinder: []))
      
           
      self.instance_eval &block
-     Enhancement.stack << FXHiliteStyle.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXHiliteStyle.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -10052,12 +7019,11 @@ module Fox
      attr_accessor :_o     
    end
    def fx_text_change name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXTextChange, op: [], ii: ii, fx: nil, kinder: []))
      
           
      self.instance_eval &block
-     Enhancement.stack << FXTextChange.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXTextChange.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -10066,67 +7032,42 @@ module Fox
      attr_accessor :_o     
    end
    def fx_text name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXText, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 3, :padRight => 3, :padTop => 2, :padBottom => 2})
+         @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 3, :padRight => 3, :padTop => 2, :padBottom => 2})
          
-           def p var
-             @op[@ii].p = var
-           end
+         def p var; @os.op[@op.ii].p = var; end
          
-           def target var
-             @op[@ii].target = var
-           end
+         def target var; @os.op[@op.ii].target = var; end
          
-           def selector var
-             @op[@ii].selector = var
-           end
+         def selector var; @os.op[@op.ii].selector = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
-           def pad_left var
-             @op[@ii].padLeft = var
-           end
+         def pad_left var; @os.op[@op.ii].padLeft = var; end
          
-           def pad_right var
-             @op[@ii].padRight = var
-           end
+         def pad_right var; @os.op[@op.ii].padRight = var; end
          
-           def pad_top var
-             @op[@ii].padTop = var
-           end
+         def pad_top var; @os.op[@op.ii].padTop = var; end
          
-           def pad_bottom var
-             @op[@ii].padBottom = var
-           end
+         def pad_bottom var; @os.op[@op.ii].padBottom = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXText.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXText.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -10135,71 +7076,44 @@ module Fox
      attr_accessor :_o     
    end
    def fx_text_field name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXTextField, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:p => :required, :ncols => :required, :target => nil, :selector => 0, :opts => TEXTFIELD_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
+         @os.op[0] = OpenStruct.new({:p => :required, :ncols => :required, :target => nil, :selector => 0, :opts => TEXTFIELD_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
          
-           def p var
-             @op[@ii].p = var
-           end
+         def p var; @os.op[@op.ii].p = var; end
          
-           def ncols var
-             @op[@ii].ncols = var
-           end
+         def ncols var; @os.op[@op.ii].ncols = var; end
          
-           def target var
-             @op[@ii].target = var
-           end
+         def target var; @os.op[@op.ii].target = var; end
          
-           def selector var
-             @op[@ii].selector = var
-           end
+         def selector var; @os.op[@op.ii].selector = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
-           def pad_left var
-             @op[@ii].padLeft = var
-           end
+         def pad_left var; @os.op[@op.ii].padLeft = var; end
          
-           def pad_right var
-             @op[@ii].padRight = var
-           end
+         def pad_right var; @os.op[@op.ii].padRight = var; end
          
-           def pad_top var
-             @op[@ii].padTop = var
-           end
+         def pad_top var; @os.op[@op.ii].padTop = var; end
          
-           def pad_bottom var
-             @op[@ii].padBottom = var
-           end
+         def pad_bottom var; @os.op[@op.ii].padBottom = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXTextField.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXTextField.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -10208,83 +7122,50 @@ module Fox
      attr_accessor :_o     
    end
    def fx_toggle_button name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXToggleButton, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:p => :required, :text1 => :required, :text2 => :required, :icon1 => nil, :icon2 => nil, :target => nil, :selector => 0, :opts => TOGGLEBUTTON_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
+         @os.op[0] = OpenStruct.new({:p => :required, :text1 => :required, :text2 => :required, :icon1 => nil, :icon2 => nil, :target => nil, :selector => 0, :opts => TOGGLEBUTTON_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
          
-           def p var
-             @op[@ii].p = var
-           end
+         def p var; @os.op[@op.ii].p = var; end
          
-           def text1 var
-             @op[@ii].text1 = var
-           end
+         def text1 var; @os.op[@op.ii].text1 = var; end
          
-           def text2 var
-             @op[@ii].text2 = var
-           end
+         def text2 var; @os.op[@op.ii].text2 = var; end
          
-           def icon1 var
-             @op[@ii].icon1 = var
-           end
+         def icon1 var; @os.op[@op.ii].icon1 = var; end
          
-           def icon2 var
-             @op[@ii].icon2 = var
-           end
+         def icon2 var; @os.op[@op.ii].icon2 = var; end
          
-           def target var
-             @op[@ii].target = var
-           end
+         def target var; @os.op[@op.ii].target = var; end
          
-           def selector var
-             @op[@ii].selector = var
-           end
+         def selector var; @os.op[@op.ii].selector = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
-           def pad_left var
-             @op[@ii].padLeft = var
-           end
+         def pad_left var; @os.op[@op.ii].padLeft = var; end
          
-           def pad_right var
-             @op[@ii].padRight = var
-           end
+         def pad_right var; @os.op[@op.ii].padRight = var; end
          
-           def pad_top var
-             @op[@ii].padTop = var
-           end
+         def pad_top var; @os.op[@op.ii].padTop = var; end
          
-           def pad_bottom var
-             @op[@ii].padBottom = var
-           end
+         def pad_bottom var; @os.op[@op.ii].padBottom = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXToggleButton.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXToggleButton.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -10293,126 +7174,75 @@ module Fox
      attr_accessor :_o     
    end
    def fx_tool_bar name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXToolBar, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:p => :required, :q => :required, :opts => LAYOUT_TOP|LAYOUT_LEFT|LAYOUT_FILL_X, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 3, :padRight => 3, :padTop => 2, :padBottom => 2, :hSpacing => DEFAULT_SPACING, :vSpacing => DEFAULT_SPACING})
+         @os.op[0] = OpenStruct.new({:p => :required, :q => :required, :opts => LAYOUT_TOP|LAYOUT_LEFT|LAYOUT_FILL_X, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 3, :padRight => 3, :padTop => 2, :padBottom => 2, :hSpacing => DEFAULT_SPACING, :vSpacing => DEFAULT_SPACING})
          
-           def p var
-             @op[@ii].p = var
-           end
+         def p var; @os.op[@op.ii].p = var; end
          
-           def q var
-             @op[@ii].q = var
-           end
+         def q var; @os.op[@op.ii].q = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
-           def pad_left var
-             @op[@ii].padLeft = var
-           end
+         def pad_left var; @os.op[@op.ii].padLeft = var; end
          
-           def pad_right var
-             @op[@ii].padRight = var
-           end
+         def pad_right var; @os.op[@op.ii].padRight = var; end
          
-           def pad_top var
-             @op[@ii].padTop = var
-           end
+         def pad_top var; @os.op[@op.ii].padTop = var; end
          
-           def pad_bottom var
-             @op[@ii].padBottom = var
-           end
+         def pad_bottom var; @os.op[@op.ii].padBottom = var; end
          
-           def h_spacing var
-             @op[@ii].hSpacing = var
-           end
+         def h_spacing var; @os.op[@op.ii].hSpacing = var; end
          
-           def v_spacing var
-             @op[@ii].vSpacing = var
-           end
+         def v_spacing var; @os.op[@op.ii].vSpacing = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
      
-         @op[1] = OpenStruct.new({:p => :required, :opts => LAYOUT_TOP|LAYOUT_LEFT|LAYOUT_FILL_X, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 3, :padRight => 3, :padTop => 2, :padBottom => 2, :hSpacing => DEFAULT_SPACING, :vSpacing => DEFAULT_SPACING})
+         @os.op[1] = OpenStruct.new({:p => :required, :opts => LAYOUT_TOP|LAYOUT_LEFT|LAYOUT_FILL_X, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 3, :padRight => 3, :padTop => 2, :padBottom => 2, :hSpacing => DEFAULT_SPACING, :vSpacing => DEFAULT_SPACING})
          
-           def p var
-             @op[@ii].p = var
-           end
+         def p var; @os.op[@op.ii].p = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
-           def pad_left var
-             @op[@ii].padLeft = var
-           end
+         def pad_left var; @os.op[@op.ii].padLeft = var; end
          
-           def pad_right var
-             @op[@ii].padRight = var
-           end
+         def pad_right var; @os.op[@op.ii].padRight = var; end
          
-           def pad_top var
-             @op[@ii].padTop = var
-           end
+         def pad_top var; @os.op[@op.ii].padTop = var; end
          
-           def pad_bottom var
-             @op[@ii].padBottom = var
-           end
+         def pad_bottom var; @os.op[@op.ii].padBottom = var; end
          
-           def h_spacing var
-             @op[@ii].hSpacing = var
-           end
+         def h_spacing var; @os.op[@op.ii].hSpacing = var; end
          
-           def v_spacing var
-             @op[@ii].vSpacing = var
-           end
+         def v_spacing var; @os.op[@op.ii].vSpacing = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXToolBar.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXToolBar.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -10421,51 +7251,34 @@ module Fox
      attr_accessor :_o     
    end
    def fx_tool_bar_grip name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXToolBarGrip, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => TOOLBARGRIP_SINGLE, :x => 0, :y => 0, :width => 0, :height => 0})
+         @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => TOOLBARGRIP_SINGLE, :x => 0, :y => 0, :width => 0, :height => 0})
          
-           def p var
-             @op[@ii].p = var
-           end
+         def p var; @os.op[@op.ii].p = var; end
          
-           def target var
-             @op[@ii].target = var
-           end
+         def target var; @os.op[@op.ii].target = var; end
          
-           def selector var
-             @op[@ii].selector = var
-           end
+         def selector var; @os.op[@op.ii].selector = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXToolBarGrip.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXToolBarGrip.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -10474,51 +7287,34 @@ module Fox
      attr_accessor :_o     
    end
    def fx_tool_bar_shell name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXToolBarShell, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:owner => :required, :opts => FRAME_RAISED|FRAME_THICK, :x => 0, :y => 0, :width => 0, :height => 0, :hSpacing => 4, :vSpacing => 4})
+         @os.op[0] = OpenStruct.new({:owner => :required, :opts => FRAME_RAISED|FRAME_THICK, :x => 0, :y => 0, :width => 0, :height => 0, :hSpacing => 4, :vSpacing => 4})
          
-           def owner var
-             @op[@ii].owner = var
-           end
+         def owner var; @os.op[@op.ii].owner = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
-           def h_spacing var
-             @op[@ii].hSpacing = var
-           end
+         def h_spacing var; @os.op[@op.ii].hSpacing = var; end
          
-           def v_spacing var
-             @op[@ii].vSpacing = var
-           end
+         def v_spacing var; @os.op[@op.ii].vSpacing = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXToolBarShell.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXToolBarShell.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -10527,51 +7323,34 @@ module Fox
      attr_accessor :_o     
    end
    def fx_tool_bar_tab name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXToolBarTab, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => FRAME_RAISED, :x => 0, :y => 0, :width => 0, :height => 0})
+         @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => FRAME_RAISED, :x => 0, :y => 0, :width => 0, :height => 0})
          
-           def p var
-             @op[@ii].p = var
-           end
+         def p var; @os.op[@op.ii].p = var; end
          
-           def target var
-             @op[@ii].target = var
-           end
+         def target var; @os.op[@op.ii].target = var; end
          
-           def selector var
-             @op[@ii].selector = var
-           end
+         def selector var; @os.op[@op.ii].selector = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXToolBarTab.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXToolBarTab.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -10580,43 +7359,30 @@ module Fox
      attr_accessor :_o     
    end
    def fx_tool_tip name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXToolTip, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:app => :required, :opts => TOOLTIP_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0})
+         @os.op[0] = OpenStruct.new({:app => :required, :opts => TOOLTIP_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0})
          
-           def app var
-             @op[@ii].app = var
-           end
+         def app var; @os.op[@op.ii].app = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXToolTip.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXToolTip.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -10625,12 +7391,11 @@ module Fox
      attr_accessor :_o     
    end
    def fx_top_window name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXTopWindow, op: [], ii: ii, fx: nil, kinder: []))
      
           
      self.instance_eval &block
-     Enhancement.stack << FXTopWindow.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXTopWindow.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -10639,23 +7404,20 @@ module Fox
      attr_accessor :_o     
    end
    def fx_translator name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXTranslator, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:a => :required})
+         @os.op[0] = OpenStruct.new({:a => :required})
          
-           def a var
-             @op[@ii].a = var
-           end
+         def a var; @os.op[@op.ii].a = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXTranslator.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXTranslator.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -10664,35 +7426,26 @@ module Fox
      attr_accessor :_o     
    end
    def fx_tree_item name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXTreeItem, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:text => :required, :openIcon => nil, :closedIcon => nil, :data => nil})
+         @os.op[0] = OpenStruct.new({:text => :required, :openIcon => nil, :closedIcon => nil, :data => nil})
          
-           def text var
-             @op[@ii].text = var
-           end
+         def text var; @os.op[@op.ii].text = var; end
          
-           def open_icon var
-             @op[@ii].openIcon = var
-           end
+         def open_icon var; @os.op[@op.ii].openIcon = var; end
          
-           def closed_icon var
-             @op[@ii].closedIcon = var
-           end
+         def closed_icon var; @os.op[@op.ii].closedIcon = var; end
          
-           def data var
-             @op[@ii].data = var
-           end
+         def data var; @os.op[@op.ii].data = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXTreeItem.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXTreeItem.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -10701,51 +7454,34 @@ module Fox
      attr_accessor :_o     
    end
    def fx_tree_list name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXTreeList, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => TREELIST_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0})
+         @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => TREELIST_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0})
          
-           def p var
-             @op[@ii].p = var
-           end
+         def p var; @os.op[@op.ii].p = var; end
          
-           def target var
-             @op[@ii].target = var
-           end
+         def target var; @os.op[@op.ii].target = var; end
          
-           def selector var
-             @op[@ii].selector = var
-           end
+         def selector var; @os.op[@op.ii].selector = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXTreeList.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXTreeList.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -10754,67 +7490,42 @@ module Fox
      attr_accessor :_o     
    end
    def fx_tree_list_box name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXTreeListBox, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => FRAME_SUNKEN|FRAME_THICK|TREELISTBOX_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
+         @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => FRAME_SUNKEN|FRAME_THICK|TREELISTBOX_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
          
-           def p var
-             @op[@ii].p = var
-           end
+         def p var; @os.op[@op.ii].p = var; end
          
-           def target var
-             @op[@ii].target = var
-           end
+         def target var; @os.op[@op.ii].target = var; end
          
-           def selector var
-             @op[@ii].selector = var
-           end
+         def selector var; @os.op[@op.ii].selector = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
-           def pad_left var
-             @op[@ii].padLeft = var
-           end
+         def pad_left var; @os.op[@op.ii].padLeft = var; end
          
-           def pad_right var
-             @op[@ii].padRight = var
-           end
+         def pad_right var; @os.op[@op.ii].padRight = var; end
          
-           def pad_top var
-             @op[@ii].padTop = var
-           end
+         def pad_top var; @os.op[@op.ii].padTop = var; end
          
-           def pad_bottom var
-             @op[@ii].padBottom = var
-           end
+         def pad_bottom var; @os.op[@op.ii].padBottom = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXTreeListBox.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXTreeListBox.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -10823,91 +7534,54 @@ module Fox
      attr_accessor :_o     
    end
    def fx_tri_state_button name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXTriStateButton, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:p => :required, :text1 => :required, :text2 => :required, :text3 => :required, :icon1 => nil, :icon2 => nil, :icon3 => nil, :target => nil, :selector => 0, :opts => TOGGLEBUTTON_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
+         @os.op[0] = OpenStruct.new({:p => :required, :text1 => :required, :text2 => :required, :text3 => :required, :icon1 => nil, :icon2 => nil, :icon3 => nil, :target => nil, :selector => 0, :opts => TOGGLEBUTTON_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
          
-           def p var
-             @op[@ii].p = var
-           end
+         def p var; @os.op[@op.ii].p = var; end
          
-           def text1 var
-             @op[@ii].text1 = var
-           end
+         def text1 var; @os.op[@op.ii].text1 = var; end
          
-           def text2 var
-             @op[@ii].text2 = var
-           end
+         def text2 var; @os.op[@op.ii].text2 = var; end
          
-           def text3 var
-             @op[@ii].text3 = var
-           end
+         def text3 var; @os.op[@op.ii].text3 = var; end
          
-           def icon1 var
-             @op[@ii].icon1 = var
-           end
+         def icon1 var; @os.op[@op.ii].icon1 = var; end
          
-           def icon2 var
-             @op[@ii].icon2 = var
-           end
+         def icon2 var; @os.op[@op.ii].icon2 = var; end
          
-           def icon3 var
-             @op[@ii].icon3 = var
-           end
+         def icon3 var; @os.op[@op.ii].icon3 = var; end
          
-           def target var
-             @op[@ii].target = var
-           end
+         def target var; @os.op[@op.ii].target = var; end
          
-           def selector var
-             @op[@ii].selector = var
-           end
+         def selector var; @os.op[@op.ii].selector = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
-           def pad_left var
-             @op[@ii].padLeft = var
-           end
+         def pad_left var; @os.op[@op.ii].padLeft = var; end
          
-           def pad_right var
-             @op[@ii].padRight = var
-           end
+         def pad_right var; @os.op[@op.ii].padRight = var; end
          
-           def pad_top var
-             @op[@ii].padTop = var
-           end
+         def pad_top var; @os.op[@op.ii].padTop = var; end
          
-           def pad_bottom var
-             @op[@ii].padBottom = var
-           end
+         def pad_bottom var; @os.op[@op.ii].padBottom = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXTriStateButton.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXTriStateButton.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -10916,27 +7590,22 @@ module Fox
      attr_accessor :_o     
    end
    def fx_vec2d name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXVec2d, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:xx => 0.0, :yy => 0.0})
+         @os.op[0] = OpenStruct.new({:xx => 0.0, :yy => 0.0})
          
-           def xx var
-             @op[@ii].xx = var
-           end
+         def xx var; @os.op[@op.ii].xx = var; end
          
-           def yy var
-             @op[@ii].yy = var
-           end
+         def yy var; @os.op[@op.ii].yy = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXVec2d.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXVec2d.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -10945,27 +7614,22 @@ module Fox
      attr_accessor :_o     
    end
    def fx_vec2f name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXVec2f, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:xx => 0.0, :yy => 0.0})
+         @os.op[0] = OpenStruct.new({:xx => 0.0, :yy => 0.0})
          
-           def xx var
-             @op[@ii].xx = var
-           end
+         def xx var; @os.op[@op.ii].xx = var; end
          
-           def yy var
-             @op[@ii].yy = var
-           end
+         def yy var; @os.op[@op.ii].yy = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXVec2f.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXVec2f.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -10974,31 +7638,24 @@ module Fox
      attr_accessor :_o     
    end
    def fx_vec3d name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXVec3d, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:xx => :required, :yy => :required, :zz => 1.0})
+         @os.op[0] = OpenStruct.new({:xx => :required, :yy => :required, :zz => 1.0})
          
-           def xx var
-             @op[@ii].xx = var
-           end
+         def xx var; @os.op[@op.ii].xx = var; end
          
-           def yy var
-             @op[@ii].yy = var
-           end
+         def yy var; @os.op[@op.ii].yy = var; end
          
-           def zz var
-             @op[@ii].zz = var
-           end
+         def zz var; @os.op[@op.ii].zz = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXVec3d.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXVec3d.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -11007,31 +7664,24 @@ module Fox
      attr_accessor :_o     
    end
    def fx_vec3f name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXVec3f, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:xx => :required, :yy => :required, :zz => 1.0})
+         @os.op[0] = OpenStruct.new({:xx => :required, :yy => :required, :zz => 1.0})
          
-           def xx var
-             @op[@ii].xx = var
-           end
+         def xx var; @os.op[@op.ii].xx = var; end
          
-           def yy var
-             @op[@ii].yy = var
-           end
+         def yy var; @os.op[@op.ii].yy = var; end
          
-           def zz var
-             @op[@ii].zz = var
-           end
+         def zz var; @os.op[@op.ii].zz = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXVec3f.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXVec3f.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -11040,50 +7690,37 @@ module Fox
      attr_accessor :_o     
    end
    def fx_vec4d name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXVec4d, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:xx => :required, :yy => :required, :zz => :required, :ww => 1.0})
+         @os.op[0] = OpenStruct.new({:xx => :required, :yy => :required, :zz => :required, :ww => 1.0})
          
-           def xx var
-             @op[@ii].xx = var
-           end
+         def xx var; @os.op[@op.ii].xx = var; end
          
-           def yy var
-             @op[@ii].yy = var
-           end
+         def yy var; @os.op[@op.ii].yy = var; end
          
-           def zz var
-             @op[@ii].zz = var
-           end
+         def zz var; @os.op[@op.ii].zz = var; end
          
-           def ww var
-             @op[@ii].ww = var
-           end
+         def ww var; @os.op[@op.ii].ww = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
      
-         @op[1] = OpenStruct.new({:vec3d => :required, :ww => 1.0})
+         @os.op[1] = OpenStruct.new({:vec3d => :required, :ww => 1.0})
          
-           def vec3d var
-             @op[@ii].vec3d = var
-           end
+         def vec3d var; @os.op[@op.ii].vec3d = var; end
          
-           def ww var
-             @op[@ii].ww = var
-           end
+         def ww var; @os.op[@op.ii].ww = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXVec4d.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXVec4d.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -11092,50 +7729,37 @@ module Fox
      attr_accessor :_o     
    end
    def fx_vec4f name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXVec4f, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:xx => :required, :yy => :required, :zz => :required, :ww => 1.0})
+         @os.op[0] = OpenStruct.new({:xx => :required, :yy => :required, :zz => :required, :ww => 1.0})
          
-           def xx var
-             @op[@ii].xx = var
-           end
+         def xx var; @os.op[@op.ii].xx = var; end
          
-           def yy var
-             @op[@ii].yy = var
-           end
+         def yy var; @os.op[@op.ii].yy = var; end
          
-           def zz var
-             @op[@ii].zz = var
-           end
+         def zz var; @os.op[@op.ii].zz = var; end
          
-           def ww var
-             @op[@ii].ww = var
-           end
+         def ww var; @os.op[@op.ii].ww = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
      
-         @op[1] = OpenStruct.new({:vec3f => :required, :ww => 1.0})
+         @os.op[1] = OpenStruct.new({:vec3f => :required, :ww => 1.0})
          
-           def vec3f var
-             @op[@ii].vec3f = var
-           end
+         def vec3f var; @os.op[@op.ii].vec3f = var; end
          
-           def ww var
-             @op[@ii].ww = var
-           end
+         def ww var; @os.op[@op.ii].ww = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXVec4f.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXVec4f.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -11144,67 +7768,42 @@ module Fox
      attr_accessor :_o     
    end
    def fx_vertical_frame name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXVerticalFrame, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:p => :required, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_SPACING, :padRight => DEFAULT_SPACING, :padTop => DEFAULT_SPACING, :padBottom => DEFAULT_SPACING, :hSpacing => DEFAULT_SPACING, :vSpacing => DEFAULT_SPACING})
+         @os.op[0] = OpenStruct.new({:p => :required, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_SPACING, :padRight => DEFAULT_SPACING, :padTop => DEFAULT_SPACING, :padBottom => DEFAULT_SPACING, :hSpacing => DEFAULT_SPACING, :vSpacing => DEFAULT_SPACING})
          
-           def p var
-             @op[@ii].p = var
-           end
+         def p var; @os.op[@op.ii].p = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
-           def pad_left var
-             @op[@ii].padLeft = var
-           end
+         def pad_left var; @os.op[@op.ii].padLeft = var; end
          
-           def pad_right var
-             @op[@ii].padRight = var
-           end
+         def pad_right var; @os.op[@op.ii].padRight = var; end
          
-           def pad_top var
-             @op[@ii].padTop = var
-           end
+         def pad_top var; @os.op[@op.ii].padTop = var; end
          
-           def pad_bottom var
-             @op[@ii].padBottom = var
-           end
+         def pad_bottom var; @os.op[@op.ii].padBottom = var; end
          
-           def h_spacing var
-             @op[@ii].hSpacing = var
-           end
+         def h_spacing var; @os.op[@op.ii].hSpacing = var; end
          
-           def v_spacing var
-             @op[@ii].vSpacing = var
-           end
+         def v_spacing var; @os.op[@op.ii].vSpacing = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXVerticalFrame.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXVerticalFrame.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -11213,31 +7812,24 @@ module Fox
      attr_accessor :_o     
    end
    def fx_visual name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXVisual, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:a => :required, :flgs => :required, :d => 32})
+         @os.op[0] = OpenStruct.new({:a => :required, :flgs => :required, :d => 32})
          
-           def a var
-             @op[@ii].a = var
-           end
+         def a var; @os.op[@op.ii].a = var; end
          
-           def flgs var
-             @op[@ii].flgs = var
-           end
+         def flgs var; @os.op[@op.ii].flgs = var; end
          
-           def d var
-             @op[@ii].d = var
-           end
+         def d var; @os.op[@op.ii].d = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXVisual.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXVisual.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -11246,93 +7838,62 @@ module Fox
      attr_accessor :_o     
    end
    def fx_window name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXWindow, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:p => :required, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
+         @os.op[0] = OpenStruct.new({:p => :required, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
          
-           def p var
-             @op[@ii].p = var
-           end
+         def p var; @os.op[@op.ii].p = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
      
-         @op[1] = OpenStruct.new({:a => :required, :vis => :required})
+         @os.op[1] = OpenStruct.new({:a => :required, :vis => :required})
          
-           def a var
-             @op[@ii].a = var
-           end
+         def a var; @os.op[@op.ii].a = var; end
          
-           def vis var
-             @op[@ii].vis = var
-           end
+         def vis var; @os.op[@op.ii].vis = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
      
-         @op[2] = OpenStruct.new({:a => :required, :own => :required, :opts => :required, :x => :required, :y => :required, :w => :required, :h => :required})
+         @os.op[2] = OpenStruct.new({:a => :required, :own => :required, :opts => :required, :x => :required, :y => :required, :w => :required, :h => :required})
          
-           def a var
-             @op[@ii].a = var
-           end
+         def a var; @os.op[@op.ii].a = var; end
          
-           def own var
-             @op[@ii].own = var
-           end
+         def own var; @os.op[@op.ii].own = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def w var
-             @op[@ii].w = var
-           end
+         def w var; @os.op[@op.ii].w = var; end
          
-           def h var
-             @op[@ii].h = var
-           end
+         def h var; @os.op[@op.ii].h = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXWindow.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXWindow.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -11341,75 +7902,46 @@ module Fox
      attr_accessor :_o     
    end
    def fx_wizard name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXWizard, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:owner => :required, :name => :required, :image => :required, :opts => DECOR_TITLE|DECOR_BORDER|DECOR_RESIZE, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 10, :padRight => 10, :padTop => 10, :padBottom => 10, :hSpacing => 10, :vSpacing => 10})
+         @os.op[0] = OpenStruct.new({:owner => :required, :name => :required, :image => :required, :opts => DECOR_TITLE|DECOR_BORDER|DECOR_RESIZE, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 10, :padRight => 10, :padTop => 10, :padBottom => 10, :hSpacing => 10, :vSpacing => 10})
          
-           def owner var
-             @op[@ii].owner = var
-           end
+         def owner var; @os.op[@op.ii].owner = var; end
          
-           def name var
-             @op[@ii].name = var
-           end
+         def name var; @os.op[@op.ii].name = var; end
          
-           def image var
-             @op[@ii].image = var
-           end
+         def image var; @os.op[@op.ii].image = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def x var
-             @op[@ii].x = var
-           end
+         def x var; @os.op[@op.ii].x = var; end
          
-           def y var
-             @op[@ii].y = var
-           end
+         def y var; @os.op[@op.ii].y = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
-           def pad_left var
-             @op[@ii].padLeft = var
-           end
+         def pad_left var; @os.op[@op.ii].padLeft = var; end
          
-           def pad_right var
-             @op[@ii].padRight = var
-           end
+         def pad_right var; @os.op[@op.ii].padRight = var; end
          
-           def pad_top var
-             @op[@ii].padTop = var
-           end
+         def pad_top var; @os.op[@op.ii].padTop = var; end
          
-           def pad_bottom var
-             @op[@ii].padBottom = var
-           end
+         def pad_bottom var; @os.op[@op.ii].padBottom = var; end
          
-           def h_spacing var
-             @op[@ii].hSpacing = var
-           end
+         def h_spacing var; @os.op[@op.ii].hSpacing = var; end
          
-           def v_spacing var
-             @op[@ii].vSpacing = var
-           end
+         def v_spacing var; @os.op[@op.ii].vSpacing = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXWizard.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXWizard.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -11418,47 +7950,32 @@ module Fox
      attr_accessor :_o     
    end
    def fxxbm_icon name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXXBMIcon, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:a => :required, :pixels => nil, :mask => nil, :clr => 0, :opts => 0, :width => 1, :height => 1})
+         @os.op[0] = OpenStruct.new({:a => :required, :pixels => nil, :mask => nil, :clr => 0, :opts => 0, :width => 1, :height => 1})
          
-           def a var
-             @op[@ii].a = var
-           end
+         def a var; @os.op[@op.ii].a = var; end
          
-           def pixels var
-             @op[@ii].pixels = var
-           end
+         def pixels var; @os.op[@op.ii].pixels = var; end
          
-           def mask var
-             @op[@ii].mask = var
-           end
+         def mask var; @os.op[@op.ii].mask = var; end
          
-           def clr var
-             @op[@ii].clr = var
-           end
+         def clr var; @os.op[@op.ii].clr = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXXBMIcon.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXXBMIcon.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -11467,43 +7984,30 @@ module Fox
      attr_accessor :_o     
    end
    def fxxbm_image name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXXBMImage, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:a => :required, :pixels => nil, :mask => nil, :opts => 0, :width => 1, :height => 1})
+         @os.op[0] = OpenStruct.new({:a => :required, :pixels => nil, :mask => nil, :opts => 0, :width => 1, :height => 1})
          
-           def a var
-             @op[@ii].a = var
-           end
+         def a var; @os.op[@op.ii].a = var; end
          
-           def pixels var
-             @op[@ii].pixels = var
-           end
+         def pixels var; @os.op[@op.ii].pixels = var; end
          
-           def mask var
-             @op[@ii].mask = var
-           end
+         def mask var; @os.op[@op.ii].mask = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXXBMImage.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXXBMImage.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -11512,43 +8016,30 @@ module Fox
      attr_accessor :_o     
    end
    def fxxpm_icon name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXXPMIcon, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:a => :required, :pix => nil, :clr => 0, :opts => 0, :width => 1, :height => 1})
+         @os.op[0] = OpenStruct.new({:a => :required, :pix => nil, :clr => 0, :opts => 0, :width => 1, :height => 1})
          
-           def a var
-             @op[@ii].a = var
-           end
+         def a var; @os.op[@op.ii].a = var; end
          
-           def pix var
-             @op[@ii].pix = var
-           end
+         def pix var; @os.op[@op.ii].pix = var; end
          
-           def clr var
-             @op[@ii].clr = var
-           end
+         def clr var; @os.op[@op.ii].clr = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXXPMIcon.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXXPMIcon.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -11557,39 +8048,28 @@ module Fox
      attr_accessor :_o     
    end
    def fxxpm_image name = nil, ii: 0, &block
-     @op = []
-     @ii = ii
+     Enhancement.stack << (@os = os = OpenStruct.new(klass: FXXPMImage, op: [], ii: ii, fx: nil, kinder: []))
      
      
-         @op[0] = OpenStruct.new({:a => :required, :pix => nil, :opts => 0, :width => 1, :height => 1})
+         @os.op[0] = OpenStruct.new({:a => :required, :pix => nil, :opts => 0, :width => 1, :height => 1})
          
-           def a var
-             @op[@ii].a = var
-           end
+         def a var; @os.op[@op.ii].a = var; end
          
-           def pix var
-             @op[@ii].pix = var
-           end
+         def pix var; @os.op[@op.ii].pix = var; end
          
-           def opts var
-             @op[@ii].opts = var
-           end
+         def opts var; @os.op[@op.ii].opts = var; end
          
-           def width var
-             @op[@ii].width = var
-           end
+         def width var; @os.op[@op.ii].width = var; end
          
-           def height var
-             @op[@ii].height = var
-           end
+         def height var; @os.op[@op.ii].height = var; end
          
          def instance a=nil, &block
-            @op[@ii].instance_name = a
-            @op[@ii].instance_block = block
+            @os.op[@op.ii].instance_name = a
+            @os.op[@op.ii].instance_block = block
          end
           
      self.instance_eval &block
-     Enhancement.stack << FXXPMImage.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
+     Enhancement.stack << FXXPMImage.new(*([Enhancement.stack.last] + @os.op[@op.ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
