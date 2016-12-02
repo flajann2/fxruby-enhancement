@@ -19,4 +19,3 @@ end
 
 require_relative 'fxruby-enhancement/enhancement'
 require_relative 'fxruby-enhancement/api-mapper'
-

@@ -4,21 +4,24 @@ module Fox
   # than include FIXME: later we will clean
   # this up.
   module Enhancement
-    def self.included(klass)
-      klass.extend ClassMethods
-      klass.class_eval do
-        #def initialize
-        #  super application,
-        #        self.class.app_title,
-        #        width: self.class.win_width,
-        #        height: self.class.win_height
-        #end
-      end
-    end
-
+    @stack = []
+    
     # Module-level
     class << self
       attr_accessor :application
+      attr_accessor :stack      
+      
+      def included(klass)
+        klass.extend ClassMethods
+        klass.class_eval do
+          #def initialize
+          #  super application,
+          #        self.class.app_title,
+          #        width: self.class.win_width,
+          #        height: self.class.win_height
+          #end
+        end
+      end
       
       def app_set name, vendor
         @application = FXApp.new(name, vendor)

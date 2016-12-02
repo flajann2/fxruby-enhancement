@@ -1,3 +1,4 @@
+# coding: utf-8
 =begin rdoc
 
 NOTE WELL:
@@ -53,7 +54,7 @@ module Fox
    def fx4_splitter name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:p=>nil, :opts=>"FOURSPLITTER_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}
          
            @o0.p = :required
@@ -91,7 +92,7 @@ module Fox
             @o0.instance_block = block
          end
      
-         @o1 = OStruct.new
+         @o1 = OpenStruct.new
          #{:p=>nil, :tgt=>nil, :sel=>nil, :opts=>"FOURSPLITTER_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}
          
            @o1.p = :required
@@ -139,7 +140,9 @@ module Fox
             @o1.instance_block = block
          end
      
-     
+     Enhancement.stack << FX4Splitter.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FX7Segment
@@ -149,7 +152,7 @@ module Fox
    def fx7_segment name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:p=>nil, :text=>nil, :opts=>"SEVENSEGMENT_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_PAD", :padRight=>"DEFAULT_PAD", :padTop=>"DEFAULT_PAD", :padBottom=>"DEFAULT_PAD"}
          
            @o0.p = :required
@@ -212,7 +215,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FX7Segment.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXAccelTable
@@ -222,7 +227,9 @@ module Fox
    def fx_accel_table name = nil, &block
      
      
-     
+     Enhancement.stack << FXAccelTable.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXEvent
@@ -232,7 +239,9 @@ module Fox
    def fx_event name = nil, &block
      
      
-     
+     Enhancement.stack << FXEvent.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXApp
@@ -242,7 +251,7 @@ module Fox
    def fx_app name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:appName=>"\"Application\"", :vendorName=>"\"FoxDefault\""}
          
            @o0.appName = "Application"
@@ -260,7 +269,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXApp.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXArrowButton
@@ -270,7 +281,7 @@ module Fox
    def fx_arrow_button name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:parent=>nil, :target=>"nil", :selector=>"0", :opts=>"ARROW_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_PAD", :padRight=>"DEFAULT_PAD", :padTop=>"DEFAULT_PAD", :padBottom=>"DEFAULT_PAD"}
          
            @o0.parent = :required
@@ -338,7 +349,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXArrowButton.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXBMPIcon
@@ -348,8 +361,8 @@ module Fox
    def fxbmp_icon name = nil, &block
      
      
-         @o0 = OStruct.new
-         #{:a=>nil, :pix=>"nil", :clr=>"Fox.FXRGB(192", :"192"=>nil}
+         @o0 = OpenStruct.new
+         #{:a=>nil, :pix=>"nil", :clr=>"Fox.FXRGB(192,192,192)", :opts=>"0", :width=>"1", :height=>"1"}
          
            @o0.a = :required
            def a var
@@ -361,14 +374,24 @@ module Fox
              @o0.pix = var
            end
          
-           @o0.clr = Fox.FXRGB(192
+           @o0.clr = Fox.FXRGB(192,192,192)
            def clr var
              @o0.clr = var
            end
          
-           @o0.192 = :required
-           def 192 var
-             @o0.192 = var
+           @o0.opts = 0
+           def opts var
+             @o0.opts = var
+           end
+         
+           @o0.width = 1
+           def width var
+             @o0.width = var
+           end
+         
+           @o0.height = 1
+           def height var
+             @o0.height = var
            end
          
          def instance a=nil, &block
@@ -376,7 +399,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXBMPIcon.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXBMPImage
@@ -386,7 +411,7 @@ module Fox
    def fxbmp_image name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:a=>nil, :pix=>"nil", :opts=>"0", :width=>"1", :height=>"1"}
          
            @o0.a = :required
@@ -419,7 +444,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXBMPImage.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXBitmap
@@ -429,7 +456,7 @@ module Fox
    def fx_bitmap name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:app=>nil, :pixels=>"nil", :opts=>"0", :width=>"1", :height=>"1"}
          
            @o0.app = :required
@@ -462,7 +489,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXBitmap.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXBitmapFrame
@@ -472,7 +501,7 @@ module Fox
    def fx_bitmap_frame name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:p=>nil, :bmp=>nil, :opts=>"FRAME_SUNKEN|FRAME_THICK", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"0", :padRight=>"0", :padTop=>"0", :padBottom=>"0"}
          
            @o0.p = :required
@@ -535,7 +564,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXBitmapFrame.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXBitmapView
@@ -545,7 +576,7 @@ module Fox
    def fx_bitmap_view name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:p=>nil, :bmp=>"nil", :target=>"nil", :selector=>"0", :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}
          
            @o0.p = :required
@@ -598,7 +629,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXBitmapView.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXButton
@@ -608,7 +641,7 @@ module Fox
    def fx_button name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:parent=>nil, :text=>nil, :icon=>"nil", :target=>"nil", :selector=>"0", :opts=>"BUTTON_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_PAD", :padRight=>"DEFAULT_PAD", :padTop=>"DEFAULT_PAD", :padBottom=>"DEFAULT_PAD"}
          
            @o0.parent = :required
@@ -686,7 +719,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXButton.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXCURCursor
@@ -696,7 +731,7 @@ module Fox
    def fxcur_cursor name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:app=>nil, :pixels=>nil}
          
            @o0.app = :required
@@ -714,7 +749,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXCURCursor.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXCanvas
@@ -724,7 +761,7 @@ module Fox
    def fx_canvas name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:parent=>nil, :target=>"nil", :selector=>"0", :opts=>"FRAME_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}
          
            @o0.parent = :required
@@ -772,7 +809,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXCanvas.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXCheckButton
@@ -782,7 +821,7 @@ module Fox
    def fx_check_button name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:parent=>nil, :text=>nil, :target=>"nil", :selector=>"0", :opts=>"CHECKBUTTON_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_PAD", :padRight=>"DEFAULT_PAD", :padTop=>"DEFAULT_PAD", :padBottom=>"DEFAULT_PAD"}
          
            @o0.parent = :required
@@ -855,7 +894,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXCheckButton.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXChoiceBox
@@ -865,7 +906,7 @@ module Fox
    def fx_choice_box name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:owner=>nil, :caption=>nil, :text=>nil, :icon=>nil, :choices=>nil, :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}
          
            @o0.owner = :required
@@ -923,7 +964,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXChoiceBox.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXColorBar
@@ -933,7 +976,7 @@ module Fox
    def fx_color_bar name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:parent=>nil, :target=>"nil", :selector=>"0", :opts=>"FRAME_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_PAD", :padRight=>"DEFAULT_PAD", :padTop=>"DEFAULT_PAD", :padBottom=>"DEFAULT_PAD"}
          
            @o0.parent = :required
@@ -1001,7 +1044,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXColorBar.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXColorDialog
@@ -1011,7 +1056,7 @@ module Fox
    def fx_color_dialog name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:owner=>nil, :title=>nil, :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}
          
            @o0.owner = :required
@@ -1054,7 +1099,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXColorDialog.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXColorItem
@@ -1064,7 +1111,7 @@ module Fox
    def fx_color_item name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:text=>nil, :clr=>nil, :data=>"nil"}
          
            @o0.text = :required
@@ -1087,7 +1134,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXColorItem.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXColorList
@@ -1097,7 +1146,7 @@ module Fox
    def fx_color_list name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:p=>nil, :target=>"nil", :selector=>"0", :opts=>"LIST_BROWSESELECT", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}
          
            @o0.p = :required
@@ -1145,7 +1194,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXColorList.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXColorRing
@@ -1155,7 +1206,7 @@ module Fox
    def fx_color_ring name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:p=>nil, :target=>"nil", :selector=>"0", :opts=>"FRAME_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_PAD", :padRight=>"DEFAULT_PAD", :padTop=>"DEFAULT_PAD", :padBottom=>"DEFAULT_PAD"}
          
            @o0.p = :required
@@ -1223,7 +1274,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXColorRing.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXColorSelector
@@ -1233,7 +1286,7 @@ module Fox
    def fx_color_selector name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:parent=>nil, :target=>"nil", :selector=>"0", :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}
          
            @o0.parent = :required
@@ -1281,7 +1334,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXColorSelector.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXColorWell
@@ -1291,7 +1346,7 @@ module Fox
    def fx_color_well name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:parent=>nil, :color=>"0", :target=>"nil", :selector=>"0", :opts=>"COLORWELL_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_PAD", :padRight=>"DEFAULT_PAD", :padTop=>"DEFAULT_PAD", :padBottom=>"DEFAULT_PAD"}
          
            @o0.parent = :required
@@ -1364,7 +1419,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXColorWell.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXColorWheel
@@ -1374,7 +1431,7 @@ module Fox
    def fx_color_wheel name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:p=>nil, :target=>"nil", :selector=>"0", :opts=>"FRAME_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_PAD", :padRight=>"DEFAULT_PAD", :padTop=>"DEFAULT_PAD", :padBottom=>"DEFAULT_PAD"}
          
            @o0.p = :required
@@ -1442,7 +1499,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXColorWheel.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXComboBox
@@ -1452,7 +1511,7 @@ module Fox
    def fx_combo_box name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:p=>nil, :cols=>nil, :target=>"nil", :selector=>"0", :opts=>"COMBOBOX_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_PAD", :padRight=>"DEFAULT_PAD", :padTop=>"DEFAULT_PAD", :padBottom=>"DEFAULT_PAD"}
          
            @o0.p = :required
@@ -1525,7 +1584,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXComboBox.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXComposite
@@ -1535,7 +1596,7 @@ module Fox
    def fx_composite name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:parent=>nil, :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}
          
            @o0.parent = :required
@@ -1573,7 +1634,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXComposite.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXCursor
@@ -1583,7 +1646,7 @@ module Fox
    def fx_cursor name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:a=>nil, :curid=>"CURSOR_ARROW"}
          
            @o0.a = :required
@@ -1601,7 +1664,7 @@ module Fox
             @o0.instance_block = block
          end
      
-         @o1 = OStruct.new
+         @o1 = OpenStruct.new
          #{:a=>nil, :pix=>nil, :width=>"32", :height=>"32", :hotX=>"-1", :hotY=>"-1"}
          
            @o1.a = :required
@@ -1639,7 +1702,7 @@ module Fox
             @o1.instance_block = block
          end
      
-         @o2 = OStruct.new
+         @o2 = OpenStruct.new
          #{:a=>nil, :pixels=>nil, :width=>"32", :height=>"32", :hotX=>"-1", :hotY=>"-1"}
          
            @o2.a = :required
@@ -1677,7 +1740,9 @@ module Fox
             @o2.instance_block = block
          end
      
-     
+     Enhancement.stack << FXCursor.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXSegment
@@ -1687,7 +1752,9 @@ module Fox
    def fx_segment name = nil, &block
      
      
-     
+     Enhancement.stack << FXSegment.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXArc
@@ -1697,7 +1764,9 @@ module Fox
    def fx_arc name = nil, &block
      
      
-     
+     Enhancement.stack << FXArc.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXDC
@@ -1707,7 +1776,7 @@ module Fox
    def fxdc name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:app=>nil}
          
            @o0.app = :required
@@ -1720,7 +1789,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXDC.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXPSBounds
@@ -1730,7 +1801,9 @@ module Fox
    def fxps_bounds name = nil, &block
      
      
-     
+     Enhancement.stack << FXPSBounds.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXPrinter
@@ -1740,7 +1813,9 @@ module Fox
    def fx_printer name = nil, &block
      
      
-     
+     Enhancement.stack << FXPrinter.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXDCPrint
@@ -1750,7 +1825,7 @@ module Fox
    def fxdc_print name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:app=>nil}
          
            @o0.app = :required
@@ -1763,7 +1838,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXDCPrint.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXDCWindow
@@ -1773,7 +1850,7 @@ module Fox
    def fxdc_window name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:drawable=>nil, :event=>"nil"}
          
            @o0.drawable = :required
@@ -1791,7 +1868,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXDCWindow.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXDataTarget
@@ -1801,7 +1880,7 @@ module Fox
    def fx_data_target name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:value=>"nil", :target=>"nil", :selector=>"0"}
          
            @o0.value = nil
@@ -1824,7 +1903,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXDataTarget.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXDebugTarget
@@ -1834,7 +1915,9 @@ module Fox
    def fx_debug_target name = nil, &block
      
      
-     
+     Enhancement.stack << FXDebugTarget.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXDelegator
@@ -1844,7 +1927,7 @@ module Fox
    def fx_delegator name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:delegate=>"nil"}
          
            @o0.delegate = nil
@@ -1857,7 +1940,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXDelegator.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXDial
@@ -1867,7 +1952,7 @@ module Fox
    def fx_dial name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:p=>nil, :target=>"nil", :selector=>"0", :opts=>"DIAL_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_PAD", :padRight=>"DEFAULT_PAD", :padTop=>"DEFAULT_PAD", :padBottom=>"DEFAULT_PAD"}
          
            @o0.p = :required
@@ -1935,7 +2020,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXDial.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXDialogBox
@@ -1945,7 +2032,7 @@ module Fox
    def fx_dialog_box name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:owner=>nil, :title=>nil, :opts=>"DECOR_TITLE|DECOR_BORDER", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"10", :padRight=>"10", :padTop=>"10", :padBottom=>"10", :hSpacing=>"4", :vSpacing=>"4"}
          
            @o0.owner = :required
@@ -2018,7 +2105,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXDialogBox.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXDict
@@ -2028,7 +2117,9 @@ module Fox
    def fx_dict name = nil, &block
      
      
-     
+     Enhancement.stack << FXDict.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXDirBox
@@ -2038,7 +2129,7 @@ module Fox
    def fx_dir_box name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:p=>nil, :target=>"nil", :selector=>"0", :opts=>"FRAME_SUNKEN|FRAME_THICK|TREELISTBOX_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_PAD", :padRight=>"DEFAULT_PAD", :padTop=>"DEFAULT_PAD", :padBottom=>"DEFAULT_PAD"}
          
            @o0.p = :required
@@ -2106,7 +2197,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXDirBox.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXDirDialog
@@ -2116,7 +2209,7 @@ module Fox
    def fx_dir_dialog name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:owner=>nil, :name=>nil, :opts=>"0", :x=>"0", :y=>"0", :width=>"500", :height=>"300"}
          
            @o0.owner = :required
@@ -2159,7 +2252,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXDirDialog.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXDirItem
@@ -2169,7 +2264,7 @@ module Fox
    def fx_dir_item name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:text=>nil, :oi=>"nil", :ci=>"nil", :data=>"nil"}
          
            @o0.text = :required
@@ -2197,7 +2292,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXDirItem.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXDirList
@@ -2207,7 +2304,7 @@ module Fox
    def fx_dir_list name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:p=>nil, :target=>"nil", :selector=>"0", :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}
          
            @o0.p = :required
@@ -2255,7 +2352,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXDirList.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXDirSelector
@@ -2265,7 +2364,7 @@ module Fox
    def fx_dir_selector name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:p=>nil, :target=>"nil", :selector=>"0", :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}
          
            @o0.p = :required
@@ -2313,7 +2412,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXDirSelector.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXDockBar
@@ -2323,7 +2424,7 @@ module Fox
    def fx_dock_bar name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:p=>nil, :q=>nil, :opts=>"LAYOUT_TOP|LAYOUT_LEFT|LAYOUT_FILL_X", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"3", :padRight=>"3", :padTop=>"2", :padBottom=>"2", :hSpacing=>"DEFAULT_SPACING", :vSpacing=>"DEFAULT_SPACING"}
          
            @o0.p = :required
@@ -2396,7 +2497,7 @@ module Fox
             @o0.instance_block = block
          end
      
-         @o1 = OStruct.new
+         @o1 = OpenStruct.new
          #{:p=>nil, :opts=>"LAYOUT_TOP|LAYOUT_LEFT|LAYOUT_FILL_X", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"3", :padRight=>"3", :padTop=>"2", :padBottom=>"2", :hSpacing=>"DEFAULT_SPACING", :vSpacing=>"DEFAULT_SPACING"}
          
            @o1.p = :required
@@ -2464,7 +2565,9 @@ module Fox
             @o1.instance_block = block
          end
      
-     
+     Enhancement.stack << FXDockBar.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXDockHandler
@@ -2474,7 +2577,7 @@ module Fox
    def fx_dock_handler name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:p=>nil, :tgt=>nil, :sel=>nil, :opts=>nil, :x=>nil, :y=>nil, :w=>nil, :h=>nil, :pl=>nil, :pr=>nil, :pt=>nil, :pb=>nil}
          
            @o0.p = :required
@@ -2542,7 +2645,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXDockHandler.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXDockSite
@@ -2552,7 +2657,7 @@ module Fox
    def fx_dock_site name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:p=>nil, :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"0", :padRight=>"0", :padTop=>"0", :padBottom=>"0", :hSpacing=>"0", :vSpacing=>"0"}
          
            @o0.p = :required
@@ -2620,7 +2725,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXDockSite.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXDockTitle
@@ -2630,7 +2737,7 @@ module Fox
    def fx_dock_title name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:p=>nil, :text=>nil, :target=>"nil", :selector=>"0", :opts=>"FRAME_NORMAL|JUSTIFY_CENTER_X|JUSTIFY_CENTER_Y", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"0", :padRight=>"0", :padTop=>"0", :padBottom=>"0"}
          
            @o0.p = :required
@@ -2703,7 +2810,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXDockTitle.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXDocument
@@ -2713,7 +2822,9 @@ module Fox
    def fx_document name = nil, &block
      
      
-     
+     Enhancement.stack << FXDocument.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXDragCorner
@@ -2723,7 +2834,7 @@ module Fox
    def fx_drag_corner name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:p=>nil}
          
            @o0.p = :required
@@ -2736,7 +2847,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXDragCorner.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXDrawable
@@ -2746,7 +2859,9 @@ module Fox
    def fx_drawable name = nil, &block
      
      
-     
+     Enhancement.stack << FXDrawable.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXDriveBox
@@ -2756,7 +2871,7 @@ module Fox
    def fx_drive_box name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:p=>nil, :target=>"nil", :selector=>"0", :opts=>"FRAME_SUNKEN|FRAME_THICK|LISTBOX_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_PAD", :padRight=>"DEFAULT_PAD", :padTop=>"DEFAULT_PAD", :padBottom=>"DEFAULT_PAD"}
          
            @o0.p = :required
@@ -2824,7 +2939,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXDriveBox.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXExtentd
@@ -2834,7 +2951,7 @@ module Fox
    def fx_extentd name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:ext=>nil}
          
            @o0.ext = :required
@@ -2847,7 +2964,7 @@ module Fox
             @o0.instance_block = block
          end
      
-         @o1 = OStruct.new
+         @o1 = OpenStruct.new
          #{:lo=>nil, :hi=>nil}
          
            @o1.lo = :required
@@ -2865,7 +2982,7 @@ module Fox
             @o1.instance_block = block
          end
      
-         @o2 = OStruct.new
+         @o2 = OpenStruct.new
          #{:xlo=>nil, :xhi=>nil, :ylo=>nil, :yhi=>nil}
          
            @o2.xlo = :required
@@ -2893,7 +3010,9 @@ module Fox
             @o2.instance_block = block
          end
      
-     
+     Enhancement.stack << FXExtentd.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXExtentf
@@ -2903,7 +3022,7 @@ module Fox
    def fx_extentf name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:ext=>nil}
          
            @o0.ext = :required
@@ -2916,7 +3035,7 @@ module Fox
             @o0.instance_block = block
          end
      
-         @o1 = OStruct.new
+         @o1 = OpenStruct.new
          #{:lo=>nil, :hi=>nil}
          
            @o1.lo = :required
@@ -2934,7 +3053,7 @@ module Fox
             @o1.instance_block = block
          end
      
-         @o2 = OStruct.new
+         @o2 = OpenStruct.new
          #{:xlo=>nil, :xhi=>nil, :ylo=>nil, :yhi=>nil}
          
            @o2.xlo = :required
@@ -2962,7 +3081,9 @@ module Fox
             @o2.instance_block = block
          end
      
-     
+     Enhancement.stack << FXExtentf.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXFileDialog
@@ -2972,7 +3093,7 @@ module Fox
    def fx_file_dialog name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:owner=>nil, :name=>nil, :opts=>"0", :x=>"0", :y=>"0", :width=>"500", :height=>"300"}
          
            @o0.owner = :required
@@ -3015,7 +3136,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXFileDialog.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXFileAssoc
@@ -3025,7 +3148,9 @@ module Fox
    def fx_file_assoc name = nil, &block
      
      
-     
+     Enhancement.stack << FXFileAssoc.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXFileDict
@@ -3035,7 +3160,7 @@ module Fox
    def fx_file_dict name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:app=>nil, :db=>"nil"}
          
            @o0.app = :required
@@ -3053,7 +3178,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXFileDict.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXFileItem
@@ -3063,7 +3190,7 @@ module Fox
    def fx_file_item name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:text=>nil, :bi=>"nil", :mi=>"nil", :ptr=>"nil"}
          
            @o0.text = :required
@@ -3091,7 +3218,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXFileItem.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXFileList
@@ -3101,7 +3230,7 @@ module Fox
    def fx_file_list name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:p=>nil, :target=>"nil", :selector=>"0", :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}
          
            @o0.p = :required
@@ -3149,7 +3278,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXFileList.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXFileSelector
@@ -3159,7 +3290,7 @@ module Fox
    def fx_file_selector name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:p=>nil, :target=>"nil", :selector=>"0", :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}
          
            @o0.p = :required
@@ -3207,7 +3338,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXFileSelector.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXFileStream
@@ -3217,7 +3350,7 @@ module Fox
    def fx_file_stream name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:cont=>"nil"}
          
            @o0.cont = nil
@@ -3230,7 +3363,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXFileStream.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXFoldingItem
@@ -3240,7 +3375,7 @@ module Fox
    def fx_folding_item name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:text=>nil, :openIcon=>"nil", :closedIcon=>"nil", :data=>"nil"}
          
            @o0.text = :required
@@ -3268,7 +3403,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXFoldingItem.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXFoldingList
@@ -3278,7 +3415,7 @@ module Fox
    def fx_folding_list name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:p=>nil, :target=>"nil", :selector=>"0", :opts=>"TREELIST_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}
          
            @o0.p = :required
@@ -3326,7 +3463,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXFoldingList.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXFontDesc
@@ -3336,7 +3475,9 @@ module Fox
    def fx_font_desc name = nil, &block
      
      
-     
+     Enhancement.stack << FXFontDesc.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXFont
@@ -3346,7 +3487,7 @@ module Fox
    def fx_font name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:a=>nil, :fontDesc=>nil}
          
            @o0.a = :required
@@ -3364,7 +3505,7 @@ module Fox
             @o0.instance_block = block
          end
      
-         @o1 = OStruct.new
+         @o1 = OpenStruct.new
          #{:a=>nil, :face=>nil, :size=>nil, :weight=>"FXFont::Normal", :slant=>"Font::Straight", :encoding=>"FONTENCODING_DEFAULT", :setWidth=>"FXFont::NonExpanded", :hints=>"0"}
          
            @o1.a = :required
@@ -3412,7 +3553,7 @@ module Fox
             @o1.instance_block = block
          end
      
-         @o2 = OStruct.new
+         @o2 = OpenStruct.new
          #{:a=>nil, :string=>nil}
          
            @o2.a = :required
@@ -3430,7 +3571,9 @@ module Fox
             @o2.instance_block = block
          end
      
-     
+     Enhancement.stack << FXFont.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXFontDialog
@@ -3440,7 +3583,7 @@ module Fox
    def fx_font_dialog name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:owner=>nil, :name=>nil, :opts=>"0", :x=>"0", :y=>"0", :width=>"600", :height=>"380"}
          
            @o0.owner = :required
@@ -3483,7 +3626,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXFontDialog.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXFontSelector
@@ -3493,7 +3638,7 @@ module Fox
    def fx_font_selector name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:p=>nil, :target=>"nil", :selector=>"0", :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}
          
            @o0.p = :required
@@ -3541,7 +3686,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXFontSelector.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXFrame
@@ -3551,7 +3698,7 @@ module Fox
    def fx_frame name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:parent=>nil, :opts=>"FRAME_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_PAD", :padRight=>"DEFAULT_PAD", :padTop=>"DEFAULT_PAD", :padBottom=>"DEFAULT_PAD"}
          
            @o0.parent = :required
@@ -3609,7 +3756,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXFrame.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXGIFCursor
@@ -3619,7 +3768,7 @@ module Fox
    def fxgif_cursor name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:a=>nil, :pix=>nil, :hx=>"-1", :hy=>"-1"}
          
            @o0.a = :required
@@ -3647,7 +3796,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXGIFCursor.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXGIFIcon
@@ -3657,7 +3808,7 @@ module Fox
    def fxgif_icon name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:a=>nil, :pix=>"nil", :clr=>"0", :opts=>"0", :width=>"1", :height=>"1"}
          
            @o0.a = :required
@@ -3695,7 +3846,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXGIFIcon.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXGIFImage
@@ -3705,7 +3858,7 @@ module Fox
    def fxgif_image name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:a=>nil, :pix=>"nil", :opts=>"0", :width=>"1", :height=>"1"}
          
            @o0.a = :required
@@ -3738,7 +3891,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXGIFImage.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXGLCanvas
@@ -3748,7 +3903,7 @@ module Fox
    def fxgl_canvas name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:parent=>nil, :vis=>nil, :target=>"nil", :selector=>"0", :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}
          
            @o0.parent = :required
@@ -3801,7 +3956,7 @@ module Fox
             @o0.instance_block = block
          end
      
-         @o1 = OStruct.new
+         @o1 = OpenStruct.new
          #{:parent=>nil, :vis=>nil, :sharegroup=>nil, :target=>"nil", :selector=>"0", :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}
          
            @o1.parent = :required
@@ -3859,7 +4014,9 @@ module Fox
             @o1.instance_block = block
          end
      
-     
+     Enhancement.stack << FXGLCanvas.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXGLContext
@@ -3869,7 +4026,7 @@ module Fox
    def fxgl_context name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:app=>nil, :visual=>nil, :other=>"nil"}
          
            @o0.app = :required
@@ -3892,7 +4049,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXGLContext.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXGLObject
@@ -3902,7 +4061,9 @@ module Fox
    def fxgl_object name = nil, &block
      
      
-     
+     Enhancement.stack << FXGLObject.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXGLShape
@@ -3912,7 +4073,7 @@ module Fox
    def fxgl_shape name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:x=>nil, :y=>nil, :z=>nil, :opts=>nil, :front=>"nil", :back=>"nil"}
          
            @o0.x = :required
@@ -3950,7 +4111,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXGLShape.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXViewport
@@ -3960,7 +4123,9 @@ module Fox
    def fx_viewport name = nil, &block
      
      
-     
+     Enhancement.stack << FXViewport.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXLight
@@ -3970,7 +4135,9 @@ module Fox
    def fx_light name = nil, &block
      
      
-     
+     Enhancement.stack << FXLight.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXMaterial
@@ -3980,7 +4147,9 @@ module Fox
    def fx_material name = nil, &block
      
      
-     
+     Enhancement.stack << FXMaterial.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXGLViewer
@@ -3990,7 +4159,7 @@ module Fox
    def fxgl_viewer name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:p=>nil, :vis=>nil, :target=>"nil", :selector=>"0", :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}
          
            @o0.p = :required
@@ -4043,7 +4212,7 @@ module Fox
             @o0.instance_block = block
          end
      
-         @o1 = OStruct.new
+         @o1 = OpenStruct.new
          #{:p=>nil, :vis=>nil, :sharegroup=>nil, :target=>"nil", :selector=>"0", :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}
          
            @o1.p = :required
@@ -4101,7 +4270,9 @@ module Fox
             @o1.instance_block = block
          end
      
-     
+     Enhancement.stack << FXGLViewer.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXGLVisual
@@ -4111,7 +4282,7 @@ module Fox
    def fxgl_visual name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:app=>nil, :flags=>nil}
          
            @o0.app = :required
@@ -4129,7 +4300,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXGLVisual.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXGradient
@@ -4139,7 +4312,9 @@ module Fox
    def fx_gradient name = nil, &block
      
      
-     
+     Enhancement.stack << FXGradient.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXGradientBar
@@ -4149,7 +4324,7 @@ module Fox
    def fx_gradient_bar name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:p=>nil, :target=>"nil", :selector=>"0", :opts=>"FRAME_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_PAD", :padRight=>"DEFAULT_PAD", :padTop=>"DEFAULT_PAD", :padBottom=>"DEFAULT_PAD"}
          
            @o0.p = :required
@@ -4217,7 +4392,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXGradientBar.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXGroupBox
@@ -4227,7 +4404,7 @@ module Fox
    def fx_group_box name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:parent=>nil, :text=>nil, :opts=>"GROUPBOX_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_SPACING", :padRight=>"DEFAULT_SPACING", :padTop=>"DEFAULT_SPACING", :padBottom=>"DEFAULT_SPACING", :hSpacing=>"DEFAULT_SPACING", :vSpacing=>"DEFAULT_SPACING"}
          
            @o0.parent = :required
@@ -4300,7 +4477,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXGroupBox.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXHeaderItem
@@ -4310,7 +4489,7 @@ module Fox
    def fx_header_item name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:text=>nil, :ic=>"nil", :s=>"0", :ptr=>"nil"}
          
            @o0.text = :required
@@ -4338,7 +4517,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXHeaderItem.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXHeader
@@ -4348,7 +4529,7 @@ module Fox
    def fx_header name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:p=>nil, :target=>"nil", :selector=>"0", :opts=>"HEADER_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_PAD", :padRight=>"DEFAULT_PAD", :padTop=>"DEFAULT_PAD", :padBottom=>"DEFAULT_PAD"}
          
            @o0.p = :required
@@ -4416,7 +4597,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXHeader.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXHorizontalFrame
@@ -4426,7 +4609,7 @@ module Fox
    def fx_horizontal_frame name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:p=>nil, :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_SPACING", :padRight=>"DEFAULT_SPACING", :padTop=>"DEFAULT_SPACING", :padBottom=>"DEFAULT_SPACING", :hSpacing=>"DEFAULT_SPACING", :vSpacing=>"DEFAULT_SPACING"}
          
            @o0.p = :required
@@ -4494,7 +4677,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXHorizontalFrame.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXICOIcon
@@ -4504,7 +4689,7 @@ module Fox
    def fxico_icon name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:a=>nil, :pix=>"nil", :clr=>"0", :opts=>"0", :width=>"1", :height=>"1"}
          
            @o0.a = :required
@@ -4542,7 +4727,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXICOIcon.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXICOImage
@@ -4552,7 +4739,7 @@ module Fox
    def fxico_image name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:a=>nil, :pix=>"nil", :opts=>"0", :width=>"1", :height=>"1"}
          
            @o0.a = :required
@@ -4585,7 +4772,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXICOImage.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXIcon
@@ -4595,7 +4784,7 @@ module Fox
    def fx_icon name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:app=>nil, :pix=>"nil", :clr=>"0", :opts=>"0", :width=>"1", :height=>"1"}
          
            @o0.app = :required
@@ -4633,7 +4822,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXIcon.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXIconDict
@@ -4643,7 +4834,9 @@ module Fox
    def fx_icon_dict name = nil, &block
      
      
-     
+     Enhancement.stack << FXIconDict.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXIconItem
@@ -4653,7 +4846,7 @@ module Fox
    def fx_icon_item name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:text=>nil, :bigIcon=>"nil", :miniIcon=>"nil", :data=>"nil"}
          
            @o0.text = :required
@@ -4681,7 +4874,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXIconItem.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXIconList
@@ -4691,7 +4886,7 @@ module Fox
    def fx_icon_list name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:p=>nil, :target=>"nil", :selector=>"0", :opts=>"ICONLIST_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}
          
            @o0.p = :required
@@ -4739,7 +4934,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXIconList.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXIconSource
@@ -4749,7 +4946,7 @@ module Fox
    def fx_icon_source name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:app=>nil}
          
            @o0.app = :required
@@ -4762,7 +4959,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXIconSource.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXId
@@ -4772,7 +4971,9 @@ module Fox
    def fx_id name = nil, &block
      
      
-     
+     Enhancement.stack << FXId.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXImage
@@ -4782,7 +4983,7 @@ module Fox
    def fx_image name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:a=>nil, :pixels=>"nil", :opts=>"0", :width=>"1", :height=>"1"}
          
            @o0.a = :required
@@ -4815,7 +5016,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXImage.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXImageFrame
@@ -4825,7 +5028,7 @@ module Fox
    def fx_image_frame name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:p=>nil, :img=>nil, :opts=>"FRAME_SUNKEN|FRAME_THICK", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"0", :padRight=>"0", :padTop=>"0", :padBottom=>"0"}
          
            @o0.p = :required
@@ -4888,7 +5091,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXImageFrame.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXImageView
@@ -4898,7 +5103,7 @@ module Fox
    def fx_image_view name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:p=>nil, :img=>"nil", :target=>"nil", :selector=>"0", :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}
          
            @o0.p = :required
@@ -4951,7 +5156,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXImageView.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXInputDialog
@@ -4961,7 +5168,7 @@ module Fox
    def fx_input_dialog name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:owner=>nil, :caption=>nil, :label=>nil, :icon=>"nil", :opts=>"INPUTDIALOG_STRING", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}
          
            @o0.owner = :required
@@ -5014,7 +5221,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXInputDialog.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXJPGIcon
@@ -5024,7 +5233,7 @@ module Fox
    def fxjpg_icon name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:a=>nil, :pix=>"nil", :clr=>"0", :opts=>"0", :width=>"1", :height=>"1", :quality=>"75"}
          
            @o0.a = :required
@@ -5067,7 +5276,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXJPGIcon.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXJPGImage
@@ -5077,7 +5288,7 @@ module Fox
    def fxjpg_image name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:a=>nil, :pix=>"nil", :opts=>"0", :width=>"1", :height=>"1", :quality=>"75"}
          
            @o0.a = :required
@@ -5115,7 +5326,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXJPGImage.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXKnob
@@ -5125,7 +5338,7 @@ module Fox
    def fx_knob name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:p=>nil, :target=>"nil", :selector=>"0", :opts=>"KNOB_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_PAD", :padRight=>"DEFAULT_PAD", :padTop=>"DEFAULT_PAD", :padBottom=>"DEFAULT_PAD"}
          
            @o0.p = :required
@@ -5193,7 +5406,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXKnob.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXLabel
@@ -5203,7 +5418,7 @@ module Fox
    def fx_label name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:parent=>nil, :text=>nil, :icon=>"nil", :opts=>"LABEL_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_PAD", :padRight=>"DEFAULT_PAD", :padTop=>"DEFAULT_PAD", :padBottom=>"DEFAULT_PAD"}
          
            @o0.parent = :required
@@ -5271,7 +5486,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXLabel.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXListItem
@@ -5281,7 +5498,7 @@ module Fox
    def fx_list_item name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:text=>nil, :icon=>"nil", :data=>"nil"}
          
            @o0.text = :required
@@ -5304,7 +5521,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXListItem.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXList
@@ -5314,7 +5533,7 @@ module Fox
    def fx_list name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:p=>nil, :target=>"nil", :selector=>"0", :opts=>"LIST_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}
          
            @o0.p = :required
@@ -5362,7 +5581,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXList.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXListBox
@@ -5372,7 +5593,7 @@ module Fox
    def fx_list_box name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:p=>nil, :target=>"nil", :selector=>"0", :opts=>"FRAME_SUNKEN|FRAME_THICK|LISTBOX_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_PAD", :padRight=>"DEFAULT_PAD", :padTop=>"DEFAULT_PAD", :padBottom=>"DEFAULT_PAD"}
          
            @o0.p = :required
@@ -5440,7 +5661,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXListBox.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXMDIDeleteButton
@@ -5450,7 +5673,7 @@ module Fox
    def fxmdi_delete_button name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:p=>nil, :target=>"nil", :selector=>"0", :opts=>"FRAME_RAISED", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}
          
            @o0.p = :required
@@ -5498,7 +5721,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXMDIDeleteButton.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXMDIRestoreButton
@@ -5508,7 +5733,7 @@ module Fox
    def fxmdi_restore_button name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:p=>nil, :target=>"nil", :selector=>"0", :opts=>"FRAME_RAISED", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}
          
            @o0.p = :required
@@ -5556,7 +5781,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXMDIRestoreButton.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXMDIMaximizeButton
@@ -5566,7 +5793,7 @@ module Fox
    def fxmdi_maximize_button name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:p=>nil, :target=>"nil", :selector=>"0", :opts=>"FRAME_RAISED", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}
          
            @o0.p = :required
@@ -5614,7 +5841,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXMDIMaximizeButton.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXMDIMinimizeButton
@@ -5624,7 +5853,7 @@ module Fox
    def fxmdi_minimize_button name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:p=>nil, :target=>"nil", :selector=>"0", :opts=>"FRAME_RAISED", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}
          
            @o0.p = :required
@@ -5672,7 +5901,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXMDIMinimizeButton.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXMDIWindowButton
@@ -5682,7 +5913,7 @@ module Fox
    def fxmdi_window_button name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:p=>nil, :pup=>nil, :target=>"nil", :selector=>"0", :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}
          
            @o0.p = :required
@@ -5735,7 +5966,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXMDIWindowButton.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXMDIMenu
@@ -5745,7 +5978,7 @@ module Fox
    def fxmdi_menu name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:owner=>nil, :target=>"nil"}
          
            @o0.owner = :required
@@ -5763,7 +5996,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXMDIMenu.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXMDIChild
@@ -5773,7 +6008,7 @@ module Fox
    def fxmdi_child name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:p=>nil, :name=>nil, :ic=>"nil", :pup=>"nil", :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}
          
            @o0.p = :required
@@ -5826,7 +6061,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXMDIChild.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXMDIClient
@@ -5836,7 +6073,7 @@ module Fox
    def fxmdi_client name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:p=>nil, :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}
          
            @o0.p = :required
@@ -5874,7 +6111,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXMDIClient.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXMainWindow
@@ -5884,7 +6123,7 @@ module Fox
    def fx_main_window name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:app=>nil, :title=>nil, :icon=>"nil", :miniIcon=>"nil", :opts=>"DECOR_ALL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"0", :padRight=>"0", :padTop=>"0", :padBottom=>"0", :hSpacing=>"4", :vSpacing=>"4"}
          
            @o0.app = :required
@@ -5967,7 +6206,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXMainWindow.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXMatrix
@@ -5977,7 +6218,7 @@ module Fox
    def fx_matrix name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:parent=>nil, :n=>"1", :opts=>"MATRIX_BY_ROWS", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_SPACING", :padRight=>"DEFAULT_SPACING", :padTop=>"DEFAULT_SPACING", :padBottom=>"DEFAULT_SPACING", :hSpacing=>"DEFAULT_SPACING", :vSpacing=>"DEFAULT_SPACING"}
          
            @o0.parent = :required
@@ -6050,7 +6291,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXMatrix.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXMemoryBuffer
@@ -6060,7 +6303,7 @@ module Fox
    def fx_memory_buffer name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:data=>nil}
          
            @o0.data = :required
@@ -6073,7 +6316,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXMemoryBuffer.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXMemoryStream
@@ -6083,7 +6328,7 @@ module Fox
    def fx_memory_stream name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:cont=>"nil"}
          
            @o0.cont = nil
@@ -6096,7 +6341,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXMemoryStream.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXMenuBar
@@ -6106,7 +6353,7 @@ module Fox
    def fx_menu_bar name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:p=>nil, :q=>nil, :opts=>"LAYOUT_TOP|LAYOUT_LEFT|LAYOUT_FILL_X", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"3", :padRight=>"3", :padTop=>"2", :padBottom=>"2", :hSpacing=>"DEFAULT_SPACING", :vSpacing=>"DEFAULT_SPACING"}
          
            @o0.p = :required
@@ -6179,7 +6426,7 @@ module Fox
             @o0.instance_block = block
          end
      
-         @o1 = OStruct.new
+         @o1 = OpenStruct.new
          #{:p=>nil, :opts=>nil, :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"3", :padRight=>"3", :padTop=>"2", :padBottom=>"2", :hSpacing=>"DEFAULT_SPACING", :vSpacing=>"DEFAULT_SPACING"}
          
            @o1.p = :required
@@ -6247,7 +6494,9 @@ module Fox
             @o1.instance_block = block
          end
      
-     
+     Enhancement.stack << FXMenuBar.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXMenuButton
@@ -6257,7 +6506,7 @@ module Fox
    def fx_menu_button name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:parent=>nil, :text=>nil, :icon=>"nil", :popupMenu=>"nil", :opts=>"JUSTIFY_NORMAL|ICON_BEFORE_TEXT|MENUBUTTON_DOWN", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_SPACING", :padRight=>"DEFAULT_SPACING", :padTop=>"DEFAULT_SPACING", :padBottom=>"DEFAULT_SPACING"}
          
            @o0.parent = :required
@@ -6330,7 +6579,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXMenuButton.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXMenuCaption
@@ -6340,7 +6591,7 @@ module Fox
    def fx_menu_caption name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:parent=>nil, :text=>nil, :icon=>"nil", :opts=>"0"}
          
            @o0.parent = :required
@@ -6368,7 +6619,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXMenuCaption.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXMenuCascade
@@ -6378,7 +6631,7 @@ module Fox
    def fx_menu_cascade name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:parent=>nil, :text=>nil, :icon=>"nil", :popupMenu=>"nil", :opts=>"0"}
          
            @o0.parent = :required
@@ -6411,7 +6664,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXMenuCascade.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXMenuCheck
@@ -6421,7 +6676,7 @@ module Fox
    def fx_menu_check name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:p=>nil, :text=>nil, :target=>"nil", :selector=>"0", :opts=>"0"}
          
            @o0.p = :required
@@ -6454,7 +6709,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXMenuCheck.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXMenuCommand
@@ -6464,7 +6721,7 @@ module Fox
    def fx_menu_command name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:p=>nil, :text=>nil, :ic=>"nil", :target=>"nil", :selector=>"0", :opts=>"0"}
          
            @o0.p = :required
@@ -6502,7 +6759,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXMenuCommand.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXMenuPane
@@ -6512,7 +6771,7 @@ module Fox
    def fx_menu_pane name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:owner=>nil, :opts=>"0"}
          
            @o0.owner = :required
@@ -6530,7 +6789,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXMenuPane.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXMenuRadio
@@ -6540,7 +6801,7 @@ module Fox
    def fx_menu_radio name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:p=>nil, :text=>nil, :target=>"nil", :selector=>"0", :opts=>"0"}
          
            @o0.p = :required
@@ -6573,7 +6834,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXMenuRadio.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXMenuSeparator
@@ -6583,7 +6846,7 @@ module Fox
    def fx_menu_separator name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:parent=>nil, :opts=>"0"}
          
            @o0.parent = :required
@@ -6601,7 +6864,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXMenuSeparator.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXMenuTitle
@@ -6611,7 +6876,7 @@ module Fox
    def fx_menu_title name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:parent=>nil, :text=>nil, :icon=>"nil", :popupMenu=>"nil", :opts=>"0"}
          
            @o0.parent = :required
@@ -6644,7 +6909,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXMenuTitle.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXMessageBox
@@ -6654,7 +6921,7 @@ module Fox
    def fx_message_box name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:owner=>nil, :caption=>nil, :text=>nil, :ic=>"nil", :opts=>"0", :x=>"0", :y=>"0"}
          
            @o0.owner = :required
@@ -6697,7 +6964,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXMessageBox.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXObject
@@ -6707,7 +6976,9 @@ module Fox
    def fx_object name = nil, &block
      
      
-     
+     Enhancement.stack << FXObject.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXOption
@@ -6717,7 +6988,7 @@ module Fox
    def fx_option name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:p=>nil, :text=>nil, :ic=>"nil", :target=>"nil", :selector=>"0", :opts=>"JUSTIFY_NORMAL|ICON_BEFORE_TEXT", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_PAD", :padRight=>"DEFAULT_PAD", :padTop=>"DEFAULT_PAD", :padBottom=>"DEFAULT_PAD"}
          
            @o0.p = :required
@@ -6795,7 +7066,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXOption.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXOptionMenu
@@ -6805,7 +7078,7 @@ module Fox
    def fx_option_menu name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:p=>nil, :pup=>"nil", :opts=>"JUSTIFY_NORMAL|ICON_BEFORE_TEXT", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_PAD", :padRight=>"DEFAULT_PAD", :padTop=>"DEFAULT_PAD", :padBottom=>"DEFAULT_PAD"}
          
            @o0.p = :required
@@ -6868,7 +7141,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXOptionMenu.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXPCXIcon
@@ -6878,7 +7153,7 @@ module Fox
    def fxpcx_icon name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:a=>nil, :pix=>"nil", :clr=>"0", :opts=>"0", :width=>"1", :height=>"1"}
          
            @o0.a = :required
@@ -6916,7 +7191,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXPCXIcon.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXPCXImage
@@ -6926,7 +7203,7 @@ module Fox
    def fxpcx_image name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:a=>nil, :pix=>"nil", :opts=>"0", :width=>"1", :height=>"1"}
          
            @o0.a = :required
@@ -6959,7 +7236,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXPCXImage.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXPNGIcon
@@ -6969,7 +7248,7 @@ module Fox
    def fxpng_icon name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:a=>nil, :pix=>"nil", :clr=>"0", :opts=>"0", :width=>"1", :height=>"1"}
          
            @o0.a = :required
@@ -7007,7 +7286,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXPNGIcon.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXPNGImage
@@ -7017,7 +7298,7 @@ module Fox
    def fxpng_image name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:a=>nil, :pix=>"nil", :opts=>"0", :width=>"1", :height=>"1"}
          
            @o0.a = :required
@@ -7050,7 +7331,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXPNGImage.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXPPMIcon
@@ -7060,7 +7343,7 @@ module Fox
    def fxppm_icon name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:a=>nil, :pix=>"nil", :clr=>"0", :opts=>"0", :width=>"1", :height=>"1"}
          
            @o0.a = :required
@@ -7098,7 +7381,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXPPMIcon.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXPPMImage
@@ -7108,7 +7393,7 @@ module Fox
    def fxppm_image name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:a=>nil, :pix=>"nil", :opts=>"0", :width=>"1", :height=>"1"}
          
            @o0.a = :required
@@ -7141,7 +7426,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXPPMImage.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXPacker
@@ -7151,7 +7438,7 @@ module Fox
    def fx_packer name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:parent=>nil, :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_SPACING", :padRight=>"DEFAULT_SPACING", :padTop=>"DEFAULT_SPACING", :padBottom=>"DEFAULT_SPACING", :hSpacing=>"DEFAULT_SPACING", :vSpacing=>"DEFAULT_SPACING"}
          
            @o0.parent = :required
@@ -7219,7 +7506,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXPacker.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXPicker
@@ -7229,7 +7518,7 @@ module Fox
    def fx_picker name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:p=>nil, :text=>nil, :ic=>"nil", :target=>"nil", :selector=>"0", :opts=>"BUTTON_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_PAD", :padRight=>"DEFAULT_PAD", :padTop=>"DEFAULT_PAD", :padBottom=>"DEFAULT_PAD"}
          
            @o0.p = :required
@@ -7307,7 +7596,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXPicker.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXPopup
@@ -7317,7 +7608,7 @@ module Fox
    def fx_popup name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:owner=>nil, :opts=>"POPUP_VERTICAL|FRAME_RAISED|FRAME_THICK", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}
          
            @o0.owner = :required
@@ -7355,7 +7646,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXPopup.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXPrintDialog
@@ -7365,7 +7658,7 @@ module Fox
    def fx_print_dialog name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:owner=>nil, :name=>nil, :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}
          
            @o0.owner = :required
@@ -7408,7 +7701,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXPrintDialog.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXProgressBar
@@ -7418,7 +7713,7 @@ module Fox
    def fx_progress_bar name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:p=>nil, :target=>"nil", :selector=>"0", :opts=>"PROGRESSBAR_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_PAD", :padRight=>"DEFAULT_PAD", :padTop=>"DEFAULT_PAD", :padBottom=>"DEFAULT_PAD"}
          
            @o0.p = :required
@@ -7486,7 +7781,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXProgressBar.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXProgressDialog
@@ -7496,7 +7793,7 @@ module Fox
    def fx_progress_dialog name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:owner=>nil, :caption=>nil, :label=>nil, :opts=>"PROGRESSDIALOG_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}
          
            @o0.owner = :required
@@ -7544,7 +7841,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXProgressDialog.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXQuatd
@@ -7554,7 +7853,7 @@ module Fox
    def fx_quatd name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:axis=>nil, :phi=>"0.0"}
          
            @o0.axis = :required
@@ -7572,7 +7871,7 @@ module Fox
             @o0.instance_block = block
          end
      
-         @o1 = OStruct.new
+         @o1 = OpenStruct.new
          #{:x=>nil, :y=>nil, :z=>nil, :w=>nil}
          
            @o1.x = :required
@@ -7600,7 +7899,7 @@ module Fox
             @o1.instance_block = block
          end
      
-         @o2 = OStruct.new
+         @o2 = OpenStruct.new
          #{:floats=>nil}
          
            @o2.floats = :required
@@ -7613,7 +7912,7 @@ module Fox
             @o2.instance_block = block
          end
      
-         @o3 = OStruct.new
+         @o3 = OpenStruct.new
          #{:roll=>nil, :pitch=>nil, :yaw=>nil}
          
            @o3.roll = :required
@@ -7636,7 +7935,7 @@ module Fox
             @o3.instance_block = block
          end
      
-         @o4 = OStruct.new
+         @o4 = OpenStruct.new
          #{:ex=>nil, :ey=>nil, :ez=>nil}
          
            @o4.ex = :required
@@ -7659,7 +7958,9 @@ module Fox
             @o4.instance_block = block
          end
      
-     
+     Enhancement.stack << FXQuatd.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXQuatf
@@ -7669,7 +7970,7 @@ module Fox
    def fx_quatf name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:axis=>nil, :phi=>"0.0"}
          
            @o0.axis = :required
@@ -7687,7 +7988,7 @@ module Fox
             @o0.instance_block = block
          end
      
-         @o1 = OStruct.new
+         @o1 = OpenStruct.new
          #{:roll=>nil, :pitch=>nil, :yaw=>nil}
          
            @o1.roll = :required
@@ -7710,7 +8011,7 @@ module Fox
             @o1.instance_block = block
          end
      
-         @o2 = OStruct.new
+         @o2 = OpenStruct.new
          #{:ex=>nil, :ey=>nil, :ez=>nil}
          
            @o2.ex = :required
@@ -7733,7 +8034,7 @@ module Fox
             @o2.instance_block = block
          end
      
-         @o3 = OStruct.new
+         @o3 = OpenStruct.new
          #{:mat=>nil}
          
            @o3.mat = :required
@@ -7746,7 +8047,7 @@ module Fox
             @o3.instance_block = block
          end
      
-         @o4 = OStruct.new
+         @o4 = OpenStruct.new
          #{:x=>nil, :y=>nil, :z=>nil, :w=>nil}
          
            @o4.x = :required
@@ -7774,7 +8075,9 @@ module Fox
             @o4.instance_block = block
          end
      
-     
+     Enhancement.stack << FXQuatf.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXRGBIcon
@@ -7784,7 +8087,7 @@ module Fox
    def fxrgb_icon name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:a=>nil, :pix=>"nil", :clr=>"0", :opts=>"0", :width=>"1", :height=>"1"}
          
            @o0.a = :required
@@ -7822,7 +8125,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXRGBIcon.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXRGBImage
@@ -7832,7 +8137,7 @@ module Fox
    def fxrgb_image name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:a=>nil, :pix=>"nil", :opts=>"0", :width=>"1", :height=>"1"}
          
            @o0.a = :required
@@ -7865,7 +8170,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXRGBImage.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXRadioButton
@@ -7875,7 +8182,7 @@ module Fox
    def fx_radio_button name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:parent=>nil, :text=>nil, :target=>"nil", :selector=>"0", :opts=>"RADIOBUTTON_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_PAD", :padRight=>"DEFAULT_PAD", :padTop=>"DEFAULT_PAD", :padBottom=>"DEFAULT_PAD"}
          
            @o0.parent = :required
@@ -7948,7 +8255,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXRadioButton.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXRanged
@@ -7958,7 +8267,7 @@ module Fox
    def fx_ranged name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:xlo=>"0.0", :xhi=>"0.0", :ylo=>"0.0", :yhi=>"0.0", :zlo=>"0.0", :zhi=>"0.0"}
          
            @o0.xlo = 0.0
@@ -7996,7 +8305,7 @@ module Fox
             @o0.instance_block = block
          end
      
-         @o1 = OStruct.new
+         @o1 = OpenStruct.new
          #{:bounds=>nil}
          
            @o1.bounds = :required
@@ -8009,7 +8318,7 @@ module Fox
             @o1.instance_block = block
          end
      
-         @o2 = OStruct.new
+         @o2 = OpenStruct.new
          #{:sphere=>nil}
          
            @o2.sphere = :required
@@ -8022,7 +8331,9 @@ module Fox
             @o2.instance_block = block
          end
      
-     
+     Enhancement.stack << FXRanged.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXRangef
@@ -8032,7 +8343,7 @@ module Fox
    def fx_rangef name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:xlo=>"0.0", :xhi=>"0.0", :ylo=>"0.0", :yhi=>"0.0", :zlo=>"0.0", :zhi=>"0.0"}
          
            @o0.xlo = 0.0
@@ -8070,7 +8381,7 @@ module Fox
             @o0.instance_block = block
          end
      
-         @o1 = OStruct.new
+         @o1 = OpenStruct.new
          #{:bounds=>nil}
          
            @o1.bounds = :required
@@ -8083,7 +8394,7 @@ module Fox
             @o1.instance_block = block
          end
      
-         @o2 = OStruct.new
+         @o2 = OpenStruct.new
          #{:sphere=>nil}
          
            @o2.sphere = :required
@@ -8096,7 +8407,9 @@ module Fox
             @o2.instance_block = block
          end
      
-     
+     Enhancement.stack << FXRangef.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXRealSlider
@@ -8106,7 +8419,7 @@ module Fox
    def fx_real_slider name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:p=>nil, :target=>"nil", :selector=>"0", :opts=>"REALSLIDER_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"0", :padRight=>"0", :padTop=>"0", :padBottom=>"0"}
          
            @o0.p = :required
@@ -8174,7 +8487,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXRealSlider.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXRealSpinner
@@ -8184,7 +8499,7 @@ module Fox
    def fx_real_spinner name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:p=>nil, :cols=>nil, :target=>"nil", :selector=>"0", :opts=>"REALSPIN_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_PAD", :padRight=>"DEFAULT_PAD", :padTop=>"DEFAULT_PAD", :padBottom=>"DEFAULT_PAD"}
          
            @o0.p = :required
@@ -8257,7 +8572,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXRealSpinner.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXRecentFiles
@@ -8267,7 +8584,7 @@ module Fox
    def fx_recent_files name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:a=>nil}
          
            @o0.a = :required
@@ -8280,7 +8597,7 @@ module Fox
             @o0.instance_block = block
          end
      
-         @o1 = OStruct.new
+         @o1 = OpenStruct.new
          #{:a=>nil, :gp=>nil, :target=>"nil", :selector=>"0"}
          
            @o1.a = :required
@@ -8308,7 +8625,9 @@ module Fox
             @o1.instance_block = block
          end
      
-     
+     Enhancement.stack << FXRecentFiles.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXRectangle
@@ -8318,7 +8637,7 @@ module Fox
    def fx_rectangle name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:xx=>nil, :yy=>nil, :ww=>nil, :hh=>nil}
          
            @o0.xx = :required
@@ -8346,7 +8665,7 @@ module Fox
             @o0.instance_block = block
          end
      
-         @o1 = OStruct.new
+         @o1 = OpenStruct.new
          #{:p=>nil, :s=>nil}
          
            @o1.p = :required
@@ -8364,7 +8683,7 @@ module Fox
             @o1.instance_block = block
          end
      
-         @o2 = OStruct.new
+         @o2 = OpenStruct.new
          #{:topleft=>nil, :bottomright=>nil}
          
            @o2.topleft = :required
@@ -8382,7 +8701,9 @@ module Fox
             @o2.instance_block = block
          end
      
-     
+     Enhancement.stack << FXRectangle.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXRegion
@@ -8392,7 +8713,7 @@ module Fox
    def fx_region name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:r=>nil}
          
            @o0.r = :required
@@ -8405,7 +8726,7 @@ module Fox
             @o0.instance_block = block
          end
      
-         @o1 = OStruct.new
+         @o1 = OpenStruct.new
          #{:rect=>nil}
          
            @o1.rect = :required
@@ -8418,7 +8739,7 @@ module Fox
             @o1.instance_block = block
          end
      
-         @o2 = OStruct.new
+         @o2 = OpenStruct.new
          #{:x=>nil, :y=>nil, :w=>nil, :h=>nil}
          
            @o2.x = :required
@@ -8446,7 +8767,7 @@ module Fox
             @o2.instance_block = block
          end
      
-         @o3 = OStruct.new
+         @o3 = OpenStruct.new
          #{:points=>nil, :winding=>"false"}
          
            @o3.points = :required
@@ -8464,7 +8785,9 @@ module Fox
             @o3.instance_block = block
          end
      
-     
+     Enhancement.stack << FXRegion.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXRegistry
@@ -8474,7 +8797,7 @@ module Fox
    def fx_registry name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:appKey=>"\"\"", :vendorKey=>"\"\""}
          
            @o0.appKey = ""
@@ -8492,7 +8815,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXRegistry.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXReplaceDialog
@@ -8502,7 +8827,7 @@ module Fox
    def fx_replace_dialog name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:owner=>nil, :caption=>nil, :ic=>"nil", :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}
          
            @o0.owner = :required
@@ -8550,7 +8875,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXReplaceDialog.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXRootWindow
@@ -8560,7 +8887,7 @@ module Fox
    def fx_root_window name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:a=>nil, :vis=>nil}
          
            @o0.a = :required
@@ -8578,7 +8905,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXRootWindow.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXRuler
@@ -8588,7 +8917,7 @@ module Fox
    def fx_ruler name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:p=>nil, :target=>"nil", :selector=>"0", :opts=>"RULER_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_PAD", :padRight=>"DEFAULT_PAD", :padTop=>"DEFAULT_PAD", :padBottom=>"DEFAULT_PAD"}
          
            @o0.p = :required
@@ -8656,7 +8985,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXRuler.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXRulerView
@@ -8666,7 +8997,7 @@ module Fox
    def fx_ruler_view name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:p=>nil, :target=>"nil", :selector=>"0", :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}
          
            @o0.p = :required
@@ -8714,7 +9045,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXRulerView.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class NotifyHeader
@@ -8724,7 +9057,9 @@ module Fox
    def notify_header name = nil, &block
      
      
-     
+     Enhancement.stack << NotifyHeader.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class SCNotification
@@ -8734,7 +9069,9 @@ module Fox
    def sc_notification name = nil, &block
      
      
-     
+     Enhancement.stack << SCNotification.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class TextRange
@@ -8744,7 +9081,7 @@ module Fox
    def text_range name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:start=>nil, :last=>nil, :size=>nil}
          
            @o0.start = :required
@@ -8767,7 +9104,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << TextRange.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXScintilla
@@ -8777,7 +9116,7 @@ module Fox
    def fx_scintilla name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:p=>nil, :target=>"nil", :selector=>"0", :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}
          
            @o0.p = :required
@@ -8825,7 +9164,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXScintilla.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXScrollArea
@@ -8835,7 +9176,7 @@ module Fox
    def fx_scroll_area name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:parent=>nil, :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}
          
            @o0.parent = :required
@@ -8873,7 +9214,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXScrollArea.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXScrollBar
@@ -8883,7 +9226,7 @@ module Fox
    def fx_scroll_bar name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:p=>nil, :target=>"nil", :selector=>"0", :opts=>"SCROLLBAR_VERTICAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}
          
            @o0.p = :required
@@ -8931,7 +9274,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXScrollBar.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXScrollCorner
@@ -8941,7 +9286,7 @@ module Fox
    def fx_scroll_corner name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:p=>nil}
          
            @o0.p = :required
@@ -8954,7 +9299,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXScrollCorner.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXScrollPane
@@ -8964,7 +9311,7 @@ module Fox
    def fx_scroll_pane name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:owner=>nil, :nvis=>nil, :opts=>"0"}
          
            @o0.owner = :required
@@ -8987,7 +9334,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXScrollPane.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXScrollWindow
@@ -8997,7 +9346,7 @@ module Fox
    def fx_scroll_window name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:p=>nil, :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}
          
            @o0.p = :required
@@ -9035,7 +9384,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXScrollWindow.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXSearchDialog
@@ -9045,7 +9396,7 @@ module Fox
    def fx_search_dialog name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:owner=>nil, :caption=>nil, :ic=>"nil", :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}
          
            @o0.owner = :required
@@ -9093,7 +9444,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXSearchDialog.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXSeparator
@@ -9103,7 +9456,7 @@ module Fox
    def fx_separator name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:p=>nil, :opts=>"SEPARATOR_GROOVE|LAYOUT_FILL_X", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"0", :padRight=>"0", :padTop=>"0", :padBottom=>"0"}
          
            @o0.p = :required
@@ -9161,7 +9514,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXSeparator.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXHorizontalSeparator
@@ -9171,7 +9526,7 @@ module Fox
    def fx_horizontal_separator name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:p=>nil, :opts=>"SEPARATOR_GROOVE|LAYOUT_FILL_X", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"1", :padRight=>"1", :padTop=>"0", :padBottom=>"0"}
          
            @o0.p = :required
@@ -9229,7 +9584,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXHorizontalSeparator.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXVerticalSeparator
@@ -9239,7 +9596,7 @@ module Fox
    def fx_vertical_separator name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:p=>nil, :opts=>"SEPARATOR_GROOVE|LAYOUT_FILL_Y", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"0", :padRight=>"0", :padTop=>"1", :padBottom=>"1"}
          
            @o0.p = :required
@@ -9297,7 +9654,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXVerticalSeparator.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXSettings
@@ -9307,7 +9666,9 @@ module Fox
    def fx_settings name = nil, &block
      
      
-     
+     Enhancement.stack << FXSettings.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXShell
@@ -9317,7 +9678,9 @@ module Fox
    def fx_shell name = nil, &block
      
      
-     
+     Enhancement.stack << FXShell.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXShutterItem
@@ -9327,7 +9690,7 @@ module Fox
    def fx_shutter_item name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:p=>nil, :text=>"\"\"", :icon=>"nil", :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_SPACING", :padRight=>"DEFAULT_SPACING", :padTop=>"DEFAULT_SPACING", :padBottom=>"DEFAULT_SPACING", :hSpacing=>"DEFAULT_SPACING", :vSpacing=>"DEFAULT_SPACING"}
          
            @o0.p = :required
@@ -9405,7 +9768,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXShutterItem.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXShutter
@@ -9415,7 +9780,7 @@ module Fox
    def fx_shutter name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:p=>nil, :target=>"nil", :selector=>"0", :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_SPACING", :padRight=>"DEFAULT_SPACING", :padTop=>"DEFAULT_SPACING", :padBottom=>"DEFAULT_SPACING", :hSpacing=>"DEFAULT_SPACING", :vSpacing=>"DEFAULT_SPACING"}
          
            @o0.p = :required
@@ -9493,7 +9858,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXShutter.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXSize
@@ -9503,7 +9870,7 @@ module Fox
    def fx_size name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:s=>nil}
          
            @o0.s = :required
@@ -9516,7 +9883,7 @@ module Fox
             @o0.instance_block = block
          end
      
-         @o1 = OStruct.new
+         @o1 = OpenStruct.new
          #{:ww=>nil, :hh=>nil}
          
            @o1.ww = :required
@@ -9534,7 +9901,9 @@ module Fox
             @o1.instance_block = block
          end
      
-     
+     Enhancement.stack << FXSize.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXSlider
@@ -9544,7 +9913,7 @@ module Fox
    def fx_slider name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:p=>nil, :target=>"nil", :selector=>"0", :opts=>"SLIDER_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"0", :padRight=>"0", :padTop=>"0", :padBottom=>"0"}
          
            @o0.p = :required
@@ -9612,7 +9981,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXSlider.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXSphered
@@ -9622,7 +9993,7 @@ module Fox
    def fx_sphered name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:otherSphere=>nil}
          
            @o0.otherSphere = :required
@@ -9635,7 +10006,7 @@ module Fox
             @o0.instance_block = block
          end
      
-         @o1 = OStruct.new
+         @o1 = OpenStruct.new
          #{:cen=>nil, :rad=>"0.0"}
          
            @o1.cen = :required
@@ -9653,7 +10024,7 @@ module Fox
             @o1.instance_block = block
          end
      
-         @o2 = OStruct.new
+         @o2 = OpenStruct.new
          #{:x=>nil, :y=>nil, :z=>nil, :rad=>"0.0"}
          
            @o2.x = :required
@@ -9681,7 +10052,7 @@ module Fox
             @o2.instance_block = block
          end
      
-         @o3 = OStruct.new
+         @o3 = OpenStruct.new
          #{:bounds=>nil}
          
            @o3.bounds = :required
@@ -9694,7 +10065,9 @@ module Fox
             @o3.instance_block = block
          end
      
-     
+     Enhancement.stack << FXSphered.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXSpheref
@@ -9704,7 +10077,7 @@ module Fox
    def fx_spheref name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:otherSphere=>nil}
          
            @o0.otherSphere = :required
@@ -9717,7 +10090,7 @@ module Fox
             @o0.instance_block = block
          end
      
-         @o1 = OStruct.new
+         @o1 = OpenStruct.new
          #{:cen=>nil, :rad=>"0.0"}
          
            @o1.cen = :required
@@ -9735,7 +10108,7 @@ module Fox
             @o1.instance_block = block
          end
      
-         @o2 = OStruct.new
+         @o2 = OpenStruct.new
          #{:x=>nil, :y=>nil, :z=>nil, :rad=>"0.0"}
          
            @o2.x = :required
@@ -9763,7 +10136,7 @@ module Fox
             @o2.instance_block = block
          end
      
-         @o3 = OStruct.new
+         @o3 = OpenStruct.new
          #{:bounds=>nil}
          
            @o3.bounds = :required
@@ -9776,7 +10149,9 @@ module Fox
             @o3.instance_block = block
          end
      
-     
+     Enhancement.stack << FXSpheref.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXSpinner
@@ -9786,7 +10161,7 @@ module Fox
    def fx_spinner name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:p=>nil, :cols=>nil, :target=>"nil", :selector=>"0", :opts=>"SPIN_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_PAD", :padRight=>"DEFAULT_PAD", :padTop=>"DEFAULT_PAD", :padBottom=>"DEFAULT_PAD"}
          
            @o0.p = :required
@@ -9859,7 +10234,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXSpinner.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXSplashWindow
@@ -9869,7 +10246,7 @@ module Fox
    def fx_splash_window name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:owner=>nil, :icon=>nil, :opts=>"SPLASH_SIMPLE", :ms=>"5000"}
          
            @o0.owner = :required
@@ -9897,7 +10274,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXSplashWindow.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXSplitter
@@ -9907,7 +10286,7 @@ module Fox
    def fx_splitter name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:p=>nil, :opts=>"SPLITTER_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}
          
            @o0.p = :required
@@ -9945,7 +10324,7 @@ module Fox
             @o0.instance_block = block
          end
      
-         @o1 = OStruct.new
+         @o1 = OpenStruct.new
          #{:p=>nil, :tgt=>nil, :sel=>nil, :opts=>"SPLITTER_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}
          
            @o1.p = :required
@@ -9993,7 +10372,9 @@ module Fox
             @o1.instance_block = block
          end
      
-     
+     Enhancement.stack << FXSplitter.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXSpring
@@ -10003,7 +10384,7 @@ module Fox
    def fx_spring name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:p=>nil, :opts=>"0", :relw=>"0", :relh=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_SPACING", :padRight=>"DEFAULT_SPACING", :padTop=>"DEFAULT_SPACING", :padBottom=>"DEFAULT_SPACING", :hSpacing=>"DEFAULT_SPACING", :vSpacing=>"DEFAULT_SPACING"}
          
            @o0.p = :required
@@ -10081,7 +10462,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXSpring.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXStatusBar
@@ -10091,7 +10474,7 @@ module Fox
    def fx_status_bar name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:p=>nil, :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"3", :padRight=>"3", :padTop=>"2", :padBottom=>"2", :hSpacing=>"4", :vSpacing=>"0"}
          
            @o0.p = :required
@@ -10159,7 +10542,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXStatusBar.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXStatusLine
@@ -10169,7 +10554,7 @@ module Fox
    def fx_status_line name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:p=>nil, :target=>"nil", :selector=>"0"}
          
            @o0.p = :required
@@ -10192,7 +10577,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXStatusLine.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXStream
@@ -10202,7 +10589,7 @@ module Fox
    def fx_stream name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:cont=>"nil"}
          
            @o0.cont = nil
@@ -10215,7 +10602,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXStream.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXStringDict
@@ -10225,7 +10614,9 @@ module Fox
    def fx_string_dict name = nil, &block
      
      
-     
+     Enhancement.stack << FXStringDict.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXSwitcher
@@ -10235,7 +10626,7 @@ module Fox
    def fx_switcher name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:p=>nil, :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_SPACING", :padRight=>"DEFAULT_SPACING", :padTop=>"DEFAULT_SPACING", :padBottom=>"DEFAULT_SPACING"}
          
            @o0.p = :required
@@ -10293,7 +10684,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXSwitcher.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXTGAIcon
@@ -10303,7 +10696,7 @@ module Fox
    def fxtga_icon name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:a=>nil, :pix=>"nil", :clr=>"0", :opts=>"0", :width=>"1", :height=>"1"}
          
            @o0.a = :required
@@ -10341,7 +10734,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXTGAIcon.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXTGAImage
@@ -10351,7 +10746,7 @@ module Fox
    def fxtga_image name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:a=>nil, :pix=>"nil", :opts=>"0", :width=>"1", :height=>"1"}
          
            @o0.a = :required
@@ -10384,7 +10779,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXTGAImage.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXTIFIcon
@@ -10394,7 +10791,7 @@ module Fox
    def fxtif_icon name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:a=>nil, :pix=>"nil", :clr=>"0", :opts=>"0", :width=>"1", :height=>"1"}
          
            @o0.a = :required
@@ -10432,7 +10829,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXTIFIcon.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXTIFImage
@@ -10442,7 +10841,7 @@ module Fox
    def fxtif_image name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:a=>nil, :pix=>"nil", :opts=>"0", :width=>"1", :height=>"1"}
          
            @o0.a = :required
@@ -10475,7 +10874,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXTIFImage.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXTabBar
@@ -10485,7 +10886,7 @@ module Fox
    def fx_tab_bar name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:p=>nil, :target=>"nil", :selector=>"0", :opts=>"TABBOOK_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_SPACING", :padRight=>"DEFAULT_SPACING", :padTop=>"DEFAULT_SPACING", :padBottom=>"DEFAULT_SPACING"}
          
            @o0.p = :required
@@ -10553,7 +10954,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXTabBar.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXTabBook
@@ -10563,7 +10966,7 @@ module Fox
    def fx_tab_book name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:p=>nil, :target=>"nil", :selector=>"0", :opts=>"TABBOOK_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_SPACING", :padRight=>"DEFAULT_SPACING", :padTop=>"DEFAULT_SPACING", :padBottom=>"DEFAULT_SPACING"}
          
            @o0.p = :required
@@ -10631,7 +11034,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXTabBook.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXTabItem
@@ -10641,7 +11046,7 @@ module Fox
    def fx_tab_item name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:p=>nil, :text=>nil, :ic=>"nil", :opts=>"TAB_TOP_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_PAD", :padRight=>"DEFAULT_PAD", :padTop=>"DEFAULT_PAD", :padBottom=>"DEFAULT_PAD"}
          
            @o0.p = :required
@@ -10709,7 +11114,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXTabItem.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXTablePos
@@ -10719,7 +11126,9 @@ module Fox
    def fx_table_pos name = nil, &block
      
      
-     
+     Enhancement.stack << FXTablePos.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXTableRange
@@ -10729,7 +11138,9 @@ module Fox
    def fx_table_range name = nil, &block
      
      
-     
+     Enhancement.stack << FXTableRange.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXTableItem
@@ -10739,7 +11150,7 @@ module Fox
    def fx_table_item name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:text=>nil, :icon=>"nil", :data=>"nil"}
          
            @o0.text = :required
@@ -10762,7 +11173,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXTableItem.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXTable
@@ -10772,7 +11185,7 @@ module Fox
    def fx_table name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:p=>nil, :target=>"nil", :selector=>"0", :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_MARGIN", :padRight=>"DEFAULT_MARGIN", :padTop=>"DEFAULT_MARGIN", :padBottom=>"DEFAULT_MARGIN"}
          
            @o0.p = :required
@@ -10840,7 +11253,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXTable.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXHiliteStyle
@@ -10850,7 +11265,9 @@ module Fox
    def fx_hilite_style name = nil, &block
      
      
-     
+     Enhancement.stack << FXHiliteStyle.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXTextChange
@@ -10860,7 +11277,9 @@ module Fox
    def fx_text_change name = nil, &block
      
      
-     
+     Enhancement.stack << FXTextChange.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXText
@@ -10870,7 +11289,7 @@ module Fox
    def fx_text name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:p=>nil, :target=>"nil", :selector=>"0", :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"3", :padRight=>"3", :padTop=>"2", :padBottom=>"2"}
          
            @o0.p = :required
@@ -10938,7 +11357,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXText.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXTextField
@@ -10948,7 +11369,7 @@ module Fox
    def fx_text_field name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:p=>nil, :ncols=>nil, :target=>"nil", :selector=>"0", :opts=>"TEXTFIELD_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_PAD", :padRight=>"DEFAULT_PAD", :padTop=>"DEFAULT_PAD", :padBottom=>"DEFAULT_PAD"}
          
            @o0.p = :required
@@ -11021,7 +11442,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXTextField.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXToggleButton
@@ -11031,7 +11454,7 @@ module Fox
    def fx_toggle_button name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:p=>nil, :text1=>nil, :text2=>nil, :icon1=>"nil", :icon2=>"nil", :target=>"nil", :selector=>"0", :opts=>"TOGGLEBUTTON_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_PAD", :padRight=>"DEFAULT_PAD", :padTop=>"DEFAULT_PAD", :padBottom=>"DEFAULT_PAD"}
          
            @o0.p = :required
@@ -11119,7 +11542,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXToggleButton.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXToolBar
@@ -11129,7 +11554,7 @@ module Fox
    def fx_tool_bar name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:p=>nil, :q=>nil, :opts=>"LAYOUT_TOP|LAYOUT_LEFT|LAYOUT_FILL_X", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"3", :padRight=>"3", :padTop=>"2", :padBottom=>"2", :hSpacing=>"DEFAULT_SPACING", :vSpacing=>"DEFAULT_SPACING"}
          
            @o0.p = :required
@@ -11202,7 +11627,7 @@ module Fox
             @o0.instance_block = block
          end
      
-         @o1 = OStruct.new
+         @o1 = OpenStruct.new
          #{:p=>nil, :opts=>"LAYOUT_TOP|LAYOUT_LEFT|LAYOUT_FILL_X", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"3", :padRight=>"3", :padTop=>"2", :padBottom=>"2", :hSpacing=>"DEFAULT_SPACING", :vSpacing=>"DEFAULT_SPACING"}
          
            @o1.p = :required
@@ -11270,7 +11695,9 @@ module Fox
             @o1.instance_block = block
          end
      
-     
+     Enhancement.stack << FXToolBar.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXToolBarGrip
@@ -11280,7 +11707,7 @@ module Fox
    def fx_tool_bar_grip name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:p=>nil, :target=>"nil", :selector=>"0", :opts=>"TOOLBARGRIP_SINGLE", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}
          
            @o0.p = :required
@@ -11328,7 +11755,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXToolBarGrip.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXToolBarShell
@@ -11338,7 +11767,7 @@ module Fox
    def fx_tool_bar_shell name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:owner=>nil, :opts=>"FRAME_RAISED|FRAME_THICK", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :hSpacing=>"4", :vSpacing=>"4"}
          
            @o0.owner = :required
@@ -11386,7 +11815,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXToolBarShell.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXToolBarTab
@@ -11396,7 +11827,7 @@ module Fox
    def fx_tool_bar_tab name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:p=>nil, :target=>"nil", :selector=>"0", :opts=>"FRAME_RAISED", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}
          
            @o0.p = :required
@@ -11444,7 +11875,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXToolBarTab.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXToolTip
@@ -11454,7 +11887,7 @@ module Fox
    def fx_tool_tip name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:app=>nil, :opts=>"TOOLTIP_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}
          
            @o0.app = :required
@@ -11492,7 +11925,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXToolTip.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXTopWindow
@@ -11502,7 +11937,9 @@ module Fox
    def fx_top_window name = nil, &block
      
      
-     
+     Enhancement.stack << FXTopWindow.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXTranslator
@@ -11512,7 +11949,7 @@ module Fox
    def fx_translator name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:a=>nil}
          
            @o0.a = :required
@@ -11525,7 +11962,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXTranslator.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXTreeItem
@@ -11535,7 +11974,7 @@ module Fox
    def fx_tree_item name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:text=>nil, :openIcon=>"nil", :closedIcon=>"nil", :data=>"nil"}
          
            @o0.text = :required
@@ -11563,7 +12002,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXTreeItem.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXTreeList
@@ -11573,7 +12014,7 @@ module Fox
    def fx_tree_list name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:p=>nil, :target=>"nil", :selector=>"0", :opts=>"TREELIST_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}
          
            @o0.p = :required
@@ -11621,7 +12062,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXTreeList.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXTreeListBox
@@ -11631,7 +12074,7 @@ module Fox
    def fx_tree_list_box name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:p=>nil, :target=>"nil", :selector=>"0", :opts=>"FRAME_SUNKEN|FRAME_THICK|TREELISTBOX_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_PAD", :padRight=>"DEFAULT_PAD", :padTop=>"DEFAULT_PAD", :padBottom=>"DEFAULT_PAD"}
          
            @o0.p = :required
@@ -11699,7 +12142,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXTreeListBox.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXTriStateButton
@@ -11709,7 +12154,7 @@ module Fox
    def fx_tri_state_button name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:p=>nil, :text1=>nil, :text2=>nil, :text3=>nil, :icon1=>"nil", :icon2=>"nil", :icon3=>"nil", :target=>"nil", :selector=>"0", :opts=>"TOGGLEBUTTON_NORMAL", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_PAD", :padRight=>"DEFAULT_PAD", :padTop=>"DEFAULT_PAD", :padBottom=>"DEFAULT_PAD"}
          
            @o0.p = :required
@@ -11807,7 +12252,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXTriStateButton.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXVec2d
@@ -11817,7 +12264,7 @@ module Fox
    def fx_vec2d name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:xx=>"0.0", :yy=>"0.0"}
          
            @o0.xx = 0.0
@@ -11835,7 +12282,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXVec2d.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXVec2f
@@ -11845,7 +12294,7 @@ module Fox
    def fx_vec2f name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:xx=>"0.0", :yy=>"0.0"}
          
            @o0.xx = 0.0
@@ -11863,7 +12312,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXVec2f.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXVec3d
@@ -11873,7 +12324,7 @@ module Fox
    def fx_vec3d name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:xx=>nil, :yy=>nil, :zz=>"1.0"}
          
            @o0.xx = :required
@@ -11896,7 +12347,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXVec3d.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXVec3f
@@ -11906,7 +12359,7 @@ module Fox
    def fx_vec3f name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:xx=>nil, :yy=>nil, :zz=>"1.0"}
          
            @o0.xx = :required
@@ -11929,7 +12382,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXVec3f.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXVec4d
@@ -11939,7 +12394,7 @@ module Fox
    def fx_vec4d name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:xx=>nil, :yy=>nil, :zz=>nil, :ww=>"1.0"}
          
            @o0.xx = :required
@@ -11967,7 +12422,7 @@ module Fox
             @o0.instance_block = block
          end
      
-         @o1 = OStruct.new
+         @o1 = OpenStruct.new
          #{:vec3d=>nil, :ww=>"1.0"}
          
            @o1.vec3d = :required
@@ -11985,7 +12440,9 @@ module Fox
             @o1.instance_block = block
          end
      
-     
+     Enhancement.stack << FXVec4d.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXVec4f
@@ -11995,7 +12452,7 @@ module Fox
    def fx_vec4f name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:xx=>nil, :yy=>nil, :zz=>nil, :ww=>"1.0"}
          
            @o0.xx = :required
@@ -12023,7 +12480,7 @@ module Fox
             @o0.instance_block = block
          end
      
-         @o1 = OStruct.new
+         @o1 = OpenStruct.new
          #{:vec3f=>nil, :ww=>"1.0"}
          
            @o1.vec3f = :required
@@ -12041,7 +12498,9 @@ module Fox
             @o1.instance_block = block
          end
      
-     
+     Enhancement.stack << FXVec4f.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXVerticalFrame
@@ -12051,7 +12510,7 @@ module Fox
    def fx_vertical_frame name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:p=>nil, :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"DEFAULT_SPACING", :padRight=>"DEFAULT_SPACING", :padTop=>"DEFAULT_SPACING", :padBottom=>"DEFAULT_SPACING", :hSpacing=>"DEFAULT_SPACING", :vSpacing=>"DEFAULT_SPACING"}
          
            @o0.p = :required
@@ -12119,7 +12578,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXVerticalFrame.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXVisual
@@ -12129,7 +12590,7 @@ module Fox
    def fx_visual name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:a=>nil, :flgs=>nil, :d=>"32"}
          
            @o0.a = :required
@@ -12152,7 +12613,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXVisual.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXWindow
@@ -12162,7 +12625,7 @@ module Fox
    def fx_window name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:p=>nil, :opts=>"0", :x=>"0", :y=>"0", :width=>"0", :height=>"0"}
          
            @o0.p = :required
@@ -12200,7 +12663,7 @@ module Fox
             @o0.instance_block = block
          end
      
-         @o1 = OStruct.new
+         @o1 = OpenStruct.new
          #{:a=>nil, :vis=>nil}
          
            @o1.a = :required
@@ -12218,7 +12681,7 @@ module Fox
             @o1.instance_block = block
          end
      
-         @o2 = OStruct.new
+         @o2 = OpenStruct.new
          #{:a=>nil, :own=>nil, :opts=>nil, :x=>nil, :y=>nil, :w=>nil, :h=>nil}
          
            @o2.a = :required
@@ -12261,7 +12724,9 @@ module Fox
             @o2.instance_block = block
          end
      
-     
+     Enhancement.stack << FXWindow.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXWizard
@@ -12271,7 +12736,7 @@ module Fox
    def fx_wizard name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:owner=>nil, :name=>nil, :image=>nil, :opts=>"DECOR_TITLE|DECOR_BORDER|DECOR_RESIZE", :x=>"0", :y=>"0", :width=>"0", :height=>"0", :padLeft=>"10", :padRight=>"10", :padTop=>"10", :padBottom=>"10", :hSpacing=>"10", :vSpacing=>"10"}
          
            @o0.owner = :required
@@ -12349,7 +12814,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXWizard.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXXBMIcon
@@ -12359,7 +12826,7 @@ module Fox
    def fxxbm_icon name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:a=>nil, :pixels=>"nil", :mask=>"nil", :clr=>"0", :opts=>"0", :width=>"1", :height=>"1"}
          
            @o0.a = :required
@@ -12402,7 +12869,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXXBMIcon.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXXBMImage
@@ -12412,7 +12881,7 @@ module Fox
    def fxxbm_image name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:a=>nil, :pixels=>"nil", :mask=>"nil", :opts=>"0", :width=>"1", :height=>"1"}
          
            @o0.a = :required
@@ -12450,7 +12919,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXXBMImage.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXXPMIcon
@@ -12460,7 +12931,7 @@ module Fox
    def fxxpm_icon name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:a=>nil, :pix=>"nil", :clr=>"0", :opts=>"0", :width=>"1", :height=>"1"}
          
            @o0.a = :required
@@ -12498,7 +12969,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXXPMIcon.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
    class FXXPMImage
@@ -12508,7 +12981,7 @@ module Fox
    def fxxpm_image name = nil, &block
      
      
-         @o0 = OStruct.new
+         @o0 = OpenStruct.new
          #{:a=>nil, :pix=>"nil", :opts=>"0", :width=>"1", :height=>"1"}
          
            @o0.a = :required
@@ -12541,7 +13014,9 @@ module Fox
             @o0.instance_block = block
          end
      
-     
+     Enhancement.stack << FXXPMImage.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 
 end 

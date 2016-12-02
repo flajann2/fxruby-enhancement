@@ -1,3 +1,4 @@
+# coding: utf-8
 =begin rdoc
 
 NOTE WELL:
@@ -53,7 +54,7 @@ module Fox
    def <%= @class.snake %> name = nil, &block
      <% @i=0 %>
      <% for @iniparams in @details[:initialize].compact %>
-         <%= "@o#{@i}" %> = OStruct.new
+         <%= "@o#{@i}" %> = OpenStruct.new
          #<%= @iniparams %>
          <% for @param, @default in @iniparams %>
            <%= "@o#{@i}.#{@param}" %> = <%= (@default) ? @default : ":required" %>
@@ -66,7 +67,9 @@ module Fox
             <%= "@o#{@i}" %>.instance_block = block
          end
      <% @i+=1; end unless @details[:initialize].nil? %>
-     
+     Enhancement.stack << <%= @class %>.new(Enhancement.stack.last)
+     self.instance_eval &block
+     Enhancement.stack.pop
    end
 <% end %>
 end 
