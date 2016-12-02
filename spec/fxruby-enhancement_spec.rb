@@ -30,5 +30,7 @@ describe "DSL" do
         end
       end
     end
+    expect(Fox::Enhancement.base).to_not be_nil
+    expect(Fox::Enhancement.base.klass).to eq Fox::FXApp
   end
 end
