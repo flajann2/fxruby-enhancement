@@ -5,11 +5,12 @@ module Fox
   # this up.
   module Enhancement
     @stack = []
+    @base = nil
     
     # Module-level
     class << self
       attr_accessor :application
-      attr_accessor :stack      
+      attr_accessor :stack, :base
       
       def included(klass)
         klass.extend ClassMethods
