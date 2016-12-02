@@ -141,9 +141,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FX4Splitter.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FX4Splitter.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -218,9 +218,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FX7Segment.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FX7Segment.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -232,9 +232,9 @@ module Fox
      @op = []
      @ii = ii
      
-     
-     Enhancement.stack << FXAccelTable.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXAccelTable.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -246,9 +246,9 @@ module Fox
      @op = []
      @ii = ii
      
-     
-     Enhancement.stack << FXEvent.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXEvent.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -278,9 +278,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXApp.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXApp.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -360,9 +360,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXArrowButton.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXArrowButton.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -412,9 +412,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXBMPIcon.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXBMPIcon.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -459,9 +459,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXBMPImage.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXBMPImage.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -506,9 +506,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXBitmap.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXBitmap.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -583,9 +583,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXBitmapFrame.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXBitmapFrame.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -650,9 +650,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXBitmapView.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXBitmapView.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -742,9 +742,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXButton.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXButton.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -774,9 +774,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXCURCursor.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXCURCursor.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -836,9 +836,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXCanvas.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXCanvas.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -923,9 +923,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXCheckButton.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXCheckButton.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -995,9 +995,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXChoiceBox.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXChoiceBox.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -1077,9 +1077,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXColorBar.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXColorBar.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -1134,9 +1134,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXColorDialog.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXColorDialog.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -1171,9 +1171,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXColorItem.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXColorItem.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -1233,9 +1233,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXColorList.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXColorList.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -1315,9 +1315,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXColorRing.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXColorRing.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -1377,9 +1377,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXColorSelector.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXColorSelector.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -1464,9 +1464,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXColorWell.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXColorWell.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -1546,9 +1546,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXColorWheel.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXColorWheel.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -1633,9 +1633,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXComboBox.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXComboBox.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -1685,9 +1685,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXComposite.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXComposite.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -1793,9 +1793,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXCursor.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXCursor.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -1807,9 +1807,9 @@ module Fox
      @op = []
      @ii = ii
      
-     
-     Enhancement.stack << FXSegment.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXSegment.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -1821,9 +1821,9 @@ module Fox
      @op = []
      @ii = ii
      
-     
-     Enhancement.stack << FXArc.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXArc.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -1848,9 +1848,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXDC.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXDC.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -1862,9 +1862,9 @@ module Fox
      @op = []
      @ii = ii
      
-     
-     Enhancement.stack << FXPSBounds.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXPSBounds.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -1876,9 +1876,9 @@ module Fox
      @op = []
      @ii = ii
      
-     
-     Enhancement.stack << FXPrinter.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXPrinter.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -1903,9 +1903,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXDCPrint.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXDCPrint.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -1935,9 +1935,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXDCWindow.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXDCWindow.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -1972,9 +1972,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXDataTarget.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXDataTarget.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -1986,9 +1986,9 @@ module Fox
      @op = []
      @ii = ii
      
-     
-     Enhancement.stack << FXDebugTarget.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXDebugTarget.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -2013,9 +2013,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXDelegator.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXDelegator.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -2095,9 +2095,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXDial.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXDial.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -2182,9 +2182,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXDialogBox.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXDialogBox.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -2196,9 +2196,9 @@ module Fox
      @op = []
      @ii = ii
      
-     
-     Enhancement.stack << FXDict.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXDict.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -2278,9 +2278,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXDirBox.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXDirBox.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -2335,9 +2335,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXDirDialog.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXDirDialog.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -2377,9 +2377,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXDirItem.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXDirItem.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -2439,9 +2439,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXDirList.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXDirList.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -2501,9 +2501,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXDirSelector.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXDirSelector.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -2656,9 +2656,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXDockBar.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXDockBar.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -2738,9 +2738,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXDockHandler.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXDockHandler.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -2820,9 +2820,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXDockSite.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXDockSite.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -2907,9 +2907,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXDockTitle.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXDockTitle.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -2921,9 +2921,9 @@ module Fox
      @op = []
      @ii = ii
      
-     
-     Enhancement.stack << FXDocument.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXDocument.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -2948,9 +2948,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXDragCorner.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXDragCorner.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -2962,9 +2962,9 @@ module Fox
      @op = []
      @ii = ii
      
-     
-     Enhancement.stack << FXDrawable.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXDrawable.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -3044,9 +3044,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXDriveBox.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXDriveBox.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -3117,9 +3117,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXExtentd.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXExtentd.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -3190,9 +3190,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXExtentf.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXExtentf.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -3247,9 +3247,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXFileDialog.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXFileDialog.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -3261,9 +3261,9 @@ module Fox
      @op = []
      @ii = ii
      
-     
-     Enhancement.stack << FXFileAssoc.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXFileAssoc.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -3293,9 +3293,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXFileDict.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXFileDict.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -3335,9 +3335,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXFileItem.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXFileItem.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -3397,9 +3397,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXFileList.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXFileList.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -3459,9 +3459,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXFileSelector.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXFileSelector.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -3486,9 +3486,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXFileStream.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXFileStream.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -3528,9 +3528,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXFoldingItem.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXFoldingItem.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -3590,9 +3590,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXFoldingList.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXFoldingList.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -3604,9 +3604,9 @@ module Fox
      @op = []
      @ii = ii
      
-     
-     Enhancement.stack << FXFontDesc.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXFontDesc.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -3702,9 +3702,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXFont.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXFont.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -3759,9 +3759,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXFontDialog.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXFontDialog.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -3821,9 +3821,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXFontSelector.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXFontSelector.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -3893,9 +3893,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXFrame.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXFrame.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -3935,9 +3935,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXGIFCursor.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXGIFCursor.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -3987,9 +3987,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXGIFIcon.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXGIFIcon.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -4034,9 +4034,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXGIFImage.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXGIFImage.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -4159,9 +4159,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXGLCanvas.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXGLCanvas.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -4196,9 +4196,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXGLContext.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXGLContext.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -4210,9 +4210,9 @@ module Fox
      @op = []
      @ii = ii
      
-     
-     Enhancement.stack << FXGLObject.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXGLObject.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -4262,9 +4262,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXGLShape.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXGLShape.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -4276,9 +4276,9 @@ module Fox
      @op = []
      @ii = ii
      
-     
-     Enhancement.stack << FXViewport.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXViewport.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -4290,9 +4290,9 @@ module Fox
      @op = []
      @ii = ii
      
-     
-     Enhancement.stack << FXLight.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXLight.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -4304,9 +4304,9 @@ module Fox
      @op = []
      @ii = ii
      
-     
-     Enhancement.stack << FXMaterial.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXMaterial.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -4429,9 +4429,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXGLViewer.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXGLViewer.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -4461,9 +4461,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXGLVisual.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXGLVisual.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -4475,9 +4475,9 @@ module Fox
      @op = []
      @ii = ii
      
-     
-     Enhancement.stack << FXGradient.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXGradient.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -4557,9 +4557,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXGradientBar.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXGradientBar.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -4644,9 +4644,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXGroupBox.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXGroupBox.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -4686,9 +4686,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXHeaderItem.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXHeaderItem.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -4768,9 +4768,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXHeader.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXHeader.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -4850,9 +4850,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXHorizontalFrame.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXHorizontalFrame.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -4902,9 +4902,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXICOIcon.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXICOIcon.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -4949,9 +4949,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXICOImage.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXICOImage.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -5001,9 +5001,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXIcon.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXIcon.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -5015,9 +5015,9 @@ module Fox
      @op = []
      @ii = ii
      
-     
-     Enhancement.stack << FXIconDict.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXIconDict.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -5057,9 +5057,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXIconItem.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXIconItem.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -5119,9 +5119,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXIconList.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXIconList.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -5146,9 +5146,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXIconSource.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXIconSource.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -5160,9 +5160,9 @@ module Fox
      @op = []
      @ii = ii
      
-     
-     Enhancement.stack << FXId.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXId.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -5207,9 +5207,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXImage.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXImage.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -5284,9 +5284,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXImageFrame.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXImageFrame.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -5351,9 +5351,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXImageView.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXImageView.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -5418,9 +5418,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXInputDialog.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXInputDialog.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -5475,9 +5475,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXJPGIcon.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXJPGIcon.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -5527,9 +5527,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXJPGImage.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXJPGImage.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -5609,9 +5609,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXKnob.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXKnob.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -5691,9 +5691,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXLabel.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXLabel.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -5728,9 +5728,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXListItem.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXListItem.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -5790,9 +5790,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXList.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXList.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -5872,9 +5872,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXListBox.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXListBox.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -5934,9 +5934,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXMDIDeleteButton.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXMDIDeleteButton.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -5996,9 +5996,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXMDIRestoreButton.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXMDIRestoreButton.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -6058,9 +6058,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXMDIMaximizeButton.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXMDIMaximizeButton.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -6120,9 +6120,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXMDIMinimizeButton.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXMDIMinimizeButton.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -6187,9 +6187,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXMDIWindowButton.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXMDIWindowButton.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -6219,9 +6219,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXMDIMenu.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXMDIMenu.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -6286,9 +6286,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXMDIChild.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXMDIChild.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -6338,9 +6338,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXMDIClient.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXMDIClient.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -6435,9 +6435,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXMainWindow.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXMainWindow.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -6522,9 +6522,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXMatrix.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXMatrix.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -6549,9 +6549,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXMemoryBuffer.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXMemoryBuffer.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -6576,9 +6576,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXMemoryStream.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXMemoryStream.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -6731,9 +6731,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXMenuBar.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXMenuBar.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -6818,9 +6818,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXMenuButton.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXMenuButton.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -6860,9 +6860,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXMenuCaption.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXMenuCaption.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -6907,9 +6907,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXMenuCascade.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXMenuCascade.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -6954,9 +6954,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXMenuCheck.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXMenuCheck.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -7006,9 +7006,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXMenuCommand.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXMenuCommand.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -7038,9 +7038,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXMenuPane.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXMenuPane.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -7085,9 +7085,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXMenuRadio.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXMenuRadio.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -7117,9 +7117,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXMenuSeparator.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXMenuSeparator.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -7164,9 +7164,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXMenuTitle.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXMenuTitle.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -7221,9 +7221,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXMessageBox.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXMessageBox.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -7235,9 +7235,9 @@ module Fox
      @op = []
      @ii = ii
      
-     
-     Enhancement.stack << FXObject.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXObject.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -7327,9 +7327,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXOption.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXOption.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -7404,9 +7404,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXOptionMenu.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXOptionMenu.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -7456,9 +7456,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXPCXIcon.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXPCXIcon.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -7503,9 +7503,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXPCXImage.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXPCXImage.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -7555,9 +7555,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXPNGIcon.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXPNGIcon.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -7602,9 +7602,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXPNGImage.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXPNGImage.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -7654,9 +7654,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXPPMIcon.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXPPMIcon.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -7701,9 +7701,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXPPMImage.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXPPMImage.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -7783,9 +7783,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXPacker.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXPacker.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -7875,9 +7875,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXPicker.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXPicker.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -7927,9 +7927,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXPopup.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXPopup.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -7984,9 +7984,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXPrintDialog.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXPrintDialog.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -8066,9 +8066,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXProgressBar.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXProgressBar.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -8128,9 +8128,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXProgressDialog.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXProgressDialog.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -8247,9 +8247,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXQuatd.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXQuatd.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -8366,9 +8366,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXQuatf.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXQuatf.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -8418,9 +8418,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXRGBIcon.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXRGBIcon.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -8465,9 +8465,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXRGBImage.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXRGBImage.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -8552,9 +8552,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXRadioButton.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXRadioButton.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -8630,9 +8630,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXRanged.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXRanged.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -8708,9 +8708,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXRangef.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXRangef.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -8790,9 +8790,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXRealSlider.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXRealSlider.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -8877,9 +8877,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXRealSpinner.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXRealSpinner.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -8932,9 +8932,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXRecentFiles.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXRecentFiles.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -9010,9 +9010,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXRectangle.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXRectangle.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -9096,9 +9096,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXRegion.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXRegion.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -9128,9 +9128,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXRegistry.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXRegistry.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -9190,9 +9190,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXReplaceDialog.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXReplaceDialog.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -9222,9 +9222,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXRootWindow.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXRootWindow.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -9304,9 +9304,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXRuler.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXRuler.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -9366,9 +9366,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXRulerView.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXRulerView.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -9380,9 +9380,9 @@ module Fox
      @op = []
      @ii = ii
      
-     
-     Enhancement.stack << NotifyHeader.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << NotifyHeader.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -9394,9 +9394,9 @@ module Fox
      @op = []
      @ii = ii
      
-     
-     Enhancement.stack << SCNotification.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << SCNotification.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -9431,9 +9431,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << TextRange.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << TextRange.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -9493,9 +9493,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXScintilla.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXScintilla.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -9545,9 +9545,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXScrollArea.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXScrollArea.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -9607,9 +9607,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXScrollBar.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXScrollBar.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -9634,9 +9634,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXScrollCorner.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXScrollCorner.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -9671,9 +9671,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXScrollPane.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXScrollPane.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -9723,9 +9723,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXScrollWindow.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXScrollWindow.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -9785,9 +9785,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXSearchDialog.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXSearchDialog.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -9857,9 +9857,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXSeparator.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXSeparator.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -9929,9 +9929,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXHorizontalSeparator.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXHorizontalSeparator.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -10001,9 +10001,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXVerticalSeparator.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXVerticalSeparator.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -10015,9 +10015,9 @@ module Fox
      @op = []
      @ii = ii
      
-     
-     Enhancement.stack << FXSettings.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXSettings.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -10029,9 +10029,9 @@ module Fox
      @op = []
      @ii = ii
      
-     
-     Enhancement.stack << FXShell.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXShell.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -10121,9 +10121,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXShutterItem.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXShutterItem.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -10213,9 +10213,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXShutter.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXShutter.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -10258,9 +10258,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXSize.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXSize.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -10340,9 +10340,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXSlider.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXSlider.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -10426,9 +10426,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXSphered.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXSphered.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -10512,9 +10512,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXSpheref.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXSpheref.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -10599,9 +10599,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXSpinner.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXSpinner.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -10641,9 +10641,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXSplashWindow.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXSplashWindow.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -10741,9 +10741,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXSplitter.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXSplitter.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -10833,9 +10833,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXSpring.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXSpring.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -10915,9 +10915,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXStatusBar.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXStatusBar.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -10952,9 +10952,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXStatusLine.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXStatusLine.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -10979,9 +10979,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXStream.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXStream.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -10993,9 +10993,9 @@ module Fox
      @op = []
      @ii = ii
      
-     
-     Enhancement.stack << FXStringDict.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXStringDict.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -11065,9 +11065,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXSwitcher.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXSwitcher.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -11117,9 +11117,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXTGAIcon.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXTGAIcon.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -11164,9 +11164,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXTGAImage.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXTGAImage.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -11216,9 +11216,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXTIFIcon.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXTIFIcon.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -11263,9 +11263,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXTIFImage.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXTIFImage.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -11345,9 +11345,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXTabBar.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXTabBar.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -11427,9 +11427,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXTabBook.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXTabBook.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -11509,9 +11509,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXTabItem.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXTabItem.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -11523,9 +11523,9 @@ module Fox
      @op = []
      @ii = ii
      
-     
-     Enhancement.stack << FXTablePos.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXTablePos.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -11537,9 +11537,9 @@ module Fox
      @op = []
      @ii = ii
      
-     
-     Enhancement.stack << FXTableRange.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXTableRange.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -11574,9 +11574,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXTableItem.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXTableItem.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -11656,9 +11656,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXTable.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXTable.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -11670,9 +11670,9 @@ module Fox
      @op = []
      @ii = ii
      
-     
-     Enhancement.stack << FXHiliteStyle.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXHiliteStyle.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -11684,9 +11684,9 @@ module Fox
      @op = []
      @ii = ii
      
-     
-     Enhancement.stack << FXTextChange.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXTextChange.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -11766,9 +11766,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXText.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXText.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -11853,9 +11853,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXTextField.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXTextField.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -11955,9 +11955,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXToggleButton.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXToggleButton.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -12110,9 +12110,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXToolBar.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXToolBar.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -12172,9 +12172,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXToolBarGrip.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXToolBarGrip.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -12234,9 +12234,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXToolBarShell.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXToolBarShell.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -12296,9 +12296,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXToolBarTab.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXToolBarTab.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -12348,9 +12348,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXToolTip.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXToolTip.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -12362,9 +12362,9 @@ module Fox
      @op = []
      @ii = ii
      
-     
-     Enhancement.stack << FXTopWindow.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXTopWindow.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -12389,9 +12389,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXTranslator.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXTranslator.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -12431,9 +12431,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXTreeItem.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXTreeItem.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -12493,9 +12493,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXTreeList.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXTreeList.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -12575,9 +12575,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXTreeListBox.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXTreeListBox.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -12687,9 +12687,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXTriStateButton.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXTriStateButton.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -12719,9 +12719,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXVec2d.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXVec2d.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -12751,9 +12751,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXVec2f.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXVec2f.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -12788,9 +12788,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXVec3d.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXVec3d.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -12825,9 +12825,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXVec3f.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXVec3f.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -12885,9 +12885,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXVec4d.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXVec4d.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -12945,9 +12945,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXVec4f.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXVec4f.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -13027,9 +13027,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXVerticalFrame.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXVerticalFrame.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -13064,9 +13064,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXVisual.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXVisual.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -13177,9 +13177,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXWindow.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXWindow.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -13269,9 +13269,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXWizard.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXWizard.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -13326,9 +13326,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXXBMIcon.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXXBMIcon.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -13378,9 +13378,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXXBMImage.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXXBMImage.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -13430,9 +13430,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXXPMIcon.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXXPMIcon.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 
@@ -13477,9 +13477,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     
-     Enhancement.stack << FXXPMImage.new(Enhancement.stack.last)
+          
      self.instance_eval &block
+     Enhancement.stack << FXXPMImage.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 

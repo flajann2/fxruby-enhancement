@@ -18,6 +18,9 @@ describe "DSL" do
   include Fox
   it "allows creation of the FXApp and one window" do
     app = fx_app :foobase do
+      app_name "Foo Test"
+      vendor_name "RubyNEAT Spinoff tech"
+      
       fx_main_window :main do
         title "test window"
         width 500

@@ -68,9 +68,9 @@ module Fox
             @op[@ii].instance_name = a
             @op[@ii].instance_block = block
          end
-     <% @i+=1; end unless @details[:initialize].nil? %>
-     Enhancement.stack << <%= @class %>.new(Enhancement.stack.last)
+     <% @i+=1; end unless @details[:initialize].nil? %>     
      self.instance_eval &block
+     Enhancement.stack << <%= @class %>.new(*([Enhancement.stack.last] + @op[@ii].to_h.values[1..-1]))
      Enhancement.stack.pop
    end
 <% end %>
