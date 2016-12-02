@@ -51,20 +51,22 @@ module Fox
      include Enhancement
      attr_accessor :_o     
    end
-   def <%= @class.snake %> name = nil, &block
+   def <%= @class.snake %> name = nil, ii: 0, &block
+     @op = []
+     @ii = ii
      <% @i=0 %>
      <% for @iniparams in @details[:initialize].compact %>
-         <%= "@o#{@i}" %> = OpenStruct.new
+         <%= "@op[#{@i}]" %> = OpenStruct.new
          #<%= @iniparams %>
          <% for @param, @default in @iniparams %>
-           <%= "@o#{@i}.#{@param}" %> = <%= (@default) ? @default : ":required" %>
+           <%= "@op[#{@i}].#{@param}" %> = <%= (@default) ? @default : ":required" %>
            def <%= "#{@param.snake}" %> var
-             <%= "@o#{@i}.#{@param}" %> = var
+             @op[@ii].<%= "#{@param}" %> = var
            end
          <% end %>
          def instance a=nil, &block
-            <%= "@o#{@i}" %>.instance_name = a
-            <%= "@o#{@i}" %>.instance_block = block
+            @op[@ii].instance_name = a
+            @op[@ii].instance_block = block
          end
      <% @i+=1; end unless @details[:initialize].nil? %>
      Enhancement.stack << <%= @class %>.new(Enhancement.stack.last)
