@@ -8,7 +8,6 @@ NOTE WELL:
 =end
 
 module Fox
-# Here we include enhancements to all FXRuby classes
 
    class FX4Splitter
      include Enhancement
