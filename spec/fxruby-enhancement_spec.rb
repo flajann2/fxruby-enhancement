@@ -14,21 +14,23 @@ describe Symbol do
   end
 end
 
+include Fox
+include Fox::Enhancement::Mapper
+
 describe "DSL" do
-  include Fox
-  include Fox::Enhancement::Mapper
   
   it "allows creation of the FXApp and one window" do
     app = fx_app :foobase do
       app_name "Foo Test"
       vendor_name "RubyNEAT Spinoff tech"
             
-      fx_main_window :main do
+      osmw = fx_main_window :main do
         title "test window"
-        width 500
+        width 700
         height 300
         instance :foo_instance do |mw|
           mw.vSpacing = 2
+          mw.show PLACEMENT_CURSOR
         end        
       end
       
@@ -40,6 +42,8 @@ describe "DSL" do
     expect(Fox::Enhancement.base.klass).to eq Fox::FXApp
     app.create_fox_components
     app.instance_final_activate
+    app.inst.create
+    app.inst.run
     expect(app.instance_result).to eq(:mission_accomplished)
   end
 end

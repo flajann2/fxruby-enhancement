@@ -99,7 +99,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  awesome_print
+  awesome_print (>= 1)
   bundler (~> 1.0)
   fxruby (~> 1.6)
   juwelier (~> 2)
