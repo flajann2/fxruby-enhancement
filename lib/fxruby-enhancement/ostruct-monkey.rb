@@ -3,7 +3,7 @@ class OpenStruct
   # and additionaly will take an optional object to use as the
   # actual base to allow for composures.
   def create_fox_components use_as_base = nil
-    unless use_as_base.nil?
+    if use_as_base.nil?
       self.inst = fx.()
       self.kinder.each{ |os| os.create_fox_components }
     else

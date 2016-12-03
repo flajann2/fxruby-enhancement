@@ -38,8 +38,8 @@ module Fox
          def height var; @os.op[@os.ii].height = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
      
          @os.op[1] = OpenStruct.new({:p => :required, :tgt => :required, :sel => :required, :opts => FOURSPLITTER_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0})
@@ -61,12 +61,15 @@ module Fox
          def height var; @os.op[@os.ii].height = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FX4Splitter.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FX4Splitter.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -109,12 +112,15 @@ module Fox
          def pad_bottom var; @os.op[@os.ii].padBottom = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FX7Segment.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FX7Segment.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -133,7 +139,10 @@ module Fox
      
           
      self.instance_eval &block
-     os.fx = ->(){ FXAccelTable.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXAccelTable.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -152,7 +161,10 @@ module Fox
      
           
      self.instance_eval &block
-     os.fx = ->(){ FXEvent.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXEvent.new(*(os.op[os.ii].to_h.values)) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -177,12 +189,15 @@ module Fox
          def vendor_name var; @os.op[@os.ii].vendorName = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXApp.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXApp.new(*(os.op[os.ii].to_h.values)) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -227,12 +242,15 @@ module Fox
          def pad_bottom var; @os.op[@os.ii].padBottom = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXArrowButton.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXArrowButton.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -265,12 +283,15 @@ module Fox
          def height var; @os.op[@os.ii].height = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXBMPIcon.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXBMPIcon.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -301,12 +322,15 @@ module Fox
          def height var; @os.op[@os.ii].height = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXBMPImage.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXBMPImage.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -337,12 +361,15 @@ module Fox
          def height var; @os.op[@os.ii].height = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXBitmap.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXBitmap.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -385,12 +412,15 @@ module Fox
          def pad_bottom var; @os.op[@os.ii].padBottom = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXBitmapFrame.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXBitmapFrame.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -429,12 +459,15 @@ module Fox
          def height var; @os.op[@os.ii].height = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXBitmapView.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXBitmapView.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -483,12 +516,15 @@ module Fox
          def pad_bottom var; @os.op[@os.ii].padBottom = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXButton.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXButton.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -513,12 +549,15 @@ module Fox
          def pixels var; @os.op[@os.ii].pixels = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXCURCursor.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXCURCursor.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -555,12 +594,15 @@ module Fox
          def height var; @os.op[@os.ii].height = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXCanvas.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXCanvas.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -607,12 +649,15 @@ module Fox
          def pad_bottom var; @os.op[@os.ii].padBottom = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXCheckButton.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXCheckButton.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -653,12 +698,15 @@ module Fox
          def height var; @os.op[@os.ii].height = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXChoiceBox.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXChoiceBox.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -703,12 +751,15 @@ module Fox
          def pad_bottom var; @os.op[@os.ii].padBottom = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXColorBar.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXColorBar.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -743,12 +794,15 @@ module Fox
          def height var; @os.op[@os.ii].height = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXColorDialog.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXColorDialog.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -775,12 +829,15 @@ module Fox
          def data var; @os.op[@os.ii].data = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXColorItem.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXColorItem.new(*(os.op[os.ii].to_h.values)) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -817,12 +874,15 @@ module Fox
          def height var; @os.op[@os.ii].height = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXColorList.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXColorList.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -867,12 +927,15 @@ module Fox
          def pad_bottom var; @os.op[@os.ii].padBottom = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXColorRing.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXColorRing.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -909,12 +972,15 @@ module Fox
          def height var; @os.op[@os.ii].height = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXColorSelector.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXColorSelector.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -961,12 +1027,15 @@ module Fox
          def pad_bottom var; @os.op[@os.ii].padBottom = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXColorWell.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXColorWell.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -1011,12 +1080,15 @@ module Fox
          def pad_bottom var; @os.op[@os.ii].padBottom = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXColorWheel.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXColorWheel.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -1063,12 +1135,15 @@ module Fox
          def pad_bottom var; @os.op[@os.ii].padBottom = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXComboBox.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXComboBox.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -1101,12 +1176,15 @@ module Fox
          def height var; @os.op[@os.ii].height = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXComposite.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXComposite.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -1131,8 +1209,8 @@ module Fox
          def curid var; @os.op[@os.ii].curid = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
      
          @os.op[1] = OpenStruct.new({:a => :required, :pix => :required, :width => 32, :height => 32, :hotX => -1, :hotY => -1})
@@ -1150,8 +1228,8 @@ module Fox
          def hot_y var; @os.op[@os.ii].hotY = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
      
          @os.op[2] = OpenStruct.new({:a => :required, :pixels => :required, :width => 32, :height => 32, :hotX => -1, :hotY => -1})
@@ -1169,12 +1247,15 @@ module Fox
          def hot_y var; @os.op[@os.ii].hotY = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXCursor.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXCursor.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -1193,7 +1274,10 @@ module Fox
      
           
      self.instance_eval &block
-     os.fx = ->(){ FXSegment.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXSegment.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -1212,7 +1296,10 @@ module Fox
      
           
      self.instance_eval &block
-     os.fx = ->(){ FXArc.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXArc.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -1235,12 +1322,15 @@ module Fox
          def app var; @os.op[@os.ii].app = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXDC.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXDC.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -1259,7 +1349,10 @@ module Fox
      
           
      self.instance_eval &block
-     os.fx = ->(){ FXPSBounds.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXPSBounds.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -1278,7 +1371,10 @@ module Fox
      
           
      self.instance_eval &block
-     os.fx = ->(){ FXPrinter.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXPrinter.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -1301,12 +1397,15 @@ module Fox
          def app var; @os.op[@os.ii].app = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXDCPrint.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXDCPrint.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -1331,12 +1430,15 @@ module Fox
          def event var; @os.op[@os.ii].event = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXDCWindow.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXDCWindow.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -1363,12 +1465,15 @@ module Fox
          def selector var; @os.op[@os.ii].selector = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXDataTarget.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXDataTarget.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -1387,7 +1492,10 @@ module Fox
      
           
      self.instance_eval &block
-     os.fx = ->(){ FXDebugTarget.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXDebugTarget.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -1410,12 +1518,15 @@ module Fox
          def delegate var; @os.op[@os.ii].delegate = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXDelegator.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXDelegator.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -1460,12 +1571,15 @@ module Fox
          def pad_bottom var; @os.op[@os.ii].padBottom = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXDial.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXDial.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -1512,12 +1626,15 @@ module Fox
          def v_spacing var; @os.op[@os.ii].vSpacing = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXDialogBox.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXDialogBox.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -1536,7 +1653,10 @@ module Fox
      
           
      self.instance_eval &block
-     os.fx = ->(){ FXDict.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXDict.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -1581,12 +1701,15 @@ module Fox
          def pad_bottom var; @os.op[@os.ii].padBottom = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXDirBox.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXDirBox.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -1621,12 +1744,15 @@ module Fox
          def height var; @os.op[@os.ii].height = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXDirDialog.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXDirDialog.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -1655,12 +1781,15 @@ module Fox
          def data var; @os.op[@os.ii].data = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXDirItem.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXDirItem.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -1697,12 +1826,15 @@ module Fox
          def height var; @os.op[@os.ii].height = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXDirList.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXDirList.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -1739,12 +1871,15 @@ module Fox
          def height var; @os.op[@os.ii].height = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXDirSelector.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXDirSelector.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -1791,8 +1926,8 @@ module Fox
          def v_spacing var; @os.op[@os.ii].vSpacing = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
      
          @os.op[1] = OpenStruct.new({:p => :required, :opts => LAYOUT_TOP|LAYOUT_LEFT|LAYOUT_FILL_X, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 3, :padRight => 3, :padTop => 2, :padBottom => 2, :hSpacing => DEFAULT_SPACING, :vSpacing => DEFAULT_SPACING})
@@ -1822,12 +1957,15 @@ module Fox
          def v_spacing var; @os.op[@os.ii].vSpacing = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXDockBar.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXDockBar.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -1872,12 +2010,15 @@ module Fox
          def pb var; @os.op[@os.ii].pb = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXDockHandler.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXDockHandler.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -1922,12 +2063,15 @@ module Fox
          def v_spacing var; @os.op[@os.ii].vSpacing = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXDockSite.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXDockSite.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -1974,12 +2118,15 @@ module Fox
          def pad_bottom var; @os.op[@os.ii].padBottom = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXDockTitle.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXDockTitle.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -1998,7 +2145,10 @@ module Fox
      
           
      self.instance_eval &block
-     os.fx = ->(){ FXDocument.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXDocument.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -2021,12 +2171,15 @@ module Fox
          def p var; @os.op[@os.ii].p = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXDragCorner.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXDragCorner.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -2045,7 +2198,10 @@ module Fox
      
           
      self.instance_eval &block
-     os.fx = ->(){ FXDrawable.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXDrawable.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -2090,12 +2246,15 @@ module Fox
          def pad_bottom var; @os.op[@os.ii].padBottom = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXDriveBox.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXDriveBox.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -2118,8 +2277,8 @@ module Fox
          def ext var; @os.op[@os.ii].ext = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
      
          @os.op[1] = OpenStruct.new({:lo => :required, :hi => :required})
@@ -2129,8 +2288,8 @@ module Fox
          def hi var; @os.op[@os.ii].hi = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
      
          @os.op[2] = OpenStruct.new({:xlo => :required, :xhi => :required, :ylo => :required, :yhi => :required})
@@ -2144,12 +2303,15 @@ module Fox
          def yhi var; @os.op[@os.ii].yhi = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXExtentd.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXExtentd.new(*(os.op[os.ii].to_h.values)) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -2172,8 +2334,8 @@ module Fox
          def ext var; @os.op[@os.ii].ext = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
      
          @os.op[1] = OpenStruct.new({:lo => :required, :hi => :required})
@@ -2183,8 +2345,8 @@ module Fox
          def hi var; @os.op[@os.ii].hi = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
      
          @os.op[2] = OpenStruct.new({:xlo => :required, :xhi => :required, :ylo => :required, :yhi => :required})
@@ -2198,12 +2360,15 @@ module Fox
          def yhi var; @os.op[@os.ii].yhi = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXExtentf.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXExtentf.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -2238,12 +2403,15 @@ module Fox
          def height var; @os.op[@os.ii].height = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXFileDialog.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXFileDialog.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -2262,7 +2430,10 @@ module Fox
      
           
      self.instance_eval &block
-     os.fx = ->(){ FXFileAssoc.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXFileAssoc.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -2287,12 +2458,15 @@ module Fox
          def db var; @os.op[@os.ii].db = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXFileDict.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXFileDict.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -2321,12 +2495,15 @@ module Fox
          def ptr var; @os.op[@os.ii].ptr = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXFileItem.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXFileItem.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -2363,12 +2540,15 @@ module Fox
          def height var; @os.op[@os.ii].height = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXFileList.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXFileList.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -2405,12 +2585,15 @@ module Fox
          def height var; @os.op[@os.ii].height = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXFileSelector.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXFileSelector.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -2433,12 +2616,15 @@ module Fox
          def cont var; @os.op[@os.ii].cont = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXFileStream.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXFileStream.new(*(os.op[os.ii].to_h.values)) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -2467,12 +2653,15 @@ module Fox
          def data var; @os.op[@os.ii].data = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXFoldingItem.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXFoldingItem.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -2509,12 +2698,15 @@ module Fox
          def height var; @os.op[@os.ii].height = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXFoldingList.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXFoldingList.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -2533,7 +2725,10 @@ module Fox
      
           
      self.instance_eval &block
-     os.fx = ->(){ FXFontDesc.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXFontDesc.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -2558,8 +2753,8 @@ module Fox
          def font_desc var; @os.op[@os.ii].fontDesc = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
      
          @os.op[1] = OpenStruct.new({:a => :required, :face => :required, :size => :required, :weight => FXFont::Normal, :slant => Font::Straight, :encoding => FONTENCODING_DEFAULT, :setWidth => FXFont::NonExpanded, :hints => 0})
@@ -2581,8 +2776,8 @@ module Fox
          def hints var; @os.op[@os.ii].hints = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
      
          @os.op[2] = OpenStruct.new({:a => :required, :string => :required})
@@ -2592,12 +2787,15 @@ module Fox
          def string var; @os.op[@os.ii].string = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXFont.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXFont.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -2632,12 +2830,15 @@ module Fox
          def height var; @os.op[@os.ii].height = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXFontDialog.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXFontDialog.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -2674,12 +2875,15 @@ module Fox
          def height var; @os.op[@os.ii].height = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXFontSelector.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXFontSelector.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -2720,12 +2924,15 @@ module Fox
          def pad_bottom var; @os.op[@os.ii].padBottom = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXFrame.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXFrame.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -2754,12 +2961,15 @@ module Fox
          def hy var; @os.op[@os.ii].hy = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXGIFCursor.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXGIFCursor.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -2792,12 +3002,15 @@ module Fox
          def height var; @os.op[@os.ii].height = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXGIFIcon.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXGIFIcon.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -2828,12 +3041,15 @@ module Fox
          def height var; @os.op[@os.ii].height = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXGIFImage.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXGIFImage.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -2872,8 +3088,8 @@ module Fox
          def height var; @os.op[@os.ii].height = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
      
          @os.op[1] = OpenStruct.new({:parent => :required, :vis => :required, :sharegroup => :required, :target => nil, :selector => 0, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
@@ -2899,12 +3115,15 @@ module Fox
          def height var; @os.op[@os.ii].height = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXGLCanvas.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXGLCanvas.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -2931,12 +3150,15 @@ module Fox
          def other var; @os.op[@os.ii].other = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXGLContext.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXGLContext.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -2955,7 +3177,10 @@ module Fox
      
           
      self.instance_eval &block
-     os.fx = ->(){ FXGLObject.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXGLObject.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -2988,12 +3213,15 @@ module Fox
          def back var; @os.op[@os.ii].back = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXGLShape.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXGLShape.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -3012,7 +3240,10 @@ module Fox
      
           
      self.instance_eval &block
-     os.fx = ->(){ FXViewport.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXViewport.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -3031,7 +3262,10 @@ module Fox
      
           
      self.instance_eval &block
-     os.fx = ->(){ FXLight.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXLight.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -3050,7 +3284,10 @@ module Fox
      
           
      self.instance_eval &block
-     os.fx = ->(){ FXMaterial.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXMaterial.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -3089,8 +3326,8 @@ module Fox
          def height var; @os.op[@os.ii].height = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
      
          @os.op[1] = OpenStruct.new({:p => :required, :vis => :required, :sharegroup => :required, :target => nil, :selector => 0, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
@@ -3116,12 +3353,15 @@ module Fox
          def height var; @os.op[@os.ii].height = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXGLViewer.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXGLViewer.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -3146,12 +3386,15 @@ module Fox
          def flags var; @os.op[@os.ii].flags = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXGLVisual.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXGLVisual.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -3170,7 +3413,10 @@ module Fox
      
           
      self.instance_eval &block
-     os.fx = ->(){ FXGradient.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXGradient.new(*(os.op[os.ii].to_h.values)) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -3215,12 +3461,15 @@ module Fox
          def pad_bottom var; @os.op[@os.ii].padBottom = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXGradientBar.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXGradientBar.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -3267,12 +3516,15 @@ module Fox
          def v_spacing var; @os.op[@os.ii].vSpacing = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXGroupBox.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXGroupBox.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -3301,12 +3553,15 @@ module Fox
          def ptr var; @os.op[@os.ii].ptr = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXHeaderItem.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXHeaderItem.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -3351,12 +3606,15 @@ module Fox
          def pad_bottom var; @os.op[@os.ii].padBottom = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXHeader.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXHeader.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -3401,12 +3659,15 @@ module Fox
          def v_spacing var; @os.op[@os.ii].vSpacing = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXHorizontalFrame.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXHorizontalFrame.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -3439,12 +3700,15 @@ module Fox
          def height var; @os.op[@os.ii].height = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXICOIcon.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXICOIcon.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -3475,12 +3739,15 @@ module Fox
          def height var; @os.op[@os.ii].height = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXICOImage.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXICOImage.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -3513,12 +3780,15 @@ module Fox
          def height var; @os.op[@os.ii].height = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXIcon.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXIcon.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -3537,7 +3807,10 @@ module Fox
      
           
      self.instance_eval &block
-     os.fx = ->(){ FXIconDict.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXIconDict.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -3566,12 +3839,15 @@ module Fox
          def data var; @os.op[@os.ii].data = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXIconItem.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXIconItem.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -3608,12 +3884,15 @@ module Fox
          def height var; @os.op[@os.ii].height = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXIconList.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXIconList.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -3636,12 +3915,15 @@ module Fox
          def app var; @os.op[@os.ii].app = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXIconSource.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXIconSource.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -3660,7 +3942,10 @@ module Fox
      
           
      self.instance_eval &block
-     os.fx = ->(){ FXId.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXId.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -3691,12 +3976,15 @@ module Fox
          def height var; @os.op[@os.ii].height = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXImage.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXImage.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -3739,12 +4027,15 @@ module Fox
          def pad_bottom var; @os.op[@os.ii].padBottom = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXImageFrame.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXImageFrame.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -3783,12 +4074,15 @@ module Fox
          def height var; @os.op[@os.ii].height = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXImageView.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXImageView.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -3827,12 +4121,15 @@ module Fox
          def height var; @os.op[@os.ii].height = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXInputDialog.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXInputDialog.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -3867,12 +4164,15 @@ module Fox
          def quality var; @os.op[@os.ii].quality = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXJPGIcon.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXJPGIcon.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -3905,12 +4205,15 @@ module Fox
          def quality var; @os.op[@os.ii].quality = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXJPGImage.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXJPGImage.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -3955,12 +4258,15 @@ module Fox
          def pad_bottom var; @os.op[@os.ii].padBottom = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXKnob.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXKnob.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -4005,12 +4311,15 @@ module Fox
          def pad_bottom var; @os.op[@os.ii].padBottom = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXLabel.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXLabel.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -4037,12 +4346,15 @@ module Fox
          def data var; @os.op[@os.ii].data = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXListItem.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXListItem.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -4079,12 +4391,15 @@ module Fox
          def height var; @os.op[@os.ii].height = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXList.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXList.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -4129,12 +4444,15 @@ module Fox
          def pad_bottom var; @os.op[@os.ii].padBottom = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXListBox.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXListBox.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -4171,12 +4489,15 @@ module Fox
          def height var; @os.op[@os.ii].height = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXMDIDeleteButton.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXMDIDeleteButton.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -4213,12 +4534,15 @@ module Fox
          def height var; @os.op[@os.ii].height = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXMDIRestoreButton.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXMDIRestoreButton.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -4255,12 +4579,15 @@ module Fox
          def height var; @os.op[@os.ii].height = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXMDIMaximizeButton.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXMDIMaximizeButton.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -4297,12 +4624,15 @@ module Fox
          def height var; @os.op[@os.ii].height = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXMDIMinimizeButton.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXMDIMinimizeButton.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -4341,12 +4671,15 @@ module Fox
          def height var; @os.op[@os.ii].height = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXMDIWindowButton.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXMDIWindowButton.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -4371,12 +4704,15 @@ module Fox
          def target var; @os.op[@os.ii].target = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXMDIMenu.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXMDIMenu.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -4415,12 +4751,15 @@ module Fox
          def height var; @os.op[@os.ii].height = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXMDIChild.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXMDIChild.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -4453,12 +4792,15 @@ module Fox
          def height var; @os.op[@os.ii].height = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXMDIClient.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXMDIClient.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -4509,12 +4851,15 @@ module Fox
          def v_spacing var; @os.op[@os.ii].vSpacing = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXMainWindow.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXMainWindow.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -4561,12 +4906,15 @@ module Fox
          def v_spacing var; @os.op[@os.ii].vSpacing = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXMatrix.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXMatrix.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -4589,12 +4937,15 @@ module Fox
          def data var; @os.op[@os.ii].data = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXMemoryBuffer.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXMemoryBuffer.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -4617,12 +4968,15 @@ module Fox
          def cont var; @os.op[@os.ii].cont = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXMemoryStream.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXMemoryStream.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -4669,8 +5023,8 @@ module Fox
          def v_spacing var; @os.op[@os.ii].vSpacing = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
      
          @os.op[1] = OpenStruct.new({:p => :required, :opts => :required, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 3, :padRight => 3, :padTop => 2, :padBottom => 2, :hSpacing => DEFAULT_SPACING, :vSpacing => DEFAULT_SPACING})
@@ -4700,12 +5054,15 @@ module Fox
          def v_spacing var; @os.op[@os.ii].vSpacing = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXMenuBar.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXMenuBar.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -4752,12 +5109,15 @@ module Fox
          def pad_bottom var; @os.op[@os.ii].padBottom = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXMenuButton.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXMenuButton.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -4786,12 +5146,15 @@ module Fox
          def opts var; @os.op[@os.ii].opts = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXMenuCaption.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXMenuCaption.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -4822,12 +5185,15 @@ module Fox
          def opts var; @os.op[@os.ii].opts = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXMenuCascade.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXMenuCascade.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -4858,12 +5224,15 @@ module Fox
          def opts var; @os.op[@os.ii].opts = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXMenuCheck.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXMenuCheck.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -4896,12 +5265,15 @@ module Fox
          def opts var; @os.op[@os.ii].opts = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXMenuCommand.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXMenuCommand.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -4926,12 +5298,15 @@ module Fox
          def opts var; @os.op[@os.ii].opts = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXMenuPane.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXMenuPane.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -4962,12 +5337,15 @@ module Fox
          def opts var; @os.op[@os.ii].opts = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXMenuRadio.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXMenuRadio.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -4992,12 +5370,15 @@ module Fox
          def opts var; @os.op[@os.ii].opts = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXMenuSeparator.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXMenuSeparator.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -5028,12 +5409,15 @@ module Fox
          def opts var; @os.op[@os.ii].opts = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXMenuTitle.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXMenuTitle.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -5068,12 +5452,15 @@ module Fox
          def y var; @os.op[@os.ii].y = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXMessageBox.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXMessageBox.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -5092,7 +5479,10 @@ module Fox
      
           
      self.instance_eval &block
-     os.fx = ->(){ FXObject.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXObject.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -5141,12 +5531,15 @@ module Fox
          def pad_bottom var; @os.op[@os.ii].padBottom = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXOption.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXOption.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -5189,12 +5582,15 @@ module Fox
          def pad_bottom var; @os.op[@os.ii].padBottom = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXOptionMenu.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXOptionMenu.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -5227,12 +5623,15 @@ module Fox
          def height var; @os.op[@os.ii].height = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXPCXIcon.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXPCXIcon.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -5263,12 +5662,15 @@ module Fox
          def height var; @os.op[@os.ii].height = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXPCXImage.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXPCXImage.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -5301,12 +5703,15 @@ module Fox
          def height var; @os.op[@os.ii].height = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXPNGIcon.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXPNGIcon.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -5337,12 +5742,15 @@ module Fox
          def height var; @os.op[@os.ii].height = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXPNGImage.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXPNGImage.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -5375,12 +5783,15 @@ module Fox
          def height var; @os.op[@os.ii].height = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXPPMIcon.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXPPMIcon.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -5411,12 +5822,15 @@ module Fox
          def height var; @os.op[@os.ii].height = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXPPMImage.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXPPMImage.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -5461,12 +5875,15 @@ module Fox
          def v_spacing var; @os.op[@os.ii].vSpacing = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXPacker.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXPacker.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -5515,12 +5932,15 @@ module Fox
          def pad_bottom var; @os.op[@os.ii].padBottom = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXPicker.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXPicker.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -5553,12 +5973,15 @@ module Fox
          def height var; @os.op[@os.ii].height = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXPopup.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXPopup.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -5593,12 +6016,15 @@ module Fox
          def height var; @os.op[@os.ii].height = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXPrintDialog.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXPrintDialog.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -5643,12 +6069,15 @@ module Fox
          def pad_bottom var; @os.op[@os.ii].padBottom = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXProgressBar.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXProgressBar.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -5685,12 +6114,15 @@ module Fox
          def height var; @os.op[@os.ii].height = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXProgressDialog.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXProgressDialog.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -5715,8 +6147,8 @@ module Fox
          def phi var; @os.op[@os.ii].phi = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
      
          @os.op[1] = OpenStruct.new({:x => :required, :y => :required, :z => :required, :w => :required})
@@ -5730,8 +6162,8 @@ module Fox
          def w var; @os.op[@os.ii].w = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
      
          @os.op[2] = OpenStruct.new({:floats => :required})
@@ -5739,8 +6171,8 @@ module Fox
          def floats var; @os.op[@os.ii].floats = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
      
          @os.op[3] = OpenStruct.new({:roll => :required, :pitch => :required, :yaw => :required})
@@ -5752,8 +6184,8 @@ module Fox
          def yaw var; @os.op[@os.ii].yaw = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
      
          @os.op[4] = OpenStruct.new({:ex => :required, :ey => :required, :ez => :required})
@@ -5765,12 +6197,15 @@ module Fox
          def ez var; @os.op[@os.ii].ez = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXQuatd.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXQuatd.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -5795,8 +6230,8 @@ module Fox
          def phi var; @os.op[@os.ii].phi = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
      
          @os.op[1] = OpenStruct.new({:roll => :required, :pitch => :required, :yaw => :required})
@@ -5808,8 +6243,8 @@ module Fox
          def yaw var; @os.op[@os.ii].yaw = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
      
          @os.op[2] = OpenStruct.new({:ex => :required, :ey => :required, :ez => :required})
@@ -5821,8 +6256,8 @@ module Fox
          def ez var; @os.op[@os.ii].ez = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
      
          @os.op[3] = OpenStruct.new({:mat => :required})
@@ -5830,8 +6265,8 @@ module Fox
          def mat var; @os.op[@os.ii].mat = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
      
          @os.op[4] = OpenStruct.new({:x => :required, :y => :required, :z => :required, :w => :required})
@@ -5845,12 +6280,15 @@ module Fox
          def w var; @os.op[@os.ii].w = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXQuatf.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXQuatf.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -5883,12 +6321,15 @@ module Fox
          def height var; @os.op[@os.ii].height = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXRGBIcon.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXRGBIcon.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -5919,12 +6360,15 @@ module Fox
          def height var; @os.op[@os.ii].height = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXRGBImage.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXRGBImage.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -5971,12 +6415,15 @@ module Fox
          def pad_bottom var; @os.op[@os.ii].padBottom = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXRadioButton.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXRadioButton.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -6009,8 +6456,8 @@ module Fox
          def zhi var; @os.op[@os.ii].zhi = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
      
          @os.op[1] = OpenStruct.new({:bounds => :required})
@@ -6018,8 +6465,8 @@ module Fox
          def bounds var; @os.op[@os.ii].bounds = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
      
          @os.op[2] = OpenStruct.new({:sphere => :required})
@@ -6027,12 +6474,15 @@ module Fox
          def sphere var; @os.op[@os.ii].sphere = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXRanged.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXRanged.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -6065,8 +6515,8 @@ module Fox
          def zhi var; @os.op[@os.ii].zhi = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
      
          @os.op[1] = OpenStruct.new({:bounds => :required})
@@ -6074,8 +6524,8 @@ module Fox
          def bounds var; @os.op[@os.ii].bounds = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
      
          @os.op[2] = OpenStruct.new({:sphere => :required})
@@ -6083,12 +6533,15 @@ module Fox
          def sphere var; @os.op[@os.ii].sphere = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXRangef.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXRangef.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -6133,12 +6586,15 @@ module Fox
          def pad_bottom var; @os.op[@os.ii].padBottom = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXRealSlider.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXRealSlider.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -6185,12 +6641,15 @@ module Fox
          def pad_bottom var; @os.op[@os.ii].padBottom = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXRealSpinner.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXRealSpinner.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -6213,8 +6672,8 @@ module Fox
          def a var; @os.op[@os.ii].a = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
      
          @os.op[1] = OpenStruct.new({:a => :required, :gp => :required, :target => nil, :selector => 0})
@@ -6228,12 +6687,15 @@ module Fox
          def selector var; @os.op[@os.ii].selector = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXRecentFiles.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXRecentFiles.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -6262,8 +6724,8 @@ module Fox
          def hh var; @os.op[@os.ii].hh = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
      
          @os.op[1] = OpenStruct.new({:p => :required, :s => :required})
@@ -6273,8 +6735,8 @@ module Fox
          def s var; @os.op[@os.ii].s = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
      
          @os.op[2] = OpenStruct.new({:topleft => :required, :bottomright => :required})
@@ -6284,12 +6746,15 @@ module Fox
          def bottomright var; @os.op[@os.ii].bottomright = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXRectangle.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXRectangle.new(*(os.op[os.ii].to_h.values)) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -6312,8 +6777,8 @@ module Fox
          def r var; @os.op[@os.ii].r = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
      
          @os.op[1] = OpenStruct.new({:rect => :required})
@@ -6321,8 +6786,8 @@ module Fox
          def rect var; @os.op[@os.ii].rect = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
      
          @os.op[2] = OpenStruct.new({:x => :required, :y => :required, :w => :required, :h => :required})
@@ -6336,8 +6801,8 @@ module Fox
          def h var; @os.op[@os.ii].h = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
      
          @os.op[3] = OpenStruct.new({:points => :required, :winding => false})
@@ -6347,12 +6812,15 @@ module Fox
          def winding var; @os.op[@os.ii].winding = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXRegion.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXRegion.new(*(os.op[os.ii].to_h.values)) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -6377,12 +6845,15 @@ module Fox
          def vendor_key var; @os.op[@os.ii].vendorKey = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXRegistry.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXRegistry.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -6419,12 +6890,15 @@ module Fox
          def height var; @os.op[@os.ii].height = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXReplaceDialog.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXReplaceDialog.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -6449,12 +6923,15 @@ module Fox
          def vis var; @os.op[@os.ii].vis = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXRootWindow.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXRootWindow.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -6499,12 +6976,15 @@ module Fox
          def pad_bottom var; @os.op[@os.ii].padBottom = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXRuler.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXRuler.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -6541,12 +7021,15 @@ module Fox
          def height var; @os.op[@os.ii].height = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXRulerView.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXRulerView.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -6565,7 +7048,10 @@ module Fox
      
           
      self.instance_eval &block
-     os.fx = ->(){ NotifyHeader.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ NotifyHeader.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -6584,7 +7070,10 @@ module Fox
      
           
      self.instance_eval &block
-     os.fx = ->(){ SCNotification.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ SCNotification.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -6611,12 +7100,15 @@ module Fox
          def size var; @os.op[@os.ii].size = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ TextRange.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ TextRange.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -6653,12 +7145,15 @@ module Fox
          def height var; @os.op[@os.ii].height = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXScintilla.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXScintilla.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -6691,12 +7186,15 @@ module Fox
          def height var; @os.op[@os.ii].height = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXScrollArea.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXScrollArea.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -6733,12 +7231,15 @@ module Fox
          def height var; @os.op[@os.ii].height = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXScrollBar.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXScrollBar.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -6761,12 +7262,15 @@ module Fox
          def p var; @os.op[@os.ii].p = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXScrollCorner.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXScrollCorner.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -6793,12 +7297,15 @@ module Fox
          def opts var; @os.op[@os.ii].opts = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXScrollPane.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXScrollPane.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -6831,12 +7338,15 @@ module Fox
          def height var; @os.op[@os.ii].height = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXScrollWindow.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXScrollWindow.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -6873,12 +7383,15 @@ module Fox
          def height var; @os.op[@os.ii].height = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXSearchDialog.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXSearchDialog.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -6919,12 +7432,15 @@ module Fox
          def pad_bottom var; @os.op[@os.ii].padBottom = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXSeparator.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXSeparator.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -6965,12 +7481,15 @@ module Fox
          def pad_bottom var; @os.op[@os.ii].padBottom = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXHorizontalSeparator.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXHorizontalSeparator.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -7011,12 +7530,15 @@ module Fox
          def pad_bottom var; @os.op[@os.ii].padBottom = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXVerticalSeparator.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXVerticalSeparator.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -7035,7 +7557,10 @@ module Fox
      
           
      self.instance_eval &block
-     os.fx = ->(){ FXSettings.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXSettings.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -7054,7 +7579,10 @@ module Fox
      
           
      self.instance_eval &block
-     os.fx = ->(){ FXShell.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXShell.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -7103,12 +7631,15 @@ module Fox
          def v_spacing var; @os.op[@os.ii].vSpacing = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXShutterItem.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXShutterItem.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -7157,12 +7688,15 @@ module Fox
          def v_spacing var; @os.op[@os.ii].vSpacing = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXShutter.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXShutter.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -7185,8 +7719,8 @@ module Fox
          def s var; @os.op[@os.ii].s = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
      
          @os.op[1] = OpenStruct.new({:ww => :required, :hh => :required})
@@ -7196,12 +7730,15 @@ module Fox
          def hh var; @os.op[@os.ii].hh = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXSize.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXSize.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -7246,12 +7783,15 @@ module Fox
          def pad_bottom var; @os.op[@os.ii].padBottom = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXSlider.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXSlider.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -7274,8 +7814,8 @@ module Fox
          def other_sphere var; @os.op[@os.ii].otherSphere = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
      
          @os.op[1] = OpenStruct.new({:cen => :required, :rad => 0.0})
@@ -7285,8 +7825,8 @@ module Fox
          def rad var; @os.op[@os.ii].rad = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
      
          @os.op[2] = OpenStruct.new({:x => :required, :y => :required, :z => :required, :rad => 0.0})
@@ -7300,8 +7840,8 @@ module Fox
          def rad var; @os.op[@os.ii].rad = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
      
          @os.op[3] = OpenStruct.new({:bounds => :required})
@@ -7309,12 +7849,15 @@ module Fox
          def bounds var; @os.op[@os.ii].bounds = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXSphered.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXSphered.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -7337,8 +7880,8 @@ module Fox
          def other_sphere var; @os.op[@os.ii].otherSphere = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
      
          @os.op[1] = OpenStruct.new({:cen => :required, :rad => 0.0})
@@ -7348,8 +7891,8 @@ module Fox
          def rad var; @os.op[@os.ii].rad = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
      
          @os.op[2] = OpenStruct.new({:x => :required, :y => :required, :z => :required, :rad => 0.0})
@@ -7363,8 +7906,8 @@ module Fox
          def rad var; @os.op[@os.ii].rad = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
      
          @os.op[3] = OpenStruct.new({:bounds => :required})
@@ -7372,12 +7915,15 @@ module Fox
          def bounds var; @os.op[@os.ii].bounds = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXSpheref.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXSpheref.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -7424,12 +7970,15 @@ module Fox
          def pad_bottom var; @os.op[@os.ii].padBottom = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXSpinner.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXSpinner.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -7458,12 +8007,15 @@ module Fox
          def ms var; @os.op[@os.ii].ms = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXSplashWindow.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXSplashWindow.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -7496,8 +8048,8 @@ module Fox
          def height var; @os.op[@os.ii].height = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
      
          @os.op[1] = OpenStruct.new({:p => :required, :tgt => :required, :sel => :required, :opts => SPLITTER_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0})
@@ -7519,12 +8071,15 @@ module Fox
          def height var; @os.op[@os.ii].height = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXSplitter.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXSplitter.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -7573,12 +8128,15 @@ module Fox
          def v_spacing var; @os.op[@os.ii].vSpacing = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXSpring.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXSpring.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -7623,12 +8181,15 @@ module Fox
          def v_spacing var; @os.op[@os.ii].vSpacing = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXStatusBar.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXStatusBar.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -7655,12 +8216,15 @@ module Fox
          def selector var; @os.op[@os.ii].selector = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXStatusLine.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXStatusLine.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -7683,12 +8247,15 @@ module Fox
          def cont var; @os.op[@os.ii].cont = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXStream.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXStream.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -7707,7 +8274,10 @@ module Fox
      
           
      self.instance_eval &block
-     os.fx = ->(){ FXStringDict.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXStringDict.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -7748,12 +8318,15 @@ module Fox
          def pad_bottom var; @os.op[@os.ii].padBottom = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXSwitcher.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXSwitcher.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -7786,12 +8359,15 @@ module Fox
          def height var; @os.op[@os.ii].height = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXTGAIcon.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXTGAIcon.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -7822,12 +8398,15 @@ module Fox
          def height var; @os.op[@os.ii].height = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXTGAImage.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXTGAImage.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -7860,12 +8439,15 @@ module Fox
          def height var; @os.op[@os.ii].height = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXTIFIcon.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXTIFIcon.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -7896,12 +8478,15 @@ module Fox
          def height var; @os.op[@os.ii].height = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXTIFImage.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXTIFImage.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -7946,12 +8531,15 @@ module Fox
          def pad_bottom var; @os.op[@os.ii].padBottom = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXTabBar.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXTabBar.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -7996,12 +8584,15 @@ module Fox
          def pad_bottom var; @os.op[@os.ii].padBottom = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXTabBook.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXTabBook.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -8046,12 +8637,15 @@ module Fox
          def pad_bottom var; @os.op[@os.ii].padBottom = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXTabItem.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXTabItem.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -8070,7 +8664,10 @@ module Fox
      
           
      self.instance_eval &block
-     os.fx = ->(){ FXTablePos.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXTablePos.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -8089,7 +8686,10 @@ module Fox
      
           
      self.instance_eval &block
-     os.fx = ->(){ FXTableRange.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXTableRange.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -8116,12 +8716,15 @@ module Fox
          def data var; @os.op[@os.ii].data = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXTableItem.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXTableItem.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -8166,12 +8769,15 @@ module Fox
          def pad_bottom var; @os.op[@os.ii].padBottom = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXTable.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXTable.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -8190,7 +8796,10 @@ module Fox
      
           
      self.instance_eval &block
-     os.fx = ->(){ FXHiliteStyle.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXHiliteStyle.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -8209,7 +8818,10 @@ module Fox
      
           
      self.instance_eval &block
-     os.fx = ->(){ FXTextChange.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXTextChange.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -8254,12 +8866,15 @@ module Fox
          def pad_bottom var; @os.op[@os.ii].padBottom = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXText.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXText.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -8306,12 +8921,15 @@ module Fox
          def pad_bottom var; @os.op[@os.ii].padBottom = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXTextField.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXTextField.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -8364,12 +8982,15 @@ module Fox
          def pad_bottom var; @os.op[@os.ii].padBottom = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXToggleButton.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXToggleButton.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -8416,8 +9037,8 @@ module Fox
          def v_spacing var; @os.op[@os.ii].vSpacing = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
      
          @os.op[1] = OpenStruct.new({:p => :required, :opts => LAYOUT_TOP|LAYOUT_LEFT|LAYOUT_FILL_X, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 3, :padRight => 3, :padTop => 2, :padBottom => 2, :hSpacing => DEFAULT_SPACING, :vSpacing => DEFAULT_SPACING})
@@ -8447,12 +9068,15 @@ module Fox
          def v_spacing var; @os.op[@os.ii].vSpacing = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXToolBar.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXToolBar.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -8489,12 +9113,15 @@ module Fox
          def height var; @os.op[@os.ii].height = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXToolBarGrip.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXToolBarGrip.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -8531,12 +9158,15 @@ module Fox
          def v_spacing var; @os.op[@os.ii].vSpacing = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXToolBarShell.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXToolBarShell.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -8573,12 +9203,15 @@ module Fox
          def height var; @os.op[@os.ii].height = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXToolBarTab.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXToolBarTab.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -8611,12 +9244,15 @@ module Fox
          def height var; @os.op[@os.ii].height = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXToolTip.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXToolTip.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -8635,7 +9271,10 @@ module Fox
      
           
      self.instance_eval &block
-     os.fx = ->(){ FXTopWindow.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXTopWindow.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -8658,12 +9297,15 @@ module Fox
          def a var; @os.op[@os.ii].a = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXTranslator.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXTranslator.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -8692,12 +9334,15 @@ module Fox
          def data var; @os.op[@os.ii].data = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXTreeItem.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXTreeItem.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -8734,12 +9379,15 @@ module Fox
          def height var; @os.op[@os.ii].height = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXTreeList.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXTreeList.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -8784,12 +9432,15 @@ module Fox
          def pad_bottom var; @os.op[@os.ii].padBottom = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXTreeListBox.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXTreeListBox.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -8846,12 +9497,15 @@ module Fox
          def pad_bottom var; @os.op[@os.ii].padBottom = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXTriStateButton.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXTriStateButton.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -8876,12 +9530,15 @@ module Fox
          def yy var; @os.op[@os.ii].yy = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXVec2d.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXVec2d.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -8906,12 +9563,15 @@ module Fox
          def yy var; @os.op[@os.ii].yy = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXVec2f.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXVec2f.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -8938,12 +9598,15 @@ module Fox
          def zz var; @os.op[@os.ii].zz = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXVec3d.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXVec3d.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -8970,12 +9633,15 @@ module Fox
          def zz var; @os.op[@os.ii].zz = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXVec3f.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXVec3f.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -9004,8 +9670,8 @@ module Fox
          def ww var; @os.op[@os.ii].ww = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
      
          @os.op[1] = OpenStruct.new({:vec3d => :required, :ww => 1.0})
@@ -9015,12 +9681,15 @@ module Fox
          def ww var; @os.op[@os.ii].ww = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXVec4d.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXVec4d.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -9049,8 +9718,8 @@ module Fox
          def ww var; @os.op[@os.ii].ww = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
      
          @os.op[1] = OpenStruct.new({:vec3f => :required, :ww => 1.0})
@@ -9060,12 +9729,15 @@ module Fox
          def ww var; @os.op[@os.ii].ww = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXVec4f.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXVec4f.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -9110,12 +9782,15 @@ module Fox
          def v_spacing var; @os.op[@os.ii].vSpacing = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXVerticalFrame.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXVerticalFrame.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -9142,12 +9817,15 @@ module Fox
          def d var; @os.op[@os.ii].d = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXVisual.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXVisual.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -9180,8 +9858,8 @@ module Fox
          def height var; @os.op[@os.ii].height = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
      
          @os.op[1] = OpenStruct.new({:a => :required, :vis => :required})
@@ -9191,8 +9869,8 @@ module Fox
          def vis var; @os.op[@os.ii].vis = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
      
          @os.op[2] = OpenStruct.new({:a => :required, :own => :required, :opts => :required, :x => :required, :y => :required, :w => :required, :h => :required})
@@ -9212,12 +9890,15 @@ module Fox
          def h var; @os.op[@os.ii].h = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXWindow.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXWindow.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -9266,12 +9947,15 @@ module Fox
          def v_spacing var; @os.op[@os.ii].vSpacing = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXWizard.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXWizard.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -9306,12 +9990,15 @@ module Fox
          def height var; @os.op[@os.ii].height = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXXBMIcon.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXXBMIcon.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -9344,12 +10031,15 @@ module Fox
          def height var; @os.op[@os.ii].height = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXXBMImage.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXXBMImage.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -9382,12 +10072,15 @@ module Fox
          def height var; @os.op[@os.ii].height = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXXPMIcon.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXXPMIcon.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 
@@ -9418,12 +10111,15 @@ module Fox
          def height var; @os.op[@os.ii].height = var; end
          
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
           
      self.instance_eval &block
-     os.fx = ->(){ FXXPMImage.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     
+     os.fx = ->(){ FXXPMImage.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     
+                                              
      Enhancement.stack.pop
    end
 

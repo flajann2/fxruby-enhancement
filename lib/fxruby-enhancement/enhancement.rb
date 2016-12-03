@@ -6,9 +6,18 @@ module Fox
   module Enhancement
     @stack = []
     @base = nil
+    SPECIAL = [:FXApp,
+               :FXColorItem,
+               :FXRegion,
+               :FXRectangle,
+               :FXGradient,
+               :FXEvent,
+               :FXFileStream,
+               :FXExtentd]
     
     # Module-level
     class << self
+      
       attr_accessor :application
       attr_accessor :stack, :base
       

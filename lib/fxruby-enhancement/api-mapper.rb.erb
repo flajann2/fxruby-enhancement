@@ -30,12 +30,17 @@ module Fox
          def <%= "#{@param.snake}" %> var; @os.op[@os.ii].<%= "#{@param}" %> = var; end
          <% end %>
          def instance a=nil, &block
-            @os.op[@os.ii].instance_name = a
-            @os.op[@os.ii].instance_block = block
+            @os.instance_name = a
+            @os.instance_block = block
          end
      <% @i+=1; end unless @details[:initialize].nil? %>     
      self.instance_eval &block
-     os.fx = ->(){ <%= @class %>.new(*([pos] + os.op[os.ii].to_h.values[1..-1])) }
+     <% unless Fox::Enhancement::SPECIAL.member? @class %>
+     os.fx = ->(){ <%= @class %>.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+     <% else %>
+     os.fx = ->(){ <%= @class %>.new(*(os.op[os.ii].to_h.values)) }
+     <% end %>
+                                              
      Enhancement.stack.pop
    end
 <% end %>
