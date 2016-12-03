@@ -13,35 +13,41 @@ module Fox
      include Enhancement
      attr_accessor :_o     
    end
-   def <%= @class.snake %> name = nil, ii: 0, &block
-     pos = Enhancement.stack.last
-     Enhancement.stack << (@os = os = OpenStruct.new(klass: <%= @class %>, op: [], ii: ii, fx: nil, kinder: [], inst: nil))
-     unless pos.nil?
-       pos.kinder << os 
-     else
-       Enhancement.base = os
-     end
-     <% @i=0 %>
-     <% for @iniparams in @details[:initialize].compact %>
-         <%= "@os.op[#{@i}]" %> = OpenStruct.new({<%= @iniparams.map{ |p,d| [p, d ? d : ":required"] }
-                                                             .map{ |p,d| ":#{p} => #{d}"}
-                                                             .join(', ') %>})
-         <% for @param, @default in @iniparams %>
-         def <%= "#{@param.snake}" %> var; @os.op[@os.ii].<%= "#{@param}" %> = var; end
-         <% end %>
-         def instance a=nil, &block
-            @os.instance_name = a
-            @os.instance_block = block
-         end
-     <% @i+=1; end unless @details[:initialize].nil? %>     
-     self.instance_eval &block
-     <% unless Fox::Enhancement::SPECIAL.member? @class %>
-     os.fx = ->(){ <%= @class %>.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
-     <% else %>
-     os.fx = ->(){ <%= @class %>.new(*(os.op[os.ii].to_h.values)) }
-     <% end %>
-                                              
-     Enhancement.stack.pop
-   end
 <% end %>
+  module Enhancement
+    module Mapper
+    <% for @class, @details in @api %>
+       def <%= @class.snake %> name = nil, ii: 0, pos: Enhancement.stack.last, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: <%= @class %>, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         unless pos.nil?
+           pos.kinder << os 
+         else
+           Enhancement.base = os
+         end
+         <% @i=0 %>
+         <% for @iniparams in @details[:initialize].compact %>
+             <%= "@os.op[#{@i}]" %> = OpenStruct.new({<%= @iniparams.map{ |p,d| [p, d ? d : ":required"] }
+                                                                 .map{ |p,d| ":#{p} => #{d}"}
+                                                                 .join(', ') %>})
+             <% for @param, @default in @iniparams %>
+             def <%= "#{@param.snake}" %> var; @os.op[@os.ii].<%= "#{@param}" %> = var; end
+             <% end %>
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+         <% @i+=1; end unless @details[:initialize].nil? %>     
+         self.instance_eval &block
+         <% unless Fox::Enhancement::SPECIAL.member? @class %>
+         os.fx = ->(){ <%= @class %>.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1])) }
+         <% else %>
+         os.fx = ->(){ <%= @class %>.new(*(os.op[os.ii].to_h.values)) }
+         <% end %>
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
+       end
+    <% end %>
+    end
+  end                                                      
 end

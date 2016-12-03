@@ -26,11 +26,7 @@ module Fox
         klass.class_eval do
         end
       end
-      
-      def app_set name, vendor
-        @application = FXApp.new(name, vendor)
-      end
-      
+            
       def app_activate
         @application.create
         @application.run
@@ -46,10 +42,6 @@ module Fox
 
 
     # instance level    
-    def app_set name, vendor
-      Enhancement.app_set name, vendor
-    end
-
     def app_activate
       Enhancement.app_activate
     end

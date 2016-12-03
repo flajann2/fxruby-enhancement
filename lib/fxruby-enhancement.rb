@@ -1,5 +1,6 @@
 require 'fox16'
 require 'ostruct'
+require 'awesome_print'
 
 class String
   def snake
