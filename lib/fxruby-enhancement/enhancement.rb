@@ -25,12 +25,7 @@ module Fox
         klass.extend ClassMethods
         klass.class_eval do
         end
-      end
-            
-      def app_activate
-        @application.create
-        @application.run
-      end
+      end            
     end
 
     # class level
