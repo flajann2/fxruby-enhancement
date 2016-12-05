@@ -103,12 +103,12 @@ DEPENDENCIES
   bundler (~> 1.0)
   fxruby (~> 1.6)
   juwelier (~> 2)
-  pry (~> 0)
-  pry-byebug (~> 3)
-  pry-doc (~> 0)
-  pry-remote (~> 0)
-  pry-rescue (~> 1)
-  pry-stack_explorer (~> 0)
+  pry
+  pry-byebug (>= 3)
+  pry-doc
+  pry-remote
+  pry-rescue (>= 1)
+  pry-stack_explorer
   rdoc (~> 5)
   rspec (~> 2.8.0)
   semver (~> 1)
