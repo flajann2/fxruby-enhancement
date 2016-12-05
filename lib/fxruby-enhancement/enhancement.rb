@@ -15,6 +15,7 @@ module Fox
                :FXEvent,
                :FXFileStream,
                :FXExtentd]
+    INITFORCE = { FXMenuBar: 1 }
     
     # Module-level
     class << self      

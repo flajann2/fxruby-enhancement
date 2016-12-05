@@ -5789,7 +5789,7 @@ module Fox
          os
        end
     
-       def fx_menu_bar name = nil, ii: 0, pos: Enhancement.stack.last, &block
+       def fx_menu_bar name = nil, ii: 1, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXMenuBar, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
