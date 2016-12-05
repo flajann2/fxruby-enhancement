@@ -44,7 +44,7 @@ module Fox
     
     module Mapper
       def fox_get_component name, &block
-        if block_given
+        if block_given?
           block.(Enhancement.components[name])
         else
           Enhancement.components[name]

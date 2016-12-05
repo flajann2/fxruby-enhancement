@@ -13,17 +13,18 @@ class OpenStruct
     if use_as_base.nil?
       self.inst = fx.() if self.inst.nil?
       self.kinder.each{ |os| os.create_fox_components }
-      self
     else
       OpenStruct.new(klass: use_as_base.class,
                      kinder: [self],
                      fx: ->() {use_as_base}).create_fox_components
     end
+    self
   end
 
   def instance_final_activate
     self.instance_result = self.instance_block.(self.inst) unless self.instance_block.nil?
-    self.kinder.each{ |os| os.instance_final_activate }    
+    self.kinder.each{ |os| os.instance_final_activate }
+    self
   end
 end
 
