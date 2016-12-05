@@ -18,13 +18,12 @@ include Fox
 include Fox::Enhancement::Mapper
 
 describe "DSL" do
-  
-  it "allows creation of the FXApp and one window" do
-    app = fx_app :foobase do
+  before :all do
+    @app = fx_app :foobase do
       app_name "Foo Test"
       vendor_name "RubyNEAT Spinoff tech"
             
-      osmw = fx_main_window :main do
+      @osmw = fx_main_window :main do
         title "test window"
         width 700
         height 300
@@ -38,12 +37,19 @@ describe "DSL" do
         :mission_accomplished
       end      
     end
+    @app.create_fox_components
+    @app.instance_final_activate
+    @app.activate
+  end
+  
+  it "allows creation of the FXApp and one window" do
     expect(Fox::Enhancement.base).to_not be_nil
     expect(Fox::Enhancement.base.klass).to eq Fox::FXApp
-    app.create_fox_components
-    app.instance_final_activate
-    app.inst.create
-    app.inst.run
-    expect(app.instance_result).to eq(:mission_accomplished)
+    @app.run_application
+    expect(@app.instance_result).to eq(:mission_accomplished)
+  end
+
+  it "adds the components to the internal registry" do
+    expect(fox_get_instance(:main).class).to eq(Fox::FXMainWindow)
   end
 end

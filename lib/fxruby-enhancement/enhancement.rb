@@ -6,6 +6,7 @@ module Fox
   module Enhancement
     @stack = []
     @base = nil
+    @components = {}
     SPECIAL = [:FXApp,
                :FXColorItem,
                :FXRegion,
@@ -19,13 +20,17 @@ module Fox
     class << self
       
       attr_accessor :application
-      attr_accessor :stack, :base
+      attr_accessor :stack, :base, :components
       
       def included(klass)
         klass.extend ClassMethods
         klass.class_eval do
         end
-      end            
+      end
+
+      def reset_components
+        @components = {}
+      end
     end
 
     # class level
@@ -34,7 +39,6 @@ module Fox
         @composure = block
       end      
     end
-
 
     # instance level    
     def app_activate
@@ -48,6 +52,16 @@ module Fox
     def create
       super
       show self.class.win_show
-    end   
-  end 
+    end
+    
+    module Mapper
+      def fox_get_component name
+        Enhancement.components[name]
+      end
+
+      def fox_get_instance name
+        fox_get_component(name).inst
+      end
+    end
+  end
 end

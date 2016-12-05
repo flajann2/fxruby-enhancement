@@ -1174,6 +1174,7 @@ module Fox
     
        def fx4_splitter name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FX4Splitter, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -1234,6 +1235,7 @@ module Fox
     
        def fx7_segment name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FX7Segment, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -1281,6 +1283,7 @@ module Fox
     
        def fx_accel_table name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXAccelTable, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -1299,6 +1302,7 @@ module Fox
     
        def fx_event name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXEvent, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -1317,6 +1321,7 @@ module Fox
     
        def fx_app name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXApp, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -1346,6 +1351,7 @@ module Fox
     
        def fx_arrow_button name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXArrowButton, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -1395,6 +1401,7 @@ module Fox
     
        def fxbmp_icon name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXBMPIcon, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -1432,6 +1439,7 @@ module Fox
     
        def fxbmp_image name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXBMPImage, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -1467,6 +1475,7 @@ module Fox
     
        def fx_bitmap name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXBitmap, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -1502,6 +1511,7 @@ module Fox
     
        def fx_bitmap_frame name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXBitmapFrame, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -1549,6 +1559,7 @@ module Fox
     
        def fx_bitmap_view name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXBitmapView, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -1592,6 +1603,7 @@ module Fox
     
        def fx_button name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXButton, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -1645,6 +1657,7 @@ module Fox
     
        def fxcur_cursor name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXCURCursor, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -1674,6 +1687,7 @@ module Fox
     
        def fx_canvas name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXCanvas, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -1715,6 +1729,7 @@ module Fox
     
        def fx_check_button name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXCheckButton, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -1766,6 +1781,7 @@ module Fox
     
        def fx_choice_box name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXChoiceBox, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -1811,6 +1827,7 @@ module Fox
     
        def fx_color_bar name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXColorBar, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -1860,6 +1877,7 @@ module Fox
     
        def fx_color_dialog name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXColorDialog, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -1899,6 +1917,7 @@ module Fox
     
        def fx_color_item name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXColorItem, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -1930,6 +1949,7 @@ module Fox
     
        def fx_color_list name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXColorList, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -1971,6 +1991,7 @@ module Fox
     
        def fx_color_ring name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXColorRing, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -2020,6 +2041,7 @@ module Fox
     
        def fx_color_selector name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXColorSelector, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -2061,6 +2083,7 @@ module Fox
     
        def fx_color_well name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXColorWell, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -2112,6 +2135,7 @@ module Fox
     
        def fx_color_wheel name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXColorWheel, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -2161,6 +2185,7 @@ module Fox
     
        def fx_combo_box name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXComboBox, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -2212,6 +2237,7 @@ module Fox
     
        def fx_composite name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXComposite, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -2249,6 +2275,7 @@ module Fox
     
        def fx_cursor name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXCursor, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -2316,6 +2343,7 @@ module Fox
     
        def fx_segment name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXSegment, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -2334,6 +2362,7 @@ module Fox
     
        def fx_arc name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXArc, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -2352,6 +2381,7 @@ module Fox
     
        def fxdc name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXDC, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -2379,6 +2409,7 @@ module Fox
     
        def fxps_bounds name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXPSBounds, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -2397,6 +2428,7 @@ module Fox
     
        def fx_printer name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXPrinter, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -2415,6 +2447,7 @@ module Fox
     
        def fxdc_print name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXDCPrint, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -2442,6 +2475,7 @@ module Fox
     
        def fxdc_window name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXDCWindow, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -2471,6 +2505,7 @@ module Fox
     
        def fx_data_target name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXDataTarget, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -2502,6 +2537,7 @@ module Fox
     
        def fx_debug_target name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXDebugTarget, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -2520,6 +2556,7 @@ module Fox
     
        def fx_delegator name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXDelegator, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -2547,6 +2584,7 @@ module Fox
     
        def fx_dial name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXDial, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -2596,6 +2634,7 @@ module Fox
     
        def fx_dialog_box name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXDialogBox, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -2647,6 +2686,7 @@ module Fox
     
        def fx_dict name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXDict, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -2665,6 +2705,7 @@ module Fox
     
        def fx_dir_box name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXDirBox, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -2714,6 +2755,7 @@ module Fox
     
        def fx_dir_dialog name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXDirDialog, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -2753,6 +2795,7 @@ module Fox
     
        def fx_dir_item name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXDirItem, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -2786,6 +2829,7 @@ module Fox
     
        def fx_dir_list name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXDirList, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -2827,6 +2871,7 @@ module Fox
     
        def fx_dir_selector name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXDirSelector, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -2868,6 +2913,7 @@ module Fox
     
        def fx_dock_bar name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXDockBar, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -2950,6 +2996,7 @@ module Fox
     
        def fx_dock_handler name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXDockHandler, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -2999,6 +3046,7 @@ module Fox
     
        def fx_dock_site name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXDockSite, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -3048,6 +3096,7 @@ module Fox
     
        def fx_dock_title name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXDockTitle, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -3099,6 +3148,7 @@ module Fox
     
        def fx_document name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXDocument, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -3117,6 +3167,7 @@ module Fox
     
        def fx_drag_corner name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXDragCorner, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -3144,6 +3195,7 @@ module Fox
     
        def fx_drawable name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXDrawable, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -3162,6 +3214,7 @@ module Fox
     
        def fx_drive_box name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXDriveBox, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -3211,6 +3264,7 @@ module Fox
     
        def fx_extentd name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXExtentd, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -3264,6 +3318,7 @@ module Fox
     
        def fx_extentf name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXExtentf, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -3317,6 +3372,7 @@ module Fox
     
        def fx_file_dialog name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXFileDialog, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -3356,6 +3412,7 @@ module Fox
     
        def fx_file_assoc name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXFileAssoc, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -3374,6 +3431,7 @@ module Fox
     
        def fx_file_dict name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXFileDict, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -3403,6 +3461,7 @@ module Fox
     
        def fx_file_item name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXFileItem, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -3436,6 +3495,7 @@ module Fox
     
        def fx_file_list name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXFileList, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -3477,6 +3537,7 @@ module Fox
     
        def fx_file_selector name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXFileSelector, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -3518,6 +3579,7 @@ module Fox
     
        def fx_file_stream name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXFileStream, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -3545,6 +3607,7 @@ module Fox
     
        def fx_folding_item name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXFoldingItem, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -3578,6 +3641,7 @@ module Fox
     
        def fx_folding_list name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXFoldingList, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -3619,6 +3683,7 @@ module Fox
     
        def fx_font_desc name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXFontDesc, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -3637,6 +3702,7 @@ module Fox
     
        def fx_font name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXFont, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -3700,6 +3766,7 @@ module Fox
     
        def fx_font_dialog name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXFontDialog, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -3739,6 +3806,7 @@ module Fox
     
        def fx_font_selector name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXFontSelector, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -3780,6 +3848,7 @@ module Fox
     
        def fx_frame name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXFrame, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -3825,6 +3894,7 @@ module Fox
     
        def fxgif_cursor name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXGIFCursor, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -3858,6 +3928,7 @@ module Fox
     
        def fxgif_icon name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXGIFIcon, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -3895,6 +3966,7 @@ module Fox
     
        def fxgif_image name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXGIFImage, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -3930,6 +4002,7 @@ module Fox
     
        def fxgl_canvas name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXGLCanvas, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -4000,6 +4073,7 @@ module Fox
     
        def fxgl_context name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXGLContext, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -4031,6 +4105,7 @@ module Fox
     
        def fxgl_object name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXGLObject, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -4049,6 +4124,7 @@ module Fox
     
        def fxgl_shape name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXGLShape, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -4086,6 +4162,7 @@ module Fox
     
        def fx_viewport name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXViewport, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -4104,6 +4181,7 @@ module Fox
     
        def fx_light name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXLight, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -4122,6 +4200,7 @@ module Fox
     
        def fx_material name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXMaterial, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -4140,6 +4219,7 @@ module Fox
     
        def fxgl_viewer name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXGLViewer, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -4210,6 +4290,7 @@ module Fox
     
        def fxgl_visual name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXGLVisual, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -4239,6 +4320,7 @@ module Fox
     
        def fx_gradient name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXGradient, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -4257,6 +4339,7 @@ module Fox
     
        def fx_gradient_bar name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXGradientBar, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -4306,6 +4389,7 @@ module Fox
     
        def fx_group_box name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXGroupBox, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -4357,6 +4441,7 @@ module Fox
     
        def fx_header_item name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXHeaderItem, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -4390,6 +4475,7 @@ module Fox
     
        def fx_header name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXHeader, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -4439,6 +4525,7 @@ module Fox
     
        def fx_horizontal_frame name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXHorizontalFrame, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -4488,6 +4575,7 @@ module Fox
     
        def fxico_icon name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXICOIcon, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -4525,6 +4613,7 @@ module Fox
     
        def fxico_image name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXICOImage, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -4560,6 +4649,7 @@ module Fox
     
        def fx_icon name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXIcon, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -4597,6 +4687,7 @@ module Fox
     
        def fx_icon_dict name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXIconDict, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -4615,6 +4706,7 @@ module Fox
     
        def fx_icon_item name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXIconItem, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -4648,6 +4740,7 @@ module Fox
     
        def fx_icon_list name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXIconList, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -4689,6 +4782,7 @@ module Fox
     
        def fx_icon_source name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXIconSource, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -4716,6 +4810,7 @@ module Fox
     
        def fx_id name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXId, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -4734,6 +4829,7 @@ module Fox
     
        def fx_image name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXImage, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -4769,6 +4865,7 @@ module Fox
     
        def fx_image_frame name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXImageFrame, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -4816,6 +4913,7 @@ module Fox
     
        def fx_image_view name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXImageView, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -4859,6 +4957,7 @@ module Fox
     
        def fx_input_dialog name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXInputDialog, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -4902,6 +5001,7 @@ module Fox
     
        def fxjpg_icon name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXJPGIcon, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -4941,6 +5041,7 @@ module Fox
     
        def fxjpg_image name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXJPGImage, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -4978,6 +5079,7 @@ module Fox
     
        def fx_knob name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXKnob, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -5027,6 +5129,7 @@ module Fox
     
        def fx_label name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXLabel, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -5076,6 +5179,7 @@ module Fox
     
        def fx_list_item name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXListItem, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -5107,6 +5211,7 @@ module Fox
     
        def fx_list name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXList, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -5148,6 +5253,7 @@ module Fox
     
        def fx_list_box name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXListBox, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -5197,6 +5303,7 @@ module Fox
     
        def fxmdi_delete_button name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXMDIDeleteButton, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -5238,6 +5345,7 @@ module Fox
     
        def fxmdi_restore_button name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXMDIRestoreButton, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -5279,6 +5387,7 @@ module Fox
     
        def fxmdi_maximize_button name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXMDIMaximizeButton, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -5320,6 +5429,7 @@ module Fox
     
        def fxmdi_minimize_button name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXMDIMinimizeButton, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -5361,6 +5471,7 @@ module Fox
     
        def fxmdi_window_button name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXMDIWindowButton, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -5404,6 +5515,7 @@ module Fox
     
        def fxmdi_menu name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXMDIMenu, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -5433,6 +5545,7 @@ module Fox
     
        def fxmdi_child name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXMDIChild, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -5476,6 +5589,7 @@ module Fox
     
        def fxmdi_client name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXMDIClient, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -5513,6 +5627,7 @@ module Fox
     
        def fx_main_window name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXMainWindow, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -5568,6 +5683,7 @@ module Fox
     
        def fx_matrix name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXMatrix, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -5619,6 +5735,7 @@ module Fox
     
        def fx_memory_buffer name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXMemoryBuffer, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -5646,6 +5763,7 @@ module Fox
     
        def fx_memory_stream name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXMemoryStream, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -5673,6 +5791,7 @@ module Fox
     
        def fx_menu_bar name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXMenuBar, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -5755,6 +5874,7 @@ module Fox
     
        def fx_menu_button name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXMenuButton, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -5806,6 +5926,7 @@ module Fox
     
        def fx_menu_caption name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXMenuCaption, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -5839,6 +5960,7 @@ module Fox
     
        def fx_menu_cascade name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXMenuCascade, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -5874,6 +5996,7 @@ module Fox
     
        def fx_menu_check name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXMenuCheck, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -5909,6 +6032,7 @@ module Fox
     
        def fx_menu_command name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXMenuCommand, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -5946,6 +6070,7 @@ module Fox
     
        def fx_menu_pane name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXMenuPane, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -5975,6 +6100,7 @@ module Fox
     
        def fx_menu_radio name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXMenuRadio, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -6010,6 +6136,7 @@ module Fox
     
        def fx_menu_separator name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXMenuSeparator, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -6039,6 +6166,7 @@ module Fox
     
        def fx_menu_title name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXMenuTitle, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -6074,6 +6202,7 @@ module Fox
     
        def fx_message_box name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXMessageBox, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -6113,6 +6242,7 @@ module Fox
     
        def fx_object name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXObject, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -6131,6 +6261,7 @@ module Fox
     
        def fx_option name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXOption, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -6184,6 +6315,7 @@ module Fox
     
        def fx_option_menu name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXOptionMenu, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -6231,6 +6363,7 @@ module Fox
     
        def fxpcx_icon name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXPCXIcon, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -6268,6 +6401,7 @@ module Fox
     
        def fxpcx_image name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXPCXImage, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -6303,6 +6437,7 @@ module Fox
     
        def fxpng_icon name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXPNGIcon, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -6340,6 +6475,7 @@ module Fox
     
        def fxpng_image name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXPNGImage, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -6375,6 +6511,7 @@ module Fox
     
        def fxppm_icon name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXPPMIcon, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -6412,6 +6549,7 @@ module Fox
     
        def fxppm_image name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXPPMImage, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -6447,6 +6585,7 @@ module Fox
     
        def fx_packer name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXPacker, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -6496,6 +6635,7 @@ module Fox
     
        def fx_picker name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXPicker, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -6549,6 +6689,7 @@ module Fox
     
        def fx_popup name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXPopup, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -6586,6 +6727,7 @@ module Fox
     
        def fx_print_dialog name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXPrintDialog, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -6625,6 +6767,7 @@ module Fox
     
        def fx_progress_bar name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXProgressBar, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -6674,6 +6817,7 @@ module Fox
     
        def fx_progress_dialog name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXProgressDialog, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -6715,6 +6859,7 @@ module Fox
     
        def fx_quatd name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXQuatd, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -6794,6 +6939,7 @@ module Fox
     
        def fx_quatf name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXQuatf, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -6873,6 +7019,7 @@ module Fox
     
        def fxrgb_icon name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXRGBIcon, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -6910,6 +7057,7 @@ module Fox
     
        def fxrgb_image name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXRGBImage, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -6945,6 +7093,7 @@ module Fox
     
        def fx_radio_button name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXRadioButton, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -6996,6 +7145,7 @@ module Fox
     
        def fx_ranged name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXRanged, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -7051,6 +7201,7 @@ module Fox
     
        def fx_rangef name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXRangef, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -7106,6 +7257,7 @@ module Fox
     
        def fx_real_slider name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXRealSlider, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -7155,6 +7307,7 @@ module Fox
     
        def fx_real_spinner name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXRealSpinner, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -7206,6 +7359,7 @@ module Fox
     
        def fx_recent_files name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXRecentFiles, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -7248,6 +7402,7 @@ module Fox
     
        def fx_rectangle name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXRectangle, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -7303,6 +7458,7 @@ module Fox
     
        def fx_region name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXRegion, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -7365,6 +7521,7 @@ module Fox
     
        def fx_registry name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXRegistry, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -7394,6 +7551,7 @@ module Fox
     
        def fx_replace_dialog name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXReplaceDialog, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -7435,6 +7593,7 @@ module Fox
     
        def fx_root_window name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXRootWindow, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -7464,6 +7623,7 @@ module Fox
     
        def fx_ruler name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXRuler, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -7513,6 +7673,7 @@ module Fox
     
        def fx_ruler_view name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXRulerView, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -7554,6 +7715,7 @@ module Fox
     
        def notify_header name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: NotifyHeader, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -7572,6 +7734,7 @@ module Fox
     
        def sc_notification name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: SCNotification, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -7590,6 +7753,7 @@ module Fox
     
        def text_range name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: TextRange, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -7621,6 +7785,7 @@ module Fox
     
        def fx_scintilla name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXScintilla, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -7662,6 +7827,7 @@ module Fox
     
        def fx_scroll_area name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXScrollArea, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -7699,6 +7865,7 @@ module Fox
     
        def fx_scroll_bar name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXScrollBar, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -7740,6 +7907,7 @@ module Fox
     
        def fx_scroll_corner name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXScrollCorner, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -7767,6 +7935,7 @@ module Fox
     
        def fx_scroll_pane name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXScrollPane, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -7798,6 +7967,7 @@ module Fox
     
        def fx_scroll_window name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXScrollWindow, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -7835,6 +8005,7 @@ module Fox
     
        def fx_search_dialog name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXSearchDialog, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -7876,6 +8047,7 @@ module Fox
     
        def fx_separator name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXSeparator, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -7921,6 +8093,7 @@ module Fox
     
        def fx_horizontal_separator name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXHorizontalSeparator, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -7966,6 +8139,7 @@ module Fox
     
        def fx_vertical_separator name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXVerticalSeparator, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -8011,6 +8185,7 @@ module Fox
     
        def fx_settings name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXSettings, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -8029,6 +8204,7 @@ module Fox
     
        def fx_shell name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXShell, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -8047,6 +8223,7 @@ module Fox
     
        def fx_shutter_item name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXShutterItem, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -8100,6 +8277,7 @@ module Fox
     
        def fx_shutter name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXShutter, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -8153,6 +8331,7 @@ module Fox
     
        def fx_size name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXSize, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -8191,6 +8370,7 @@ module Fox
     
        def fx_slider name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXSlider, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -8240,6 +8420,7 @@ module Fox
     
        def fx_sphered name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXSphered, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -8302,6 +8483,7 @@ module Fox
     
        def fx_spheref name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXSpheref, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -8364,6 +8546,7 @@ module Fox
     
        def fx_spinner name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXSpinner, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -8415,6 +8598,7 @@ module Fox
     
        def fx_splash_window name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXSplashWindow, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -8448,6 +8632,7 @@ module Fox
     
        def fx_splitter name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXSplitter, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -8508,6 +8693,7 @@ module Fox
     
        def fx_spring name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXSpring, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -8561,6 +8747,7 @@ module Fox
     
        def fx_status_bar name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXStatusBar, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -8610,6 +8797,7 @@ module Fox
     
        def fx_status_line name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXStatusLine, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -8641,6 +8829,7 @@ module Fox
     
        def fx_stream name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXStream, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -8668,6 +8857,7 @@ module Fox
     
        def fx_string_dict name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXStringDict, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -8686,6 +8876,7 @@ module Fox
     
        def fx_switcher name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXSwitcher, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -8731,6 +8922,7 @@ module Fox
     
        def fxtga_icon name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXTGAIcon, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -8768,6 +8960,7 @@ module Fox
     
        def fxtga_image name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXTGAImage, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -8803,6 +8996,7 @@ module Fox
     
        def fxtif_icon name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXTIFIcon, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -8840,6 +9034,7 @@ module Fox
     
        def fxtif_image name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXTIFImage, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -8875,6 +9070,7 @@ module Fox
     
        def fx_tab_bar name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXTabBar, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -8924,6 +9120,7 @@ module Fox
     
        def fx_tab_book name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXTabBook, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -8973,6 +9170,7 @@ module Fox
     
        def fx_tab_item name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXTabItem, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -9022,6 +9220,7 @@ module Fox
     
        def fx_table_pos name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXTablePos, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -9040,6 +9239,7 @@ module Fox
     
        def fx_table_range name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXTableRange, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -9058,6 +9258,7 @@ module Fox
     
        def fx_table_item name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXTableItem, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -9089,6 +9290,7 @@ module Fox
     
        def fx_table name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXTable, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -9138,6 +9340,7 @@ module Fox
     
        def fx_hilite_style name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXHiliteStyle, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -9156,6 +9359,7 @@ module Fox
     
        def fx_text_change name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXTextChange, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -9174,6 +9378,7 @@ module Fox
     
        def fx_text name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXText, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -9223,6 +9428,7 @@ module Fox
     
        def fx_text_field name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXTextField, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -9274,6 +9480,7 @@ module Fox
     
        def fx_toggle_button name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXToggleButton, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -9331,6 +9538,7 @@ module Fox
     
        def fx_tool_bar name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXToolBar, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -9413,6 +9621,7 @@ module Fox
     
        def fx_tool_bar_grip name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXToolBarGrip, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -9454,6 +9663,7 @@ module Fox
     
        def fx_tool_bar_shell name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXToolBarShell, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -9495,6 +9705,7 @@ module Fox
     
        def fx_tool_bar_tab name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXToolBarTab, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -9536,6 +9747,7 @@ module Fox
     
        def fx_tool_tip name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXToolTip, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -9573,6 +9785,7 @@ module Fox
     
        def fx_top_window name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXTopWindow, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -9591,6 +9804,7 @@ module Fox
     
        def fx_translator name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXTranslator, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -9618,6 +9832,7 @@ module Fox
     
        def fx_tree_item name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXTreeItem, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -9651,6 +9866,7 @@ module Fox
     
        def fx_tree_list name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXTreeList, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -9692,6 +9908,7 @@ module Fox
     
        def fx_tree_list_box name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXTreeListBox, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -9741,6 +9958,7 @@ module Fox
     
        def fx_tri_state_button name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXTriStateButton, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -9802,6 +10020,7 @@ module Fox
     
        def fx_vec2d name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXVec2d, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -9831,6 +10050,7 @@ module Fox
     
        def fx_vec2f name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXVec2f, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -9860,6 +10080,7 @@ module Fox
     
        def fx_vec3d name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXVec3d, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -9891,6 +10112,7 @@ module Fox
     
        def fx_vec3f name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXVec3f, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -9922,6 +10144,7 @@ module Fox
     
        def fx_vec4d name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXVec4d, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -9966,6 +10189,7 @@ module Fox
     
        def fx_vec4f name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXVec4f, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -10010,6 +10234,7 @@ module Fox
     
        def fx_vertical_frame name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXVerticalFrame, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -10059,6 +10284,7 @@ module Fox
     
        def fx_visual name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXVisual, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -10090,6 +10316,7 @@ module Fox
     
        def fx_window name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXWindow, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -10159,6 +10386,7 @@ module Fox
     
        def fx_wizard name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXWizard, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -10212,6 +10440,7 @@ module Fox
     
        def fxxbm_icon name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXXBMIcon, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -10251,6 +10480,7 @@ module Fox
     
        def fxxbm_image name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXXBMImage, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -10288,6 +10518,7 @@ module Fox
     
        def fxxpm_icon name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXXPMIcon, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
@@ -10325,6 +10556,7 @@ module Fox
     
        def fxxpm_image name = nil, ii: 0, pos: Enhancement.stack.last, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXXPMImage, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
          else
