@@ -52,4 +52,6 @@ describe "DSL" do
   it "adds the components to the internal registry" do
     expect(fox_get_instance(:main).class).to eq(Fox::FXMainWindow)
   end
+  
+  it "checks fx_menu_bar :ii defaults to 1 instead of zero"
 end
