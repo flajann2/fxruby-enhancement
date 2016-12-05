@@ -17,8 +17,7 @@ module Fox
                :FXExtentd]
     
     # Module-level
-    class << self
-      
+    class << self      
       attr_accessor :application
       attr_accessor :stack, :base, :components
       
@@ -40,27 +39,24 @@ module Fox
       end      
     end
 
-    # instance level    
-    def app_activate
-      Enhancement.app_activate
-    end
-
-    def application
-      Enhancement.application
-    end
-    
-    def create
-      super
-      show self.class.win_show
-    end
+    # instance level
+    # Add it here.
     
     module Mapper
-      def fox_get_component name
-        Enhancement.components[name]
+      def fox_get_component name, &block
+        if block_given?
+          block.(fox_get_component(name).inst)
+        else
+          Enhancement.components[name]
+        end
       end
 
-      def fox_get_instance name
-        fox_get_component(name).inst
+      def fox_get_instance name, &block
+        if block_given?
+          block.(fox_get_component(name).inst)
+        else
+          fox_get_component(name).inst
+        end
       end
     end
   end
