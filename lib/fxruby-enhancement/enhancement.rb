@@ -17,7 +17,7 @@ module Fox
                :FXExtentd]
     INITFORCE = { FXMenuBar: 1 }
     
-    # Module-level
+    # Module-level    
     class << self      
       attr_accessor :application
       attr_accessor :stack, :base, :components
@@ -30,7 +30,7 @@ module Fox
 
       def reset_components
         @components = {}
-      end
+      end      
     end
 
     # class level
@@ -44,6 +44,19 @@ module Fox
     # Add it here.
     
     module Mapper
+      # Find the referenced component's instance
+      def ref sym
+        raise "No reference for #{sym} found" if Enhancement.components[sym].nil?
+        raise "No instance for #{sym} allocated" if Enhancement.components[sym].inst.nil?        
+        Enhancement.components[sym].inst
+      end
+      
+      # Find the referenced component's wrapper object
+      def refc sym
+        raise "No reference component for #{sym} found" if Enhancement.components[sym].nil?
+        Enhancement.components[sym]
+      end
+
       def fox_get_component name, &block
         if block_given?
           block.(Enhancement.components[name])

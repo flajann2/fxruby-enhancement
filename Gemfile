@@ -5,7 +5,7 @@ gem "fxruby", "~> 1.6"
 gem "awesome_print", ">= 1"
 
 group :development do
-  gem "rspec", "~> 2.8.0"
+  gem "rspec", "~> 3"
   gem "yard", "~> 0.7"
   gem "rdoc", "~> 5"
   gem "bundler", "~> 1.0"

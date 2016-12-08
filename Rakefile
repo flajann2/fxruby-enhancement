@@ -39,7 +39,7 @@ Juwelier::Tasks.new do |gem|
   gem.email = "fred.mitchell@gmx.de"
   gem.authors = ["Fred Mitchell"]
   gem.version = s_version
-  gem.required_ruby_version = '>= 2.2.2'
+  gem.required_ruby_version = '>= 2.3.1'
 
   # dependencies defined in Gemfile
 end
