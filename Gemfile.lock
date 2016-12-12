@@ -28,7 +28,7 @@ GEM
     highline (1.7.8)
     interception (0.5)
     json (2.0.2)
-    juwelier (2.2.3)
+    juwelier (2.3.0)
       builder
       bundler (>= 1.13)
       git (>= 1.2.5)
