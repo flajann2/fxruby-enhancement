@@ -12,6 +12,36 @@
    API documentation and infer the DSL construct for fxruby-enhancement.
 
 ** Documentation
+*** binding.fx   
+    This is a way to split up your layouts into different .fx "modules", purely for
+    organizational reasons. For example,
+
+    #+begin_src ruby
+    binding.fx "overview"
+    #+end_src
+
+    will load the overview.fx portion of the GUI, which happens to be a tab contents
+    in the tab book, which in our case looks like:
+
+    #+begin_src ruby
+    # Overview Tab
+
+    fx_tab_item { text "&Overview" }
+    fx_horizontal_frame (:overview_info) {
+      opts STD_FRAME|LAYOUT_FILL_Y
+  
+      fx_group_box (:ov_connections_group) {
+        text "Connections"
+        opts STD_GROUPBOX|LAYOUT_FILL_Y
+    
+        fx_vertical_frame {
+          opts LAYOUT_FILL_Y|LAYOUT_FILL_X #|PACK_UNIFORM_HEIGHT
+      
+          fx_group_box (:ov_conn_rabbitmq) {
+    ...
+    #+end_src
+
+
 *** Examples
     Class-based enhancement:
     #+begin_src ruby
