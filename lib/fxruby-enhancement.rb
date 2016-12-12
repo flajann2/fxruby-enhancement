@@ -19,6 +19,13 @@ class Symbol
   end
 end
 
+class Binding
+  def fx fxf, dir=File.dirname(self.eval("__FILE__"))
+    filepath = File.expand_path("#{fxf}.fx", dir)
+    self.eval(File.read(filepath), filepath)
+  end
+end
+
 require_relative 'fxruby-enhancement/enhancement'
 require_relative 'fxruby-enhancement/ostruct-monkey'
 require_relative 'fxruby-enhancement/api-mapper'
