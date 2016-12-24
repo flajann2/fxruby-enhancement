@@ -57,21 +57,26 @@ module Fox
         Enhancement.components[sym]
       end
 
-      def fox_get_component name, &block
+      # Wrapper component
+      def fox_component name, &block
         if block_given?
           block.(Enhancement.components[name])
         else
           Enhancement.components[name]
         end
       end
+      alias_method :fxc, :fox_component
 
-      def fox_get_instance name, &block
+      # Actual FX Object instance
+      def fox_instance name, &block
         if block_given?
-          block.(fox_get_component(name).inst)
+          block.(fox_component(name).inst)
         else
-          fox_get_component(name).inst
+          fox_component(name).inst
         end
       end
+      alias_method :fxi, :fox_instance
+
     end
   end
 end
