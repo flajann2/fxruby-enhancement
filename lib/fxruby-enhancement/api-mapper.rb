@@ -10591,5 +10591,411 @@ module Fox
        end
     
     end
+    
+    # 
+    def sel_none(&block)
+      self.connect(SEL_NONE, &block)
+    end
+    
+    # Key pressed
+    def sel_keypress(&block)
+      self.connect(SEL_KEYPRESS, &block)
+    end
+    
+    # Key released
+    def sel_keyrelease(&block)
+      self.connect(SEL_KEYRELEASE, &block)
+    end
+    
+    # Left mouse button pressed
+    def sel_leftbuttonpress(&block)
+      self.connect(SEL_LEFTBUTTONPRESS, &block)
+    end
+    
+    # Left mouse button released
+    def sel_leftbuttonrelease(&block)
+      self.connect(SEL_LEFTBUTTONRELEASE, &block)
+    end
+    
+    # Middle mouse button pressed
+    def sel_middlebuttonpress(&block)
+      self.connect(SEL_MIDDLEBUTTONPRESS, &block)
+    end
+    
+    # Middle mouse button released
+    def sel_middlebuttonrelease(&block)
+      self.connect(SEL_MIDDLEBUTTONRELEASE, &block)
+    end
+    
+    # Right mouse button pressed
+    def sel_rightbuttonpress(&block)
+      self.connect(SEL_RIGHTBUTTONPRESS, &block)
+    end
+    
+    # Right mouse button released
+    def sel_rightbuttonrelease(&block)
+      self.connect(SEL_RIGHTBUTTONRELEASE, &block)
+    end
+    
+    # Mouse motion
+    def sel_motion(&block)
+      self.connect(SEL_MOTION, &block)
+    end
+    
+    # Mouse entered window
+    def sel_enter(&block)
+      self.connect(SEL_ENTER, &block)
+    end
+    
+    # Mouse left window
+    def sel_leave(&block)
+      self.connect(SEL_LEAVE, &block)
+    end
+    
+    # Focus into window
+    def sel_focusin(&block)
+      self.connect(SEL_FOCUSIN, &block)
+    end
+    
+    # Focus out of window
+    def sel_focusout(&block)
+      self.connect(SEL_FOCUSOUT, &block)
+    end
+    
+    # 
+    def sel_keymap(&block)
+      self.connect(SEL_KEYMAP, &block)
+    end
+    
+    # Lost the grab (Windows)
+    def sel_ungrabbed(&block)
+      self.connect(SEL_UNGRABBED, &block)
+    end
+    
+    # Must repaint window
+    def sel_paint(&block)
+      self.connect(SEL_PAINT, &block)
+    end
+    
+    # 
+    def sel_create(&block)
+      self.connect(SEL_CREATE, &block)
+    end
+    
+    # 
+    def sel_destroy(&block)
+      self.connect(SEL_DESTROY, &block)
+    end
+    
+    # Window was hidden
+    def sel_unmap(&block)
+      self.connect(SEL_UNMAP, &block)
+    end
+    
+    # Window was shown
+    def sel_map(&block)
+      self.connect(SEL_MAP, &block)
+    end
+    
+    # Resize
+    def sel_configure(&block)
+      self.connect(SEL_CONFIGURE, &block)
+    end
+    
+    # Widget lost selection
+    def sel_selection_lost(&block)
+      self.connect(SEL_SELECTION_LOST, &block)
+    end
+    
+    # Widget gained selection
+    def sel_selection_gained(&block)
+      self.connect(SEL_SELECTION_GAINED, &block)
+    end
+    
+    # Inquire selection data
+    def sel_selection_request(&block)
+      self.connect(SEL_SELECTION_REQUEST, &block)
+    end
+    
+    # Window to top of stack
+    def sel_raised(&block)
+      self.connect(SEL_RAISED, &block)
+    end
+    
+    # Window to bottom of stack
+    def sel_lowered(&block)
+      self.connect(SEL_LOWERED, &block)
+    end
+    
+    # Close window
+    def sel_close(&block)
+      self.connect(SEL_CLOSE, &block)
+    end
+    
+    # Delete window
+    def sel_delete(&block)
+      self.connect(SEL_DELETE, &block)
+    end
+    
+    # Iconified
+    def sel_minimize(&block)
+      self.connect(SEL_MINIMIZE, &block)
+    end
+    
+    # No longer iconified or maximized
+    def sel_restore(&block)
+      self.connect(SEL_RESTORE, &block)
+    end
+    
+    # Maximized
+    def sel_maximize(&block)
+      self.connect(SEL_MAXIMIZE, &block)
+    end
+    
+    # GUI update
+    def sel_update(&block)
+      self.connect(SEL_UPDATE, &block)
+    end
+    
+    # GUI command
+    def sel_command(&block)
+      self.connect(SEL_COMMAND, &block)
+    end
+    
+    # Clicked
+    def sel_clicked(&block)
+      self.connect(SEL_CLICKED, &block)
+    end
+    
+    # Double-clicked
+    def sel_doubleclicked(&block)
+      self.connect(SEL_DOUBLECLICKED, &block)
+    end
+    
+    # Triple-clicked
+    def sel_tripleclicked(&block)
+      self.connect(SEL_TRIPLECLICKED, &block)
+    end
+    
+    # Mouse wheel
+    def sel_mousewheel(&block)
+      self.connect(SEL_MOUSEWHEEL, &block)
+    end
+    
+    # GUI has changed
+    def sel_changed(&block)
+      self.connect(SEL_CHANGED, &block)
+    end
+    
+    # Verify change
+    def sel_verify(&block)
+      self.connect(SEL_VERIFY, &block)
+    end
+    
+    # Deselected
+    def sel_deselected(&block)
+      self.connect(SEL_DESELECTED, &block)
+    end
+    
+    # Selected
+    def sel_selected(&block)
+      self.connect(SEL_SELECTED, &block)
+    end
+    
+    # Inserted
+    def sel_inserted(&block)
+      self.connect(SEL_INSERTED, &block)
+    end
+    
+    # Replaced
+    def sel_replaced(&block)
+      self.connect(SEL_REPLACED, &block)
+    end
+    
+    # Deleted
+    def sel_deleted(&block)
+      self.connect(SEL_DELETED, &block)
+    end
+    
+    # Opened
+    def sel_opened(&block)
+      self.connect(SEL_OPENED, &block)
+    end
+    
+    # Closed
+    def sel_closed(&block)
+      self.connect(SEL_CLOSED, &block)
+    end
+    
+    # Expanded
+    def sel_expanded(&block)
+      self.connect(SEL_EXPANDED, &block)
+    end
+    
+    # Collapsed
+    def sel_collapsed(&block)
+      self.connect(SEL_COLLAPSED, &block)
+    end
+    
+    # Start a drag
+    def sel_begindrag(&block)
+      self.connect(SEL_BEGINDRAG, &block)
+    end
+    
+    # End a drag
+    def sel_enddrag(&block)
+      self.connect(SEL_ENDDRAG, &block)
+    end
+    
+    # Dragged
+    def sel_dragged(&block)
+      self.connect(SEL_DRAGGED, &block)
+    end
+    
+    # Lassoed
+    def sel_lassoed(&block)
+      self.connect(SEL_LASSOED, &block)
+    end
+    
+    # Timeout occurred
+    def sel_timeout(&block)
+      self.connect(SEL_TIMEOUT, &block)
+    end
+    
+    # Signal received
+    def sel_signal(&block)
+      self.connect(SEL_SIGNAL, &block)
+    end
+    
+    # Widget lost clipboard
+    def sel_clipboard_lost(&block)
+      self.connect(SEL_CLIPBOARD_LOST, &block)
+    end
+    
+    # Widget gained clipboard
+    def sel_clipboard_gained(&block)
+      self.connect(SEL_CLIPBOARD_GAINED, &block)
+    end
+    
+    # Inquire clipboard data
+    def sel_clipboard_request(&block)
+      self.connect(SEL_CLIPBOARD_REQUEST, &block)
+    end
+    
+    # Background chore
+    def sel_chore(&block)
+      self.connect(SEL_CHORE, &block)
+    end
+    
+    # Focus on widget itself
+    def sel_focus_self(&block)
+      self.connect(SEL_FOCUS_SELF, &block)
+    end
+    
+    # Focus moved right
+    def sel_focus_right(&block)
+      self.connect(SEL_FOCUS_RIGHT, &block)
+    end
+    
+    # Focus moved left
+    def sel_focus_left(&block)
+      self.connect(SEL_FOCUS_LEFT, &block)
+    end
+    
+    # Focus moved down
+    def sel_focus_down(&block)
+      self.connect(SEL_FOCUS_DOWN, &block)
+    end
+    
+    # Focus moved up
+    def sel_focus_up(&block)
+      self.connect(SEL_FOCUS_UP, &block)
+    end
+    
+    # Focus moved to next widget
+    def sel_focus_next(&block)
+      self.connect(SEL_FOCUS_NEXT, &block)
+    end
+    
+    # Focus moved to previous widget
+    def sel_focus_prev(&block)
+      self.connect(SEL_FOCUS_PREV, &block)
+    end
+    
+    # Drag action entering potential drop target
+    def sel_dnd_enter(&block)
+      self.connect(SEL_DND_ENTER, &block)
+    end
+    
+    # Drag action leaving potential drop target
+    def sel_dnd_leave(&block)
+      self.connect(SEL_DND_LEAVE, &block)
+    end
+    
+    # Drop on drop target
+    def sel_dnd_drop(&block)
+      self.connect(SEL_DND_DROP, &block)
+    end
+    
+    # Drag position changed over potential drop target
+    def sel_dnd_motion(&block)
+      self.connect(SEL_DND_MOTION, &block)
+    end
+    
+    # Inquire drag and drop data
+    def sel_dnd_request(&block)
+      self.connect(SEL_DND_REQUEST, &block)
+    end
+    
+    # Read activity on a pipe
+    def sel_io_read(&block)
+      self.connect(SEL_IO_READ, &block)
+    end
+    
+    # Write activity on a pipe
+    def sel_io_write(&block)
+      self.connect(SEL_IO_WRITE, &block)
+    end
+    
+    # Except activity on a pipe
+    def sel_io_except(&block)
+      self.connect(SEL_IO_EXCEPT, &block)
+    end
+    
+    # Picked some location
+    def sel_picked(&block)
+      self.connect(SEL_PICKED, &block)
+    end
+    
+    # Message inquiring about tooltip
+    def sel_query_tip(&block)
+      self.connect(SEL_QUERY_TIP, &block)
+    end
+    
+    # Message inquiring about statusline help
+    def sel_query_help(&block)
+      self.connect(SEL_QUERY_HELP, &block)
+    end
+    
+    # Toolbar docked
+    def sel_docked(&block)
+      self.connect(SEL_DOCKED, &block)
+    end
+    
+    # Toolbar floated
+    def sel_floated(&block)
+      self.connect(SEL_FLOATED, &block)
+    end
+    
+    # Session is about to close
+    def sel_session_notify(&block)
+      self.connect(SEL_SESSION_NOTIFY, &block)
+    end
+    
+    # Session is closed
+    def sel_session_closed(&block)
+      self.connect(SEL_SESSION_CLOSED, &block)
+    end
+                                                            
   end                                                      
 end

@@ -50,5 +50,11 @@ module Fox
        end
     <% end %>
     end
+    <% for @select, @meth, @comment in @sel %>
+    # <%= @comment %>
+    def <%= @select.downcase %>(&block)
+      self.connect(<%= @select %>, &block)
+    end
+    <% end %>                                                        
   end                                                      
 end

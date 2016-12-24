@@ -12,6 +12,7 @@ $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 $LOAD_PATH.unshift(File.dirname(__FILE__))
 
 SOURCES = File.expand_path("../fxruby/rdoc-sources", File.dirname(__FILE__))
+SRC_DEFS = File.expand_path("../fxruby/fox-includes/fxdefs.h", File.dirname(__FILE__))
 TARGET = File.expand_path("../lib/fxruby-enhancement/api-mapper.rb", File.dirname(__FILE__))
 TEMPLATE = File.expand_path("api-mapper.rb.erb", File.dirname(TARGET))
 File.delete TARGET unless not File.exists? TARGET
@@ -82,7 +83,15 @@ API = Dir.entries(SOURCES)
                              ]}
       .to_h
 
-pp API
+# Scan for Selectors
+File.open(SRC_DEFS, 'r') do |fd|
+  SEL = fd.readlines
+        .select{ |s| s =~ /SEL_/ }
+        .map{ |s| /(SEL_)([A-Z_]+),(.*)/.match s }
+        .compact
+        .map{ |md| [md[1], md[2], /\b*\/\/\/(.*)/.match(md[3])] }
+        .map{ |s, f, c| [s+f, f.downcase.to_sym, c.nil? ? '' : c[1].strip] }
+end
 
 # Now that we have the entire FXRuby API description,
 # we now rely on the template to flesh out and create
@@ -105,6 +114,7 @@ pp API
 File.open(TEMPLATE, 'r') do |template|
   File.open(TARGET, 'w') do |target|
     @api = API
+    @sel = SEL
     target.write ERB.new(template.read).result(binding)
   end
 end
