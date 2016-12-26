@@ -107,6 +107,7 @@ DEPENDENCIES
   awesome_print (>= 1)
   bundler (~> 1.0)
   fxruby (~> 1.6)
+  json (~> 2.0, >= 2.0.2)
   juwelier (~> 2)
   pry
   pry-byebug (>= 3)

@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new(">= 0".freeze) if s.respond_to? :required_rubygems_version=
   s.require_paths = ["lib".freeze]
   s.authors = ["Fred Mitchell".freeze]
-  s.date = "2016-12-24"
+  s.date = "2016-12-26"
   s.description = "The fxruby library is an excellent wrapper for the FOX toolkit. However, it reflects the\n  C++-ness of FOX, rather than being more Ruby-like. As such, creating composed objects with\n  it tends to be rather ugly and cumbersome.\n\n  fxruby-enhancement is a wrapper for the wrapper, to \"rubyfy\" it and make it more easy to \n  use for Rubyists. \n\n  fxruby-enhancement is basically a DSL of sorts, and every effort has been taken to make \n  it intuitive to use. Once you get the hang of it, you should be able to look at the FXRuby\n  API documentation and infer the DSL construct for fxruby-enhancement.".freeze
   s.email = "fred.mitchell@gmx.de".freeze
   s.extra_rdoc_files = [
@@ -42,7 +42,7 @@ Gem::Specification.new do |s|
   s.homepage = "http://github.com/flajann2/fxruby-enhancement".freeze
   s.licenses = ["MIT".freeze]
   s.required_ruby_version = Gem::Requirement.new(">= 2.3.1".freeze)
-  s.rubygems_version = "2.5.2".freeze
+  s.rubygems_version = "2.6.8".freeze
   s.summary = "fxruby enhancements".freeze
 
   if s.respond_to? :specification_version then
@@ -52,6 +52,7 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<semver>.freeze, ["~> 1"])
       s.add_runtime_dependency(%q<fxruby>.freeze, ["~> 1.6"])
       s.add_runtime_dependency(%q<awesome_print>.freeze, [">= 1"])
+      s.add_runtime_dependency(%q<json>.freeze, [">= 2.0.2", "~> 2.0"])
       s.add_development_dependency(%q<rspec>.freeze, ["~> 3"])
       s.add_development_dependency(%q<yard>.freeze, ["~> 0.7"])
       s.add_development_dependency(%q<rdoc>.freeze, ["~> 5"])
@@ -68,6 +69,7 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<semver>.freeze, ["~> 1"])
       s.add_dependency(%q<fxruby>.freeze, ["~> 1.6"])
       s.add_dependency(%q<awesome_print>.freeze, [">= 1"])
+      s.add_dependency(%q<json>.freeze, [">= 2.0.2", "~> 2.0"])
       s.add_dependency(%q<rspec>.freeze, ["~> 3"])
       s.add_dependency(%q<yard>.freeze, ["~> 0.7"])
       s.add_dependency(%q<rdoc>.freeze, ["~> 5"])
@@ -85,6 +87,7 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<semver>.freeze, ["~> 1"])
     s.add_dependency(%q<fxruby>.freeze, ["~> 1.6"])
     s.add_dependency(%q<awesome_print>.freeze, [">= 1"])
+    s.add_dependency(%q<json>.freeze, [">= 2.0.2", "~> 2.0"])
     s.add_dependency(%q<rspec>.freeze, ["~> 3"])
     s.add_dependency(%q<yard>.freeze, ["~> 0.7"])
     s.add_dependency(%q<rdoc>.freeze, ["~> 5"])
