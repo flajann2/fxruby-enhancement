@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-gem "semver", "~> 1"
+gem "semver2", "~> 3"
 gem "fxruby", "~> 1.6"
 gem "awesome_print", ">= 1"
 gem "json", "~> 2.0", ">= 2.0.2"
