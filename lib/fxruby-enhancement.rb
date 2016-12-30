@@ -2,6 +2,7 @@ require 'fox16'
 require 'ostruct'
 require 'awesome_print'
 require 'forwardable'
+require 'queue_ding'
 
 require_relative 'fxruby-enhancement/core-monkey.rb'
 require_relative 'fxruby-enhancement/enhancement'
