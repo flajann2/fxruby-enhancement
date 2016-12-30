@@ -12,6 +12,24 @@
    API documentation and infer the DSL construct for fxruby-enhancement.
 
 ** Documentation
+*** Events from other Threads
+    In handling interfacing to databases, AMQPs like RabbitMQ,
+    network connections, or just about anything else that might otherwise
+    slow down the GUI (Fox) thread and make it non-responsive, there needs 
+    to be a clean way to get data into and out of the GUI thread.
+
+    Fox provides some mechanisms specifically for sockets or system-level IO,
+    but these are too specific, and would require some awkard workarounds to
+    make them work in the general context.
+
+    And so we provide a means to accomplish that in a clean -- to you, anyway --
+    manner. We make use of queue_ding queues for passing messages into and out of
+    the FXRuby (and therefore FXRuby Enhancement) space. This will allow you to
+    keep the GUI thread responsive and also to maintain a seperation of concerns.
+**** The Queue_Ding Queues
+***** TODO Ingress
+***** TODO Egress
+
 *** binding.fx   
     This is a way to split up your layouts into different .fx "modules", purely for
     organizational reasons. For example,

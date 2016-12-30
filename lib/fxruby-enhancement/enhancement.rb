@@ -22,15 +22,18 @@ module Fox
       attr_accessor :application
       attr_accessor :stack, :base, :components
       
+      # queues for messages objects coming from and going to other threads.
+      attr_accessor :ingress, :egress
+      
       def included(klass)
+        @ingress ||= QDing.new
+        @egress  ||= QDing.new
         klass.extend ClassMethods
-        klass.class_eval do
-        end
       end
 
       def reset_components
         @components = {}
-      end      
+      end
     end
 
     # class level
@@ -47,7 +50,7 @@ module Fox
       # Find the referenced component's instance
       def ref sym
         raise "No reference for #{sym} found" if Enhancement.components[sym].nil?
-        raise "No instance for #{sym} allocated" if Enhancement.components[sym].inst.nil?        
+        raise "No instance for #{sym} allocated" if Enhancement.components[sym].inst.nil?
         Enhancement.components[sym].inst
       end
       
