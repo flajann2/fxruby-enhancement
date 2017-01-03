@@ -27,4 +27,3 @@ class OpenStruct
     self
   end
 end
-

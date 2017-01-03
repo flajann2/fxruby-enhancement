@@ -47,19 +47,18 @@ module Fox
       end
 
       # Sets up the mechanism by which the custom ingress is activated
-      def activate_ingress_handlers  app: Enhancement.base
+      def activate_ingress_handlers app = Enhancement.base
         raise "Application Object not instantiated yet" if app.nil? || app.inst.nil?
         raise "No ingress blocks set" if @ingress_map.empty?
-
-        app.inst.addTimeout(@ingress_delay ||= @ms_ingress_delay_min)
-        @ing_blk = ->() {
+        
+        @ing_blk = ->(sender, sel, data) { 
           begin
             unless @ingress.empty?
               @ingress_delay = @ms_ingress_delay_min
               until @ingress.empty?
                 dispatch_to, payload = @ingress.next
                 raise "Unknown dispatch #{dispatch_to}" unless @ingress_map.member? dispatch_to
-                @ingress_map[dispatch_to].(payload)
+                @ingress_map[dispatch_to].(dispatch_to, payload)
               end
             else
               @ingress_delay *= 2 unless @ingress_delay >= @ms_ingress_delay_max
