@@ -1,8 +1,10 @@
+# coding: utf-8
 module Fox 
-  # include this in your top class objects.
+
+  # Include this in your top class objects.
   # If for a module, you want to extend, rather
-  # than include FIXME: later we will clean
-  # this up.
+  # than include.
+  # FIXME: later we will clean this up.
   module Enhancement
     @stack = []
     @base = nil
@@ -18,21 +20,59 @@ module Fox
     INITFORCE = { FXMenuBar: 1 }
     
     # Module-level    
-    class << self      
-      attr_accessor :application
-      attr_accessor :stack, :base, :components
+    class << self
+      attr_accessor :stack,
+                    :base, # the very first component declared, usually the app.
+                    :components,
+                    :deferred_setups,
+                    :ms_ingress_delay_min,
+                    :ms_ingress_delay_max
       
       # queues for messages objects coming from and going to other threads.
-      attr_accessor :ingress, :egress
+      attr_accessor :ingress, :egress, :ingress_map
       
       def included(klass)
         @ingress ||= QDing.new
         @egress  ||= QDing.new
+        @ingress_map ||= {}
+        @deferred_setups ||= []
+        @ms_ingress_delay_min = 100
+        @ms_ingress_delay_max = 1600
+        
         klass.extend ClassMethods
       end
 
       def reset_components
         @components = {}
+      end
+
+      # Sets up the mechanism by which the custom ingress is activated
+      def activate_ingress_handlers  app: Enhancement.base
+        raise "Application Object not instantiated yet" if app.nil? || app.inst.nil?
+        raise "No ingress blocks set" if @ingress_map.empty?
+
+        app.inst.addTimeout(@ingress_delay ||= @ms_ingress_delay_min)
+        @ing_blk = ->() {
+          begin
+            unless @ingress.empty?
+              @ingress_delay = @ms_ingress_delay_min
+              until @ingress.empty?
+                dispatch_to, payload = @ingress.next
+                raise "Unknown dispatch #{dispatch_to}" unless @ingress_map.member? dispatch_to
+                @ingress_map[dispatch_to].(payload)
+              end
+            else
+              @ingress_delay *= 2 unless @ingress_delay >= @ms_ingress_delay_max
+            end
+          ensure
+            app.inst.addTimeout(@ingress_delay, &@ing_blk)
+          end
+        }
+        app.inst.addTimeout(@ingress_delay ||= @ms_ingress_delay_min, &@ing_blk)
+      end
+
+      def activate_deferred_setups common_ob, app: Enhancement.base
+        Enhancement.deferred_setups.each { |b| b.(common_ob, app) }
       end
     end
 
@@ -80,6 +120,19 @@ module Fox
       end
       alias_method :fxi, :fox_instance
 
+      # Handles incomming external messages of type given
+      # block, written by user, is called with |type, message|
+      def ingress_handler type = :all, &block
+        Enhancement.ingress_map[type] = block
+      end
+
+      # This is invoked after we have
+      # a real application in place. Invocation
+      # of this is held off until the last possible
+      # moment.
+      def deferred_setup &block
+        Enhancement.deferred_setups << block
+      end      
     end
   end
 end
