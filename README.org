@@ -10,6 +10,10 @@
          - [[#enhancementegress][Enhancement.egress]]
      - [[#bindingfx][binding.fx]]
      - [[#examples][Examples]]
+       - [[#hello-world-example-full-the-enhancement-way][Hello World example (full) the Enhancement Way]]
+       - [[#hello-world-the-old-fxruby-way][Hello World the old fxruby way:]]
+       - [[#bouncing-ball-example-full][Bouncing Ball example (full):]]
+       - [[#bouncing-ball-the-old-fxruby-way][Bouncing Ball the old fxruby way:]]
    - [[#release-notes][Release Notes]]
    - [[#known-issues][Known Issues]]
    - [[#contributing-to-fxruby-enhancement][Contributing to fxruby-enhancement]]
@@ -220,7 +224,7 @@
     end    
     #+end_src
 
-    [[file:examples/hello.rb][Hello World]] example (full) the Enhancement Way
+**** [[file:examples/hello.rb][Hello World]] example (full) the Enhancement Way
     #+begin_src ruby
 #!/usr/bin/env ruby
 require 'fxruby-enhancement'
@@ -257,7 +261,7 @@ fox_component :app do |app|
 end
     #+end_src
     
-    Hello World the old fxruby way:
+**** Hello World the old fxruby way:
     #+begin_src ruby
 #!/usr/bin/env ruby
 
@@ -279,7 +283,7 @@ application.run()
     Perhaps this example is too small, but perhaps the next one will
     more illustrative.
 
-    [[file:examples/bounce.rb][Bouncing Ball]] example (full):
+**** [[file:examples/bounce.rb][Bouncing Ball]] example (full):
     #+begin_src ruby
 #!/usr/bin/env ruby
 require 'fxruby-enhancement'
@@ -441,7 +445,7 @@ if __FILE__ == $0
 end
     #+end_src
 
-    Bouncing Ball the old fxruby way:
+**** Bouncing Ball the old fxruby way:
     #+begin_src ruby
 require 'fox16'
 
