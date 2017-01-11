@@ -94,7 +94,7 @@ module Fox
         if block_given?
           block.(inst)
         end
-        inst
+        return inst
       end
       
       # Find the referenced component's wrapper object
@@ -104,7 +104,7 @@ module Fox
         if block_given?
           block.(c)
         end
-        c
+        return c
       end
 
       # Wrapper component

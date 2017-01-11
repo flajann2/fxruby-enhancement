@@ -28,6 +28,7 @@ fx_app :app do
   }
 end
 
+# alias for fox_component is fxc
 fox_component :app do |app|
   app.launch
 end
