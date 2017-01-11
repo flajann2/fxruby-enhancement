@@ -1,4 +1,22 @@
 #+OPTIONS: broken-links:mark
+* Table of Contents                                                     :TOC_5:
+ - [[#fxruby-enhancement][fxruby-enhancement]]
+   - [[#introduction][Introduction]]
+   - [[#installation][Installation]]
+   - [[#documentation][Documentation]]
+     - [[#events-from-other-threads][Events from other Threads]]
+       - [[#the-queue_ding-queues][The Queue_Ding Queues]]
+         - [[#enhancementingress--some_tag-some_payload][Enhancement.ingress << [:some_tag, some_payload]]]
+         - [[#enhancementegress][Enhancement.egress]]
+     - [[#bindingfx][binding.fx]]
+     - [[#examples][Examples]]
+   - [[#release-notes][Release Notes]]
+   - [[#known-issues][Known Issues]]
+   - [[#contributing-to-fxruby-enhancement][Contributing to fxruby-enhancement]]
+   - [[#copyright][Copyright]]
+   - [[#the-scratchpad][The Scratchpad]]
+     - [[#genesis-of-the-meta-meta-programming-whereby-brain-goes-boom][Genesis of the meta-meta programming, whereby brain goes boom]]
+
 * fxruby-enhancement
 ** Introduction
    The fxruby library is an excellent wrapper for the FOX toolkit. However, it reflects the
@@ -445,4 +463,5 @@ end
    <% end %>
 <% end %>
     #+end_src
+
 
