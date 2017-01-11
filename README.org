@@ -4,6 +4,8 @@
    - [[#introduction][Introduction]]
    - [[#installation][Installation]]
    - [[#documentation][Documentation]]
+     - [[#in-general][In General]]
+     - [[#execution-phases-of-fxruby-enhancement][Execution Phases of fxruby-enhancement]]
      - [[#events-from-other-threads][Events from other Threads]]
        - [[#the-queue_ding-queues][The Queue_Ding Queues]]
          - [[#enhancementingress][Enhancement.ingress]]
@@ -64,6 +66,67 @@
    a concern, but it is something to be aware of.
 
 ** Documentation
+*** In General
+    fxruby-enhancement (which we will refer to as "Enhancement" from time
+    to time) makes use of the singleton pattern in Ruby. There is basically
+    no need to declare subclases off of most FXRuby classes. This is a very
+    C++ish way, and the way the C++ Fox Toolkit works. It will make most
+    hard-core Rubyists gnash their teeth.
+
+    Here, we do away with all of it. Also, the SEL_x variables -- which maps
+    to the C++ #defines of the same -- is replaced with method declarations
+    of the nature of sel_x -- just the lowercase version of the same. For instance,
+    in the straight fxruby, you would have to do something like:
+
+    #+begin_src ruby
+    @canvas.connect(SEL_PAINT) { |sender, sel, evt|
+      FXDCWindow.new(sender, evt) { |dc|
+        dc.drawImage(@backBuffer, 0, 0)
+      }
+    #+end_srcv
+
+    but with Enhancement, you do it thusly:
+
+    #+begin_src ruby
+    instance { |c|
+      c.sel_paint { |sender, sel, event|
+        FXDCWindow.new(sender, event) { |dc|
+          dc.drawImage(ref(:back_buffer), 0, 0)
+        }
+      }
+    }
+    #+end_src
+    
+    And here we illustrate something else, the instance declaration. Why do
+    we do it this way? Because Enhancement is multi-phase. First, we declare
+    the GUI layout with Enhancement. At this time, none of the underlying
+    FXRuby objects exist yet, but need to be referenced anyway. So we defer
+    that part where references need to be resolved to the instance claus,
+    which, as you can well imagine, means the FXRuby object instances have
+    been instantiated.
+
+    You will also note the use of the ref clause, as in:
+    #+begin_src ruby
+    dc.drawImage(ref(:back_buffer), 0, 0)
+    #+end_src
+    
+    When the :back_buffer object was declared, it was done thusly:
+    #+begin_src ruby
+    fx_image(:back_buffer) { opts IMAGE_KEEP }
+    #+end_src
+
+    So when the actual FXImage object is instantiated, it is associated to
+    the :back_buffer tag, which then is found by ref() and can be used
+    anywhere in the instantiation phase.
+*** Execution Phases of fxruby-enhancement
+    This 
+    | State                     | Description                                                                                                                  |
+    |---------------------------+------------------------------------------------------------------------------------------------------------------------------|
+    | Declarative               | The basic GUI layout is declared by the DSL, but it is not instantiated yet.                                                 |
+    | FXRuby instantiation      | All the basic underlying FXRuby object are instantiatied, but the foundational FOX Toolkit Objects are not instantiated yet. |
+    | FOX Toolkit instantiation | The FOX Toolkit C++-level objects are now alive and kicking.                                                                 |
+
+
 *** Events from other Threads
     In handling interfacing to databases, AMQPs like RabbitMQ,
     network connections, or just about anything else that might otherwise
