@@ -10,7 +10,8 @@
    fxruby-enhancement is basically a DSL of sorts, and every effort has been taken to make 
    it intuitive to use. Once you get the hang of it, you should be able to look at the FXRuby
    API documentation and infer the DSL construct for fxruby-enhancement.
-
+   
+** TODO Installation
 ** Documentation
 *** Events from other Threads
     In handling interfacing to databases, AMQPs like RabbitMQ,
@@ -58,8 +59,7 @@
           fx_group_box (:ov_conn_rabbitmq) {
     ...
     #+end_src
-
-
+    
 *** Examples
     Class-based enhancement:
     #+begin_src ruby
@@ -129,7 +129,6 @@
       end
     end    
     #+end_src
-
 
 
 ** TODO Release Notes
