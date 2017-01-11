@@ -1,3 +1,4 @@
+#+OPTIONS: broken-links:mark
 * fxruby-enhancement
 ** Introduction
    The fxruby library is an excellent wrapper for the FOX toolkit. However, it reflects the
@@ -146,7 +147,7 @@
     end    
     #+end_src
 
-    [[examples/hello.rb][Hello World]] example:
+    [[file:examples/hello.rb][Hello World]] example (full):
     #+begin_src ruby
 #!/usr/bin/env ruby
 require 'fxruby-enhancement'
@@ -183,7 +184,7 @@ fox_component :app do |app|
 end
     #+end_src
 
-    [[examples/bounce.rb][Bouncing Ball]] example:
+    [[file:examples/bounce.rb][Bouncing Ball]] example (full):
     #+begin_src ruby
 #!/usr/bin/env ruby
 require 'fxruby-enhancement'
