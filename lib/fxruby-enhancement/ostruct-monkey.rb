@@ -26,4 +26,13 @@ class OpenStruct
     self.kinder.each{ |os| os.instance_final_activate }
     self
   end
+
+  # launch the application
+  def launch ingress: false
+    create_fox_components
+    instance_final_activate
+    activate
+    Enhancement.activate_ingress_handlers self if ingress
+    run_application
+  end
 end

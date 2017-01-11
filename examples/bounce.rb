@@ -1,3 +1,5 @@
+#!/usr/bin/env ruby
+
 require 'fxruby-enhancement'
 
 include Fox
@@ -149,16 +151,8 @@ fx_app :app do
   }
 end
 
-def run_app
-  fox_component :app do |app|
-    app.create_fox_components
-    app.instance_final_activate
-    app.activate
-    app.run_application
-  end
-end
-
-
 if __FILE__ == $0
-  run_app
+  fox_component :app do |app|
+    app.launch
+  end
 end
