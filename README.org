@@ -6,7 +6,7 @@
    - [[#documentation][Documentation]]
      - [[#events-from-other-threads][Events from other Threads]]
        - [[#the-queue_ding-queues][The Queue_Ding Queues]]
-         - [[#enhancementingress--some_tag-some_payload][Enhancement.ingress << [:some_tag, some_payload]]]
+         - [[#enhancementingress][Enhancement.ingress]]
          - [[#enhancementegress][Enhancement.egress]]
      - [[#bindingfx][binding.fx]]
      - [[#examples][Examples]]
@@ -14,7 +14,7 @@
    - [[#known-issues][Known Issues]]
    - [[#contributing-to-fxruby-enhancement][Contributing to fxruby-enhancement]]
    - [[#copyright][Copyright]]
-   - [[#the-scratchpad][The Scratchpad]]
+   - [[#the-junkyard--scratchpad][The Junkyard / Scratchpad]]
      - [[#genesis-of-the-meta-meta-programming-whereby-brain-goes-boom][Genesis of the meta-meta programming, whereby brain goes boom]]
 
 * fxruby-enhancement
@@ -71,7 +71,7 @@
      the next entry arrives. Since Queue Ding is really derived from ::Array,
      you may also do thing like #empty? to check to see if entries are availabe
      to avoid blocking.
-***** Enhancement.ingress << [:some_tag, some_payload]
+***** Enhancement.ingress
       To get messages objects into fxruby_enhacement, simply #push or #<<
       it into the queue as shown:
       #+begin_src ruby
@@ -424,7 +424,7 @@ end
 
    Copyright (c) 2016-2017 Fred Mitchell. See LICENSE.txt for
    further details.
-** The Scratchpad
+** The Junkyard / Scratchpad
    These are my personal notes, not meant for anyone else.
    You may see some interesting tidbits here, but I am not
    gauranteeing anything to be useful or reliable in this
