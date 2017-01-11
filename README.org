@@ -6,11 +6,22 @@
    - [[#documentation][Documentation]]
      - [[#in-general][In General]]
      - [[#execution-phases-of-fxruby-enhancement][Execution Phases of fxruby-enhancement]]
+       - [[#declarative][Declarative]]
+       - [[#fxruby-instantiation][FXRuby Instantiation]]
+       - [[#fox-toolkit-instantiation][FOX Toolkit instantiation]]
      - [[#events-from-other-threads][Events from other Threads]]
        - [[#the-queue_ding-queues][The Queue_Ding Queues]]
          - [[#enhancementingress][Enhancement.ingress]]
          - [[#enhancementegress][Enhancement.egress]]
-     - [[#bindingfx][binding.fx]]
+       - [[#api--dsl][API & DSL]]
+         - [[#ref-refc-and-tagging-your-objects][ref(), refc() and tagging your objects]]
+         - [[#fox_component-and-fox_instance][fox_component and fox_instance]]
+         - [[#fx_app][fx_app]]
+         - [[#instance][instance]]
+         - [[#ingress_handler][ingress_handler]]
+         - [[#deferred_setup][deferred_setup]]
+         - [[#mapping-between-fx_-declarations-and-the-fx-fxruby-objects][Mapping between fx_* declarations and the FX* FXRuby objects]]
+         - [[#bindingfx][binding.fx]]
      - [[#examples][Examples]]
        - [[#hello-world-example-full-the-enhancement-way][Hello World example (full) the Enhancement Way]]
        - [[#hello-world-the-old-fxruby-way][Hello World the old fxruby way:]]
@@ -119,14 +130,33 @@
     the :back_buffer tag, which then is found by ref() and can be used
     anywhere in the instantiation phase.
 *** Execution Phases of fxruby-enhancement
-    This 
+    This represents the work flow, in the order stated:
     | State                     | Description                                                                                                                  |
     |---------------------------+------------------------------------------------------------------------------------------------------------------------------|
     | Declarative               | The basic GUI layout is declared by the DSL, but it is not instantiated yet.                                                 |
     | FXRuby instantiation      | All the basic underlying FXRuby object are instantiatied, but the foundational FOX Toolkit Objects are not instantiated yet. |
     | FOX Toolkit instantiation | The FOX Toolkit C++-level objects are now alive and kicking.                                                                 |
 
+**** Declarative
+     This phase, under the proverbial hood, ceates the component objects,
+     which are just place-holders for the underlying FXRuby objects.
 
+     When the FXRuby object is created, it is assigned to its place holder
+     component object, and can be references as comp.inst. In most cases,
+     you will almost never need to touch the component objects directly.
+**** FXRuby Instantiation
+     During the FXRuby instantiantion stage, all of the FXRuby
+     objects are instantiated and stored in their respective
+     component objects. If they are tagged, the instantiated
+     object may be referenced with ref(), and the component 
+     object itself may be referenced via refc(). There is almost 
+     never a case where you would need to go after the component
+     object directly.
+**** FOX Toolkit instantiation
+     All of the FOX Toolkit C++ objects, resources, etc. that
+     correspond to the FXRuby objects are now set up, and activated.
+     With the all-important "show PLACEMENT_SCREEN" command, the
+     FOX GUI should now be visible.
 *** Events from other Threads
     In handling interfacing to databases, AMQPs like RabbitMQ,
     network connections, or just about anything else that might otherwise
@@ -189,34 +219,112 @@
       #+begin_src
       #+end_src
 
-*** binding.fx   
-    This is a way to split up your layouts into different .fx "modules", purely for
-    organizational reasons. For example,
+**** API & DSL
+***** ref(), refc() and tagging your objects
+      In an effort to eliminate the fuss and bother with
+      scoping issues and object reference, ref(:some_tag) will
+      retrive the FXRuby instance object so tagged with :some_tag.
 
-    #+begin_src ruby
-    binding.fx "overview"
-    #+end_src
+      You may have anonymous, i.e., untagged objects, and those will
+      not be findable by ref(). It is not necessary to tag all objects,
+      either.
 
-    will load the overview.fx portion of the GUI, which happens to be a tab contents
-    in the tab book, which in our case looks like:
+      refc() is similar to ref(), except it retrives the underlying 
+      component object insted. Indeed, the following are equivalent
+      operations:
+      #+begin_src ruby
+      ref(:some_tag)
+      refc(:some_tag).inst
+      #+end_src
 
-    #+begin_src ruby
-    # Overview Tab
+      There may be some edge cases where you might want to
+      reference the underlying component ahead of FXRuby object
+      instaniation, but in the vast majority of the cases, it should
+      be unnecessary. My goal is to enable to do what you need, not
+      to restrict you. You may need it for debugging, etc.
 
-    fx_tab_item { text "&Overview" }
-    fx_horizontal_frame (:overview_info) {
-      opts STD_FRAME|LAYOUT_FILL_Y
+      Underlying, the component object is really a subclass of OpenScript.
+      While you may like to stuff some additional data there, 
+      this is frowned upon because it might conflict with Enhancement.
+      If you have a need for this, please do a issue in GitHub.
+
+***** fox_component and fox_instance
+      fox_component and fox_instance are roughly the
+      equivalent of refc() and ref(), respecively. The
+      difference mainly being that fox_component does no
+      sanity checking, and is therefore slightly faster.
+
+      At some point, they may be merged, but for now don't 
+      count on it.
+
+      To initialize and run your app, you customairly do the
+      following:
+      #+begin_src ruby
+      fox_component :app do |app|
+        app.launch
+      end
+      #+end_src
+
+      Which presumes your fx_app declaration was tagged with
+      :app as follows:
+      #+begin_src ruby
+      fx_app :app do
+        app_name "Your Amazingly Cool Application"
+        vendor_name "YouDaMan"
+        ...
+      end
+      #+end_src
+
+      This is the only time you will reference the component
+      object directly for the obvious reason that you must start
+      from someonere.
+
+***** fx_app
+      To begin the declaration of your app, you must do the
+      following somewhere:
+      #+begin_src ruby
+      fx_app :app do
+        app_name "The Forbin Project"
+        vendor_name "Colossus"
+        ...
+      end
+      #+end_src
+
+      Typeically you'd do this inside of a module, but you could do it also
+      in a class body. Please see the examples.
+
+***** TODO instance
+***** TODO ingress_handler
+***** TODO deferred_setup
+***** TODO Mapping between fx_* declarations and the FX* FXRuby objects
+***** binding.fx   
+      This is a way to split up your layouts into different .fx "modules", purely for
+      organizational reasons. For example,
+
+      #+begin_src ruby
+      binding.fx "overview"
+      #+end_src
+
+      will load the overview.fx portion of the GUI, which happens to be a tab contents
+      in the tab book, which in our case looks like:
+
+      #+begin_src ruby
+      # Overview Tab
+
+      fx_tab_item { text "&Overview" }
+      fx_horizontal_frame (:overview_info) {
+        opts STD_FRAME|LAYOUT_FILL_Y
   
-      fx_group_box (:ov_connections_group) {
-        text "Connections"
-        opts STD_GROUPBOX|LAYOUT_FILL_Y
+        fx_group_box (:ov_connections_group) {
+          text "Connections"
+          opts STD_GROUPBOX|LAYOUT_FILL_Y
     
-        fx_vertical_frame {
-          opts LAYOUT_FILL_Y|LAYOUT_FILL_X #|PACK_UNIFORM_HEIGHT
+          fx_vertical_frame {
+            opts LAYOUT_FILL_Y|LAYOUT_FILL_X #|PACK_UNIFORM_HEIGHT
       
-          fx_group_box (:ov_conn_rabbitmq) {
-    ...
-    #+end_src
+            fx_group_box (:ov_conn_rabbitmq) {
+      ...
+      #+end_src
     
 *** Examples
     Class-based enhancement (this has not been tested yet!!!):
@@ -340,9 +448,9 @@ main.show(PLACEMENT_SCREEN)
 application.run()
     #+end_src
 
-    Even though the old way has a slightly less line count, you can
+    Even though the old way has a slightly smaller line count, you can
     see how messy it can be assigning each newly-created object to
-    a variable, and then having to pass the variable to the children.
+    a variable, and then having to pass that variable to the children.
     Perhaps this example is too small, but perhaps the next one will
     more illustrative.
 
@@ -691,12 +799,12 @@ end
    | Version |       Date | Notes           |
    |---------+------------+-----------------|
    |   0.0.2 | 2017-01-11 | Initial release |
-   |         |            |                 |
+
 ** Known Issues
    | Version |       Date | Issues                     |
    |---------+------------+----------------------------|
    |   0.0.2 | 2017-01-11 | Not enough example code!!! |
-   |         |            |                            |
+
 ** Contributing to fxruby-enhancement
  
    - Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet.
