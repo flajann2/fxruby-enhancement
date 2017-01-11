@@ -3,6 +3,8 @@ require 'fxruby-enhancement'
 include Fox
 include Fox::Enhancement::Mapper
 
+ANIMATION_TIME = 20
+
 class Ball
   attr_reader :color
   attr_reader :center
@@ -78,19 +80,50 @@ fx_app :app do
   app_name "Bounce"
   vendor_name "Example"
 
-  fx_image :back_buffer {
-    opts IMAGE_KEEP
-  }
+  fx_image(:back_buffer) { opts IMAGE_KEEP }
   
-  fx_main_window :bounce_window {
-    title "Ball Demo"
+  fx_main_window(:bounce_window) {
+    title "Bounce Demo"
     opts DECOR_ALL
     width 400
     height 300
     
     $ball = Ball.new(20)
 
-    fx_canvas :canvas {
+    instance { |w|
+      def w.drawScene(drawable)
+        FXDCWindow.new(drawable) { |dc|
+          dc.setForeground(FXRGB(255, 255, 255))
+          dc.fillRectangle(0, 0, drawable.width, drawable.height)
+          $ball.draw(dc)
+        }
+      end
+      
+      def w.updateCanvas
+        $ball.move(10)
+        drawScene(ref(:back_buffer))
+        ref(:canvas).update
+      end
+      
+      #
+      # Handle timeout events
+      #
+      def w.onTimeout(sender, sel, ptr)
+        # Move the ball and re-draw the scene
+        updateCanvas
+        
+        # Re-register the timeout
+        ref(:app).addTimeout(ANIMATION_TIME, ref(:bounce_window).method(:onTimeout))
+        
+        # Done
+        return 1
+      end
+      
+      w.show PLACEMENT_SCREEN
+      ref(:app).addTimeout(ANIMATION_TIME, w.method(:onTimeout))
+    }
+    
+    fx_canvas(:canvas) {
       opts LAYOUT_FILL_X|LAYOUT_FILL_Y
       
       instance { |c|
@@ -105,36 +138,8 @@ fx_app :app do
           bb.create unless bb.created?
           bb.resize(sender.width, sender.height)
           $ball.setWorldSize(sender.width, sender.height)
-          c.drawScene(bb)
+          ref(:bounce_window).drawScene(bb)
         }
-
-        def c.drawScene(drawable)
-          FXDCWindow.new(drawable) { |dc|
-            dc.setForeground(FXRGB(255, 255, 255))
-            dc.fillRectangle(0, 0, drawable.width, drawable.height)
-            $ball.draw(dc)
-          }
-        end
-
-        def c.updateCanvas
-          $ball.move(10)
-          drawScene(@backBuffer)
-          @canvas.update
-        end
-
-        #
-        # Handle timeout events
-        #
-        def c.onTimeout(sender, sel, ptr)
-          # Move the ball and re-draw the scene
-          updateCanvas
-          
-          # Re-register the timeout
-          ref(:app).addTimeout(ANIMATION_TIME, method(:onTimeout))
-          
-          # Done
-          return 1
-        end
       }
     }
   }
