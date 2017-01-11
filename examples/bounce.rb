@@ -1,5 +1,4 @@
 #!/usr/bin/env ruby
-
 require 'fxruby-enhancement'
 
 include Fox
