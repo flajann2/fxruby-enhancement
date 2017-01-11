@@ -46,8 +46,42 @@
     the FXRuby (and therefore FXRuby Enhancement) space. This will allow you to
     keep the GUI thread responsive and also to maintain a seperation of concerns.
 **** The Queue_Ding Queues
-***** TODO Ingress
-***** TODO Egress
+     [[ttps://github.com/flajann2/queue_ding][Queue Ding]] is an enhancement for doing queing across threads in Ruby,
+     and we offer it here to allow external events to be funneled into and
+     out of the Fox GUI thread. Usage is easy and straightforard. When
+     removing entries from Queue Ding using #next, the queue will block until
+     the next entry arrives. Since Queue Ding is really derived from ::Array,
+     you may also do thing like #empty? to check to see if entries are availabe
+     to avoid blocking.
+***** Enhancement.ingress << [:some_tag, some_payload]
+      To get messages objects into fxruby_enhacement, simply #push or #<<
+      it into the queue as shown:
+      #+begin_src ruby
+      Enhancement.ingress << [:some_tag, some_payload]
+      #+end_src
+
+      In the DSL, you must set up a handler for the ingress,
+      #+begin_src ruby
+      ingress_handler :status do |tag, payload|
+        puts "received #{tag} => #{payload}"
+      end
+      #+end_src
+
+      And so your handler will most likely act as a dispatcher
+      for the payloads received. For example:
+      #+begin_src ruby
+      ingress_handler :status do |tag, logline|
+        puts "received #{tag} => #{payload}"
+        case tag
+        when :log_info
+          ref(:logging_info).appendItem logline
+        when :log_error
+          ref(:logging_error).appendItem logline
+        end
+      end
+      #+end_src
+
+***** Enhancement.egress
 
 *** binding.fx   
     This is a way to split up your layouts into different .fx "modules", purely for

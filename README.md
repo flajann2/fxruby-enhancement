@@ -2,24 +2,24 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org0977442">1. fxruby-enhancement</a>
+<li><a href="#org9489b52">1. fxruby-enhancement</a>
 <ul>
-<li><a href="#orgf7629a4">1.1. Introduction</a></li>
-<li><a href="#org3d11194">1.2. Installation</a></li>
-<li><a href="#org27fb6ec">1.3. Documentation</a>
+<li><a href="#orgb994cfd">1.1. Introduction</a></li>
+<li><a href="#orgc3a9f9b">1.2. Installation</a></li>
+<li><a href="#orgab69c37">1.3. Documentation</a>
 <ul>
-<li><a href="#orgc0dfebb">1.3.1. Events from other Threads</a></li>
-<li><a href="#org8675cd0">1.3.2. binding.fx</a></li>
-<li><a href="#orgb722ac8">1.3.3. Examples</a></li>
+<li><a href="#orgb53ed4c">1.3.1. Events from other Threads</a></li>
+<li><a href="#orge10c25e">1.3.2. binding.fx</a></li>
+<li><a href="#org00d5f29">1.3.3. Examples</a></li>
 </ul>
 </li>
-<li><a href="#orgff11a07">1.4. <span class="todo TODO">TODO</span> Release Notes</a></li>
-<li><a href="#orge9218d6">1.5. <span class="todo TODO">TODO</span> Known Issues</a></li>
-<li><a href="#orgd02c7a5">1.6. Contributing to fxruby-enhancement</a></li>
-<li><a href="#org6d61ea7">1.7. Copyright</a></li>
-<li><a href="#org59eb834">1.8. The Scratchpad</a>
+<li><a href="#org653f43e">1.4. <span class="todo TODO">TODO</span> Release Notes</a></li>
+<li><a href="#org560f608">1.5. <span class="todo TODO">TODO</span> Known Issues</a></li>
+<li><a href="#orga97bc57">1.6. Contributing to fxruby-enhancement</a></li>
+<li><a href="#org87c79bf">1.7. Copyright</a></li>
+<li><a href="#orga49216d">1.8. The Scratchpad</a>
 <ul>
-<li><a href="#org642246c">1.8.1. Genesis of the meta-meta programming, whereby brain goes boom</a></li>
+<li><a href="#org1485b52">1.8.1. Genesis of the meta-meta programming, whereby brain goes boom</a></li>
 </ul>
 </li>
 </ul>
@@ -29,12 +29,12 @@
 </div>
 
 
-<a id="org0977442"></a>
+<a id="org9489b52"></a>
 
 # fxruby-enhancement
 
 
-<a id="orgf7629a4"></a>
+<a id="orgb994cfd"></a>
 
 ## Introduction
 
@@ -50,7 +50,7 @@ it intuitive to use. Once you get the hang of it, you should be able to look at 
 API documentation and infer the DSL construct for fxruby-enhancement.
 
 
-<a id="org3d11194"></a>
+<a id="orgc3a9f9b"></a>
 
 ## Installation
 
@@ -68,12 +68,12 @@ that must compile properly on your system. Normally, this is not
 a concern, but it is something to be aware of.
 
 
-<a id="org27fb6ec"></a>
+<a id="orgab69c37"></a>
 
 ## Documentation
 
 
-<a id="orgc0dfebb"></a>
+<a id="orgb53ed4c"></a>
 
 ### Events from other Threads
 
@@ -98,7 +98,7 @@ keep the GUI thread responsive and also to maintain a seperation of concerns.
     2.  TODO Egress
 
 
-<a id="org8675cd0"></a>
+<a id="orge10c25e"></a>
 
 ### binding.fx
 
@@ -127,7 +127,7 @@ in the tab book, which in our case looks like:
     ...
 
 
-<a id="orgb722ac8"></a>
+<a id="org00d5f29"></a>
 
 ### Examples
 
@@ -395,17 +395,17 @@ Class-free enhancement:
     end
 
 
-<a id="orgff11a07"></a>
+<a id="org653f43e"></a>
 
 ## Release Notes
 
 
-<a id="orge9218d6"></a>
+<a id="org560f608"></a>
 
 ## Known Issues
 
 
-<a id="orgd02c7a5"></a>
+<a id="orga97bc57"></a>
 
 ## Contributing to fxruby-enhancement
 
@@ -418,7 +418,7 @@ Class-free enhancement:
 -   Please try not to mess with the Rakefile, version, or history. If you want to have your own version, or is otherwise necessary, that is fine, but please isolate to its own commit so I can cherry-pick around it.
 
 
-<a id="org6d61ea7"></a>
+<a id="org87c79bf"></a>
 
 ## Copyright
 
@@ -426,7 +426,7 @@ Copyright (c) 2016-2017 Fred Mitchell. See LICENSE.txt for
 further details.
 
 
-<a id="org59eb834"></a>
+<a id="orga49216d"></a>
 
 ## The Scratchpad
 
@@ -436,7 +436,7 @@ gauranteeing anything to be useful or reliable in this
 section. YOU HAVE BEEN WARNED.
 
 
-<a id="org642246c"></a>
+<a id="org1485b52"></a>
 
 ### Genesis of the meta-meta programming, whereby brain goes boom
 
