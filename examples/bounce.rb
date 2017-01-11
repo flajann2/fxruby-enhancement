@@ -88,19 +88,21 @@ fx_app :app do
     width 400
     height 300
     
-    $ball = Ball.new(20)
-
     instance { |w|
+      def w.ball
+        @ball ||= Ball.new(20)
+      end
+      
       def w.drawScene(drawable)
         FXDCWindow.new(drawable) { |dc|
           dc.setForeground(FXRGB(255, 255, 255))
           dc.fillRectangle(0, 0, drawable.width, drawable.height)
-          $ball.draw(dc)
+          ball.draw(dc)
         }
       end
       
       def w.updateCanvas
-        $ball.move(10)
+        ball.move(10)
         drawScene(ref(:back_buffer))
         ref(:canvas).update
       end
@@ -137,8 +139,10 @@ fx_app :app do
           bb = ref(:back_buffer)
           bb.create unless bb.created?
           bb.resize(sender.width, sender.height)
-          $ball.setWorldSize(sender.width, sender.height)
-          ref(:bounce_window).drawScene(bb)
+          ref(:bounce_window) do |bw|
+            bw.ball.setWorldSize(sender.width, sender.height)
+            bw.drawScene(bb)
+          end
         }
       }
     }

@@ -87,16 +87,24 @@ module Fox
     
     module Mapper
       # Find the referenced component's instance
-      def ref sym
+      def ref sym, &block
         raise "No reference for #{sym} found" if Enhancement.components[sym].nil?
         raise "No instance for #{sym} allocated" if Enhancement.components[sym].inst.nil?
-        Enhancement.components[sym].inst
+        inst = Enhancement.components[sym].inst
+        if block_given?
+          block.(inst)
+        end
+        inst
       end
       
       # Find the referenced component's wrapper object
-      def refc sym
+      def refc sym, &block
         raise "No reference component for #{sym} found" if Enhancement.components[sym].nil?
-        Enhancement.components[sym]
+        c = Enhancement.components[sym]
+        if block_given?
+          block.(c)
+        end
+        c
       end
 
       # Wrapper component
