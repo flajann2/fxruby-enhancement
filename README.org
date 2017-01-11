@@ -82,6 +82,16 @@
       #+end_src
 
 ***** Enhancement.egress
+      Wnen your Fox application needs to send a message to other
+      listening threads, You simply push your payload onto the egress queue
+      thusly:
+      #+begin_src ruby
+      Enhancement.egress << [:button_clicked, "I was clicked!"]
+      #+end_src
+
+      and your Ruby thread external to Fox would simply do:
+      #+begin_src
+      #+end_src
 
 *** binding.fx   
     This is a way to split up your layouts into different .fx "modules", purely for

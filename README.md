@@ -2,24 +2,24 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org9489b52">1. fxruby-enhancement</a>
+<li><a href="#org3193ec5">1. fxruby-enhancement</a>
 <ul>
-<li><a href="#orgb994cfd">1.1. Introduction</a></li>
-<li><a href="#orgc3a9f9b">1.2. Installation</a></li>
-<li><a href="#orgab69c37">1.3. Documentation</a>
+<li><a href="#orge896ea7">1.1. Introduction</a></li>
+<li><a href="#org4f833f7">1.2. Installation</a></li>
+<li><a href="#orge56e82c">1.3. Documentation</a>
 <ul>
-<li><a href="#orgb53ed4c">1.3.1. Events from other Threads</a></li>
-<li><a href="#orge10c25e">1.3.2. binding.fx</a></li>
-<li><a href="#org00d5f29">1.3.3. Examples</a></li>
+<li><a href="#orgb611837">1.3.1. Events from other Threads</a></li>
+<li><a href="#org47d2aa1">1.3.2. binding.fx</a></li>
+<li><a href="#org1d40f82">1.3.3. Examples</a></li>
 </ul>
 </li>
-<li><a href="#org653f43e">1.4. <span class="todo TODO">TODO</span> Release Notes</a></li>
-<li><a href="#org560f608">1.5. <span class="todo TODO">TODO</span> Known Issues</a></li>
-<li><a href="#orga97bc57">1.6. Contributing to fxruby-enhancement</a></li>
-<li><a href="#org87c79bf">1.7. Copyright</a></li>
-<li><a href="#orga49216d">1.8. The Scratchpad</a>
+<li><a href="#org1d593b8">1.4. <span class="todo TODO">TODO</span> Release Notes</a></li>
+<li><a href="#orgc11bb35">1.5. <span class="todo TODO">TODO</span> Known Issues</a></li>
+<li><a href="#orgb2cc583">1.6. Contributing to fxruby-enhancement</a></li>
+<li><a href="#org0f2969c">1.7. Copyright</a></li>
+<li><a href="#org2391f2d">1.8. The Scratchpad</a>
 <ul>
-<li><a href="#org1485b52">1.8.1. Genesis of the meta-meta programming, whereby brain goes boom</a></li>
+<li><a href="#org9e9ff82">1.8.1. Genesis of the meta-meta programming, whereby brain goes boom</a></li>
 </ul>
 </li>
 </ul>
@@ -29,12 +29,12 @@
 </div>
 
 
-<a id="org9489b52"></a>
+<a id="org3193ec5"></a>
 
 # fxruby-enhancement
 
 
-<a id="orgb994cfd"></a>
+<a id="orge896ea7"></a>
 
 ## Introduction
 
@@ -50,7 +50,7 @@ it intuitive to use. Once you get the hang of it, you should be able to look at 
 API documentation and infer the DSL construct for fxruby-enhancement.
 
 
-<a id="orgc3a9f9b"></a>
+<a id="org4f833f7"></a>
 
 ## Installation
 
@@ -68,12 +68,12 @@ that must compile properly on your system. Normally, this is not
 a concern, but it is something to be aware of.
 
 
-<a id="orgab69c37"></a>
+<a id="orge56e82c"></a>
 
 ## Documentation
 
 
-<a id="orgb53ed4c"></a>
+<a id="orgb611837"></a>
 
 ### Events from other Threads
 
@@ -93,12 +93,52 @@ keep the GUI thread responsive and also to maintain a seperation of concerns.
 
 1.  The Queue<sub>Ding</sub> Queues
 
-    1.  TODO Ingress
+    [BROKEN LINK: nil] is an enhancement for doing queing across threads in Ruby,
+    and we offer it here to allow external events to be funneled into and
+    out of the Fox GUI thread. Usage is easy and straightforard. When
+    removing entries from Queue Ding using #next, the queue will block until
+    the next entry arrives. Since Queue Ding is really derived from ::Array,
+    you may also do thing like #empty? to check to see if entries are availabe
+    to avoid blocking.
     
-    2.  TODO Egress
+    1.  Enhancement.ingress << [:some<sub>tag</sub>, some<sub>payload</sub>]
+    
+        To get messages objects into fxruby<sub>enhacement</sub>, simply #push or #<<
+        it into the queue as shown:
+        
+            Enhancement.ingress << [:some_tag, some_payload]
+        
+        In the DSL, you must set up a handler for the ingress,
+        
+            ingress_handler :status do |tag, payload|
+              puts "received #{tag} => #{payload}"
+            end
+        
+        And so your handler will most likely act as a dispatcher
+        for the payloads received. For example:
+        
+            ingress_handler :status do |tag, logline|
+              puts "received #{tag} => #{payload}"
+              case tag
+              when :log_info
+                ref(:logging_info).appendItem logline
+              when :log_error
+                ref(:logging_error).appendItem logline
+              end
+            end
+    
+    2.  Enhancement.egress
+    
+        Wnen your Fox application needs to send a message to other
+        listening threads, You simply push your payload onto the egress queue
+        thusly:
+        
+            Enhancement.egress << [:button_clicked, "I was clicked!"]
+        
+        and your Ruby thread external to Fox would simply do:
 
 
-<a id="orge10c25e"></a>
+<a id="org47d2aa1"></a>
 
 ### binding.fx
 
@@ -127,7 +167,7 @@ in the tab book, which in our case looks like:
     ...
 
 
-<a id="org00d5f29"></a>
+<a id="org1d40f82"></a>
 
 ### Examples
 
@@ -395,17 +435,17 @@ Class-free enhancement:
     end
 
 
-<a id="org653f43e"></a>
+<a id="org1d593b8"></a>
 
 ## Release Notes
 
 
-<a id="org560f608"></a>
+<a id="orgc11bb35"></a>
 
 ## Known Issues
 
 
-<a id="orga97bc57"></a>
+<a id="orgb2cc583"></a>
 
 ## Contributing to fxruby-enhancement
 
@@ -418,7 +458,7 @@ Class-free enhancement:
 -   Please try not to mess with the Rakefile, version, or history. If you want to have your own version, or is otherwise necessary, that is fine, but please isolate to its own commit so I can cherry-pick around it.
 
 
-<a id="org87c79bf"></a>
+<a id="org0f2969c"></a>
 
 ## Copyright
 
@@ -426,7 +466,7 @@ Copyright (c) 2016-2017 Fred Mitchell. See LICENSE.txt for
 further details.
 
 
-<a id="orga49216d"></a>
+<a id="org2391f2d"></a>
 
 ## The Scratchpad
 
@@ -436,7 +476,7 @@ gauranteeing anything to be useful or reliable in this
 section. YOU HAVE BEEN WARNED.
 
 
-<a id="org1485b52"></a>
+<a id="org9e9ff82"></a>
 
 ### Genesis of the meta-meta programming, whereby brain goes boom
 
