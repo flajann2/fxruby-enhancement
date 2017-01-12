@@ -13,15 +13,15 @@
        - [[#the-queue_ding-queues][The Queue_Ding Queues]]
          - [[#enhancementingress][Enhancement.ingress]]
          - [[#enhancementegress][Enhancement.egress]]
-       - [[#api--dsl][API & DSL]]
-         - [[#ref-refc-and-tagging-your-objects][ref(), refc() and tagging your objects]]
-         - [[#fox_component-and-fox_instance][fox_component and fox_instance]]
-         - [[#fx_app][fx_app]]
-         - [[#instance][instance]]
-         - [[#ingress_handler][ingress_handler]]
-         - [[#deferred_setup][deferred_setup]]
-         - [[#mapping-between-fx_-declarations-and-the-fx-fxruby-objects][Mapping between fx_* declarations and the FX* FXRuby objects]]
-         - [[#bindingfx][binding.fx]]
+     - [[#api--dsl][API & DSL]]
+       - [[#ref-refc-and-tagging-your-objects][ref(), refc() and tagging your objects]]
+       - [[#fox_component-and-fox_instance][fox_component and fox_instance]]
+       - [[#fx_app][fx_app]]
+       - [[#instance][instance]]
+       - [[#ingress_handler][ingress_handler]]
+       - [[#deferred_setup][deferred_setup]]
+       - [[#mapping-between-fx_-declarations-and-the-fx-fxruby-objects][Mapping between fx_* declarations and the FX* FXRuby objects]]
+       - [[#bindingfx][binding.fx]]
      - [[#examples][Examples]]
        - [[#hello-world-example-full-the-enhancement-way][Hello World example (full) the Enhancement Way]]
        - [[#hello-world-the-old-fxruby-way][Hello World the old fxruby way:]]
@@ -36,10 +36,10 @@
 
 * fxruby-enhancement
 ** Introduction
-   The fxruby library is an excellent wrapper for the FOX toolkit.
+   The fxruby library is an excellent wrapper for the FOX Toolkit.
    However, it reflects the C++-ness of FOX, rather than being more
    Ruby-like. As such, creating composed objects with it tends to be
-   rather ugly and cumbersome. For every new component you create with
+   rather cumbersome, given its C++ roots. For every new component you create with
    fxruby, you are handed back a reference to that object, which you'll
    need to store somewhere. And then all the subsequent child objects
    will need to be passed pointers to the parent objects.
@@ -75,7 +75,7 @@
    will automatically include it. However fxruby has a c-extension
    that must compile properly on your system. Normally, this is not
    a concern, but it is something to be aware of.
-
+   
 ** Documentation
 *** In General
     fxruby-enhancement (which we will refer to as "Enhancement" from time
@@ -219,114 +219,186 @@
       #+begin_src
       #+end_src
 
-**** API & DSL
-***** ref(), refc() and tagging your objects
-      In an effort to eliminate the fuss and bother with
-      scoping issues and object reference, ref(:some_tag) will
-      retrive the FXRuby instance object so tagged with :some_tag.
+*** API & DSL
+**** ref(), refc() and tagging your objects
+     In an effort to eliminate the fuss and bother with
+     scoping issues and object reference, ref(:some_tag) will
+     retrive the FXRuby instance object so tagged with :some_tag.
 
-      You may have anonymous, i.e., untagged objects, and those will
-      not be findable by ref(). It is not necessary to tag all objects,
-      either.
+     You may have anonymous, i.e., untagged objects, and those will
+     not be findable by ref(). It is not necessary to tag all objects,
+     either.
 
-      refc() is similar to ref(), except it retrives the underlying 
-      component object insted. Indeed, the following are equivalent
-      operations:
-      #+begin_src ruby
-      ref(:some_tag)
-      refc(:some_tag).inst
-      #+end_src
+     refc() is similar to ref(), except it retrives the underlying 
+     component object insted. Indeed, the following are equivalent
+     operations:
+     #+begin_src ruby
+     ref(:some_tag)
+     refc(:some_tag).inst
+     #+end_src
 
-      There may be some edge cases where you might want to
-      reference the underlying component ahead of FXRuby object
-      instaniation, but in the vast majority of the cases, it should
-      be unnecessary. My goal is to enable to do what you need, not
-      to restrict you. You may need it for debugging, etc.
+     There may be some edge cases where you might want to
+     reference the underlying component ahead of FXRuby object
+     instaniation, but in the vast majority of the cases, it should
+     be unnecessary. My goal is to enable to do what you need, not
+     to restrict you. You may need it for debugging, etc.
 
-      Underlying, the component object is really a subclass of OpenScript.
-      While you may like to stuff some additional data there, 
-      this is frowned upon because it might conflict with Enhancement.
-      If you have a need for this, please do a issue in GitHub.
+     Underlying, the component object is really a subclass of OpenScript.
+     While you may like to stuff some additional data there, 
+     this is frowned upon because it might conflict with Enhancement.
+     If you have a need for this, please do a issue in GitHub.
 
-***** fox_component and fox_instance
-      fox_component and fox_instance are roughly the
-      equivalent of refc() and ref(), respecively. The
-      difference mainly being that fox_component does no
-      sanity checking, and is therefore slightly faster.
+**** fox_component and fox_instance
+     fox_component and fox_instance are roughly the
+     equivalent of refc() and ref(), respecively. The
+     difference mainly being that fox_component does no
+     sanity checking, and is therefore slightly faster.
 
-      At some point, they may be merged, but for now don't 
-      count on it.
+     At some point, they may be merged, but for now don't 
+     count on it.
 
-      To initialize and run your app, you customairly do the
-      following:
-      #+begin_src ruby
-      fox_component :app do |app|
-        app.launch
-      end
-      #+end_src
+     To initialize and run your app, you customairly do the
+     following:
+     #+begin_src ruby
+     fox_component :app do |app|
+       app.launch
+     end
+     #+end_src
 
-      Which presumes your fx_app declaration was tagged with
-      :app as follows:
-      #+begin_src ruby
-      fx_app :app do
-        app_name "Your Amazingly Cool Application"
-        vendor_name "YouDaMan"
-        ...
-      end
-      #+end_src
+     Which presumes your fx_app declaration was tagged with
+     :app as follows:
+     #+begin_src ruby
+     fx_app :app do
+       app_name "Your Amazingly Cool Application"
+       vendor_name "YouDaMan"
+       ...
+     end
+     #+end_src
 
-      This is the only time you will reference the component
-      object directly for the obvious reason that you must start
-      from someonere.
+     This is the only time you will reference the component
+     object directly for the obvious reason that you must start
+     from someonere.
 
-***** fx_app
-      To begin the declaration of your app, you must do the
-      following somewhere:
-      #+begin_src ruby
-      fx_app :app do
-        app_name "The Forbin Project"
-        vendor_name "Colossus"
-        ...
-      end
-      #+end_src
+**** fx_app
+     To begin the declaration of your app, you must do the
+     following somewhere:
+     #+begin_src ruby
+     fx_app :app do
+       app_name "The Forbin Project"
+       vendor_name "Colossus"
+       ...
+     end
+     #+end_src
 
-      Typeically you'd do this inside of a module, but you could do it also
-      in a class body. Please see the examples.
+     Typeically you'd do this inside of a module, but you could do it also
+     in a class body. Please see the examples.
 
-***** TODO instance
-***** TODO ingress_handler
-***** TODO deferred_setup
-***** TODO Mapping between fx_* declarations and the FX* FXRuby objects
-***** binding.fx   
-      This is a way to split up your layouts into different .fx "modules", purely for
-      organizational reasons. For example,
+**** instance
+     Inside of your component declaration, you will undoubtly
+     want to specify what you want to do once the FXRuby object
+     is actually instantiated. This is what the instance clause
+     will allow you to do. Your code block there will be passed
+     a reference to the FXRuby object, allowing you to set up
+     connections, change the component state, etc.
 
-      #+begin_src ruby
-      binding.fx "overview"
-      #+end_src
+     There are some added benefits as well. When making a connection,
+     with the normal FXRuby, you would do something like this:
+     #+begin_src ruby
+     ...
+     aButton.connect(SEL_COMMAND)  { |sender, selector, data|
+       ... code to handle this event ...
+     }
+     #+end_src
 
-      will load the overview.fx portion of the GUI, which happens to be a tab contents
-      in the tab book, which in our case looks like:
+     But with Enhancement, you would be able to do it thusly:
+     #+begin_src ruby
+     fx_button(:my_button) {
+       ... configs for this FXButton object ...
+       instance { |button|
+         button.sel_command { |sender, selector, data|
+           ... code to handle this event ...
+         }
+       }
+     }
+     #+end_src
 
-      #+begin_src ruby
-      # Overview Tab
+     which will make it feel more Ruby-like and less C++-like.
 
-      fx_tab_item { text "&Overview" }
-      fx_horizontal_frame (:overview_info) {
-        opts STD_FRAME|LAYOUT_FILL_Y
-  
-        fx_group_box (:ov_connections_group) {
-          text "Connections"
-          opts STD_GROUPBOX|LAYOUT_FILL_Y
-    
-          fx_vertical_frame {
-            opts LAYOUT_FILL_Y|LAYOUT_FILL_X #|PACK_UNIFORM_HEIGHT
+**** ingress_handler
+     ingress_handler will allow you to set up the handler for
+     messages coming in from an external source to FXRuby thread,
+     such as RabbitMQ, network connections, databases, or anything else.
+     It allows you to do clean multhreaded Ruby without the normal worries
+     of semaphores and synchronization and the like -- it is all
+     handled for you "magically" behind the scenes!
+
+     You may have as many ingress_handlers specified as you like, as
+     each one needs to have a tag, and the tags are used to dispatch
+     the messages.
+
+     Here is an example taken from RubyNEAT Panel:
+     #+begin_src ruby
+     ingress_handler :status do |type, status|
+       suc, st = status.response
       
-            fx_group_box (:ov_conn_rabbitmq) {
-      ...
-      #+end_src
+       wlist = ref :ov_conn_neaters_widget_list
+       wlist.clearItems
+       st[:neaters].each { |neater| wlist.appendItem neater }
+
+       nlist = ref :ov_conn_neurons_list
+       nlist.clearItems
+       st[:neurons].each { |neuron| nlist.appendItem neuron}
+     end
+     #+end_src
+     
+     Here you can see that a status message has been dispatched to 
+     this ingress_handler, and that the message contains a list of
+     'neaters' and 'neurons' that are being sent to the wlist
+     and nlist list (:ov_conn_neaters_widget_list and :ov_conn:_neurons_list),
+     respecively.
+
+     You may declare your ingress_handler anywhere in your code and have 
+     the expected happen.
+
+**** TODO deferred_setup
+**** TODO Mapping between fx_* declarations and the FX* FXRuby objects
+**** binding.fx   
+     This is a way to split up your layouts into different .fx "modules", purely for
+     organizational reasons. For example,
+
+     #+begin_src ruby
+     binding.fx "overview"
+     #+end_src
+
+     will load the overview.fx portion of the GUI, which happens to be a tab contents
+     in the tab book, which in our case looks like:
+
+     #+begin_src ruby
+     # Overview Tab
+
+     fx_tab_item { text "&Overview" }
+     fx_horizontal_frame (:overview_info) {
+       opts STD_FRAME|LAYOUT_FILL_Y
+  
+       fx_group_box (:ov_connections_group) {
+         text "Connections"
+         opts STD_GROUPBOX|LAYOUT_FILL_Y
+    
+         fx_vertical_frame {
+           opts LAYOUT_FILL_Y|LAYOUT_FILL_X #|PACK_UNIFORM_HEIGHT
+      
+           fx_group_box (:ov_conn_rabbitmq) {
+     ...
+     #+end_src
     
 *** Examples
+    Because this is a spinoff project of the ongoing RubyNEAT
+    effort, there is a splendid RubyNEAT Panel example, that
+    is still in the works. However, you are free to look at the
+    code that is there to get good ideas.
+
+    https://github.com/flajann2/rubyneat-panel/tree/master/lib/rubyneat-panel
+
     Class-based enhancement (this has not been tested yet!!!):
     #+begin_src ruby
     class Main < FXMainWindow
