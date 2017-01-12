@@ -873,9 +873,10 @@ end
    |   0.0.2 | 2017-01-11 | Initial release |
 
 ** Known Issues
-   | Version |       Date | Issues                     |
-   |---------+------------+----------------------------|
-   |   0.0.2 | 2017-01-11 | Not enough example code!!! |
+   | Version |       Date | Issues                                                |
+   |---------+------------+-------------------------------------------------------|
+   |   0.0.2 | 2017-01-11 | Not enough example code!!! Need more documentation!!! |
+
 
 ** Contributing to fxruby-enhancement
  
