@@ -57,7 +57,7 @@ module Fox
               @ingress_delay = @ms_ingress_delay_min
               until @ingress.empty?
                 dispatch_to, payload = @ingress.next
-                raise "Unknown dispatch #{dispatch_to}" unless @ingress_map.member? dispatch_to
+                raise "Unknown dispatch ':#{dispatch_to}'" unless @ingress_map.member? dispatch_to
                 @ingress_map[dispatch_to].(dispatch_to, payload)
               end
             else
