@@ -144,9 +144,9 @@
 *** Reference Documentation
     The following external references are provided for FOX and FXRuby.
     You will need them to understand the FOX Toolkit in general.
-    [[http://www.fox-toolkit.org/][FOX Toolkit]]
-    [[http://www.rubydoc.info/gems/fxruby][FXRuby Class Documentation]]
-    [[http://www.fxruby.org/][FXRuby General Documentation]]
+    - [[http://www.fox-toolkit.org/][FOX Toolkit]]
+    - [[http://www.rubydoc.info/gems/fxruby][FXRuby Class Documentation]]
+    - [[http://www.fxruby.org/][FXRuby General Documentation]]
 
 *** Execution Phases of fxruby-enhancement
     This represents the work flow, in the order stated:
