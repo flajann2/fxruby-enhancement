@@ -36,6 +36,7 @@
      - [[#genesis-of-the-meta-meta-programming-whereby-brain-goes-boom][Genesis of the meta-meta programming, whereby brain goes boom]]
 
 * fxruby-enhancement
+  [[https://gitter.im/fxruby-enhancement][Join the Gitter Community]]
 ** Introduction
    The fxruby library is an excellent wrapper for the FOX Toolkit.
    However, it reflects the C++-ness of FOX, rather than being more
