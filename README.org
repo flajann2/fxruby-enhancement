@@ -384,7 +384,7 @@
                        padTop = DEFAULT_PAD, padBottom = DEFAULT_PAD)
      #+end_src
      
-     becomes:
+     becomes (and we only specify a few parameters in this mapping):
      #+begin_src ruby
      fx_check_button(:your_cb_tag) {
        opts CHECKBUTTON_NORMAL
@@ -394,7 +394,7 @@
      #+end_src
 
      Even though there is a facility for named parameters in FXRuby that requries an
-     additional require (for 1.8.x compatability), there is no need to bother with that.
+     additional 'require' (for 1.8.x compatability), there is no need to bother with that.
      Here, we handle some things for you automatically, like "parent", for example (which
      is why you are using Enhancement!!!) and all the defaults. You just
      specify the parameters you need in the declaration, using the same name
@@ -405,7 +405,8 @@
 
      and infer the correct snake-case usage in Enhancement.
      Furthermore, you will no doubt want to be able to set attributes
-     on the object, so here's how you do it with our example:
+     on the object, so here's how you would, for instance, set the 'backColor'
+     attribute with our example:
      #+begin_src ruby
      fx_check_button(:your_cb_tag) {
        opts CHECKBUTTON_NORMAL
@@ -419,8 +420,28 @@
      #+end_src
 
      Noting that such attributes can only be set once the underlying FXCheckButton object
-     comes into existence.
+     comes into existence. Hince the instance clause.
 
+     As well, you will also want to set up a "target" to handle, for instance, when the
+     FXCheckButton is clicked. Here's how:
+     #+begin_src ruby
+     fx_check_button(:your_cb_tag) {
+       opts CHECKBUTTON_NORMAL
+       padTop DEFAULT_PAD
+       text "Nice Choice"
+
+       instance { |cb|
+         cb.backColor = FXColor::WhiteSmoke
+         cb.sel_command { 
+           ... your code to handle this event...
+         }
+       }
+     }
+     #+end_src
+
+     where you can communicate with other tagged components,
+     put entries in the egress queue, or whatever esle you like.
+     Please see some of the examples presented here.
 **** binding.fx   
      This is a way to split up your layouts into different .fx "modules", purely for
      organizational reasons. For example,
