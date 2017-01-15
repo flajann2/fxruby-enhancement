@@ -142,6 +142,9 @@
     the :back_buffer tag, which then is found by ref() and can be used
     anywhere in the instantiation phase.
 *** Reference Documentation
+    The following external references are provided for FOX and FXRuby.
+    You will need them to understand the FOX Toolkit in general.
+    [[http://www.fox-toolkit.org/][FOX Toolkit]]
     [[http://www.rubydoc.info/gems/fxruby][FXRuby Class Documentation]]
     [[http://www.fxruby.org/][FXRuby General Documentation]]
 
