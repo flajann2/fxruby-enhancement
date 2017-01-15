@@ -5,6 +5,7 @@
    - [[#installation][Installation]]
    - [[#documentation][Documentation]]
      - [[#in-general][In General]]
+     - [[#reference-documentation][Reference Documentation]]
      - [[#execution-phases-of-fxruby-enhancement][Execution Phases of fxruby-enhancement]]
        - [[#declarative][Declarative]]
        - [[#fxruby-instantiation][FXRuby Instantiation]]
@@ -140,6 +141,10 @@
     So when the actual FXImage object is instantiated, it is associated to
     the :back_buffer tag, which then is found by ref() and can be used
     anywhere in the instantiation phase.
+*** Reference Documentation
+    [[http://www.rubydoc.info/gems/fxruby][FXRuby Class Documentation]]
+    [[http://www.fxruby.org/][FXRuby General Documentation]]
+
 *** Execution Phases of fxruby-enhancement
     This represents the work flow, in the order stated:
     | State                     | Description                                                                                                                  |
