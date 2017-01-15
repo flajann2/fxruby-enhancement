@@ -1,4 +1,4 @@
-#+OPTIONS: broken-links:mark
+#+ATTR_HTML: title="Join the chat at https://gitter.im/fxruby-enhancement/Lobby"
 * FXRuby Enhancement Table of Contents                             :TOC_5_gh:
  - [[#fxruby-enhancement][fxruby-enhancement]]
    - [[#introduction][Introduction]]
@@ -36,7 +36,6 @@
      - [[#genesis-of-the-meta-meta-programming-whereby-brain-goes-boom][Genesis of the meta-meta programming, whereby brain goes boom]]
 
 * fxruby-enhancement
-  #+ATTR_HTML: title="Join the chat at https://gitter.im/fxruby-enhancement/Lobby"
 ** Introduction
    The fxruby library is an excellent wrapper for the FOX Toolkit.
    However, it reflects the C++-ness of FOX, rather than being more
