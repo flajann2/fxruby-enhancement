@@ -380,6 +380,8 @@
      the expected happen.
 
 **** TODO deferred_setup
+     Hang in there. We will document this shortly. Most likely
+     you won't be needing this anyway.
 **** Mapping between fx_* declarations and the FX* FXRuby objects
      Basically, the camel-cased FXRuby objects map to snake-case
      fx_* declaritives. For instance,
