@@ -361,7 +361,66 @@
      the expected happen.
 
 **** TODO deferred_setup
-**** TODO Mapping between fx_* declarations and the FX* FXRuby objects
+**** Mapping between fx_* declarations and the FX* FXRuby objects
+     Basically, the camel-cased FXRuby objects map to snake-case
+     fx_* declaritives. For instance,
+     #+begin_src ruby
+     FXCheckButton
+     #+end_src
+
+     maps to:
+     #+begin_src ruby
+     fx_check_button
+     #+end_src
+
+     Furthermore, the parameters required to 'new' an FXRuby object
+     become specifiers in the Enhancement sense. For instance, the parameter
+     list for FXCheckButton is:
+     #+begin_src ruby
+     FXCheckButton.new(parent,
+                       text, target = nil, selector = 0,
+                       opts = CHECKBUTTON_NORMAL, x = 0, y = 0, width = 0,
+                       height = 0, padLeft = DEFAULT_PAD, padRight = DEFAULT_PAD,
+                       padTop = DEFAULT_PAD, padBottom = DEFAULT_PAD)
+     #+end_src
+     
+     becomes:
+     #+begin_src ruby
+     fx_check_button(:your_cb_tag) {
+       opts CHECKBUTTON_NORMAL
+       padTop DEFAULT_PAD
+       text "Nice Choice"
+     }
+     #+end_src
+
+     Even though there is a facility for named parameters in FXRuby that requries an
+     additional require (for 1.8.x compatability), there is no need to bother with that.
+     Here, we handle some things for you automatically, like "parent", for example (which
+     is why you are using Enhancement!!!) and all the defaults. You just
+     specify the parameters you need in the declaration, using the same name
+     of the parameters in the initializer list.
+
+     So that will allow you to use the FXRuby class doumentation, 
+     http://www.rubydoc.info/gems/fxruby
+
+     and infer the correct snake-case usage in Enhancement.
+     Furthermore, you will no doubt want to be able to set attributes
+     on the object, so here's how you do it with our example:
+     #+begin_src ruby
+     fx_check_button(:your_cb_tag) {
+       opts CHECKBUTTON_NORMAL
+       padTop DEFAULT_PAD
+       text "Nice Choice"
+
+       instance { |cb|
+         cb.backColor = FXColor::WhiteSmoke
+       }
+     }
+     #+end_src
+
+     Noting that such attributes can only be set once the underlying FXCheckButton object
+     comes into existence.
+
 **** binding.fx   
      This is a way to split up your layouts into different .fx "modules", purely for
      organizational reasons. For example,
