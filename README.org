@@ -868,9 +868,10 @@ end
     More examples can be found [[file:examples][HERE]].
 
 ** Release Notes
-   | Version |       Date | Notes           |
-   |---------+------------+-----------------|
-   |   0.0.2 | 2017-01-11 | Initial release |
+   | Version |       Date | Notes                                                   |
+   |---------+------------+---------------------------------------------------------|
+   |   0.0.2 | 2017-01-11 | Initial release                                         |
+   |   0.0.3 | 2017-01-15 | Needed to require fox16/colors for FXColor to be loaded |
 
 ** Known Issues
    | Version |       Date | Issues                                                |

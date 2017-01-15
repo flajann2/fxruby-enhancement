@@ -1,4 +1,5 @@
 require 'fox16'
+require 'fox16/colors'
 require 'ostruct'
 require 'awesome_print'
 require 'forwardable'
