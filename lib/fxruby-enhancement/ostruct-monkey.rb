@@ -28,11 +28,12 @@ class OpenStruct
   end
 
   # launch the application
-  def launch ingress: false
+  def launch ingress: false, &block
     create_fox_components
     instance_final_activate
     activate
     Enhancement.activate_ingress_handlers self if ingress
+    block.() if block_given?
     run_application
   end
 end

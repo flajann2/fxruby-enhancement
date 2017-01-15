@@ -13,7 +13,7 @@ class MainWindow < EFXMainWindow
   compose :main_window {    
     title "Hello"
     opts DECOR_ALL
-    
+        
     fx_button {
       text "&Hello, World"
       selector FXApp::ID_QUIT
@@ -31,5 +31,6 @@ end
 
 # alias for fox_component is fxc
 fox_component :app do |app|
-  app.launch
+  app.launch do
+  end
 end
