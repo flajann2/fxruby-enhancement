@@ -44,8 +44,34 @@ module Fox
 <% for @class, @details in @api %>
    class <%= @class %>
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class E<%= @class %> < <%= @class %>
+     <% @i=0 %>
+     <% for @iniparams in @details[:initialize].compact %>
+     def initialize(<%= @iniparams.map{ |p,d| "#{p}" + (d ? "=#{d}" : '')}.join(', ') %>)
+       super
+     end
+     <% @i+=1; end unless @details[:initialize].nil? %>
+
+     def self.compose tag, appref, &block
+         <% @i=0 %>
+         <% for @iniparams in @details[:initialize].compact %>
+             <%= "@os.op[#{@i}]" %> = OpenStruct.new({<%= @iniparams.map{ |p,d| [p, d ? d : ":required"] }
+                                                                 .map{ |p,d| ":#{p} => #{d}"}
+                                                                 .join(', ') %>})
+             <% for @param, @default in @iniparams %>
+             def <%= "#{@param.snake}" %> var; @os.op[@os.ii].<%= "#{@param}" %> = var; end
+             <% end %>
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+         <% @i+=1; end unless @details[:initialize].nil? %>     
+     end
+   end
+          
 <% end %>
   module Enhancement
     module Mapper

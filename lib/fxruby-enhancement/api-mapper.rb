@@ -44,1163 +44,9709 @@ module Fox
 
    class FX4Splitter
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFX4Splitter < FX4Splitter
+     
+     
+     def initialize(p, opts=FOURSPLITTER_NORMAL, x=0, y=0, width=0, height=0)
+       super
+     end
+     
+     def initialize(p, tgt, sel, opts=FOURSPLITTER_NORMAL, x=0, y=0, width=0, height=0)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:p => :required, :opts => FOURSPLITTER_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0})
+             
+             def p var; @os.op[@os.ii].p = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+         
+             @os.op[1] = OpenStruct.new({:p => :required, :tgt => :required, :sel => :required, :opts => FOURSPLITTER_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0})
+             
+             def p var; @os.op[@os.ii].p = var; end
+             
+             def tgt var; @os.op[@os.ii].tgt = var; end
+             
+             def sel var; @os.op[@os.ii].sel = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FX7Segment
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFX7Segment < FX7Segment
+     
+     
+     def initialize(p, text, opts=SEVENSEGMENT_NORMAL, x=0, y=0, width=0, height=0, padLeft=DEFAULT_PAD, padRight=DEFAULT_PAD, padTop=DEFAULT_PAD, padBottom=DEFAULT_PAD)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:p => :required, :text => :required, :opts => SEVENSEGMENT_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
+             
+             def p var; @os.op[@os.ii].p = var; end
+             
+             def text var; @os.op[@os.ii].text = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def pad_left var; @os.op[@os.ii].padLeft = var; end
+             
+             def pad_right var; @os.op[@os.ii].padRight = var; end
+             
+             def pad_top var; @os.op[@os.ii].padTop = var; end
+             
+             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXAccelTable
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXAccelTable < FXAccelTable
+     
+     
+
+     def self.compose tag, appref, &block
+         
+              
+     end
+   end
+          
 
    class FXEvent
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXEvent < FXEvent
+     
+     
+
+     def self.compose tag, appref, &block
+         
+              
+     end
+   end
+          
 
    class FXApp
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXApp < FXApp
+     
+     
+     def initialize(appName="Application", vendorName="FoxDefault")
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:appName => "Application", :vendorName => "FoxDefault"})
+             
+             def app_name var; @os.op[@os.ii].appName = var; end
+             
+             def vendor_name var; @os.op[@os.ii].vendorName = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXArrowButton
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXArrowButton < FXArrowButton
+     
+     
+     def initialize(parent, target=nil, selector=0, opts=ARROW_NORMAL, x=0, y=0, width=0, height=0, padLeft=DEFAULT_PAD, padRight=DEFAULT_PAD, padTop=DEFAULT_PAD, padBottom=DEFAULT_PAD)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:parent => :required, :target => nil, :selector => 0, :opts => ARROW_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
+             
+             def parent var; @os.op[@os.ii].parent = var; end
+             
+             def target var; @os.op[@os.ii].target = var; end
+             
+             def selector var; @os.op[@os.ii].selector = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def pad_left var; @os.op[@os.ii].padLeft = var; end
+             
+             def pad_right var; @os.op[@os.ii].padRight = var; end
+             
+             def pad_top var; @os.op[@os.ii].padTop = var; end
+             
+             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXBMPIcon
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXBMPIcon < FXBMPIcon
+     
+     
+     def initialize(a, pix=nil, clr=Fox.FXRGB(192,192,192), opts=0, width=1, height=1)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:a => :required, :pix => nil, :clr => Fox.FXRGB(192,192,192), :opts => 0, :width => 1, :height => 1})
+             
+             def a var; @os.op[@os.ii].a = var; end
+             
+             def pix var; @os.op[@os.ii].pix = var; end
+             
+             def clr var; @os.op[@os.ii].clr = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXBMPImage
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXBMPImage < FXBMPImage
+     
+     
+     def initialize(a, pix=nil, opts=0, width=1, height=1)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:a => :required, :pix => nil, :opts => 0, :width => 1, :height => 1})
+             
+             def a var; @os.op[@os.ii].a = var; end
+             
+             def pix var; @os.op[@os.ii].pix = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXBitmap
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXBitmap < FXBitmap
+     
+     
+     def initialize(app, pixels=nil, opts=0, width=1, height=1)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:app => :required, :pixels => nil, :opts => 0, :width => 1, :height => 1})
+             
+             def app var; @os.op[@os.ii].app = var; end
+             
+             def pixels var; @os.op[@os.ii].pixels = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXBitmapFrame
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXBitmapFrame < FXBitmapFrame
+     
+     
+     def initialize(p, bmp, opts=FRAME_SUNKEN|FRAME_THICK, x=0, y=0, width=0, height=0, padLeft=0, padRight=0, padTop=0, padBottom=0)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:p => :required, :bmp => :required, :opts => FRAME_SUNKEN|FRAME_THICK, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 0, :padRight => 0, :padTop => 0, :padBottom => 0})
+             
+             def p var; @os.op[@os.ii].p = var; end
+             
+             def bmp var; @os.op[@os.ii].bmp = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def pad_left var; @os.op[@os.ii].padLeft = var; end
+             
+             def pad_right var; @os.op[@os.ii].padRight = var; end
+             
+             def pad_top var; @os.op[@os.ii].padTop = var; end
+             
+             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXBitmapView
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXBitmapView < FXBitmapView
+     
+     
+     def initialize(p, bmp=nil, target=nil, selector=0, opts=0, x=0, y=0, width=0, height=0)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:p => :required, :bmp => nil, :target => nil, :selector => 0, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
+             
+             def p var; @os.op[@os.ii].p = var; end
+             
+             def bmp var; @os.op[@os.ii].bmp = var; end
+             
+             def target var; @os.op[@os.ii].target = var; end
+             
+             def selector var; @os.op[@os.ii].selector = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXButton
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXButton < FXButton
+     
+     
+     def initialize(parent, text, icon=nil, target=nil, selector=0, opts=BUTTON_NORMAL, x=0, y=0, width=0, height=0, padLeft=DEFAULT_PAD, padRight=DEFAULT_PAD, padTop=DEFAULT_PAD, padBottom=DEFAULT_PAD)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:parent => :required, :text => :required, :icon => nil, :target => nil, :selector => 0, :opts => BUTTON_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
+             
+             def parent var; @os.op[@os.ii].parent = var; end
+             
+             def text var; @os.op[@os.ii].text = var; end
+             
+             def icon var; @os.op[@os.ii].icon = var; end
+             
+             def target var; @os.op[@os.ii].target = var; end
+             
+             def selector var; @os.op[@os.ii].selector = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def pad_left var; @os.op[@os.ii].padLeft = var; end
+             
+             def pad_right var; @os.op[@os.ii].padRight = var; end
+             
+             def pad_top var; @os.op[@os.ii].padTop = var; end
+             
+             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXCURCursor
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXCURCursor < FXCURCursor
+     
+     
+     def initialize(app, pixels)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:app => :required, :pixels => :required})
+             
+             def app var; @os.op[@os.ii].app = var; end
+             
+             def pixels var; @os.op[@os.ii].pixels = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXCanvas
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXCanvas < FXCanvas
+     
+     
+     def initialize(parent, target=nil, selector=0, opts=FRAME_NORMAL, x=0, y=0, width=0, height=0)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:parent => :required, :target => nil, :selector => 0, :opts => FRAME_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0})
+             
+             def parent var; @os.op[@os.ii].parent = var; end
+             
+             def target var; @os.op[@os.ii].target = var; end
+             
+             def selector var; @os.op[@os.ii].selector = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXCheckButton
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXCheckButton < FXCheckButton
+     
+     
+     def initialize(parent, text, target=nil, selector=0, opts=CHECKBUTTON_NORMAL, x=0, y=0, width=0, height=0, padLeft=DEFAULT_PAD, padRight=DEFAULT_PAD, padTop=DEFAULT_PAD, padBottom=DEFAULT_PAD)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:parent => :required, :text => :required, :target => nil, :selector => 0, :opts => CHECKBUTTON_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
+             
+             def parent var; @os.op[@os.ii].parent = var; end
+             
+             def text var; @os.op[@os.ii].text = var; end
+             
+             def target var; @os.op[@os.ii].target = var; end
+             
+             def selector var; @os.op[@os.ii].selector = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def pad_left var; @os.op[@os.ii].padLeft = var; end
+             
+             def pad_right var; @os.op[@os.ii].padRight = var; end
+             
+             def pad_top var; @os.op[@os.ii].padTop = var; end
+             
+             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXChoiceBox
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXChoiceBox < FXChoiceBox
+     
+     
+     def initialize(owner, caption, text, icon, choices, opts=0, x=0, y=0, width=0, height=0)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:owner => :required, :caption => :required, :text => :required, :icon => :required, :choices => :required, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
+             
+             def owner var; @os.op[@os.ii].owner = var; end
+             
+             def caption var; @os.op[@os.ii].caption = var; end
+             
+             def text var; @os.op[@os.ii].text = var; end
+             
+             def icon var; @os.op[@os.ii].icon = var; end
+             
+             def choices var; @os.op[@os.ii].choices = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXColorBar
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXColorBar < FXColorBar
+     
+     
+     def initialize(parent, target=nil, selector=0, opts=FRAME_NORMAL, x=0, y=0, width=0, height=0, padLeft=DEFAULT_PAD, padRight=DEFAULT_PAD, padTop=DEFAULT_PAD, padBottom=DEFAULT_PAD)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:parent => :required, :target => nil, :selector => 0, :opts => FRAME_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
+             
+             def parent var; @os.op[@os.ii].parent = var; end
+             
+             def target var; @os.op[@os.ii].target = var; end
+             
+             def selector var; @os.op[@os.ii].selector = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def pad_left var; @os.op[@os.ii].padLeft = var; end
+             
+             def pad_right var; @os.op[@os.ii].padRight = var; end
+             
+             def pad_top var; @os.op[@os.ii].padTop = var; end
+             
+             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXColorDialog
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXColorDialog < FXColorDialog
+     
+     
+     def initialize(owner, title, opts=0, x=0, y=0, width=0, height=0)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:owner => :required, :title => :required, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
+             
+             def owner var; @os.op[@os.ii].owner = var; end
+             
+             def title var; @os.op[@os.ii].title = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXColorItem
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXColorItem < FXColorItem
+     
+     
+     def initialize(text, clr, data=nil)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:text => :required, :clr => :required, :data => nil})
+             
+             def text var; @os.op[@os.ii].text = var; end
+             
+             def clr var; @os.op[@os.ii].clr = var; end
+             
+             def data var; @os.op[@os.ii].data = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXColorList
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXColorList < FXColorList
+     
+     
+     def initialize(p, target=nil, selector=0, opts=LIST_BROWSESELECT, x=0, y=0, width=0, height=0)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => LIST_BROWSESELECT, :x => 0, :y => 0, :width => 0, :height => 0})
+             
+             def p var; @os.op[@os.ii].p = var; end
+             
+             def target var; @os.op[@os.ii].target = var; end
+             
+             def selector var; @os.op[@os.ii].selector = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXColorRing
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXColorRing < FXColorRing
+     
+     
+     def initialize(p, target=nil, selector=0, opts=FRAME_NORMAL, x=0, y=0, width=0, height=0, padLeft=DEFAULT_PAD, padRight=DEFAULT_PAD, padTop=DEFAULT_PAD, padBottom=DEFAULT_PAD)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => FRAME_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
+             
+             def p var; @os.op[@os.ii].p = var; end
+             
+             def target var; @os.op[@os.ii].target = var; end
+             
+             def selector var; @os.op[@os.ii].selector = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def pad_left var; @os.op[@os.ii].padLeft = var; end
+             
+             def pad_right var; @os.op[@os.ii].padRight = var; end
+             
+             def pad_top var; @os.op[@os.ii].padTop = var; end
+             
+             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXColorSelector
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXColorSelector < FXColorSelector
+     
+     
+     def initialize(parent, target=nil, selector=0, opts=0, x=0, y=0, width=0, height=0)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:parent => :required, :target => nil, :selector => 0, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
+             
+             def parent var; @os.op[@os.ii].parent = var; end
+             
+             def target var; @os.op[@os.ii].target = var; end
+             
+             def selector var; @os.op[@os.ii].selector = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXColorWell
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXColorWell < FXColorWell
+     
+     
+     def initialize(parent, color=0, target=nil, selector=0, opts=COLORWELL_NORMAL, x=0, y=0, width=0, height=0, padLeft=DEFAULT_PAD, padRight=DEFAULT_PAD, padTop=DEFAULT_PAD, padBottom=DEFAULT_PAD)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:parent => :required, :color => 0, :target => nil, :selector => 0, :opts => COLORWELL_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
+             
+             def parent var; @os.op[@os.ii].parent = var; end
+             
+             def color var; @os.op[@os.ii].color = var; end
+             
+             def target var; @os.op[@os.ii].target = var; end
+             
+             def selector var; @os.op[@os.ii].selector = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def pad_left var; @os.op[@os.ii].padLeft = var; end
+             
+             def pad_right var; @os.op[@os.ii].padRight = var; end
+             
+             def pad_top var; @os.op[@os.ii].padTop = var; end
+             
+             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXColorWheel
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXColorWheel < FXColorWheel
+     
+     
+     def initialize(p, target=nil, selector=0, opts=FRAME_NORMAL, x=0, y=0, width=0, height=0, padLeft=DEFAULT_PAD, padRight=DEFAULT_PAD, padTop=DEFAULT_PAD, padBottom=DEFAULT_PAD)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => FRAME_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
+             
+             def p var; @os.op[@os.ii].p = var; end
+             
+             def target var; @os.op[@os.ii].target = var; end
+             
+             def selector var; @os.op[@os.ii].selector = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def pad_left var; @os.op[@os.ii].padLeft = var; end
+             
+             def pad_right var; @os.op[@os.ii].padRight = var; end
+             
+             def pad_top var; @os.op[@os.ii].padTop = var; end
+             
+             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXComboBox
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXComboBox < FXComboBox
+     
+     
+     def initialize(p, cols, target=nil, selector=0, opts=COMBOBOX_NORMAL, x=0, y=0, width=0, height=0, padLeft=DEFAULT_PAD, padRight=DEFAULT_PAD, padTop=DEFAULT_PAD, padBottom=DEFAULT_PAD)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:p => :required, :cols => :required, :target => nil, :selector => 0, :opts => COMBOBOX_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
+             
+             def p var; @os.op[@os.ii].p = var; end
+             
+             def cols var; @os.op[@os.ii].cols = var; end
+             
+             def target var; @os.op[@os.ii].target = var; end
+             
+             def selector var; @os.op[@os.ii].selector = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def pad_left var; @os.op[@os.ii].padLeft = var; end
+             
+             def pad_right var; @os.op[@os.ii].padRight = var; end
+             
+             def pad_top var; @os.op[@os.ii].padTop = var; end
+             
+             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXComposite
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXComposite < FXComposite
+     
+     
+     def initialize(parent, opts=0, x=0, y=0, width=0, height=0)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:parent => :required, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
+             
+             def parent var; @os.op[@os.ii].parent = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXCursor
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXCursor < FXCursor
+     
+     
+     def initialize(a, curid=CURSOR_ARROW)
+       super
+     end
+     
+     def initialize(a, pix, width=32, height=32, hotX=-1, hotY=-1)
+       super
+     end
+     
+     def initialize(a, pixels, width=32, height=32, hotX=-1, hotY=-1)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:a => :required, :curid => CURSOR_ARROW})
+             
+             def a var; @os.op[@os.ii].a = var; end
+             
+             def curid var; @os.op[@os.ii].curid = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+         
+             @os.op[1] = OpenStruct.new({:a => :required, :pix => :required, :width => 32, :height => 32, :hotX => -1, :hotY => -1})
+             
+             def a var; @os.op[@os.ii].a = var; end
+             
+             def pix var; @os.op[@os.ii].pix = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def hot_x var; @os.op[@os.ii].hotX = var; end
+             
+             def hot_y var; @os.op[@os.ii].hotY = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+         
+             @os.op[2] = OpenStruct.new({:a => :required, :pixels => :required, :width => 32, :height => 32, :hotX => -1, :hotY => -1})
+             
+             def a var; @os.op[@os.ii].a = var; end
+             
+             def pixels var; @os.op[@os.ii].pixels = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def hot_x var; @os.op[@os.ii].hotX = var; end
+             
+             def hot_y var; @os.op[@os.ii].hotY = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXSegment
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXSegment < FXSegment
+     
+     
+
+     def self.compose tag, appref, &block
+         
+              
+     end
+   end
+          
 
    class FXArc
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXArc < FXArc
+     
+     
+
+     def self.compose tag, appref, &block
+         
+              
+     end
+   end
+          
 
    class FXDC
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXDC < FXDC
+     
+     
+     def initialize(app)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:app => :required})
+             
+             def app var; @os.op[@os.ii].app = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXPSBounds
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXPSBounds < FXPSBounds
+     
+     
+
+     def self.compose tag, appref, &block
+         
+              
+     end
+   end
+          
 
    class FXPrinter
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXPrinter < FXPrinter
+     
+     
+
+     def self.compose tag, appref, &block
+         
+              
+     end
+   end
+          
 
    class FXDCPrint
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXDCPrint < FXDCPrint
+     
+     
+     def initialize(app)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:app => :required})
+             
+             def app var; @os.op[@os.ii].app = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXDCWindow
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXDCWindow < FXDCWindow
+     
+     
+     def initialize(drawable, event=nil)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:drawable => :required, :event => nil})
+             
+             def drawable var; @os.op[@os.ii].drawable = var; end
+             
+             def event var; @os.op[@os.ii].event = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXDataTarget
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXDataTarget < FXDataTarget
+     
+     
+     def initialize(value=nil, target=nil, selector=0)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:value => nil, :target => nil, :selector => 0})
+             
+             def value var; @os.op[@os.ii].value = var; end
+             
+             def target var; @os.op[@os.ii].target = var; end
+             
+             def selector var; @os.op[@os.ii].selector = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXDebugTarget
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXDebugTarget < FXDebugTarget
+     
+     
+
+     def self.compose tag, appref, &block
+         
+              
+     end
+   end
+          
 
    class FXDelegator
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXDelegator < FXDelegator
+     
+     
+     def initialize(delegate=nil)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:delegate => nil})
+             
+             def delegate var; @os.op[@os.ii].delegate = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXDial
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXDial < FXDial
+     
+     
+     def initialize(p, target=nil, selector=0, opts=DIAL_NORMAL, x=0, y=0, width=0, height=0, padLeft=DEFAULT_PAD, padRight=DEFAULT_PAD, padTop=DEFAULT_PAD, padBottom=DEFAULT_PAD)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => DIAL_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
+             
+             def p var; @os.op[@os.ii].p = var; end
+             
+             def target var; @os.op[@os.ii].target = var; end
+             
+             def selector var; @os.op[@os.ii].selector = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def pad_left var; @os.op[@os.ii].padLeft = var; end
+             
+             def pad_right var; @os.op[@os.ii].padRight = var; end
+             
+             def pad_top var; @os.op[@os.ii].padTop = var; end
+             
+             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXDialogBox
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXDialogBox < FXDialogBox
+     
+     
+     def initialize(owner, title, opts=DECOR_TITLE|DECOR_BORDER, x=0, y=0, width=0, height=0, padLeft=10, padRight=10, padTop=10, padBottom=10, hSpacing=4, vSpacing=4)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:owner => :required, :title => :required, :opts => DECOR_TITLE|DECOR_BORDER, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 10, :padRight => 10, :padTop => 10, :padBottom => 10, :hSpacing => 4, :vSpacing => 4})
+             
+             def owner var; @os.op[@os.ii].owner = var; end
+             
+             def title var; @os.op[@os.ii].title = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def pad_left var; @os.op[@os.ii].padLeft = var; end
+             
+             def pad_right var; @os.op[@os.ii].padRight = var; end
+             
+             def pad_top var; @os.op[@os.ii].padTop = var; end
+             
+             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+             
+             def h_spacing var; @os.op[@os.ii].hSpacing = var; end
+             
+             def v_spacing var; @os.op[@os.ii].vSpacing = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXDict
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXDict < FXDict
+     
+     
+
+     def self.compose tag, appref, &block
+         
+              
+     end
+   end
+          
 
    class FXDirBox
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXDirBox < FXDirBox
+     
+     
+     def initialize(p, target=nil, selector=0, opts=FRAME_SUNKEN|FRAME_THICK|TREELISTBOX_NORMAL, x=0, y=0, width=0, height=0, padLeft=DEFAULT_PAD, padRight=DEFAULT_PAD, padTop=DEFAULT_PAD, padBottom=DEFAULT_PAD)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => FRAME_SUNKEN|FRAME_THICK|TREELISTBOX_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
+             
+             def p var; @os.op[@os.ii].p = var; end
+             
+             def target var; @os.op[@os.ii].target = var; end
+             
+             def selector var; @os.op[@os.ii].selector = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def pad_left var; @os.op[@os.ii].padLeft = var; end
+             
+             def pad_right var; @os.op[@os.ii].padRight = var; end
+             
+             def pad_top var; @os.op[@os.ii].padTop = var; end
+             
+             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXDirDialog
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXDirDialog < FXDirDialog
+     
+     
+     def initialize(owner, name, opts=0, x=0, y=0, width=500, height=300)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:owner => :required, :name => :required, :opts => 0, :x => 0, :y => 0, :width => 500, :height => 300})
+             
+             def owner var; @os.op[@os.ii].owner = var; end
+             
+             def name var; @os.op[@os.ii].name = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXDirItem
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXDirItem < FXDirItem
+     
+     
+     def initialize(text, oi=nil, ci=nil, data=nil)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:text => :required, :oi => nil, :ci => nil, :data => nil})
+             
+             def text var; @os.op[@os.ii].text = var; end
+             
+             def oi var; @os.op[@os.ii].oi = var; end
+             
+             def ci var; @os.op[@os.ii].ci = var; end
+             
+             def data var; @os.op[@os.ii].data = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXDirList
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXDirList < FXDirList
+     
+     
+     def initialize(p, target=nil, selector=0, opts=0, x=0, y=0, width=0, height=0)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
+             
+             def p var; @os.op[@os.ii].p = var; end
+             
+             def target var; @os.op[@os.ii].target = var; end
+             
+             def selector var; @os.op[@os.ii].selector = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXDirSelector
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXDirSelector < FXDirSelector
+     
+     
+     def initialize(p, target=nil, selector=0, opts=0, x=0, y=0, width=0, height=0)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
+             
+             def p var; @os.op[@os.ii].p = var; end
+             
+             def target var; @os.op[@os.ii].target = var; end
+             
+             def selector var; @os.op[@os.ii].selector = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXDockBar
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXDockBar < FXDockBar
+     
+     
+     def initialize(p, q, opts=LAYOUT_TOP|LAYOUT_LEFT|LAYOUT_FILL_X, x=0, y=0, width=0, height=0, padLeft=3, padRight=3, padTop=2, padBottom=2, hSpacing=DEFAULT_SPACING, vSpacing=DEFAULT_SPACING)
+       super
+     end
+     
+     def initialize(p, opts=LAYOUT_TOP|LAYOUT_LEFT|LAYOUT_FILL_X, x=0, y=0, width=0, height=0, padLeft=3, padRight=3, padTop=2, padBottom=2, hSpacing=DEFAULT_SPACING, vSpacing=DEFAULT_SPACING)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:p => :required, :q => :required, :opts => LAYOUT_TOP|LAYOUT_LEFT|LAYOUT_FILL_X, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 3, :padRight => 3, :padTop => 2, :padBottom => 2, :hSpacing => DEFAULT_SPACING, :vSpacing => DEFAULT_SPACING})
+             
+             def p var; @os.op[@os.ii].p = var; end
+             
+             def q var; @os.op[@os.ii].q = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def pad_left var; @os.op[@os.ii].padLeft = var; end
+             
+             def pad_right var; @os.op[@os.ii].padRight = var; end
+             
+             def pad_top var; @os.op[@os.ii].padTop = var; end
+             
+             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+             
+             def h_spacing var; @os.op[@os.ii].hSpacing = var; end
+             
+             def v_spacing var; @os.op[@os.ii].vSpacing = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+         
+             @os.op[1] = OpenStruct.new({:p => :required, :opts => LAYOUT_TOP|LAYOUT_LEFT|LAYOUT_FILL_X, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 3, :padRight => 3, :padTop => 2, :padBottom => 2, :hSpacing => DEFAULT_SPACING, :vSpacing => DEFAULT_SPACING})
+             
+             def p var; @os.op[@os.ii].p = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def pad_left var; @os.op[@os.ii].padLeft = var; end
+             
+             def pad_right var; @os.op[@os.ii].padRight = var; end
+             
+             def pad_top var; @os.op[@os.ii].padTop = var; end
+             
+             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+             
+             def h_spacing var; @os.op[@os.ii].hSpacing = var; end
+             
+             def v_spacing var; @os.op[@os.ii].vSpacing = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXDockHandler
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXDockHandler < FXDockHandler
+     
+     
+     def initialize(p, tgt, sel, opts, x, y, w, h, pl, pr, pt, pb)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:p => :required, :tgt => :required, :sel => :required, :opts => :required, :x => :required, :y => :required, :w => :required, :h => :required, :pl => :required, :pr => :required, :pt => :required, :pb => :required})
+             
+             def p var; @os.op[@os.ii].p = var; end
+             
+             def tgt var; @os.op[@os.ii].tgt = var; end
+             
+             def sel var; @os.op[@os.ii].sel = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def w var; @os.op[@os.ii].w = var; end
+             
+             def h var; @os.op[@os.ii].h = var; end
+             
+             def pl var; @os.op[@os.ii].pl = var; end
+             
+             def pr var; @os.op[@os.ii].pr = var; end
+             
+             def pt var; @os.op[@os.ii].pt = var; end
+             
+             def pb var; @os.op[@os.ii].pb = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXDockSite
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXDockSite < FXDockSite
+     
+     
+     def initialize(p, opts=0, x=0, y=0, width=0, height=0, padLeft=0, padRight=0, padTop=0, padBottom=0, hSpacing=0, vSpacing=0)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:p => :required, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 0, :padRight => 0, :padTop => 0, :padBottom => 0, :hSpacing => 0, :vSpacing => 0})
+             
+             def p var; @os.op[@os.ii].p = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def pad_left var; @os.op[@os.ii].padLeft = var; end
+             
+             def pad_right var; @os.op[@os.ii].padRight = var; end
+             
+             def pad_top var; @os.op[@os.ii].padTop = var; end
+             
+             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+             
+             def h_spacing var; @os.op[@os.ii].hSpacing = var; end
+             
+             def v_spacing var; @os.op[@os.ii].vSpacing = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXDockTitle
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXDockTitle < FXDockTitle
+     
+     
+     def initialize(p, text, target=nil, selector=0, opts=FRAME_NORMAL|JUSTIFY_CENTER_X|JUSTIFY_CENTER_Y, x=0, y=0, width=0, height=0, padLeft=0, padRight=0, padTop=0, padBottom=0)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:p => :required, :text => :required, :target => nil, :selector => 0, :opts => FRAME_NORMAL|JUSTIFY_CENTER_X|JUSTIFY_CENTER_Y, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 0, :padRight => 0, :padTop => 0, :padBottom => 0})
+             
+             def p var; @os.op[@os.ii].p = var; end
+             
+             def text var; @os.op[@os.ii].text = var; end
+             
+             def target var; @os.op[@os.ii].target = var; end
+             
+             def selector var; @os.op[@os.ii].selector = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def pad_left var; @os.op[@os.ii].padLeft = var; end
+             
+             def pad_right var; @os.op[@os.ii].padRight = var; end
+             
+             def pad_top var; @os.op[@os.ii].padTop = var; end
+             
+             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXDocument
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXDocument < FXDocument
+     
+     
+
+     def self.compose tag, appref, &block
+         
+              
+     end
+   end
+          
 
    class FXDragCorner
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXDragCorner < FXDragCorner
+     
+     
+     def initialize(p)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:p => :required})
+             
+             def p var; @os.op[@os.ii].p = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXDrawable
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXDrawable < FXDrawable
+     
+     
+
+     def self.compose tag, appref, &block
+         
+              
+     end
+   end
+          
 
    class FXDriveBox
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXDriveBox < FXDriveBox
+     
+     
+     def initialize(p, target=nil, selector=0, opts=FRAME_SUNKEN|FRAME_THICK|LISTBOX_NORMAL, x=0, y=0, width=0, height=0, padLeft=DEFAULT_PAD, padRight=DEFAULT_PAD, padTop=DEFAULT_PAD, padBottom=DEFAULT_PAD)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => FRAME_SUNKEN|FRAME_THICK|LISTBOX_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
+             
+             def p var; @os.op[@os.ii].p = var; end
+             
+             def target var; @os.op[@os.ii].target = var; end
+             
+             def selector var; @os.op[@os.ii].selector = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def pad_left var; @os.op[@os.ii].padLeft = var; end
+             
+             def pad_right var; @os.op[@os.ii].padRight = var; end
+             
+             def pad_top var; @os.op[@os.ii].padTop = var; end
+             
+             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXExtentd
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXExtentd < FXExtentd
+     
+     
+     def initialize(ext)
+       super
+     end
+     
+     def initialize(lo, hi)
+       super
+     end
+     
+     def initialize(xlo, xhi, ylo, yhi)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:ext => :required})
+             
+             def ext var; @os.op[@os.ii].ext = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+         
+             @os.op[1] = OpenStruct.new({:lo => :required, :hi => :required})
+             
+             def lo var; @os.op[@os.ii].lo = var; end
+             
+             def hi var; @os.op[@os.ii].hi = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+         
+             @os.op[2] = OpenStruct.new({:xlo => :required, :xhi => :required, :ylo => :required, :yhi => :required})
+             
+             def xlo var; @os.op[@os.ii].xlo = var; end
+             
+             def xhi var; @os.op[@os.ii].xhi = var; end
+             
+             def ylo var; @os.op[@os.ii].ylo = var; end
+             
+             def yhi var; @os.op[@os.ii].yhi = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXExtentf
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXExtentf < FXExtentf
+     
+     
+     def initialize(ext)
+       super
+     end
+     
+     def initialize(lo, hi)
+       super
+     end
+     
+     def initialize(xlo, xhi, ylo, yhi)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:ext => :required})
+             
+             def ext var; @os.op[@os.ii].ext = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+         
+             @os.op[1] = OpenStruct.new({:lo => :required, :hi => :required})
+             
+             def lo var; @os.op[@os.ii].lo = var; end
+             
+             def hi var; @os.op[@os.ii].hi = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+         
+             @os.op[2] = OpenStruct.new({:xlo => :required, :xhi => :required, :ylo => :required, :yhi => :required})
+             
+             def xlo var; @os.op[@os.ii].xlo = var; end
+             
+             def xhi var; @os.op[@os.ii].xhi = var; end
+             
+             def ylo var; @os.op[@os.ii].ylo = var; end
+             
+             def yhi var; @os.op[@os.ii].yhi = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXFileDialog
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXFileDialog < FXFileDialog
+     
+     
+     def initialize(owner, name, opts=0, x=0, y=0, width=500, height=300)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:owner => :required, :name => :required, :opts => 0, :x => 0, :y => 0, :width => 500, :height => 300})
+             
+             def owner var; @os.op[@os.ii].owner = var; end
+             
+             def name var; @os.op[@os.ii].name = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXFileAssoc
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXFileAssoc < FXFileAssoc
+     
+     
+
+     def self.compose tag, appref, &block
+         
+              
+     end
+   end
+          
 
    class FXFileDict
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXFileDict < FXFileDict
+     
+     
+     def initialize(app, db=nil)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:app => :required, :db => nil})
+             
+             def app var; @os.op[@os.ii].app = var; end
+             
+             def db var; @os.op[@os.ii].db = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXFileItem
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXFileItem < FXFileItem
+     
+     
+     def initialize(text, bi=nil, mi=nil, ptr=nil)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:text => :required, :bi => nil, :mi => nil, :ptr => nil})
+             
+             def text var; @os.op[@os.ii].text = var; end
+             
+             def bi var; @os.op[@os.ii].bi = var; end
+             
+             def mi var; @os.op[@os.ii].mi = var; end
+             
+             def ptr var; @os.op[@os.ii].ptr = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXFileList
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXFileList < FXFileList
+     
+     
+     def initialize(p, target=nil, selector=0, opts=0, x=0, y=0, width=0, height=0)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
+             
+             def p var; @os.op[@os.ii].p = var; end
+             
+             def target var; @os.op[@os.ii].target = var; end
+             
+             def selector var; @os.op[@os.ii].selector = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXFileSelector
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXFileSelector < FXFileSelector
+     
+     
+     def initialize(p, target=nil, selector=0, opts=0, x=0, y=0, width=0, height=0)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
+             
+             def p var; @os.op[@os.ii].p = var; end
+             
+             def target var; @os.op[@os.ii].target = var; end
+             
+             def selector var; @os.op[@os.ii].selector = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXFileStream
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXFileStream < FXFileStream
+     
+     
+     def initialize(cont=nil)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:cont => nil})
+             
+             def cont var; @os.op[@os.ii].cont = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXFoldingItem
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXFoldingItem < FXFoldingItem
+     
+     
+     def initialize(text, openIcon=nil, closedIcon=nil, data=nil)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:text => :required, :openIcon => nil, :closedIcon => nil, :data => nil})
+             
+             def text var; @os.op[@os.ii].text = var; end
+             
+             def open_icon var; @os.op[@os.ii].openIcon = var; end
+             
+             def closed_icon var; @os.op[@os.ii].closedIcon = var; end
+             
+             def data var; @os.op[@os.ii].data = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXFoldingList
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXFoldingList < FXFoldingList
+     
+     
+     def initialize(p, target=nil, selector=0, opts=TREELIST_NORMAL, x=0, y=0, width=0, height=0)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => TREELIST_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0})
+             
+             def p var; @os.op[@os.ii].p = var; end
+             
+             def target var; @os.op[@os.ii].target = var; end
+             
+             def selector var; @os.op[@os.ii].selector = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXFontDesc
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXFontDesc < FXFontDesc
+     
+     
+
+     def self.compose tag, appref, &block
+         
+              
+     end
+   end
+          
 
    class FXFont
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXFont < FXFont
+     
+     
+     def initialize(a, fontDesc)
+       super
+     end
+     
+     def initialize(a, face, size, weight=FXFont::Normal, slant=Font::Straight, encoding=FONTENCODING_DEFAULT, setWidth=FXFont::NonExpanded, hints=0)
+       super
+     end
+     
+     def initialize(a, string)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:a => :required, :fontDesc => :required})
+             
+             def a var; @os.op[@os.ii].a = var; end
+             
+             def font_desc var; @os.op[@os.ii].fontDesc = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+         
+             @os.op[1] = OpenStruct.new({:a => :required, :face => :required, :size => :required, :weight => FXFont::Normal, :slant => Font::Straight, :encoding => FONTENCODING_DEFAULT, :setWidth => FXFont::NonExpanded, :hints => 0})
+             
+             def a var; @os.op[@os.ii].a = var; end
+             
+             def face var; @os.op[@os.ii].face = var; end
+             
+             def size var; @os.op[@os.ii].size = var; end
+             
+             def weight var; @os.op[@os.ii].weight = var; end
+             
+             def slant var; @os.op[@os.ii].slant = var; end
+             
+             def encoding var; @os.op[@os.ii].encoding = var; end
+             
+             def set_width var; @os.op[@os.ii].setWidth = var; end
+             
+             def hints var; @os.op[@os.ii].hints = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+         
+             @os.op[2] = OpenStruct.new({:a => :required, :string => :required})
+             
+             def a var; @os.op[@os.ii].a = var; end
+             
+             def string var; @os.op[@os.ii].string = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXFontDialog
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXFontDialog < FXFontDialog
+     
+     
+     def initialize(owner, name, opts=0, x=0, y=0, width=600, height=380)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:owner => :required, :name => :required, :opts => 0, :x => 0, :y => 0, :width => 600, :height => 380})
+             
+             def owner var; @os.op[@os.ii].owner = var; end
+             
+             def name var; @os.op[@os.ii].name = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXFontSelector
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXFontSelector < FXFontSelector
+     
+     
+     def initialize(p, target=nil, selector=0, opts=0, x=0, y=0, width=0, height=0)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
+             
+             def p var; @os.op[@os.ii].p = var; end
+             
+             def target var; @os.op[@os.ii].target = var; end
+             
+             def selector var; @os.op[@os.ii].selector = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXFrame
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXFrame < FXFrame
+     
+     
+     def initialize(parent, opts=FRAME_NORMAL, x=0, y=0, width=0, height=0, padLeft=DEFAULT_PAD, padRight=DEFAULT_PAD, padTop=DEFAULT_PAD, padBottom=DEFAULT_PAD)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:parent => :required, :opts => FRAME_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
+             
+             def parent var; @os.op[@os.ii].parent = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def pad_left var; @os.op[@os.ii].padLeft = var; end
+             
+             def pad_right var; @os.op[@os.ii].padRight = var; end
+             
+             def pad_top var; @os.op[@os.ii].padTop = var; end
+             
+             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXGIFCursor
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXGIFCursor < FXGIFCursor
+     
+     
+     def initialize(a, pix, hx=-1, hy=-1)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:a => :required, :pix => :required, :hx => -1, :hy => -1})
+             
+             def a var; @os.op[@os.ii].a = var; end
+             
+             def pix var; @os.op[@os.ii].pix = var; end
+             
+             def hx var; @os.op[@os.ii].hx = var; end
+             
+             def hy var; @os.op[@os.ii].hy = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXGIFIcon
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXGIFIcon < FXGIFIcon
+     
+     
+     def initialize(a, pix=nil, clr=0, opts=0, width=1, height=1)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:a => :required, :pix => nil, :clr => 0, :opts => 0, :width => 1, :height => 1})
+             
+             def a var; @os.op[@os.ii].a = var; end
+             
+             def pix var; @os.op[@os.ii].pix = var; end
+             
+             def clr var; @os.op[@os.ii].clr = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXGIFImage
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXGIFImage < FXGIFImage
+     
+     
+     def initialize(a, pix=nil, opts=0, width=1, height=1)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:a => :required, :pix => nil, :opts => 0, :width => 1, :height => 1})
+             
+             def a var; @os.op[@os.ii].a = var; end
+             
+             def pix var; @os.op[@os.ii].pix = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXGLCanvas
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXGLCanvas < FXGLCanvas
+     
+     
+     def initialize(parent, vis, target=nil, selector=0, opts=0, x=0, y=0, width=0, height=0)
+       super
+     end
+     
+     def initialize(parent, vis, sharegroup, target=nil, selector=0, opts=0, x=0, y=0, width=0, height=0)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:parent => :required, :vis => :required, :target => nil, :selector => 0, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
+             
+             def parent var; @os.op[@os.ii].parent = var; end
+             
+             def vis var; @os.op[@os.ii].vis = var; end
+             
+             def target var; @os.op[@os.ii].target = var; end
+             
+             def selector var; @os.op[@os.ii].selector = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+         
+             @os.op[1] = OpenStruct.new({:parent => :required, :vis => :required, :sharegroup => :required, :target => nil, :selector => 0, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
+             
+             def parent var; @os.op[@os.ii].parent = var; end
+             
+             def vis var; @os.op[@os.ii].vis = var; end
+             
+             def sharegroup var; @os.op[@os.ii].sharegroup = var; end
+             
+             def target var; @os.op[@os.ii].target = var; end
+             
+             def selector var; @os.op[@os.ii].selector = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXGLContext
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXGLContext < FXGLContext
+     
+     
+     def initialize(app, visual, other=nil)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:app => :required, :visual => :required, :other => nil})
+             
+             def app var; @os.op[@os.ii].app = var; end
+             
+             def visual var; @os.op[@os.ii].visual = var; end
+             
+             def other var; @os.op[@os.ii].other = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXGLObject
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXGLObject < FXGLObject
+     
+     
+
+     def self.compose tag, appref, &block
+         
+              
+     end
+   end
+          
 
    class FXGLShape
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXGLShape < FXGLShape
+     
+     
+     def initialize(x, y, z, opts, front=nil, back=nil)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:x => :required, :y => :required, :z => :required, :opts => :required, :front => nil, :back => nil})
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def z var; @os.op[@os.ii].z = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def front var; @os.op[@os.ii].front = var; end
+             
+             def back var; @os.op[@os.ii].back = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXViewport
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXViewport < FXViewport
+     
+     
+
+     def self.compose tag, appref, &block
+         
+              
+     end
+   end
+          
 
    class FXLight
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXLight < FXLight
+     
+     
+
+     def self.compose tag, appref, &block
+         
+              
+     end
+   end
+          
 
    class FXMaterial
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXMaterial < FXMaterial
+     
+     
+
+     def self.compose tag, appref, &block
+         
+              
+     end
+   end
+          
 
    class FXGLViewer
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXGLViewer < FXGLViewer
+     
+     
+     def initialize(p, vis, target=nil, selector=0, opts=0, x=0, y=0, width=0, height=0)
+       super
+     end
+     
+     def initialize(p, vis, sharegroup, target=nil, selector=0, opts=0, x=0, y=0, width=0, height=0)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:p => :required, :vis => :required, :target => nil, :selector => 0, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
+             
+             def p var; @os.op[@os.ii].p = var; end
+             
+             def vis var; @os.op[@os.ii].vis = var; end
+             
+             def target var; @os.op[@os.ii].target = var; end
+             
+             def selector var; @os.op[@os.ii].selector = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+         
+             @os.op[1] = OpenStruct.new({:p => :required, :vis => :required, :sharegroup => :required, :target => nil, :selector => 0, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
+             
+             def p var; @os.op[@os.ii].p = var; end
+             
+             def vis var; @os.op[@os.ii].vis = var; end
+             
+             def sharegroup var; @os.op[@os.ii].sharegroup = var; end
+             
+             def target var; @os.op[@os.ii].target = var; end
+             
+             def selector var; @os.op[@os.ii].selector = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXGLVisual
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXGLVisual < FXGLVisual
+     
+     
+     def initialize(app, flags)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:app => :required, :flags => :required})
+             
+             def app var; @os.op[@os.ii].app = var; end
+             
+             def flags var; @os.op[@os.ii].flags = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXGradient
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXGradient < FXGradient
+     
+     
+
+     def self.compose tag, appref, &block
+         
+              
+     end
+   end
+          
 
    class FXGradientBar
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXGradientBar < FXGradientBar
+     
+     
+     def initialize(p, target=nil, selector=0, opts=FRAME_NORMAL, x=0, y=0, width=0, height=0, padLeft=DEFAULT_PAD, padRight=DEFAULT_PAD, padTop=DEFAULT_PAD, padBottom=DEFAULT_PAD)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => FRAME_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
+             
+             def p var; @os.op[@os.ii].p = var; end
+             
+             def target var; @os.op[@os.ii].target = var; end
+             
+             def selector var; @os.op[@os.ii].selector = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def pad_left var; @os.op[@os.ii].padLeft = var; end
+             
+             def pad_right var; @os.op[@os.ii].padRight = var; end
+             
+             def pad_top var; @os.op[@os.ii].padTop = var; end
+             
+             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXGroupBox
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXGroupBox < FXGroupBox
+     
+     
+     def initialize(parent, text, opts=GROUPBOX_NORMAL, x=0, y=0, width=0, height=0, padLeft=DEFAULT_SPACING, padRight=DEFAULT_SPACING, padTop=DEFAULT_SPACING, padBottom=DEFAULT_SPACING, hSpacing=DEFAULT_SPACING, vSpacing=DEFAULT_SPACING)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:parent => :required, :text => :required, :opts => GROUPBOX_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_SPACING, :padRight => DEFAULT_SPACING, :padTop => DEFAULT_SPACING, :padBottom => DEFAULT_SPACING, :hSpacing => DEFAULT_SPACING, :vSpacing => DEFAULT_SPACING})
+             
+             def parent var; @os.op[@os.ii].parent = var; end
+             
+             def text var; @os.op[@os.ii].text = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def pad_left var; @os.op[@os.ii].padLeft = var; end
+             
+             def pad_right var; @os.op[@os.ii].padRight = var; end
+             
+             def pad_top var; @os.op[@os.ii].padTop = var; end
+             
+             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+             
+             def h_spacing var; @os.op[@os.ii].hSpacing = var; end
+             
+             def v_spacing var; @os.op[@os.ii].vSpacing = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXHeaderItem
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXHeaderItem < FXHeaderItem
+     
+     
+     def initialize(text, ic=nil, s=0, ptr=nil)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:text => :required, :ic => nil, :s => 0, :ptr => nil})
+             
+             def text var; @os.op[@os.ii].text = var; end
+             
+             def ic var; @os.op[@os.ii].ic = var; end
+             
+             def s var; @os.op[@os.ii].s = var; end
+             
+             def ptr var; @os.op[@os.ii].ptr = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXHeader
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXHeader < FXHeader
+     
+     
+     def initialize(p, target=nil, selector=0, opts=HEADER_NORMAL, x=0, y=0, width=0, height=0, padLeft=DEFAULT_PAD, padRight=DEFAULT_PAD, padTop=DEFAULT_PAD, padBottom=DEFAULT_PAD)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => HEADER_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
+             
+             def p var; @os.op[@os.ii].p = var; end
+             
+             def target var; @os.op[@os.ii].target = var; end
+             
+             def selector var; @os.op[@os.ii].selector = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def pad_left var; @os.op[@os.ii].padLeft = var; end
+             
+             def pad_right var; @os.op[@os.ii].padRight = var; end
+             
+             def pad_top var; @os.op[@os.ii].padTop = var; end
+             
+             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXHorizontalFrame
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXHorizontalFrame < FXHorizontalFrame
+     
+     
+     def initialize(p, opts=0, x=0, y=0, width=0, height=0, padLeft=DEFAULT_SPACING, padRight=DEFAULT_SPACING, padTop=DEFAULT_SPACING, padBottom=DEFAULT_SPACING, hSpacing=DEFAULT_SPACING, vSpacing=DEFAULT_SPACING)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:p => :required, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_SPACING, :padRight => DEFAULT_SPACING, :padTop => DEFAULT_SPACING, :padBottom => DEFAULT_SPACING, :hSpacing => DEFAULT_SPACING, :vSpacing => DEFAULT_SPACING})
+             
+             def p var; @os.op[@os.ii].p = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def pad_left var; @os.op[@os.ii].padLeft = var; end
+             
+             def pad_right var; @os.op[@os.ii].padRight = var; end
+             
+             def pad_top var; @os.op[@os.ii].padTop = var; end
+             
+             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+             
+             def h_spacing var; @os.op[@os.ii].hSpacing = var; end
+             
+             def v_spacing var; @os.op[@os.ii].vSpacing = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXICOIcon
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXICOIcon < FXICOIcon
+     
+     
+     def initialize(a, pix=nil, clr=0, opts=0, width=1, height=1)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:a => :required, :pix => nil, :clr => 0, :opts => 0, :width => 1, :height => 1})
+             
+             def a var; @os.op[@os.ii].a = var; end
+             
+             def pix var; @os.op[@os.ii].pix = var; end
+             
+             def clr var; @os.op[@os.ii].clr = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXICOImage
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXICOImage < FXICOImage
+     
+     
+     def initialize(a, pix=nil, opts=0, width=1, height=1)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:a => :required, :pix => nil, :opts => 0, :width => 1, :height => 1})
+             
+             def a var; @os.op[@os.ii].a = var; end
+             
+             def pix var; @os.op[@os.ii].pix = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXIcon
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXIcon < FXIcon
+     
+     
+     def initialize(app, pix=nil, clr=0, opts=0, width=1, height=1)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:app => :required, :pix => nil, :clr => 0, :opts => 0, :width => 1, :height => 1})
+             
+             def app var; @os.op[@os.ii].app = var; end
+             
+             def pix var; @os.op[@os.ii].pix = var; end
+             
+             def clr var; @os.op[@os.ii].clr = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXIconDict
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXIconDict < FXIconDict
+     
+     
+
+     def self.compose tag, appref, &block
+         
+              
+     end
+   end
+          
 
    class FXIconItem
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXIconItem < FXIconItem
+     
+     
+     def initialize(text, bigIcon=nil, miniIcon=nil, data=nil)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:text => :required, :bigIcon => nil, :miniIcon => nil, :data => nil})
+             
+             def text var; @os.op[@os.ii].text = var; end
+             
+             def big_icon var; @os.op[@os.ii].bigIcon = var; end
+             
+             def mini_icon var; @os.op[@os.ii].miniIcon = var; end
+             
+             def data var; @os.op[@os.ii].data = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXIconList
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXIconList < FXIconList
+     
+     
+     def initialize(p, target=nil, selector=0, opts=ICONLIST_NORMAL, x=0, y=0, width=0, height=0)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => ICONLIST_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0})
+             
+             def p var; @os.op[@os.ii].p = var; end
+             
+             def target var; @os.op[@os.ii].target = var; end
+             
+             def selector var; @os.op[@os.ii].selector = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXIconSource
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXIconSource < FXIconSource
+     
+     
+     def initialize(app)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:app => :required})
+             
+             def app var; @os.op[@os.ii].app = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXId
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXId < FXId
+     
+     
+
+     def self.compose tag, appref, &block
+         
+              
+     end
+   end
+          
 
    class FXImage
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXImage < FXImage
+     
+     
+     def initialize(a, pixels=nil, opts=0, width=1, height=1)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:a => :required, :pixels => nil, :opts => 0, :width => 1, :height => 1})
+             
+             def a var; @os.op[@os.ii].a = var; end
+             
+             def pixels var; @os.op[@os.ii].pixels = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXImageFrame
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXImageFrame < FXImageFrame
+     
+     
+     def initialize(p, img, opts=FRAME_SUNKEN|FRAME_THICK, x=0, y=0, width=0, height=0, padLeft=0, padRight=0, padTop=0, padBottom=0)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:p => :required, :img => :required, :opts => FRAME_SUNKEN|FRAME_THICK, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 0, :padRight => 0, :padTop => 0, :padBottom => 0})
+             
+             def p var; @os.op[@os.ii].p = var; end
+             
+             def img var; @os.op[@os.ii].img = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def pad_left var; @os.op[@os.ii].padLeft = var; end
+             
+             def pad_right var; @os.op[@os.ii].padRight = var; end
+             
+             def pad_top var; @os.op[@os.ii].padTop = var; end
+             
+             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXImageView
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXImageView < FXImageView
+     
+     
+     def initialize(p, img=nil, target=nil, selector=0, opts=0, x=0, y=0, width=0, height=0)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:p => :required, :img => nil, :target => nil, :selector => 0, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
+             
+             def p var; @os.op[@os.ii].p = var; end
+             
+             def img var; @os.op[@os.ii].img = var; end
+             
+             def target var; @os.op[@os.ii].target = var; end
+             
+             def selector var; @os.op[@os.ii].selector = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXInputDialog
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXInputDialog < FXInputDialog
+     
+     
+     def initialize(owner, caption, label, icon=nil, opts=INPUTDIALOG_STRING, x=0, y=0, width=0, height=0)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:owner => :required, :caption => :required, :label => :required, :icon => nil, :opts => INPUTDIALOG_STRING, :x => 0, :y => 0, :width => 0, :height => 0})
+             
+             def owner var; @os.op[@os.ii].owner = var; end
+             
+             def caption var; @os.op[@os.ii].caption = var; end
+             
+             def label var; @os.op[@os.ii].label = var; end
+             
+             def icon var; @os.op[@os.ii].icon = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXJPGIcon
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXJPGIcon < FXJPGIcon
+     
+     
+     def initialize(a, pix=nil, clr=0, opts=0, width=1, height=1, quality=75)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:a => :required, :pix => nil, :clr => 0, :opts => 0, :width => 1, :height => 1, :quality => 75})
+             
+             def a var; @os.op[@os.ii].a = var; end
+             
+             def pix var; @os.op[@os.ii].pix = var; end
+             
+             def clr var; @os.op[@os.ii].clr = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def quality var; @os.op[@os.ii].quality = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXJPGImage
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXJPGImage < FXJPGImage
+     
+     
+     def initialize(a, pix=nil, opts=0, width=1, height=1, quality=75)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:a => :required, :pix => nil, :opts => 0, :width => 1, :height => 1, :quality => 75})
+             
+             def a var; @os.op[@os.ii].a = var; end
+             
+             def pix var; @os.op[@os.ii].pix = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def quality var; @os.op[@os.ii].quality = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXKnob
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXKnob < FXKnob
+     
+     
+     def initialize(p, target=nil, selector=0, opts=KNOB_NORMAL, x=0, y=0, width=0, height=0, padLeft=DEFAULT_PAD, padRight=DEFAULT_PAD, padTop=DEFAULT_PAD, padBottom=DEFAULT_PAD)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => KNOB_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
+             
+             def p var; @os.op[@os.ii].p = var; end
+             
+             def target var; @os.op[@os.ii].target = var; end
+             
+             def selector var; @os.op[@os.ii].selector = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def pad_left var; @os.op[@os.ii].padLeft = var; end
+             
+             def pad_right var; @os.op[@os.ii].padRight = var; end
+             
+             def pad_top var; @os.op[@os.ii].padTop = var; end
+             
+             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXLabel
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXLabel < FXLabel
+     
+     
+     def initialize(parent, text, icon=nil, opts=LABEL_NORMAL, x=0, y=0, width=0, height=0, padLeft=DEFAULT_PAD, padRight=DEFAULT_PAD, padTop=DEFAULT_PAD, padBottom=DEFAULT_PAD)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:parent => :required, :text => :required, :icon => nil, :opts => LABEL_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
+             
+             def parent var; @os.op[@os.ii].parent = var; end
+             
+             def text var; @os.op[@os.ii].text = var; end
+             
+             def icon var; @os.op[@os.ii].icon = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def pad_left var; @os.op[@os.ii].padLeft = var; end
+             
+             def pad_right var; @os.op[@os.ii].padRight = var; end
+             
+             def pad_top var; @os.op[@os.ii].padTop = var; end
+             
+             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXListItem
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXListItem < FXListItem
+     
+     
+     def initialize(text, icon=nil, data=nil)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:text => :required, :icon => nil, :data => nil})
+             
+             def text var; @os.op[@os.ii].text = var; end
+             
+             def icon var; @os.op[@os.ii].icon = var; end
+             
+             def data var; @os.op[@os.ii].data = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXList
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXList < FXList
+     
+     
+     def initialize(p, target=nil, selector=0, opts=LIST_NORMAL, x=0, y=0, width=0, height=0)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => LIST_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0})
+             
+             def p var; @os.op[@os.ii].p = var; end
+             
+             def target var; @os.op[@os.ii].target = var; end
+             
+             def selector var; @os.op[@os.ii].selector = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXListBox
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXListBox < FXListBox
+     
+     
+     def initialize(p, target=nil, selector=0, opts=FRAME_SUNKEN|FRAME_THICK|LISTBOX_NORMAL, x=0, y=0, width=0, height=0, padLeft=DEFAULT_PAD, padRight=DEFAULT_PAD, padTop=DEFAULT_PAD, padBottom=DEFAULT_PAD)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => FRAME_SUNKEN|FRAME_THICK|LISTBOX_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
+             
+             def p var; @os.op[@os.ii].p = var; end
+             
+             def target var; @os.op[@os.ii].target = var; end
+             
+             def selector var; @os.op[@os.ii].selector = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def pad_left var; @os.op[@os.ii].padLeft = var; end
+             
+             def pad_right var; @os.op[@os.ii].padRight = var; end
+             
+             def pad_top var; @os.op[@os.ii].padTop = var; end
+             
+             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXMDIDeleteButton
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXMDIDeleteButton < FXMDIDeleteButton
+     
+     
+     def initialize(p, target=nil, selector=0, opts=FRAME_RAISED, x=0, y=0, width=0, height=0)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => FRAME_RAISED, :x => 0, :y => 0, :width => 0, :height => 0})
+             
+             def p var; @os.op[@os.ii].p = var; end
+             
+             def target var; @os.op[@os.ii].target = var; end
+             
+             def selector var; @os.op[@os.ii].selector = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXMDIRestoreButton
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXMDIRestoreButton < FXMDIRestoreButton
+     
+     
+     def initialize(p, target=nil, selector=0, opts=FRAME_RAISED, x=0, y=0, width=0, height=0)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => FRAME_RAISED, :x => 0, :y => 0, :width => 0, :height => 0})
+             
+             def p var; @os.op[@os.ii].p = var; end
+             
+             def target var; @os.op[@os.ii].target = var; end
+             
+             def selector var; @os.op[@os.ii].selector = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXMDIMaximizeButton
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXMDIMaximizeButton < FXMDIMaximizeButton
+     
+     
+     def initialize(p, target=nil, selector=0, opts=FRAME_RAISED, x=0, y=0, width=0, height=0)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => FRAME_RAISED, :x => 0, :y => 0, :width => 0, :height => 0})
+             
+             def p var; @os.op[@os.ii].p = var; end
+             
+             def target var; @os.op[@os.ii].target = var; end
+             
+             def selector var; @os.op[@os.ii].selector = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXMDIMinimizeButton
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXMDIMinimizeButton < FXMDIMinimizeButton
+     
+     
+     def initialize(p, target=nil, selector=0, opts=FRAME_RAISED, x=0, y=0, width=0, height=0)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => FRAME_RAISED, :x => 0, :y => 0, :width => 0, :height => 0})
+             
+             def p var; @os.op[@os.ii].p = var; end
+             
+             def target var; @os.op[@os.ii].target = var; end
+             
+             def selector var; @os.op[@os.ii].selector = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXMDIWindowButton
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXMDIWindowButton < FXMDIWindowButton
+     
+     
+     def initialize(p, pup, target=nil, selector=0, opts=0, x=0, y=0, width=0, height=0)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:p => :required, :pup => :required, :target => nil, :selector => 0, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
+             
+             def p var; @os.op[@os.ii].p = var; end
+             
+             def pup var; @os.op[@os.ii].pup = var; end
+             
+             def target var; @os.op[@os.ii].target = var; end
+             
+             def selector var; @os.op[@os.ii].selector = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXMDIMenu
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXMDIMenu < FXMDIMenu
+     
+     
+     def initialize(owner, target=nil)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:owner => :required, :target => nil})
+             
+             def owner var; @os.op[@os.ii].owner = var; end
+             
+             def target var; @os.op[@os.ii].target = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXMDIChild
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXMDIChild < FXMDIChild
+     
+     
+     def initialize(p, name, ic=nil, pup=nil, opts=0, x=0, y=0, width=0, height=0)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:p => :required, :name => :required, :ic => nil, :pup => nil, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
+             
+             def p var; @os.op[@os.ii].p = var; end
+             
+             def name var; @os.op[@os.ii].name = var; end
+             
+             def ic var; @os.op[@os.ii].ic = var; end
+             
+             def pup var; @os.op[@os.ii].pup = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXMDIClient
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXMDIClient < FXMDIClient
+     
+     
+     def initialize(p, opts=0, x=0, y=0, width=0, height=0)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:p => :required, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
+             
+             def p var; @os.op[@os.ii].p = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXMainWindow
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXMainWindow < FXMainWindow
+     
+     
+     def initialize(app, title, icon=nil, miniIcon=nil, opts=DECOR_ALL, x=0, y=0, width=0, height=0, padLeft=0, padRight=0, padTop=0, padBottom=0, hSpacing=4, vSpacing=4)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:app => :required, :title => :required, :icon => nil, :miniIcon => nil, :opts => DECOR_ALL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 0, :padRight => 0, :padTop => 0, :padBottom => 0, :hSpacing => 4, :vSpacing => 4})
+             
+             def app var; @os.op[@os.ii].app = var; end
+             
+             def title var; @os.op[@os.ii].title = var; end
+             
+             def icon var; @os.op[@os.ii].icon = var; end
+             
+             def mini_icon var; @os.op[@os.ii].miniIcon = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def pad_left var; @os.op[@os.ii].padLeft = var; end
+             
+             def pad_right var; @os.op[@os.ii].padRight = var; end
+             
+             def pad_top var; @os.op[@os.ii].padTop = var; end
+             
+             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+             
+             def h_spacing var; @os.op[@os.ii].hSpacing = var; end
+             
+             def v_spacing var; @os.op[@os.ii].vSpacing = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXMatrix
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXMatrix < FXMatrix
+     
+     
+     def initialize(parent, n=1, opts=MATRIX_BY_ROWS, x=0, y=0, width=0, height=0, padLeft=DEFAULT_SPACING, padRight=DEFAULT_SPACING, padTop=DEFAULT_SPACING, padBottom=DEFAULT_SPACING, hSpacing=DEFAULT_SPACING, vSpacing=DEFAULT_SPACING)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:parent => :required, :n => 1, :opts => MATRIX_BY_ROWS, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_SPACING, :padRight => DEFAULT_SPACING, :padTop => DEFAULT_SPACING, :padBottom => DEFAULT_SPACING, :hSpacing => DEFAULT_SPACING, :vSpacing => DEFAULT_SPACING})
+             
+             def parent var; @os.op[@os.ii].parent = var; end
+             
+             def n var; @os.op[@os.ii].n = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def pad_left var; @os.op[@os.ii].padLeft = var; end
+             
+             def pad_right var; @os.op[@os.ii].padRight = var; end
+             
+             def pad_top var; @os.op[@os.ii].padTop = var; end
+             
+             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+             
+             def h_spacing var; @os.op[@os.ii].hSpacing = var; end
+             
+             def v_spacing var; @os.op[@os.ii].vSpacing = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXMemoryBuffer
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXMemoryBuffer < FXMemoryBuffer
+     
+     
+     def initialize(data)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:data => :required})
+             
+             def data var; @os.op[@os.ii].data = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXMemoryStream
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXMemoryStream < FXMemoryStream
+     
+     
+     def initialize(cont=nil)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:cont => nil})
+             
+             def cont var; @os.op[@os.ii].cont = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXMenuBar
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXMenuBar < FXMenuBar
+     
+     
+     def initialize(p, q, opts=LAYOUT_TOP|LAYOUT_LEFT|LAYOUT_FILL_X, x=0, y=0, width=0, height=0, padLeft=3, padRight=3, padTop=2, padBottom=2, hSpacing=DEFAULT_SPACING, vSpacing=DEFAULT_SPACING)
+       super
+     end
+     
+     def initialize(p, opts, x=0, y=0, width=0, height=0, padLeft=3, padRight=3, padTop=2, padBottom=2, hSpacing=DEFAULT_SPACING, vSpacing=DEFAULT_SPACING)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:p => :required, :q => :required, :opts => LAYOUT_TOP|LAYOUT_LEFT|LAYOUT_FILL_X, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 3, :padRight => 3, :padTop => 2, :padBottom => 2, :hSpacing => DEFAULT_SPACING, :vSpacing => DEFAULT_SPACING})
+             
+             def p var; @os.op[@os.ii].p = var; end
+             
+             def q var; @os.op[@os.ii].q = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def pad_left var; @os.op[@os.ii].padLeft = var; end
+             
+             def pad_right var; @os.op[@os.ii].padRight = var; end
+             
+             def pad_top var; @os.op[@os.ii].padTop = var; end
+             
+             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+             
+             def h_spacing var; @os.op[@os.ii].hSpacing = var; end
+             
+             def v_spacing var; @os.op[@os.ii].vSpacing = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+         
+             @os.op[1] = OpenStruct.new({:p => :required, :opts => :required, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 3, :padRight => 3, :padTop => 2, :padBottom => 2, :hSpacing => DEFAULT_SPACING, :vSpacing => DEFAULT_SPACING})
+             
+             def p var; @os.op[@os.ii].p = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def pad_left var; @os.op[@os.ii].padLeft = var; end
+             
+             def pad_right var; @os.op[@os.ii].padRight = var; end
+             
+             def pad_top var; @os.op[@os.ii].padTop = var; end
+             
+             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+             
+             def h_spacing var; @os.op[@os.ii].hSpacing = var; end
+             
+             def v_spacing var; @os.op[@os.ii].vSpacing = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXMenuButton
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXMenuButton < FXMenuButton
+     
+     
+     def initialize(parent, text, icon=nil, popupMenu=nil, opts=JUSTIFY_NORMAL|ICON_BEFORE_TEXT|MENUBUTTON_DOWN, x=0, y=0, width=0, height=0, padLeft=DEFAULT_SPACING, padRight=DEFAULT_SPACING, padTop=DEFAULT_SPACING, padBottom=DEFAULT_SPACING)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:parent => :required, :text => :required, :icon => nil, :popupMenu => nil, :opts => JUSTIFY_NORMAL|ICON_BEFORE_TEXT|MENUBUTTON_DOWN, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_SPACING, :padRight => DEFAULT_SPACING, :padTop => DEFAULT_SPACING, :padBottom => DEFAULT_SPACING})
+             
+             def parent var; @os.op[@os.ii].parent = var; end
+             
+             def text var; @os.op[@os.ii].text = var; end
+             
+             def icon var; @os.op[@os.ii].icon = var; end
+             
+             def popup_menu var; @os.op[@os.ii].popupMenu = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def pad_left var; @os.op[@os.ii].padLeft = var; end
+             
+             def pad_right var; @os.op[@os.ii].padRight = var; end
+             
+             def pad_top var; @os.op[@os.ii].padTop = var; end
+             
+             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXMenuCaption
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXMenuCaption < FXMenuCaption
+     
+     
+     def initialize(parent, text, icon=nil, opts=0)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:parent => :required, :text => :required, :icon => nil, :opts => 0})
+             
+             def parent var; @os.op[@os.ii].parent = var; end
+             
+             def text var; @os.op[@os.ii].text = var; end
+             
+             def icon var; @os.op[@os.ii].icon = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXMenuCascade
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXMenuCascade < FXMenuCascade
+     
+     
+     def initialize(parent, text, icon=nil, popupMenu=nil, opts=0)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:parent => :required, :text => :required, :icon => nil, :popupMenu => nil, :opts => 0})
+             
+             def parent var; @os.op[@os.ii].parent = var; end
+             
+             def text var; @os.op[@os.ii].text = var; end
+             
+             def icon var; @os.op[@os.ii].icon = var; end
+             
+             def popup_menu var; @os.op[@os.ii].popupMenu = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXMenuCheck
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXMenuCheck < FXMenuCheck
+     
+     
+     def initialize(p, text, target=nil, selector=0, opts=0)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:p => :required, :text => :required, :target => nil, :selector => 0, :opts => 0})
+             
+             def p var; @os.op[@os.ii].p = var; end
+             
+             def text var; @os.op[@os.ii].text = var; end
+             
+             def target var; @os.op[@os.ii].target = var; end
+             
+             def selector var; @os.op[@os.ii].selector = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXMenuCommand
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXMenuCommand < FXMenuCommand
+     
+     
+     def initialize(p, text, ic=nil, target=nil, selector=0, opts=0)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:p => :required, :text => :required, :ic => nil, :target => nil, :selector => 0, :opts => 0})
+             
+             def p var; @os.op[@os.ii].p = var; end
+             
+             def text var; @os.op[@os.ii].text = var; end
+             
+             def ic var; @os.op[@os.ii].ic = var; end
+             
+             def target var; @os.op[@os.ii].target = var; end
+             
+             def selector var; @os.op[@os.ii].selector = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXMenuPane
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXMenuPane < FXMenuPane
+     
+     
+     def initialize(owner, opts=0)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:owner => :required, :opts => 0})
+             
+             def owner var; @os.op[@os.ii].owner = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXMenuRadio
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXMenuRadio < FXMenuRadio
+     
+     
+     def initialize(p, text, target=nil, selector=0, opts=0)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:p => :required, :text => :required, :target => nil, :selector => 0, :opts => 0})
+             
+             def p var; @os.op[@os.ii].p = var; end
+             
+             def text var; @os.op[@os.ii].text = var; end
+             
+             def target var; @os.op[@os.ii].target = var; end
+             
+             def selector var; @os.op[@os.ii].selector = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXMenuSeparator
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXMenuSeparator < FXMenuSeparator
+     
+     
+     def initialize(parent, opts=0)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:parent => :required, :opts => 0})
+             
+             def parent var; @os.op[@os.ii].parent = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXMenuTitle
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXMenuTitle < FXMenuTitle
+     
+     
+     def initialize(parent, text, icon=nil, popupMenu=nil, opts=0)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:parent => :required, :text => :required, :icon => nil, :popupMenu => nil, :opts => 0})
+             
+             def parent var; @os.op[@os.ii].parent = var; end
+             
+             def text var; @os.op[@os.ii].text = var; end
+             
+             def icon var; @os.op[@os.ii].icon = var; end
+             
+             def popup_menu var; @os.op[@os.ii].popupMenu = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXMessageBox
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXMessageBox < FXMessageBox
+     
+     
+     def initialize(owner, caption, text, ic=nil, opts=0, x=0, y=0)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:owner => :required, :caption => :required, :text => :required, :ic => nil, :opts => 0, :x => 0, :y => 0})
+             
+             def owner var; @os.op[@os.ii].owner = var; end
+             
+             def caption var; @os.op[@os.ii].caption = var; end
+             
+             def text var; @os.op[@os.ii].text = var; end
+             
+             def ic var; @os.op[@os.ii].ic = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXObject
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXObject < FXObject
+     
+     
+
+     def self.compose tag, appref, &block
+         
+              
+     end
+   end
+          
 
    class FXOption
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXOption < FXOption
+     
+     
+     def initialize(p, text, ic=nil, target=nil, selector=0, opts=JUSTIFY_NORMAL|ICON_BEFORE_TEXT, x=0, y=0, width=0, height=0, padLeft=DEFAULT_PAD, padRight=DEFAULT_PAD, padTop=DEFAULT_PAD, padBottom=DEFAULT_PAD)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:p => :required, :text => :required, :ic => nil, :target => nil, :selector => 0, :opts => JUSTIFY_NORMAL|ICON_BEFORE_TEXT, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
+             
+             def p var; @os.op[@os.ii].p = var; end
+             
+             def text var; @os.op[@os.ii].text = var; end
+             
+             def ic var; @os.op[@os.ii].ic = var; end
+             
+             def target var; @os.op[@os.ii].target = var; end
+             
+             def selector var; @os.op[@os.ii].selector = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def pad_left var; @os.op[@os.ii].padLeft = var; end
+             
+             def pad_right var; @os.op[@os.ii].padRight = var; end
+             
+             def pad_top var; @os.op[@os.ii].padTop = var; end
+             
+             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXOptionMenu
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXOptionMenu < FXOptionMenu
+     
+     
+     def initialize(p, pup=nil, opts=JUSTIFY_NORMAL|ICON_BEFORE_TEXT, x=0, y=0, width=0, height=0, padLeft=DEFAULT_PAD, padRight=DEFAULT_PAD, padTop=DEFAULT_PAD, padBottom=DEFAULT_PAD)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:p => :required, :pup => nil, :opts => JUSTIFY_NORMAL|ICON_BEFORE_TEXT, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
+             
+             def p var; @os.op[@os.ii].p = var; end
+             
+             def pup var; @os.op[@os.ii].pup = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def pad_left var; @os.op[@os.ii].padLeft = var; end
+             
+             def pad_right var; @os.op[@os.ii].padRight = var; end
+             
+             def pad_top var; @os.op[@os.ii].padTop = var; end
+             
+             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXPCXIcon
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXPCXIcon < FXPCXIcon
+     
+     
+     def initialize(a, pix=nil, clr=0, opts=0, width=1, height=1)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:a => :required, :pix => nil, :clr => 0, :opts => 0, :width => 1, :height => 1})
+             
+             def a var; @os.op[@os.ii].a = var; end
+             
+             def pix var; @os.op[@os.ii].pix = var; end
+             
+             def clr var; @os.op[@os.ii].clr = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXPCXImage
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXPCXImage < FXPCXImage
+     
+     
+     def initialize(a, pix=nil, opts=0, width=1, height=1)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:a => :required, :pix => nil, :opts => 0, :width => 1, :height => 1})
+             
+             def a var; @os.op[@os.ii].a = var; end
+             
+             def pix var; @os.op[@os.ii].pix = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXPNGIcon
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXPNGIcon < FXPNGIcon
+     
+     
+     def initialize(a, pix=nil, clr=0, opts=0, width=1, height=1)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:a => :required, :pix => nil, :clr => 0, :opts => 0, :width => 1, :height => 1})
+             
+             def a var; @os.op[@os.ii].a = var; end
+             
+             def pix var; @os.op[@os.ii].pix = var; end
+             
+             def clr var; @os.op[@os.ii].clr = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXPNGImage
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXPNGImage < FXPNGImage
+     
+     
+     def initialize(a, pix=nil, opts=0, width=1, height=1)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:a => :required, :pix => nil, :opts => 0, :width => 1, :height => 1})
+             
+             def a var; @os.op[@os.ii].a = var; end
+             
+             def pix var; @os.op[@os.ii].pix = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXPPMIcon
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXPPMIcon < FXPPMIcon
+     
+     
+     def initialize(a, pix=nil, clr=0, opts=0, width=1, height=1)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:a => :required, :pix => nil, :clr => 0, :opts => 0, :width => 1, :height => 1})
+             
+             def a var; @os.op[@os.ii].a = var; end
+             
+             def pix var; @os.op[@os.ii].pix = var; end
+             
+             def clr var; @os.op[@os.ii].clr = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXPPMImage
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXPPMImage < FXPPMImage
+     
+     
+     def initialize(a, pix=nil, opts=0, width=1, height=1)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:a => :required, :pix => nil, :opts => 0, :width => 1, :height => 1})
+             
+             def a var; @os.op[@os.ii].a = var; end
+             
+             def pix var; @os.op[@os.ii].pix = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXPacker
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXPacker < FXPacker
+     
+     
+     def initialize(parent, opts=0, x=0, y=0, width=0, height=0, padLeft=DEFAULT_SPACING, padRight=DEFAULT_SPACING, padTop=DEFAULT_SPACING, padBottom=DEFAULT_SPACING, hSpacing=DEFAULT_SPACING, vSpacing=DEFAULT_SPACING)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:parent => :required, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_SPACING, :padRight => DEFAULT_SPACING, :padTop => DEFAULT_SPACING, :padBottom => DEFAULT_SPACING, :hSpacing => DEFAULT_SPACING, :vSpacing => DEFAULT_SPACING})
+             
+             def parent var; @os.op[@os.ii].parent = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def pad_left var; @os.op[@os.ii].padLeft = var; end
+             
+             def pad_right var; @os.op[@os.ii].padRight = var; end
+             
+             def pad_top var; @os.op[@os.ii].padTop = var; end
+             
+             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+             
+             def h_spacing var; @os.op[@os.ii].hSpacing = var; end
+             
+             def v_spacing var; @os.op[@os.ii].vSpacing = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXPicker
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXPicker < FXPicker
+     
+     
+     def initialize(p, text, ic=nil, target=nil, selector=0, opts=BUTTON_NORMAL, x=0, y=0, width=0, height=0, padLeft=DEFAULT_PAD, padRight=DEFAULT_PAD, padTop=DEFAULT_PAD, padBottom=DEFAULT_PAD)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:p => :required, :text => :required, :ic => nil, :target => nil, :selector => 0, :opts => BUTTON_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
+             
+             def p var; @os.op[@os.ii].p = var; end
+             
+             def text var; @os.op[@os.ii].text = var; end
+             
+             def ic var; @os.op[@os.ii].ic = var; end
+             
+             def target var; @os.op[@os.ii].target = var; end
+             
+             def selector var; @os.op[@os.ii].selector = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def pad_left var; @os.op[@os.ii].padLeft = var; end
+             
+             def pad_right var; @os.op[@os.ii].padRight = var; end
+             
+             def pad_top var; @os.op[@os.ii].padTop = var; end
+             
+             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXPopup
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXPopup < FXPopup
+     
+     
+     def initialize(owner, opts=POPUP_VERTICAL|FRAME_RAISED|FRAME_THICK, x=0, y=0, width=0, height=0)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:owner => :required, :opts => POPUP_VERTICAL|FRAME_RAISED|FRAME_THICK, :x => 0, :y => 0, :width => 0, :height => 0})
+             
+             def owner var; @os.op[@os.ii].owner = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXPrintDialog
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXPrintDialog < FXPrintDialog
+     
+     
+     def initialize(owner, name, opts=0, x=0, y=0, width=0, height=0)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:owner => :required, :name => :required, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
+             
+             def owner var; @os.op[@os.ii].owner = var; end
+             
+             def name var; @os.op[@os.ii].name = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXProgressBar
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXProgressBar < FXProgressBar
+     
+     
+     def initialize(p, target=nil, selector=0, opts=PROGRESSBAR_NORMAL, x=0, y=0, width=0, height=0, padLeft=DEFAULT_PAD, padRight=DEFAULT_PAD, padTop=DEFAULT_PAD, padBottom=DEFAULT_PAD)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => PROGRESSBAR_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
+             
+             def p var; @os.op[@os.ii].p = var; end
+             
+             def target var; @os.op[@os.ii].target = var; end
+             
+             def selector var; @os.op[@os.ii].selector = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def pad_left var; @os.op[@os.ii].padLeft = var; end
+             
+             def pad_right var; @os.op[@os.ii].padRight = var; end
+             
+             def pad_top var; @os.op[@os.ii].padTop = var; end
+             
+             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXProgressDialog
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXProgressDialog < FXProgressDialog
+     
+     
+     def initialize(owner, caption, label, opts=PROGRESSDIALOG_NORMAL, x=0, y=0, width=0, height=0)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:owner => :required, :caption => :required, :label => :required, :opts => PROGRESSDIALOG_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0})
+             
+             def owner var; @os.op[@os.ii].owner = var; end
+             
+             def caption var; @os.op[@os.ii].caption = var; end
+             
+             def label var; @os.op[@os.ii].label = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXQuatd
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXQuatd < FXQuatd
+     
+     
+     def initialize(axis, phi=0.0)
+       super
+     end
+     
+     def initialize(x, y, z, w)
+       super
+     end
+     
+     def initialize(floats)
+       super
+     end
+     
+     def initialize(roll, pitch, yaw)
+       super
+     end
+     
+     def initialize(ex, ey, ez)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:axis => :required, :phi => 0.0})
+             
+             def axis var; @os.op[@os.ii].axis = var; end
+             
+             def phi var; @os.op[@os.ii].phi = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+         
+             @os.op[1] = OpenStruct.new({:x => :required, :y => :required, :z => :required, :w => :required})
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def z var; @os.op[@os.ii].z = var; end
+             
+             def w var; @os.op[@os.ii].w = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+         
+             @os.op[2] = OpenStruct.new({:floats => :required})
+             
+             def floats var; @os.op[@os.ii].floats = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+         
+             @os.op[3] = OpenStruct.new({:roll => :required, :pitch => :required, :yaw => :required})
+             
+             def roll var; @os.op[@os.ii].roll = var; end
+             
+             def pitch var; @os.op[@os.ii].pitch = var; end
+             
+             def yaw var; @os.op[@os.ii].yaw = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+         
+             @os.op[4] = OpenStruct.new({:ex => :required, :ey => :required, :ez => :required})
+             
+             def ex var; @os.op[@os.ii].ex = var; end
+             
+             def ey var; @os.op[@os.ii].ey = var; end
+             
+             def ez var; @os.op[@os.ii].ez = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXQuatf
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXQuatf < FXQuatf
+     
+     
+     def initialize(axis, phi=0.0)
+       super
+     end
+     
+     def initialize(roll, pitch, yaw)
+       super
+     end
+     
+     def initialize(ex, ey, ez)
+       super
+     end
+     
+     def initialize(mat)
+       super
+     end
+     
+     def initialize(x, y, z, w)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:axis => :required, :phi => 0.0})
+             
+             def axis var; @os.op[@os.ii].axis = var; end
+             
+             def phi var; @os.op[@os.ii].phi = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+         
+             @os.op[1] = OpenStruct.new({:roll => :required, :pitch => :required, :yaw => :required})
+             
+             def roll var; @os.op[@os.ii].roll = var; end
+             
+             def pitch var; @os.op[@os.ii].pitch = var; end
+             
+             def yaw var; @os.op[@os.ii].yaw = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+         
+             @os.op[2] = OpenStruct.new({:ex => :required, :ey => :required, :ez => :required})
+             
+             def ex var; @os.op[@os.ii].ex = var; end
+             
+             def ey var; @os.op[@os.ii].ey = var; end
+             
+             def ez var; @os.op[@os.ii].ez = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+         
+             @os.op[3] = OpenStruct.new({:mat => :required})
+             
+             def mat var; @os.op[@os.ii].mat = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+         
+             @os.op[4] = OpenStruct.new({:x => :required, :y => :required, :z => :required, :w => :required})
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def z var; @os.op[@os.ii].z = var; end
+             
+             def w var; @os.op[@os.ii].w = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXRGBIcon
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXRGBIcon < FXRGBIcon
+     
+     
+     def initialize(a, pix=nil, clr=0, opts=0, width=1, height=1)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:a => :required, :pix => nil, :clr => 0, :opts => 0, :width => 1, :height => 1})
+             
+             def a var; @os.op[@os.ii].a = var; end
+             
+             def pix var; @os.op[@os.ii].pix = var; end
+             
+             def clr var; @os.op[@os.ii].clr = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXRGBImage
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXRGBImage < FXRGBImage
+     
+     
+     def initialize(a, pix=nil, opts=0, width=1, height=1)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:a => :required, :pix => nil, :opts => 0, :width => 1, :height => 1})
+             
+             def a var; @os.op[@os.ii].a = var; end
+             
+             def pix var; @os.op[@os.ii].pix = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXRadioButton
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXRadioButton < FXRadioButton
+     
+     
+     def initialize(parent, text, target=nil, selector=0, opts=RADIOBUTTON_NORMAL, x=0, y=0, width=0, height=0, padLeft=DEFAULT_PAD, padRight=DEFAULT_PAD, padTop=DEFAULT_PAD, padBottom=DEFAULT_PAD)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:parent => :required, :text => :required, :target => nil, :selector => 0, :opts => RADIOBUTTON_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
+             
+             def parent var; @os.op[@os.ii].parent = var; end
+             
+             def text var; @os.op[@os.ii].text = var; end
+             
+             def target var; @os.op[@os.ii].target = var; end
+             
+             def selector var; @os.op[@os.ii].selector = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def pad_left var; @os.op[@os.ii].padLeft = var; end
+             
+             def pad_right var; @os.op[@os.ii].padRight = var; end
+             
+             def pad_top var; @os.op[@os.ii].padTop = var; end
+             
+             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXRanged
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXRanged < FXRanged
+     
+     
+     def initialize(xlo=0.0, xhi=0.0, ylo=0.0, yhi=0.0, zlo=0.0, zhi=0.0)
+       super
+     end
+     
+     def initialize(bounds)
+       super
+     end
+     
+     def initialize(sphere)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:xlo => 0.0, :xhi => 0.0, :ylo => 0.0, :yhi => 0.0, :zlo => 0.0, :zhi => 0.0})
+             
+             def xlo var; @os.op[@os.ii].xlo = var; end
+             
+             def xhi var; @os.op[@os.ii].xhi = var; end
+             
+             def ylo var; @os.op[@os.ii].ylo = var; end
+             
+             def yhi var; @os.op[@os.ii].yhi = var; end
+             
+             def zlo var; @os.op[@os.ii].zlo = var; end
+             
+             def zhi var; @os.op[@os.ii].zhi = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+         
+             @os.op[1] = OpenStruct.new({:bounds => :required})
+             
+             def bounds var; @os.op[@os.ii].bounds = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+         
+             @os.op[2] = OpenStruct.new({:sphere => :required})
+             
+             def sphere var; @os.op[@os.ii].sphere = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXRangef
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXRangef < FXRangef
+     
+     
+     def initialize(xlo=0.0, xhi=0.0, ylo=0.0, yhi=0.0, zlo=0.0, zhi=0.0)
+       super
+     end
+     
+     def initialize(bounds)
+       super
+     end
+     
+     def initialize(sphere)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:xlo => 0.0, :xhi => 0.0, :ylo => 0.0, :yhi => 0.0, :zlo => 0.0, :zhi => 0.0})
+             
+             def xlo var; @os.op[@os.ii].xlo = var; end
+             
+             def xhi var; @os.op[@os.ii].xhi = var; end
+             
+             def ylo var; @os.op[@os.ii].ylo = var; end
+             
+             def yhi var; @os.op[@os.ii].yhi = var; end
+             
+             def zlo var; @os.op[@os.ii].zlo = var; end
+             
+             def zhi var; @os.op[@os.ii].zhi = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+         
+             @os.op[1] = OpenStruct.new({:bounds => :required})
+             
+             def bounds var; @os.op[@os.ii].bounds = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+         
+             @os.op[2] = OpenStruct.new({:sphere => :required})
+             
+             def sphere var; @os.op[@os.ii].sphere = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXRealSlider
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXRealSlider < FXRealSlider
+     
+     
+     def initialize(p, target=nil, selector=0, opts=REALSLIDER_NORMAL, x=0, y=0, width=0, height=0, padLeft=0, padRight=0, padTop=0, padBottom=0)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => REALSLIDER_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 0, :padRight => 0, :padTop => 0, :padBottom => 0})
+             
+             def p var; @os.op[@os.ii].p = var; end
+             
+             def target var; @os.op[@os.ii].target = var; end
+             
+             def selector var; @os.op[@os.ii].selector = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def pad_left var; @os.op[@os.ii].padLeft = var; end
+             
+             def pad_right var; @os.op[@os.ii].padRight = var; end
+             
+             def pad_top var; @os.op[@os.ii].padTop = var; end
+             
+             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXRealSpinner
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXRealSpinner < FXRealSpinner
+     
+     
+     def initialize(p, cols, target=nil, selector=0, opts=REALSPIN_NORMAL, x=0, y=0, width=0, height=0, padLeft=DEFAULT_PAD, padRight=DEFAULT_PAD, padTop=DEFAULT_PAD, padBottom=DEFAULT_PAD)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:p => :required, :cols => :required, :target => nil, :selector => 0, :opts => REALSPIN_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
+             
+             def p var; @os.op[@os.ii].p = var; end
+             
+             def cols var; @os.op[@os.ii].cols = var; end
+             
+             def target var; @os.op[@os.ii].target = var; end
+             
+             def selector var; @os.op[@os.ii].selector = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def pad_left var; @os.op[@os.ii].padLeft = var; end
+             
+             def pad_right var; @os.op[@os.ii].padRight = var; end
+             
+             def pad_top var; @os.op[@os.ii].padTop = var; end
+             
+             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXRecentFiles
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXRecentFiles < FXRecentFiles
+     
+     
+     def initialize(a)
+       super
+     end
+     
+     def initialize(a, gp, target=nil, selector=0)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:a => :required})
+             
+             def a var; @os.op[@os.ii].a = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+         
+             @os.op[1] = OpenStruct.new({:a => :required, :gp => :required, :target => nil, :selector => 0})
+             
+             def a var; @os.op[@os.ii].a = var; end
+             
+             def gp var; @os.op[@os.ii].gp = var; end
+             
+             def target var; @os.op[@os.ii].target = var; end
+             
+             def selector var; @os.op[@os.ii].selector = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXRectangle
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXRectangle < FXRectangle
+     
+     
+     def initialize(xx, yy, ww, hh)
+       super
+     end
+     
+     def initialize(p, s)
+       super
+     end
+     
+     def initialize(topleft, bottomright)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:xx => :required, :yy => :required, :ww => :required, :hh => :required})
+             
+             def xx var; @os.op[@os.ii].xx = var; end
+             
+             def yy var; @os.op[@os.ii].yy = var; end
+             
+             def ww var; @os.op[@os.ii].ww = var; end
+             
+             def hh var; @os.op[@os.ii].hh = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+         
+             @os.op[1] = OpenStruct.new({:p => :required, :s => :required})
+             
+             def p var; @os.op[@os.ii].p = var; end
+             
+             def s var; @os.op[@os.ii].s = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+         
+             @os.op[2] = OpenStruct.new({:topleft => :required, :bottomright => :required})
+             
+             def topleft var; @os.op[@os.ii].topleft = var; end
+             
+             def bottomright var; @os.op[@os.ii].bottomright = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXRegion
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXRegion < FXRegion
+     
+     
+     def initialize(r)
+       super
+     end
+     
+     def initialize(rect)
+       super
+     end
+     
+     def initialize(x, y, w, h)
+       super
+     end
+     
+     def initialize(points, winding=false)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:r => :required})
+             
+             def r var; @os.op[@os.ii].r = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+         
+             @os.op[1] = OpenStruct.new({:rect => :required})
+             
+             def rect var; @os.op[@os.ii].rect = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+         
+             @os.op[2] = OpenStruct.new({:x => :required, :y => :required, :w => :required, :h => :required})
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def w var; @os.op[@os.ii].w = var; end
+             
+             def h var; @os.op[@os.ii].h = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+         
+             @os.op[3] = OpenStruct.new({:points => :required, :winding => false})
+             
+             def points var; @os.op[@os.ii].points = var; end
+             
+             def winding var; @os.op[@os.ii].winding = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXRegistry
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXRegistry < FXRegistry
+     
+     
+     def initialize(appKey="", vendorKey="")
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:appKey => "", :vendorKey => ""})
+             
+             def app_key var; @os.op[@os.ii].appKey = var; end
+             
+             def vendor_key var; @os.op[@os.ii].vendorKey = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXReplaceDialog
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXReplaceDialog < FXReplaceDialog
+     
+     
+     def initialize(owner, caption, ic=nil, opts=0, x=0, y=0, width=0, height=0)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:owner => :required, :caption => :required, :ic => nil, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
+             
+             def owner var; @os.op[@os.ii].owner = var; end
+             
+             def caption var; @os.op[@os.ii].caption = var; end
+             
+             def ic var; @os.op[@os.ii].ic = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXRootWindow
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXRootWindow < FXRootWindow
+     
+     
+     def initialize(a, vis)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:a => :required, :vis => :required})
+             
+             def a var; @os.op[@os.ii].a = var; end
+             
+             def vis var; @os.op[@os.ii].vis = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXRuler
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXRuler < FXRuler
+     
+     
+     def initialize(p, target=nil, selector=0, opts=RULER_NORMAL, x=0, y=0, width=0, height=0, padLeft=DEFAULT_PAD, padRight=DEFAULT_PAD, padTop=DEFAULT_PAD, padBottom=DEFAULT_PAD)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => RULER_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
+             
+             def p var; @os.op[@os.ii].p = var; end
+             
+             def target var; @os.op[@os.ii].target = var; end
+             
+             def selector var; @os.op[@os.ii].selector = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def pad_left var; @os.op[@os.ii].padLeft = var; end
+             
+             def pad_right var; @os.op[@os.ii].padRight = var; end
+             
+             def pad_top var; @os.op[@os.ii].padTop = var; end
+             
+             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXRulerView
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXRulerView < FXRulerView
+     
+     
+     def initialize(p, target=nil, selector=0, opts=0, x=0, y=0, width=0, height=0)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
+             
+             def p var; @os.op[@os.ii].p = var; end
+             
+             def target var; @os.op[@os.ii].target = var; end
+             
+             def selector var; @os.op[@os.ii].selector = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class NotifyHeader
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class ENotifyHeader < NotifyHeader
+     
+     
+
+     def self.compose tag, appref, &block
+         
+              
+     end
+   end
+          
 
    class SCNotification
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class ESCNotification < SCNotification
+     
+     
+
+     def self.compose tag, appref, &block
+         
+              
+     end
+   end
+          
 
    class TextRange
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class ETextRange < TextRange
+     
+     
+     def initialize(start, last, size)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:start => :required, :last => :required, :size => :required})
+             
+             def start var; @os.op[@os.ii].start = var; end
+             
+             def last var; @os.op[@os.ii].last = var; end
+             
+             def size var; @os.op[@os.ii].size = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXScintilla
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXScintilla < FXScintilla
+     
+     
+     def initialize(p, target=nil, selector=0, opts=0, x=0, y=0, width=0, height=0)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
+             
+             def p var; @os.op[@os.ii].p = var; end
+             
+             def target var; @os.op[@os.ii].target = var; end
+             
+             def selector var; @os.op[@os.ii].selector = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXScrollArea
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXScrollArea < FXScrollArea
+     
+     
+     def initialize(parent, opts=0, x=0, y=0, width=0, height=0)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:parent => :required, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
+             
+             def parent var; @os.op[@os.ii].parent = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXScrollBar
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXScrollBar < FXScrollBar
+     
+     
+     def initialize(p, target=nil, selector=0, opts=SCROLLBAR_VERTICAL, x=0, y=0, width=0, height=0)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => SCROLLBAR_VERTICAL, :x => 0, :y => 0, :width => 0, :height => 0})
+             
+             def p var; @os.op[@os.ii].p = var; end
+             
+             def target var; @os.op[@os.ii].target = var; end
+             
+             def selector var; @os.op[@os.ii].selector = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXScrollCorner
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXScrollCorner < FXScrollCorner
+     
+     
+     def initialize(p)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:p => :required})
+             
+             def p var; @os.op[@os.ii].p = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXScrollPane
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXScrollPane < FXScrollPane
+     
+     
+     def initialize(owner, nvis, opts=0)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:owner => :required, :nvis => :required, :opts => 0})
+             
+             def owner var; @os.op[@os.ii].owner = var; end
+             
+             def nvis var; @os.op[@os.ii].nvis = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXScrollWindow
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXScrollWindow < FXScrollWindow
+     
+     
+     def initialize(p, opts=0, x=0, y=0, width=0, height=0)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:p => :required, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
+             
+             def p var; @os.op[@os.ii].p = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXSearchDialog
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXSearchDialog < FXSearchDialog
+     
+     
+     def initialize(owner, caption, ic=nil, opts=0, x=0, y=0, width=0, height=0)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:owner => :required, :caption => :required, :ic => nil, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
+             
+             def owner var; @os.op[@os.ii].owner = var; end
+             
+             def caption var; @os.op[@os.ii].caption = var; end
+             
+             def ic var; @os.op[@os.ii].ic = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXSeparator
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXSeparator < FXSeparator
+     
+     
+     def initialize(p, opts=SEPARATOR_GROOVE|LAYOUT_FILL_X, x=0, y=0, width=0, height=0, padLeft=0, padRight=0, padTop=0, padBottom=0)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:p => :required, :opts => SEPARATOR_GROOVE|LAYOUT_FILL_X, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 0, :padRight => 0, :padTop => 0, :padBottom => 0})
+             
+             def p var; @os.op[@os.ii].p = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def pad_left var; @os.op[@os.ii].padLeft = var; end
+             
+             def pad_right var; @os.op[@os.ii].padRight = var; end
+             
+             def pad_top var; @os.op[@os.ii].padTop = var; end
+             
+             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXHorizontalSeparator
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXHorizontalSeparator < FXHorizontalSeparator
+     
+     
+     def initialize(p, opts=SEPARATOR_GROOVE|LAYOUT_FILL_X, x=0, y=0, width=0, height=0, padLeft=1, padRight=1, padTop=0, padBottom=0)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:p => :required, :opts => SEPARATOR_GROOVE|LAYOUT_FILL_X, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 1, :padRight => 1, :padTop => 0, :padBottom => 0})
+             
+             def p var; @os.op[@os.ii].p = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def pad_left var; @os.op[@os.ii].padLeft = var; end
+             
+             def pad_right var; @os.op[@os.ii].padRight = var; end
+             
+             def pad_top var; @os.op[@os.ii].padTop = var; end
+             
+             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXVerticalSeparator
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXVerticalSeparator < FXVerticalSeparator
+     
+     
+     def initialize(p, opts=SEPARATOR_GROOVE|LAYOUT_FILL_Y, x=0, y=0, width=0, height=0, padLeft=0, padRight=0, padTop=1, padBottom=1)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:p => :required, :opts => SEPARATOR_GROOVE|LAYOUT_FILL_Y, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 0, :padRight => 0, :padTop => 1, :padBottom => 1})
+             
+             def p var; @os.op[@os.ii].p = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def pad_left var; @os.op[@os.ii].padLeft = var; end
+             
+             def pad_right var; @os.op[@os.ii].padRight = var; end
+             
+             def pad_top var; @os.op[@os.ii].padTop = var; end
+             
+             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXSettings
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXSettings < FXSettings
+     
+     
+
+     def self.compose tag, appref, &block
+         
+              
+     end
+   end
+          
 
    class FXShell
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXShell < FXShell
+     
+     
+
+     def self.compose tag, appref, &block
+         
+              
+     end
+   end
+          
 
    class FXShutterItem
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXShutterItem < FXShutterItem
+     
+     
+     def initialize(p, text="", icon=nil, opts=0, x=0, y=0, width=0, height=0, padLeft=DEFAULT_SPACING, padRight=DEFAULT_SPACING, padTop=DEFAULT_SPACING, padBottom=DEFAULT_SPACING, hSpacing=DEFAULT_SPACING, vSpacing=DEFAULT_SPACING)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:p => :required, :text => "", :icon => nil, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_SPACING, :padRight => DEFAULT_SPACING, :padTop => DEFAULT_SPACING, :padBottom => DEFAULT_SPACING, :hSpacing => DEFAULT_SPACING, :vSpacing => DEFAULT_SPACING})
+             
+             def p var; @os.op[@os.ii].p = var; end
+             
+             def text var; @os.op[@os.ii].text = var; end
+             
+             def icon var; @os.op[@os.ii].icon = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def pad_left var; @os.op[@os.ii].padLeft = var; end
+             
+             def pad_right var; @os.op[@os.ii].padRight = var; end
+             
+             def pad_top var; @os.op[@os.ii].padTop = var; end
+             
+             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+             
+             def h_spacing var; @os.op[@os.ii].hSpacing = var; end
+             
+             def v_spacing var; @os.op[@os.ii].vSpacing = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXShutter
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXShutter < FXShutter
+     
+     
+     def initialize(p, target=nil, selector=0, opts=0, x=0, y=0, width=0, height=0, padLeft=DEFAULT_SPACING, padRight=DEFAULT_SPACING, padTop=DEFAULT_SPACING, padBottom=DEFAULT_SPACING, hSpacing=DEFAULT_SPACING, vSpacing=DEFAULT_SPACING)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_SPACING, :padRight => DEFAULT_SPACING, :padTop => DEFAULT_SPACING, :padBottom => DEFAULT_SPACING, :hSpacing => DEFAULT_SPACING, :vSpacing => DEFAULT_SPACING})
+             
+             def p var; @os.op[@os.ii].p = var; end
+             
+             def target var; @os.op[@os.ii].target = var; end
+             
+             def selector var; @os.op[@os.ii].selector = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def pad_left var; @os.op[@os.ii].padLeft = var; end
+             
+             def pad_right var; @os.op[@os.ii].padRight = var; end
+             
+             def pad_top var; @os.op[@os.ii].padTop = var; end
+             
+             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+             
+             def h_spacing var; @os.op[@os.ii].hSpacing = var; end
+             
+             def v_spacing var; @os.op[@os.ii].vSpacing = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXSize
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXSize < FXSize
+     
+     
+     def initialize(s)
+       super
+     end
+     
+     def initialize(ww, hh)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:s => :required})
+             
+             def s var; @os.op[@os.ii].s = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+         
+             @os.op[1] = OpenStruct.new({:ww => :required, :hh => :required})
+             
+             def ww var; @os.op[@os.ii].ww = var; end
+             
+             def hh var; @os.op[@os.ii].hh = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXSlider
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXSlider < FXSlider
+     
+     
+     def initialize(p, target=nil, selector=0, opts=SLIDER_NORMAL, x=0, y=0, width=0, height=0, padLeft=0, padRight=0, padTop=0, padBottom=0)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => SLIDER_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 0, :padRight => 0, :padTop => 0, :padBottom => 0})
+             
+             def p var; @os.op[@os.ii].p = var; end
+             
+             def target var; @os.op[@os.ii].target = var; end
+             
+             def selector var; @os.op[@os.ii].selector = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def pad_left var; @os.op[@os.ii].padLeft = var; end
+             
+             def pad_right var; @os.op[@os.ii].padRight = var; end
+             
+             def pad_top var; @os.op[@os.ii].padTop = var; end
+             
+             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXSphered
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXSphered < FXSphered
+     
+     
+     def initialize(otherSphere)
+       super
+     end
+     
+     def initialize(cen, rad=0.0)
+       super
+     end
+     
+     def initialize(x, y, z, rad=0.0)
+       super
+     end
+     
+     def initialize(bounds)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:otherSphere => :required})
+             
+             def other_sphere var; @os.op[@os.ii].otherSphere = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+         
+             @os.op[1] = OpenStruct.new({:cen => :required, :rad => 0.0})
+             
+             def cen var; @os.op[@os.ii].cen = var; end
+             
+             def rad var; @os.op[@os.ii].rad = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+         
+             @os.op[2] = OpenStruct.new({:x => :required, :y => :required, :z => :required, :rad => 0.0})
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def z var; @os.op[@os.ii].z = var; end
+             
+             def rad var; @os.op[@os.ii].rad = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+         
+             @os.op[3] = OpenStruct.new({:bounds => :required})
+             
+             def bounds var; @os.op[@os.ii].bounds = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXSpheref
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXSpheref < FXSpheref
+     
+     
+     def initialize(otherSphere)
+       super
+     end
+     
+     def initialize(cen, rad=0.0)
+       super
+     end
+     
+     def initialize(x, y, z, rad=0.0)
+       super
+     end
+     
+     def initialize(bounds)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:otherSphere => :required})
+             
+             def other_sphere var; @os.op[@os.ii].otherSphere = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+         
+             @os.op[1] = OpenStruct.new({:cen => :required, :rad => 0.0})
+             
+             def cen var; @os.op[@os.ii].cen = var; end
+             
+             def rad var; @os.op[@os.ii].rad = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+         
+             @os.op[2] = OpenStruct.new({:x => :required, :y => :required, :z => :required, :rad => 0.0})
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def z var; @os.op[@os.ii].z = var; end
+             
+             def rad var; @os.op[@os.ii].rad = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+         
+             @os.op[3] = OpenStruct.new({:bounds => :required})
+             
+             def bounds var; @os.op[@os.ii].bounds = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXSpinner
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXSpinner < FXSpinner
+     
+     
+     def initialize(p, cols, target=nil, selector=0, opts=SPIN_NORMAL, x=0, y=0, width=0, height=0, padLeft=DEFAULT_PAD, padRight=DEFAULT_PAD, padTop=DEFAULT_PAD, padBottom=DEFAULT_PAD)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:p => :required, :cols => :required, :target => nil, :selector => 0, :opts => SPIN_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
+             
+             def p var; @os.op[@os.ii].p = var; end
+             
+             def cols var; @os.op[@os.ii].cols = var; end
+             
+             def target var; @os.op[@os.ii].target = var; end
+             
+             def selector var; @os.op[@os.ii].selector = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def pad_left var; @os.op[@os.ii].padLeft = var; end
+             
+             def pad_right var; @os.op[@os.ii].padRight = var; end
+             
+             def pad_top var; @os.op[@os.ii].padTop = var; end
+             
+             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXSplashWindow
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXSplashWindow < FXSplashWindow
+     
+     
+     def initialize(owner, icon, opts=SPLASH_SIMPLE, ms=5000)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:owner => :required, :icon => :required, :opts => SPLASH_SIMPLE, :ms => 5000})
+             
+             def owner var; @os.op[@os.ii].owner = var; end
+             
+             def icon var; @os.op[@os.ii].icon = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def ms var; @os.op[@os.ii].ms = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXSplitter
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXSplitter < FXSplitter
+     
+     
+     def initialize(p, opts=SPLITTER_NORMAL, x=0, y=0, width=0, height=0)
+       super
+     end
+     
+     def initialize(p, tgt, sel, opts=SPLITTER_NORMAL, x=0, y=0, width=0, height=0)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:p => :required, :opts => SPLITTER_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0})
+             
+             def p var; @os.op[@os.ii].p = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+         
+             @os.op[1] = OpenStruct.new({:p => :required, :tgt => :required, :sel => :required, :opts => SPLITTER_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0})
+             
+             def p var; @os.op[@os.ii].p = var; end
+             
+             def tgt var; @os.op[@os.ii].tgt = var; end
+             
+             def sel var; @os.op[@os.ii].sel = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXSpring
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXSpring < FXSpring
+     
+     
+     def initialize(p, opts=0, relw=0, relh=0, x=0, y=0, width=0, height=0, padLeft=DEFAULT_SPACING, padRight=DEFAULT_SPACING, padTop=DEFAULT_SPACING, padBottom=DEFAULT_SPACING, hSpacing=DEFAULT_SPACING, vSpacing=DEFAULT_SPACING)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:p => :required, :opts => 0, :relw => 0, :relh => 0, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_SPACING, :padRight => DEFAULT_SPACING, :padTop => DEFAULT_SPACING, :padBottom => DEFAULT_SPACING, :hSpacing => DEFAULT_SPACING, :vSpacing => DEFAULT_SPACING})
+             
+             def p var; @os.op[@os.ii].p = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def relw var; @os.op[@os.ii].relw = var; end
+             
+             def relh var; @os.op[@os.ii].relh = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def pad_left var; @os.op[@os.ii].padLeft = var; end
+             
+             def pad_right var; @os.op[@os.ii].padRight = var; end
+             
+             def pad_top var; @os.op[@os.ii].padTop = var; end
+             
+             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+             
+             def h_spacing var; @os.op[@os.ii].hSpacing = var; end
+             
+             def v_spacing var; @os.op[@os.ii].vSpacing = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXStatusBar
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXStatusBar < FXStatusBar
+     
+     
+     def initialize(p, opts=0, x=0, y=0, width=0, height=0, padLeft=3, padRight=3, padTop=2, padBottom=2, hSpacing=4, vSpacing=0)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:p => :required, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 3, :padRight => 3, :padTop => 2, :padBottom => 2, :hSpacing => 4, :vSpacing => 0})
+             
+             def p var; @os.op[@os.ii].p = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def pad_left var; @os.op[@os.ii].padLeft = var; end
+             
+             def pad_right var; @os.op[@os.ii].padRight = var; end
+             
+             def pad_top var; @os.op[@os.ii].padTop = var; end
+             
+             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+             
+             def h_spacing var; @os.op[@os.ii].hSpacing = var; end
+             
+             def v_spacing var; @os.op[@os.ii].vSpacing = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXStatusLine
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXStatusLine < FXStatusLine
+     
+     
+     def initialize(p, target=nil, selector=0)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0})
+             
+             def p var; @os.op[@os.ii].p = var; end
+             
+             def target var; @os.op[@os.ii].target = var; end
+             
+             def selector var; @os.op[@os.ii].selector = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXStream
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXStream < FXStream
+     
+     
+     def initialize(cont=nil)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:cont => nil})
+             
+             def cont var; @os.op[@os.ii].cont = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXStringDict
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXStringDict < FXStringDict
+     
+     
+
+     def self.compose tag, appref, &block
+         
+              
+     end
+   end
+          
 
    class FXSwitcher
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXSwitcher < FXSwitcher
+     
+     
+     def initialize(p, opts=0, x=0, y=0, width=0, height=0, padLeft=DEFAULT_SPACING, padRight=DEFAULT_SPACING, padTop=DEFAULT_SPACING, padBottom=DEFAULT_SPACING)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:p => :required, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_SPACING, :padRight => DEFAULT_SPACING, :padTop => DEFAULT_SPACING, :padBottom => DEFAULT_SPACING})
+             
+             def p var; @os.op[@os.ii].p = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def pad_left var; @os.op[@os.ii].padLeft = var; end
+             
+             def pad_right var; @os.op[@os.ii].padRight = var; end
+             
+             def pad_top var; @os.op[@os.ii].padTop = var; end
+             
+             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXTGAIcon
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXTGAIcon < FXTGAIcon
+     
+     
+     def initialize(a, pix=nil, clr=0, opts=0, width=1, height=1)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:a => :required, :pix => nil, :clr => 0, :opts => 0, :width => 1, :height => 1})
+             
+             def a var; @os.op[@os.ii].a = var; end
+             
+             def pix var; @os.op[@os.ii].pix = var; end
+             
+             def clr var; @os.op[@os.ii].clr = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXTGAImage
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXTGAImage < FXTGAImage
+     
+     
+     def initialize(a, pix=nil, opts=0, width=1, height=1)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:a => :required, :pix => nil, :opts => 0, :width => 1, :height => 1})
+             
+             def a var; @os.op[@os.ii].a = var; end
+             
+             def pix var; @os.op[@os.ii].pix = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXTIFIcon
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXTIFIcon < FXTIFIcon
+     
+     
+     def initialize(a, pix=nil, clr=0, opts=0, width=1, height=1)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:a => :required, :pix => nil, :clr => 0, :opts => 0, :width => 1, :height => 1})
+             
+             def a var; @os.op[@os.ii].a = var; end
+             
+             def pix var; @os.op[@os.ii].pix = var; end
+             
+             def clr var; @os.op[@os.ii].clr = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXTIFImage
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXTIFImage < FXTIFImage
+     
+     
+     def initialize(a, pix=nil, opts=0, width=1, height=1)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:a => :required, :pix => nil, :opts => 0, :width => 1, :height => 1})
+             
+             def a var; @os.op[@os.ii].a = var; end
+             
+             def pix var; @os.op[@os.ii].pix = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXTabBar
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXTabBar < FXTabBar
+     
+     
+     def initialize(p, target=nil, selector=0, opts=TABBOOK_NORMAL, x=0, y=0, width=0, height=0, padLeft=DEFAULT_SPACING, padRight=DEFAULT_SPACING, padTop=DEFAULT_SPACING, padBottom=DEFAULT_SPACING)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => TABBOOK_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_SPACING, :padRight => DEFAULT_SPACING, :padTop => DEFAULT_SPACING, :padBottom => DEFAULT_SPACING})
+             
+             def p var; @os.op[@os.ii].p = var; end
+             
+             def target var; @os.op[@os.ii].target = var; end
+             
+             def selector var; @os.op[@os.ii].selector = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def pad_left var; @os.op[@os.ii].padLeft = var; end
+             
+             def pad_right var; @os.op[@os.ii].padRight = var; end
+             
+             def pad_top var; @os.op[@os.ii].padTop = var; end
+             
+             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXTabBook
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXTabBook < FXTabBook
+     
+     
+     def initialize(p, target=nil, selector=0, opts=TABBOOK_NORMAL, x=0, y=0, width=0, height=0, padLeft=DEFAULT_SPACING, padRight=DEFAULT_SPACING, padTop=DEFAULT_SPACING, padBottom=DEFAULT_SPACING)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => TABBOOK_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_SPACING, :padRight => DEFAULT_SPACING, :padTop => DEFAULT_SPACING, :padBottom => DEFAULT_SPACING})
+             
+             def p var; @os.op[@os.ii].p = var; end
+             
+             def target var; @os.op[@os.ii].target = var; end
+             
+             def selector var; @os.op[@os.ii].selector = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def pad_left var; @os.op[@os.ii].padLeft = var; end
+             
+             def pad_right var; @os.op[@os.ii].padRight = var; end
+             
+             def pad_top var; @os.op[@os.ii].padTop = var; end
+             
+             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXTabItem
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXTabItem < FXTabItem
+     
+     
+     def initialize(p, text, ic=nil, opts=TAB_TOP_NORMAL, x=0, y=0, width=0, height=0, padLeft=DEFAULT_PAD, padRight=DEFAULT_PAD, padTop=DEFAULT_PAD, padBottom=DEFAULT_PAD)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:p => :required, :text => :required, :ic => nil, :opts => TAB_TOP_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
+             
+             def p var; @os.op[@os.ii].p = var; end
+             
+             def text var; @os.op[@os.ii].text = var; end
+             
+             def ic var; @os.op[@os.ii].ic = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def pad_left var; @os.op[@os.ii].padLeft = var; end
+             
+             def pad_right var; @os.op[@os.ii].padRight = var; end
+             
+             def pad_top var; @os.op[@os.ii].padTop = var; end
+             
+             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXTablePos
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXTablePos < FXTablePos
+     
+     
+
+     def self.compose tag, appref, &block
+         
+              
+     end
+   end
+          
 
    class FXTableRange
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXTableRange < FXTableRange
+     
+     
+
+     def self.compose tag, appref, &block
+         
+              
+     end
+   end
+          
 
    class FXTableItem
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXTableItem < FXTableItem
+     
+     
+     def initialize(text, icon=nil, data=nil)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:text => :required, :icon => nil, :data => nil})
+             
+             def text var; @os.op[@os.ii].text = var; end
+             
+             def icon var; @os.op[@os.ii].icon = var; end
+             
+             def data var; @os.op[@os.ii].data = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXTable
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXTable < FXTable
+     
+     
+     def initialize(p, target=nil, selector=0, opts=0, x=0, y=0, width=0, height=0, padLeft=DEFAULT_MARGIN, padRight=DEFAULT_MARGIN, padTop=DEFAULT_MARGIN, padBottom=DEFAULT_MARGIN)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_MARGIN, :padRight => DEFAULT_MARGIN, :padTop => DEFAULT_MARGIN, :padBottom => DEFAULT_MARGIN})
+             
+             def p var; @os.op[@os.ii].p = var; end
+             
+             def target var; @os.op[@os.ii].target = var; end
+             
+             def selector var; @os.op[@os.ii].selector = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def pad_left var; @os.op[@os.ii].padLeft = var; end
+             
+             def pad_right var; @os.op[@os.ii].padRight = var; end
+             
+             def pad_top var; @os.op[@os.ii].padTop = var; end
+             
+             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXHiliteStyle
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXHiliteStyle < FXHiliteStyle
+     
+     
+
+     def self.compose tag, appref, &block
+         
+              
+     end
+   end
+          
 
    class FXTextChange
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXTextChange < FXTextChange
+     
+     
+
+     def self.compose tag, appref, &block
+         
+              
+     end
+   end
+          
 
    class FXText
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXText < FXText
+     
+     
+     def initialize(p, target=nil, selector=0, opts=0, x=0, y=0, width=0, height=0, padLeft=3, padRight=3, padTop=2, padBottom=2)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 3, :padRight => 3, :padTop => 2, :padBottom => 2})
+             
+             def p var; @os.op[@os.ii].p = var; end
+             
+             def target var; @os.op[@os.ii].target = var; end
+             
+             def selector var; @os.op[@os.ii].selector = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def pad_left var; @os.op[@os.ii].padLeft = var; end
+             
+             def pad_right var; @os.op[@os.ii].padRight = var; end
+             
+             def pad_top var; @os.op[@os.ii].padTop = var; end
+             
+             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXTextField
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXTextField < FXTextField
+     
+     
+     def initialize(p, ncols, target=nil, selector=0, opts=TEXTFIELD_NORMAL, x=0, y=0, width=0, height=0, padLeft=DEFAULT_PAD, padRight=DEFAULT_PAD, padTop=DEFAULT_PAD, padBottom=DEFAULT_PAD)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:p => :required, :ncols => :required, :target => nil, :selector => 0, :opts => TEXTFIELD_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
+             
+             def p var; @os.op[@os.ii].p = var; end
+             
+             def ncols var; @os.op[@os.ii].ncols = var; end
+             
+             def target var; @os.op[@os.ii].target = var; end
+             
+             def selector var; @os.op[@os.ii].selector = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def pad_left var; @os.op[@os.ii].padLeft = var; end
+             
+             def pad_right var; @os.op[@os.ii].padRight = var; end
+             
+             def pad_top var; @os.op[@os.ii].padTop = var; end
+             
+             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXToggleButton
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXToggleButton < FXToggleButton
+     
+     
+     def initialize(p, text1, text2, icon1=nil, icon2=nil, target=nil, selector=0, opts=TOGGLEBUTTON_NORMAL, x=0, y=0, width=0, height=0, padLeft=DEFAULT_PAD, padRight=DEFAULT_PAD, padTop=DEFAULT_PAD, padBottom=DEFAULT_PAD)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:p => :required, :text1 => :required, :text2 => :required, :icon1 => nil, :icon2 => nil, :target => nil, :selector => 0, :opts => TOGGLEBUTTON_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
+             
+             def p var; @os.op[@os.ii].p = var; end
+             
+             def text1 var; @os.op[@os.ii].text1 = var; end
+             
+             def text2 var; @os.op[@os.ii].text2 = var; end
+             
+             def icon1 var; @os.op[@os.ii].icon1 = var; end
+             
+             def icon2 var; @os.op[@os.ii].icon2 = var; end
+             
+             def target var; @os.op[@os.ii].target = var; end
+             
+             def selector var; @os.op[@os.ii].selector = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def pad_left var; @os.op[@os.ii].padLeft = var; end
+             
+             def pad_right var; @os.op[@os.ii].padRight = var; end
+             
+             def pad_top var; @os.op[@os.ii].padTop = var; end
+             
+             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXToolBar
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXToolBar < FXToolBar
+     
+     
+     def initialize(p, q, opts=LAYOUT_TOP|LAYOUT_LEFT|LAYOUT_FILL_X, x=0, y=0, width=0, height=0, padLeft=3, padRight=3, padTop=2, padBottom=2, hSpacing=DEFAULT_SPACING, vSpacing=DEFAULT_SPACING)
+       super
+     end
+     
+     def initialize(p, opts=LAYOUT_TOP|LAYOUT_LEFT|LAYOUT_FILL_X, x=0, y=0, width=0, height=0, padLeft=3, padRight=3, padTop=2, padBottom=2, hSpacing=DEFAULT_SPACING, vSpacing=DEFAULT_SPACING)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:p => :required, :q => :required, :opts => LAYOUT_TOP|LAYOUT_LEFT|LAYOUT_FILL_X, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 3, :padRight => 3, :padTop => 2, :padBottom => 2, :hSpacing => DEFAULT_SPACING, :vSpacing => DEFAULT_SPACING})
+             
+             def p var; @os.op[@os.ii].p = var; end
+             
+             def q var; @os.op[@os.ii].q = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def pad_left var; @os.op[@os.ii].padLeft = var; end
+             
+             def pad_right var; @os.op[@os.ii].padRight = var; end
+             
+             def pad_top var; @os.op[@os.ii].padTop = var; end
+             
+             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+             
+             def h_spacing var; @os.op[@os.ii].hSpacing = var; end
+             
+             def v_spacing var; @os.op[@os.ii].vSpacing = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+         
+             @os.op[1] = OpenStruct.new({:p => :required, :opts => LAYOUT_TOP|LAYOUT_LEFT|LAYOUT_FILL_X, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 3, :padRight => 3, :padTop => 2, :padBottom => 2, :hSpacing => DEFAULT_SPACING, :vSpacing => DEFAULT_SPACING})
+             
+             def p var; @os.op[@os.ii].p = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def pad_left var; @os.op[@os.ii].padLeft = var; end
+             
+             def pad_right var; @os.op[@os.ii].padRight = var; end
+             
+             def pad_top var; @os.op[@os.ii].padTop = var; end
+             
+             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+             
+             def h_spacing var; @os.op[@os.ii].hSpacing = var; end
+             
+             def v_spacing var; @os.op[@os.ii].vSpacing = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXToolBarGrip
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXToolBarGrip < FXToolBarGrip
+     
+     
+     def initialize(p, target=nil, selector=0, opts=TOOLBARGRIP_SINGLE, x=0, y=0, width=0, height=0)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => TOOLBARGRIP_SINGLE, :x => 0, :y => 0, :width => 0, :height => 0})
+             
+             def p var; @os.op[@os.ii].p = var; end
+             
+             def target var; @os.op[@os.ii].target = var; end
+             
+             def selector var; @os.op[@os.ii].selector = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXToolBarShell
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXToolBarShell < FXToolBarShell
+     
+     
+     def initialize(owner, opts=FRAME_RAISED|FRAME_THICK, x=0, y=0, width=0, height=0, hSpacing=4, vSpacing=4)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:owner => :required, :opts => FRAME_RAISED|FRAME_THICK, :x => 0, :y => 0, :width => 0, :height => 0, :hSpacing => 4, :vSpacing => 4})
+             
+             def owner var; @os.op[@os.ii].owner = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def h_spacing var; @os.op[@os.ii].hSpacing = var; end
+             
+             def v_spacing var; @os.op[@os.ii].vSpacing = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXToolBarTab
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXToolBarTab < FXToolBarTab
+     
+     
+     def initialize(p, target=nil, selector=0, opts=FRAME_RAISED, x=0, y=0, width=0, height=0)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => FRAME_RAISED, :x => 0, :y => 0, :width => 0, :height => 0})
+             
+             def p var; @os.op[@os.ii].p = var; end
+             
+             def target var; @os.op[@os.ii].target = var; end
+             
+             def selector var; @os.op[@os.ii].selector = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXToolTip
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXToolTip < FXToolTip
+     
+     
+     def initialize(app, opts=TOOLTIP_NORMAL, x=0, y=0, width=0, height=0)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:app => :required, :opts => TOOLTIP_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0})
+             
+             def app var; @os.op[@os.ii].app = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXTopWindow
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXTopWindow < FXTopWindow
+     
+     
+
+     def self.compose tag, appref, &block
+         
+              
+     end
+   end
+          
 
    class FXTranslator
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXTranslator < FXTranslator
+     
+     
+     def initialize(a)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:a => :required})
+             
+             def a var; @os.op[@os.ii].a = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXTreeItem
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXTreeItem < FXTreeItem
+     
+     
+     def initialize(text, openIcon=nil, closedIcon=nil, data=nil)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:text => :required, :openIcon => nil, :closedIcon => nil, :data => nil})
+             
+             def text var; @os.op[@os.ii].text = var; end
+             
+             def open_icon var; @os.op[@os.ii].openIcon = var; end
+             
+             def closed_icon var; @os.op[@os.ii].closedIcon = var; end
+             
+             def data var; @os.op[@os.ii].data = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXTreeList
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXTreeList < FXTreeList
+     
+     
+     def initialize(p, target=nil, selector=0, opts=TREELIST_NORMAL, x=0, y=0, width=0, height=0)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => TREELIST_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0})
+             
+             def p var; @os.op[@os.ii].p = var; end
+             
+             def target var; @os.op[@os.ii].target = var; end
+             
+             def selector var; @os.op[@os.ii].selector = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXTreeListBox
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXTreeListBox < FXTreeListBox
+     
+     
+     def initialize(p, target=nil, selector=0, opts=FRAME_SUNKEN|FRAME_THICK|TREELISTBOX_NORMAL, x=0, y=0, width=0, height=0, padLeft=DEFAULT_PAD, padRight=DEFAULT_PAD, padTop=DEFAULT_PAD, padBottom=DEFAULT_PAD)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => FRAME_SUNKEN|FRAME_THICK|TREELISTBOX_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
+             
+             def p var; @os.op[@os.ii].p = var; end
+             
+             def target var; @os.op[@os.ii].target = var; end
+             
+             def selector var; @os.op[@os.ii].selector = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def pad_left var; @os.op[@os.ii].padLeft = var; end
+             
+             def pad_right var; @os.op[@os.ii].padRight = var; end
+             
+             def pad_top var; @os.op[@os.ii].padTop = var; end
+             
+             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXTriStateButton
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXTriStateButton < FXTriStateButton
+     
+     
+     def initialize(p, text1, text2, text3, icon1=nil, icon2=nil, icon3=nil, target=nil, selector=0, opts=TOGGLEBUTTON_NORMAL, x=0, y=0, width=0, height=0, padLeft=DEFAULT_PAD, padRight=DEFAULT_PAD, padTop=DEFAULT_PAD, padBottom=DEFAULT_PAD)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:p => :required, :text1 => :required, :text2 => :required, :text3 => :required, :icon1 => nil, :icon2 => nil, :icon3 => nil, :target => nil, :selector => 0, :opts => TOGGLEBUTTON_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
+             
+             def p var; @os.op[@os.ii].p = var; end
+             
+             def text1 var; @os.op[@os.ii].text1 = var; end
+             
+             def text2 var; @os.op[@os.ii].text2 = var; end
+             
+             def text3 var; @os.op[@os.ii].text3 = var; end
+             
+             def icon1 var; @os.op[@os.ii].icon1 = var; end
+             
+             def icon2 var; @os.op[@os.ii].icon2 = var; end
+             
+             def icon3 var; @os.op[@os.ii].icon3 = var; end
+             
+             def target var; @os.op[@os.ii].target = var; end
+             
+             def selector var; @os.op[@os.ii].selector = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def pad_left var; @os.op[@os.ii].padLeft = var; end
+             
+             def pad_right var; @os.op[@os.ii].padRight = var; end
+             
+             def pad_top var; @os.op[@os.ii].padTop = var; end
+             
+             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXVec2d
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXVec2d < FXVec2d
+     
+     
+     def initialize(xx=0.0, yy=0.0)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:xx => 0.0, :yy => 0.0})
+             
+             def xx var; @os.op[@os.ii].xx = var; end
+             
+             def yy var; @os.op[@os.ii].yy = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXVec2f
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXVec2f < FXVec2f
+     
+     
+     def initialize(xx=0.0, yy=0.0)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:xx => 0.0, :yy => 0.0})
+             
+             def xx var; @os.op[@os.ii].xx = var; end
+             
+             def yy var; @os.op[@os.ii].yy = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXVec3d
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXVec3d < FXVec3d
+     
+     
+     def initialize(xx, yy, zz=1.0)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:xx => :required, :yy => :required, :zz => 1.0})
+             
+             def xx var; @os.op[@os.ii].xx = var; end
+             
+             def yy var; @os.op[@os.ii].yy = var; end
+             
+             def zz var; @os.op[@os.ii].zz = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXVec3f
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXVec3f < FXVec3f
+     
+     
+     def initialize(xx, yy, zz=1.0)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:xx => :required, :yy => :required, :zz => 1.0})
+             
+             def xx var; @os.op[@os.ii].xx = var; end
+             
+             def yy var; @os.op[@os.ii].yy = var; end
+             
+             def zz var; @os.op[@os.ii].zz = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXVec4d
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXVec4d < FXVec4d
+     
+     
+     def initialize(xx, yy, zz, ww=1.0)
+       super
+     end
+     
+     def initialize(vec3d, ww=1.0)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:xx => :required, :yy => :required, :zz => :required, :ww => 1.0})
+             
+             def xx var; @os.op[@os.ii].xx = var; end
+             
+             def yy var; @os.op[@os.ii].yy = var; end
+             
+             def zz var; @os.op[@os.ii].zz = var; end
+             
+             def ww var; @os.op[@os.ii].ww = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+         
+             @os.op[1] = OpenStruct.new({:vec3d => :required, :ww => 1.0})
+             
+             def vec3d var; @os.op[@os.ii].vec3d = var; end
+             
+             def ww var; @os.op[@os.ii].ww = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXVec4f
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXVec4f < FXVec4f
+     
+     
+     def initialize(xx, yy, zz, ww=1.0)
+       super
+     end
+     
+     def initialize(vec3f, ww=1.0)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:xx => :required, :yy => :required, :zz => :required, :ww => 1.0})
+             
+             def xx var; @os.op[@os.ii].xx = var; end
+             
+             def yy var; @os.op[@os.ii].yy = var; end
+             
+             def zz var; @os.op[@os.ii].zz = var; end
+             
+             def ww var; @os.op[@os.ii].ww = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+         
+             @os.op[1] = OpenStruct.new({:vec3f => :required, :ww => 1.0})
+             
+             def vec3f var; @os.op[@os.ii].vec3f = var; end
+             
+             def ww var; @os.op[@os.ii].ww = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXVerticalFrame
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXVerticalFrame < FXVerticalFrame
+     
+     
+     def initialize(p, opts=0, x=0, y=0, width=0, height=0, padLeft=DEFAULT_SPACING, padRight=DEFAULT_SPACING, padTop=DEFAULT_SPACING, padBottom=DEFAULT_SPACING, hSpacing=DEFAULT_SPACING, vSpacing=DEFAULT_SPACING)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:p => :required, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_SPACING, :padRight => DEFAULT_SPACING, :padTop => DEFAULT_SPACING, :padBottom => DEFAULT_SPACING, :hSpacing => DEFAULT_SPACING, :vSpacing => DEFAULT_SPACING})
+             
+             def p var; @os.op[@os.ii].p = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def pad_left var; @os.op[@os.ii].padLeft = var; end
+             
+             def pad_right var; @os.op[@os.ii].padRight = var; end
+             
+             def pad_top var; @os.op[@os.ii].padTop = var; end
+             
+             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+             
+             def h_spacing var; @os.op[@os.ii].hSpacing = var; end
+             
+             def v_spacing var; @os.op[@os.ii].vSpacing = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXVisual
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXVisual < FXVisual
+     
+     
+     def initialize(a, flgs, d=32)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:a => :required, :flgs => :required, :d => 32})
+             
+             def a var; @os.op[@os.ii].a = var; end
+             
+             def flgs var; @os.op[@os.ii].flgs = var; end
+             
+             def d var; @os.op[@os.ii].d = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXWindow
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXWindow < FXWindow
+     
+     
+     def initialize(p, opts=0, x=0, y=0, width=0, height=0)
+       super
+     end
+     
+     def initialize(a, vis)
+       super
+     end
+     
+     def initialize(a, own, opts, x, y, w, h)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:p => :required, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
+             
+             def p var; @os.op[@os.ii].p = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+         
+             @os.op[1] = OpenStruct.new({:a => :required, :vis => :required})
+             
+             def a var; @os.op[@os.ii].a = var; end
+             
+             def vis var; @os.op[@os.ii].vis = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+         
+             @os.op[2] = OpenStruct.new({:a => :required, :own => :required, :opts => :required, :x => :required, :y => :required, :w => :required, :h => :required})
+             
+             def a var; @os.op[@os.ii].a = var; end
+             
+             def own var; @os.op[@os.ii].own = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def w var; @os.op[@os.ii].w = var; end
+             
+             def h var; @os.op[@os.ii].h = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXWizard
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXWizard < FXWizard
+     
+     
+     def initialize(owner, name, image, opts=DECOR_TITLE|DECOR_BORDER|DECOR_RESIZE, x=0, y=0, width=0, height=0, padLeft=10, padRight=10, padTop=10, padBottom=10, hSpacing=10, vSpacing=10)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:owner => :required, :name => :required, :image => :required, :opts => DECOR_TITLE|DECOR_BORDER|DECOR_RESIZE, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 10, :padRight => 10, :padTop => 10, :padBottom => 10, :hSpacing => 10, :vSpacing => 10})
+             
+             def owner var; @os.op[@os.ii].owner = var; end
+             
+             def name var; @os.op[@os.ii].name = var; end
+             
+             def image var; @os.op[@os.ii].image = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def x var; @os.op[@os.ii].x = var; end
+             
+             def y var; @os.op[@os.ii].y = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def pad_left var; @os.op[@os.ii].padLeft = var; end
+             
+             def pad_right var; @os.op[@os.ii].padRight = var; end
+             
+             def pad_top var; @os.op[@os.ii].padTop = var; end
+             
+             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+             
+             def h_spacing var; @os.op[@os.ii].hSpacing = var; end
+             
+             def v_spacing var; @os.op[@os.ii].vSpacing = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXXBMIcon
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXXBMIcon < FXXBMIcon
+     
+     
+     def initialize(a, pixels=nil, mask=nil, clr=0, opts=0, width=1, height=1)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:a => :required, :pixels => nil, :mask => nil, :clr => 0, :opts => 0, :width => 1, :height => 1})
+             
+             def a var; @os.op[@os.ii].a = var; end
+             
+             def pixels var; @os.op[@os.ii].pixels = var; end
+             
+             def mask var; @os.op[@os.ii].mask = var; end
+             
+             def clr var; @os.op[@os.ii].clr = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXXBMImage
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXXBMImage < FXXBMImage
+     
+     
+     def initialize(a, pixels=nil, mask=nil, opts=0, width=1, height=1)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:a => :required, :pixels => nil, :mask => nil, :opts => 0, :width => 1, :height => 1})
+             
+             def a var; @os.op[@os.ii].a = var; end
+             
+             def pixels var; @os.op[@os.ii].pixels = var; end
+             
+             def mask var; @os.op[@os.ii].mask = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXXPMIcon
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXXPMIcon < FXXPMIcon
+     
+     
+     def initialize(a, pix=nil, clr=0, opts=0, width=1, height=1)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:a => :required, :pix => nil, :clr => 0, :opts => 0, :width => 1, :height => 1})
+             
+             def a var; @os.op[@os.ii].a = var; end
+             
+             def pix var; @os.op[@os.ii].pix = var; end
+             
+             def clr var; @os.op[@os.ii].clr = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
    class FXXPMImage
      include Enhancement
-     attr_accessor :_o     
+     attr_accessor :_o
    end
+
+   class EFXXPMImage < FXXPMImage
+     
+     
+     def initialize(a, pix=nil, opts=0, width=1, height=1)
+       super
+     end
+     
+
+     def self.compose tag, appref, &block
+         
+         
+             @os.op[0] = OpenStruct.new({:a => :required, :pix => nil, :opts => 0, :width => 1, :height => 1})
+             
+             def a var; @os.op[@os.ii].a = var; end
+             
+             def pix var; @os.op[@os.ii].pix = var; end
+             
+             def opts var; @os.op[@os.ii].opts = var; end
+             
+             def width var; @os.op[@os.ii].width = var; end
+             
+             def height var; @os.op[@os.ii].height = var; end
+             
+             def instance a=nil, &block
+                @os.instance_name = a
+                @os.instance_block = block
+             end
+              
+     end
+   end
+          
 
   module Enhancement
     module Mapper

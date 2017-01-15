@@ -77,7 +77,7 @@ module Fox
 
     # class level
     module ClassMethods
-      def compose &block #DSL
+      def compose tag, appref, &block #DSL
         @composure = block
       end      
     end

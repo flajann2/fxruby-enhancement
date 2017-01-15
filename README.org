@@ -501,14 +501,16 @@
 
     https://github.com/flajann2/rubyneat-panel/tree/master/lib/rubyneat-panel
 
-    Class-based enhancement (this has not been tested yet!!!):
+    Class-based enhancement. You must derive from the EFX... class rather
+    than the FX... class. For example, EFXMainWinodw instead of FXMainWindow.
     #+begin_src ruby
-    class Main < FXMainWindow
-      compose :my_window do
+    class Main < EFXMainWindow
+      compose :my_window, :app do
         title "RubyNEAT Panel"
         show PLACEMENT_SCREEN
         width 700
         height 400
+
         fx_tab_book :my_book do |tab_book_ob|
           x 0
           y 0
