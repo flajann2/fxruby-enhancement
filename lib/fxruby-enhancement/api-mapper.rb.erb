@@ -50,25 +50,25 @@ module Fox
    class E<%= @class %> < <%= @class %>
      <% @i=0 %>
      <% for @iniparams in @details[:initialize].compact %>
-     def initialize(<%= @iniparams.map{ |p,d| "#{p}" + (d ? "=#{d}" : '')}.join(', ') %>)
+     def initialize(<%= @iniparams.map{ |p,d| "#{p}" + "=(defined?(@@_#{p})?@@_#{p}:nil)" + (d ? " || #{d}" : '')}.join(', ') %>)
        super
      end
      <% @i+=1; end unless @details[:initialize].nil? %>
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: E<%= @class %>, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          <% @i=0 %>
          <% for @iniparams in @details[:initialize].compact %>
-             <%= "@os.op[#{@i}]" %> = OpenStruct.new({<%= @iniparams.map{ |p,d| [p, d ? d : ":required"] }
-                                                                 .map{ |p,d| ":#{p} => #{d}"}
-                                                                 .join(', ') %>})
              <% for @param, @default in @iniparams %>
-             def <%= "#{@param.snake}" %> var; @os.op[@os.ii].<%= "#{@param}" %> = var; end
+         def <%= "#{@param.snake}" %> var; @@_<%= "#{@param}" %> = var; end
              <% end %>
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
          <% @i+=1; end unless @details[:initialize].nil? %>     
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           

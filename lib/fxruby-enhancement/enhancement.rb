@@ -77,9 +77,9 @@ module Fox
 
     # class level
     module ClassMethods
-      def compose tag, appref, &block #DSL
-        @composure = block
-      end      
+      #def compose tag, appref, &block #DSL
+      #  @composure = block
+      #end      
     end
 
     # instance level

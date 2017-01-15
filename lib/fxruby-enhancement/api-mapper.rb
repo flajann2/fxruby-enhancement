@@ -50,60 +50,57 @@ module Fox
    class EFX4Splitter < FX4Splitter
      
      
-     def initialize(p, opts=FOURSPLITTER_NORMAL, x=0, y=0, width=0, height=0)
+     def initialize(p=(defined?(@@_p)?@@_p:nil), opts=(defined?(@@_opts)?@@_opts:nil) || FOURSPLITTER_NORMAL, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0)
        super
      end
      
-     def initialize(p, tgt, sel, opts=FOURSPLITTER_NORMAL, x=0, y=0, width=0, height=0)
+     def initialize(p=(defined?(@@_p)?@@_p:nil), tgt=(defined?(@@_tgt)?@@_tgt:nil), sel=(defined?(@@_sel)?@@_sel:nil), opts=(defined?(@@_opts)?@@_opts:nil) || FOURSPLITTER_NORMAL, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFX4Splitter, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:p => :required, :opts => FOURSPLITTER_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0})
              
-             def p var; @os.op[@os.ii].p = var; end
+         def p var; @@_p = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
          
-             @os.op[1] = OpenStruct.new({:p => :required, :tgt => :required, :sel => :required, :opts => FOURSPLITTER_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0})
              
-             def p var; @os.op[@os.ii].p = var; end
+         def p var; @@_p = var; end
              
-             def tgt var; @os.op[@os.ii].tgt = var; end
+         def tgt var; @@_tgt = var; end
              
-             def sel var; @os.op[@os.ii].sel = var; end
+         def sel var; @@_sel = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -116,43 +113,45 @@ module Fox
    class EFX7Segment < FX7Segment
      
      
-     def initialize(p, text, opts=SEVENSEGMENT_NORMAL, x=0, y=0, width=0, height=0, padLeft=DEFAULT_PAD, padRight=DEFAULT_PAD, padTop=DEFAULT_PAD, padBottom=DEFAULT_PAD)
+     def initialize(p=(defined?(@@_p)?@@_p:nil), text=(defined?(@@_text)?@@_text:nil), opts=(defined?(@@_opts)?@@_opts:nil) || SEVENSEGMENT_NORMAL, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0, padLeft=(defined?(@@_padLeft)?@@_padLeft:nil) || DEFAULT_PAD, padRight=(defined?(@@_padRight)?@@_padRight:nil) || DEFAULT_PAD, padTop=(defined?(@@_padTop)?@@_padTop:nil) || DEFAULT_PAD, padBottom=(defined?(@@_padBottom)?@@_padBottom:nil) || DEFAULT_PAD)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFX7Segment, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:p => :required, :text => :required, :opts => SEVENSEGMENT_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
              
-             def p var; @os.op[@os.ii].p = var; end
+         def p var; @@_p = var; end
              
-             def text var; @os.op[@os.ii].text = var; end
+         def text var; @@_text = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def pad_left var; @os.op[@os.ii].padLeft = var; end
+         def pad_left var; @@_padLeft = var; end
              
-             def pad_right var; @os.op[@os.ii].padRight = var; end
+         def pad_right var; @@_padRight = var; end
              
-             def pad_top var; @os.op[@os.ii].padTop = var; end
+         def pad_top var; @@_padTop = var; end
              
-             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+         def pad_bottom var; @@_padBottom = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -166,9 +165,16 @@ module Fox
      
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXAccelTable, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -182,9 +188,16 @@ module Fox
      
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXEvent, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -197,25 +210,27 @@ module Fox
    class EFXApp < FXApp
      
      
-     def initialize(appName="Application", vendorName="FoxDefault")
+     def initialize(appName=(defined?(@@_appName)?@@_appName:nil) || "Application", vendorName=(defined?(@@_vendorName)?@@_vendorName:nil) || "FoxDefault")
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXApp, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:appName => "Application", :vendorName => "FoxDefault"})
              
-             def app_name var; @os.op[@os.ii].appName = var; end
+         def app_name var; @@_appName = var; end
              
-             def vendor_name var; @os.op[@os.ii].vendorName = var; end
+         def vendor_name var; @@_vendorName = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -228,45 +243,47 @@ module Fox
    class EFXArrowButton < FXArrowButton
      
      
-     def initialize(parent, target=nil, selector=0, opts=ARROW_NORMAL, x=0, y=0, width=0, height=0, padLeft=DEFAULT_PAD, padRight=DEFAULT_PAD, padTop=DEFAULT_PAD, padBottom=DEFAULT_PAD)
+     def initialize(parent=(defined?(@@_parent)?@@_parent:nil), target=(defined?(@@_target)?@@_target:nil) || nil, selector=(defined?(@@_selector)?@@_selector:nil) || 0, opts=(defined?(@@_opts)?@@_opts:nil) || ARROW_NORMAL, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0, padLeft=(defined?(@@_padLeft)?@@_padLeft:nil) || DEFAULT_PAD, padRight=(defined?(@@_padRight)?@@_padRight:nil) || DEFAULT_PAD, padTop=(defined?(@@_padTop)?@@_padTop:nil) || DEFAULT_PAD, padBottom=(defined?(@@_padBottom)?@@_padBottom:nil) || DEFAULT_PAD)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXArrowButton, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:parent => :required, :target => nil, :selector => 0, :opts => ARROW_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
              
-             def parent var; @os.op[@os.ii].parent = var; end
+         def parent var; @@_parent = var; end
              
-             def target var; @os.op[@os.ii].target = var; end
+         def target var; @@_target = var; end
              
-             def selector var; @os.op[@os.ii].selector = var; end
+         def selector var; @@_selector = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def pad_left var; @os.op[@os.ii].padLeft = var; end
+         def pad_left var; @@_padLeft = var; end
              
-             def pad_right var; @os.op[@os.ii].padRight = var; end
+         def pad_right var; @@_padRight = var; end
              
-             def pad_top var; @os.op[@os.ii].padTop = var; end
+         def pad_top var; @@_padTop = var; end
              
-             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+         def pad_bottom var; @@_padBottom = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -279,33 +296,35 @@ module Fox
    class EFXBMPIcon < FXBMPIcon
      
      
-     def initialize(a, pix=nil, clr=Fox.FXRGB(192,192,192), opts=0, width=1, height=1)
+     def initialize(a=(defined?(@@_a)?@@_a:nil), pix=(defined?(@@_pix)?@@_pix:nil) || nil, clr=(defined?(@@_clr)?@@_clr:nil) || Fox.FXRGB(192,192,192), opts=(defined?(@@_opts)?@@_opts:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 1, height=(defined?(@@_height)?@@_height:nil) || 1)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXBMPIcon, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:a => :required, :pix => nil, :clr => Fox.FXRGB(192,192,192), :opts => 0, :width => 1, :height => 1})
              
-             def a var; @os.op[@os.ii].a = var; end
+         def a var; @@_a = var; end
              
-             def pix var; @os.op[@os.ii].pix = var; end
+         def pix var; @@_pix = var; end
              
-             def clr var; @os.op[@os.ii].clr = var; end
+         def clr var; @@_clr = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -318,31 +337,33 @@ module Fox
    class EFXBMPImage < FXBMPImage
      
      
-     def initialize(a, pix=nil, opts=0, width=1, height=1)
+     def initialize(a=(defined?(@@_a)?@@_a:nil), pix=(defined?(@@_pix)?@@_pix:nil) || nil, opts=(defined?(@@_opts)?@@_opts:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 1, height=(defined?(@@_height)?@@_height:nil) || 1)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXBMPImage, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:a => :required, :pix => nil, :opts => 0, :width => 1, :height => 1})
              
-             def a var; @os.op[@os.ii].a = var; end
+         def a var; @@_a = var; end
              
-             def pix var; @os.op[@os.ii].pix = var; end
+         def pix var; @@_pix = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -355,31 +376,33 @@ module Fox
    class EFXBitmap < FXBitmap
      
      
-     def initialize(app, pixels=nil, opts=0, width=1, height=1)
+     def initialize(app=(defined?(@@_app)?@@_app:nil), pixels=(defined?(@@_pixels)?@@_pixels:nil) || nil, opts=(defined?(@@_opts)?@@_opts:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 1, height=(defined?(@@_height)?@@_height:nil) || 1)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXBitmap, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:app => :required, :pixels => nil, :opts => 0, :width => 1, :height => 1})
              
-             def app var; @os.op[@os.ii].app = var; end
+         def app var; @@_app = var; end
              
-             def pixels var; @os.op[@os.ii].pixels = var; end
+         def pixels var; @@_pixels = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -392,43 +415,45 @@ module Fox
    class EFXBitmapFrame < FXBitmapFrame
      
      
-     def initialize(p, bmp, opts=FRAME_SUNKEN|FRAME_THICK, x=0, y=0, width=0, height=0, padLeft=0, padRight=0, padTop=0, padBottom=0)
+     def initialize(p=(defined?(@@_p)?@@_p:nil), bmp=(defined?(@@_bmp)?@@_bmp:nil), opts=(defined?(@@_opts)?@@_opts:nil) || FRAME_SUNKEN|FRAME_THICK, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0, padLeft=(defined?(@@_padLeft)?@@_padLeft:nil) || 0, padRight=(defined?(@@_padRight)?@@_padRight:nil) || 0, padTop=(defined?(@@_padTop)?@@_padTop:nil) || 0, padBottom=(defined?(@@_padBottom)?@@_padBottom:nil) || 0)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXBitmapFrame, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:p => :required, :bmp => :required, :opts => FRAME_SUNKEN|FRAME_THICK, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 0, :padRight => 0, :padTop => 0, :padBottom => 0})
              
-             def p var; @os.op[@os.ii].p = var; end
+         def p var; @@_p = var; end
              
-             def bmp var; @os.op[@os.ii].bmp = var; end
+         def bmp var; @@_bmp = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def pad_left var; @os.op[@os.ii].padLeft = var; end
+         def pad_left var; @@_padLeft = var; end
              
-             def pad_right var; @os.op[@os.ii].padRight = var; end
+         def pad_right var; @@_padRight = var; end
              
-             def pad_top var; @os.op[@os.ii].padTop = var; end
+         def pad_top var; @@_padTop = var; end
              
-             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+         def pad_bottom var; @@_padBottom = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -441,39 +466,41 @@ module Fox
    class EFXBitmapView < FXBitmapView
      
      
-     def initialize(p, bmp=nil, target=nil, selector=0, opts=0, x=0, y=0, width=0, height=0)
+     def initialize(p=(defined?(@@_p)?@@_p:nil), bmp=(defined?(@@_bmp)?@@_bmp:nil) || nil, target=(defined?(@@_target)?@@_target:nil) || nil, selector=(defined?(@@_selector)?@@_selector:nil) || 0, opts=(defined?(@@_opts)?@@_opts:nil) || 0, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXBitmapView, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:p => :required, :bmp => nil, :target => nil, :selector => 0, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
              
-             def p var; @os.op[@os.ii].p = var; end
+         def p var; @@_p = var; end
              
-             def bmp var; @os.op[@os.ii].bmp = var; end
+         def bmp var; @@_bmp = var; end
              
-             def target var; @os.op[@os.ii].target = var; end
+         def target var; @@_target = var; end
              
-             def selector var; @os.op[@os.ii].selector = var; end
+         def selector var; @@_selector = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -486,49 +513,51 @@ module Fox
    class EFXButton < FXButton
      
      
-     def initialize(parent, text, icon=nil, target=nil, selector=0, opts=BUTTON_NORMAL, x=0, y=0, width=0, height=0, padLeft=DEFAULT_PAD, padRight=DEFAULT_PAD, padTop=DEFAULT_PAD, padBottom=DEFAULT_PAD)
+     def initialize(parent=(defined?(@@_parent)?@@_parent:nil), text=(defined?(@@_text)?@@_text:nil), icon=(defined?(@@_icon)?@@_icon:nil) || nil, target=(defined?(@@_target)?@@_target:nil) || nil, selector=(defined?(@@_selector)?@@_selector:nil) || 0, opts=(defined?(@@_opts)?@@_opts:nil) || BUTTON_NORMAL, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0, padLeft=(defined?(@@_padLeft)?@@_padLeft:nil) || DEFAULT_PAD, padRight=(defined?(@@_padRight)?@@_padRight:nil) || DEFAULT_PAD, padTop=(defined?(@@_padTop)?@@_padTop:nil) || DEFAULT_PAD, padBottom=(defined?(@@_padBottom)?@@_padBottom:nil) || DEFAULT_PAD)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXButton, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:parent => :required, :text => :required, :icon => nil, :target => nil, :selector => 0, :opts => BUTTON_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
              
-             def parent var; @os.op[@os.ii].parent = var; end
+         def parent var; @@_parent = var; end
              
-             def text var; @os.op[@os.ii].text = var; end
+         def text var; @@_text = var; end
              
-             def icon var; @os.op[@os.ii].icon = var; end
+         def icon var; @@_icon = var; end
              
-             def target var; @os.op[@os.ii].target = var; end
+         def target var; @@_target = var; end
              
-             def selector var; @os.op[@os.ii].selector = var; end
+         def selector var; @@_selector = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def pad_left var; @os.op[@os.ii].padLeft = var; end
+         def pad_left var; @@_padLeft = var; end
              
-             def pad_right var; @os.op[@os.ii].padRight = var; end
+         def pad_right var; @@_padRight = var; end
              
-             def pad_top var; @os.op[@os.ii].padTop = var; end
+         def pad_top var; @@_padTop = var; end
              
-             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+         def pad_bottom var; @@_padBottom = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -541,25 +570,27 @@ module Fox
    class EFXCURCursor < FXCURCursor
      
      
-     def initialize(app, pixels)
+     def initialize(app=(defined?(@@_app)?@@_app:nil), pixels=(defined?(@@_pixels)?@@_pixels:nil))
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXCURCursor, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:app => :required, :pixels => :required})
              
-             def app var; @os.op[@os.ii].app = var; end
+         def app var; @@_app = var; end
              
-             def pixels var; @os.op[@os.ii].pixels = var; end
+         def pixels var; @@_pixels = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -572,37 +603,39 @@ module Fox
    class EFXCanvas < FXCanvas
      
      
-     def initialize(parent, target=nil, selector=0, opts=FRAME_NORMAL, x=0, y=0, width=0, height=0)
+     def initialize(parent=(defined?(@@_parent)?@@_parent:nil), target=(defined?(@@_target)?@@_target:nil) || nil, selector=(defined?(@@_selector)?@@_selector:nil) || 0, opts=(defined?(@@_opts)?@@_opts:nil) || FRAME_NORMAL, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXCanvas, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:parent => :required, :target => nil, :selector => 0, :opts => FRAME_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0})
              
-             def parent var; @os.op[@os.ii].parent = var; end
+         def parent var; @@_parent = var; end
              
-             def target var; @os.op[@os.ii].target = var; end
+         def target var; @@_target = var; end
              
-             def selector var; @os.op[@os.ii].selector = var; end
+         def selector var; @@_selector = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -615,47 +648,49 @@ module Fox
    class EFXCheckButton < FXCheckButton
      
      
-     def initialize(parent, text, target=nil, selector=0, opts=CHECKBUTTON_NORMAL, x=0, y=0, width=0, height=0, padLeft=DEFAULT_PAD, padRight=DEFAULT_PAD, padTop=DEFAULT_PAD, padBottom=DEFAULT_PAD)
+     def initialize(parent=(defined?(@@_parent)?@@_parent:nil), text=(defined?(@@_text)?@@_text:nil), target=(defined?(@@_target)?@@_target:nil) || nil, selector=(defined?(@@_selector)?@@_selector:nil) || 0, opts=(defined?(@@_opts)?@@_opts:nil) || CHECKBUTTON_NORMAL, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0, padLeft=(defined?(@@_padLeft)?@@_padLeft:nil) || DEFAULT_PAD, padRight=(defined?(@@_padRight)?@@_padRight:nil) || DEFAULT_PAD, padTop=(defined?(@@_padTop)?@@_padTop:nil) || DEFAULT_PAD, padBottom=(defined?(@@_padBottom)?@@_padBottom:nil) || DEFAULT_PAD)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXCheckButton, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:parent => :required, :text => :required, :target => nil, :selector => 0, :opts => CHECKBUTTON_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
              
-             def parent var; @os.op[@os.ii].parent = var; end
+         def parent var; @@_parent = var; end
              
-             def text var; @os.op[@os.ii].text = var; end
+         def text var; @@_text = var; end
              
-             def target var; @os.op[@os.ii].target = var; end
+         def target var; @@_target = var; end
              
-             def selector var; @os.op[@os.ii].selector = var; end
+         def selector var; @@_selector = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def pad_left var; @os.op[@os.ii].padLeft = var; end
+         def pad_left var; @@_padLeft = var; end
              
-             def pad_right var; @os.op[@os.ii].padRight = var; end
+         def pad_right var; @@_padRight = var; end
              
-             def pad_top var; @os.op[@os.ii].padTop = var; end
+         def pad_top var; @@_padTop = var; end
              
-             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+         def pad_bottom var; @@_padBottom = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -668,41 +703,43 @@ module Fox
    class EFXChoiceBox < FXChoiceBox
      
      
-     def initialize(owner, caption, text, icon, choices, opts=0, x=0, y=0, width=0, height=0)
+     def initialize(owner=(defined?(@@_owner)?@@_owner:nil), caption=(defined?(@@_caption)?@@_caption:nil), text=(defined?(@@_text)?@@_text:nil), icon=(defined?(@@_icon)?@@_icon:nil), choices=(defined?(@@_choices)?@@_choices:nil), opts=(defined?(@@_opts)?@@_opts:nil) || 0, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXChoiceBox, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:owner => :required, :caption => :required, :text => :required, :icon => :required, :choices => :required, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
              
-             def owner var; @os.op[@os.ii].owner = var; end
+         def owner var; @@_owner = var; end
              
-             def caption var; @os.op[@os.ii].caption = var; end
+         def caption var; @@_caption = var; end
              
-             def text var; @os.op[@os.ii].text = var; end
+         def text var; @@_text = var; end
              
-             def icon var; @os.op[@os.ii].icon = var; end
+         def icon var; @@_icon = var; end
              
-             def choices var; @os.op[@os.ii].choices = var; end
+         def choices var; @@_choices = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -715,45 +752,47 @@ module Fox
    class EFXColorBar < FXColorBar
      
      
-     def initialize(parent, target=nil, selector=0, opts=FRAME_NORMAL, x=0, y=0, width=0, height=0, padLeft=DEFAULT_PAD, padRight=DEFAULT_PAD, padTop=DEFAULT_PAD, padBottom=DEFAULT_PAD)
+     def initialize(parent=(defined?(@@_parent)?@@_parent:nil), target=(defined?(@@_target)?@@_target:nil) || nil, selector=(defined?(@@_selector)?@@_selector:nil) || 0, opts=(defined?(@@_opts)?@@_opts:nil) || FRAME_NORMAL, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0, padLeft=(defined?(@@_padLeft)?@@_padLeft:nil) || DEFAULT_PAD, padRight=(defined?(@@_padRight)?@@_padRight:nil) || DEFAULT_PAD, padTop=(defined?(@@_padTop)?@@_padTop:nil) || DEFAULT_PAD, padBottom=(defined?(@@_padBottom)?@@_padBottom:nil) || DEFAULT_PAD)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXColorBar, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:parent => :required, :target => nil, :selector => 0, :opts => FRAME_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
              
-             def parent var; @os.op[@os.ii].parent = var; end
+         def parent var; @@_parent = var; end
              
-             def target var; @os.op[@os.ii].target = var; end
+         def target var; @@_target = var; end
              
-             def selector var; @os.op[@os.ii].selector = var; end
+         def selector var; @@_selector = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def pad_left var; @os.op[@os.ii].padLeft = var; end
+         def pad_left var; @@_padLeft = var; end
              
-             def pad_right var; @os.op[@os.ii].padRight = var; end
+         def pad_right var; @@_padRight = var; end
              
-             def pad_top var; @os.op[@os.ii].padTop = var; end
+         def pad_top var; @@_padTop = var; end
              
-             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+         def pad_bottom var; @@_padBottom = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -766,35 +805,37 @@ module Fox
    class EFXColorDialog < FXColorDialog
      
      
-     def initialize(owner, title, opts=0, x=0, y=0, width=0, height=0)
+     def initialize(owner=(defined?(@@_owner)?@@_owner:nil), title=(defined?(@@_title)?@@_title:nil), opts=(defined?(@@_opts)?@@_opts:nil) || 0, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXColorDialog, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:owner => :required, :title => :required, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
              
-             def owner var; @os.op[@os.ii].owner = var; end
+         def owner var; @@_owner = var; end
              
-             def title var; @os.op[@os.ii].title = var; end
+         def title var; @@_title = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -807,27 +848,29 @@ module Fox
    class EFXColorItem < FXColorItem
      
      
-     def initialize(text, clr, data=nil)
+     def initialize(text=(defined?(@@_text)?@@_text:nil), clr=(defined?(@@_clr)?@@_clr:nil), data=(defined?(@@_data)?@@_data:nil) || nil)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXColorItem, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:text => :required, :clr => :required, :data => nil})
              
-             def text var; @os.op[@os.ii].text = var; end
+         def text var; @@_text = var; end
              
-             def clr var; @os.op[@os.ii].clr = var; end
+         def clr var; @@_clr = var; end
              
-             def data var; @os.op[@os.ii].data = var; end
+         def data var; @@_data = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -840,37 +883,39 @@ module Fox
    class EFXColorList < FXColorList
      
      
-     def initialize(p, target=nil, selector=0, opts=LIST_BROWSESELECT, x=0, y=0, width=0, height=0)
+     def initialize(p=(defined?(@@_p)?@@_p:nil), target=(defined?(@@_target)?@@_target:nil) || nil, selector=(defined?(@@_selector)?@@_selector:nil) || 0, opts=(defined?(@@_opts)?@@_opts:nil) || LIST_BROWSESELECT, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXColorList, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => LIST_BROWSESELECT, :x => 0, :y => 0, :width => 0, :height => 0})
              
-             def p var; @os.op[@os.ii].p = var; end
+         def p var; @@_p = var; end
              
-             def target var; @os.op[@os.ii].target = var; end
+         def target var; @@_target = var; end
              
-             def selector var; @os.op[@os.ii].selector = var; end
+         def selector var; @@_selector = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -883,45 +928,47 @@ module Fox
    class EFXColorRing < FXColorRing
      
      
-     def initialize(p, target=nil, selector=0, opts=FRAME_NORMAL, x=0, y=0, width=0, height=0, padLeft=DEFAULT_PAD, padRight=DEFAULT_PAD, padTop=DEFAULT_PAD, padBottom=DEFAULT_PAD)
+     def initialize(p=(defined?(@@_p)?@@_p:nil), target=(defined?(@@_target)?@@_target:nil) || nil, selector=(defined?(@@_selector)?@@_selector:nil) || 0, opts=(defined?(@@_opts)?@@_opts:nil) || FRAME_NORMAL, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0, padLeft=(defined?(@@_padLeft)?@@_padLeft:nil) || DEFAULT_PAD, padRight=(defined?(@@_padRight)?@@_padRight:nil) || DEFAULT_PAD, padTop=(defined?(@@_padTop)?@@_padTop:nil) || DEFAULT_PAD, padBottom=(defined?(@@_padBottom)?@@_padBottom:nil) || DEFAULT_PAD)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXColorRing, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => FRAME_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
              
-             def p var; @os.op[@os.ii].p = var; end
+         def p var; @@_p = var; end
              
-             def target var; @os.op[@os.ii].target = var; end
+         def target var; @@_target = var; end
              
-             def selector var; @os.op[@os.ii].selector = var; end
+         def selector var; @@_selector = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def pad_left var; @os.op[@os.ii].padLeft = var; end
+         def pad_left var; @@_padLeft = var; end
              
-             def pad_right var; @os.op[@os.ii].padRight = var; end
+         def pad_right var; @@_padRight = var; end
              
-             def pad_top var; @os.op[@os.ii].padTop = var; end
+         def pad_top var; @@_padTop = var; end
              
-             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+         def pad_bottom var; @@_padBottom = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -934,37 +981,39 @@ module Fox
    class EFXColorSelector < FXColorSelector
      
      
-     def initialize(parent, target=nil, selector=0, opts=0, x=0, y=0, width=0, height=0)
+     def initialize(parent=(defined?(@@_parent)?@@_parent:nil), target=(defined?(@@_target)?@@_target:nil) || nil, selector=(defined?(@@_selector)?@@_selector:nil) || 0, opts=(defined?(@@_opts)?@@_opts:nil) || 0, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXColorSelector, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:parent => :required, :target => nil, :selector => 0, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
              
-             def parent var; @os.op[@os.ii].parent = var; end
+         def parent var; @@_parent = var; end
              
-             def target var; @os.op[@os.ii].target = var; end
+         def target var; @@_target = var; end
              
-             def selector var; @os.op[@os.ii].selector = var; end
+         def selector var; @@_selector = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -977,47 +1026,49 @@ module Fox
    class EFXColorWell < FXColorWell
      
      
-     def initialize(parent, color=0, target=nil, selector=0, opts=COLORWELL_NORMAL, x=0, y=0, width=0, height=0, padLeft=DEFAULT_PAD, padRight=DEFAULT_PAD, padTop=DEFAULT_PAD, padBottom=DEFAULT_PAD)
+     def initialize(parent=(defined?(@@_parent)?@@_parent:nil), color=(defined?(@@_color)?@@_color:nil) || 0, target=(defined?(@@_target)?@@_target:nil) || nil, selector=(defined?(@@_selector)?@@_selector:nil) || 0, opts=(defined?(@@_opts)?@@_opts:nil) || COLORWELL_NORMAL, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0, padLeft=(defined?(@@_padLeft)?@@_padLeft:nil) || DEFAULT_PAD, padRight=(defined?(@@_padRight)?@@_padRight:nil) || DEFAULT_PAD, padTop=(defined?(@@_padTop)?@@_padTop:nil) || DEFAULT_PAD, padBottom=(defined?(@@_padBottom)?@@_padBottom:nil) || DEFAULT_PAD)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXColorWell, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:parent => :required, :color => 0, :target => nil, :selector => 0, :opts => COLORWELL_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
              
-             def parent var; @os.op[@os.ii].parent = var; end
+         def parent var; @@_parent = var; end
              
-             def color var; @os.op[@os.ii].color = var; end
+         def color var; @@_color = var; end
              
-             def target var; @os.op[@os.ii].target = var; end
+         def target var; @@_target = var; end
              
-             def selector var; @os.op[@os.ii].selector = var; end
+         def selector var; @@_selector = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def pad_left var; @os.op[@os.ii].padLeft = var; end
+         def pad_left var; @@_padLeft = var; end
              
-             def pad_right var; @os.op[@os.ii].padRight = var; end
+         def pad_right var; @@_padRight = var; end
              
-             def pad_top var; @os.op[@os.ii].padTop = var; end
+         def pad_top var; @@_padTop = var; end
              
-             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+         def pad_bottom var; @@_padBottom = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -1030,45 +1081,47 @@ module Fox
    class EFXColorWheel < FXColorWheel
      
      
-     def initialize(p, target=nil, selector=0, opts=FRAME_NORMAL, x=0, y=0, width=0, height=0, padLeft=DEFAULT_PAD, padRight=DEFAULT_PAD, padTop=DEFAULT_PAD, padBottom=DEFAULT_PAD)
+     def initialize(p=(defined?(@@_p)?@@_p:nil), target=(defined?(@@_target)?@@_target:nil) || nil, selector=(defined?(@@_selector)?@@_selector:nil) || 0, opts=(defined?(@@_opts)?@@_opts:nil) || FRAME_NORMAL, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0, padLeft=(defined?(@@_padLeft)?@@_padLeft:nil) || DEFAULT_PAD, padRight=(defined?(@@_padRight)?@@_padRight:nil) || DEFAULT_PAD, padTop=(defined?(@@_padTop)?@@_padTop:nil) || DEFAULT_PAD, padBottom=(defined?(@@_padBottom)?@@_padBottom:nil) || DEFAULT_PAD)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXColorWheel, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => FRAME_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
              
-             def p var; @os.op[@os.ii].p = var; end
+         def p var; @@_p = var; end
              
-             def target var; @os.op[@os.ii].target = var; end
+         def target var; @@_target = var; end
              
-             def selector var; @os.op[@os.ii].selector = var; end
+         def selector var; @@_selector = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def pad_left var; @os.op[@os.ii].padLeft = var; end
+         def pad_left var; @@_padLeft = var; end
              
-             def pad_right var; @os.op[@os.ii].padRight = var; end
+         def pad_right var; @@_padRight = var; end
              
-             def pad_top var; @os.op[@os.ii].padTop = var; end
+         def pad_top var; @@_padTop = var; end
              
-             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+         def pad_bottom var; @@_padBottom = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -1081,47 +1134,49 @@ module Fox
    class EFXComboBox < FXComboBox
      
      
-     def initialize(p, cols, target=nil, selector=0, opts=COMBOBOX_NORMAL, x=0, y=0, width=0, height=0, padLeft=DEFAULT_PAD, padRight=DEFAULT_PAD, padTop=DEFAULT_PAD, padBottom=DEFAULT_PAD)
+     def initialize(p=(defined?(@@_p)?@@_p:nil), cols=(defined?(@@_cols)?@@_cols:nil), target=(defined?(@@_target)?@@_target:nil) || nil, selector=(defined?(@@_selector)?@@_selector:nil) || 0, opts=(defined?(@@_opts)?@@_opts:nil) || COMBOBOX_NORMAL, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0, padLeft=(defined?(@@_padLeft)?@@_padLeft:nil) || DEFAULT_PAD, padRight=(defined?(@@_padRight)?@@_padRight:nil) || DEFAULT_PAD, padTop=(defined?(@@_padTop)?@@_padTop:nil) || DEFAULT_PAD, padBottom=(defined?(@@_padBottom)?@@_padBottom:nil) || DEFAULT_PAD)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXComboBox, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:p => :required, :cols => :required, :target => nil, :selector => 0, :opts => COMBOBOX_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
              
-             def p var; @os.op[@os.ii].p = var; end
+         def p var; @@_p = var; end
              
-             def cols var; @os.op[@os.ii].cols = var; end
+         def cols var; @@_cols = var; end
              
-             def target var; @os.op[@os.ii].target = var; end
+         def target var; @@_target = var; end
              
-             def selector var; @os.op[@os.ii].selector = var; end
+         def selector var; @@_selector = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def pad_left var; @os.op[@os.ii].padLeft = var; end
+         def pad_left var; @@_padLeft = var; end
              
-             def pad_right var; @os.op[@os.ii].padRight = var; end
+         def pad_right var; @@_padRight = var; end
              
-             def pad_top var; @os.op[@os.ii].padTop = var; end
+         def pad_top var; @@_padTop = var; end
              
-             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+         def pad_bottom var; @@_padBottom = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -1134,33 +1189,35 @@ module Fox
    class EFXComposite < FXComposite
      
      
-     def initialize(parent, opts=0, x=0, y=0, width=0, height=0)
+     def initialize(parent=(defined?(@@_parent)?@@_parent:nil), opts=(defined?(@@_opts)?@@_opts:nil) || 0, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXComposite, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:parent => :required, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
              
-             def parent var; @os.op[@os.ii].parent = var; end
+         def parent var; @@_parent = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -1173,71 +1230,63 @@ module Fox
    class EFXCursor < FXCursor
      
      
-     def initialize(a, curid=CURSOR_ARROW)
+     def initialize(a=(defined?(@@_a)?@@_a:nil), curid=(defined?(@@_curid)?@@_curid:nil) || CURSOR_ARROW)
        super
      end
      
-     def initialize(a, pix, width=32, height=32, hotX=-1, hotY=-1)
+     def initialize(a=(defined?(@@_a)?@@_a:nil), pix=(defined?(@@_pix)?@@_pix:nil), width=(defined?(@@_width)?@@_width:nil) || 32, height=(defined?(@@_height)?@@_height:nil) || 32, hotX=(defined?(@@_hotX)?@@_hotX:nil) || -1, hotY=(defined?(@@_hotY)?@@_hotY:nil) || -1)
        super
      end
      
-     def initialize(a, pixels, width=32, height=32, hotX=-1, hotY=-1)
+     def initialize(a=(defined?(@@_a)?@@_a:nil), pixels=(defined?(@@_pixels)?@@_pixels:nil), width=(defined?(@@_width)?@@_width:nil) || 32, height=(defined?(@@_height)?@@_height:nil) || 32, hotX=(defined?(@@_hotX)?@@_hotX:nil) || -1, hotY=(defined?(@@_hotY)?@@_hotY:nil) || -1)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXCursor, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:a => :required, :curid => CURSOR_ARROW})
              
-             def a var; @os.op[@os.ii].a = var; end
+         def a var; @@_a = var; end
              
-             def curid var; @os.op[@os.ii].curid = var; end
+         def curid var; @@_curid = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
          
-             @os.op[1] = OpenStruct.new({:a => :required, :pix => :required, :width => 32, :height => 32, :hotX => -1, :hotY => -1})
              
-             def a var; @os.op[@os.ii].a = var; end
+         def a var; @@_a = var; end
              
-             def pix var; @os.op[@os.ii].pix = var; end
+         def pix var; @@_pix = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def hot_x var; @os.op[@os.ii].hotX = var; end
+         def hot_x var; @@_hotX = var; end
              
-             def hot_y var; @os.op[@os.ii].hotY = var; end
+         def hot_y var; @@_hotY = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
          
-             @os.op[2] = OpenStruct.new({:a => :required, :pixels => :required, :width => 32, :height => 32, :hotX => -1, :hotY => -1})
              
-             def a var; @os.op[@os.ii].a = var; end
+         def a var; @@_a = var; end
              
-             def pixels var; @os.op[@os.ii].pixels = var; end
+         def pixels var; @@_pixels = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def hot_x var; @os.op[@os.ii].hotX = var; end
+         def hot_x var; @@_hotX = var; end
              
-             def hot_y var; @os.op[@os.ii].hotY = var; end
+         def hot_y var; @@_hotY = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -1251,9 +1300,16 @@ module Fox
      
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXSegment, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -1267,9 +1323,16 @@ module Fox
      
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXArc, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -1282,23 +1345,25 @@ module Fox
    class EFXDC < FXDC
      
      
-     def initialize(app)
+     def initialize(app=(defined?(@@_app)?@@_app:nil))
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXDC, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:app => :required})
              
-             def app var; @os.op[@os.ii].app = var; end
+         def app var; @@_app = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -1312,9 +1377,16 @@ module Fox
      
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXPSBounds, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -1328,9 +1400,16 @@ module Fox
      
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXPrinter, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -1343,23 +1422,25 @@ module Fox
    class EFXDCPrint < FXDCPrint
      
      
-     def initialize(app)
+     def initialize(app=(defined?(@@_app)?@@_app:nil))
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXDCPrint, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:app => :required})
              
-             def app var; @os.op[@os.ii].app = var; end
+         def app var; @@_app = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -1372,25 +1453,27 @@ module Fox
    class EFXDCWindow < FXDCWindow
      
      
-     def initialize(drawable, event=nil)
+     def initialize(drawable=(defined?(@@_drawable)?@@_drawable:nil), event=(defined?(@@_event)?@@_event:nil) || nil)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXDCWindow, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:drawable => :required, :event => nil})
              
-             def drawable var; @os.op[@os.ii].drawable = var; end
+         def drawable var; @@_drawable = var; end
              
-             def event var; @os.op[@os.ii].event = var; end
+         def event var; @@_event = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -1403,27 +1486,29 @@ module Fox
    class EFXDataTarget < FXDataTarget
      
      
-     def initialize(value=nil, target=nil, selector=0)
+     def initialize(value=(defined?(@@_value)?@@_value:nil) || nil, target=(defined?(@@_target)?@@_target:nil) || nil, selector=(defined?(@@_selector)?@@_selector:nil) || 0)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXDataTarget, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:value => nil, :target => nil, :selector => 0})
              
-             def value var; @os.op[@os.ii].value = var; end
+         def value var; @@_value = var; end
              
-             def target var; @os.op[@os.ii].target = var; end
+         def target var; @@_target = var; end
              
-             def selector var; @os.op[@os.ii].selector = var; end
+         def selector var; @@_selector = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -1437,9 +1522,16 @@ module Fox
      
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXDebugTarget, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -1452,23 +1544,25 @@ module Fox
    class EFXDelegator < FXDelegator
      
      
-     def initialize(delegate=nil)
+     def initialize(delegate=(defined?(@@_delegate)?@@_delegate:nil) || nil)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXDelegator, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:delegate => nil})
              
-             def delegate var; @os.op[@os.ii].delegate = var; end
+         def delegate var; @@_delegate = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -1481,45 +1575,47 @@ module Fox
    class EFXDial < FXDial
      
      
-     def initialize(p, target=nil, selector=0, opts=DIAL_NORMAL, x=0, y=0, width=0, height=0, padLeft=DEFAULT_PAD, padRight=DEFAULT_PAD, padTop=DEFAULT_PAD, padBottom=DEFAULT_PAD)
+     def initialize(p=(defined?(@@_p)?@@_p:nil), target=(defined?(@@_target)?@@_target:nil) || nil, selector=(defined?(@@_selector)?@@_selector:nil) || 0, opts=(defined?(@@_opts)?@@_opts:nil) || DIAL_NORMAL, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0, padLeft=(defined?(@@_padLeft)?@@_padLeft:nil) || DEFAULT_PAD, padRight=(defined?(@@_padRight)?@@_padRight:nil) || DEFAULT_PAD, padTop=(defined?(@@_padTop)?@@_padTop:nil) || DEFAULT_PAD, padBottom=(defined?(@@_padBottom)?@@_padBottom:nil) || DEFAULT_PAD)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXDial, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => DIAL_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
              
-             def p var; @os.op[@os.ii].p = var; end
+         def p var; @@_p = var; end
              
-             def target var; @os.op[@os.ii].target = var; end
+         def target var; @@_target = var; end
              
-             def selector var; @os.op[@os.ii].selector = var; end
+         def selector var; @@_selector = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def pad_left var; @os.op[@os.ii].padLeft = var; end
+         def pad_left var; @@_padLeft = var; end
              
-             def pad_right var; @os.op[@os.ii].padRight = var; end
+         def pad_right var; @@_padRight = var; end
              
-             def pad_top var; @os.op[@os.ii].padTop = var; end
+         def pad_top var; @@_padTop = var; end
              
-             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+         def pad_bottom var; @@_padBottom = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -1532,47 +1628,49 @@ module Fox
    class EFXDialogBox < FXDialogBox
      
      
-     def initialize(owner, title, opts=DECOR_TITLE|DECOR_BORDER, x=0, y=0, width=0, height=0, padLeft=10, padRight=10, padTop=10, padBottom=10, hSpacing=4, vSpacing=4)
+     def initialize(owner=(defined?(@@_owner)?@@_owner:nil), title=(defined?(@@_title)?@@_title:nil), opts=(defined?(@@_opts)?@@_opts:nil) || DECOR_TITLE|DECOR_BORDER, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0, padLeft=(defined?(@@_padLeft)?@@_padLeft:nil) || 10, padRight=(defined?(@@_padRight)?@@_padRight:nil) || 10, padTop=(defined?(@@_padTop)?@@_padTop:nil) || 10, padBottom=(defined?(@@_padBottom)?@@_padBottom:nil) || 10, hSpacing=(defined?(@@_hSpacing)?@@_hSpacing:nil) || 4, vSpacing=(defined?(@@_vSpacing)?@@_vSpacing:nil) || 4)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXDialogBox, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:owner => :required, :title => :required, :opts => DECOR_TITLE|DECOR_BORDER, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 10, :padRight => 10, :padTop => 10, :padBottom => 10, :hSpacing => 4, :vSpacing => 4})
              
-             def owner var; @os.op[@os.ii].owner = var; end
+         def owner var; @@_owner = var; end
              
-             def title var; @os.op[@os.ii].title = var; end
+         def title var; @@_title = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def pad_left var; @os.op[@os.ii].padLeft = var; end
+         def pad_left var; @@_padLeft = var; end
              
-             def pad_right var; @os.op[@os.ii].padRight = var; end
+         def pad_right var; @@_padRight = var; end
              
-             def pad_top var; @os.op[@os.ii].padTop = var; end
+         def pad_top var; @@_padTop = var; end
              
-             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+         def pad_bottom var; @@_padBottom = var; end
              
-             def h_spacing var; @os.op[@os.ii].hSpacing = var; end
+         def h_spacing var; @@_hSpacing = var; end
              
-             def v_spacing var; @os.op[@os.ii].vSpacing = var; end
+         def v_spacing var; @@_vSpacing = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -1586,9 +1684,16 @@ module Fox
      
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXDict, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -1601,45 +1706,47 @@ module Fox
    class EFXDirBox < FXDirBox
      
      
-     def initialize(p, target=nil, selector=0, opts=FRAME_SUNKEN|FRAME_THICK|TREELISTBOX_NORMAL, x=0, y=0, width=0, height=0, padLeft=DEFAULT_PAD, padRight=DEFAULT_PAD, padTop=DEFAULT_PAD, padBottom=DEFAULT_PAD)
+     def initialize(p=(defined?(@@_p)?@@_p:nil), target=(defined?(@@_target)?@@_target:nil) || nil, selector=(defined?(@@_selector)?@@_selector:nil) || 0, opts=(defined?(@@_opts)?@@_opts:nil) || FRAME_SUNKEN|FRAME_THICK|TREELISTBOX_NORMAL, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0, padLeft=(defined?(@@_padLeft)?@@_padLeft:nil) || DEFAULT_PAD, padRight=(defined?(@@_padRight)?@@_padRight:nil) || DEFAULT_PAD, padTop=(defined?(@@_padTop)?@@_padTop:nil) || DEFAULT_PAD, padBottom=(defined?(@@_padBottom)?@@_padBottom:nil) || DEFAULT_PAD)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXDirBox, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => FRAME_SUNKEN|FRAME_THICK|TREELISTBOX_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
              
-             def p var; @os.op[@os.ii].p = var; end
+         def p var; @@_p = var; end
              
-             def target var; @os.op[@os.ii].target = var; end
+         def target var; @@_target = var; end
              
-             def selector var; @os.op[@os.ii].selector = var; end
+         def selector var; @@_selector = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def pad_left var; @os.op[@os.ii].padLeft = var; end
+         def pad_left var; @@_padLeft = var; end
              
-             def pad_right var; @os.op[@os.ii].padRight = var; end
+         def pad_right var; @@_padRight = var; end
              
-             def pad_top var; @os.op[@os.ii].padTop = var; end
+         def pad_top var; @@_padTop = var; end
              
-             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+         def pad_bottom var; @@_padBottom = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -1652,35 +1759,37 @@ module Fox
    class EFXDirDialog < FXDirDialog
      
      
-     def initialize(owner, name, opts=0, x=0, y=0, width=500, height=300)
+     def initialize(owner=(defined?(@@_owner)?@@_owner:nil), name=(defined?(@@_name)?@@_name:nil), opts=(defined?(@@_opts)?@@_opts:nil) || 0, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 500, height=(defined?(@@_height)?@@_height:nil) || 300)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXDirDialog, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:owner => :required, :name => :required, :opts => 0, :x => 0, :y => 0, :width => 500, :height => 300})
              
-             def owner var; @os.op[@os.ii].owner = var; end
+         def owner var; @@_owner = var; end
              
-             def name var; @os.op[@os.ii].name = var; end
+         def name var; @@_name = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -1693,29 +1802,31 @@ module Fox
    class EFXDirItem < FXDirItem
      
      
-     def initialize(text, oi=nil, ci=nil, data=nil)
+     def initialize(text=(defined?(@@_text)?@@_text:nil), oi=(defined?(@@_oi)?@@_oi:nil) || nil, ci=(defined?(@@_ci)?@@_ci:nil) || nil, data=(defined?(@@_data)?@@_data:nil) || nil)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXDirItem, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:text => :required, :oi => nil, :ci => nil, :data => nil})
              
-             def text var; @os.op[@os.ii].text = var; end
+         def text var; @@_text = var; end
              
-             def oi var; @os.op[@os.ii].oi = var; end
+         def oi var; @@_oi = var; end
              
-             def ci var; @os.op[@os.ii].ci = var; end
+         def ci var; @@_ci = var; end
              
-             def data var; @os.op[@os.ii].data = var; end
+         def data var; @@_data = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -1728,37 +1839,39 @@ module Fox
    class EFXDirList < FXDirList
      
      
-     def initialize(p, target=nil, selector=0, opts=0, x=0, y=0, width=0, height=0)
+     def initialize(p=(defined?(@@_p)?@@_p:nil), target=(defined?(@@_target)?@@_target:nil) || nil, selector=(defined?(@@_selector)?@@_selector:nil) || 0, opts=(defined?(@@_opts)?@@_opts:nil) || 0, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXDirList, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
              
-             def p var; @os.op[@os.ii].p = var; end
+         def p var; @@_p = var; end
              
-             def target var; @os.op[@os.ii].target = var; end
+         def target var; @@_target = var; end
              
-             def selector var; @os.op[@os.ii].selector = var; end
+         def selector var; @@_selector = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -1771,37 +1884,39 @@ module Fox
    class EFXDirSelector < FXDirSelector
      
      
-     def initialize(p, target=nil, selector=0, opts=0, x=0, y=0, width=0, height=0)
+     def initialize(p=(defined?(@@_p)?@@_p:nil), target=(defined?(@@_target)?@@_target:nil) || nil, selector=(defined?(@@_selector)?@@_selector:nil) || 0, opts=(defined?(@@_opts)?@@_opts:nil) || 0, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXDirSelector, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
              
-             def p var; @os.op[@os.ii].p = var; end
+         def p var; @@_p = var; end
              
-             def target var; @os.op[@os.ii].target = var; end
+         def target var; @@_target = var; end
              
-             def selector var; @os.op[@os.ii].selector = var; end
+         def selector var; @@_selector = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -1814,82 +1929,79 @@ module Fox
    class EFXDockBar < FXDockBar
      
      
-     def initialize(p, q, opts=LAYOUT_TOP|LAYOUT_LEFT|LAYOUT_FILL_X, x=0, y=0, width=0, height=0, padLeft=3, padRight=3, padTop=2, padBottom=2, hSpacing=DEFAULT_SPACING, vSpacing=DEFAULT_SPACING)
+     def initialize(p=(defined?(@@_p)?@@_p:nil), q=(defined?(@@_q)?@@_q:nil), opts=(defined?(@@_opts)?@@_opts:nil) || LAYOUT_TOP|LAYOUT_LEFT|LAYOUT_FILL_X, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0, padLeft=(defined?(@@_padLeft)?@@_padLeft:nil) || 3, padRight=(defined?(@@_padRight)?@@_padRight:nil) || 3, padTop=(defined?(@@_padTop)?@@_padTop:nil) || 2, padBottom=(defined?(@@_padBottom)?@@_padBottom:nil) || 2, hSpacing=(defined?(@@_hSpacing)?@@_hSpacing:nil) || DEFAULT_SPACING, vSpacing=(defined?(@@_vSpacing)?@@_vSpacing:nil) || DEFAULT_SPACING)
        super
      end
      
-     def initialize(p, opts=LAYOUT_TOP|LAYOUT_LEFT|LAYOUT_FILL_X, x=0, y=0, width=0, height=0, padLeft=3, padRight=3, padTop=2, padBottom=2, hSpacing=DEFAULT_SPACING, vSpacing=DEFAULT_SPACING)
+     def initialize(p=(defined?(@@_p)?@@_p:nil), opts=(defined?(@@_opts)?@@_opts:nil) || LAYOUT_TOP|LAYOUT_LEFT|LAYOUT_FILL_X, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0, padLeft=(defined?(@@_padLeft)?@@_padLeft:nil) || 3, padRight=(defined?(@@_padRight)?@@_padRight:nil) || 3, padTop=(defined?(@@_padTop)?@@_padTop:nil) || 2, padBottom=(defined?(@@_padBottom)?@@_padBottom:nil) || 2, hSpacing=(defined?(@@_hSpacing)?@@_hSpacing:nil) || DEFAULT_SPACING, vSpacing=(defined?(@@_vSpacing)?@@_vSpacing:nil) || DEFAULT_SPACING)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXDockBar, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:p => :required, :q => :required, :opts => LAYOUT_TOP|LAYOUT_LEFT|LAYOUT_FILL_X, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 3, :padRight => 3, :padTop => 2, :padBottom => 2, :hSpacing => DEFAULT_SPACING, :vSpacing => DEFAULT_SPACING})
              
-             def p var; @os.op[@os.ii].p = var; end
+         def p var; @@_p = var; end
              
-             def q var; @os.op[@os.ii].q = var; end
+         def q var; @@_q = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def pad_left var; @os.op[@os.ii].padLeft = var; end
+         def pad_left var; @@_padLeft = var; end
              
-             def pad_right var; @os.op[@os.ii].padRight = var; end
+         def pad_right var; @@_padRight = var; end
              
-             def pad_top var; @os.op[@os.ii].padTop = var; end
+         def pad_top var; @@_padTop = var; end
              
-             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+         def pad_bottom var; @@_padBottom = var; end
              
-             def h_spacing var; @os.op[@os.ii].hSpacing = var; end
+         def h_spacing var; @@_hSpacing = var; end
              
-             def v_spacing var; @os.op[@os.ii].vSpacing = var; end
+         def v_spacing var; @@_vSpacing = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
          
-             @os.op[1] = OpenStruct.new({:p => :required, :opts => LAYOUT_TOP|LAYOUT_LEFT|LAYOUT_FILL_X, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 3, :padRight => 3, :padTop => 2, :padBottom => 2, :hSpacing => DEFAULT_SPACING, :vSpacing => DEFAULT_SPACING})
              
-             def p var; @os.op[@os.ii].p = var; end
+         def p var; @@_p = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def pad_left var; @os.op[@os.ii].padLeft = var; end
+         def pad_left var; @@_padLeft = var; end
              
-             def pad_right var; @os.op[@os.ii].padRight = var; end
+         def pad_right var; @@_padRight = var; end
              
-             def pad_top var; @os.op[@os.ii].padTop = var; end
+         def pad_top var; @@_padTop = var; end
              
-             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+         def pad_bottom var; @@_padBottom = var; end
              
-             def h_spacing var; @os.op[@os.ii].hSpacing = var; end
+         def h_spacing var; @@_hSpacing = var; end
              
-             def v_spacing var; @os.op[@os.ii].vSpacing = var; end
+         def v_spacing var; @@_vSpacing = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -1902,45 +2014,47 @@ module Fox
    class EFXDockHandler < FXDockHandler
      
      
-     def initialize(p, tgt, sel, opts, x, y, w, h, pl, pr, pt, pb)
+     def initialize(p=(defined?(@@_p)?@@_p:nil), tgt=(defined?(@@_tgt)?@@_tgt:nil), sel=(defined?(@@_sel)?@@_sel:nil), opts=(defined?(@@_opts)?@@_opts:nil), x=(defined?(@@_x)?@@_x:nil), y=(defined?(@@_y)?@@_y:nil), w=(defined?(@@_w)?@@_w:nil), h=(defined?(@@_h)?@@_h:nil), pl=(defined?(@@_pl)?@@_pl:nil), pr=(defined?(@@_pr)?@@_pr:nil), pt=(defined?(@@_pt)?@@_pt:nil), pb=(defined?(@@_pb)?@@_pb:nil))
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXDockHandler, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:p => :required, :tgt => :required, :sel => :required, :opts => :required, :x => :required, :y => :required, :w => :required, :h => :required, :pl => :required, :pr => :required, :pt => :required, :pb => :required})
              
-             def p var; @os.op[@os.ii].p = var; end
+         def p var; @@_p = var; end
              
-             def tgt var; @os.op[@os.ii].tgt = var; end
+         def tgt var; @@_tgt = var; end
              
-             def sel var; @os.op[@os.ii].sel = var; end
+         def sel var; @@_sel = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def w var; @os.op[@os.ii].w = var; end
+         def w var; @@_w = var; end
              
-             def h var; @os.op[@os.ii].h = var; end
+         def h var; @@_h = var; end
              
-             def pl var; @os.op[@os.ii].pl = var; end
+         def pl var; @@_pl = var; end
              
-             def pr var; @os.op[@os.ii].pr = var; end
+         def pr var; @@_pr = var; end
              
-             def pt var; @os.op[@os.ii].pt = var; end
+         def pt var; @@_pt = var; end
              
-             def pb var; @os.op[@os.ii].pb = var; end
+         def pb var; @@_pb = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -1953,45 +2067,47 @@ module Fox
    class EFXDockSite < FXDockSite
      
      
-     def initialize(p, opts=0, x=0, y=0, width=0, height=0, padLeft=0, padRight=0, padTop=0, padBottom=0, hSpacing=0, vSpacing=0)
+     def initialize(p=(defined?(@@_p)?@@_p:nil), opts=(defined?(@@_opts)?@@_opts:nil) || 0, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0, padLeft=(defined?(@@_padLeft)?@@_padLeft:nil) || 0, padRight=(defined?(@@_padRight)?@@_padRight:nil) || 0, padTop=(defined?(@@_padTop)?@@_padTop:nil) || 0, padBottom=(defined?(@@_padBottom)?@@_padBottom:nil) || 0, hSpacing=(defined?(@@_hSpacing)?@@_hSpacing:nil) || 0, vSpacing=(defined?(@@_vSpacing)?@@_vSpacing:nil) || 0)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXDockSite, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:p => :required, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 0, :padRight => 0, :padTop => 0, :padBottom => 0, :hSpacing => 0, :vSpacing => 0})
              
-             def p var; @os.op[@os.ii].p = var; end
+         def p var; @@_p = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def pad_left var; @os.op[@os.ii].padLeft = var; end
+         def pad_left var; @@_padLeft = var; end
              
-             def pad_right var; @os.op[@os.ii].padRight = var; end
+         def pad_right var; @@_padRight = var; end
              
-             def pad_top var; @os.op[@os.ii].padTop = var; end
+         def pad_top var; @@_padTop = var; end
              
-             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+         def pad_bottom var; @@_padBottom = var; end
              
-             def h_spacing var; @os.op[@os.ii].hSpacing = var; end
+         def h_spacing var; @@_hSpacing = var; end
              
-             def v_spacing var; @os.op[@os.ii].vSpacing = var; end
+         def v_spacing var; @@_vSpacing = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -2004,47 +2120,49 @@ module Fox
    class EFXDockTitle < FXDockTitle
      
      
-     def initialize(p, text, target=nil, selector=0, opts=FRAME_NORMAL|JUSTIFY_CENTER_X|JUSTIFY_CENTER_Y, x=0, y=0, width=0, height=0, padLeft=0, padRight=0, padTop=0, padBottom=0)
+     def initialize(p=(defined?(@@_p)?@@_p:nil), text=(defined?(@@_text)?@@_text:nil), target=(defined?(@@_target)?@@_target:nil) || nil, selector=(defined?(@@_selector)?@@_selector:nil) || 0, opts=(defined?(@@_opts)?@@_opts:nil) || FRAME_NORMAL|JUSTIFY_CENTER_X|JUSTIFY_CENTER_Y, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0, padLeft=(defined?(@@_padLeft)?@@_padLeft:nil) || 0, padRight=(defined?(@@_padRight)?@@_padRight:nil) || 0, padTop=(defined?(@@_padTop)?@@_padTop:nil) || 0, padBottom=(defined?(@@_padBottom)?@@_padBottom:nil) || 0)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXDockTitle, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:p => :required, :text => :required, :target => nil, :selector => 0, :opts => FRAME_NORMAL|JUSTIFY_CENTER_X|JUSTIFY_CENTER_Y, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 0, :padRight => 0, :padTop => 0, :padBottom => 0})
              
-             def p var; @os.op[@os.ii].p = var; end
+         def p var; @@_p = var; end
              
-             def text var; @os.op[@os.ii].text = var; end
+         def text var; @@_text = var; end
              
-             def target var; @os.op[@os.ii].target = var; end
+         def target var; @@_target = var; end
              
-             def selector var; @os.op[@os.ii].selector = var; end
+         def selector var; @@_selector = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def pad_left var; @os.op[@os.ii].padLeft = var; end
+         def pad_left var; @@_padLeft = var; end
              
-             def pad_right var; @os.op[@os.ii].padRight = var; end
+         def pad_right var; @@_padRight = var; end
              
-             def pad_top var; @os.op[@os.ii].padTop = var; end
+         def pad_top var; @@_padTop = var; end
              
-             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+         def pad_bottom var; @@_padBottom = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -2058,9 +2176,16 @@ module Fox
      
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXDocument, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -2073,23 +2198,25 @@ module Fox
    class EFXDragCorner < FXDragCorner
      
      
-     def initialize(p)
+     def initialize(p=(defined?(@@_p)?@@_p:nil))
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXDragCorner, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:p => :required})
              
-             def p var; @os.op[@os.ii].p = var; end
+         def p var; @@_p = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -2103,9 +2230,16 @@ module Fox
      
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXDrawable, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -2118,45 +2252,47 @@ module Fox
    class EFXDriveBox < FXDriveBox
      
      
-     def initialize(p, target=nil, selector=0, opts=FRAME_SUNKEN|FRAME_THICK|LISTBOX_NORMAL, x=0, y=0, width=0, height=0, padLeft=DEFAULT_PAD, padRight=DEFAULT_PAD, padTop=DEFAULT_PAD, padBottom=DEFAULT_PAD)
+     def initialize(p=(defined?(@@_p)?@@_p:nil), target=(defined?(@@_target)?@@_target:nil) || nil, selector=(defined?(@@_selector)?@@_selector:nil) || 0, opts=(defined?(@@_opts)?@@_opts:nil) || FRAME_SUNKEN|FRAME_THICK|LISTBOX_NORMAL, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0, padLeft=(defined?(@@_padLeft)?@@_padLeft:nil) || DEFAULT_PAD, padRight=(defined?(@@_padRight)?@@_padRight:nil) || DEFAULT_PAD, padTop=(defined?(@@_padTop)?@@_padTop:nil) || DEFAULT_PAD, padBottom=(defined?(@@_padBottom)?@@_padBottom:nil) || DEFAULT_PAD)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXDriveBox, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => FRAME_SUNKEN|FRAME_THICK|LISTBOX_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
              
-             def p var; @os.op[@os.ii].p = var; end
+         def p var; @@_p = var; end
              
-             def target var; @os.op[@os.ii].target = var; end
+         def target var; @@_target = var; end
              
-             def selector var; @os.op[@os.ii].selector = var; end
+         def selector var; @@_selector = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def pad_left var; @os.op[@os.ii].padLeft = var; end
+         def pad_left var; @@_padLeft = var; end
              
-             def pad_right var; @os.op[@os.ii].padRight = var; end
+         def pad_right var; @@_padRight = var; end
              
-             def pad_top var; @os.op[@os.ii].padTop = var; end
+         def pad_top var; @@_padTop = var; end
              
-             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+         def pad_bottom var; @@_padBottom = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -2169,57 +2305,49 @@ module Fox
    class EFXExtentd < FXExtentd
      
      
-     def initialize(ext)
+     def initialize(ext=(defined?(@@_ext)?@@_ext:nil))
        super
      end
      
-     def initialize(lo, hi)
+     def initialize(lo=(defined?(@@_lo)?@@_lo:nil), hi=(defined?(@@_hi)?@@_hi:nil))
        super
      end
      
-     def initialize(xlo, xhi, ylo, yhi)
+     def initialize(xlo=(defined?(@@_xlo)?@@_xlo:nil), xhi=(defined?(@@_xhi)?@@_xhi:nil), ylo=(defined?(@@_ylo)?@@_ylo:nil), yhi=(defined?(@@_yhi)?@@_yhi:nil))
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXExtentd, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:ext => :required})
              
-             def ext var; @os.op[@os.ii].ext = var; end
+         def ext var; @@_ext = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
          
-             @os.op[1] = OpenStruct.new({:lo => :required, :hi => :required})
              
-             def lo var; @os.op[@os.ii].lo = var; end
+         def lo var; @@_lo = var; end
              
-             def hi var; @os.op[@os.ii].hi = var; end
+         def hi var; @@_hi = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
          
-             @os.op[2] = OpenStruct.new({:xlo => :required, :xhi => :required, :ylo => :required, :yhi => :required})
              
-             def xlo var; @os.op[@os.ii].xlo = var; end
+         def xlo var; @@_xlo = var; end
              
-             def xhi var; @os.op[@os.ii].xhi = var; end
+         def xhi var; @@_xhi = var; end
              
-             def ylo var; @os.op[@os.ii].ylo = var; end
+         def ylo var; @@_ylo = var; end
              
-             def yhi var; @os.op[@os.ii].yhi = var; end
+         def yhi var; @@_yhi = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -2232,57 +2360,49 @@ module Fox
    class EFXExtentf < FXExtentf
      
      
-     def initialize(ext)
+     def initialize(ext=(defined?(@@_ext)?@@_ext:nil))
        super
      end
      
-     def initialize(lo, hi)
+     def initialize(lo=(defined?(@@_lo)?@@_lo:nil), hi=(defined?(@@_hi)?@@_hi:nil))
        super
      end
      
-     def initialize(xlo, xhi, ylo, yhi)
+     def initialize(xlo=(defined?(@@_xlo)?@@_xlo:nil), xhi=(defined?(@@_xhi)?@@_xhi:nil), ylo=(defined?(@@_ylo)?@@_ylo:nil), yhi=(defined?(@@_yhi)?@@_yhi:nil))
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXExtentf, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:ext => :required})
              
-             def ext var; @os.op[@os.ii].ext = var; end
+         def ext var; @@_ext = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
          
-             @os.op[1] = OpenStruct.new({:lo => :required, :hi => :required})
              
-             def lo var; @os.op[@os.ii].lo = var; end
+         def lo var; @@_lo = var; end
              
-             def hi var; @os.op[@os.ii].hi = var; end
+         def hi var; @@_hi = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
          
-             @os.op[2] = OpenStruct.new({:xlo => :required, :xhi => :required, :ylo => :required, :yhi => :required})
              
-             def xlo var; @os.op[@os.ii].xlo = var; end
+         def xlo var; @@_xlo = var; end
              
-             def xhi var; @os.op[@os.ii].xhi = var; end
+         def xhi var; @@_xhi = var; end
              
-             def ylo var; @os.op[@os.ii].ylo = var; end
+         def ylo var; @@_ylo = var; end
              
-             def yhi var; @os.op[@os.ii].yhi = var; end
+         def yhi var; @@_yhi = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -2295,35 +2415,37 @@ module Fox
    class EFXFileDialog < FXFileDialog
      
      
-     def initialize(owner, name, opts=0, x=0, y=0, width=500, height=300)
+     def initialize(owner=(defined?(@@_owner)?@@_owner:nil), name=(defined?(@@_name)?@@_name:nil), opts=(defined?(@@_opts)?@@_opts:nil) || 0, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 500, height=(defined?(@@_height)?@@_height:nil) || 300)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXFileDialog, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:owner => :required, :name => :required, :opts => 0, :x => 0, :y => 0, :width => 500, :height => 300})
              
-             def owner var; @os.op[@os.ii].owner = var; end
+         def owner var; @@_owner = var; end
              
-             def name var; @os.op[@os.ii].name = var; end
+         def name var; @@_name = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -2337,9 +2459,16 @@ module Fox
      
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXFileAssoc, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -2352,25 +2481,27 @@ module Fox
    class EFXFileDict < FXFileDict
      
      
-     def initialize(app, db=nil)
+     def initialize(app=(defined?(@@_app)?@@_app:nil), db=(defined?(@@_db)?@@_db:nil) || nil)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXFileDict, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:app => :required, :db => nil})
              
-             def app var; @os.op[@os.ii].app = var; end
+         def app var; @@_app = var; end
              
-             def db var; @os.op[@os.ii].db = var; end
+         def db var; @@_db = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -2383,29 +2514,31 @@ module Fox
    class EFXFileItem < FXFileItem
      
      
-     def initialize(text, bi=nil, mi=nil, ptr=nil)
+     def initialize(text=(defined?(@@_text)?@@_text:nil), bi=(defined?(@@_bi)?@@_bi:nil) || nil, mi=(defined?(@@_mi)?@@_mi:nil) || nil, ptr=(defined?(@@_ptr)?@@_ptr:nil) || nil)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXFileItem, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:text => :required, :bi => nil, :mi => nil, :ptr => nil})
              
-             def text var; @os.op[@os.ii].text = var; end
+         def text var; @@_text = var; end
              
-             def bi var; @os.op[@os.ii].bi = var; end
+         def bi var; @@_bi = var; end
              
-             def mi var; @os.op[@os.ii].mi = var; end
+         def mi var; @@_mi = var; end
              
-             def ptr var; @os.op[@os.ii].ptr = var; end
+         def ptr var; @@_ptr = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -2418,37 +2551,39 @@ module Fox
    class EFXFileList < FXFileList
      
      
-     def initialize(p, target=nil, selector=0, opts=0, x=0, y=0, width=0, height=0)
+     def initialize(p=(defined?(@@_p)?@@_p:nil), target=(defined?(@@_target)?@@_target:nil) || nil, selector=(defined?(@@_selector)?@@_selector:nil) || 0, opts=(defined?(@@_opts)?@@_opts:nil) || 0, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXFileList, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
              
-             def p var; @os.op[@os.ii].p = var; end
+         def p var; @@_p = var; end
              
-             def target var; @os.op[@os.ii].target = var; end
+         def target var; @@_target = var; end
              
-             def selector var; @os.op[@os.ii].selector = var; end
+         def selector var; @@_selector = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -2461,37 +2596,39 @@ module Fox
    class EFXFileSelector < FXFileSelector
      
      
-     def initialize(p, target=nil, selector=0, opts=0, x=0, y=0, width=0, height=0)
+     def initialize(p=(defined?(@@_p)?@@_p:nil), target=(defined?(@@_target)?@@_target:nil) || nil, selector=(defined?(@@_selector)?@@_selector:nil) || 0, opts=(defined?(@@_opts)?@@_opts:nil) || 0, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXFileSelector, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
              
-             def p var; @os.op[@os.ii].p = var; end
+         def p var; @@_p = var; end
              
-             def target var; @os.op[@os.ii].target = var; end
+         def target var; @@_target = var; end
              
-             def selector var; @os.op[@os.ii].selector = var; end
+         def selector var; @@_selector = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -2504,23 +2641,25 @@ module Fox
    class EFXFileStream < FXFileStream
      
      
-     def initialize(cont=nil)
+     def initialize(cont=(defined?(@@_cont)?@@_cont:nil) || nil)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXFileStream, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:cont => nil})
              
-             def cont var; @os.op[@os.ii].cont = var; end
+         def cont var; @@_cont = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -2533,29 +2672,31 @@ module Fox
    class EFXFoldingItem < FXFoldingItem
      
      
-     def initialize(text, openIcon=nil, closedIcon=nil, data=nil)
+     def initialize(text=(defined?(@@_text)?@@_text:nil), openIcon=(defined?(@@_openIcon)?@@_openIcon:nil) || nil, closedIcon=(defined?(@@_closedIcon)?@@_closedIcon:nil) || nil, data=(defined?(@@_data)?@@_data:nil) || nil)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXFoldingItem, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:text => :required, :openIcon => nil, :closedIcon => nil, :data => nil})
              
-             def text var; @os.op[@os.ii].text = var; end
+         def text var; @@_text = var; end
              
-             def open_icon var; @os.op[@os.ii].openIcon = var; end
+         def open_icon var; @@_openIcon = var; end
              
-             def closed_icon var; @os.op[@os.ii].closedIcon = var; end
+         def closed_icon var; @@_closedIcon = var; end
              
-             def data var; @os.op[@os.ii].data = var; end
+         def data var; @@_data = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -2568,37 +2709,39 @@ module Fox
    class EFXFoldingList < FXFoldingList
      
      
-     def initialize(p, target=nil, selector=0, opts=TREELIST_NORMAL, x=0, y=0, width=0, height=0)
+     def initialize(p=(defined?(@@_p)?@@_p:nil), target=(defined?(@@_target)?@@_target:nil) || nil, selector=(defined?(@@_selector)?@@_selector:nil) || 0, opts=(defined?(@@_opts)?@@_opts:nil) || TREELIST_NORMAL, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXFoldingList, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => TREELIST_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0})
              
-             def p var; @os.op[@os.ii].p = var; end
+         def p var; @@_p = var; end
              
-             def target var; @os.op[@os.ii].target = var; end
+         def target var; @@_target = var; end
              
-             def selector var; @os.op[@os.ii].selector = var; end
+         def selector var; @@_selector = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -2612,9 +2755,16 @@ module Fox
      
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXFontDesc, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -2627,67 +2777,59 @@ module Fox
    class EFXFont < FXFont
      
      
-     def initialize(a, fontDesc)
+     def initialize(a=(defined?(@@_a)?@@_a:nil), fontDesc=(defined?(@@_fontDesc)?@@_fontDesc:nil))
        super
      end
      
-     def initialize(a, face, size, weight=FXFont::Normal, slant=Font::Straight, encoding=FONTENCODING_DEFAULT, setWidth=FXFont::NonExpanded, hints=0)
+     def initialize(a=(defined?(@@_a)?@@_a:nil), face=(defined?(@@_face)?@@_face:nil), size=(defined?(@@_size)?@@_size:nil), weight=(defined?(@@_weight)?@@_weight:nil) || FXFont::Normal, slant=(defined?(@@_slant)?@@_slant:nil) || Font::Straight, encoding=(defined?(@@_encoding)?@@_encoding:nil) || FONTENCODING_DEFAULT, setWidth=(defined?(@@_setWidth)?@@_setWidth:nil) || FXFont::NonExpanded, hints=(defined?(@@_hints)?@@_hints:nil) || 0)
        super
      end
      
-     def initialize(a, string)
+     def initialize(a=(defined?(@@_a)?@@_a:nil), string=(defined?(@@_string)?@@_string:nil))
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXFont, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:a => :required, :fontDesc => :required})
              
-             def a var; @os.op[@os.ii].a = var; end
+         def a var; @@_a = var; end
              
-             def font_desc var; @os.op[@os.ii].fontDesc = var; end
+         def font_desc var; @@_fontDesc = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
          
-             @os.op[1] = OpenStruct.new({:a => :required, :face => :required, :size => :required, :weight => FXFont::Normal, :slant => Font::Straight, :encoding => FONTENCODING_DEFAULT, :setWidth => FXFont::NonExpanded, :hints => 0})
              
-             def a var; @os.op[@os.ii].a = var; end
+         def a var; @@_a = var; end
              
-             def face var; @os.op[@os.ii].face = var; end
+         def face var; @@_face = var; end
              
-             def size var; @os.op[@os.ii].size = var; end
+         def size var; @@_size = var; end
              
-             def weight var; @os.op[@os.ii].weight = var; end
+         def weight var; @@_weight = var; end
              
-             def slant var; @os.op[@os.ii].slant = var; end
+         def slant var; @@_slant = var; end
              
-             def encoding var; @os.op[@os.ii].encoding = var; end
+         def encoding var; @@_encoding = var; end
              
-             def set_width var; @os.op[@os.ii].setWidth = var; end
+         def set_width var; @@_setWidth = var; end
              
-             def hints var; @os.op[@os.ii].hints = var; end
+         def hints var; @@_hints = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
          
-             @os.op[2] = OpenStruct.new({:a => :required, :string => :required})
              
-             def a var; @os.op[@os.ii].a = var; end
+         def a var; @@_a = var; end
              
-             def string var; @os.op[@os.ii].string = var; end
+         def string var; @@_string = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -2700,35 +2842,37 @@ module Fox
    class EFXFontDialog < FXFontDialog
      
      
-     def initialize(owner, name, opts=0, x=0, y=0, width=600, height=380)
+     def initialize(owner=(defined?(@@_owner)?@@_owner:nil), name=(defined?(@@_name)?@@_name:nil), opts=(defined?(@@_opts)?@@_opts:nil) || 0, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 600, height=(defined?(@@_height)?@@_height:nil) || 380)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXFontDialog, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:owner => :required, :name => :required, :opts => 0, :x => 0, :y => 0, :width => 600, :height => 380})
              
-             def owner var; @os.op[@os.ii].owner = var; end
+         def owner var; @@_owner = var; end
              
-             def name var; @os.op[@os.ii].name = var; end
+         def name var; @@_name = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -2741,37 +2885,39 @@ module Fox
    class EFXFontSelector < FXFontSelector
      
      
-     def initialize(p, target=nil, selector=0, opts=0, x=0, y=0, width=0, height=0)
+     def initialize(p=(defined?(@@_p)?@@_p:nil), target=(defined?(@@_target)?@@_target:nil) || nil, selector=(defined?(@@_selector)?@@_selector:nil) || 0, opts=(defined?(@@_opts)?@@_opts:nil) || 0, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXFontSelector, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
              
-             def p var; @os.op[@os.ii].p = var; end
+         def p var; @@_p = var; end
              
-             def target var; @os.op[@os.ii].target = var; end
+         def target var; @@_target = var; end
              
-             def selector var; @os.op[@os.ii].selector = var; end
+         def selector var; @@_selector = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -2784,41 +2930,43 @@ module Fox
    class EFXFrame < FXFrame
      
      
-     def initialize(parent, opts=FRAME_NORMAL, x=0, y=0, width=0, height=0, padLeft=DEFAULT_PAD, padRight=DEFAULT_PAD, padTop=DEFAULT_PAD, padBottom=DEFAULT_PAD)
+     def initialize(parent=(defined?(@@_parent)?@@_parent:nil), opts=(defined?(@@_opts)?@@_opts:nil) || FRAME_NORMAL, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0, padLeft=(defined?(@@_padLeft)?@@_padLeft:nil) || DEFAULT_PAD, padRight=(defined?(@@_padRight)?@@_padRight:nil) || DEFAULT_PAD, padTop=(defined?(@@_padTop)?@@_padTop:nil) || DEFAULT_PAD, padBottom=(defined?(@@_padBottom)?@@_padBottom:nil) || DEFAULT_PAD)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXFrame, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:parent => :required, :opts => FRAME_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
              
-             def parent var; @os.op[@os.ii].parent = var; end
+         def parent var; @@_parent = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def pad_left var; @os.op[@os.ii].padLeft = var; end
+         def pad_left var; @@_padLeft = var; end
              
-             def pad_right var; @os.op[@os.ii].padRight = var; end
+         def pad_right var; @@_padRight = var; end
              
-             def pad_top var; @os.op[@os.ii].padTop = var; end
+         def pad_top var; @@_padTop = var; end
              
-             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+         def pad_bottom var; @@_padBottom = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -2831,29 +2979,31 @@ module Fox
    class EFXGIFCursor < FXGIFCursor
      
      
-     def initialize(a, pix, hx=-1, hy=-1)
+     def initialize(a=(defined?(@@_a)?@@_a:nil), pix=(defined?(@@_pix)?@@_pix:nil), hx=(defined?(@@_hx)?@@_hx:nil) || -1, hy=(defined?(@@_hy)?@@_hy:nil) || -1)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXGIFCursor, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:a => :required, :pix => :required, :hx => -1, :hy => -1})
              
-             def a var; @os.op[@os.ii].a = var; end
+         def a var; @@_a = var; end
              
-             def pix var; @os.op[@os.ii].pix = var; end
+         def pix var; @@_pix = var; end
              
-             def hx var; @os.op[@os.ii].hx = var; end
+         def hx var; @@_hx = var; end
              
-             def hy var; @os.op[@os.ii].hy = var; end
+         def hy var; @@_hy = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -2866,33 +3016,35 @@ module Fox
    class EFXGIFIcon < FXGIFIcon
      
      
-     def initialize(a, pix=nil, clr=0, opts=0, width=1, height=1)
+     def initialize(a=(defined?(@@_a)?@@_a:nil), pix=(defined?(@@_pix)?@@_pix:nil) || nil, clr=(defined?(@@_clr)?@@_clr:nil) || 0, opts=(defined?(@@_opts)?@@_opts:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 1, height=(defined?(@@_height)?@@_height:nil) || 1)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXGIFIcon, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:a => :required, :pix => nil, :clr => 0, :opts => 0, :width => 1, :height => 1})
              
-             def a var; @os.op[@os.ii].a = var; end
+         def a var; @@_a = var; end
              
-             def pix var; @os.op[@os.ii].pix = var; end
+         def pix var; @@_pix = var; end
              
-             def clr var; @os.op[@os.ii].clr = var; end
+         def clr var; @@_clr = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -2905,31 +3057,33 @@ module Fox
    class EFXGIFImage < FXGIFImage
      
      
-     def initialize(a, pix=nil, opts=0, width=1, height=1)
+     def initialize(a=(defined?(@@_a)?@@_a:nil), pix=(defined?(@@_pix)?@@_pix:nil) || nil, opts=(defined?(@@_opts)?@@_opts:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 1, height=(defined?(@@_height)?@@_height:nil) || 1)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXGIFImage, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:a => :required, :pix => nil, :opts => 0, :width => 1, :height => 1})
              
-             def a var; @os.op[@os.ii].a = var; end
+         def a var; @@_a = var; end
              
-             def pix var; @os.op[@os.ii].pix = var; end
+         def pix var; @@_pix = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -2942,70 +3096,67 @@ module Fox
    class EFXGLCanvas < FXGLCanvas
      
      
-     def initialize(parent, vis, target=nil, selector=0, opts=0, x=0, y=0, width=0, height=0)
+     def initialize(parent=(defined?(@@_parent)?@@_parent:nil), vis=(defined?(@@_vis)?@@_vis:nil), target=(defined?(@@_target)?@@_target:nil) || nil, selector=(defined?(@@_selector)?@@_selector:nil) || 0, opts=(defined?(@@_opts)?@@_opts:nil) || 0, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0)
        super
      end
      
-     def initialize(parent, vis, sharegroup, target=nil, selector=0, opts=0, x=0, y=0, width=0, height=0)
+     def initialize(parent=(defined?(@@_parent)?@@_parent:nil), vis=(defined?(@@_vis)?@@_vis:nil), sharegroup=(defined?(@@_sharegroup)?@@_sharegroup:nil), target=(defined?(@@_target)?@@_target:nil) || nil, selector=(defined?(@@_selector)?@@_selector:nil) || 0, opts=(defined?(@@_opts)?@@_opts:nil) || 0, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXGLCanvas, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:parent => :required, :vis => :required, :target => nil, :selector => 0, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
              
-             def parent var; @os.op[@os.ii].parent = var; end
+         def parent var; @@_parent = var; end
              
-             def vis var; @os.op[@os.ii].vis = var; end
+         def vis var; @@_vis = var; end
              
-             def target var; @os.op[@os.ii].target = var; end
+         def target var; @@_target = var; end
              
-             def selector var; @os.op[@os.ii].selector = var; end
+         def selector var; @@_selector = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
          
-             @os.op[1] = OpenStruct.new({:parent => :required, :vis => :required, :sharegroup => :required, :target => nil, :selector => 0, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
              
-             def parent var; @os.op[@os.ii].parent = var; end
+         def parent var; @@_parent = var; end
              
-             def vis var; @os.op[@os.ii].vis = var; end
+         def vis var; @@_vis = var; end
              
-             def sharegroup var; @os.op[@os.ii].sharegroup = var; end
+         def sharegroup var; @@_sharegroup = var; end
              
-             def target var; @os.op[@os.ii].target = var; end
+         def target var; @@_target = var; end
              
-             def selector var; @os.op[@os.ii].selector = var; end
+         def selector var; @@_selector = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -3018,27 +3169,29 @@ module Fox
    class EFXGLContext < FXGLContext
      
      
-     def initialize(app, visual, other=nil)
+     def initialize(app=(defined?(@@_app)?@@_app:nil), visual=(defined?(@@_visual)?@@_visual:nil), other=(defined?(@@_other)?@@_other:nil) || nil)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXGLContext, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:app => :required, :visual => :required, :other => nil})
              
-             def app var; @os.op[@os.ii].app = var; end
+         def app var; @@_app = var; end
              
-             def visual var; @os.op[@os.ii].visual = var; end
+         def visual var; @@_visual = var; end
              
-             def other var; @os.op[@os.ii].other = var; end
+         def other var; @@_other = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -3052,9 +3205,16 @@ module Fox
      
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXGLObject, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -3067,33 +3227,35 @@ module Fox
    class EFXGLShape < FXGLShape
      
      
-     def initialize(x, y, z, opts, front=nil, back=nil)
+     def initialize(x=(defined?(@@_x)?@@_x:nil), y=(defined?(@@_y)?@@_y:nil), z=(defined?(@@_z)?@@_z:nil), opts=(defined?(@@_opts)?@@_opts:nil), front=(defined?(@@_front)?@@_front:nil) || nil, back=(defined?(@@_back)?@@_back:nil) || nil)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXGLShape, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:x => :required, :y => :required, :z => :required, :opts => :required, :front => nil, :back => nil})
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def z var; @os.op[@os.ii].z = var; end
+         def z var; @@_z = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def front var; @os.op[@os.ii].front = var; end
+         def front var; @@_front = var; end
              
-             def back var; @os.op[@os.ii].back = var; end
+         def back var; @@_back = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -3107,9 +3269,16 @@ module Fox
      
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXViewport, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -3123,9 +3292,16 @@ module Fox
      
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXLight, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -3139,9 +3315,16 @@ module Fox
      
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXMaterial, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -3154,70 +3337,67 @@ module Fox
    class EFXGLViewer < FXGLViewer
      
      
-     def initialize(p, vis, target=nil, selector=0, opts=0, x=0, y=0, width=0, height=0)
+     def initialize(p=(defined?(@@_p)?@@_p:nil), vis=(defined?(@@_vis)?@@_vis:nil), target=(defined?(@@_target)?@@_target:nil) || nil, selector=(defined?(@@_selector)?@@_selector:nil) || 0, opts=(defined?(@@_opts)?@@_opts:nil) || 0, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0)
        super
      end
      
-     def initialize(p, vis, sharegroup, target=nil, selector=0, opts=0, x=0, y=0, width=0, height=0)
+     def initialize(p=(defined?(@@_p)?@@_p:nil), vis=(defined?(@@_vis)?@@_vis:nil), sharegroup=(defined?(@@_sharegroup)?@@_sharegroup:nil), target=(defined?(@@_target)?@@_target:nil) || nil, selector=(defined?(@@_selector)?@@_selector:nil) || 0, opts=(defined?(@@_opts)?@@_opts:nil) || 0, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXGLViewer, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:p => :required, :vis => :required, :target => nil, :selector => 0, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
              
-             def p var; @os.op[@os.ii].p = var; end
+         def p var; @@_p = var; end
              
-             def vis var; @os.op[@os.ii].vis = var; end
+         def vis var; @@_vis = var; end
              
-             def target var; @os.op[@os.ii].target = var; end
+         def target var; @@_target = var; end
              
-             def selector var; @os.op[@os.ii].selector = var; end
+         def selector var; @@_selector = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
          
-             @os.op[1] = OpenStruct.new({:p => :required, :vis => :required, :sharegroup => :required, :target => nil, :selector => 0, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
              
-             def p var; @os.op[@os.ii].p = var; end
+         def p var; @@_p = var; end
              
-             def vis var; @os.op[@os.ii].vis = var; end
+         def vis var; @@_vis = var; end
              
-             def sharegroup var; @os.op[@os.ii].sharegroup = var; end
+         def sharegroup var; @@_sharegroup = var; end
              
-             def target var; @os.op[@os.ii].target = var; end
+         def target var; @@_target = var; end
              
-             def selector var; @os.op[@os.ii].selector = var; end
+         def selector var; @@_selector = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -3230,25 +3410,27 @@ module Fox
    class EFXGLVisual < FXGLVisual
      
      
-     def initialize(app, flags)
+     def initialize(app=(defined?(@@_app)?@@_app:nil), flags=(defined?(@@_flags)?@@_flags:nil))
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXGLVisual, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:app => :required, :flags => :required})
              
-             def app var; @os.op[@os.ii].app = var; end
+         def app var; @@_app = var; end
              
-             def flags var; @os.op[@os.ii].flags = var; end
+         def flags var; @@_flags = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -3262,9 +3444,16 @@ module Fox
      
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXGradient, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -3277,45 +3466,47 @@ module Fox
    class EFXGradientBar < FXGradientBar
      
      
-     def initialize(p, target=nil, selector=0, opts=FRAME_NORMAL, x=0, y=0, width=0, height=0, padLeft=DEFAULT_PAD, padRight=DEFAULT_PAD, padTop=DEFAULT_PAD, padBottom=DEFAULT_PAD)
+     def initialize(p=(defined?(@@_p)?@@_p:nil), target=(defined?(@@_target)?@@_target:nil) || nil, selector=(defined?(@@_selector)?@@_selector:nil) || 0, opts=(defined?(@@_opts)?@@_opts:nil) || FRAME_NORMAL, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0, padLeft=(defined?(@@_padLeft)?@@_padLeft:nil) || DEFAULT_PAD, padRight=(defined?(@@_padRight)?@@_padRight:nil) || DEFAULT_PAD, padTop=(defined?(@@_padTop)?@@_padTop:nil) || DEFAULT_PAD, padBottom=(defined?(@@_padBottom)?@@_padBottom:nil) || DEFAULT_PAD)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXGradientBar, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => FRAME_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
              
-             def p var; @os.op[@os.ii].p = var; end
+         def p var; @@_p = var; end
              
-             def target var; @os.op[@os.ii].target = var; end
+         def target var; @@_target = var; end
              
-             def selector var; @os.op[@os.ii].selector = var; end
+         def selector var; @@_selector = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def pad_left var; @os.op[@os.ii].padLeft = var; end
+         def pad_left var; @@_padLeft = var; end
              
-             def pad_right var; @os.op[@os.ii].padRight = var; end
+         def pad_right var; @@_padRight = var; end
              
-             def pad_top var; @os.op[@os.ii].padTop = var; end
+         def pad_top var; @@_padTop = var; end
              
-             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+         def pad_bottom var; @@_padBottom = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -3328,47 +3519,49 @@ module Fox
    class EFXGroupBox < FXGroupBox
      
      
-     def initialize(parent, text, opts=GROUPBOX_NORMAL, x=0, y=0, width=0, height=0, padLeft=DEFAULT_SPACING, padRight=DEFAULT_SPACING, padTop=DEFAULT_SPACING, padBottom=DEFAULT_SPACING, hSpacing=DEFAULT_SPACING, vSpacing=DEFAULT_SPACING)
+     def initialize(parent=(defined?(@@_parent)?@@_parent:nil), text=(defined?(@@_text)?@@_text:nil), opts=(defined?(@@_opts)?@@_opts:nil) || GROUPBOX_NORMAL, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0, padLeft=(defined?(@@_padLeft)?@@_padLeft:nil) || DEFAULT_SPACING, padRight=(defined?(@@_padRight)?@@_padRight:nil) || DEFAULT_SPACING, padTop=(defined?(@@_padTop)?@@_padTop:nil) || DEFAULT_SPACING, padBottom=(defined?(@@_padBottom)?@@_padBottom:nil) || DEFAULT_SPACING, hSpacing=(defined?(@@_hSpacing)?@@_hSpacing:nil) || DEFAULT_SPACING, vSpacing=(defined?(@@_vSpacing)?@@_vSpacing:nil) || DEFAULT_SPACING)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXGroupBox, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:parent => :required, :text => :required, :opts => GROUPBOX_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_SPACING, :padRight => DEFAULT_SPACING, :padTop => DEFAULT_SPACING, :padBottom => DEFAULT_SPACING, :hSpacing => DEFAULT_SPACING, :vSpacing => DEFAULT_SPACING})
              
-             def parent var; @os.op[@os.ii].parent = var; end
+         def parent var; @@_parent = var; end
              
-             def text var; @os.op[@os.ii].text = var; end
+         def text var; @@_text = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def pad_left var; @os.op[@os.ii].padLeft = var; end
+         def pad_left var; @@_padLeft = var; end
              
-             def pad_right var; @os.op[@os.ii].padRight = var; end
+         def pad_right var; @@_padRight = var; end
              
-             def pad_top var; @os.op[@os.ii].padTop = var; end
+         def pad_top var; @@_padTop = var; end
              
-             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+         def pad_bottom var; @@_padBottom = var; end
              
-             def h_spacing var; @os.op[@os.ii].hSpacing = var; end
+         def h_spacing var; @@_hSpacing = var; end
              
-             def v_spacing var; @os.op[@os.ii].vSpacing = var; end
+         def v_spacing var; @@_vSpacing = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -3381,29 +3574,31 @@ module Fox
    class EFXHeaderItem < FXHeaderItem
      
      
-     def initialize(text, ic=nil, s=0, ptr=nil)
+     def initialize(text=(defined?(@@_text)?@@_text:nil), ic=(defined?(@@_ic)?@@_ic:nil) || nil, s=(defined?(@@_s)?@@_s:nil) || 0, ptr=(defined?(@@_ptr)?@@_ptr:nil) || nil)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXHeaderItem, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:text => :required, :ic => nil, :s => 0, :ptr => nil})
              
-             def text var; @os.op[@os.ii].text = var; end
+         def text var; @@_text = var; end
              
-             def ic var; @os.op[@os.ii].ic = var; end
+         def ic var; @@_ic = var; end
              
-             def s var; @os.op[@os.ii].s = var; end
+         def s var; @@_s = var; end
              
-             def ptr var; @os.op[@os.ii].ptr = var; end
+         def ptr var; @@_ptr = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -3416,45 +3611,47 @@ module Fox
    class EFXHeader < FXHeader
      
      
-     def initialize(p, target=nil, selector=0, opts=HEADER_NORMAL, x=0, y=0, width=0, height=0, padLeft=DEFAULT_PAD, padRight=DEFAULT_PAD, padTop=DEFAULT_PAD, padBottom=DEFAULT_PAD)
+     def initialize(p=(defined?(@@_p)?@@_p:nil), target=(defined?(@@_target)?@@_target:nil) || nil, selector=(defined?(@@_selector)?@@_selector:nil) || 0, opts=(defined?(@@_opts)?@@_opts:nil) || HEADER_NORMAL, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0, padLeft=(defined?(@@_padLeft)?@@_padLeft:nil) || DEFAULT_PAD, padRight=(defined?(@@_padRight)?@@_padRight:nil) || DEFAULT_PAD, padTop=(defined?(@@_padTop)?@@_padTop:nil) || DEFAULT_PAD, padBottom=(defined?(@@_padBottom)?@@_padBottom:nil) || DEFAULT_PAD)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXHeader, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => HEADER_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
              
-             def p var; @os.op[@os.ii].p = var; end
+         def p var; @@_p = var; end
              
-             def target var; @os.op[@os.ii].target = var; end
+         def target var; @@_target = var; end
              
-             def selector var; @os.op[@os.ii].selector = var; end
+         def selector var; @@_selector = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def pad_left var; @os.op[@os.ii].padLeft = var; end
+         def pad_left var; @@_padLeft = var; end
              
-             def pad_right var; @os.op[@os.ii].padRight = var; end
+         def pad_right var; @@_padRight = var; end
              
-             def pad_top var; @os.op[@os.ii].padTop = var; end
+         def pad_top var; @@_padTop = var; end
              
-             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+         def pad_bottom var; @@_padBottom = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -3467,45 +3664,47 @@ module Fox
    class EFXHorizontalFrame < FXHorizontalFrame
      
      
-     def initialize(p, opts=0, x=0, y=0, width=0, height=0, padLeft=DEFAULT_SPACING, padRight=DEFAULT_SPACING, padTop=DEFAULT_SPACING, padBottom=DEFAULT_SPACING, hSpacing=DEFAULT_SPACING, vSpacing=DEFAULT_SPACING)
+     def initialize(p=(defined?(@@_p)?@@_p:nil), opts=(defined?(@@_opts)?@@_opts:nil) || 0, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0, padLeft=(defined?(@@_padLeft)?@@_padLeft:nil) || DEFAULT_SPACING, padRight=(defined?(@@_padRight)?@@_padRight:nil) || DEFAULT_SPACING, padTop=(defined?(@@_padTop)?@@_padTop:nil) || DEFAULT_SPACING, padBottom=(defined?(@@_padBottom)?@@_padBottom:nil) || DEFAULT_SPACING, hSpacing=(defined?(@@_hSpacing)?@@_hSpacing:nil) || DEFAULT_SPACING, vSpacing=(defined?(@@_vSpacing)?@@_vSpacing:nil) || DEFAULT_SPACING)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXHorizontalFrame, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:p => :required, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_SPACING, :padRight => DEFAULT_SPACING, :padTop => DEFAULT_SPACING, :padBottom => DEFAULT_SPACING, :hSpacing => DEFAULT_SPACING, :vSpacing => DEFAULT_SPACING})
              
-             def p var; @os.op[@os.ii].p = var; end
+         def p var; @@_p = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def pad_left var; @os.op[@os.ii].padLeft = var; end
+         def pad_left var; @@_padLeft = var; end
              
-             def pad_right var; @os.op[@os.ii].padRight = var; end
+         def pad_right var; @@_padRight = var; end
              
-             def pad_top var; @os.op[@os.ii].padTop = var; end
+         def pad_top var; @@_padTop = var; end
              
-             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+         def pad_bottom var; @@_padBottom = var; end
              
-             def h_spacing var; @os.op[@os.ii].hSpacing = var; end
+         def h_spacing var; @@_hSpacing = var; end
              
-             def v_spacing var; @os.op[@os.ii].vSpacing = var; end
+         def v_spacing var; @@_vSpacing = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -3518,33 +3717,35 @@ module Fox
    class EFXICOIcon < FXICOIcon
      
      
-     def initialize(a, pix=nil, clr=0, opts=0, width=1, height=1)
+     def initialize(a=(defined?(@@_a)?@@_a:nil), pix=(defined?(@@_pix)?@@_pix:nil) || nil, clr=(defined?(@@_clr)?@@_clr:nil) || 0, opts=(defined?(@@_opts)?@@_opts:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 1, height=(defined?(@@_height)?@@_height:nil) || 1)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXICOIcon, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:a => :required, :pix => nil, :clr => 0, :opts => 0, :width => 1, :height => 1})
              
-             def a var; @os.op[@os.ii].a = var; end
+         def a var; @@_a = var; end
              
-             def pix var; @os.op[@os.ii].pix = var; end
+         def pix var; @@_pix = var; end
              
-             def clr var; @os.op[@os.ii].clr = var; end
+         def clr var; @@_clr = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -3557,31 +3758,33 @@ module Fox
    class EFXICOImage < FXICOImage
      
      
-     def initialize(a, pix=nil, opts=0, width=1, height=1)
+     def initialize(a=(defined?(@@_a)?@@_a:nil), pix=(defined?(@@_pix)?@@_pix:nil) || nil, opts=(defined?(@@_opts)?@@_opts:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 1, height=(defined?(@@_height)?@@_height:nil) || 1)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXICOImage, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:a => :required, :pix => nil, :opts => 0, :width => 1, :height => 1})
              
-             def a var; @os.op[@os.ii].a = var; end
+         def a var; @@_a = var; end
              
-             def pix var; @os.op[@os.ii].pix = var; end
+         def pix var; @@_pix = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -3594,33 +3797,35 @@ module Fox
    class EFXIcon < FXIcon
      
      
-     def initialize(app, pix=nil, clr=0, opts=0, width=1, height=1)
+     def initialize(app=(defined?(@@_app)?@@_app:nil), pix=(defined?(@@_pix)?@@_pix:nil) || nil, clr=(defined?(@@_clr)?@@_clr:nil) || 0, opts=(defined?(@@_opts)?@@_opts:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 1, height=(defined?(@@_height)?@@_height:nil) || 1)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXIcon, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:app => :required, :pix => nil, :clr => 0, :opts => 0, :width => 1, :height => 1})
              
-             def app var; @os.op[@os.ii].app = var; end
+         def app var; @@_app = var; end
              
-             def pix var; @os.op[@os.ii].pix = var; end
+         def pix var; @@_pix = var; end
              
-             def clr var; @os.op[@os.ii].clr = var; end
+         def clr var; @@_clr = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -3634,9 +3839,16 @@ module Fox
      
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXIconDict, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -3649,29 +3861,31 @@ module Fox
    class EFXIconItem < FXIconItem
      
      
-     def initialize(text, bigIcon=nil, miniIcon=nil, data=nil)
+     def initialize(text=(defined?(@@_text)?@@_text:nil), bigIcon=(defined?(@@_bigIcon)?@@_bigIcon:nil) || nil, miniIcon=(defined?(@@_miniIcon)?@@_miniIcon:nil) || nil, data=(defined?(@@_data)?@@_data:nil) || nil)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXIconItem, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:text => :required, :bigIcon => nil, :miniIcon => nil, :data => nil})
              
-             def text var; @os.op[@os.ii].text = var; end
+         def text var; @@_text = var; end
              
-             def big_icon var; @os.op[@os.ii].bigIcon = var; end
+         def big_icon var; @@_bigIcon = var; end
              
-             def mini_icon var; @os.op[@os.ii].miniIcon = var; end
+         def mini_icon var; @@_miniIcon = var; end
              
-             def data var; @os.op[@os.ii].data = var; end
+         def data var; @@_data = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -3684,37 +3898,39 @@ module Fox
    class EFXIconList < FXIconList
      
      
-     def initialize(p, target=nil, selector=0, opts=ICONLIST_NORMAL, x=0, y=0, width=0, height=0)
+     def initialize(p=(defined?(@@_p)?@@_p:nil), target=(defined?(@@_target)?@@_target:nil) || nil, selector=(defined?(@@_selector)?@@_selector:nil) || 0, opts=(defined?(@@_opts)?@@_opts:nil) || ICONLIST_NORMAL, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXIconList, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => ICONLIST_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0})
              
-             def p var; @os.op[@os.ii].p = var; end
+         def p var; @@_p = var; end
              
-             def target var; @os.op[@os.ii].target = var; end
+         def target var; @@_target = var; end
              
-             def selector var; @os.op[@os.ii].selector = var; end
+         def selector var; @@_selector = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -3727,23 +3943,25 @@ module Fox
    class EFXIconSource < FXIconSource
      
      
-     def initialize(app)
+     def initialize(app=(defined?(@@_app)?@@_app:nil))
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXIconSource, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:app => :required})
              
-             def app var; @os.op[@os.ii].app = var; end
+         def app var; @@_app = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -3757,9 +3975,16 @@ module Fox
      
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXId, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -3772,31 +3997,33 @@ module Fox
    class EFXImage < FXImage
      
      
-     def initialize(a, pixels=nil, opts=0, width=1, height=1)
+     def initialize(a=(defined?(@@_a)?@@_a:nil), pixels=(defined?(@@_pixels)?@@_pixels:nil) || nil, opts=(defined?(@@_opts)?@@_opts:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 1, height=(defined?(@@_height)?@@_height:nil) || 1)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXImage, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:a => :required, :pixels => nil, :opts => 0, :width => 1, :height => 1})
              
-             def a var; @os.op[@os.ii].a = var; end
+         def a var; @@_a = var; end
              
-             def pixels var; @os.op[@os.ii].pixels = var; end
+         def pixels var; @@_pixels = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -3809,43 +4036,45 @@ module Fox
    class EFXImageFrame < FXImageFrame
      
      
-     def initialize(p, img, opts=FRAME_SUNKEN|FRAME_THICK, x=0, y=0, width=0, height=0, padLeft=0, padRight=0, padTop=0, padBottom=0)
+     def initialize(p=(defined?(@@_p)?@@_p:nil), img=(defined?(@@_img)?@@_img:nil), opts=(defined?(@@_opts)?@@_opts:nil) || FRAME_SUNKEN|FRAME_THICK, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0, padLeft=(defined?(@@_padLeft)?@@_padLeft:nil) || 0, padRight=(defined?(@@_padRight)?@@_padRight:nil) || 0, padTop=(defined?(@@_padTop)?@@_padTop:nil) || 0, padBottom=(defined?(@@_padBottom)?@@_padBottom:nil) || 0)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXImageFrame, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:p => :required, :img => :required, :opts => FRAME_SUNKEN|FRAME_THICK, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 0, :padRight => 0, :padTop => 0, :padBottom => 0})
              
-             def p var; @os.op[@os.ii].p = var; end
+         def p var; @@_p = var; end
              
-             def img var; @os.op[@os.ii].img = var; end
+         def img var; @@_img = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def pad_left var; @os.op[@os.ii].padLeft = var; end
+         def pad_left var; @@_padLeft = var; end
              
-             def pad_right var; @os.op[@os.ii].padRight = var; end
+         def pad_right var; @@_padRight = var; end
              
-             def pad_top var; @os.op[@os.ii].padTop = var; end
+         def pad_top var; @@_padTop = var; end
              
-             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+         def pad_bottom var; @@_padBottom = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -3858,39 +4087,41 @@ module Fox
    class EFXImageView < FXImageView
      
      
-     def initialize(p, img=nil, target=nil, selector=0, opts=0, x=0, y=0, width=0, height=0)
+     def initialize(p=(defined?(@@_p)?@@_p:nil), img=(defined?(@@_img)?@@_img:nil) || nil, target=(defined?(@@_target)?@@_target:nil) || nil, selector=(defined?(@@_selector)?@@_selector:nil) || 0, opts=(defined?(@@_opts)?@@_opts:nil) || 0, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXImageView, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:p => :required, :img => nil, :target => nil, :selector => 0, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
              
-             def p var; @os.op[@os.ii].p = var; end
+         def p var; @@_p = var; end
              
-             def img var; @os.op[@os.ii].img = var; end
+         def img var; @@_img = var; end
              
-             def target var; @os.op[@os.ii].target = var; end
+         def target var; @@_target = var; end
              
-             def selector var; @os.op[@os.ii].selector = var; end
+         def selector var; @@_selector = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -3903,39 +4134,41 @@ module Fox
    class EFXInputDialog < FXInputDialog
      
      
-     def initialize(owner, caption, label, icon=nil, opts=INPUTDIALOG_STRING, x=0, y=0, width=0, height=0)
+     def initialize(owner=(defined?(@@_owner)?@@_owner:nil), caption=(defined?(@@_caption)?@@_caption:nil), label=(defined?(@@_label)?@@_label:nil), icon=(defined?(@@_icon)?@@_icon:nil) || nil, opts=(defined?(@@_opts)?@@_opts:nil) || INPUTDIALOG_STRING, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXInputDialog, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:owner => :required, :caption => :required, :label => :required, :icon => nil, :opts => INPUTDIALOG_STRING, :x => 0, :y => 0, :width => 0, :height => 0})
              
-             def owner var; @os.op[@os.ii].owner = var; end
+         def owner var; @@_owner = var; end
              
-             def caption var; @os.op[@os.ii].caption = var; end
+         def caption var; @@_caption = var; end
              
-             def label var; @os.op[@os.ii].label = var; end
+         def label var; @@_label = var; end
              
-             def icon var; @os.op[@os.ii].icon = var; end
+         def icon var; @@_icon = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -3948,35 +4181,37 @@ module Fox
    class EFXJPGIcon < FXJPGIcon
      
      
-     def initialize(a, pix=nil, clr=0, opts=0, width=1, height=1, quality=75)
+     def initialize(a=(defined?(@@_a)?@@_a:nil), pix=(defined?(@@_pix)?@@_pix:nil) || nil, clr=(defined?(@@_clr)?@@_clr:nil) || 0, opts=(defined?(@@_opts)?@@_opts:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 1, height=(defined?(@@_height)?@@_height:nil) || 1, quality=(defined?(@@_quality)?@@_quality:nil) || 75)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXJPGIcon, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:a => :required, :pix => nil, :clr => 0, :opts => 0, :width => 1, :height => 1, :quality => 75})
              
-             def a var; @os.op[@os.ii].a = var; end
+         def a var; @@_a = var; end
              
-             def pix var; @os.op[@os.ii].pix = var; end
+         def pix var; @@_pix = var; end
              
-             def clr var; @os.op[@os.ii].clr = var; end
+         def clr var; @@_clr = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def quality var; @os.op[@os.ii].quality = var; end
+         def quality var; @@_quality = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -3989,33 +4224,35 @@ module Fox
    class EFXJPGImage < FXJPGImage
      
      
-     def initialize(a, pix=nil, opts=0, width=1, height=1, quality=75)
+     def initialize(a=(defined?(@@_a)?@@_a:nil), pix=(defined?(@@_pix)?@@_pix:nil) || nil, opts=(defined?(@@_opts)?@@_opts:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 1, height=(defined?(@@_height)?@@_height:nil) || 1, quality=(defined?(@@_quality)?@@_quality:nil) || 75)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXJPGImage, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:a => :required, :pix => nil, :opts => 0, :width => 1, :height => 1, :quality => 75})
              
-             def a var; @os.op[@os.ii].a = var; end
+         def a var; @@_a = var; end
              
-             def pix var; @os.op[@os.ii].pix = var; end
+         def pix var; @@_pix = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def quality var; @os.op[@os.ii].quality = var; end
+         def quality var; @@_quality = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -4028,45 +4265,47 @@ module Fox
    class EFXKnob < FXKnob
      
      
-     def initialize(p, target=nil, selector=0, opts=KNOB_NORMAL, x=0, y=0, width=0, height=0, padLeft=DEFAULT_PAD, padRight=DEFAULT_PAD, padTop=DEFAULT_PAD, padBottom=DEFAULT_PAD)
+     def initialize(p=(defined?(@@_p)?@@_p:nil), target=(defined?(@@_target)?@@_target:nil) || nil, selector=(defined?(@@_selector)?@@_selector:nil) || 0, opts=(defined?(@@_opts)?@@_opts:nil) || KNOB_NORMAL, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0, padLeft=(defined?(@@_padLeft)?@@_padLeft:nil) || DEFAULT_PAD, padRight=(defined?(@@_padRight)?@@_padRight:nil) || DEFAULT_PAD, padTop=(defined?(@@_padTop)?@@_padTop:nil) || DEFAULT_PAD, padBottom=(defined?(@@_padBottom)?@@_padBottom:nil) || DEFAULT_PAD)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXKnob, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => KNOB_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
              
-             def p var; @os.op[@os.ii].p = var; end
+         def p var; @@_p = var; end
              
-             def target var; @os.op[@os.ii].target = var; end
+         def target var; @@_target = var; end
              
-             def selector var; @os.op[@os.ii].selector = var; end
+         def selector var; @@_selector = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def pad_left var; @os.op[@os.ii].padLeft = var; end
+         def pad_left var; @@_padLeft = var; end
              
-             def pad_right var; @os.op[@os.ii].padRight = var; end
+         def pad_right var; @@_padRight = var; end
              
-             def pad_top var; @os.op[@os.ii].padTop = var; end
+         def pad_top var; @@_padTop = var; end
              
-             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+         def pad_bottom var; @@_padBottom = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -4079,45 +4318,47 @@ module Fox
    class EFXLabel < FXLabel
      
      
-     def initialize(parent, text, icon=nil, opts=LABEL_NORMAL, x=0, y=0, width=0, height=0, padLeft=DEFAULT_PAD, padRight=DEFAULT_PAD, padTop=DEFAULT_PAD, padBottom=DEFAULT_PAD)
+     def initialize(parent=(defined?(@@_parent)?@@_parent:nil), text=(defined?(@@_text)?@@_text:nil), icon=(defined?(@@_icon)?@@_icon:nil) || nil, opts=(defined?(@@_opts)?@@_opts:nil) || LABEL_NORMAL, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0, padLeft=(defined?(@@_padLeft)?@@_padLeft:nil) || DEFAULT_PAD, padRight=(defined?(@@_padRight)?@@_padRight:nil) || DEFAULT_PAD, padTop=(defined?(@@_padTop)?@@_padTop:nil) || DEFAULT_PAD, padBottom=(defined?(@@_padBottom)?@@_padBottom:nil) || DEFAULT_PAD)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXLabel, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:parent => :required, :text => :required, :icon => nil, :opts => LABEL_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
              
-             def parent var; @os.op[@os.ii].parent = var; end
+         def parent var; @@_parent = var; end
              
-             def text var; @os.op[@os.ii].text = var; end
+         def text var; @@_text = var; end
              
-             def icon var; @os.op[@os.ii].icon = var; end
+         def icon var; @@_icon = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def pad_left var; @os.op[@os.ii].padLeft = var; end
+         def pad_left var; @@_padLeft = var; end
              
-             def pad_right var; @os.op[@os.ii].padRight = var; end
+         def pad_right var; @@_padRight = var; end
              
-             def pad_top var; @os.op[@os.ii].padTop = var; end
+         def pad_top var; @@_padTop = var; end
              
-             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+         def pad_bottom var; @@_padBottom = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -4130,27 +4371,29 @@ module Fox
    class EFXListItem < FXListItem
      
      
-     def initialize(text, icon=nil, data=nil)
+     def initialize(text=(defined?(@@_text)?@@_text:nil), icon=(defined?(@@_icon)?@@_icon:nil) || nil, data=(defined?(@@_data)?@@_data:nil) || nil)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXListItem, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:text => :required, :icon => nil, :data => nil})
              
-             def text var; @os.op[@os.ii].text = var; end
+         def text var; @@_text = var; end
              
-             def icon var; @os.op[@os.ii].icon = var; end
+         def icon var; @@_icon = var; end
              
-             def data var; @os.op[@os.ii].data = var; end
+         def data var; @@_data = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -4163,37 +4406,39 @@ module Fox
    class EFXList < FXList
      
      
-     def initialize(p, target=nil, selector=0, opts=LIST_NORMAL, x=0, y=0, width=0, height=0)
+     def initialize(p=(defined?(@@_p)?@@_p:nil), target=(defined?(@@_target)?@@_target:nil) || nil, selector=(defined?(@@_selector)?@@_selector:nil) || 0, opts=(defined?(@@_opts)?@@_opts:nil) || LIST_NORMAL, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXList, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => LIST_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0})
              
-             def p var; @os.op[@os.ii].p = var; end
+         def p var; @@_p = var; end
              
-             def target var; @os.op[@os.ii].target = var; end
+         def target var; @@_target = var; end
              
-             def selector var; @os.op[@os.ii].selector = var; end
+         def selector var; @@_selector = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -4206,45 +4451,47 @@ module Fox
    class EFXListBox < FXListBox
      
      
-     def initialize(p, target=nil, selector=0, opts=FRAME_SUNKEN|FRAME_THICK|LISTBOX_NORMAL, x=0, y=0, width=0, height=0, padLeft=DEFAULT_PAD, padRight=DEFAULT_PAD, padTop=DEFAULT_PAD, padBottom=DEFAULT_PAD)
+     def initialize(p=(defined?(@@_p)?@@_p:nil), target=(defined?(@@_target)?@@_target:nil) || nil, selector=(defined?(@@_selector)?@@_selector:nil) || 0, opts=(defined?(@@_opts)?@@_opts:nil) || FRAME_SUNKEN|FRAME_THICK|LISTBOX_NORMAL, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0, padLeft=(defined?(@@_padLeft)?@@_padLeft:nil) || DEFAULT_PAD, padRight=(defined?(@@_padRight)?@@_padRight:nil) || DEFAULT_PAD, padTop=(defined?(@@_padTop)?@@_padTop:nil) || DEFAULT_PAD, padBottom=(defined?(@@_padBottom)?@@_padBottom:nil) || DEFAULT_PAD)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXListBox, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => FRAME_SUNKEN|FRAME_THICK|LISTBOX_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
              
-             def p var; @os.op[@os.ii].p = var; end
+         def p var; @@_p = var; end
              
-             def target var; @os.op[@os.ii].target = var; end
+         def target var; @@_target = var; end
              
-             def selector var; @os.op[@os.ii].selector = var; end
+         def selector var; @@_selector = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def pad_left var; @os.op[@os.ii].padLeft = var; end
+         def pad_left var; @@_padLeft = var; end
              
-             def pad_right var; @os.op[@os.ii].padRight = var; end
+         def pad_right var; @@_padRight = var; end
              
-             def pad_top var; @os.op[@os.ii].padTop = var; end
+         def pad_top var; @@_padTop = var; end
              
-             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+         def pad_bottom var; @@_padBottom = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -4257,37 +4504,39 @@ module Fox
    class EFXMDIDeleteButton < FXMDIDeleteButton
      
      
-     def initialize(p, target=nil, selector=0, opts=FRAME_RAISED, x=0, y=0, width=0, height=0)
+     def initialize(p=(defined?(@@_p)?@@_p:nil), target=(defined?(@@_target)?@@_target:nil) || nil, selector=(defined?(@@_selector)?@@_selector:nil) || 0, opts=(defined?(@@_opts)?@@_opts:nil) || FRAME_RAISED, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXMDIDeleteButton, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => FRAME_RAISED, :x => 0, :y => 0, :width => 0, :height => 0})
              
-             def p var; @os.op[@os.ii].p = var; end
+         def p var; @@_p = var; end
              
-             def target var; @os.op[@os.ii].target = var; end
+         def target var; @@_target = var; end
              
-             def selector var; @os.op[@os.ii].selector = var; end
+         def selector var; @@_selector = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -4300,37 +4549,39 @@ module Fox
    class EFXMDIRestoreButton < FXMDIRestoreButton
      
      
-     def initialize(p, target=nil, selector=0, opts=FRAME_RAISED, x=0, y=0, width=0, height=0)
+     def initialize(p=(defined?(@@_p)?@@_p:nil), target=(defined?(@@_target)?@@_target:nil) || nil, selector=(defined?(@@_selector)?@@_selector:nil) || 0, opts=(defined?(@@_opts)?@@_opts:nil) || FRAME_RAISED, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXMDIRestoreButton, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => FRAME_RAISED, :x => 0, :y => 0, :width => 0, :height => 0})
              
-             def p var; @os.op[@os.ii].p = var; end
+         def p var; @@_p = var; end
              
-             def target var; @os.op[@os.ii].target = var; end
+         def target var; @@_target = var; end
              
-             def selector var; @os.op[@os.ii].selector = var; end
+         def selector var; @@_selector = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -4343,37 +4594,39 @@ module Fox
    class EFXMDIMaximizeButton < FXMDIMaximizeButton
      
      
-     def initialize(p, target=nil, selector=0, opts=FRAME_RAISED, x=0, y=0, width=0, height=0)
+     def initialize(p=(defined?(@@_p)?@@_p:nil), target=(defined?(@@_target)?@@_target:nil) || nil, selector=(defined?(@@_selector)?@@_selector:nil) || 0, opts=(defined?(@@_opts)?@@_opts:nil) || FRAME_RAISED, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXMDIMaximizeButton, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => FRAME_RAISED, :x => 0, :y => 0, :width => 0, :height => 0})
              
-             def p var; @os.op[@os.ii].p = var; end
+         def p var; @@_p = var; end
              
-             def target var; @os.op[@os.ii].target = var; end
+         def target var; @@_target = var; end
              
-             def selector var; @os.op[@os.ii].selector = var; end
+         def selector var; @@_selector = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -4386,37 +4639,39 @@ module Fox
    class EFXMDIMinimizeButton < FXMDIMinimizeButton
      
      
-     def initialize(p, target=nil, selector=0, opts=FRAME_RAISED, x=0, y=0, width=0, height=0)
+     def initialize(p=(defined?(@@_p)?@@_p:nil), target=(defined?(@@_target)?@@_target:nil) || nil, selector=(defined?(@@_selector)?@@_selector:nil) || 0, opts=(defined?(@@_opts)?@@_opts:nil) || FRAME_RAISED, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXMDIMinimizeButton, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => FRAME_RAISED, :x => 0, :y => 0, :width => 0, :height => 0})
              
-             def p var; @os.op[@os.ii].p = var; end
+         def p var; @@_p = var; end
              
-             def target var; @os.op[@os.ii].target = var; end
+         def target var; @@_target = var; end
              
-             def selector var; @os.op[@os.ii].selector = var; end
+         def selector var; @@_selector = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -4429,39 +4684,41 @@ module Fox
    class EFXMDIWindowButton < FXMDIWindowButton
      
      
-     def initialize(p, pup, target=nil, selector=0, opts=0, x=0, y=0, width=0, height=0)
+     def initialize(p=(defined?(@@_p)?@@_p:nil), pup=(defined?(@@_pup)?@@_pup:nil), target=(defined?(@@_target)?@@_target:nil) || nil, selector=(defined?(@@_selector)?@@_selector:nil) || 0, opts=(defined?(@@_opts)?@@_opts:nil) || 0, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXMDIWindowButton, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:p => :required, :pup => :required, :target => nil, :selector => 0, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
              
-             def p var; @os.op[@os.ii].p = var; end
+         def p var; @@_p = var; end
              
-             def pup var; @os.op[@os.ii].pup = var; end
+         def pup var; @@_pup = var; end
              
-             def target var; @os.op[@os.ii].target = var; end
+         def target var; @@_target = var; end
              
-             def selector var; @os.op[@os.ii].selector = var; end
+         def selector var; @@_selector = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -4474,25 +4731,27 @@ module Fox
    class EFXMDIMenu < FXMDIMenu
      
      
-     def initialize(owner, target=nil)
+     def initialize(owner=(defined?(@@_owner)?@@_owner:nil), target=(defined?(@@_target)?@@_target:nil) || nil)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXMDIMenu, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:owner => :required, :target => nil})
              
-             def owner var; @os.op[@os.ii].owner = var; end
+         def owner var; @@_owner = var; end
              
-             def target var; @os.op[@os.ii].target = var; end
+         def target var; @@_target = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -4505,39 +4764,41 @@ module Fox
    class EFXMDIChild < FXMDIChild
      
      
-     def initialize(p, name, ic=nil, pup=nil, opts=0, x=0, y=0, width=0, height=0)
+     def initialize(p=(defined?(@@_p)?@@_p:nil), name=(defined?(@@_name)?@@_name:nil), ic=(defined?(@@_ic)?@@_ic:nil) || nil, pup=(defined?(@@_pup)?@@_pup:nil) || nil, opts=(defined?(@@_opts)?@@_opts:nil) || 0, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXMDIChild, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:p => :required, :name => :required, :ic => nil, :pup => nil, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
              
-             def p var; @os.op[@os.ii].p = var; end
+         def p var; @@_p = var; end
              
-             def name var; @os.op[@os.ii].name = var; end
+         def name var; @@_name = var; end
              
-             def ic var; @os.op[@os.ii].ic = var; end
+         def ic var; @@_ic = var; end
              
-             def pup var; @os.op[@os.ii].pup = var; end
+         def pup var; @@_pup = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -4550,33 +4811,35 @@ module Fox
    class EFXMDIClient < FXMDIClient
      
      
-     def initialize(p, opts=0, x=0, y=0, width=0, height=0)
+     def initialize(p=(defined?(@@_p)?@@_p:nil), opts=(defined?(@@_opts)?@@_opts:nil) || 0, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXMDIClient, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:p => :required, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
              
-             def p var; @os.op[@os.ii].p = var; end
+         def p var; @@_p = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -4589,51 +4852,53 @@ module Fox
    class EFXMainWindow < FXMainWindow
      
      
-     def initialize(app, title, icon=nil, miniIcon=nil, opts=DECOR_ALL, x=0, y=0, width=0, height=0, padLeft=0, padRight=0, padTop=0, padBottom=0, hSpacing=4, vSpacing=4)
+     def initialize(app=(defined?(@@_app)?@@_app:nil), title=(defined?(@@_title)?@@_title:nil), icon=(defined?(@@_icon)?@@_icon:nil) || nil, miniIcon=(defined?(@@_miniIcon)?@@_miniIcon:nil) || nil, opts=(defined?(@@_opts)?@@_opts:nil) || DECOR_ALL, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0, padLeft=(defined?(@@_padLeft)?@@_padLeft:nil) || 0, padRight=(defined?(@@_padRight)?@@_padRight:nil) || 0, padTop=(defined?(@@_padTop)?@@_padTop:nil) || 0, padBottom=(defined?(@@_padBottom)?@@_padBottom:nil) || 0, hSpacing=(defined?(@@_hSpacing)?@@_hSpacing:nil) || 4, vSpacing=(defined?(@@_vSpacing)?@@_vSpacing:nil) || 4)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXMainWindow, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:app => :required, :title => :required, :icon => nil, :miniIcon => nil, :opts => DECOR_ALL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 0, :padRight => 0, :padTop => 0, :padBottom => 0, :hSpacing => 4, :vSpacing => 4})
              
-             def app var; @os.op[@os.ii].app = var; end
+         def app var; @@_app = var; end
              
-             def title var; @os.op[@os.ii].title = var; end
+         def title var; @@_title = var; end
              
-             def icon var; @os.op[@os.ii].icon = var; end
+         def icon var; @@_icon = var; end
              
-             def mini_icon var; @os.op[@os.ii].miniIcon = var; end
+         def mini_icon var; @@_miniIcon = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def pad_left var; @os.op[@os.ii].padLeft = var; end
+         def pad_left var; @@_padLeft = var; end
              
-             def pad_right var; @os.op[@os.ii].padRight = var; end
+         def pad_right var; @@_padRight = var; end
              
-             def pad_top var; @os.op[@os.ii].padTop = var; end
+         def pad_top var; @@_padTop = var; end
              
-             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+         def pad_bottom var; @@_padBottom = var; end
              
-             def h_spacing var; @os.op[@os.ii].hSpacing = var; end
+         def h_spacing var; @@_hSpacing = var; end
              
-             def v_spacing var; @os.op[@os.ii].vSpacing = var; end
+         def v_spacing var; @@_vSpacing = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -4646,47 +4911,49 @@ module Fox
    class EFXMatrix < FXMatrix
      
      
-     def initialize(parent, n=1, opts=MATRIX_BY_ROWS, x=0, y=0, width=0, height=0, padLeft=DEFAULT_SPACING, padRight=DEFAULT_SPACING, padTop=DEFAULT_SPACING, padBottom=DEFAULT_SPACING, hSpacing=DEFAULT_SPACING, vSpacing=DEFAULT_SPACING)
+     def initialize(parent=(defined?(@@_parent)?@@_parent:nil), n=(defined?(@@_n)?@@_n:nil) || 1, opts=(defined?(@@_opts)?@@_opts:nil) || MATRIX_BY_ROWS, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0, padLeft=(defined?(@@_padLeft)?@@_padLeft:nil) || DEFAULT_SPACING, padRight=(defined?(@@_padRight)?@@_padRight:nil) || DEFAULT_SPACING, padTop=(defined?(@@_padTop)?@@_padTop:nil) || DEFAULT_SPACING, padBottom=(defined?(@@_padBottom)?@@_padBottom:nil) || DEFAULT_SPACING, hSpacing=(defined?(@@_hSpacing)?@@_hSpacing:nil) || DEFAULT_SPACING, vSpacing=(defined?(@@_vSpacing)?@@_vSpacing:nil) || DEFAULT_SPACING)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXMatrix, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:parent => :required, :n => 1, :opts => MATRIX_BY_ROWS, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_SPACING, :padRight => DEFAULT_SPACING, :padTop => DEFAULT_SPACING, :padBottom => DEFAULT_SPACING, :hSpacing => DEFAULT_SPACING, :vSpacing => DEFAULT_SPACING})
              
-             def parent var; @os.op[@os.ii].parent = var; end
+         def parent var; @@_parent = var; end
              
-             def n var; @os.op[@os.ii].n = var; end
+         def n var; @@_n = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def pad_left var; @os.op[@os.ii].padLeft = var; end
+         def pad_left var; @@_padLeft = var; end
              
-             def pad_right var; @os.op[@os.ii].padRight = var; end
+         def pad_right var; @@_padRight = var; end
              
-             def pad_top var; @os.op[@os.ii].padTop = var; end
+         def pad_top var; @@_padTop = var; end
              
-             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+         def pad_bottom var; @@_padBottom = var; end
              
-             def h_spacing var; @os.op[@os.ii].hSpacing = var; end
+         def h_spacing var; @@_hSpacing = var; end
              
-             def v_spacing var; @os.op[@os.ii].vSpacing = var; end
+         def v_spacing var; @@_vSpacing = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -4699,23 +4966,25 @@ module Fox
    class EFXMemoryBuffer < FXMemoryBuffer
      
      
-     def initialize(data)
+     def initialize(data=(defined?(@@_data)?@@_data:nil))
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXMemoryBuffer, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:data => :required})
              
-             def data var; @os.op[@os.ii].data = var; end
+         def data var; @@_data = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -4728,23 +4997,25 @@ module Fox
    class EFXMemoryStream < FXMemoryStream
      
      
-     def initialize(cont=nil)
+     def initialize(cont=(defined?(@@_cont)?@@_cont:nil) || nil)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXMemoryStream, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:cont => nil})
              
-             def cont var; @os.op[@os.ii].cont = var; end
+         def cont var; @@_cont = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -4757,82 +5028,79 @@ module Fox
    class EFXMenuBar < FXMenuBar
      
      
-     def initialize(p, q, opts=LAYOUT_TOP|LAYOUT_LEFT|LAYOUT_FILL_X, x=0, y=0, width=0, height=0, padLeft=3, padRight=3, padTop=2, padBottom=2, hSpacing=DEFAULT_SPACING, vSpacing=DEFAULT_SPACING)
+     def initialize(p=(defined?(@@_p)?@@_p:nil), q=(defined?(@@_q)?@@_q:nil), opts=(defined?(@@_opts)?@@_opts:nil) || LAYOUT_TOP|LAYOUT_LEFT|LAYOUT_FILL_X, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0, padLeft=(defined?(@@_padLeft)?@@_padLeft:nil) || 3, padRight=(defined?(@@_padRight)?@@_padRight:nil) || 3, padTop=(defined?(@@_padTop)?@@_padTop:nil) || 2, padBottom=(defined?(@@_padBottom)?@@_padBottom:nil) || 2, hSpacing=(defined?(@@_hSpacing)?@@_hSpacing:nil) || DEFAULT_SPACING, vSpacing=(defined?(@@_vSpacing)?@@_vSpacing:nil) || DEFAULT_SPACING)
        super
      end
      
-     def initialize(p, opts, x=0, y=0, width=0, height=0, padLeft=3, padRight=3, padTop=2, padBottom=2, hSpacing=DEFAULT_SPACING, vSpacing=DEFAULT_SPACING)
+     def initialize(p=(defined?(@@_p)?@@_p:nil), opts=(defined?(@@_opts)?@@_opts:nil), x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0, padLeft=(defined?(@@_padLeft)?@@_padLeft:nil) || 3, padRight=(defined?(@@_padRight)?@@_padRight:nil) || 3, padTop=(defined?(@@_padTop)?@@_padTop:nil) || 2, padBottom=(defined?(@@_padBottom)?@@_padBottom:nil) || 2, hSpacing=(defined?(@@_hSpacing)?@@_hSpacing:nil) || DEFAULT_SPACING, vSpacing=(defined?(@@_vSpacing)?@@_vSpacing:nil) || DEFAULT_SPACING)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXMenuBar, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:p => :required, :q => :required, :opts => LAYOUT_TOP|LAYOUT_LEFT|LAYOUT_FILL_X, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 3, :padRight => 3, :padTop => 2, :padBottom => 2, :hSpacing => DEFAULT_SPACING, :vSpacing => DEFAULT_SPACING})
              
-             def p var; @os.op[@os.ii].p = var; end
+         def p var; @@_p = var; end
              
-             def q var; @os.op[@os.ii].q = var; end
+         def q var; @@_q = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def pad_left var; @os.op[@os.ii].padLeft = var; end
+         def pad_left var; @@_padLeft = var; end
              
-             def pad_right var; @os.op[@os.ii].padRight = var; end
+         def pad_right var; @@_padRight = var; end
              
-             def pad_top var; @os.op[@os.ii].padTop = var; end
+         def pad_top var; @@_padTop = var; end
              
-             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+         def pad_bottom var; @@_padBottom = var; end
              
-             def h_spacing var; @os.op[@os.ii].hSpacing = var; end
+         def h_spacing var; @@_hSpacing = var; end
              
-             def v_spacing var; @os.op[@os.ii].vSpacing = var; end
+         def v_spacing var; @@_vSpacing = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
          
-             @os.op[1] = OpenStruct.new({:p => :required, :opts => :required, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 3, :padRight => 3, :padTop => 2, :padBottom => 2, :hSpacing => DEFAULT_SPACING, :vSpacing => DEFAULT_SPACING})
              
-             def p var; @os.op[@os.ii].p = var; end
+         def p var; @@_p = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def pad_left var; @os.op[@os.ii].padLeft = var; end
+         def pad_left var; @@_padLeft = var; end
              
-             def pad_right var; @os.op[@os.ii].padRight = var; end
+         def pad_right var; @@_padRight = var; end
              
-             def pad_top var; @os.op[@os.ii].padTop = var; end
+         def pad_top var; @@_padTop = var; end
              
-             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+         def pad_bottom var; @@_padBottom = var; end
              
-             def h_spacing var; @os.op[@os.ii].hSpacing = var; end
+         def h_spacing var; @@_hSpacing = var; end
              
-             def v_spacing var; @os.op[@os.ii].vSpacing = var; end
+         def v_spacing var; @@_vSpacing = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -4845,47 +5113,49 @@ module Fox
    class EFXMenuButton < FXMenuButton
      
      
-     def initialize(parent, text, icon=nil, popupMenu=nil, opts=JUSTIFY_NORMAL|ICON_BEFORE_TEXT|MENUBUTTON_DOWN, x=0, y=0, width=0, height=0, padLeft=DEFAULT_SPACING, padRight=DEFAULT_SPACING, padTop=DEFAULT_SPACING, padBottom=DEFAULT_SPACING)
+     def initialize(parent=(defined?(@@_parent)?@@_parent:nil), text=(defined?(@@_text)?@@_text:nil), icon=(defined?(@@_icon)?@@_icon:nil) || nil, popupMenu=(defined?(@@_popupMenu)?@@_popupMenu:nil) || nil, opts=(defined?(@@_opts)?@@_opts:nil) || JUSTIFY_NORMAL|ICON_BEFORE_TEXT|MENUBUTTON_DOWN, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0, padLeft=(defined?(@@_padLeft)?@@_padLeft:nil) || DEFAULT_SPACING, padRight=(defined?(@@_padRight)?@@_padRight:nil) || DEFAULT_SPACING, padTop=(defined?(@@_padTop)?@@_padTop:nil) || DEFAULT_SPACING, padBottom=(defined?(@@_padBottom)?@@_padBottom:nil) || DEFAULT_SPACING)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXMenuButton, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:parent => :required, :text => :required, :icon => nil, :popupMenu => nil, :opts => JUSTIFY_NORMAL|ICON_BEFORE_TEXT|MENUBUTTON_DOWN, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_SPACING, :padRight => DEFAULT_SPACING, :padTop => DEFAULT_SPACING, :padBottom => DEFAULT_SPACING})
              
-             def parent var; @os.op[@os.ii].parent = var; end
+         def parent var; @@_parent = var; end
              
-             def text var; @os.op[@os.ii].text = var; end
+         def text var; @@_text = var; end
              
-             def icon var; @os.op[@os.ii].icon = var; end
+         def icon var; @@_icon = var; end
              
-             def popup_menu var; @os.op[@os.ii].popupMenu = var; end
+         def popup_menu var; @@_popupMenu = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def pad_left var; @os.op[@os.ii].padLeft = var; end
+         def pad_left var; @@_padLeft = var; end
              
-             def pad_right var; @os.op[@os.ii].padRight = var; end
+         def pad_right var; @@_padRight = var; end
              
-             def pad_top var; @os.op[@os.ii].padTop = var; end
+         def pad_top var; @@_padTop = var; end
              
-             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+         def pad_bottom var; @@_padBottom = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -4898,29 +5168,31 @@ module Fox
    class EFXMenuCaption < FXMenuCaption
      
      
-     def initialize(parent, text, icon=nil, opts=0)
+     def initialize(parent=(defined?(@@_parent)?@@_parent:nil), text=(defined?(@@_text)?@@_text:nil), icon=(defined?(@@_icon)?@@_icon:nil) || nil, opts=(defined?(@@_opts)?@@_opts:nil) || 0)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXMenuCaption, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:parent => :required, :text => :required, :icon => nil, :opts => 0})
              
-             def parent var; @os.op[@os.ii].parent = var; end
+         def parent var; @@_parent = var; end
              
-             def text var; @os.op[@os.ii].text = var; end
+         def text var; @@_text = var; end
              
-             def icon var; @os.op[@os.ii].icon = var; end
+         def icon var; @@_icon = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -4933,31 +5205,33 @@ module Fox
    class EFXMenuCascade < FXMenuCascade
      
      
-     def initialize(parent, text, icon=nil, popupMenu=nil, opts=0)
+     def initialize(parent=(defined?(@@_parent)?@@_parent:nil), text=(defined?(@@_text)?@@_text:nil), icon=(defined?(@@_icon)?@@_icon:nil) || nil, popupMenu=(defined?(@@_popupMenu)?@@_popupMenu:nil) || nil, opts=(defined?(@@_opts)?@@_opts:nil) || 0)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXMenuCascade, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:parent => :required, :text => :required, :icon => nil, :popupMenu => nil, :opts => 0})
              
-             def parent var; @os.op[@os.ii].parent = var; end
+         def parent var; @@_parent = var; end
              
-             def text var; @os.op[@os.ii].text = var; end
+         def text var; @@_text = var; end
              
-             def icon var; @os.op[@os.ii].icon = var; end
+         def icon var; @@_icon = var; end
              
-             def popup_menu var; @os.op[@os.ii].popupMenu = var; end
+         def popup_menu var; @@_popupMenu = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -4970,31 +5244,33 @@ module Fox
    class EFXMenuCheck < FXMenuCheck
      
      
-     def initialize(p, text, target=nil, selector=0, opts=0)
+     def initialize(p=(defined?(@@_p)?@@_p:nil), text=(defined?(@@_text)?@@_text:nil), target=(defined?(@@_target)?@@_target:nil) || nil, selector=(defined?(@@_selector)?@@_selector:nil) || 0, opts=(defined?(@@_opts)?@@_opts:nil) || 0)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXMenuCheck, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:p => :required, :text => :required, :target => nil, :selector => 0, :opts => 0})
              
-             def p var; @os.op[@os.ii].p = var; end
+         def p var; @@_p = var; end
              
-             def text var; @os.op[@os.ii].text = var; end
+         def text var; @@_text = var; end
              
-             def target var; @os.op[@os.ii].target = var; end
+         def target var; @@_target = var; end
              
-             def selector var; @os.op[@os.ii].selector = var; end
+         def selector var; @@_selector = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -5007,33 +5283,35 @@ module Fox
    class EFXMenuCommand < FXMenuCommand
      
      
-     def initialize(p, text, ic=nil, target=nil, selector=0, opts=0)
+     def initialize(p=(defined?(@@_p)?@@_p:nil), text=(defined?(@@_text)?@@_text:nil), ic=(defined?(@@_ic)?@@_ic:nil) || nil, target=(defined?(@@_target)?@@_target:nil) || nil, selector=(defined?(@@_selector)?@@_selector:nil) || 0, opts=(defined?(@@_opts)?@@_opts:nil) || 0)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXMenuCommand, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:p => :required, :text => :required, :ic => nil, :target => nil, :selector => 0, :opts => 0})
              
-             def p var; @os.op[@os.ii].p = var; end
+         def p var; @@_p = var; end
              
-             def text var; @os.op[@os.ii].text = var; end
+         def text var; @@_text = var; end
              
-             def ic var; @os.op[@os.ii].ic = var; end
+         def ic var; @@_ic = var; end
              
-             def target var; @os.op[@os.ii].target = var; end
+         def target var; @@_target = var; end
              
-             def selector var; @os.op[@os.ii].selector = var; end
+         def selector var; @@_selector = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -5046,25 +5324,27 @@ module Fox
    class EFXMenuPane < FXMenuPane
      
      
-     def initialize(owner, opts=0)
+     def initialize(owner=(defined?(@@_owner)?@@_owner:nil), opts=(defined?(@@_opts)?@@_opts:nil) || 0)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXMenuPane, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:owner => :required, :opts => 0})
              
-             def owner var; @os.op[@os.ii].owner = var; end
+         def owner var; @@_owner = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -5077,31 +5357,33 @@ module Fox
    class EFXMenuRadio < FXMenuRadio
      
      
-     def initialize(p, text, target=nil, selector=0, opts=0)
+     def initialize(p=(defined?(@@_p)?@@_p:nil), text=(defined?(@@_text)?@@_text:nil), target=(defined?(@@_target)?@@_target:nil) || nil, selector=(defined?(@@_selector)?@@_selector:nil) || 0, opts=(defined?(@@_opts)?@@_opts:nil) || 0)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXMenuRadio, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:p => :required, :text => :required, :target => nil, :selector => 0, :opts => 0})
              
-             def p var; @os.op[@os.ii].p = var; end
+         def p var; @@_p = var; end
              
-             def text var; @os.op[@os.ii].text = var; end
+         def text var; @@_text = var; end
              
-             def target var; @os.op[@os.ii].target = var; end
+         def target var; @@_target = var; end
              
-             def selector var; @os.op[@os.ii].selector = var; end
+         def selector var; @@_selector = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -5114,25 +5396,27 @@ module Fox
    class EFXMenuSeparator < FXMenuSeparator
      
      
-     def initialize(parent, opts=0)
+     def initialize(parent=(defined?(@@_parent)?@@_parent:nil), opts=(defined?(@@_opts)?@@_opts:nil) || 0)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXMenuSeparator, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:parent => :required, :opts => 0})
              
-             def parent var; @os.op[@os.ii].parent = var; end
+         def parent var; @@_parent = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -5145,31 +5429,33 @@ module Fox
    class EFXMenuTitle < FXMenuTitle
      
      
-     def initialize(parent, text, icon=nil, popupMenu=nil, opts=0)
+     def initialize(parent=(defined?(@@_parent)?@@_parent:nil), text=(defined?(@@_text)?@@_text:nil), icon=(defined?(@@_icon)?@@_icon:nil) || nil, popupMenu=(defined?(@@_popupMenu)?@@_popupMenu:nil) || nil, opts=(defined?(@@_opts)?@@_opts:nil) || 0)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXMenuTitle, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:parent => :required, :text => :required, :icon => nil, :popupMenu => nil, :opts => 0})
              
-             def parent var; @os.op[@os.ii].parent = var; end
+         def parent var; @@_parent = var; end
              
-             def text var; @os.op[@os.ii].text = var; end
+         def text var; @@_text = var; end
              
-             def icon var; @os.op[@os.ii].icon = var; end
+         def icon var; @@_icon = var; end
              
-             def popup_menu var; @os.op[@os.ii].popupMenu = var; end
+         def popup_menu var; @@_popupMenu = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -5182,35 +5468,37 @@ module Fox
    class EFXMessageBox < FXMessageBox
      
      
-     def initialize(owner, caption, text, ic=nil, opts=0, x=0, y=0)
+     def initialize(owner=(defined?(@@_owner)?@@_owner:nil), caption=(defined?(@@_caption)?@@_caption:nil), text=(defined?(@@_text)?@@_text:nil), ic=(defined?(@@_ic)?@@_ic:nil) || nil, opts=(defined?(@@_opts)?@@_opts:nil) || 0, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXMessageBox, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:owner => :required, :caption => :required, :text => :required, :ic => nil, :opts => 0, :x => 0, :y => 0})
              
-             def owner var; @os.op[@os.ii].owner = var; end
+         def owner var; @@_owner = var; end
              
-             def caption var; @os.op[@os.ii].caption = var; end
+         def caption var; @@_caption = var; end
              
-             def text var; @os.op[@os.ii].text = var; end
+         def text var; @@_text = var; end
              
-             def ic var; @os.op[@os.ii].ic = var; end
+         def ic var; @@_ic = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -5224,9 +5512,16 @@ module Fox
      
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXObject, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -5239,49 +5534,51 @@ module Fox
    class EFXOption < FXOption
      
      
-     def initialize(p, text, ic=nil, target=nil, selector=0, opts=JUSTIFY_NORMAL|ICON_BEFORE_TEXT, x=0, y=0, width=0, height=0, padLeft=DEFAULT_PAD, padRight=DEFAULT_PAD, padTop=DEFAULT_PAD, padBottom=DEFAULT_PAD)
+     def initialize(p=(defined?(@@_p)?@@_p:nil), text=(defined?(@@_text)?@@_text:nil), ic=(defined?(@@_ic)?@@_ic:nil) || nil, target=(defined?(@@_target)?@@_target:nil) || nil, selector=(defined?(@@_selector)?@@_selector:nil) || 0, opts=(defined?(@@_opts)?@@_opts:nil) || JUSTIFY_NORMAL|ICON_BEFORE_TEXT, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0, padLeft=(defined?(@@_padLeft)?@@_padLeft:nil) || DEFAULT_PAD, padRight=(defined?(@@_padRight)?@@_padRight:nil) || DEFAULT_PAD, padTop=(defined?(@@_padTop)?@@_padTop:nil) || DEFAULT_PAD, padBottom=(defined?(@@_padBottom)?@@_padBottom:nil) || DEFAULT_PAD)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXOption, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:p => :required, :text => :required, :ic => nil, :target => nil, :selector => 0, :opts => JUSTIFY_NORMAL|ICON_BEFORE_TEXT, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
              
-             def p var; @os.op[@os.ii].p = var; end
+         def p var; @@_p = var; end
              
-             def text var; @os.op[@os.ii].text = var; end
+         def text var; @@_text = var; end
              
-             def ic var; @os.op[@os.ii].ic = var; end
+         def ic var; @@_ic = var; end
              
-             def target var; @os.op[@os.ii].target = var; end
+         def target var; @@_target = var; end
              
-             def selector var; @os.op[@os.ii].selector = var; end
+         def selector var; @@_selector = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def pad_left var; @os.op[@os.ii].padLeft = var; end
+         def pad_left var; @@_padLeft = var; end
              
-             def pad_right var; @os.op[@os.ii].padRight = var; end
+         def pad_right var; @@_padRight = var; end
              
-             def pad_top var; @os.op[@os.ii].padTop = var; end
+         def pad_top var; @@_padTop = var; end
              
-             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+         def pad_bottom var; @@_padBottom = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -5294,43 +5591,45 @@ module Fox
    class EFXOptionMenu < FXOptionMenu
      
      
-     def initialize(p, pup=nil, opts=JUSTIFY_NORMAL|ICON_BEFORE_TEXT, x=0, y=0, width=0, height=0, padLeft=DEFAULT_PAD, padRight=DEFAULT_PAD, padTop=DEFAULT_PAD, padBottom=DEFAULT_PAD)
+     def initialize(p=(defined?(@@_p)?@@_p:nil), pup=(defined?(@@_pup)?@@_pup:nil) || nil, opts=(defined?(@@_opts)?@@_opts:nil) || JUSTIFY_NORMAL|ICON_BEFORE_TEXT, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0, padLeft=(defined?(@@_padLeft)?@@_padLeft:nil) || DEFAULT_PAD, padRight=(defined?(@@_padRight)?@@_padRight:nil) || DEFAULT_PAD, padTop=(defined?(@@_padTop)?@@_padTop:nil) || DEFAULT_PAD, padBottom=(defined?(@@_padBottom)?@@_padBottom:nil) || DEFAULT_PAD)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXOptionMenu, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:p => :required, :pup => nil, :opts => JUSTIFY_NORMAL|ICON_BEFORE_TEXT, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
              
-             def p var; @os.op[@os.ii].p = var; end
+         def p var; @@_p = var; end
              
-             def pup var; @os.op[@os.ii].pup = var; end
+         def pup var; @@_pup = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def pad_left var; @os.op[@os.ii].padLeft = var; end
+         def pad_left var; @@_padLeft = var; end
              
-             def pad_right var; @os.op[@os.ii].padRight = var; end
+         def pad_right var; @@_padRight = var; end
              
-             def pad_top var; @os.op[@os.ii].padTop = var; end
+         def pad_top var; @@_padTop = var; end
              
-             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+         def pad_bottom var; @@_padBottom = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -5343,33 +5642,35 @@ module Fox
    class EFXPCXIcon < FXPCXIcon
      
      
-     def initialize(a, pix=nil, clr=0, opts=0, width=1, height=1)
+     def initialize(a=(defined?(@@_a)?@@_a:nil), pix=(defined?(@@_pix)?@@_pix:nil) || nil, clr=(defined?(@@_clr)?@@_clr:nil) || 0, opts=(defined?(@@_opts)?@@_opts:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 1, height=(defined?(@@_height)?@@_height:nil) || 1)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXPCXIcon, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:a => :required, :pix => nil, :clr => 0, :opts => 0, :width => 1, :height => 1})
              
-             def a var; @os.op[@os.ii].a = var; end
+         def a var; @@_a = var; end
              
-             def pix var; @os.op[@os.ii].pix = var; end
+         def pix var; @@_pix = var; end
              
-             def clr var; @os.op[@os.ii].clr = var; end
+         def clr var; @@_clr = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -5382,31 +5683,33 @@ module Fox
    class EFXPCXImage < FXPCXImage
      
      
-     def initialize(a, pix=nil, opts=0, width=1, height=1)
+     def initialize(a=(defined?(@@_a)?@@_a:nil), pix=(defined?(@@_pix)?@@_pix:nil) || nil, opts=(defined?(@@_opts)?@@_opts:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 1, height=(defined?(@@_height)?@@_height:nil) || 1)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXPCXImage, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:a => :required, :pix => nil, :opts => 0, :width => 1, :height => 1})
              
-             def a var; @os.op[@os.ii].a = var; end
+         def a var; @@_a = var; end
              
-             def pix var; @os.op[@os.ii].pix = var; end
+         def pix var; @@_pix = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -5419,33 +5722,35 @@ module Fox
    class EFXPNGIcon < FXPNGIcon
      
      
-     def initialize(a, pix=nil, clr=0, opts=0, width=1, height=1)
+     def initialize(a=(defined?(@@_a)?@@_a:nil), pix=(defined?(@@_pix)?@@_pix:nil) || nil, clr=(defined?(@@_clr)?@@_clr:nil) || 0, opts=(defined?(@@_opts)?@@_opts:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 1, height=(defined?(@@_height)?@@_height:nil) || 1)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXPNGIcon, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:a => :required, :pix => nil, :clr => 0, :opts => 0, :width => 1, :height => 1})
              
-             def a var; @os.op[@os.ii].a = var; end
+         def a var; @@_a = var; end
              
-             def pix var; @os.op[@os.ii].pix = var; end
+         def pix var; @@_pix = var; end
              
-             def clr var; @os.op[@os.ii].clr = var; end
+         def clr var; @@_clr = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -5458,31 +5763,33 @@ module Fox
    class EFXPNGImage < FXPNGImage
      
      
-     def initialize(a, pix=nil, opts=0, width=1, height=1)
+     def initialize(a=(defined?(@@_a)?@@_a:nil), pix=(defined?(@@_pix)?@@_pix:nil) || nil, opts=(defined?(@@_opts)?@@_opts:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 1, height=(defined?(@@_height)?@@_height:nil) || 1)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXPNGImage, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:a => :required, :pix => nil, :opts => 0, :width => 1, :height => 1})
              
-             def a var; @os.op[@os.ii].a = var; end
+         def a var; @@_a = var; end
              
-             def pix var; @os.op[@os.ii].pix = var; end
+         def pix var; @@_pix = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -5495,33 +5802,35 @@ module Fox
    class EFXPPMIcon < FXPPMIcon
      
      
-     def initialize(a, pix=nil, clr=0, opts=0, width=1, height=1)
+     def initialize(a=(defined?(@@_a)?@@_a:nil), pix=(defined?(@@_pix)?@@_pix:nil) || nil, clr=(defined?(@@_clr)?@@_clr:nil) || 0, opts=(defined?(@@_opts)?@@_opts:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 1, height=(defined?(@@_height)?@@_height:nil) || 1)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXPPMIcon, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:a => :required, :pix => nil, :clr => 0, :opts => 0, :width => 1, :height => 1})
              
-             def a var; @os.op[@os.ii].a = var; end
+         def a var; @@_a = var; end
              
-             def pix var; @os.op[@os.ii].pix = var; end
+         def pix var; @@_pix = var; end
              
-             def clr var; @os.op[@os.ii].clr = var; end
+         def clr var; @@_clr = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -5534,31 +5843,33 @@ module Fox
    class EFXPPMImage < FXPPMImage
      
      
-     def initialize(a, pix=nil, opts=0, width=1, height=1)
+     def initialize(a=(defined?(@@_a)?@@_a:nil), pix=(defined?(@@_pix)?@@_pix:nil) || nil, opts=(defined?(@@_opts)?@@_opts:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 1, height=(defined?(@@_height)?@@_height:nil) || 1)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXPPMImage, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:a => :required, :pix => nil, :opts => 0, :width => 1, :height => 1})
              
-             def a var; @os.op[@os.ii].a = var; end
+         def a var; @@_a = var; end
              
-             def pix var; @os.op[@os.ii].pix = var; end
+         def pix var; @@_pix = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -5571,45 +5882,47 @@ module Fox
    class EFXPacker < FXPacker
      
      
-     def initialize(parent, opts=0, x=0, y=0, width=0, height=0, padLeft=DEFAULT_SPACING, padRight=DEFAULT_SPACING, padTop=DEFAULT_SPACING, padBottom=DEFAULT_SPACING, hSpacing=DEFAULT_SPACING, vSpacing=DEFAULT_SPACING)
+     def initialize(parent=(defined?(@@_parent)?@@_parent:nil), opts=(defined?(@@_opts)?@@_opts:nil) || 0, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0, padLeft=(defined?(@@_padLeft)?@@_padLeft:nil) || DEFAULT_SPACING, padRight=(defined?(@@_padRight)?@@_padRight:nil) || DEFAULT_SPACING, padTop=(defined?(@@_padTop)?@@_padTop:nil) || DEFAULT_SPACING, padBottom=(defined?(@@_padBottom)?@@_padBottom:nil) || DEFAULT_SPACING, hSpacing=(defined?(@@_hSpacing)?@@_hSpacing:nil) || DEFAULT_SPACING, vSpacing=(defined?(@@_vSpacing)?@@_vSpacing:nil) || DEFAULT_SPACING)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXPacker, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:parent => :required, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_SPACING, :padRight => DEFAULT_SPACING, :padTop => DEFAULT_SPACING, :padBottom => DEFAULT_SPACING, :hSpacing => DEFAULT_SPACING, :vSpacing => DEFAULT_SPACING})
              
-             def parent var; @os.op[@os.ii].parent = var; end
+         def parent var; @@_parent = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def pad_left var; @os.op[@os.ii].padLeft = var; end
+         def pad_left var; @@_padLeft = var; end
              
-             def pad_right var; @os.op[@os.ii].padRight = var; end
+         def pad_right var; @@_padRight = var; end
              
-             def pad_top var; @os.op[@os.ii].padTop = var; end
+         def pad_top var; @@_padTop = var; end
              
-             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+         def pad_bottom var; @@_padBottom = var; end
              
-             def h_spacing var; @os.op[@os.ii].hSpacing = var; end
+         def h_spacing var; @@_hSpacing = var; end
              
-             def v_spacing var; @os.op[@os.ii].vSpacing = var; end
+         def v_spacing var; @@_vSpacing = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -5622,49 +5935,51 @@ module Fox
    class EFXPicker < FXPicker
      
      
-     def initialize(p, text, ic=nil, target=nil, selector=0, opts=BUTTON_NORMAL, x=0, y=0, width=0, height=0, padLeft=DEFAULT_PAD, padRight=DEFAULT_PAD, padTop=DEFAULT_PAD, padBottom=DEFAULT_PAD)
+     def initialize(p=(defined?(@@_p)?@@_p:nil), text=(defined?(@@_text)?@@_text:nil), ic=(defined?(@@_ic)?@@_ic:nil) || nil, target=(defined?(@@_target)?@@_target:nil) || nil, selector=(defined?(@@_selector)?@@_selector:nil) || 0, opts=(defined?(@@_opts)?@@_opts:nil) || BUTTON_NORMAL, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0, padLeft=(defined?(@@_padLeft)?@@_padLeft:nil) || DEFAULT_PAD, padRight=(defined?(@@_padRight)?@@_padRight:nil) || DEFAULT_PAD, padTop=(defined?(@@_padTop)?@@_padTop:nil) || DEFAULT_PAD, padBottom=(defined?(@@_padBottom)?@@_padBottom:nil) || DEFAULT_PAD)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXPicker, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:p => :required, :text => :required, :ic => nil, :target => nil, :selector => 0, :opts => BUTTON_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
              
-             def p var; @os.op[@os.ii].p = var; end
+         def p var; @@_p = var; end
              
-             def text var; @os.op[@os.ii].text = var; end
+         def text var; @@_text = var; end
              
-             def ic var; @os.op[@os.ii].ic = var; end
+         def ic var; @@_ic = var; end
              
-             def target var; @os.op[@os.ii].target = var; end
+         def target var; @@_target = var; end
              
-             def selector var; @os.op[@os.ii].selector = var; end
+         def selector var; @@_selector = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def pad_left var; @os.op[@os.ii].padLeft = var; end
+         def pad_left var; @@_padLeft = var; end
              
-             def pad_right var; @os.op[@os.ii].padRight = var; end
+         def pad_right var; @@_padRight = var; end
              
-             def pad_top var; @os.op[@os.ii].padTop = var; end
+         def pad_top var; @@_padTop = var; end
              
-             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+         def pad_bottom var; @@_padBottom = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -5677,33 +5992,35 @@ module Fox
    class EFXPopup < FXPopup
      
      
-     def initialize(owner, opts=POPUP_VERTICAL|FRAME_RAISED|FRAME_THICK, x=0, y=0, width=0, height=0)
+     def initialize(owner=(defined?(@@_owner)?@@_owner:nil), opts=(defined?(@@_opts)?@@_opts:nil) || POPUP_VERTICAL|FRAME_RAISED|FRAME_THICK, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXPopup, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:owner => :required, :opts => POPUP_VERTICAL|FRAME_RAISED|FRAME_THICK, :x => 0, :y => 0, :width => 0, :height => 0})
              
-             def owner var; @os.op[@os.ii].owner = var; end
+         def owner var; @@_owner = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -5716,35 +6033,37 @@ module Fox
    class EFXPrintDialog < FXPrintDialog
      
      
-     def initialize(owner, name, opts=0, x=0, y=0, width=0, height=0)
+     def initialize(owner=(defined?(@@_owner)?@@_owner:nil), name=(defined?(@@_name)?@@_name:nil), opts=(defined?(@@_opts)?@@_opts:nil) || 0, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXPrintDialog, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:owner => :required, :name => :required, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
              
-             def owner var; @os.op[@os.ii].owner = var; end
+         def owner var; @@_owner = var; end
              
-             def name var; @os.op[@os.ii].name = var; end
+         def name var; @@_name = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -5757,45 +6076,47 @@ module Fox
    class EFXProgressBar < FXProgressBar
      
      
-     def initialize(p, target=nil, selector=0, opts=PROGRESSBAR_NORMAL, x=0, y=0, width=0, height=0, padLeft=DEFAULT_PAD, padRight=DEFAULT_PAD, padTop=DEFAULT_PAD, padBottom=DEFAULT_PAD)
+     def initialize(p=(defined?(@@_p)?@@_p:nil), target=(defined?(@@_target)?@@_target:nil) || nil, selector=(defined?(@@_selector)?@@_selector:nil) || 0, opts=(defined?(@@_opts)?@@_opts:nil) || PROGRESSBAR_NORMAL, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0, padLeft=(defined?(@@_padLeft)?@@_padLeft:nil) || DEFAULT_PAD, padRight=(defined?(@@_padRight)?@@_padRight:nil) || DEFAULT_PAD, padTop=(defined?(@@_padTop)?@@_padTop:nil) || DEFAULT_PAD, padBottom=(defined?(@@_padBottom)?@@_padBottom:nil) || DEFAULT_PAD)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXProgressBar, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => PROGRESSBAR_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
              
-             def p var; @os.op[@os.ii].p = var; end
+         def p var; @@_p = var; end
              
-             def target var; @os.op[@os.ii].target = var; end
+         def target var; @@_target = var; end
              
-             def selector var; @os.op[@os.ii].selector = var; end
+         def selector var; @@_selector = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def pad_left var; @os.op[@os.ii].padLeft = var; end
+         def pad_left var; @@_padLeft = var; end
              
-             def pad_right var; @os.op[@os.ii].padRight = var; end
+         def pad_right var; @@_padRight = var; end
              
-             def pad_top var; @os.op[@os.ii].padTop = var; end
+         def pad_top var; @@_padTop = var; end
              
-             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+         def pad_bottom var; @@_padBottom = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -5808,37 +6129,39 @@ module Fox
    class EFXProgressDialog < FXProgressDialog
      
      
-     def initialize(owner, caption, label, opts=PROGRESSDIALOG_NORMAL, x=0, y=0, width=0, height=0)
+     def initialize(owner=(defined?(@@_owner)?@@_owner:nil), caption=(defined?(@@_caption)?@@_caption:nil), label=(defined?(@@_label)?@@_label:nil), opts=(defined?(@@_opts)?@@_opts:nil) || PROGRESSDIALOG_NORMAL, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXProgressDialog, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:owner => :required, :caption => :required, :label => :required, :opts => PROGRESSDIALOG_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0})
              
-             def owner var; @os.op[@os.ii].owner = var; end
+         def owner var; @@_owner = var; end
              
-             def caption var; @os.op[@os.ii].caption = var; end
+         def caption var; @@_caption = var; end
              
-             def label var; @os.op[@os.ii].label = var; end
+         def label var; @@_label = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -5851,91 +6174,73 @@ module Fox
    class EFXQuatd < FXQuatd
      
      
-     def initialize(axis, phi=0.0)
+     def initialize(axis=(defined?(@@_axis)?@@_axis:nil), phi=(defined?(@@_phi)?@@_phi:nil) || 0.0)
        super
      end
      
-     def initialize(x, y, z, w)
+     def initialize(x=(defined?(@@_x)?@@_x:nil), y=(defined?(@@_y)?@@_y:nil), z=(defined?(@@_z)?@@_z:nil), w=(defined?(@@_w)?@@_w:nil))
        super
      end
      
-     def initialize(floats)
+     def initialize(floats=(defined?(@@_floats)?@@_floats:nil))
        super
      end
      
-     def initialize(roll, pitch, yaw)
+     def initialize(roll=(defined?(@@_roll)?@@_roll:nil), pitch=(defined?(@@_pitch)?@@_pitch:nil), yaw=(defined?(@@_yaw)?@@_yaw:nil))
        super
      end
      
-     def initialize(ex, ey, ez)
+     def initialize(ex=(defined?(@@_ex)?@@_ex:nil), ey=(defined?(@@_ey)?@@_ey:nil), ez=(defined?(@@_ez)?@@_ez:nil))
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXQuatd, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:axis => :required, :phi => 0.0})
              
-             def axis var; @os.op[@os.ii].axis = var; end
+         def axis var; @@_axis = var; end
              
-             def phi var; @os.op[@os.ii].phi = var; end
+         def phi var; @@_phi = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
          
-             @os.op[1] = OpenStruct.new({:x => :required, :y => :required, :z => :required, :w => :required})
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def z var; @os.op[@os.ii].z = var; end
+         def z var; @@_z = var; end
              
-             def w var; @os.op[@os.ii].w = var; end
+         def w var; @@_w = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
          
-             @os.op[2] = OpenStruct.new({:floats => :required})
              
-             def floats var; @os.op[@os.ii].floats = var; end
+         def floats var; @@_floats = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
          
-             @os.op[3] = OpenStruct.new({:roll => :required, :pitch => :required, :yaw => :required})
              
-             def roll var; @os.op[@os.ii].roll = var; end
+         def roll var; @@_roll = var; end
              
-             def pitch var; @os.op[@os.ii].pitch = var; end
+         def pitch var; @@_pitch = var; end
              
-             def yaw var; @os.op[@os.ii].yaw = var; end
+         def yaw var; @@_yaw = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
          
-             @os.op[4] = OpenStruct.new({:ex => :required, :ey => :required, :ez => :required})
              
-             def ex var; @os.op[@os.ii].ex = var; end
+         def ex var; @@_ex = var; end
              
-             def ey var; @os.op[@os.ii].ey = var; end
+         def ey var; @@_ey = var; end
              
-             def ez var; @os.op[@os.ii].ez = var; end
+         def ez var; @@_ez = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -5948,91 +6253,73 @@ module Fox
    class EFXQuatf < FXQuatf
      
      
-     def initialize(axis, phi=0.0)
+     def initialize(axis=(defined?(@@_axis)?@@_axis:nil), phi=(defined?(@@_phi)?@@_phi:nil) || 0.0)
        super
      end
      
-     def initialize(roll, pitch, yaw)
+     def initialize(roll=(defined?(@@_roll)?@@_roll:nil), pitch=(defined?(@@_pitch)?@@_pitch:nil), yaw=(defined?(@@_yaw)?@@_yaw:nil))
        super
      end
      
-     def initialize(ex, ey, ez)
+     def initialize(ex=(defined?(@@_ex)?@@_ex:nil), ey=(defined?(@@_ey)?@@_ey:nil), ez=(defined?(@@_ez)?@@_ez:nil))
        super
      end
      
-     def initialize(mat)
+     def initialize(mat=(defined?(@@_mat)?@@_mat:nil))
        super
      end
      
-     def initialize(x, y, z, w)
+     def initialize(x=(defined?(@@_x)?@@_x:nil), y=(defined?(@@_y)?@@_y:nil), z=(defined?(@@_z)?@@_z:nil), w=(defined?(@@_w)?@@_w:nil))
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXQuatf, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:axis => :required, :phi => 0.0})
              
-             def axis var; @os.op[@os.ii].axis = var; end
+         def axis var; @@_axis = var; end
              
-             def phi var; @os.op[@os.ii].phi = var; end
+         def phi var; @@_phi = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
          
-             @os.op[1] = OpenStruct.new({:roll => :required, :pitch => :required, :yaw => :required})
              
-             def roll var; @os.op[@os.ii].roll = var; end
+         def roll var; @@_roll = var; end
              
-             def pitch var; @os.op[@os.ii].pitch = var; end
+         def pitch var; @@_pitch = var; end
              
-             def yaw var; @os.op[@os.ii].yaw = var; end
+         def yaw var; @@_yaw = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
          
-             @os.op[2] = OpenStruct.new({:ex => :required, :ey => :required, :ez => :required})
              
-             def ex var; @os.op[@os.ii].ex = var; end
+         def ex var; @@_ex = var; end
              
-             def ey var; @os.op[@os.ii].ey = var; end
+         def ey var; @@_ey = var; end
              
-             def ez var; @os.op[@os.ii].ez = var; end
+         def ez var; @@_ez = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
          
-             @os.op[3] = OpenStruct.new({:mat => :required})
              
-             def mat var; @os.op[@os.ii].mat = var; end
+         def mat var; @@_mat = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
          
-             @os.op[4] = OpenStruct.new({:x => :required, :y => :required, :z => :required, :w => :required})
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def z var; @os.op[@os.ii].z = var; end
+         def z var; @@_z = var; end
              
-             def w var; @os.op[@os.ii].w = var; end
+         def w var; @@_w = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -6045,33 +6332,35 @@ module Fox
    class EFXRGBIcon < FXRGBIcon
      
      
-     def initialize(a, pix=nil, clr=0, opts=0, width=1, height=1)
+     def initialize(a=(defined?(@@_a)?@@_a:nil), pix=(defined?(@@_pix)?@@_pix:nil) || nil, clr=(defined?(@@_clr)?@@_clr:nil) || 0, opts=(defined?(@@_opts)?@@_opts:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 1, height=(defined?(@@_height)?@@_height:nil) || 1)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXRGBIcon, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:a => :required, :pix => nil, :clr => 0, :opts => 0, :width => 1, :height => 1})
              
-             def a var; @os.op[@os.ii].a = var; end
+         def a var; @@_a = var; end
              
-             def pix var; @os.op[@os.ii].pix = var; end
+         def pix var; @@_pix = var; end
              
-             def clr var; @os.op[@os.ii].clr = var; end
+         def clr var; @@_clr = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -6084,31 +6373,33 @@ module Fox
    class EFXRGBImage < FXRGBImage
      
      
-     def initialize(a, pix=nil, opts=0, width=1, height=1)
+     def initialize(a=(defined?(@@_a)?@@_a:nil), pix=(defined?(@@_pix)?@@_pix:nil) || nil, opts=(defined?(@@_opts)?@@_opts:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 1, height=(defined?(@@_height)?@@_height:nil) || 1)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXRGBImage, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:a => :required, :pix => nil, :opts => 0, :width => 1, :height => 1})
              
-             def a var; @os.op[@os.ii].a = var; end
+         def a var; @@_a = var; end
              
-             def pix var; @os.op[@os.ii].pix = var; end
+         def pix var; @@_pix = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -6121,47 +6412,49 @@ module Fox
    class EFXRadioButton < FXRadioButton
      
      
-     def initialize(parent, text, target=nil, selector=0, opts=RADIOBUTTON_NORMAL, x=0, y=0, width=0, height=0, padLeft=DEFAULT_PAD, padRight=DEFAULT_PAD, padTop=DEFAULT_PAD, padBottom=DEFAULT_PAD)
+     def initialize(parent=(defined?(@@_parent)?@@_parent:nil), text=(defined?(@@_text)?@@_text:nil), target=(defined?(@@_target)?@@_target:nil) || nil, selector=(defined?(@@_selector)?@@_selector:nil) || 0, opts=(defined?(@@_opts)?@@_opts:nil) || RADIOBUTTON_NORMAL, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0, padLeft=(defined?(@@_padLeft)?@@_padLeft:nil) || DEFAULT_PAD, padRight=(defined?(@@_padRight)?@@_padRight:nil) || DEFAULT_PAD, padTop=(defined?(@@_padTop)?@@_padTop:nil) || DEFAULT_PAD, padBottom=(defined?(@@_padBottom)?@@_padBottom:nil) || DEFAULT_PAD)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXRadioButton, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:parent => :required, :text => :required, :target => nil, :selector => 0, :opts => RADIOBUTTON_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
              
-             def parent var; @os.op[@os.ii].parent = var; end
+         def parent var; @@_parent = var; end
              
-             def text var; @os.op[@os.ii].text = var; end
+         def text var; @@_text = var; end
              
-             def target var; @os.op[@os.ii].target = var; end
+         def target var; @@_target = var; end
              
-             def selector var; @os.op[@os.ii].selector = var; end
+         def selector var; @@_selector = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def pad_left var; @os.op[@os.ii].padLeft = var; end
+         def pad_left var; @@_padLeft = var; end
              
-             def pad_right var; @os.op[@os.ii].padRight = var; end
+         def pad_right var; @@_padRight = var; end
              
-             def pad_top var; @os.op[@os.ii].padTop = var; end
+         def pad_top var; @@_padTop = var; end
              
-             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+         def pad_bottom var; @@_padBottom = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -6174,59 +6467,51 @@ module Fox
    class EFXRanged < FXRanged
      
      
-     def initialize(xlo=0.0, xhi=0.0, ylo=0.0, yhi=0.0, zlo=0.0, zhi=0.0)
+     def initialize(xlo=(defined?(@@_xlo)?@@_xlo:nil) || 0.0, xhi=(defined?(@@_xhi)?@@_xhi:nil) || 0.0, ylo=(defined?(@@_ylo)?@@_ylo:nil) || 0.0, yhi=(defined?(@@_yhi)?@@_yhi:nil) || 0.0, zlo=(defined?(@@_zlo)?@@_zlo:nil) || 0.0, zhi=(defined?(@@_zhi)?@@_zhi:nil) || 0.0)
        super
      end
      
-     def initialize(bounds)
+     def initialize(bounds=(defined?(@@_bounds)?@@_bounds:nil))
        super
      end
      
-     def initialize(sphere)
+     def initialize(sphere=(defined?(@@_sphere)?@@_sphere:nil))
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXRanged, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:xlo => 0.0, :xhi => 0.0, :ylo => 0.0, :yhi => 0.0, :zlo => 0.0, :zhi => 0.0})
              
-             def xlo var; @os.op[@os.ii].xlo = var; end
+         def xlo var; @@_xlo = var; end
              
-             def xhi var; @os.op[@os.ii].xhi = var; end
+         def xhi var; @@_xhi = var; end
              
-             def ylo var; @os.op[@os.ii].ylo = var; end
+         def ylo var; @@_ylo = var; end
              
-             def yhi var; @os.op[@os.ii].yhi = var; end
+         def yhi var; @@_yhi = var; end
              
-             def zlo var; @os.op[@os.ii].zlo = var; end
+         def zlo var; @@_zlo = var; end
              
-             def zhi var; @os.op[@os.ii].zhi = var; end
+         def zhi var; @@_zhi = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
          
-             @os.op[1] = OpenStruct.new({:bounds => :required})
              
-             def bounds var; @os.op[@os.ii].bounds = var; end
+         def bounds var; @@_bounds = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
          
-             @os.op[2] = OpenStruct.new({:sphere => :required})
              
-             def sphere var; @os.op[@os.ii].sphere = var; end
+         def sphere var; @@_sphere = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -6239,59 +6524,51 @@ module Fox
    class EFXRangef < FXRangef
      
      
-     def initialize(xlo=0.0, xhi=0.0, ylo=0.0, yhi=0.0, zlo=0.0, zhi=0.0)
+     def initialize(xlo=(defined?(@@_xlo)?@@_xlo:nil) || 0.0, xhi=(defined?(@@_xhi)?@@_xhi:nil) || 0.0, ylo=(defined?(@@_ylo)?@@_ylo:nil) || 0.0, yhi=(defined?(@@_yhi)?@@_yhi:nil) || 0.0, zlo=(defined?(@@_zlo)?@@_zlo:nil) || 0.0, zhi=(defined?(@@_zhi)?@@_zhi:nil) || 0.0)
        super
      end
      
-     def initialize(bounds)
+     def initialize(bounds=(defined?(@@_bounds)?@@_bounds:nil))
        super
      end
      
-     def initialize(sphere)
+     def initialize(sphere=(defined?(@@_sphere)?@@_sphere:nil))
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXRangef, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:xlo => 0.0, :xhi => 0.0, :ylo => 0.0, :yhi => 0.0, :zlo => 0.0, :zhi => 0.0})
              
-             def xlo var; @os.op[@os.ii].xlo = var; end
+         def xlo var; @@_xlo = var; end
              
-             def xhi var; @os.op[@os.ii].xhi = var; end
+         def xhi var; @@_xhi = var; end
              
-             def ylo var; @os.op[@os.ii].ylo = var; end
+         def ylo var; @@_ylo = var; end
              
-             def yhi var; @os.op[@os.ii].yhi = var; end
+         def yhi var; @@_yhi = var; end
              
-             def zlo var; @os.op[@os.ii].zlo = var; end
+         def zlo var; @@_zlo = var; end
              
-             def zhi var; @os.op[@os.ii].zhi = var; end
+         def zhi var; @@_zhi = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
          
-             @os.op[1] = OpenStruct.new({:bounds => :required})
              
-             def bounds var; @os.op[@os.ii].bounds = var; end
+         def bounds var; @@_bounds = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
          
-             @os.op[2] = OpenStruct.new({:sphere => :required})
              
-             def sphere var; @os.op[@os.ii].sphere = var; end
+         def sphere var; @@_sphere = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -6304,45 +6581,47 @@ module Fox
    class EFXRealSlider < FXRealSlider
      
      
-     def initialize(p, target=nil, selector=0, opts=REALSLIDER_NORMAL, x=0, y=0, width=0, height=0, padLeft=0, padRight=0, padTop=0, padBottom=0)
+     def initialize(p=(defined?(@@_p)?@@_p:nil), target=(defined?(@@_target)?@@_target:nil) || nil, selector=(defined?(@@_selector)?@@_selector:nil) || 0, opts=(defined?(@@_opts)?@@_opts:nil) || REALSLIDER_NORMAL, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0, padLeft=(defined?(@@_padLeft)?@@_padLeft:nil) || 0, padRight=(defined?(@@_padRight)?@@_padRight:nil) || 0, padTop=(defined?(@@_padTop)?@@_padTop:nil) || 0, padBottom=(defined?(@@_padBottom)?@@_padBottom:nil) || 0)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXRealSlider, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => REALSLIDER_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 0, :padRight => 0, :padTop => 0, :padBottom => 0})
              
-             def p var; @os.op[@os.ii].p = var; end
+         def p var; @@_p = var; end
              
-             def target var; @os.op[@os.ii].target = var; end
+         def target var; @@_target = var; end
              
-             def selector var; @os.op[@os.ii].selector = var; end
+         def selector var; @@_selector = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def pad_left var; @os.op[@os.ii].padLeft = var; end
+         def pad_left var; @@_padLeft = var; end
              
-             def pad_right var; @os.op[@os.ii].padRight = var; end
+         def pad_right var; @@_padRight = var; end
              
-             def pad_top var; @os.op[@os.ii].padTop = var; end
+         def pad_top var; @@_padTop = var; end
              
-             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+         def pad_bottom var; @@_padBottom = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -6355,47 +6634,49 @@ module Fox
    class EFXRealSpinner < FXRealSpinner
      
      
-     def initialize(p, cols, target=nil, selector=0, opts=REALSPIN_NORMAL, x=0, y=0, width=0, height=0, padLeft=DEFAULT_PAD, padRight=DEFAULT_PAD, padTop=DEFAULT_PAD, padBottom=DEFAULT_PAD)
+     def initialize(p=(defined?(@@_p)?@@_p:nil), cols=(defined?(@@_cols)?@@_cols:nil), target=(defined?(@@_target)?@@_target:nil) || nil, selector=(defined?(@@_selector)?@@_selector:nil) || 0, opts=(defined?(@@_opts)?@@_opts:nil) || REALSPIN_NORMAL, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0, padLeft=(defined?(@@_padLeft)?@@_padLeft:nil) || DEFAULT_PAD, padRight=(defined?(@@_padRight)?@@_padRight:nil) || DEFAULT_PAD, padTop=(defined?(@@_padTop)?@@_padTop:nil) || DEFAULT_PAD, padBottom=(defined?(@@_padBottom)?@@_padBottom:nil) || DEFAULT_PAD)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXRealSpinner, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:p => :required, :cols => :required, :target => nil, :selector => 0, :opts => REALSPIN_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
              
-             def p var; @os.op[@os.ii].p = var; end
+         def p var; @@_p = var; end
              
-             def cols var; @os.op[@os.ii].cols = var; end
+         def cols var; @@_cols = var; end
              
-             def target var; @os.op[@os.ii].target = var; end
+         def target var; @@_target = var; end
              
-             def selector var; @os.op[@os.ii].selector = var; end
+         def selector var; @@_selector = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def pad_left var; @os.op[@os.ii].padLeft = var; end
+         def pad_left var; @@_padLeft = var; end
              
-             def pad_right var; @os.op[@os.ii].padRight = var; end
+         def pad_right var; @@_padRight = var; end
              
-             def pad_top var; @os.op[@os.ii].padTop = var; end
+         def pad_top var; @@_padTop = var; end
              
-             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+         def pad_bottom var; @@_padBottom = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -6408,42 +6689,39 @@ module Fox
    class EFXRecentFiles < FXRecentFiles
      
      
-     def initialize(a)
+     def initialize(a=(defined?(@@_a)?@@_a:nil))
        super
      end
      
-     def initialize(a, gp, target=nil, selector=0)
+     def initialize(a=(defined?(@@_a)?@@_a:nil), gp=(defined?(@@_gp)?@@_gp:nil), target=(defined?(@@_target)?@@_target:nil) || nil, selector=(defined?(@@_selector)?@@_selector:nil) || 0)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXRecentFiles, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:a => :required})
              
-             def a var; @os.op[@os.ii].a = var; end
+         def a var; @@_a = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
          
-             @os.op[1] = OpenStruct.new({:a => :required, :gp => :required, :target => nil, :selector => 0})
              
-             def a var; @os.op[@os.ii].a = var; end
+         def a var; @@_a = var; end
              
-             def gp var; @os.op[@os.ii].gp = var; end
+         def gp var; @@_gp = var; end
              
-             def target var; @os.op[@os.ii].target = var; end
+         def target var; @@_target = var; end
              
-             def selector var; @os.op[@os.ii].selector = var; end
+         def selector var; @@_selector = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -6456,59 +6734,51 @@ module Fox
    class EFXRectangle < FXRectangle
      
      
-     def initialize(xx, yy, ww, hh)
+     def initialize(xx=(defined?(@@_xx)?@@_xx:nil), yy=(defined?(@@_yy)?@@_yy:nil), ww=(defined?(@@_ww)?@@_ww:nil), hh=(defined?(@@_hh)?@@_hh:nil))
        super
      end
      
-     def initialize(p, s)
+     def initialize(p=(defined?(@@_p)?@@_p:nil), s=(defined?(@@_s)?@@_s:nil))
        super
      end
      
-     def initialize(topleft, bottomright)
+     def initialize(topleft=(defined?(@@_topleft)?@@_topleft:nil), bottomright=(defined?(@@_bottomright)?@@_bottomright:nil))
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXRectangle, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:xx => :required, :yy => :required, :ww => :required, :hh => :required})
              
-             def xx var; @os.op[@os.ii].xx = var; end
+         def xx var; @@_xx = var; end
              
-             def yy var; @os.op[@os.ii].yy = var; end
+         def yy var; @@_yy = var; end
              
-             def ww var; @os.op[@os.ii].ww = var; end
+         def ww var; @@_ww = var; end
              
-             def hh var; @os.op[@os.ii].hh = var; end
+         def hh var; @@_hh = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
          
-             @os.op[1] = OpenStruct.new({:p => :required, :s => :required})
              
-             def p var; @os.op[@os.ii].p = var; end
+         def p var; @@_p = var; end
              
-             def s var; @os.op[@os.ii].s = var; end
+         def s var; @@_s = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
          
-             @os.op[2] = OpenStruct.new({:topleft => :required, :bottomright => :required})
              
-             def topleft var; @os.op[@os.ii].topleft = var; end
+         def topleft var; @@_topleft = var; end
              
-             def bottomright var; @os.op[@os.ii].bottomright = var; end
+         def bottomright var; @@_bottomright = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -6521,70 +6791,57 @@ module Fox
    class EFXRegion < FXRegion
      
      
-     def initialize(r)
+     def initialize(r=(defined?(@@_r)?@@_r:nil))
        super
      end
      
-     def initialize(rect)
+     def initialize(rect=(defined?(@@_rect)?@@_rect:nil))
        super
      end
      
-     def initialize(x, y, w, h)
+     def initialize(x=(defined?(@@_x)?@@_x:nil), y=(defined?(@@_y)?@@_y:nil), w=(defined?(@@_w)?@@_w:nil), h=(defined?(@@_h)?@@_h:nil))
        super
      end
      
-     def initialize(points, winding=false)
+     def initialize(points=(defined?(@@_points)?@@_points:nil), winding=(defined?(@@_winding)?@@_winding:nil) || false)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXRegion, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:r => :required})
              
-             def r var; @os.op[@os.ii].r = var; end
+         def r var; @@_r = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
          
-             @os.op[1] = OpenStruct.new({:rect => :required})
              
-             def rect var; @os.op[@os.ii].rect = var; end
+         def rect var; @@_rect = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
          
-             @os.op[2] = OpenStruct.new({:x => :required, :y => :required, :w => :required, :h => :required})
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def w var; @os.op[@os.ii].w = var; end
+         def w var; @@_w = var; end
              
-             def h var; @os.op[@os.ii].h = var; end
+         def h var; @@_h = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
          
-             @os.op[3] = OpenStruct.new({:points => :required, :winding => false})
              
-             def points var; @os.op[@os.ii].points = var; end
+         def points var; @@_points = var; end
              
-             def winding var; @os.op[@os.ii].winding = var; end
+         def winding var; @@_winding = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -6597,25 +6854,27 @@ module Fox
    class EFXRegistry < FXRegistry
      
      
-     def initialize(appKey="", vendorKey="")
+     def initialize(appKey=(defined?(@@_appKey)?@@_appKey:nil) || "", vendorKey=(defined?(@@_vendorKey)?@@_vendorKey:nil) || "")
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXRegistry, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:appKey => "", :vendorKey => ""})
              
-             def app_key var; @os.op[@os.ii].appKey = var; end
+         def app_key var; @@_appKey = var; end
              
-             def vendor_key var; @os.op[@os.ii].vendorKey = var; end
+         def vendor_key var; @@_vendorKey = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -6628,37 +6887,39 @@ module Fox
    class EFXReplaceDialog < FXReplaceDialog
      
      
-     def initialize(owner, caption, ic=nil, opts=0, x=0, y=0, width=0, height=0)
+     def initialize(owner=(defined?(@@_owner)?@@_owner:nil), caption=(defined?(@@_caption)?@@_caption:nil), ic=(defined?(@@_ic)?@@_ic:nil) || nil, opts=(defined?(@@_opts)?@@_opts:nil) || 0, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXReplaceDialog, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:owner => :required, :caption => :required, :ic => nil, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
              
-             def owner var; @os.op[@os.ii].owner = var; end
+         def owner var; @@_owner = var; end
              
-             def caption var; @os.op[@os.ii].caption = var; end
+         def caption var; @@_caption = var; end
              
-             def ic var; @os.op[@os.ii].ic = var; end
+         def ic var; @@_ic = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -6671,25 +6932,27 @@ module Fox
    class EFXRootWindow < FXRootWindow
      
      
-     def initialize(a, vis)
+     def initialize(a=(defined?(@@_a)?@@_a:nil), vis=(defined?(@@_vis)?@@_vis:nil))
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXRootWindow, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:a => :required, :vis => :required})
              
-             def a var; @os.op[@os.ii].a = var; end
+         def a var; @@_a = var; end
              
-             def vis var; @os.op[@os.ii].vis = var; end
+         def vis var; @@_vis = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -6702,45 +6965,47 @@ module Fox
    class EFXRuler < FXRuler
      
      
-     def initialize(p, target=nil, selector=0, opts=RULER_NORMAL, x=0, y=0, width=0, height=0, padLeft=DEFAULT_PAD, padRight=DEFAULT_PAD, padTop=DEFAULT_PAD, padBottom=DEFAULT_PAD)
+     def initialize(p=(defined?(@@_p)?@@_p:nil), target=(defined?(@@_target)?@@_target:nil) || nil, selector=(defined?(@@_selector)?@@_selector:nil) || 0, opts=(defined?(@@_opts)?@@_opts:nil) || RULER_NORMAL, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0, padLeft=(defined?(@@_padLeft)?@@_padLeft:nil) || DEFAULT_PAD, padRight=(defined?(@@_padRight)?@@_padRight:nil) || DEFAULT_PAD, padTop=(defined?(@@_padTop)?@@_padTop:nil) || DEFAULT_PAD, padBottom=(defined?(@@_padBottom)?@@_padBottom:nil) || DEFAULT_PAD)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXRuler, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => RULER_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
              
-             def p var; @os.op[@os.ii].p = var; end
+         def p var; @@_p = var; end
              
-             def target var; @os.op[@os.ii].target = var; end
+         def target var; @@_target = var; end
              
-             def selector var; @os.op[@os.ii].selector = var; end
+         def selector var; @@_selector = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def pad_left var; @os.op[@os.ii].padLeft = var; end
+         def pad_left var; @@_padLeft = var; end
              
-             def pad_right var; @os.op[@os.ii].padRight = var; end
+         def pad_right var; @@_padRight = var; end
              
-             def pad_top var; @os.op[@os.ii].padTop = var; end
+         def pad_top var; @@_padTop = var; end
              
-             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+         def pad_bottom var; @@_padBottom = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -6753,37 +7018,39 @@ module Fox
    class EFXRulerView < FXRulerView
      
      
-     def initialize(p, target=nil, selector=0, opts=0, x=0, y=0, width=0, height=0)
+     def initialize(p=(defined?(@@_p)?@@_p:nil), target=(defined?(@@_target)?@@_target:nil) || nil, selector=(defined?(@@_selector)?@@_selector:nil) || 0, opts=(defined?(@@_opts)?@@_opts:nil) || 0, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXRulerView, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
              
-             def p var; @os.op[@os.ii].p = var; end
+         def p var; @@_p = var; end
              
-             def target var; @os.op[@os.ii].target = var; end
+         def target var; @@_target = var; end
              
-             def selector var; @os.op[@os.ii].selector = var; end
+         def selector var; @@_selector = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -6797,9 +7064,16 @@ module Fox
      
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: ENotifyHeader, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -6813,9 +7087,16 @@ module Fox
      
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: ESCNotification, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -6828,27 +7109,29 @@ module Fox
    class ETextRange < TextRange
      
      
-     def initialize(start, last, size)
+     def initialize(start=(defined?(@@_start)?@@_start:nil), last=(defined?(@@_last)?@@_last:nil), size=(defined?(@@_size)?@@_size:nil))
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: ETextRange, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:start => :required, :last => :required, :size => :required})
              
-             def start var; @os.op[@os.ii].start = var; end
+         def start var; @@_start = var; end
              
-             def last var; @os.op[@os.ii].last = var; end
+         def last var; @@_last = var; end
              
-             def size var; @os.op[@os.ii].size = var; end
+         def size var; @@_size = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -6861,37 +7144,39 @@ module Fox
    class EFXScintilla < FXScintilla
      
      
-     def initialize(p, target=nil, selector=0, opts=0, x=0, y=0, width=0, height=0)
+     def initialize(p=(defined?(@@_p)?@@_p:nil), target=(defined?(@@_target)?@@_target:nil) || nil, selector=(defined?(@@_selector)?@@_selector:nil) || 0, opts=(defined?(@@_opts)?@@_opts:nil) || 0, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXScintilla, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
              
-             def p var; @os.op[@os.ii].p = var; end
+         def p var; @@_p = var; end
              
-             def target var; @os.op[@os.ii].target = var; end
+         def target var; @@_target = var; end
              
-             def selector var; @os.op[@os.ii].selector = var; end
+         def selector var; @@_selector = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -6904,33 +7189,35 @@ module Fox
    class EFXScrollArea < FXScrollArea
      
      
-     def initialize(parent, opts=0, x=0, y=0, width=0, height=0)
+     def initialize(parent=(defined?(@@_parent)?@@_parent:nil), opts=(defined?(@@_opts)?@@_opts:nil) || 0, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXScrollArea, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:parent => :required, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
              
-             def parent var; @os.op[@os.ii].parent = var; end
+         def parent var; @@_parent = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -6943,37 +7230,39 @@ module Fox
    class EFXScrollBar < FXScrollBar
      
      
-     def initialize(p, target=nil, selector=0, opts=SCROLLBAR_VERTICAL, x=0, y=0, width=0, height=0)
+     def initialize(p=(defined?(@@_p)?@@_p:nil), target=(defined?(@@_target)?@@_target:nil) || nil, selector=(defined?(@@_selector)?@@_selector:nil) || 0, opts=(defined?(@@_opts)?@@_opts:nil) || SCROLLBAR_VERTICAL, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXScrollBar, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => SCROLLBAR_VERTICAL, :x => 0, :y => 0, :width => 0, :height => 0})
              
-             def p var; @os.op[@os.ii].p = var; end
+         def p var; @@_p = var; end
              
-             def target var; @os.op[@os.ii].target = var; end
+         def target var; @@_target = var; end
              
-             def selector var; @os.op[@os.ii].selector = var; end
+         def selector var; @@_selector = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -6986,23 +7275,25 @@ module Fox
    class EFXScrollCorner < FXScrollCorner
      
      
-     def initialize(p)
+     def initialize(p=(defined?(@@_p)?@@_p:nil))
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXScrollCorner, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:p => :required})
              
-             def p var; @os.op[@os.ii].p = var; end
+         def p var; @@_p = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -7015,27 +7306,29 @@ module Fox
    class EFXScrollPane < FXScrollPane
      
      
-     def initialize(owner, nvis, opts=0)
+     def initialize(owner=(defined?(@@_owner)?@@_owner:nil), nvis=(defined?(@@_nvis)?@@_nvis:nil), opts=(defined?(@@_opts)?@@_opts:nil) || 0)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXScrollPane, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:owner => :required, :nvis => :required, :opts => 0})
              
-             def owner var; @os.op[@os.ii].owner = var; end
+         def owner var; @@_owner = var; end
              
-             def nvis var; @os.op[@os.ii].nvis = var; end
+         def nvis var; @@_nvis = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -7048,33 +7341,35 @@ module Fox
    class EFXScrollWindow < FXScrollWindow
      
      
-     def initialize(p, opts=0, x=0, y=0, width=0, height=0)
+     def initialize(p=(defined?(@@_p)?@@_p:nil), opts=(defined?(@@_opts)?@@_opts:nil) || 0, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXScrollWindow, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:p => :required, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
              
-             def p var; @os.op[@os.ii].p = var; end
+         def p var; @@_p = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -7087,37 +7382,39 @@ module Fox
    class EFXSearchDialog < FXSearchDialog
      
      
-     def initialize(owner, caption, ic=nil, opts=0, x=0, y=0, width=0, height=0)
+     def initialize(owner=(defined?(@@_owner)?@@_owner:nil), caption=(defined?(@@_caption)?@@_caption:nil), ic=(defined?(@@_ic)?@@_ic:nil) || nil, opts=(defined?(@@_opts)?@@_opts:nil) || 0, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXSearchDialog, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:owner => :required, :caption => :required, :ic => nil, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
              
-             def owner var; @os.op[@os.ii].owner = var; end
+         def owner var; @@_owner = var; end
              
-             def caption var; @os.op[@os.ii].caption = var; end
+         def caption var; @@_caption = var; end
              
-             def ic var; @os.op[@os.ii].ic = var; end
+         def ic var; @@_ic = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -7130,41 +7427,43 @@ module Fox
    class EFXSeparator < FXSeparator
      
      
-     def initialize(p, opts=SEPARATOR_GROOVE|LAYOUT_FILL_X, x=0, y=0, width=0, height=0, padLeft=0, padRight=0, padTop=0, padBottom=0)
+     def initialize(p=(defined?(@@_p)?@@_p:nil), opts=(defined?(@@_opts)?@@_opts:nil) || SEPARATOR_GROOVE|LAYOUT_FILL_X, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0, padLeft=(defined?(@@_padLeft)?@@_padLeft:nil) || 0, padRight=(defined?(@@_padRight)?@@_padRight:nil) || 0, padTop=(defined?(@@_padTop)?@@_padTop:nil) || 0, padBottom=(defined?(@@_padBottom)?@@_padBottom:nil) || 0)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXSeparator, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:p => :required, :opts => SEPARATOR_GROOVE|LAYOUT_FILL_X, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 0, :padRight => 0, :padTop => 0, :padBottom => 0})
              
-             def p var; @os.op[@os.ii].p = var; end
+         def p var; @@_p = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def pad_left var; @os.op[@os.ii].padLeft = var; end
+         def pad_left var; @@_padLeft = var; end
              
-             def pad_right var; @os.op[@os.ii].padRight = var; end
+         def pad_right var; @@_padRight = var; end
              
-             def pad_top var; @os.op[@os.ii].padTop = var; end
+         def pad_top var; @@_padTop = var; end
              
-             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+         def pad_bottom var; @@_padBottom = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -7177,41 +7476,43 @@ module Fox
    class EFXHorizontalSeparator < FXHorizontalSeparator
      
      
-     def initialize(p, opts=SEPARATOR_GROOVE|LAYOUT_FILL_X, x=0, y=0, width=0, height=0, padLeft=1, padRight=1, padTop=0, padBottom=0)
+     def initialize(p=(defined?(@@_p)?@@_p:nil), opts=(defined?(@@_opts)?@@_opts:nil) || SEPARATOR_GROOVE|LAYOUT_FILL_X, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0, padLeft=(defined?(@@_padLeft)?@@_padLeft:nil) || 1, padRight=(defined?(@@_padRight)?@@_padRight:nil) || 1, padTop=(defined?(@@_padTop)?@@_padTop:nil) || 0, padBottom=(defined?(@@_padBottom)?@@_padBottom:nil) || 0)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXHorizontalSeparator, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:p => :required, :opts => SEPARATOR_GROOVE|LAYOUT_FILL_X, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 1, :padRight => 1, :padTop => 0, :padBottom => 0})
              
-             def p var; @os.op[@os.ii].p = var; end
+         def p var; @@_p = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def pad_left var; @os.op[@os.ii].padLeft = var; end
+         def pad_left var; @@_padLeft = var; end
              
-             def pad_right var; @os.op[@os.ii].padRight = var; end
+         def pad_right var; @@_padRight = var; end
              
-             def pad_top var; @os.op[@os.ii].padTop = var; end
+         def pad_top var; @@_padTop = var; end
              
-             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+         def pad_bottom var; @@_padBottom = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -7224,41 +7525,43 @@ module Fox
    class EFXVerticalSeparator < FXVerticalSeparator
      
      
-     def initialize(p, opts=SEPARATOR_GROOVE|LAYOUT_FILL_Y, x=0, y=0, width=0, height=0, padLeft=0, padRight=0, padTop=1, padBottom=1)
+     def initialize(p=(defined?(@@_p)?@@_p:nil), opts=(defined?(@@_opts)?@@_opts:nil) || SEPARATOR_GROOVE|LAYOUT_FILL_Y, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0, padLeft=(defined?(@@_padLeft)?@@_padLeft:nil) || 0, padRight=(defined?(@@_padRight)?@@_padRight:nil) || 0, padTop=(defined?(@@_padTop)?@@_padTop:nil) || 1, padBottom=(defined?(@@_padBottom)?@@_padBottom:nil) || 1)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXVerticalSeparator, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:p => :required, :opts => SEPARATOR_GROOVE|LAYOUT_FILL_Y, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 0, :padRight => 0, :padTop => 1, :padBottom => 1})
              
-             def p var; @os.op[@os.ii].p = var; end
+         def p var; @@_p = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def pad_left var; @os.op[@os.ii].padLeft = var; end
+         def pad_left var; @@_padLeft = var; end
              
-             def pad_right var; @os.op[@os.ii].padRight = var; end
+         def pad_right var; @@_padRight = var; end
              
-             def pad_top var; @os.op[@os.ii].padTop = var; end
+         def pad_top var; @@_padTop = var; end
              
-             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+         def pad_bottom var; @@_padBottom = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -7272,9 +7575,16 @@ module Fox
      
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXSettings, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -7288,9 +7598,16 @@ module Fox
      
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXShell, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -7303,49 +7620,51 @@ module Fox
    class EFXShutterItem < FXShutterItem
      
      
-     def initialize(p, text="", icon=nil, opts=0, x=0, y=0, width=0, height=0, padLeft=DEFAULT_SPACING, padRight=DEFAULT_SPACING, padTop=DEFAULT_SPACING, padBottom=DEFAULT_SPACING, hSpacing=DEFAULT_SPACING, vSpacing=DEFAULT_SPACING)
+     def initialize(p=(defined?(@@_p)?@@_p:nil), text=(defined?(@@_text)?@@_text:nil) || "", icon=(defined?(@@_icon)?@@_icon:nil) || nil, opts=(defined?(@@_opts)?@@_opts:nil) || 0, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0, padLeft=(defined?(@@_padLeft)?@@_padLeft:nil) || DEFAULT_SPACING, padRight=(defined?(@@_padRight)?@@_padRight:nil) || DEFAULT_SPACING, padTop=(defined?(@@_padTop)?@@_padTop:nil) || DEFAULT_SPACING, padBottom=(defined?(@@_padBottom)?@@_padBottom:nil) || DEFAULT_SPACING, hSpacing=(defined?(@@_hSpacing)?@@_hSpacing:nil) || DEFAULT_SPACING, vSpacing=(defined?(@@_vSpacing)?@@_vSpacing:nil) || DEFAULT_SPACING)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXShutterItem, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:p => :required, :text => "", :icon => nil, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_SPACING, :padRight => DEFAULT_SPACING, :padTop => DEFAULT_SPACING, :padBottom => DEFAULT_SPACING, :hSpacing => DEFAULT_SPACING, :vSpacing => DEFAULT_SPACING})
              
-             def p var; @os.op[@os.ii].p = var; end
+         def p var; @@_p = var; end
              
-             def text var; @os.op[@os.ii].text = var; end
+         def text var; @@_text = var; end
              
-             def icon var; @os.op[@os.ii].icon = var; end
+         def icon var; @@_icon = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def pad_left var; @os.op[@os.ii].padLeft = var; end
+         def pad_left var; @@_padLeft = var; end
              
-             def pad_right var; @os.op[@os.ii].padRight = var; end
+         def pad_right var; @@_padRight = var; end
              
-             def pad_top var; @os.op[@os.ii].padTop = var; end
+         def pad_top var; @@_padTop = var; end
              
-             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+         def pad_bottom var; @@_padBottom = var; end
              
-             def h_spacing var; @os.op[@os.ii].hSpacing = var; end
+         def h_spacing var; @@_hSpacing = var; end
              
-             def v_spacing var; @os.op[@os.ii].vSpacing = var; end
+         def v_spacing var; @@_vSpacing = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -7358,49 +7677,51 @@ module Fox
    class EFXShutter < FXShutter
      
      
-     def initialize(p, target=nil, selector=0, opts=0, x=0, y=0, width=0, height=0, padLeft=DEFAULT_SPACING, padRight=DEFAULT_SPACING, padTop=DEFAULT_SPACING, padBottom=DEFAULT_SPACING, hSpacing=DEFAULT_SPACING, vSpacing=DEFAULT_SPACING)
+     def initialize(p=(defined?(@@_p)?@@_p:nil), target=(defined?(@@_target)?@@_target:nil) || nil, selector=(defined?(@@_selector)?@@_selector:nil) || 0, opts=(defined?(@@_opts)?@@_opts:nil) || 0, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0, padLeft=(defined?(@@_padLeft)?@@_padLeft:nil) || DEFAULT_SPACING, padRight=(defined?(@@_padRight)?@@_padRight:nil) || DEFAULT_SPACING, padTop=(defined?(@@_padTop)?@@_padTop:nil) || DEFAULT_SPACING, padBottom=(defined?(@@_padBottom)?@@_padBottom:nil) || DEFAULT_SPACING, hSpacing=(defined?(@@_hSpacing)?@@_hSpacing:nil) || DEFAULT_SPACING, vSpacing=(defined?(@@_vSpacing)?@@_vSpacing:nil) || DEFAULT_SPACING)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXShutter, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_SPACING, :padRight => DEFAULT_SPACING, :padTop => DEFAULT_SPACING, :padBottom => DEFAULT_SPACING, :hSpacing => DEFAULT_SPACING, :vSpacing => DEFAULT_SPACING})
              
-             def p var; @os.op[@os.ii].p = var; end
+         def p var; @@_p = var; end
              
-             def target var; @os.op[@os.ii].target = var; end
+         def target var; @@_target = var; end
              
-             def selector var; @os.op[@os.ii].selector = var; end
+         def selector var; @@_selector = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def pad_left var; @os.op[@os.ii].padLeft = var; end
+         def pad_left var; @@_padLeft = var; end
              
-             def pad_right var; @os.op[@os.ii].padRight = var; end
+         def pad_right var; @@_padRight = var; end
              
-             def pad_top var; @os.op[@os.ii].padTop = var; end
+         def pad_top var; @@_padTop = var; end
              
-             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+         def pad_bottom var; @@_padBottom = var; end
              
-             def h_spacing var; @os.op[@os.ii].hSpacing = var; end
+         def h_spacing var; @@_hSpacing = var; end
              
-             def v_spacing var; @os.op[@os.ii].vSpacing = var; end
+         def v_spacing var; @@_vSpacing = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -7413,38 +7734,35 @@ module Fox
    class EFXSize < FXSize
      
      
-     def initialize(s)
+     def initialize(s=(defined?(@@_s)?@@_s:nil))
        super
      end
      
-     def initialize(ww, hh)
+     def initialize(ww=(defined?(@@_ww)?@@_ww:nil), hh=(defined?(@@_hh)?@@_hh:nil))
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXSize, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:s => :required})
              
-             def s var; @os.op[@os.ii].s = var; end
+         def s var; @@_s = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
          
-             @os.op[1] = OpenStruct.new({:ww => :required, :hh => :required})
              
-             def ww var; @os.op[@os.ii].ww = var; end
+         def ww var; @@_ww = var; end
              
-             def hh var; @os.op[@os.ii].hh = var; end
+         def hh var; @@_hh = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -7457,45 +7775,47 @@ module Fox
    class EFXSlider < FXSlider
      
      
-     def initialize(p, target=nil, selector=0, opts=SLIDER_NORMAL, x=0, y=0, width=0, height=0, padLeft=0, padRight=0, padTop=0, padBottom=0)
+     def initialize(p=(defined?(@@_p)?@@_p:nil), target=(defined?(@@_target)?@@_target:nil) || nil, selector=(defined?(@@_selector)?@@_selector:nil) || 0, opts=(defined?(@@_opts)?@@_opts:nil) || SLIDER_NORMAL, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0, padLeft=(defined?(@@_padLeft)?@@_padLeft:nil) || 0, padRight=(defined?(@@_padRight)?@@_padRight:nil) || 0, padTop=(defined?(@@_padTop)?@@_padTop:nil) || 0, padBottom=(defined?(@@_padBottom)?@@_padBottom:nil) || 0)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXSlider, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => SLIDER_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 0, :padRight => 0, :padTop => 0, :padBottom => 0})
              
-             def p var; @os.op[@os.ii].p = var; end
+         def p var; @@_p = var; end
              
-             def target var; @os.op[@os.ii].target = var; end
+         def target var; @@_target = var; end
              
-             def selector var; @os.op[@os.ii].selector = var; end
+         def selector var; @@_selector = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def pad_left var; @os.op[@os.ii].padLeft = var; end
+         def pad_left var; @@_padLeft = var; end
              
-             def pad_right var; @os.op[@os.ii].padRight = var; end
+         def pad_right var; @@_padRight = var; end
              
-             def pad_top var; @os.op[@os.ii].padTop = var; end
+         def pad_top var; @@_padTop = var; end
              
-             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+         def pad_bottom var; @@_padBottom = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -7508,70 +7828,57 @@ module Fox
    class EFXSphered < FXSphered
      
      
-     def initialize(otherSphere)
+     def initialize(otherSphere=(defined?(@@_otherSphere)?@@_otherSphere:nil))
        super
      end
      
-     def initialize(cen, rad=0.0)
+     def initialize(cen=(defined?(@@_cen)?@@_cen:nil), rad=(defined?(@@_rad)?@@_rad:nil) || 0.0)
        super
      end
      
-     def initialize(x, y, z, rad=0.0)
+     def initialize(x=(defined?(@@_x)?@@_x:nil), y=(defined?(@@_y)?@@_y:nil), z=(defined?(@@_z)?@@_z:nil), rad=(defined?(@@_rad)?@@_rad:nil) || 0.0)
        super
      end
      
-     def initialize(bounds)
+     def initialize(bounds=(defined?(@@_bounds)?@@_bounds:nil))
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXSphered, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:otherSphere => :required})
              
-             def other_sphere var; @os.op[@os.ii].otherSphere = var; end
+         def other_sphere var; @@_otherSphere = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
          
-             @os.op[1] = OpenStruct.new({:cen => :required, :rad => 0.0})
              
-             def cen var; @os.op[@os.ii].cen = var; end
+         def cen var; @@_cen = var; end
              
-             def rad var; @os.op[@os.ii].rad = var; end
+         def rad var; @@_rad = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
          
-             @os.op[2] = OpenStruct.new({:x => :required, :y => :required, :z => :required, :rad => 0.0})
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def z var; @os.op[@os.ii].z = var; end
+         def z var; @@_z = var; end
              
-             def rad var; @os.op[@os.ii].rad = var; end
+         def rad var; @@_rad = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
          
-             @os.op[3] = OpenStruct.new({:bounds => :required})
              
-             def bounds var; @os.op[@os.ii].bounds = var; end
+         def bounds var; @@_bounds = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -7584,70 +7891,57 @@ module Fox
    class EFXSpheref < FXSpheref
      
      
-     def initialize(otherSphere)
+     def initialize(otherSphere=(defined?(@@_otherSphere)?@@_otherSphere:nil))
        super
      end
      
-     def initialize(cen, rad=0.0)
+     def initialize(cen=(defined?(@@_cen)?@@_cen:nil), rad=(defined?(@@_rad)?@@_rad:nil) || 0.0)
        super
      end
      
-     def initialize(x, y, z, rad=0.0)
+     def initialize(x=(defined?(@@_x)?@@_x:nil), y=(defined?(@@_y)?@@_y:nil), z=(defined?(@@_z)?@@_z:nil), rad=(defined?(@@_rad)?@@_rad:nil) || 0.0)
        super
      end
      
-     def initialize(bounds)
+     def initialize(bounds=(defined?(@@_bounds)?@@_bounds:nil))
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXSpheref, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:otherSphere => :required})
              
-             def other_sphere var; @os.op[@os.ii].otherSphere = var; end
+         def other_sphere var; @@_otherSphere = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
          
-             @os.op[1] = OpenStruct.new({:cen => :required, :rad => 0.0})
              
-             def cen var; @os.op[@os.ii].cen = var; end
+         def cen var; @@_cen = var; end
              
-             def rad var; @os.op[@os.ii].rad = var; end
+         def rad var; @@_rad = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
          
-             @os.op[2] = OpenStruct.new({:x => :required, :y => :required, :z => :required, :rad => 0.0})
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def z var; @os.op[@os.ii].z = var; end
+         def z var; @@_z = var; end
              
-             def rad var; @os.op[@os.ii].rad = var; end
+         def rad var; @@_rad = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
          
-             @os.op[3] = OpenStruct.new({:bounds => :required})
              
-             def bounds var; @os.op[@os.ii].bounds = var; end
+         def bounds var; @@_bounds = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -7660,47 +7954,49 @@ module Fox
    class EFXSpinner < FXSpinner
      
      
-     def initialize(p, cols, target=nil, selector=0, opts=SPIN_NORMAL, x=0, y=0, width=0, height=0, padLeft=DEFAULT_PAD, padRight=DEFAULT_PAD, padTop=DEFAULT_PAD, padBottom=DEFAULT_PAD)
+     def initialize(p=(defined?(@@_p)?@@_p:nil), cols=(defined?(@@_cols)?@@_cols:nil), target=(defined?(@@_target)?@@_target:nil) || nil, selector=(defined?(@@_selector)?@@_selector:nil) || 0, opts=(defined?(@@_opts)?@@_opts:nil) || SPIN_NORMAL, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0, padLeft=(defined?(@@_padLeft)?@@_padLeft:nil) || DEFAULT_PAD, padRight=(defined?(@@_padRight)?@@_padRight:nil) || DEFAULT_PAD, padTop=(defined?(@@_padTop)?@@_padTop:nil) || DEFAULT_PAD, padBottom=(defined?(@@_padBottom)?@@_padBottom:nil) || DEFAULT_PAD)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXSpinner, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:p => :required, :cols => :required, :target => nil, :selector => 0, :opts => SPIN_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
              
-             def p var; @os.op[@os.ii].p = var; end
+         def p var; @@_p = var; end
              
-             def cols var; @os.op[@os.ii].cols = var; end
+         def cols var; @@_cols = var; end
              
-             def target var; @os.op[@os.ii].target = var; end
+         def target var; @@_target = var; end
              
-             def selector var; @os.op[@os.ii].selector = var; end
+         def selector var; @@_selector = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def pad_left var; @os.op[@os.ii].padLeft = var; end
+         def pad_left var; @@_padLeft = var; end
              
-             def pad_right var; @os.op[@os.ii].padRight = var; end
+         def pad_right var; @@_padRight = var; end
              
-             def pad_top var; @os.op[@os.ii].padTop = var; end
+         def pad_top var; @@_padTop = var; end
              
-             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+         def pad_bottom var; @@_padBottom = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -7713,29 +8009,31 @@ module Fox
    class EFXSplashWindow < FXSplashWindow
      
      
-     def initialize(owner, icon, opts=SPLASH_SIMPLE, ms=5000)
+     def initialize(owner=(defined?(@@_owner)?@@_owner:nil), icon=(defined?(@@_icon)?@@_icon:nil), opts=(defined?(@@_opts)?@@_opts:nil) || SPLASH_SIMPLE, ms=(defined?(@@_ms)?@@_ms:nil) || 5000)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXSplashWindow, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:owner => :required, :icon => :required, :opts => SPLASH_SIMPLE, :ms => 5000})
              
-             def owner var; @os.op[@os.ii].owner = var; end
+         def owner var; @@_owner = var; end
              
-             def icon var; @os.op[@os.ii].icon = var; end
+         def icon var; @@_icon = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def ms var; @os.op[@os.ii].ms = var; end
+         def ms var; @@_ms = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -7748,60 +8046,57 @@ module Fox
    class EFXSplitter < FXSplitter
      
      
-     def initialize(p, opts=SPLITTER_NORMAL, x=0, y=0, width=0, height=0)
+     def initialize(p=(defined?(@@_p)?@@_p:nil), opts=(defined?(@@_opts)?@@_opts:nil) || SPLITTER_NORMAL, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0)
        super
      end
      
-     def initialize(p, tgt, sel, opts=SPLITTER_NORMAL, x=0, y=0, width=0, height=0)
+     def initialize(p=(defined?(@@_p)?@@_p:nil), tgt=(defined?(@@_tgt)?@@_tgt:nil), sel=(defined?(@@_sel)?@@_sel:nil), opts=(defined?(@@_opts)?@@_opts:nil) || SPLITTER_NORMAL, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXSplitter, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:p => :required, :opts => SPLITTER_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0})
              
-             def p var; @os.op[@os.ii].p = var; end
+         def p var; @@_p = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
          
-             @os.op[1] = OpenStruct.new({:p => :required, :tgt => :required, :sel => :required, :opts => SPLITTER_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0})
              
-             def p var; @os.op[@os.ii].p = var; end
+         def p var; @@_p = var; end
              
-             def tgt var; @os.op[@os.ii].tgt = var; end
+         def tgt var; @@_tgt = var; end
              
-             def sel var; @os.op[@os.ii].sel = var; end
+         def sel var; @@_sel = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -7814,49 +8109,51 @@ module Fox
    class EFXSpring < FXSpring
      
      
-     def initialize(p, opts=0, relw=0, relh=0, x=0, y=0, width=0, height=0, padLeft=DEFAULT_SPACING, padRight=DEFAULT_SPACING, padTop=DEFAULT_SPACING, padBottom=DEFAULT_SPACING, hSpacing=DEFAULT_SPACING, vSpacing=DEFAULT_SPACING)
+     def initialize(p=(defined?(@@_p)?@@_p:nil), opts=(defined?(@@_opts)?@@_opts:nil) || 0, relw=(defined?(@@_relw)?@@_relw:nil) || 0, relh=(defined?(@@_relh)?@@_relh:nil) || 0, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0, padLeft=(defined?(@@_padLeft)?@@_padLeft:nil) || DEFAULT_SPACING, padRight=(defined?(@@_padRight)?@@_padRight:nil) || DEFAULT_SPACING, padTop=(defined?(@@_padTop)?@@_padTop:nil) || DEFAULT_SPACING, padBottom=(defined?(@@_padBottom)?@@_padBottom:nil) || DEFAULT_SPACING, hSpacing=(defined?(@@_hSpacing)?@@_hSpacing:nil) || DEFAULT_SPACING, vSpacing=(defined?(@@_vSpacing)?@@_vSpacing:nil) || DEFAULT_SPACING)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXSpring, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:p => :required, :opts => 0, :relw => 0, :relh => 0, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_SPACING, :padRight => DEFAULT_SPACING, :padTop => DEFAULT_SPACING, :padBottom => DEFAULT_SPACING, :hSpacing => DEFAULT_SPACING, :vSpacing => DEFAULT_SPACING})
              
-             def p var; @os.op[@os.ii].p = var; end
+         def p var; @@_p = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def relw var; @os.op[@os.ii].relw = var; end
+         def relw var; @@_relw = var; end
              
-             def relh var; @os.op[@os.ii].relh = var; end
+         def relh var; @@_relh = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def pad_left var; @os.op[@os.ii].padLeft = var; end
+         def pad_left var; @@_padLeft = var; end
              
-             def pad_right var; @os.op[@os.ii].padRight = var; end
+         def pad_right var; @@_padRight = var; end
              
-             def pad_top var; @os.op[@os.ii].padTop = var; end
+         def pad_top var; @@_padTop = var; end
              
-             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+         def pad_bottom var; @@_padBottom = var; end
              
-             def h_spacing var; @os.op[@os.ii].hSpacing = var; end
+         def h_spacing var; @@_hSpacing = var; end
              
-             def v_spacing var; @os.op[@os.ii].vSpacing = var; end
+         def v_spacing var; @@_vSpacing = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -7869,45 +8166,47 @@ module Fox
    class EFXStatusBar < FXStatusBar
      
      
-     def initialize(p, opts=0, x=0, y=0, width=0, height=0, padLeft=3, padRight=3, padTop=2, padBottom=2, hSpacing=4, vSpacing=0)
+     def initialize(p=(defined?(@@_p)?@@_p:nil), opts=(defined?(@@_opts)?@@_opts:nil) || 0, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0, padLeft=(defined?(@@_padLeft)?@@_padLeft:nil) || 3, padRight=(defined?(@@_padRight)?@@_padRight:nil) || 3, padTop=(defined?(@@_padTop)?@@_padTop:nil) || 2, padBottom=(defined?(@@_padBottom)?@@_padBottom:nil) || 2, hSpacing=(defined?(@@_hSpacing)?@@_hSpacing:nil) || 4, vSpacing=(defined?(@@_vSpacing)?@@_vSpacing:nil) || 0)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXStatusBar, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:p => :required, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 3, :padRight => 3, :padTop => 2, :padBottom => 2, :hSpacing => 4, :vSpacing => 0})
              
-             def p var; @os.op[@os.ii].p = var; end
+         def p var; @@_p = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def pad_left var; @os.op[@os.ii].padLeft = var; end
+         def pad_left var; @@_padLeft = var; end
              
-             def pad_right var; @os.op[@os.ii].padRight = var; end
+         def pad_right var; @@_padRight = var; end
              
-             def pad_top var; @os.op[@os.ii].padTop = var; end
+         def pad_top var; @@_padTop = var; end
              
-             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+         def pad_bottom var; @@_padBottom = var; end
              
-             def h_spacing var; @os.op[@os.ii].hSpacing = var; end
+         def h_spacing var; @@_hSpacing = var; end
              
-             def v_spacing var; @os.op[@os.ii].vSpacing = var; end
+         def v_spacing var; @@_vSpacing = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -7920,27 +8219,29 @@ module Fox
    class EFXStatusLine < FXStatusLine
      
      
-     def initialize(p, target=nil, selector=0)
+     def initialize(p=(defined?(@@_p)?@@_p:nil), target=(defined?(@@_target)?@@_target:nil) || nil, selector=(defined?(@@_selector)?@@_selector:nil) || 0)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXStatusLine, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0})
              
-             def p var; @os.op[@os.ii].p = var; end
+         def p var; @@_p = var; end
              
-             def target var; @os.op[@os.ii].target = var; end
+         def target var; @@_target = var; end
              
-             def selector var; @os.op[@os.ii].selector = var; end
+         def selector var; @@_selector = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -7953,23 +8254,25 @@ module Fox
    class EFXStream < FXStream
      
      
-     def initialize(cont=nil)
+     def initialize(cont=(defined?(@@_cont)?@@_cont:nil) || nil)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXStream, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:cont => nil})
              
-             def cont var; @os.op[@os.ii].cont = var; end
+         def cont var; @@_cont = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -7983,9 +8286,16 @@ module Fox
      
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXStringDict, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -7998,41 +8308,43 @@ module Fox
    class EFXSwitcher < FXSwitcher
      
      
-     def initialize(p, opts=0, x=0, y=0, width=0, height=0, padLeft=DEFAULT_SPACING, padRight=DEFAULT_SPACING, padTop=DEFAULT_SPACING, padBottom=DEFAULT_SPACING)
+     def initialize(p=(defined?(@@_p)?@@_p:nil), opts=(defined?(@@_opts)?@@_opts:nil) || 0, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0, padLeft=(defined?(@@_padLeft)?@@_padLeft:nil) || DEFAULT_SPACING, padRight=(defined?(@@_padRight)?@@_padRight:nil) || DEFAULT_SPACING, padTop=(defined?(@@_padTop)?@@_padTop:nil) || DEFAULT_SPACING, padBottom=(defined?(@@_padBottom)?@@_padBottom:nil) || DEFAULT_SPACING)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXSwitcher, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:p => :required, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_SPACING, :padRight => DEFAULT_SPACING, :padTop => DEFAULT_SPACING, :padBottom => DEFAULT_SPACING})
              
-             def p var; @os.op[@os.ii].p = var; end
+         def p var; @@_p = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def pad_left var; @os.op[@os.ii].padLeft = var; end
+         def pad_left var; @@_padLeft = var; end
              
-             def pad_right var; @os.op[@os.ii].padRight = var; end
+         def pad_right var; @@_padRight = var; end
              
-             def pad_top var; @os.op[@os.ii].padTop = var; end
+         def pad_top var; @@_padTop = var; end
              
-             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+         def pad_bottom var; @@_padBottom = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -8045,33 +8357,35 @@ module Fox
    class EFXTGAIcon < FXTGAIcon
      
      
-     def initialize(a, pix=nil, clr=0, opts=0, width=1, height=1)
+     def initialize(a=(defined?(@@_a)?@@_a:nil), pix=(defined?(@@_pix)?@@_pix:nil) || nil, clr=(defined?(@@_clr)?@@_clr:nil) || 0, opts=(defined?(@@_opts)?@@_opts:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 1, height=(defined?(@@_height)?@@_height:nil) || 1)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXTGAIcon, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:a => :required, :pix => nil, :clr => 0, :opts => 0, :width => 1, :height => 1})
              
-             def a var; @os.op[@os.ii].a = var; end
+         def a var; @@_a = var; end
              
-             def pix var; @os.op[@os.ii].pix = var; end
+         def pix var; @@_pix = var; end
              
-             def clr var; @os.op[@os.ii].clr = var; end
+         def clr var; @@_clr = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -8084,31 +8398,33 @@ module Fox
    class EFXTGAImage < FXTGAImage
      
      
-     def initialize(a, pix=nil, opts=0, width=1, height=1)
+     def initialize(a=(defined?(@@_a)?@@_a:nil), pix=(defined?(@@_pix)?@@_pix:nil) || nil, opts=(defined?(@@_opts)?@@_opts:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 1, height=(defined?(@@_height)?@@_height:nil) || 1)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXTGAImage, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:a => :required, :pix => nil, :opts => 0, :width => 1, :height => 1})
              
-             def a var; @os.op[@os.ii].a = var; end
+         def a var; @@_a = var; end
              
-             def pix var; @os.op[@os.ii].pix = var; end
+         def pix var; @@_pix = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -8121,33 +8437,35 @@ module Fox
    class EFXTIFIcon < FXTIFIcon
      
      
-     def initialize(a, pix=nil, clr=0, opts=0, width=1, height=1)
+     def initialize(a=(defined?(@@_a)?@@_a:nil), pix=(defined?(@@_pix)?@@_pix:nil) || nil, clr=(defined?(@@_clr)?@@_clr:nil) || 0, opts=(defined?(@@_opts)?@@_opts:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 1, height=(defined?(@@_height)?@@_height:nil) || 1)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXTIFIcon, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:a => :required, :pix => nil, :clr => 0, :opts => 0, :width => 1, :height => 1})
              
-             def a var; @os.op[@os.ii].a = var; end
+         def a var; @@_a = var; end
              
-             def pix var; @os.op[@os.ii].pix = var; end
+         def pix var; @@_pix = var; end
              
-             def clr var; @os.op[@os.ii].clr = var; end
+         def clr var; @@_clr = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -8160,31 +8478,33 @@ module Fox
    class EFXTIFImage < FXTIFImage
      
      
-     def initialize(a, pix=nil, opts=0, width=1, height=1)
+     def initialize(a=(defined?(@@_a)?@@_a:nil), pix=(defined?(@@_pix)?@@_pix:nil) || nil, opts=(defined?(@@_opts)?@@_opts:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 1, height=(defined?(@@_height)?@@_height:nil) || 1)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXTIFImage, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:a => :required, :pix => nil, :opts => 0, :width => 1, :height => 1})
              
-             def a var; @os.op[@os.ii].a = var; end
+         def a var; @@_a = var; end
              
-             def pix var; @os.op[@os.ii].pix = var; end
+         def pix var; @@_pix = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -8197,45 +8517,47 @@ module Fox
    class EFXTabBar < FXTabBar
      
      
-     def initialize(p, target=nil, selector=0, opts=TABBOOK_NORMAL, x=0, y=0, width=0, height=0, padLeft=DEFAULT_SPACING, padRight=DEFAULT_SPACING, padTop=DEFAULT_SPACING, padBottom=DEFAULT_SPACING)
+     def initialize(p=(defined?(@@_p)?@@_p:nil), target=(defined?(@@_target)?@@_target:nil) || nil, selector=(defined?(@@_selector)?@@_selector:nil) || 0, opts=(defined?(@@_opts)?@@_opts:nil) || TABBOOK_NORMAL, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0, padLeft=(defined?(@@_padLeft)?@@_padLeft:nil) || DEFAULT_SPACING, padRight=(defined?(@@_padRight)?@@_padRight:nil) || DEFAULT_SPACING, padTop=(defined?(@@_padTop)?@@_padTop:nil) || DEFAULT_SPACING, padBottom=(defined?(@@_padBottom)?@@_padBottom:nil) || DEFAULT_SPACING)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXTabBar, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => TABBOOK_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_SPACING, :padRight => DEFAULT_SPACING, :padTop => DEFAULT_SPACING, :padBottom => DEFAULT_SPACING})
              
-             def p var; @os.op[@os.ii].p = var; end
+         def p var; @@_p = var; end
              
-             def target var; @os.op[@os.ii].target = var; end
+         def target var; @@_target = var; end
              
-             def selector var; @os.op[@os.ii].selector = var; end
+         def selector var; @@_selector = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def pad_left var; @os.op[@os.ii].padLeft = var; end
+         def pad_left var; @@_padLeft = var; end
              
-             def pad_right var; @os.op[@os.ii].padRight = var; end
+         def pad_right var; @@_padRight = var; end
              
-             def pad_top var; @os.op[@os.ii].padTop = var; end
+         def pad_top var; @@_padTop = var; end
              
-             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+         def pad_bottom var; @@_padBottom = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -8248,45 +8570,47 @@ module Fox
    class EFXTabBook < FXTabBook
      
      
-     def initialize(p, target=nil, selector=0, opts=TABBOOK_NORMAL, x=0, y=0, width=0, height=0, padLeft=DEFAULT_SPACING, padRight=DEFAULT_SPACING, padTop=DEFAULT_SPACING, padBottom=DEFAULT_SPACING)
+     def initialize(p=(defined?(@@_p)?@@_p:nil), target=(defined?(@@_target)?@@_target:nil) || nil, selector=(defined?(@@_selector)?@@_selector:nil) || 0, opts=(defined?(@@_opts)?@@_opts:nil) || TABBOOK_NORMAL, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0, padLeft=(defined?(@@_padLeft)?@@_padLeft:nil) || DEFAULT_SPACING, padRight=(defined?(@@_padRight)?@@_padRight:nil) || DEFAULT_SPACING, padTop=(defined?(@@_padTop)?@@_padTop:nil) || DEFAULT_SPACING, padBottom=(defined?(@@_padBottom)?@@_padBottom:nil) || DEFAULT_SPACING)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXTabBook, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => TABBOOK_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_SPACING, :padRight => DEFAULT_SPACING, :padTop => DEFAULT_SPACING, :padBottom => DEFAULT_SPACING})
              
-             def p var; @os.op[@os.ii].p = var; end
+         def p var; @@_p = var; end
              
-             def target var; @os.op[@os.ii].target = var; end
+         def target var; @@_target = var; end
              
-             def selector var; @os.op[@os.ii].selector = var; end
+         def selector var; @@_selector = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def pad_left var; @os.op[@os.ii].padLeft = var; end
+         def pad_left var; @@_padLeft = var; end
              
-             def pad_right var; @os.op[@os.ii].padRight = var; end
+         def pad_right var; @@_padRight = var; end
              
-             def pad_top var; @os.op[@os.ii].padTop = var; end
+         def pad_top var; @@_padTop = var; end
              
-             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+         def pad_bottom var; @@_padBottom = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -8299,45 +8623,47 @@ module Fox
    class EFXTabItem < FXTabItem
      
      
-     def initialize(p, text, ic=nil, opts=TAB_TOP_NORMAL, x=0, y=0, width=0, height=0, padLeft=DEFAULT_PAD, padRight=DEFAULT_PAD, padTop=DEFAULT_PAD, padBottom=DEFAULT_PAD)
+     def initialize(p=(defined?(@@_p)?@@_p:nil), text=(defined?(@@_text)?@@_text:nil), ic=(defined?(@@_ic)?@@_ic:nil) || nil, opts=(defined?(@@_opts)?@@_opts:nil) || TAB_TOP_NORMAL, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0, padLeft=(defined?(@@_padLeft)?@@_padLeft:nil) || DEFAULT_PAD, padRight=(defined?(@@_padRight)?@@_padRight:nil) || DEFAULT_PAD, padTop=(defined?(@@_padTop)?@@_padTop:nil) || DEFAULT_PAD, padBottom=(defined?(@@_padBottom)?@@_padBottom:nil) || DEFAULT_PAD)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXTabItem, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:p => :required, :text => :required, :ic => nil, :opts => TAB_TOP_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
              
-             def p var; @os.op[@os.ii].p = var; end
+         def p var; @@_p = var; end
              
-             def text var; @os.op[@os.ii].text = var; end
+         def text var; @@_text = var; end
              
-             def ic var; @os.op[@os.ii].ic = var; end
+         def ic var; @@_ic = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def pad_left var; @os.op[@os.ii].padLeft = var; end
+         def pad_left var; @@_padLeft = var; end
              
-             def pad_right var; @os.op[@os.ii].padRight = var; end
+         def pad_right var; @@_padRight = var; end
              
-             def pad_top var; @os.op[@os.ii].padTop = var; end
+         def pad_top var; @@_padTop = var; end
              
-             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+         def pad_bottom var; @@_padBottom = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -8351,9 +8677,16 @@ module Fox
      
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXTablePos, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -8367,9 +8700,16 @@ module Fox
      
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXTableRange, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -8382,27 +8722,29 @@ module Fox
    class EFXTableItem < FXTableItem
      
      
-     def initialize(text, icon=nil, data=nil)
+     def initialize(text=(defined?(@@_text)?@@_text:nil), icon=(defined?(@@_icon)?@@_icon:nil) || nil, data=(defined?(@@_data)?@@_data:nil) || nil)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXTableItem, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:text => :required, :icon => nil, :data => nil})
              
-             def text var; @os.op[@os.ii].text = var; end
+         def text var; @@_text = var; end
              
-             def icon var; @os.op[@os.ii].icon = var; end
+         def icon var; @@_icon = var; end
              
-             def data var; @os.op[@os.ii].data = var; end
+         def data var; @@_data = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -8415,45 +8757,47 @@ module Fox
    class EFXTable < FXTable
      
      
-     def initialize(p, target=nil, selector=0, opts=0, x=0, y=0, width=0, height=0, padLeft=DEFAULT_MARGIN, padRight=DEFAULT_MARGIN, padTop=DEFAULT_MARGIN, padBottom=DEFAULT_MARGIN)
+     def initialize(p=(defined?(@@_p)?@@_p:nil), target=(defined?(@@_target)?@@_target:nil) || nil, selector=(defined?(@@_selector)?@@_selector:nil) || 0, opts=(defined?(@@_opts)?@@_opts:nil) || 0, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0, padLeft=(defined?(@@_padLeft)?@@_padLeft:nil) || DEFAULT_MARGIN, padRight=(defined?(@@_padRight)?@@_padRight:nil) || DEFAULT_MARGIN, padTop=(defined?(@@_padTop)?@@_padTop:nil) || DEFAULT_MARGIN, padBottom=(defined?(@@_padBottom)?@@_padBottom:nil) || DEFAULT_MARGIN)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXTable, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_MARGIN, :padRight => DEFAULT_MARGIN, :padTop => DEFAULT_MARGIN, :padBottom => DEFAULT_MARGIN})
              
-             def p var; @os.op[@os.ii].p = var; end
+         def p var; @@_p = var; end
              
-             def target var; @os.op[@os.ii].target = var; end
+         def target var; @@_target = var; end
              
-             def selector var; @os.op[@os.ii].selector = var; end
+         def selector var; @@_selector = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def pad_left var; @os.op[@os.ii].padLeft = var; end
+         def pad_left var; @@_padLeft = var; end
              
-             def pad_right var; @os.op[@os.ii].padRight = var; end
+         def pad_right var; @@_padRight = var; end
              
-             def pad_top var; @os.op[@os.ii].padTop = var; end
+         def pad_top var; @@_padTop = var; end
              
-             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+         def pad_bottom var; @@_padBottom = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -8467,9 +8811,16 @@ module Fox
      
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXHiliteStyle, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -8483,9 +8834,16 @@ module Fox
      
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXTextChange, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -8498,45 +8856,47 @@ module Fox
    class EFXText < FXText
      
      
-     def initialize(p, target=nil, selector=0, opts=0, x=0, y=0, width=0, height=0, padLeft=3, padRight=3, padTop=2, padBottom=2)
+     def initialize(p=(defined?(@@_p)?@@_p:nil), target=(defined?(@@_target)?@@_target:nil) || nil, selector=(defined?(@@_selector)?@@_selector:nil) || 0, opts=(defined?(@@_opts)?@@_opts:nil) || 0, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0, padLeft=(defined?(@@_padLeft)?@@_padLeft:nil) || 3, padRight=(defined?(@@_padRight)?@@_padRight:nil) || 3, padTop=(defined?(@@_padTop)?@@_padTop:nil) || 2, padBottom=(defined?(@@_padBottom)?@@_padBottom:nil) || 2)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXText, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 3, :padRight => 3, :padTop => 2, :padBottom => 2})
              
-             def p var; @os.op[@os.ii].p = var; end
+         def p var; @@_p = var; end
              
-             def target var; @os.op[@os.ii].target = var; end
+         def target var; @@_target = var; end
              
-             def selector var; @os.op[@os.ii].selector = var; end
+         def selector var; @@_selector = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def pad_left var; @os.op[@os.ii].padLeft = var; end
+         def pad_left var; @@_padLeft = var; end
              
-             def pad_right var; @os.op[@os.ii].padRight = var; end
+         def pad_right var; @@_padRight = var; end
              
-             def pad_top var; @os.op[@os.ii].padTop = var; end
+         def pad_top var; @@_padTop = var; end
              
-             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+         def pad_bottom var; @@_padBottom = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -8549,47 +8909,49 @@ module Fox
    class EFXTextField < FXTextField
      
      
-     def initialize(p, ncols, target=nil, selector=0, opts=TEXTFIELD_NORMAL, x=0, y=0, width=0, height=0, padLeft=DEFAULT_PAD, padRight=DEFAULT_PAD, padTop=DEFAULT_PAD, padBottom=DEFAULT_PAD)
+     def initialize(p=(defined?(@@_p)?@@_p:nil), ncols=(defined?(@@_ncols)?@@_ncols:nil), target=(defined?(@@_target)?@@_target:nil) || nil, selector=(defined?(@@_selector)?@@_selector:nil) || 0, opts=(defined?(@@_opts)?@@_opts:nil) || TEXTFIELD_NORMAL, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0, padLeft=(defined?(@@_padLeft)?@@_padLeft:nil) || DEFAULT_PAD, padRight=(defined?(@@_padRight)?@@_padRight:nil) || DEFAULT_PAD, padTop=(defined?(@@_padTop)?@@_padTop:nil) || DEFAULT_PAD, padBottom=(defined?(@@_padBottom)?@@_padBottom:nil) || DEFAULT_PAD)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXTextField, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:p => :required, :ncols => :required, :target => nil, :selector => 0, :opts => TEXTFIELD_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
              
-             def p var; @os.op[@os.ii].p = var; end
+         def p var; @@_p = var; end
              
-             def ncols var; @os.op[@os.ii].ncols = var; end
+         def ncols var; @@_ncols = var; end
              
-             def target var; @os.op[@os.ii].target = var; end
+         def target var; @@_target = var; end
              
-             def selector var; @os.op[@os.ii].selector = var; end
+         def selector var; @@_selector = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def pad_left var; @os.op[@os.ii].padLeft = var; end
+         def pad_left var; @@_padLeft = var; end
              
-             def pad_right var; @os.op[@os.ii].padRight = var; end
+         def pad_right var; @@_padRight = var; end
              
-             def pad_top var; @os.op[@os.ii].padTop = var; end
+         def pad_top var; @@_padTop = var; end
              
-             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+         def pad_bottom var; @@_padBottom = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -8602,53 +8964,55 @@ module Fox
    class EFXToggleButton < FXToggleButton
      
      
-     def initialize(p, text1, text2, icon1=nil, icon2=nil, target=nil, selector=0, opts=TOGGLEBUTTON_NORMAL, x=0, y=0, width=0, height=0, padLeft=DEFAULT_PAD, padRight=DEFAULT_PAD, padTop=DEFAULT_PAD, padBottom=DEFAULT_PAD)
+     def initialize(p=(defined?(@@_p)?@@_p:nil), text1=(defined?(@@_text1)?@@_text1:nil), text2=(defined?(@@_text2)?@@_text2:nil), icon1=(defined?(@@_icon1)?@@_icon1:nil) || nil, icon2=(defined?(@@_icon2)?@@_icon2:nil) || nil, target=(defined?(@@_target)?@@_target:nil) || nil, selector=(defined?(@@_selector)?@@_selector:nil) || 0, opts=(defined?(@@_opts)?@@_opts:nil) || TOGGLEBUTTON_NORMAL, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0, padLeft=(defined?(@@_padLeft)?@@_padLeft:nil) || DEFAULT_PAD, padRight=(defined?(@@_padRight)?@@_padRight:nil) || DEFAULT_PAD, padTop=(defined?(@@_padTop)?@@_padTop:nil) || DEFAULT_PAD, padBottom=(defined?(@@_padBottom)?@@_padBottom:nil) || DEFAULT_PAD)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXToggleButton, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:p => :required, :text1 => :required, :text2 => :required, :icon1 => nil, :icon2 => nil, :target => nil, :selector => 0, :opts => TOGGLEBUTTON_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
              
-             def p var; @os.op[@os.ii].p = var; end
+         def p var; @@_p = var; end
              
-             def text1 var; @os.op[@os.ii].text1 = var; end
+         def text1 var; @@_text1 = var; end
              
-             def text2 var; @os.op[@os.ii].text2 = var; end
+         def text2 var; @@_text2 = var; end
              
-             def icon1 var; @os.op[@os.ii].icon1 = var; end
+         def icon1 var; @@_icon1 = var; end
              
-             def icon2 var; @os.op[@os.ii].icon2 = var; end
+         def icon2 var; @@_icon2 = var; end
              
-             def target var; @os.op[@os.ii].target = var; end
+         def target var; @@_target = var; end
              
-             def selector var; @os.op[@os.ii].selector = var; end
+         def selector var; @@_selector = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def pad_left var; @os.op[@os.ii].padLeft = var; end
+         def pad_left var; @@_padLeft = var; end
              
-             def pad_right var; @os.op[@os.ii].padRight = var; end
+         def pad_right var; @@_padRight = var; end
              
-             def pad_top var; @os.op[@os.ii].padTop = var; end
+         def pad_top var; @@_padTop = var; end
              
-             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+         def pad_bottom var; @@_padBottom = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -8661,82 +9025,79 @@ module Fox
    class EFXToolBar < FXToolBar
      
      
-     def initialize(p, q, opts=LAYOUT_TOP|LAYOUT_LEFT|LAYOUT_FILL_X, x=0, y=0, width=0, height=0, padLeft=3, padRight=3, padTop=2, padBottom=2, hSpacing=DEFAULT_SPACING, vSpacing=DEFAULT_SPACING)
+     def initialize(p=(defined?(@@_p)?@@_p:nil), q=(defined?(@@_q)?@@_q:nil), opts=(defined?(@@_opts)?@@_opts:nil) || LAYOUT_TOP|LAYOUT_LEFT|LAYOUT_FILL_X, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0, padLeft=(defined?(@@_padLeft)?@@_padLeft:nil) || 3, padRight=(defined?(@@_padRight)?@@_padRight:nil) || 3, padTop=(defined?(@@_padTop)?@@_padTop:nil) || 2, padBottom=(defined?(@@_padBottom)?@@_padBottom:nil) || 2, hSpacing=(defined?(@@_hSpacing)?@@_hSpacing:nil) || DEFAULT_SPACING, vSpacing=(defined?(@@_vSpacing)?@@_vSpacing:nil) || DEFAULT_SPACING)
        super
      end
      
-     def initialize(p, opts=LAYOUT_TOP|LAYOUT_LEFT|LAYOUT_FILL_X, x=0, y=0, width=0, height=0, padLeft=3, padRight=3, padTop=2, padBottom=2, hSpacing=DEFAULT_SPACING, vSpacing=DEFAULT_SPACING)
+     def initialize(p=(defined?(@@_p)?@@_p:nil), opts=(defined?(@@_opts)?@@_opts:nil) || LAYOUT_TOP|LAYOUT_LEFT|LAYOUT_FILL_X, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0, padLeft=(defined?(@@_padLeft)?@@_padLeft:nil) || 3, padRight=(defined?(@@_padRight)?@@_padRight:nil) || 3, padTop=(defined?(@@_padTop)?@@_padTop:nil) || 2, padBottom=(defined?(@@_padBottom)?@@_padBottom:nil) || 2, hSpacing=(defined?(@@_hSpacing)?@@_hSpacing:nil) || DEFAULT_SPACING, vSpacing=(defined?(@@_vSpacing)?@@_vSpacing:nil) || DEFAULT_SPACING)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXToolBar, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:p => :required, :q => :required, :opts => LAYOUT_TOP|LAYOUT_LEFT|LAYOUT_FILL_X, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 3, :padRight => 3, :padTop => 2, :padBottom => 2, :hSpacing => DEFAULT_SPACING, :vSpacing => DEFAULT_SPACING})
              
-             def p var; @os.op[@os.ii].p = var; end
+         def p var; @@_p = var; end
              
-             def q var; @os.op[@os.ii].q = var; end
+         def q var; @@_q = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def pad_left var; @os.op[@os.ii].padLeft = var; end
+         def pad_left var; @@_padLeft = var; end
              
-             def pad_right var; @os.op[@os.ii].padRight = var; end
+         def pad_right var; @@_padRight = var; end
              
-             def pad_top var; @os.op[@os.ii].padTop = var; end
+         def pad_top var; @@_padTop = var; end
              
-             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+         def pad_bottom var; @@_padBottom = var; end
              
-             def h_spacing var; @os.op[@os.ii].hSpacing = var; end
+         def h_spacing var; @@_hSpacing = var; end
              
-             def v_spacing var; @os.op[@os.ii].vSpacing = var; end
+         def v_spacing var; @@_vSpacing = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
          
-             @os.op[1] = OpenStruct.new({:p => :required, :opts => LAYOUT_TOP|LAYOUT_LEFT|LAYOUT_FILL_X, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 3, :padRight => 3, :padTop => 2, :padBottom => 2, :hSpacing => DEFAULT_SPACING, :vSpacing => DEFAULT_SPACING})
              
-             def p var; @os.op[@os.ii].p = var; end
+         def p var; @@_p = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def pad_left var; @os.op[@os.ii].padLeft = var; end
+         def pad_left var; @@_padLeft = var; end
              
-             def pad_right var; @os.op[@os.ii].padRight = var; end
+         def pad_right var; @@_padRight = var; end
              
-             def pad_top var; @os.op[@os.ii].padTop = var; end
+         def pad_top var; @@_padTop = var; end
              
-             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+         def pad_bottom var; @@_padBottom = var; end
              
-             def h_spacing var; @os.op[@os.ii].hSpacing = var; end
+         def h_spacing var; @@_hSpacing = var; end
              
-             def v_spacing var; @os.op[@os.ii].vSpacing = var; end
+         def v_spacing var; @@_vSpacing = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -8749,37 +9110,39 @@ module Fox
    class EFXToolBarGrip < FXToolBarGrip
      
      
-     def initialize(p, target=nil, selector=0, opts=TOOLBARGRIP_SINGLE, x=0, y=0, width=0, height=0)
+     def initialize(p=(defined?(@@_p)?@@_p:nil), target=(defined?(@@_target)?@@_target:nil) || nil, selector=(defined?(@@_selector)?@@_selector:nil) || 0, opts=(defined?(@@_opts)?@@_opts:nil) || TOOLBARGRIP_SINGLE, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXToolBarGrip, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => TOOLBARGRIP_SINGLE, :x => 0, :y => 0, :width => 0, :height => 0})
              
-             def p var; @os.op[@os.ii].p = var; end
+         def p var; @@_p = var; end
              
-             def target var; @os.op[@os.ii].target = var; end
+         def target var; @@_target = var; end
              
-             def selector var; @os.op[@os.ii].selector = var; end
+         def selector var; @@_selector = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -8792,37 +9155,39 @@ module Fox
    class EFXToolBarShell < FXToolBarShell
      
      
-     def initialize(owner, opts=FRAME_RAISED|FRAME_THICK, x=0, y=0, width=0, height=0, hSpacing=4, vSpacing=4)
+     def initialize(owner=(defined?(@@_owner)?@@_owner:nil), opts=(defined?(@@_opts)?@@_opts:nil) || FRAME_RAISED|FRAME_THICK, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0, hSpacing=(defined?(@@_hSpacing)?@@_hSpacing:nil) || 4, vSpacing=(defined?(@@_vSpacing)?@@_vSpacing:nil) || 4)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXToolBarShell, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:owner => :required, :opts => FRAME_RAISED|FRAME_THICK, :x => 0, :y => 0, :width => 0, :height => 0, :hSpacing => 4, :vSpacing => 4})
              
-             def owner var; @os.op[@os.ii].owner = var; end
+         def owner var; @@_owner = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def h_spacing var; @os.op[@os.ii].hSpacing = var; end
+         def h_spacing var; @@_hSpacing = var; end
              
-             def v_spacing var; @os.op[@os.ii].vSpacing = var; end
+         def v_spacing var; @@_vSpacing = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -8835,37 +9200,39 @@ module Fox
    class EFXToolBarTab < FXToolBarTab
      
      
-     def initialize(p, target=nil, selector=0, opts=FRAME_RAISED, x=0, y=0, width=0, height=0)
+     def initialize(p=(defined?(@@_p)?@@_p:nil), target=(defined?(@@_target)?@@_target:nil) || nil, selector=(defined?(@@_selector)?@@_selector:nil) || 0, opts=(defined?(@@_opts)?@@_opts:nil) || FRAME_RAISED, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXToolBarTab, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => FRAME_RAISED, :x => 0, :y => 0, :width => 0, :height => 0})
              
-             def p var; @os.op[@os.ii].p = var; end
+         def p var; @@_p = var; end
              
-             def target var; @os.op[@os.ii].target = var; end
+         def target var; @@_target = var; end
              
-             def selector var; @os.op[@os.ii].selector = var; end
+         def selector var; @@_selector = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -8878,33 +9245,35 @@ module Fox
    class EFXToolTip < FXToolTip
      
      
-     def initialize(app, opts=TOOLTIP_NORMAL, x=0, y=0, width=0, height=0)
+     def initialize(app=(defined?(@@_app)?@@_app:nil), opts=(defined?(@@_opts)?@@_opts:nil) || TOOLTIP_NORMAL, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXToolTip, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:app => :required, :opts => TOOLTIP_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0})
              
-             def app var; @os.op[@os.ii].app = var; end
+         def app var; @@_app = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -8918,9 +9287,16 @@ module Fox
      
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXTopWindow, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -8933,23 +9309,25 @@ module Fox
    class EFXTranslator < FXTranslator
      
      
-     def initialize(a)
+     def initialize(a=(defined?(@@_a)?@@_a:nil))
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXTranslator, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:a => :required})
              
-             def a var; @os.op[@os.ii].a = var; end
+         def a var; @@_a = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -8962,29 +9340,31 @@ module Fox
    class EFXTreeItem < FXTreeItem
      
      
-     def initialize(text, openIcon=nil, closedIcon=nil, data=nil)
+     def initialize(text=(defined?(@@_text)?@@_text:nil), openIcon=(defined?(@@_openIcon)?@@_openIcon:nil) || nil, closedIcon=(defined?(@@_closedIcon)?@@_closedIcon:nil) || nil, data=(defined?(@@_data)?@@_data:nil) || nil)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXTreeItem, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:text => :required, :openIcon => nil, :closedIcon => nil, :data => nil})
              
-             def text var; @os.op[@os.ii].text = var; end
+         def text var; @@_text = var; end
              
-             def open_icon var; @os.op[@os.ii].openIcon = var; end
+         def open_icon var; @@_openIcon = var; end
              
-             def closed_icon var; @os.op[@os.ii].closedIcon = var; end
+         def closed_icon var; @@_closedIcon = var; end
              
-             def data var; @os.op[@os.ii].data = var; end
+         def data var; @@_data = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -8997,37 +9377,39 @@ module Fox
    class EFXTreeList < FXTreeList
      
      
-     def initialize(p, target=nil, selector=0, opts=TREELIST_NORMAL, x=0, y=0, width=0, height=0)
+     def initialize(p=(defined?(@@_p)?@@_p:nil), target=(defined?(@@_target)?@@_target:nil) || nil, selector=(defined?(@@_selector)?@@_selector:nil) || 0, opts=(defined?(@@_opts)?@@_opts:nil) || TREELIST_NORMAL, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXTreeList, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => TREELIST_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0})
              
-             def p var; @os.op[@os.ii].p = var; end
+         def p var; @@_p = var; end
              
-             def target var; @os.op[@os.ii].target = var; end
+         def target var; @@_target = var; end
              
-             def selector var; @os.op[@os.ii].selector = var; end
+         def selector var; @@_selector = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -9040,45 +9422,47 @@ module Fox
    class EFXTreeListBox < FXTreeListBox
      
      
-     def initialize(p, target=nil, selector=0, opts=FRAME_SUNKEN|FRAME_THICK|TREELISTBOX_NORMAL, x=0, y=0, width=0, height=0, padLeft=DEFAULT_PAD, padRight=DEFAULT_PAD, padTop=DEFAULT_PAD, padBottom=DEFAULT_PAD)
+     def initialize(p=(defined?(@@_p)?@@_p:nil), target=(defined?(@@_target)?@@_target:nil) || nil, selector=(defined?(@@_selector)?@@_selector:nil) || 0, opts=(defined?(@@_opts)?@@_opts:nil) || FRAME_SUNKEN|FRAME_THICK|TREELISTBOX_NORMAL, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0, padLeft=(defined?(@@_padLeft)?@@_padLeft:nil) || DEFAULT_PAD, padRight=(defined?(@@_padRight)?@@_padRight:nil) || DEFAULT_PAD, padTop=(defined?(@@_padTop)?@@_padTop:nil) || DEFAULT_PAD, padBottom=(defined?(@@_padBottom)?@@_padBottom:nil) || DEFAULT_PAD)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXTreeListBox, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:p => :required, :target => nil, :selector => 0, :opts => FRAME_SUNKEN|FRAME_THICK|TREELISTBOX_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
              
-             def p var; @os.op[@os.ii].p = var; end
+         def p var; @@_p = var; end
              
-             def target var; @os.op[@os.ii].target = var; end
+         def target var; @@_target = var; end
              
-             def selector var; @os.op[@os.ii].selector = var; end
+         def selector var; @@_selector = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def pad_left var; @os.op[@os.ii].padLeft = var; end
+         def pad_left var; @@_padLeft = var; end
              
-             def pad_right var; @os.op[@os.ii].padRight = var; end
+         def pad_right var; @@_padRight = var; end
              
-             def pad_top var; @os.op[@os.ii].padTop = var; end
+         def pad_top var; @@_padTop = var; end
              
-             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+         def pad_bottom var; @@_padBottom = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -9091,57 +9475,59 @@ module Fox
    class EFXTriStateButton < FXTriStateButton
      
      
-     def initialize(p, text1, text2, text3, icon1=nil, icon2=nil, icon3=nil, target=nil, selector=0, opts=TOGGLEBUTTON_NORMAL, x=0, y=0, width=0, height=0, padLeft=DEFAULT_PAD, padRight=DEFAULT_PAD, padTop=DEFAULT_PAD, padBottom=DEFAULT_PAD)
+     def initialize(p=(defined?(@@_p)?@@_p:nil), text1=(defined?(@@_text1)?@@_text1:nil), text2=(defined?(@@_text2)?@@_text2:nil), text3=(defined?(@@_text3)?@@_text3:nil), icon1=(defined?(@@_icon1)?@@_icon1:nil) || nil, icon2=(defined?(@@_icon2)?@@_icon2:nil) || nil, icon3=(defined?(@@_icon3)?@@_icon3:nil) || nil, target=(defined?(@@_target)?@@_target:nil) || nil, selector=(defined?(@@_selector)?@@_selector:nil) || 0, opts=(defined?(@@_opts)?@@_opts:nil) || TOGGLEBUTTON_NORMAL, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0, padLeft=(defined?(@@_padLeft)?@@_padLeft:nil) || DEFAULT_PAD, padRight=(defined?(@@_padRight)?@@_padRight:nil) || DEFAULT_PAD, padTop=(defined?(@@_padTop)?@@_padTop:nil) || DEFAULT_PAD, padBottom=(defined?(@@_padBottom)?@@_padBottom:nil) || DEFAULT_PAD)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXTriStateButton, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:p => :required, :text1 => :required, :text2 => :required, :text3 => :required, :icon1 => nil, :icon2 => nil, :icon3 => nil, :target => nil, :selector => 0, :opts => TOGGLEBUTTON_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_PAD, :padRight => DEFAULT_PAD, :padTop => DEFAULT_PAD, :padBottom => DEFAULT_PAD})
              
-             def p var; @os.op[@os.ii].p = var; end
+         def p var; @@_p = var; end
              
-             def text1 var; @os.op[@os.ii].text1 = var; end
+         def text1 var; @@_text1 = var; end
              
-             def text2 var; @os.op[@os.ii].text2 = var; end
+         def text2 var; @@_text2 = var; end
              
-             def text3 var; @os.op[@os.ii].text3 = var; end
+         def text3 var; @@_text3 = var; end
              
-             def icon1 var; @os.op[@os.ii].icon1 = var; end
+         def icon1 var; @@_icon1 = var; end
              
-             def icon2 var; @os.op[@os.ii].icon2 = var; end
+         def icon2 var; @@_icon2 = var; end
              
-             def icon3 var; @os.op[@os.ii].icon3 = var; end
+         def icon3 var; @@_icon3 = var; end
              
-             def target var; @os.op[@os.ii].target = var; end
+         def target var; @@_target = var; end
              
-             def selector var; @os.op[@os.ii].selector = var; end
+         def selector var; @@_selector = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def pad_left var; @os.op[@os.ii].padLeft = var; end
+         def pad_left var; @@_padLeft = var; end
              
-             def pad_right var; @os.op[@os.ii].padRight = var; end
+         def pad_right var; @@_padRight = var; end
              
-             def pad_top var; @os.op[@os.ii].padTop = var; end
+         def pad_top var; @@_padTop = var; end
              
-             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+         def pad_bottom var; @@_padBottom = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -9154,25 +9540,27 @@ module Fox
    class EFXVec2d < FXVec2d
      
      
-     def initialize(xx=0.0, yy=0.0)
+     def initialize(xx=(defined?(@@_xx)?@@_xx:nil) || 0.0, yy=(defined?(@@_yy)?@@_yy:nil) || 0.0)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXVec2d, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:xx => 0.0, :yy => 0.0})
              
-             def xx var; @os.op[@os.ii].xx = var; end
+         def xx var; @@_xx = var; end
              
-             def yy var; @os.op[@os.ii].yy = var; end
+         def yy var; @@_yy = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -9185,25 +9573,27 @@ module Fox
    class EFXVec2f < FXVec2f
      
      
-     def initialize(xx=0.0, yy=0.0)
+     def initialize(xx=(defined?(@@_xx)?@@_xx:nil) || 0.0, yy=(defined?(@@_yy)?@@_yy:nil) || 0.0)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXVec2f, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:xx => 0.0, :yy => 0.0})
              
-             def xx var; @os.op[@os.ii].xx = var; end
+         def xx var; @@_xx = var; end
              
-             def yy var; @os.op[@os.ii].yy = var; end
+         def yy var; @@_yy = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -9216,27 +9606,29 @@ module Fox
    class EFXVec3d < FXVec3d
      
      
-     def initialize(xx, yy, zz=1.0)
+     def initialize(xx=(defined?(@@_xx)?@@_xx:nil), yy=(defined?(@@_yy)?@@_yy:nil), zz=(defined?(@@_zz)?@@_zz:nil) || 1.0)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXVec3d, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:xx => :required, :yy => :required, :zz => 1.0})
              
-             def xx var; @os.op[@os.ii].xx = var; end
+         def xx var; @@_xx = var; end
              
-             def yy var; @os.op[@os.ii].yy = var; end
+         def yy var; @@_yy = var; end
              
-             def zz var; @os.op[@os.ii].zz = var; end
+         def zz var; @@_zz = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -9249,27 +9641,29 @@ module Fox
    class EFXVec3f < FXVec3f
      
      
-     def initialize(xx, yy, zz=1.0)
+     def initialize(xx=(defined?(@@_xx)?@@_xx:nil), yy=(defined?(@@_yy)?@@_yy:nil), zz=(defined?(@@_zz)?@@_zz:nil) || 1.0)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXVec3f, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:xx => :required, :yy => :required, :zz => 1.0})
              
-             def xx var; @os.op[@os.ii].xx = var; end
+         def xx var; @@_xx = var; end
              
-             def yy var; @os.op[@os.ii].yy = var; end
+         def yy var; @@_yy = var; end
              
-             def zz var; @os.op[@os.ii].zz = var; end
+         def zz var; @@_zz = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -9282,44 +9676,41 @@ module Fox
    class EFXVec4d < FXVec4d
      
      
-     def initialize(xx, yy, zz, ww=1.0)
+     def initialize(xx=(defined?(@@_xx)?@@_xx:nil), yy=(defined?(@@_yy)?@@_yy:nil), zz=(defined?(@@_zz)?@@_zz:nil), ww=(defined?(@@_ww)?@@_ww:nil) || 1.0)
        super
      end
      
-     def initialize(vec3d, ww=1.0)
+     def initialize(vec3d=(defined?(@@_vec3d)?@@_vec3d:nil), ww=(defined?(@@_ww)?@@_ww:nil) || 1.0)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXVec4d, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:xx => :required, :yy => :required, :zz => :required, :ww => 1.0})
              
-             def xx var; @os.op[@os.ii].xx = var; end
+         def xx var; @@_xx = var; end
              
-             def yy var; @os.op[@os.ii].yy = var; end
+         def yy var; @@_yy = var; end
              
-             def zz var; @os.op[@os.ii].zz = var; end
+         def zz var; @@_zz = var; end
              
-             def ww var; @os.op[@os.ii].ww = var; end
+         def ww var; @@_ww = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
          
-             @os.op[1] = OpenStruct.new({:vec3d => :required, :ww => 1.0})
              
-             def vec3d var; @os.op[@os.ii].vec3d = var; end
+         def vec3d var; @@_vec3d = var; end
              
-             def ww var; @os.op[@os.ii].ww = var; end
+         def ww var; @@_ww = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -9332,44 +9723,41 @@ module Fox
    class EFXVec4f < FXVec4f
      
      
-     def initialize(xx, yy, zz, ww=1.0)
+     def initialize(xx=(defined?(@@_xx)?@@_xx:nil), yy=(defined?(@@_yy)?@@_yy:nil), zz=(defined?(@@_zz)?@@_zz:nil), ww=(defined?(@@_ww)?@@_ww:nil) || 1.0)
        super
      end
      
-     def initialize(vec3f, ww=1.0)
+     def initialize(vec3f=(defined?(@@_vec3f)?@@_vec3f:nil), ww=(defined?(@@_ww)?@@_ww:nil) || 1.0)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXVec4f, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:xx => :required, :yy => :required, :zz => :required, :ww => 1.0})
              
-             def xx var; @os.op[@os.ii].xx = var; end
+         def xx var; @@_xx = var; end
              
-             def yy var; @os.op[@os.ii].yy = var; end
+         def yy var; @@_yy = var; end
              
-             def zz var; @os.op[@os.ii].zz = var; end
+         def zz var; @@_zz = var; end
              
-             def ww var; @os.op[@os.ii].ww = var; end
+         def ww var; @@_ww = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
          
-             @os.op[1] = OpenStruct.new({:vec3f => :required, :ww => 1.0})
              
-             def vec3f var; @os.op[@os.ii].vec3f = var; end
+         def vec3f var; @@_vec3f = var; end
              
-             def ww var; @os.op[@os.ii].ww = var; end
+         def ww var; @@_ww = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -9382,45 +9770,47 @@ module Fox
    class EFXVerticalFrame < FXVerticalFrame
      
      
-     def initialize(p, opts=0, x=0, y=0, width=0, height=0, padLeft=DEFAULT_SPACING, padRight=DEFAULT_SPACING, padTop=DEFAULT_SPACING, padBottom=DEFAULT_SPACING, hSpacing=DEFAULT_SPACING, vSpacing=DEFAULT_SPACING)
+     def initialize(p=(defined?(@@_p)?@@_p:nil), opts=(defined?(@@_opts)?@@_opts:nil) || 0, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0, padLeft=(defined?(@@_padLeft)?@@_padLeft:nil) || DEFAULT_SPACING, padRight=(defined?(@@_padRight)?@@_padRight:nil) || DEFAULT_SPACING, padTop=(defined?(@@_padTop)?@@_padTop:nil) || DEFAULT_SPACING, padBottom=(defined?(@@_padBottom)?@@_padBottom:nil) || DEFAULT_SPACING, hSpacing=(defined?(@@_hSpacing)?@@_hSpacing:nil) || DEFAULT_SPACING, vSpacing=(defined?(@@_vSpacing)?@@_vSpacing:nil) || DEFAULT_SPACING)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXVerticalFrame, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:p => :required, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => DEFAULT_SPACING, :padRight => DEFAULT_SPACING, :padTop => DEFAULT_SPACING, :padBottom => DEFAULT_SPACING, :hSpacing => DEFAULT_SPACING, :vSpacing => DEFAULT_SPACING})
              
-             def p var; @os.op[@os.ii].p = var; end
+         def p var; @@_p = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def pad_left var; @os.op[@os.ii].padLeft = var; end
+         def pad_left var; @@_padLeft = var; end
              
-             def pad_right var; @os.op[@os.ii].padRight = var; end
+         def pad_right var; @@_padRight = var; end
              
-             def pad_top var; @os.op[@os.ii].padTop = var; end
+         def pad_top var; @@_padTop = var; end
              
-             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+         def pad_bottom var; @@_padBottom = var; end
              
-             def h_spacing var; @os.op[@os.ii].hSpacing = var; end
+         def h_spacing var; @@_hSpacing = var; end
              
-             def v_spacing var; @os.op[@os.ii].vSpacing = var; end
+         def v_spacing var; @@_vSpacing = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -9433,27 +9823,29 @@ module Fox
    class EFXVisual < FXVisual
      
      
-     def initialize(a, flgs, d=32)
+     def initialize(a=(defined?(@@_a)?@@_a:nil), flgs=(defined?(@@_flgs)?@@_flgs:nil), d=(defined?(@@_d)?@@_d:nil) || 32)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXVisual, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:a => :required, :flgs => :required, :d => 32})
              
-             def a var; @os.op[@os.ii].a = var; end
+         def a var; @@_a = var; end
              
-             def flgs var; @os.op[@os.ii].flgs = var; end
+         def flgs var; @@_flgs = var; end
              
-             def d var; @os.op[@os.ii].d = var; end
+         def d var; @@_d = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -9466,73 +9858,65 @@ module Fox
    class EFXWindow < FXWindow
      
      
-     def initialize(p, opts=0, x=0, y=0, width=0, height=0)
+     def initialize(p=(defined?(@@_p)?@@_p:nil), opts=(defined?(@@_opts)?@@_opts:nil) || 0, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0)
        super
      end
      
-     def initialize(a, vis)
+     def initialize(a=(defined?(@@_a)?@@_a:nil), vis=(defined?(@@_vis)?@@_vis:nil))
        super
      end
      
-     def initialize(a, own, opts, x, y, w, h)
+     def initialize(a=(defined?(@@_a)?@@_a:nil), own=(defined?(@@_own)?@@_own:nil), opts=(defined?(@@_opts)?@@_opts:nil), x=(defined?(@@_x)?@@_x:nil), y=(defined?(@@_y)?@@_y:nil), w=(defined?(@@_w)?@@_w:nil), h=(defined?(@@_h)?@@_h:nil))
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXWindow, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:p => :required, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
              
-             def p var; @os.op[@os.ii].p = var; end
+         def p var; @@_p = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
          
-             @os.op[1] = OpenStruct.new({:a => :required, :vis => :required})
              
-             def a var; @os.op[@os.ii].a = var; end
+         def a var; @@_a = var; end
              
-             def vis var; @os.op[@os.ii].vis = var; end
+         def vis var; @@_vis = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
          
-             @os.op[2] = OpenStruct.new({:a => :required, :own => :required, :opts => :required, :x => :required, :y => :required, :w => :required, :h => :required})
              
-             def a var; @os.op[@os.ii].a = var; end
+         def a var; @@_a = var; end
              
-             def own var; @os.op[@os.ii].own = var; end
+         def own var; @@_own = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def w var; @os.op[@os.ii].w = var; end
+         def w var; @@_w = var; end
              
-             def h var; @os.op[@os.ii].h = var; end
+         def h var; @@_h = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -9545,49 +9929,51 @@ module Fox
    class EFXWizard < FXWizard
      
      
-     def initialize(owner, name, image, opts=DECOR_TITLE|DECOR_BORDER|DECOR_RESIZE, x=0, y=0, width=0, height=0, padLeft=10, padRight=10, padTop=10, padBottom=10, hSpacing=10, vSpacing=10)
+     def initialize(owner=(defined?(@@_owner)?@@_owner:nil), name=(defined?(@@_name)?@@_name:nil), image=(defined?(@@_image)?@@_image:nil), opts=(defined?(@@_opts)?@@_opts:nil) || DECOR_TITLE|DECOR_BORDER|DECOR_RESIZE, x=(defined?(@@_x)?@@_x:nil) || 0, y=(defined?(@@_y)?@@_y:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 0, height=(defined?(@@_height)?@@_height:nil) || 0, padLeft=(defined?(@@_padLeft)?@@_padLeft:nil) || 10, padRight=(defined?(@@_padRight)?@@_padRight:nil) || 10, padTop=(defined?(@@_padTop)?@@_padTop:nil) || 10, padBottom=(defined?(@@_padBottom)?@@_padBottom:nil) || 10, hSpacing=(defined?(@@_hSpacing)?@@_hSpacing:nil) || 10, vSpacing=(defined?(@@_vSpacing)?@@_vSpacing:nil) || 10)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXWizard, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:owner => :required, :name => :required, :image => :required, :opts => DECOR_TITLE|DECOR_BORDER|DECOR_RESIZE, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 10, :padRight => 10, :padTop => 10, :padBottom => 10, :hSpacing => 10, :vSpacing => 10})
              
-             def owner var; @os.op[@os.ii].owner = var; end
+         def owner var; @@_owner = var; end
              
-             def name var; @os.op[@os.ii].name = var; end
+         def name var; @@_name = var; end
              
-             def image var; @os.op[@os.ii].image = var; end
+         def image var; @@_image = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def x var; @os.op[@os.ii].x = var; end
+         def x var; @@_x = var; end
              
-             def y var; @os.op[@os.ii].y = var; end
+         def y var; @@_y = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def pad_left var; @os.op[@os.ii].padLeft = var; end
+         def pad_left var; @@_padLeft = var; end
              
-             def pad_right var; @os.op[@os.ii].padRight = var; end
+         def pad_right var; @@_padRight = var; end
              
-             def pad_top var; @os.op[@os.ii].padTop = var; end
+         def pad_top var; @@_padTop = var; end
              
-             def pad_bottom var; @os.op[@os.ii].padBottom = var; end
+         def pad_bottom var; @@_padBottom = var; end
              
-             def h_spacing var; @os.op[@os.ii].hSpacing = var; end
+         def h_spacing var; @@_hSpacing = var; end
              
-             def v_spacing var; @os.op[@os.ii].vSpacing = var; end
+         def v_spacing var; @@_vSpacing = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -9600,35 +9986,37 @@ module Fox
    class EFXXBMIcon < FXXBMIcon
      
      
-     def initialize(a, pixels=nil, mask=nil, clr=0, opts=0, width=1, height=1)
+     def initialize(a=(defined?(@@_a)?@@_a:nil), pixels=(defined?(@@_pixels)?@@_pixels:nil) || nil, mask=(defined?(@@_mask)?@@_mask:nil) || nil, clr=(defined?(@@_clr)?@@_clr:nil) || 0, opts=(defined?(@@_opts)?@@_opts:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 1, height=(defined?(@@_height)?@@_height:nil) || 1)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXXBMIcon, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:a => :required, :pixels => nil, :mask => nil, :clr => 0, :opts => 0, :width => 1, :height => 1})
              
-             def a var; @os.op[@os.ii].a = var; end
+         def a var; @@_a = var; end
              
-             def pixels var; @os.op[@os.ii].pixels = var; end
+         def pixels var; @@_pixels = var; end
              
-             def mask var; @os.op[@os.ii].mask = var; end
+         def mask var; @@_mask = var; end
              
-             def clr var; @os.op[@os.ii].clr = var; end
+         def clr var; @@_clr = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -9641,33 +10029,35 @@ module Fox
    class EFXXBMImage < FXXBMImage
      
      
-     def initialize(a, pixels=nil, mask=nil, opts=0, width=1, height=1)
+     def initialize(a=(defined?(@@_a)?@@_a:nil), pixels=(defined?(@@_pixels)?@@_pixels:nil) || nil, mask=(defined?(@@_mask)?@@_mask:nil) || nil, opts=(defined?(@@_opts)?@@_opts:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 1, height=(defined?(@@_height)?@@_height:nil) || 1)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXXBMImage, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:a => :required, :pixels => nil, :mask => nil, :opts => 0, :width => 1, :height => 1})
              
-             def a var; @os.op[@os.ii].a = var; end
+         def a var; @@_a = var; end
              
-             def pixels var; @os.op[@os.ii].pixels = var; end
+         def pixels var; @@_pixels = var; end
              
-             def mask var; @os.op[@os.ii].mask = var; end
+         def mask var; @@_mask = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -9680,33 +10070,35 @@ module Fox
    class EFXXPMIcon < FXXPMIcon
      
      
-     def initialize(a, pix=nil, clr=0, opts=0, width=1, height=1)
+     def initialize(a=(defined?(@@_a)?@@_a:nil), pix=(defined?(@@_pix)?@@_pix:nil) || nil, clr=(defined?(@@_clr)?@@_clr:nil) || 0, opts=(defined?(@@_opts)?@@_opts:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 1, height=(defined?(@@_height)?@@_height:nil) || 1)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXXPMIcon, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:a => :required, :pix => nil, :clr => 0, :opts => 0, :width => 1, :height => 1})
              
-             def a var; @os.op[@os.ii].a = var; end
+         def a var; @@_a = var; end
              
-             def pix var; @os.op[@os.ii].pix = var; end
+         def pix var; @@_pix = var; end
              
-             def clr var; @os.op[@os.ii].clr = var; end
+         def clr var; @@_clr = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
@@ -9719,31 +10111,33 @@ module Fox
    class EFXXPMImage < FXXPMImage
      
      
-     def initialize(a, pix=nil, opts=0, width=1, height=1)
+     def initialize(a=(defined?(@@_a)?@@_a:nil), pix=(defined?(@@_pix)?@@_pix:nil) || nil, opts=(defined?(@@_opts)?@@_opts:nil) || 0, width=(defined?(@@_width)?@@_width:nil) || 1, height=(defined?(@@_height)?@@_height:nil) || 1)
        super
      end
      
 
-     def self.compose tag, appref, &block
+     def self.compose tag=nil, parenttag=:app, &block
+         Enhancement.stack << (@os = os = OpenStruct.new(klass: EFXXPMImage, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil))
+         Enhancement.components[tag] = os unless tag.nil?
+         Enhancement.components[parenttag].kinder << os
          
          
-             @os.op[0] = OpenStruct.new({:a => :required, :pix => nil, :opts => 0, :width => 1, :height => 1})
              
-             def a var; @os.op[@os.ii].a = var; end
+         def a var; @@_a = var; end
              
-             def pix var; @os.op[@os.ii].pix = var; end
+         def pix var; @@_pix = var; end
              
-             def opts var; @os.op[@os.ii].opts = var; end
+         def opts var; @@_opts = var; end
              
-             def width var; @os.op[@os.ii].width = var; end
+         def width var; @@_width = var; end
              
-             def height var; @os.op[@os.ii].height = var; end
+         def height var; @@_height = var; end
              
-             def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
-             end
               
+         self.instance_eval &block
+         Enhancement.stack.pop                                                  
+         @os = Enhancement.stack.last
+         os
      end
    end
           
