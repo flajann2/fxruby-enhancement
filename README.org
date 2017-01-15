@@ -1,5 +1,7 @@
-#+ATTR_HTML: title="Join the chat at https://gitter.im/fxruby-enhancement/Lobby"
+* community
+  #+ATTR_HTML: title="Join the chat at https://gitter.im/fxruby-enhancement/Lobby"
 * FXRuby Enhancement Table of Contents                             :TOC_5_gh:
+ - [[#community][community]]
  - [[#fxruby-enhancement][fxruby-enhancement]]
    - [[#introduction][Introduction]]
    - [[#installation][Installation]]
