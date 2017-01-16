@@ -128,15 +128,23 @@ module Fox
       alias_method :fxi, :fox_instance
 
       # Handles incomming external messages of type given
-      # block, written by user, is called with |type, message|
-      def ingress_handler type = :all, &block
-        Enhancement.ingress_map[type] = block
+      # block, written by user, is called with |type, message|.
+      # Zero or more symbols may be given,
+      # in which case the given block will
+      # be associated with all the given symbols.
+      def ingress_handler *types, &block
+        raise "No block given" unless block_given?
+        types = [:all] if types.empty?
+        types.each do |type|
+          Enhancement.ingress_map[type] = block
+        end
       end
 
       # This is invoked after we have
       # a real application in place. Invocation
       # of this is held off until the last possible
       # moment.
+      # TODO: Not sure we need this. This may go away.
       def deferred_setup &block
         Enhancement.deferred_setups << block
       end      
