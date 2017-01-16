@@ -418,7 +418,7 @@
 
     https://github.com/flajann2/rubyneat-panel/tree/master/lib/rubyneat-panel
 
-    Class-based enhancement (this is currently not supported!!!):
+    Class-based Enhancement (this is currently not supported!!!):
     #+begin_src ruby
     class Main < FXMainWindow
       compose :my_window do
@@ -451,7 +451,7 @@
     end    
     #+end_src
 
-    Class-free enhancement:
+    Class-free Enhancement (strongly recommended):
     #+begin_src ruby
     mw = fx_main_window :my_window do 
         title "RubyNEAT Panel"
