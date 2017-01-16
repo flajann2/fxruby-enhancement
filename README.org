@@ -891,6 +891,7 @@ end
    |---------+------------+---------------------------------------------------------|
    |   0.0.2 | 2017-01-11 | Initial release                                         |
    |   0.0.3 | 2017-01-15 | Needed to require fox16/colors for FXColor to be loaded |
+   |   0.0.4 | 2017-01-16 | ingress_handler now handles multiple tags.              |
 
 ** Known Issues
    | Version |       Date | Issues                                                |
