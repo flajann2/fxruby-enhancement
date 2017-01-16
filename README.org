@@ -360,6 +360,25 @@
      You may declare your ingress_handler anywhere in your code and have 
      the expected happen.
 
+     igress_handler may also be specified with more than one tag, for
+     instance:
+     #+begin_src ruby
+     ingress_handler :warn, :info, :error do |type, log|
+       case type
+       when :warn
+         ...
+       when :info
+         ...
+       when :error
+         ...
+       else
+         raise "Unknown log type"
+       end
+     end
+     #+end_src
+
+     The same block is assigned to all the given tags of :warn, :info, and :error.
+
 **** TODO deferred_setup
 **** TODO Mapping between fx_* declarations and the FX* FXRuby objects
 **** binding.fx   
