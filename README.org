@@ -196,7 +196,7 @@
       And so your handler will most likely act as a dispatcher
       for the payloads received. For example:
       #+begin_src ruby
-      ingress_handler :status do |tag, logline|
+      ingress_handler :log_info, :log_error do |tag, logline|
         puts "received #{tag} => #{payload}"
         case tag
         when :log_info
@@ -206,6 +206,14 @@
         end
       end
       #+end_src
+
+      Note that this ingress handler is responding to two tags. You can have
+      as many tags as you like for your ingress handler, and as many
+      ingress handlers as you like. 
+      
+      Currently, all the tags should be unique. Later we may support having 
+      multiple blocks associated with the same tag. Please feel free to generate
+      an issue if you want this!!!
 
 ***** Enhancement.egress
       Wnen your Fox application needs to send a message to other
