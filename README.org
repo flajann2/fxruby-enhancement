@@ -224,7 +224,22 @@
       #+end_src
 
       and your Ruby thread external to Fox would simply do:
-      #+begin_src
+      #+begin_src ruby
+      ...
+      message = Enhancement.egress.next
+      ...
+      #+end_src
+      
+      where you'll block pending the arrival of the next message. If you
+      do not wish to block, you may do:
+      #+begin_src ruby
+      ...
+      unless Enhancement.egress.empty?
+        message = Enhancement.egress.next 
+      else
+        # some action to take
+      end
+      ...
       #+end_src
 
 *** API & DSL
