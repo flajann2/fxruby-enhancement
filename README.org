@@ -32,7 +32,9 @@
    - [[#contributing-to-fxruby-enhancement][Contributing to fxruby-enhancement]]
    - [[#copyright-and-licensing][Copyright and Licensing]]
    - [[#the-junkyard--scratchpad][The Junkyard / Scratchpad]]
-     - [[#genesis-of-the-meta-meta-programming-whereby-brain-goes-boom][Genesis of the meta-meta programming, whereby brain goes boom]]
+     - [[#junkyard-genesis-of-the-meta-meta-programming-whereby-brain-goes-boom][JUNKYARD Genesis of the meta-meta programming, whereby brain goes boom]]
+     - [[#junkyard-resuable-components-and-data-targets][JUNKYARD Resuable components and data targets]]
+       - [[#data-targets][Data Targets]]
 
 * fxruby-enhancement
 ** Introduction
@@ -910,17 +912,17 @@ end
     More examples can be found [[file:examples][HERE]].
 
 ** Release Notes
-   | Version |       Date | Notes                                                   |
-   |---------+------------+---------------------------------------------------------|
-   |   0.0.2 | 2017-01-11 | Initial release                                         |
-   |   0.0.3 | 2017-01-15 | Needed to require fox16/colors for FXColor to be loaded |
-   |   0.0.4 | 2017-01-16 | ingress_handler now handles multiple tags.              |
+   | Version |       Date | Notes                                                       |
+   |---------+------------+-------------------------------------------------------------|
+   |   0.0.2 | 2017-01-11 | Initial release                                             |
+   |   0.0.3 | 2017-01-15 | Needed to require fox16/colors for FXColor to be loaded     |
+   |   0.0.4 | 2017-01-16 | ingress_handler now handles multiple tags.                  |
+   |   0.1.0 | 2017-01-18 | special handling for fx_data_target and resuable components |
 
 ** Known Issues
    | Version |       Date | Issues                                                |
    |---------+------------+-------------------------------------------------------|
    |   0.0.2 | 2017-01-11 | Not enough example code!!! Need more documentation!!! |
-
 
 ** Contributing to fxruby-enhancement
  
@@ -940,7 +942,7 @@ end
    You may see some interesting tidbits here, but I am not
    gauranteeing anything to be useful or reliable in this
    section. YOU HAVE BEEN WARNED.
-*** Genesis of the meta-meta programming, whereby brain goes boom
+*** JUNKYARD Genesis of the meta-meta programming, whereby brain goes boom
     #+begin_src ruby
     class FXToolBar # monkey patch
       include Enhancement
@@ -976,3 +978,19 @@ end
     #+end_src
 
 
+*** JUNKYARD Resuable components and data targets
+    We have an issue with needing to have reusable components
+    (dialog boxes, say), and ṕroperly handling data targets designations.
+**** Data Targets
+     Data targets cannot be done the same way we are doing the other
+     fxruby components, because they have a different workflow. Basically,
+     they need to be instantiated before the other comonents that uses
+     them, and they are not really "child" objects, either. Referring to them
+     using the ref() or refc() approach simply fails, because they won't
+     be instantiated in time.
+
+     We have ameroliated this problem by checking in the parameter list
+     for an OpenStruct object, and calling #inst on it to pass in the instance,
+     rather than the object itself. So now you simply use refc()
+     in those cases.
+     

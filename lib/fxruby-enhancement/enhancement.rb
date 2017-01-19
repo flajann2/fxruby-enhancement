@@ -15,6 +15,7 @@ module Fox
                :FXRectangle,
                :FXGradient,
                :FXEvent,
+               :FXDataTarget,
                :FXFileStream,
                :FXExtentd]
     INITFORCE = { FXMenuBar: 1 }
