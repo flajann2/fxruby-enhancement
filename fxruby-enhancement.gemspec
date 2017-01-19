@@ -32,6 +32,7 @@ Gem::Specification.new do |s|
     "build/scrape-rdoc.rb",
     "examples/.ruby-version",
     "examples/bounce.rb",
+    "examples/data_target.rb",
     "examples/hello.rb",
     "fxruby-enhancement.gemspec",
     "lib/fxruby-enhancement.rb",
