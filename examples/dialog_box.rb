@@ -13,7 +13,13 @@ fx_app :app do
     opts DECOR_ALL
 
     fx_button {
-      text "&Hello, World"
+      text "&See Ya!"
+      selector FXApp::ID_QUIT
+      target refc(:app)
+    }
+    
+    fx_button {
+      text "&See Ya!"
       selector FXApp::ID_QUIT
       target refc(:app)
     }

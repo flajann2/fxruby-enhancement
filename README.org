@@ -264,12 +264,25 @@
      refc(:some_tag).inst
      #+end_src
 
-     There may be some edge cases where you might want to
-     reference the underlying component ahead of FXRuby object
-     instaniation, but in the vast majority of the cases, it should
-     be unnecessary. My goal is to enable to do what you need, not
-     to restrict you. You may need it for debugging, etc.
-
+     Where might you want to use refc() instead of ref()? In cases
+     where the underlying FXRuby object have not been instantiated yet,
+     you'd use refc() instead of ref(), almost always during the component
+     configuration. For example:
+     #+begin_src ruby
+     fx_app :app do
+     ...
+       fx_button {
+         text "&See Ya!"
+         selector FXApp::ID_QUIT
+         target refc(:app)
+       }
+     ...
+     #+end_src
+     
+     Here, we set the button to exit the application by sending the FXApp object the ID_QUIT
+     message. But at the time we set the configuration, the FXApp object has not been instantiated
+     yet. So we use refc() instead of ref().
+     
      Underlying, the component object is really a subclass of OpenScript.
      While you may like to stuff some additional data there, 
      this is frowned upon because it might conflict with Enhancement.

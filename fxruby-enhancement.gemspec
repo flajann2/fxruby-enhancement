@@ -33,6 +33,7 @@ Gem::Specification.new do |s|
     "examples/.ruby-version",
     "examples/bounce.rb",
     "examples/data_target.rb",
+    "examples/dialog_box.rb",
     "examples/hello.rb",
     "fxruby-enhancement.gemspec",
     "lib/fxruby-enhancement.rb",
