@@ -349,7 +349,7 @@
      other is instantly updated.
 
      Otherwise, you can deal with fx_data_target as expected. See
-     the [[#DataTarget Example]].
+     the [[DataTarget Example][DataTarget Example]].
 
 **** instance
      Inside of your component declaration, you will undoubtly
