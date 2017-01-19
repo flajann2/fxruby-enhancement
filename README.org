@@ -36,7 +36,7 @@
    - [[#the-junkyard--scratchpad][The Junkyard / Scratchpad]]
      - [[#junkyard-genesis-of-the-meta-meta-programming-whereby-brain-goes-boom][JUNKYARD Genesis of the meta-meta programming, whereby brain goes boom]]
      - [[#junkyard-resuable-components-and-data-targets][JUNKYARD Resuable components and data targets]]
-       - [[#data-targets][Data Targets]]
+       - [[#junkyard-data-targets][JUNKYARD Data Targets]]
 
 * fxruby-enhancement
 ** Introduction
@@ -1078,7 +1078,7 @@ end
 *** JUNKYARD Resuable components and data targets
     We have an issue with needing to have reusable components
     (dialog boxes, say), and ṕroperly handling data targets designations.
-**** Data Targets
+**** JUNKYARD Data Targets
      Data targets cannot be done the same way we are doing the other
      fxruby components, because they have a different workflow. Basically,
      they need to be instantiated before the other comonents that uses

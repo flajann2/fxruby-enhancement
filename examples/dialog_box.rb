@@ -5,11 +5,11 @@ include Fox
 include Fox::Enhancement::Mapper
 
 fx_app :app do
-  app_name "Hello"
+  app_name "Dialong Box"
   vendor_name "Example"
 
   fx_main_window(:main) {
-    title "Hello"
+    title "Dialog Box Example"
     opts DECOR_ALL
 
     fx_button {
