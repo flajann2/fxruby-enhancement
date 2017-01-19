@@ -17,6 +17,7 @@
        - [[#ref-refc-and-tagging-your-objects][ref(), refc() and tagging your objects]]
        - [[#fox_component-and-fox_instance][fox_component and fox_instance]]
        - [[#fx_app][fx_app]]
+       - [[#fx_data_target][fx_data_target]]
        - [[#instance][instance]]
        - [[#ingress_handler][ingress_handler]]
        - [[#deferred_setup][deferred_setup]]
@@ -318,6 +319,37 @@
 
      Typeically you'd do this inside of a module, but you could do it also
      in a class body. Please see the examples.
+
+**** fx_data_target
+     FOX (and therefor FXRuby) supports data synchronization among components.
+     fx_data_target encapsulates the FXDataTarget class, just like all the
+     other fx_* directives do. However, in this case, some special treatment
+     is necessary since it is referenced at a time the underlying FXRuby
+     object has not been created yet.
+
+     Enter refc(). You use refc(), instead of ref(), to use it when you are
+     configuring the component (really, specifying the initial parameters
+     to the underlying FXRuby class!) We illustrate here:
+     #+begin_src ruby
+     ...
+     fx_data_target (:mydata) { value "initial value"  }
+     ...
+     fx_text (:text_3) {
+       target refc(:mydata)
+       selector FXDataTarget::ID_VALUE
+     }
+     fx_text (:text_4) {
+       target refc(:mydata)
+       selector FXDataTarget::ID_VALUE
+     }
+     #+end_src
+
+     And so the two text components  -- or widgets -- are initially
+     set to the value of "initial value", and when one changes, the
+     other is instantly updated.
+
+     Otherwise, you can deal with fx_data_target as expected. See
+     the [[DataTarget Example]].
 
 **** instance
      Inside of your component declaration, you will undoubtly
