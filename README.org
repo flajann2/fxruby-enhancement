@@ -55,14 +55,23 @@
    fxruby-enhancement makes this a snap to do. You simply declare
    your GUI arrangement in a nested fashion. fxruby-enhancement will
    take care of passing parents to the nested children, and other issues
-   as well. You can now focus on creating a good GUI layout that you
+   as well. You can now focus on creating your great GUI layout that you
    can change on the fly without much fuss and bother.
 
-   fxruby-enhancement is basically a DSL of sorts, and every effort has
-   been taken to make it intuitive to use. Once you get the hang of it,
-   you should be able to look at the FXRuby API documentation and infer
-   the DSL construct for fxruby-enhancement. Please also see the many
-   [[file:examples][examples]].
+   fxruby-enhancement (also referred to as "Enhancement") is basically a
+   DSL of sorts, and every effort has been taken to make it intuitive to
+   use. Once you get the hang of it, you should be able to look at the
+   FXRuby API documentation and infer the DSL construct for fxruby-enhancement.
+   Please also see the many [[file:examples][examples]].
+   
+   Enhancement basically leverages Ruby's singleton feature, and eliminates
+   the need to "subclass" the FXRuby objects and the like. In fact, you might
+   even consider this Enhancement's own "paradigm" for doing GUI programming.
+
+   Your input and criticisms are more than welcome. Feel free to raise
+   issues on GitHub. I have not anticipated all the ways someone might try
+   to use Enhancement. I am making heavy use of Enhancement in my RubyNEAT
+   project -- which is why I created it.
    
 ** Installation
    To install the gem from commandline:
@@ -1016,6 +1025,9 @@ end
     More examples can be found [[file:examples][HERE]].
 
 **** DataTarget Example
+     fx_data_target (:some_name) must be referenced as refc(:some_name) and
+     not ref(...). See the example below.
+
      #+begin_src ruby
 #!/usr/bin/env ruby
 require 'fxruby-enhancement'
@@ -1088,9 +1100,11 @@ end
    |   0.1.0 | 2017-01-18 | special handling for fx_data_target and resuable components |
 
 ** Known Issues
-   | Version |       Date | Issues                                                |
-   |---------+------------+-------------------------------------------------------|
-   |   0.0.2 | 2017-01-11 | Not enough example code!!! Need more documentation!!! |
+   | Version |                   Date | Issues                                                             |
+   |---------+------------------------+--------------------------------------------------------------------|
+   |   0.0.2 |             2017-01-11 | Not enough example code!!! Need more documentation!!!              |
+   |   0.1.0 | Trump Inaguration Day, | deferred_setup not fully implemented, and may go away.             |
+   |         |             2017-01-20 | compose is not really needed, and is not fully implemented anyway. |
 
 ** Contributing to fxruby-enhancement
  
