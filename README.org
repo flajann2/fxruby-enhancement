@@ -44,6 +44,8 @@
   #+caption: Enhancement vs. FXRuby versions of Hello World.
   #+name: fig:hello-world
   [[./examples/images/hello-world-new-and-old.png]]
+  On the left: Enhancement version of hello world.
+  On the right: FXRuby version.
 ** Introduction
    The fxruby library is an excellent wrapper for the FOX Toolkit.
    However, it reflects the C++-ness of FOX, rather than being more
