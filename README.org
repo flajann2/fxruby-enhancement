@@ -41,6 +41,9 @@
        - [[#junkyard-data-targets][JUNKYARD Data Targets]]
 
 * fxruby-enhancement
+  #+caption: Enhancement vs. FXRuby versions of Hello World.
+  #+name: fig:hello-world
+  [[./examples/images/hello-world-new-and-old.png]]
 ** Introduction
    The fxruby library is an excellent wrapper for the FOX Toolkit.
    However, it reflects the C++-ness of FOX, rather than being more
