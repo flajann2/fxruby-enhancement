@@ -277,7 +277,7 @@
 
     With reusable components, you will use the #starten and #stoppen methods
     to create and destroy the component. Please see
-    the [[file:examples/dialog_box][Dialog Box]] for a full example, and also
+    the [[file:examples/dialog_box.rb][Dialog Box]] for a full example, and also
     the docs for #starten and #stoppen.
 
 *** API & DSL
