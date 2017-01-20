@@ -5,7 +5,7 @@ include Fox
 include Fox::Enhancement::Mapper
 
 fx_app :app do
-  app_name "Dialong Box"
+  app_name "Dialog Box"
   vendor_name "Example"
 
   fx_main_window(:main) {
