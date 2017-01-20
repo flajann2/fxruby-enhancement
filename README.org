@@ -13,7 +13,7 @@
        - [[#the-queue_ding-queues][The Queue_Ding Queues]]
          - [[#enhancementingress][Enhancement.ingress]]
          - [[#enhancementegress][Enhancement.egress]]
-     - [[#reusable-components-and-dynamic-creation-and-the-reuse-flag][Reusable components and dynamic creation, and the 'reuse:' flag]]
+     - [[#reusable-components-and-dynamic-creation-and-the-reuse-flag][Reusable components and dynamic creation, and the 'reuse' flag]]
      - [[#api--dsl][API & DSL]]
        - [[#ref-refc-and-tagging-your-objects][ref(), refc() and tagging your objects]]
        - [[#fox_component-and-fox_instance][fox_component and fox_instance]]
@@ -21,6 +21,7 @@
        - [[#fx_data_target][fx_data_target]]
        - [[#instance][instance]]
        - [[#ingress_handler][ingress_handler]]
+       - [[#starten-and-stoppen-with-resuable-components][#starten and #stoppen with resuable components]]
        - [[#deferred_setup][deferred_setup]]
        - [[#mapping-between-fx_-declarations-and-the-fx-fxruby-objects][Mapping between fx_* declarations and the FX* FXRuby objects]]
        - [[#bindingfx][binding.fx]]
@@ -247,12 +248,38 @@
       ...
       #+end_src
 
-*** Reusable components and dynamic creation, and the 'reuse:' flag
+*** Reusable components and dynamic creation, and the 'reuse' flag
     There are times you may want to be able to create, and popup, say, a dialog
     box, or perhaps you want to create on the fly child components on an
     existing window.
 
-    This is made possible with the "reuse:" flag.
+    This is made possible with the "reuse: true" flag. For example:
+    #+begin_src ruby
+    fx_dialog_box(:dialog, reuse: true) {
+      title "I am a Dialog!"
+      opts DECOR_ALL
+      
+      fx_button {
+        text "&It Works!"
+        instance { |dia|
+          dia.sel_command {
+            refc(:dialog).stoppen
+          }
+        }
+      }      
+      instance { |dia| dia.show PLACEMENT_OWNER  }
+    }
+    #+end_src
+
+    This code snippet can be run in the context of the app or a window. 
+    If you do it in a window context, that window will become the "owner",
+    and will initially be placed hovering over it.
+
+    With reusable components, you will use the #starten and #stoppen methods
+    to create and destroy the component. Please see
+    the [[file:examples/dialog_box][Dialog Box]] for a full example, and also
+    the docs for #starten and #stoppen.
+
 *** API & DSL
 **** ref(), refc() and tagging your objects
      In an effort to eliminate the fuss and bother with
@@ -456,6 +483,30 @@
      #+end_src
 
      The same block is assigned to all the given tags of :warn, :info, and :error.
+
+**** #starten and #stoppen with resuable components
+     To designate a component as reusable, declare it with "reuse: true"
+     as in the example:
+     #+begin_src ruby
+     fx_dialog_box(:dialog, reuse: true) { ... }
+     #+end_src
+
+     Then in the instance clause or to the response to an event,
+     you would do:
+     #+begin_src ruby
+     refc(:dialog).starten
+     #+end_src
+
+     to activate it, and
+     #+begin_src ruby
+     refc(:dialog).stoppen
+     #+end_src
+
+     to deactive it (and remove the 'server'-side FOX components!)
+
+     Note that you call refc(), not ref() in this case, because the
+     functionality lies in the component object holder for the actual
+     FOX component, not within the FXRuby object itself.
 
 **** TODO deferred_setup
 **** TODO Mapping between fx_* declarations and the FX* FXRuby objects
