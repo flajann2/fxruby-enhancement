@@ -13,6 +13,7 @@
        - [[#the-queue_ding-queues][The Queue_Ding Queues]]
          - [[#enhancementingress][Enhancement.ingress]]
          - [[#enhancementegress][Enhancement.egress]]
+     - [[#reusable-components-and-dynamic-creation-and-the-reuse-flag][Reusable components and dynamic creation, and the 'reuse:' flag]]
      - [[#api--dsl][API & DSL]]
        - [[#ref-refc-and-tagging-your-objects][ref(), refc() and tagging your objects]]
        - [[#fox_component-and-fox_instance][fox_component and fox_instance]]
@@ -246,6 +247,12 @@
       ...
       #+end_src
 
+*** Reusable components and dynamic creation, and the 'reuse:' flag
+    There are times you may want to be able to create, and popup, say, a dialog
+    box, or perhaps you want to create on the fly child components on an
+    existing window.
+
+    This is made possible with the "reuse:" flag.
 *** API & DSL
 **** ref(), refc() and tagging your objects
      In an effort to eliminate the fuss and bother with
