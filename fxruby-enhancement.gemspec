@@ -43,6 +43,7 @@ Gem::Specification.new do |s|
     "lib/fxruby-enhancement/core-monkey.rb",
     "lib/fxruby-enhancement/enhancement.rb",
     "lib/fxruby-enhancement/ostruct-monkey.rb",
+    "lib/fxruby-enhancement/xtras/chart.rb",
     "spec/fxruby-enhancement_spec.rb",
     "spec/spec_helper.rb"
   ]
