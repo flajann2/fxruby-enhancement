@@ -67,8 +67,9 @@ module Fox
              def <%= "#{@param.snake}" %> var; @os.op[@os.ii].<%= "#{@param}" %> = var; end
              <% end %>
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
          <% @i+=1; end unless @details[:initialize].nil? %>     
          self.instance_eval &block

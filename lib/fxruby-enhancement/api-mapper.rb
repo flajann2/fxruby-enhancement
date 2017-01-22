@@ -1230,8 +1230,9 @@ module Fox
              def height var; @os.op[@os.ii].height = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
          
              @os.op[1] = OpenStruct.new({:p => :required, :tgt => :required, :sel => :required, :opts => FOURSPLITTER_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0})
@@ -1253,8 +1254,9 @@ module Fox
              def height var; @os.op[@os.ii].height = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -1301,8 +1303,9 @@ module Fox
              def pad_bottom var; @os.op[@os.ii].padBottom = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -1369,8 +1372,9 @@ module Fox
              def vendor_name var; @os.op[@os.ii].vendorName = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -1419,8 +1423,9 @@ module Fox
              def pad_bottom var; @os.op[@os.ii].padBottom = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -1457,8 +1462,9 @@ module Fox
              def height var; @os.op[@os.ii].height = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -1493,8 +1499,9 @@ module Fox
              def height var; @os.op[@os.ii].height = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -1529,8 +1536,9 @@ module Fox
              def height var; @os.op[@os.ii].height = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -1577,8 +1585,9 @@ module Fox
              def pad_bottom var; @os.op[@os.ii].padBottom = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -1621,8 +1630,9 @@ module Fox
              def height var; @os.op[@os.ii].height = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -1675,8 +1685,9 @@ module Fox
              def pad_bottom var; @os.op[@os.ii].padBottom = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -1705,8 +1716,9 @@ module Fox
              def pixels var; @os.op[@os.ii].pixels = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -1747,8 +1759,9 @@ module Fox
              def height var; @os.op[@os.ii].height = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -1799,8 +1812,9 @@ module Fox
              def pad_bottom var; @os.op[@os.ii].padBottom = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -1845,8 +1859,9 @@ module Fox
              def height var; @os.op[@os.ii].height = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -1895,8 +1910,9 @@ module Fox
              def pad_bottom var; @os.op[@os.ii].padBottom = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -1935,8 +1951,9 @@ module Fox
              def height var; @os.op[@os.ii].height = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -1967,8 +1984,9 @@ module Fox
              def data var; @os.op[@os.ii].data = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -2009,8 +2027,9 @@ module Fox
              def height var; @os.op[@os.ii].height = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -2059,8 +2078,9 @@ module Fox
              def pad_bottom var; @os.op[@os.ii].padBottom = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -2101,8 +2121,9 @@ module Fox
              def height var; @os.op[@os.ii].height = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -2153,8 +2174,9 @@ module Fox
              def pad_bottom var; @os.op[@os.ii].padBottom = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -2203,8 +2225,9 @@ module Fox
              def pad_bottom var; @os.op[@os.ii].padBottom = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -2255,8 +2278,9 @@ module Fox
              def pad_bottom var; @os.op[@os.ii].padBottom = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -2293,8 +2317,9 @@ module Fox
              def height var; @os.op[@os.ii].height = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -2323,8 +2348,9 @@ module Fox
              def curid var; @os.op[@os.ii].curid = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
          
              @os.op[1] = OpenStruct.new({:a => :required, :pix => :required, :width => 32, :height => 32, :hotX => -1, :hotY => -1})
@@ -2342,8 +2368,9 @@ module Fox
              def hot_y var; @os.op[@os.ii].hotY = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
          
              @os.op[2] = OpenStruct.new({:a => :required, :pixels => :required, :width => 32, :height => 32, :hotX => -1, :hotY => -1})
@@ -2361,8 +2388,9 @@ module Fox
              def hot_y var; @os.op[@os.ii].hotY = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -2427,8 +2455,9 @@ module Fox
              def app var; @os.op[@os.ii].app = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -2493,8 +2522,9 @@ module Fox
              def app var; @os.op[@os.ii].app = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -2523,8 +2553,9 @@ module Fox
              def event var; @os.op[@os.ii].event = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -2555,8 +2586,9 @@ module Fox
              def selector var; @os.op[@os.ii].selector = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -2602,8 +2634,9 @@ module Fox
              def delegate var; @os.op[@os.ii].delegate = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -2652,8 +2685,9 @@ module Fox
              def pad_bottom var; @os.op[@os.ii].padBottom = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -2704,8 +2738,9 @@ module Fox
              def v_spacing var; @os.op[@os.ii].vSpacing = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -2773,8 +2808,9 @@ module Fox
              def pad_bottom var; @os.op[@os.ii].padBottom = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -2813,8 +2849,9 @@ module Fox
              def height var; @os.op[@os.ii].height = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -2847,8 +2884,9 @@ module Fox
              def data var; @os.op[@os.ii].data = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -2889,8 +2927,9 @@ module Fox
              def height var; @os.op[@os.ii].height = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -2931,8 +2970,9 @@ module Fox
              def height var; @os.op[@os.ii].height = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -2983,8 +3023,9 @@ module Fox
              def v_spacing var; @os.op[@os.ii].vSpacing = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
          
              @os.op[1] = OpenStruct.new({:p => :required, :opts => LAYOUT_TOP|LAYOUT_LEFT|LAYOUT_FILL_X, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 3, :padRight => 3, :padTop => 2, :padBottom => 2, :hSpacing => DEFAULT_SPACING, :vSpacing => DEFAULT_SPACING})
@@ -3014,8 +3055,9 @@ module Fox
              def v_spacing var; @os.op[@os.ii].vSpacing = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -3064,8 +3106,9 @@ module Fox
              def pb var; @os.op[@os.ii].pb = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -3114,8 +3157,9 @@ module Fox
              def v_spacing var; @os.op[@os.ii].vSpacing = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -3166,8 +3210,9 @@ module Fox
              def pad_bottom var; @os.op[@os.ii].padBottom = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -3213,8 +3258,9 @@ module Fox
              def p var; @os.op[@os.ii].p = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -3282,8 +3328,9 @@ module Fox
              def pad_bottom var; @os.op[@os.ii].padBottom = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -3310,8 +3357,9 @@ module Fox
              def ext var; @os.op[@os.ii].ext = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
          
              @os.op[1] = OpenStruct.new({:lo => :required, :hi => :required})
@@ -3321,8 +3369,9 @@ module Fox
              def hi var; @os.op[@os.ii].hi = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
          
              @os.op[2] = OpenStruct.new({:xlo => :required, :xhi => :required, :ylo => :required, :yhi => :required})
@@ -3336,8 +3385,9 @@ module Fox
              def yhi var; @os.op[@os.ii].yhi = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -3364,8 +3414,9 @@ module Fox
              def ext var; @os.op[@os.ii].ext = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
          
              @os.op[1] = OpenStruct.new({:lo => :required, :hi => :required})
@@ -3375,8 +3426,9 @@ module Fox
              def hi var; @os.op[@os.ii].hi = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
          
              @os.op[2] = OpenStruct.new({:xlo => :required, :xhi => :required, :ylo => :required, :yhi => :required})
@@ -3390,8 +3442,9 @@ module Fox
              def yhi var; @os.op[@os.ii].yhi = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -3430,8 +3483,9 @@ module Fox
              def height var; @os.op[@os.ii].height = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -3479,8 +3533,9 @@ module Fox
              def db var; @os.op[@os.ii].db = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -3513,8 +3568,9 @@ module Fox
              def ptr var; @os.op[@os.ii].ptr = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -3555,8 +3611,9 @@ module Fox
              def height var; @os.op[@os.ii].height = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -3597,8 +3654,9 @@ module Fox
              def height var; @os.op[@os.ii].height = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -3625,8 +3683,9 @@ module Fox
              def cont var; @os.op[@os.ii].cont = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -3659,8 +3718,9 @@ module Fox
              def data var; @os.op[@os.ii].data = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -3701,8 +3761,9 @@ module Fox
              def height var; @os.op[@os.ii].height = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -3750,8 +3811,9 @@ module Fox
              def font_desc var; @os.op[@os.ii].fontDesc = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
          
              @os.op[1] = OpenStruct.new({:a => :required, :face => :required, :size => :required, :weight => FXFont::Normal, :slant => Font::Straight, :encoding => FONTENCODING_DEFAULT, :setWidth => FXFont::NonExpanded, :hints => 0})
@@ -3773,8 +3835,9 @@ module Fox
              def hints var; @os.op[@os.ii].hints = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
          
              @os.op[2] = OpenStruct.new({:a => :required, :string => :required})
@@ -3784,8 +3847,9 @@ module Fox
              def string var; @os.op[@os.ii].string = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -3824,8 +3888,9 @@ module Fox
              def height var; @os.op[@os.ii].height = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -3866,8 +3931,9 @@ module Fox
              def height var; @os.op[@os.ii].height = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -3912,8 +3978,9 @@ module Fox
              def pad_bottom var; @os.op[@os.ii].padBottom = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -3946,8 +4013,9 @@ module Fox
              def hy var; @os.op[@os.ii].hy = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -3984,8 +4052,9 @@ module Fox
              def height var; @os.op[@os.ii].height = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -4020,8 +4089,9 @@ module Fox
              def height var; @os.op[@os.ii].height = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -4064,8 +4134,9 @@ module Fox
              def height var; @os.op[@os.ii].height = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
          
              @os.op[1] = OpenStruct.new({:parent => :required, :vis => :required, :sharegroup => :required, :target => nil, :selector => 0, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
@@ -4091,8 +4162,9 @@ module Fox
              def height var; @os.op[@os.ii].height = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -4123,8 +4195,9 @@ module Fox
              def other var; @os.op[@os.ii].other = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -4180,8 +4253,9 @@ module Fox
              def back var; @os.op[@os.ii].back = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -4281,8 +4355,9 @@ module Fox
              def height var; @os.op[@os.ii].height = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
          
              @os.op[1] = OpenStruct.new({:p => :required, :vis => :required, :sharegroup => :required, :target => nil, :selector => 0, :opts => 0, :x => 0, :y => 0, :width => 0, :height => 0})
@@ -4308,8 +4383,9 @@ module Fox
              def height var; @os.op[@os.ii].height = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -4338,8 +4414,9 @@ module Fox
              def flags var; @os.op[@os.ii].flags = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -4407,8 +4484,9 @@ module Fox
              def pad_bottom var; @os.op[@os.ii].padBottom = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -4459,8 +4537,9 @@ module Fox
              def v_spacing var; @os.op[@os.ii].vSpacing = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -4493,8 +4572,9 @@ module Fox
              def ptr var; @os.op[@os.ii].ptr = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -4543,8 +4623,9 @@ module Fox
              def pad_bottom var; @os.op[@os.ii].padBottom = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -4593,8 +4674,9 @@ module Fox
              def v_spacing var; @os.op[@os.ii].vSpacing = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -4631,8 +4713,9 @@ module Fox
              def height var; @os.op[@os.ii].height = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -4667,8 +4750,9 @@ module Fox
              def height var; @os.op[@os.ii].height = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -4705,8 +4789,9 @@ module Fox
              def height var; @os.op[@os.ii].height = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -4758,8 +4843,9 @@ module Fox
              def data var; @os.op[@os.ii].data = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -4800,8 +4886,9 @@ module Fox
              def height var; @os.op[@os.ii].height = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -4828,8 +4915,9 @@ module Fox
              def app var; @os.op[@os.ii].app = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -4883,8 +4971,9 @@ module Fox
              def height var; @os.op[@os.ii].height = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -4931,8 +5020,9 @@ module Fox
              def pad_bottom var; @os.op[@os.ii].padBottom = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -4975,8 +5065,9 @@ module Fox
              def height var; @os.op[@os.ii].height = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -5019,8 +5110,9 @@ module Fox
              def height var; @os.op[@os.ii].height = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -5059,8 +5151,9 @@ module Fox
              def quality var; @os.op[@os.ii].quality = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -5097,8 +5190,9 @@ module Fox
              def quality var; @os.op[@os.ii].quality = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -5147,8 +5241,9 @@ module Fox
              def pad_bottom var; @os.op[@os.ii].padBottom = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -5197,8 +5292,9 @@ module Fox
              def pad_bottom var; @os.op[@os.ii].padBottom = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -5229,8 +5325,9 @@ module Fox
              def data var; @os.op[@os.ii].data = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -5271,8 +5368,9 @@ module Fox
              def height var; @os.op[@os.ii].height = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -5321,8 +5419,9 @@ module Fox
              def pad_bottom var; @os.op[@os.ii].padBottom = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -5363,8 +5462,9 @@ module Fox
              def height var; @os.op[@os.ii].height = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -5405,8 +5505,9 @@ module Fox
              def height var; @os.op[@os.ii].height = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -5447,8 +5548,9 @@ module Fox
              def height var; @os.op[@os.ii].height = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -5489,8 +5591,9 @@ module Fox
              def height var; @os.op[@os.ii].height = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -5533,8 +5636,9 @@ module Fox
              def height var; @os.op[@os.ii].height = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -5563,8 +5667,9 @@ module Fox
              def target var; @os.op[@os.ii].target = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -5607,8 +5712,9 @@ module Fox
              def height var; @os.op[@os.ii].height = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -5645,8 +5751,9 @@ module Fox
              def height var; @os.op[@os.ii].height = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -5701,8 +5808,9 @@ module Fox
              def v_spacing var; @os.op[@os.ii].vSpacing = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -5753,8 +5861,9 @@ module Fox
              def v_spacing var; @os.op[@os.ii].vSpacing = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -5781,8 +5890,9 @@ module Fox
              def data var; @os.op[@os.ii].data = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -5809,8 +5919,9 @@ module Fox
              def cont var; @os.op[@os.ii].cont = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -5861,8 +5972,9 @@ module Fox
              def v_spacing var; @os.op[@os.ii].vSpacing = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
          
              @os.op[1] = OpenStruct.new({:p => :required, :opts => :required, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 3, :padRight => 3, :padTop => 2, :padBottom => 2, :hSpacing => DEFAULT_SPACING, :vSpacing => DEFAULT_SPACING})
@@ -5892,8 +6004,9 @@ module Fox
              def v_spacing var; @os.op[@os.ii].vSpacing = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -5944,8 +6057,9 @@ module Fox
              def pad_bottom var; @os.op[@os.ii].padBottom = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -5978,8 +6092,9 @@ module Fox
              def opts var; @os.op[@os.ii].opts = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -6014,8 +6129,9 @@ module Fox
              def opts var; @os.op[@os.ii].opts = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -6050,8 +6166,9 @@ module Fox
              def opts var; @os.op[@os.ii].opts = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -6088,8 +6205,9 @@ module Fox
              def opts var; @os.op[@os.ii].opts = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -6118,8 +6236,9 @@ module Fox
              def opts var; @os.op[@os.ii].opts = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -6154,8 +6273,9 @@ module Fox
              def opts var; @os.op[@os.ii].opts = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -6184,8 +6304,9 @@ module Fox
              def opts var; @os.op[@os.ii].opts = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -6220,8 +6341,9 @@ module Fox
              def opts var; @os.op[@os.ii].opts = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -6260,8 +6382,9 @@ module Fox
              def y var; @os.op[@os.ii].y = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -6333,8 +6456,9 @@ module Fox
              def pad_bottom var; @os.op[@os.ii].padBottom = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -6381,8 +6505,9 @@ module Fox
              def pad_bottom var; @os.op[@os.ii].padBottom = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -6419,8 +6544,9 @@ module Fox
              def height var; @os.op[@os.ii].height = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -6455,8 +6581,9 @@ module Fox
              def height var; @os.op[@os.ii].height = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -6493,8 +6620,9 @@ module Fox
              def height var; @os.op[@os.ii].height = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -6529,8 +6657,9 @@ module Fox
              def height var; @os.op[@os.ii].height = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -6567,8 +6696,9 @@ module Fox
              def height var; @os.op[@os.ii].height = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -6603,8 +6733,9 @@ module Fox
              def height var; @os.op[@os.ii].height = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -6653,8 +6784,9 @@ module Fox
              def v_spacing var; @os.op[@os.ii].vSpacing = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -6707,8 +6839,9 @@ module Fox
              def pad_bottom var; @os.op[@os.ii].padBottom = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -6745,8 +6878,9 @@ module Fox
              def height var; @os.op[@os.ii].height = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -6785,8 +6919,9 @@ module Fox
              def height var; @os.op[@os.ii].height = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -6835,8 +6970,9 @@ module Fox
              def pad_bottom var; @os.op[@os.ii].padBottom = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -6877,8 +7013,9 @@ module Fox
              def height var; @os.op[@os.ii].height = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -6907,8 +7044,9 @@ module Fox
              def phi var; @os.op[@os.ii].phi = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
          
              @os.op[1] = OpenStruct.new({:x => :required, :y => :required, :z => :required, :w => :required})
@@ -6922,8 +7060,9 @@ module Fox
              def w var; @os.op[@os.ii].w = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
          
              @os.op[2] = OpenStruct.new({:floats => :required})
@@ -6931,8 +7070,9 @@ module Fox
              def floats var; @os.op[@os.ii].floats = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
          
              @os.op[3] = OpenStruct.new({:roll => :required, :pitch => :required, :yaw => :required})
@@ -6944,8 +7084,9 @@ module Fox
              def yaw var; @os.op[@os.ii].yaw = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
          
              @os.op[4] = OpenStruct.new({:ex => :required, :ey => :required, :ez => :required})
@@ -6957,8 +7098,9 @@ module Fox
              def ez var; @os.op[@os.ii].ez = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -6987,8 +7129,9 @@ module Fox
              def phi var; @os.op[@os.ii].phi = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
          
              @os.op[1] = OpenStruct.new({:roll => :required, :pitch => :required, :yaw => :required})
@@ -7000,8 +7143,9 @@ module Fox
              def yaw var; @os.op[@os.ii].yaw = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
          
              @os.op[2] = OpenStruct.new({:ex => :required, :ey => :required, :ez => :required})
@@ -7013,8 +7157,9 @@ module Fox
              def ez var; @os.op[@os.ii].ez = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
          
              @os.op[3] = OpenStruct.new({:mat => :required})
@@ -7022,8 +7167,9 @@ module Fox
              def mat var; @os.op[@os.ii].mat = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
          
              @os.op[4] = OpenStruct.new({:x => :required, :y => :required, :z => :required, :w => :required})
@@ -7037,8 +7183,9 @@ module Fox
              def w var; @os.op[@os.ii].w = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -7075,8 +7222,9 @@ module Fox
              def height var; @os.op[@os.ii].height = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -7111,8 +7259,9 @@ module Fox
              def height var; @os.op[@os.ii].height = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -7163,8 +7312,9 @@ module Fox
              def pad_bottom var; @os.op[@os.ii].padBottom = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -7201,8 +7351,9 @@ module Fox
              def zhi var; @os.op[@os.ii].zhi = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
          
              @os.op[1] = OpenStruct.new({:bounds => :required})
@@ -7210,8 +7361,9 @@ module Fox
              def bounds var; @os.op[@os.ii].bounds = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
          
              @os.op[2] = OpenStruct.new({:sphere => :required})
@@ -7219,8 +7371,9 @@ module Fox
              def sphere var; @os.op[@os.ii].sphere = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -7257,8 +7410,9 @@ module Fox
              def zhi var; @os.op[@os.ii].zhi = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
          
              @os.op[1] = OpenStruct.new({:bounds => :required})
@@ -7266,8 +7420,9 @@ module Fox
              def bounds var; @os.op[@os.ii].bounds = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
          
              @os.op[2] = OpenStruct.new({:sphere => :required})
@@ -7275,8 +7430,9 @@ module Fox
              def sphere var; @os.op[@os.ii].sphere = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -7325,8 +7481,9 @@ module Fox
              def pad_bottom var; @os.op[@os.ii].padBottom = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -7377,8 +7534,9 @@ module Fox
              def pad_bottom var; @os.op[@os.ii].padBottom = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -7405,8 +7563,9 @@ module Fox
              def a var; @os.op[@os.ii].a = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
          
              @os.op[1] = OpenStruct.new({:a => :required, :gp => :required, :target => nil, :selector => 0})
@@ -7420,8 +7579,9 @@ module Fox
              def selector var; @os.op[@os.ii].selector = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -7454,8 +7614,9 @@ module Fox
              def hh var; @os.op[@os.ii].hh = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
          
              @os.op[1] = OpenStruct.new({:p => :required, :s => :required})
@@ -7465,8 +7626,9 @@ module Fox
              def s var; @os.op[@os.ii].s = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
          
              @os.op[2] = OpenStruct.new({:topleft => :required, :bottomright => :required})
@@ -7476,8 +7638,9 @@ module Fox
              def bottomright var; @os.op[@os.ii].bottomright = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -7504,8 +7667,9 @@ module Fox
              def r var; @os.op[@os.ii].r = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
          
              @os.op[1] = OpenStruct.new({:rect => :required})
@@ -7513,8 +7677,9 @@ module Fox
              def rect var; @os.op[@os.ii].rect = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
          
              @os.op[2] = OpenStruct.new({:x => :required, :y => :required, :w => :required, :h => :required})
@@ -7528,8 +7693,9 @@ module Fox
              def h var; @os.op[@os.ii].h = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
          
              @os.op[3] = OpenStruct.new({:points => :required, :winding => false})
@@ -7539,8 +7705,9 @@ module Fox
              def winding var; @os.op[@os.ii].winding = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -7569,8 +7736,9 @@ module Fox
              def vendor_key var; @os.op[@os.ii].vendorKey = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -7611,8 +7779,9 @@ module Fox
              def height var; @os.op[@os.ii].height = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -7641,8 +7810,9 @@ module Fox
              def vis var; @os.op[@os.ii].vis = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -7691,8 +7861,9 @@ module Fox
              def pad_bottom var; @os.op[@os.ii].padBottom = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -7733,8 +7904,9 @@ module Fox
              def height var; @os.op[@os.ii].height = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -7803,8 +7975,9 @@ module Fox
              def size var; @os.op[@os.ii].size = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -7845,8 +8018,9 @@ module Fox
              def height var; @os.op[@os.ii].height = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -7883,8 +8057,9 @@ module Fox
              def height var; @os.op[@os.ii].height = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -7925,8 +8100,9 @@ module Fox
              def height var; @os.op[@os.ii].height = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -7953,8 +8129,9 @@ module Fox
              def p var; @os.op[@os.ii].p = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -7985,8 +8162,9 @@ module Fox
              def opts var; @os.op[@os.ii].opts = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -8023,8 +8201,9 @@ module Fox
              def height var; @os.op[@os.ii].height = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -8065,8 +8244,9 @@ module Fox
              def height var; @os.op[@os.ii].height = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -8111,8 +8291,9 @@ module Fox
              def pad_bottom var; @os.op[@os.ii].padBottom = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -8157,8 +8338,9 @@ module Fox
              def pad_bottom var; @os.op[@os.ii].padBottom = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -8203,8 +8385,9 @@ module Fox
              def pad_bottom var; @os.op[@os.ii].padBottom = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -8295,8 +8478,9 @@ module Fox
              def v_spacing var; @os.op[@os.ii].vSpacing = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -8349,8 +8533,9 @@ module Fox
              def v_spacing var; @os.op[@os.ii].vSpacing = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -8377,8 +8562,9 @@ module Fox
              def s var; @os.op[@os.ii].s = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
          
              @os.op[1] = OpenStruct.new({:ww => :required, :hh => :required})
@@ -8388,8 +8574,9 @@ module Fox
              def hh var; @os.op[@os.ii].hh = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -8438,8 +8625,9 @@ module Fox
              def pad_bottom var; @os.op[@os.ii].padBottom = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -8466,8 +8654,9 @@ module Fox
              def other_sphere var; @os.op[@os.ii].otherSphere = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
          
              @os.op[1] = OpenStruct.new({:cen => :required, :rad => 0.0})
@@ -8477,8 +8666,9 @@ module Fox
              def rad var; @os.op[@os.ii].rad = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
          
              @os.op[2] = OpenStruct.new({:x => :required, :y => :required, :z => :required, :rad => 0.0})
@@ -8492,8 +8682,9 @@ module Fox
              def rad var; @os.op[@os.ii].rad = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
          
              @os.op[3] = OpenStruct.new({:bounds => :required})
@@ -8501,8 +8692,9 @@ module Fox
              def bounds var; @os.op[@os.ii].bounds = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -8529,8 +8721,9 @@ module Fox
              def other_sphere var; @os.op[@os.ii].otherSphere = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
          
              @os.op[1] = OpenStruct.new({:cen => :required, :rad => 0.0})
@@ -8540,8 +8733,9 @@ module Fox
              def rad var; @os.op[@os.ii].rad = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
          
              @os.op[2] = OpenStruct.new({:x => :required, :y => :required, :z => :required, :rad => 0.0})
@@ -8555,8 +8749,9 @@ module Fox
              def rad var; @os.op[@os.ii].rad = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
          
              @os.op[3] = OpenStruct.new({:bounds => :required})
@@ -8564,8 +8759,9 @@ module Fox
              def bounds var; @os.op[@os.ii].bounds = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -8616,8 +8812,9 @@ module Fox
              def pad_bottom var; @os.op[@os.ii].padBottom = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -8650,8 +8847,9 @@ module Fox
              def ms var; @os.op[@os.ii].ms = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -8688,8 +8886,9 @@ module Fox
              def height var; @os.op[@os.ii].height = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
          
              @os.op[1] = OpenStruct.new({:p => :required, :tgt => :required, :sel => :required, :opts => SPLITTER_NORMAL, :x => 0, :y => 0, :width => 0, :height => 0})
@@ -8711,8 +8910,9 @@ module Fox
              def height var; @os.op[@os.ii].height = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -8765,8 +8965,9 @@ module Fox
              def v_spacing var; @os.op[@os.ii].vSpacing = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -8815,8 +9016,9 @@ module Fox
              def v_spacing var; @os.op[@os.ii].vSpacing = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -8847,8 +9049,9 @@ module Fox
              def selector var; @os.op[@os.ii].selector = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -8875,8 +9078,9 @@ module Fox
              def cont var; @os.op[@os.ii].cont = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -8940,8 +9144,9 @@ module Fox
              def pad_bottom var; @os.op[@os.ii].padBottom = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -8978,8 +9183,9 @@ module Fox
              def height var; @os.op[@os.ii].height = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -9014,8 +9220,9 @@ module Fox
              def height var; @os.op[@os.ii].height = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -9052,8 +9259,9 @@ module Fox
              def height var; @os.op[@os.ii].height = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -9088,8 +9296,9 @@ module Fox
              def height var; @os.op[@os.ii].height = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -9138,8 +9347,9 @@ module Fox
              def pad_bottom var; @os.op[@os.ii].padBottom = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -9188,8 +9398,9 @@ module Fox
              def pad_bottom var; @os.op[@os.ii].padBottom = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -9238,8 +9449,9 @@ module Fox
              def pad_bottom var; @os.op[@os.ii].padBottom = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -9308,8 +9520,9 @@ module Fox
              def data var; @os.op[@os.ii].data = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -9358,8 +9571,9 @@ module Fox
              def pad_bottom var; @os.op[@os.ii].padBottom = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -9446,8 +9660,9 @@ module Fox
              def pad_bottom var; @os.op[@os.ii].padBottom = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -9498,8 +9713,9 @@ module Fox
              def pad_bottom var; @os.op[@os.ii].padBottom = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -9556,8 +9772,9 @@ module Fox
              def pad_bottom var; @os.op[@os.ii].padBottom = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -9608,8 +9825,9 @@ module Fox
              def v_spacing var; @os.op[@os.ii].vSpacing = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
          
              @os.op[1] = OpenStruct.new({:p => :required, :opts => LAYOUT_TOP|LAYOUT_LEFT|LAYOUT_FILL_X, :x => 0, :y => 0, :width => 0, :height => 0, :padLeft => 3, :padRight => 3, :padTop => 2, :padBottom => 2, :hSpacing => DEFAULT_SPACING, :vSpacing => DEFAULT_SPACING})
@@ -9639,8 +9857,9 @@ module Fox
              def v_spacing var; @os.op[@os.ii].vSpacing = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -9681,8 +9900,9 @@ module Fox
              def height var; @os.op[@os.ii].height = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -9723,8 +9943,9 @@ module Fox
              def v_spacing var; @os.op[@os.ii].vSpacing = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -9765,8 +9986,9 @@ module Fox
              def height var; @os.op[@os.ii].height = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -9803,8 +10025,9 @@ module Fox
              def height var; @os.op[@os.ii].height = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -9850,8 +10073,9 @@ module Fox
              def a var; @os.op[@os.ii].a = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -9884,8 +10108,9 @@ module Fox
              def data var; @os.op[@os.ii].data = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -9926,8 +10151,9 @@ module Fox
              def height var; @os.op[@os.ii].height = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -9976,8 +10202,9 @@ module Fox
              def pad_bottom var; @os.op[@os.ii].padBottom = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -10038,8 +10265,9 @@ module Fox
              def pad_bottom var; @os.op[@os.ii].padBottom = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -10068,8 +10296,9 @@ module Fox
              def yy var; @os.op[@os.ii].yy = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -10098,8 +10327,9 @@ module Fox
              def yy var; @os.op[@os.ii].yy = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -10130,8 +10360,9 @@ module Fox
              def zz var; @os.op[@os.ii].zz = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -10162,8 +10393,9 @@ module Fox
              def zz var; @os.op[@os.ii].zz = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -10196,8 +10428,9 @@ module Fox
              def ww var; @os.op[@os.ii].ww = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
          
              @os.op[1] = OpenStruct.new({:vec3d => :required, :ww => 1.0})
@@ -10207,8 +10440,9 @@ module Fox
              def ww var; @os.op[@os.ii].ww = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -10241,8 +10475,9 @@ module Fox
              def ww var; @os.op[@os.ii].ww = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
          
              @os.op[1] = OpenStruct.new({:vec3f => :required, :ww => 1.0})
@@ -10252,8 +10487,9 @@ module Fox
              def ww var; @os.op[@os.ii].ww = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -10302,8 +10538,9 @@ module Fox
              def v_spacing var; @os.op[@os.ii].vSpacing = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -10334,8 +10571,9 @@ module Fox
              def d var; @os.op[@os.ii].d = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -10372,8 +10610,9 @@ module Fox
              def height var; @os.op[@os.ii].height = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
          
              @os.op[1] = OpenStruct.new({:a => :required, :vis => :required})
@@ -10383,8 +10622,9 @@ module Fox
              def vis var; @os.op[@os.ii].vis = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
          
              @os.op[2] = OpenStruct.new({:a => :required, :own => :required, :opts => :required, :x => :required, :y => :required, :w => :required, :h => :required})
@@ -10404,8 +10644,9 @@ module Fox
              def h var; @os.op[@os.ii].h = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -10458,8 +10699,9 @@ module Fox
              def v_spacing var; @os.op[@os.ii].vSpacing = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -10498,8 +10740,9 @@ module Fox
              def height var; @os.op[@os.ii].height = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -10536,8 +10779,9 @@ module Fox
              def height var; @os.op[@os.ii].height = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -10574,8 +10818,9 @@ module Fox
              def height var; @os.op[@os.ii].height = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block
@@ -10610,8 +10855,9 @@ module Fox
              def height var; @os.op[@os.ii].height = var; end
              
              def instance a=nil, &block
-                @os.instance_name = a
-                @os.instance_block = block
+               @os.instance_name = a
+               @os.instance_block ||= []
+               @os.instance_block << [a, block]
              end
               
          self.instance_eval &block

@@ -2,14 +2,21 @@ module Fox
   module Enhancement
     module Mapper
       def fx_chart name = nil, ii: 0, pos: Enhancement.stack.last, reuse: nil, &block
-        Enhancement.stack << (@os = os = OpenStruct.new(klass: FXCanvas, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil, reusable: reuse))
+        Enhancement.stack << (@os = os =
+                              OpenStruct.new(klass: FXCanvas,
+                                             op: [],
+                                             ii: ii,
+                                             fx: nil,
+                                             kinder: [],
+                                             inst: nil,
+                                             instance_result: nil,
+                                             reusable: reuse))
         Enhancement.components[name] = os unless name.nil?
         unless pos.nil?
           pos.kinder << os 
         else
           Enhancement.base = os
         end
-        
         
         @os.op[0] = OpenStruct.new({:parent => :required,
                                     :target => nil,
@@ -31,22 +38,21 @@ module Fox
         
         def instance a=nil, &block
           @os.instance_name = a
-          @os.instance_block = block
+          @os.instance_block ||= []
+          @os.instance_block << [a, block]
         end
         
         self.instance_eval &block
         
         os.fx = ->(){
           FXCanvas.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1]
-                                      .map{ |v| (v.is_a?(OpenStruct)
-                                                 ? v.inst
-                                                 : v)
+                                      .map{ |v| (v.is_a?(OpenStruct) ? v.inst : v)
                          } ))
         }
         
         Enhancement.stack.pop                                                  
         @os = Enhancement.stack.last
-        os
+        return os
       end
     end
   end

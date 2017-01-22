@@ -38,10 +38,17 @@ class OpenStruct
     }
     self.inst = nil
   end
-  
+
+  # We can have as many instances as we like.
   def instance_final_activate
-    self.instance_result = self.instance_block.(self.inst) unless self.instance_block.nil?
-    self.kinder.each{ |os| os.instance_final_activate unless os.reusable? }
+    self.instance_result =
+      self.instance_block.each{ |name, inst|
+      inst.(self.inst)
+    } unless self.instance_block.nil?
+    self.kinder
+      .each{ |os|
+      os.instance_final_activate unless os.reusable?
+    }
     self
   end
 
