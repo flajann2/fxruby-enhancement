@@ -1,3 +1,4 @@
+# coding: utf-8
 module Fox
   module Enhancement
     module Mapper
@@ -26,8 +27,8 @@ module Fox
                                     :y => 0,
                                     :width => 0,
                                     :height => 0})
-        
-        def parent var; @os.op[@os.ii].parent = var; end       
+
+        # Initializers for the underlying 
         def target var; @os.op[@os.ii].target = var; end
         def selector var; @os.op[@os.ii].selector = var; end
         def opts var; @os.op[@os.ii].opts = var; end
@@ -36,6 +37,10 @@ module Fox
         def width var; @os.op[@os.ii].width = var; end
         def height var; @os.op[@os.ii].height = var; end
         
+        # Chart specific
+        def type var; end
+
+        # What will be executed after FXCanvas is created.
         def instance a=nil, &block
           @os.instance_name = a
           @os.instance_block ||= []

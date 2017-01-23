@@ -32,6 +32,7 @@ Gem::Specification.new do |s|
     "build/scrape-rdoc.rb",
     "examples/.ruby-version",
     "examples/bounce.rb",
+    "examples/chart.rb",
     "examples/data_target.rb",
     "examples/dialog_box.rb",
     "examples/hello.rb",

@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+# coding: utf-8
 require 'fxruby-enhancement'
 
 include Fox
@@ -130,6 +131,11 @@ fx_app :app do
     
     fx_chart(:chart) {
       opts LAYOUT_FILL_X|LAYOUT_FILL_Y
+      type :cartesian
+      axis x: :ĺinear, color: :black, name: "Time"
+      axis y: :linear, color: :black, name: "Price"
+      background color: :white, grid: true, grid_color: :blue
+      
       
       instance { |c|
         c.sel_paint { |sender, sel, event|
