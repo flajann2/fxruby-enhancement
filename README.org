@@ -16,6 +16,7 @@
      - [[#reusable-components-and-dynamic-creation-and-the-reuse-flag][Reusable components and dynamic creation, and the 'reuse' flag]]
      - [[#api--dsl][API & DSL]]
        - [[#ref-refc-and-tagging-your-objects][ref(), refc() and tagging your objects]]
+       - [[#as----adding-new-child-components-to-already-declared-ones][as -- adding new child components to already declared ones]]
        - [[#fox_component-and-fox_instance][fox_component and fox_instance]]
        - [[#fx_app][fx_app]]
        - [[#fx_data_target][fx_data_target]]
@@ -335,6 +336,37 @@
      While you may like to stuff some additional data there, 
      this is frowned upon because it might conflict with Enhancement.
      If you have a need for this, please do a issue in GitHub.
+
+**** as -- adding new child components to already declared ones
+     The 'as' clause allow you to shift context back
+     to a previously defined component, so that you
+     can factor your code in a way to promote
+     encapsulation.
+
+     This is especially useful in large projects
+     where you are making heavy use of binding.fx
+     to modularize your GUI layout. It helps
+     you keep everything related in one place.
+
+     For example, deep within a 
+     window definition, you made need to define
+     an image to be used by a widget. However,
+     the image needs to be defined in the fx_app
+     context, taking it far away from where
+     it is actially needed. Here's an example of how
+     you would do that:
+     #+begin_src ruby
+     fx_main_window(:bounce_window) {
+       title "Bounce Demo"
+       ...
+       as (:app) {
+         fx_image(:back_buffer) { opts IMAGE_KEEP }
+       }
+       ...
+     #+end_src
+
+     As you can see, your components will need to be tagged
+     to be referenced by 'as'.
 
 **** fox_component and fox_instance
      fox_component and fox_instance are roughly the

@@ -80,14 +80,16 @@ end
 fx_app :app do
   app_name "Bounce"
   vendor_name "Example"
-
-  fx_image(:back_buffer) { opts IMAGE_KEEP }
   
   fx_main_window(:bounce_window) {
     title "Bounce Demo"
     opts DECOR_ALL
     width 400
     height 300
+
+    as (:app) {
+      fx_image(:back_buffer) { opts IMAGE_KEEP }
+    }
     
     instance { |w|
       def w.ball

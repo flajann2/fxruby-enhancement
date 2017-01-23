@@ -128,6 +128,26 @@ module Fox
       end
       alias_method :fxi, :fox_instance
 
+      # To allow for adding new components at
+      # other places other than the immediate
+      # parental nesting
+      def as tag, &block
+        Enhancement.stack << (@os = os = refc(tag))
+        
+        def instance a=nil, &block
+          @os.instance_name = a
+          @os.instance_block ||= []
+          @os.instance_block << [a, block]
+        end
+        
+        self.instance_eval &block
+
+        Enhancement.stack.pop                                                  
+        @os = Enhancement.stack.last
+        return os
+
+      end
+      
       # Handles incomming external messages of type given
       # block, written by user, is called with |type, message|.
       # Zero or more symbols may be given,
