@@ -5,6 +5,7 @@
    - [[#installation][Installation]]
    - [[#documentation][Documentation]]
      - [[#in-general][In General]]
+       - [[#the-use-of--vs-doend-to-define-your-blocks][The use of {...} vs do...end to define your blocks]]
      - [[#execution-phases-of-fxruby-enhancement][Execution Phases of fxruby-enhancement]]
        - [[#declarative][Declarative]]
        - [[#fxruby-instantiation][FXRuby Instantiation]]
@@ -150,6 +151,44 @@
     So when the actual FXImage object is instantiated, it is associated to
     the :back_buffer tag, which then is found by ref() and can be used
     anywhere in the instantiation phase.
+**** The use of {...} vs do...end to define your blocks
+     This is something to be aware of, depending on
+     how you'd like to style your code for Enhancement.
+     I prefer the use of the braces {}, but others
+     might prefer the use of do...end.
+
+     Even though Ehnancement is a bit "opionated", I don't
+     wish to impose a coding style on you. But I do wish
+     to alert you to the subtle difference in syntax
+     that Ruby expects.
+
+     If you use the braces, you must enclose the
+     parameters to the directive in parens (). If
+     you use do...end, you have no such requirement.
+     for example, to use do...end:
+     #+begin_src ruby
+     fx_app :app do
+       ...
+     end
+     #+end_src
+
+     is perfectly OK, whereas:
+     #+begin_src ruby
+     fx_app :app {
+       ...
+     }
+     #+end_src
+
+     would generate a syntax error. You must, in this case:
+     #+begin_src ruby
+     fx_app (:app) {
+       ...
+     }
+     #+end_src
+
+     And that won't get your hands slapped by the Ruby
+     parser.
+
 *** Execution Phases of fxruby-enhancement
     This represents the work flow, in the order stated:
     | State                     | Description                                                                                                                  |
