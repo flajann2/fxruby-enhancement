@@ -145,7 +145,6 @@ module Fox
         Enhancement.stack.pop                                                  
         @os = Enhancement.stack.last
         return os
-
       end
       
       # Handles incomming external messages of type given
