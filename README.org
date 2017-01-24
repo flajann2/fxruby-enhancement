@@ -1183,6 +1183,7 @@ end
    |   0.1.0 | Trump Inaguration Day, | deferred_setup not fully implemented, and may go away.                   |
    |         | 2017-01-20             | compose is not really needed, and is not fully implemented anyway.       |
    |   0.2.0 | Subtle Ruby Bug        | There are TODO notes in chart.rb, and there is something in The Junkyard |
+   |         |                        | Bug moved into bug/ruby240 branch. Workaround now in place here.         |
 
 ** Contributing to fxruby-enhancement
  
