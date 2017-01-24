@@ -132,10 +132,9 @@ fx_app :app do
     fx_chart(:chart) {
       opts LAYOUT_FILL_X|LAYOUT_FILL_Y
       type :cartesian
-      axis x: :ĺinear, color: :black, name: "Time"
-      axis y: :linear, color: :black, name: "Price"
-      background color: :white, grid: true, grid_color: :blue
-      
+      background color: :white, grid: true, grid_color: :blue      
+      axis :x, type: :linear, color: :black, name: "Time"
+      axis :y, type: :linear, color: :black, name: "Price"
       
       instance { |c|
         c.sel_paint { |sender, sel, event|

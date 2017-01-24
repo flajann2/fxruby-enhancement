@@ -41,6 +41,7 @@
      - [[#junkyard-genesis-of-the-meta-meta-programming-whereby-brain-goes-boom][JUNKYARD Genesis of the meta-meta programming, whereby brain goes boom]]
      - [[#junkyard-resuable-components-and-data-targets][JUNKYARD Resuable components and data targets]]
        - [[#junkyard-data-targets][JUNKYARD Data Targets]]
+     - [[#junkyard-subtle-ruby-bug-detected-chartrb-ruby-240][JUNKYARD Subtle Ruby Bug detected. (chart.rb) Ruby 2.4.0]]
 
 * fxruby-enhancement
   #+caption: Enhancement vs. FXRuby versions of Hello World.
@@ -1176,11 +1177,12 @@ end
    |   0.1.0 | 2017-01-18 | special handling for fx_data_target and resuable components |
 
 ** Known Issues
-   | Version |                   Date | Issues                                                             |
-   |---------+------------------------+--------------------------------------------------------------------|
-   |   0.0.2 |             2017-01-11 | Not enough example code!!! Need more documentation!!!              |
-   |   0.1.0 | Trump Inaguration Day, | deferred_setup not fully implemented, and may go away.             |
-   |         |             2017-01-20 | compose is not really needed, and is not fully implemented anyway. |
+   | Version | Date                   | Issues                                                                   |
+   |---------+------------------------+--------------------------------------------------------------------------|
+   |   0.0.2 | 2017-01-11             | Not enough example code!!! Need more documentation!!!                    |
+   |   0.1.0 | Trump Inaguration Day, | deferred_setup not fully implemented, and may go away.                   |
+   |         | 2017-01-20             | compose is not really needed, and is not fully implemented anyway.       |
+   |   0.2.0 | Subtle Ruby Bug        | There are TODO notes in chart.rb, and there is something in The Junkyard |
 
 ** Contributing to fxruby-enhancement
  
@@ -1235,7 +1237,6 @@ end
 <% end %>
     #+end_src
 
-
 *** JUNKYARD Resuable components and data targets
     We have an issue with needing to have reusable components
     (dialog boxes, say), and ṕroperly handling data targets designations.
@@ -1252,3 +1253,112 @@ end
      rather than the object itself. So now you simply use refc()
      in those cases.
      
+*** JUNKYARD Subtle Ruby Bug detected. (chart.rb) Ruby 2.4.0
+    This bug is a bit difficult to describe, but want to capture it here. It
+    has to do with my "pushing the limits" of Ruby's metaprogramming features.
+    #+begin_src ruby
+module Fox
+  module Enhancement
+    module Mapper
+      def fx_chart name = nil, ii: 0, pos: Enhancement.stack.last, reuse: nil, &block
+        Enhancement.stack << (@os = os =
+                              OpenStruct.new(klass: FXCanvas,
+                                             op: [],
+                                             ii: ii,
+                                             fx: nil,
+                                             kinder: [],
+                                             inst: nil,
+                                             instance_result: nil,
+                                             reusable: reuse,
+                                             type: :cartesian,
+                                             axial: OpenStruct.new, #TODO: name changed to protect the innocent
+                                             background: OpenStruct.new))
+        Enhancement.components[name] = os unless name.nil?
+        unless pos.nil?
+          pos.kinder << os 
+        else
+          Enhancement.base = os
+        end
+        
+        @os.op[0] = OpenStruct.new(:parent => :required,
+                                   :target => nil,
+                                   :selector => 0,
+                                   :opts => FRAME_NORMAL,
+                                   :x => 0,
+                                   :y => 0,
+                                   :width => 0,
+                                   :height => 0)
+
+        # Initializers for the underlying 
+        def target var; @os.op[@os.ii].target = var; end
+        def selector var; @os.op[@os.ii].selector = var; end
+        def opts var; @os.op[@os.ii].opts = var; end
+        def x var; @os.op[@os.ii].x = var; end
+        def y var; @os.op[@os.ii].y = var; end
+        def width var; @os.op[@os.ii].width = var; end
+        def height var; @os.op[@os.ii].height = var; end
+        
+        # Chart specific
+        def type var; @os.type = var; end
+
+        #TODO: Subtle bug in Ruby 2.4.0 tripped over here with
+        #TODO: the name of this funcion being the same as the
+        #TODO: initialized variable in the OS, so I had to make
+        #TODO: them different, hence the "axial".
+        def axis ax, **kv
+          ap @os.axial[ax] = OpenStruct.new(**kv)
+        end
+
+        def background **kv; kv.each{ |k,v| @os.background[k] = v }; end
+
+        # What will be executed after FXCanvas is created.
+        def instance a=nil, &block
+          @os.instance_name = a
+          @os.instance_block ||= []
+          @os.instance_block << [a, block]
+        end
+        
+        self.instance_eval &block
+        
+        os.fx = ->(){
+          FXCanvas.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1]
+                                      .map{ |v| (v.is_a?(OpenStruct) ? v.inst : v)
+                         } ))
+        }
+        
+        Enhancement.stack.pop                                                  
+        @os = Enhancement.stack.last
+        return os
+      end
+    end
+  end
+end
+    #+end_src
+
+    Change "axial" to "axis" to recrystalize this bug. I suspect that the parser
+    or some aspect of the intepreter is confusing the "axis" function with
+    the "axis" variable on the OpenStruct object, and it has to do with the
+    exact way I am doing the parameters for the axis function that trips it up.
+    A similar approach with the background function works perfectly fine:
+    #+begin_src ruby
+        def axis ax, **kv
+          ap @os.axis[ax] = OpenStruct.new(**kv)
+        end
+
+        def background **kv; kv.each{ |k,v| @os.background[k] = v }; end
+    #+end_src
+
+    Which results in the error of:
+    #+begin_src
+    ArgumentError: wrong number of arguments (given 0, expected 1)
+    from /home/alveric/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/fxruby-enhancement-0.2.0/lib/fxruby-enhancement/xtras/chart.rb:46:in `axis'
+    #+end_src
+
+    A simple workaround was to rename the variable to "axial" or anything different
+    from the function "axis".
+
+    I need to investigate if this bug also exists in prior releases of Ruby, and
+    also produce a single-file scaled down example of this bug, so it can be reported
+    back to Matz.
+
+    Oh, the time...

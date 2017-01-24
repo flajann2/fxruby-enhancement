@@ -11,7 +11,10 @@ module Fox
                                              kinder: [],
                                              inst: nil,
                                              instance_result: nil,
-                                             reusable: reuse))
+                                             reusable: reuse,
+                                             type: :cartesian,
+                                             axial: OpenStruct.new, #TODO: name changed to protect the innocent
+                                             background: OpenStruct.new))
         Enhancement.components[name] = os unless name.nil?
         unless pos.nil?
           pos.kinder << os 
@@ -19,14 +22,14 @@ module Fox
           Enhancement.base = os
         end
         
-        @os.op[0] = OpenStruct.new({:parent => :required,
-                                    :target => nil,
-                                    :selector => 0,
-                                    :opts => FRAME_NORMAL,
-                                    :x => 0,
-                                    :y => 0,
-                                    :width => 0,
-                                    :height => 0})
+        @os.op[0] = OpenStruct.new(:parent => :required,
+                                   :target => nil,
+                                   :selector => 0,
+                                   :opts => FRAME_NORMAL,
+                                   :x => 0,
+                                   :y => 0,
+                                   :width => 0,
+                                   :height => 0)
 
         # Initializers for the underlying 
         def target var; @os.op[@os.ii].target = var; end
@@ -38,7 +41,17 @@ module Fox
         def height var; @os.op[@os.ii].height = var; end
         
         # Chart specific
-        def type var; end
+        def type var; @os.type = var; end
+
+        #TODO: Subtle bug in Ruby 2.4.0 tripped over here with
+        #TODO: the name of this funcion being the same as the
+        #TODO: initialized variable in the OS, so I had to make
+        #TODO: them different, hence the "axial".
+        def axis ax, **kv
+          ap @os.axial[ax] = OpenStruct.new(**kv)
+        end
+
+        def background **kv; kv.each{ |k,v| @os.background[k] = v }; end
 
         # What will be executed after FXCanvas is created.
         def instance a=nil, &block
@@ -62,4 +75,3 @@ module Fox
     end
   end
 end
-
