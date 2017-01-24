@@ -13,7 +13,7 @@ module Fox
                                              instance_result: nil,
                                              reusable: reuse,
                                              type: :cartesian,
-                                             axial: OpenStruct.new, #TODO: name changed to protect the innocent
+                                             axis: OpenStruct.new, #TODO: name changed to protect the innocent
                                              background: OpenStruct.new))
         Enhancement.components[name] = os unless name.nil?
         unless pos.nil?
@@ -46,9 +46,9 @@ module Fox
         #TODO: Subtle bug in Ruby 2.4.0 tripped over here with
         #TODO: the name of this funcion being the same as the
         #TODO: initialized variable in the OS, so I had to make
-        #TODO: them different, hence the "axial".
+        #TODO: them different, hence the "axis".
         def axis ax, **kv
-          ap @os.axial[ax] = OpenStruct.new(**kv)
+          ap @os.axis[ax] = OpenStruct.new(**kv)
         end
 
         def background **kv; kv.each{ |k,v| @os.background[k] = v }; end
