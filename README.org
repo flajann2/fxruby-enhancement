@@ -485,35 +485,39 @@
 ****** Labeling
        Each entry in the vectors must have some sort of 
        designation to describe how the chart will display them.
-       So we represent this as a vector of labels, and each
+       So we represent this as an association of labels, and each
        label will define how the data from that position in the
        vector will be drawn and labeled. For example:
        #+begin_src ruby
-       [
-         {
-         label: 'x-axis',
-         type: :range
+       {
+         0 => {
+           label: 'x-axis',
+           type: :range
+           },
+         1 => {
+           label: 'Germany',
+           type: :data,
+           color: :yellow,
+           thickness: 3
+           },
+         2 => {
+           label: 'Poland',
+           type: :data,
+           color: :blue,
+           thickness: 1
+           },
+         3 => {
+           label: 'Östereich',
+           type: :data,
+           color: :green,
+           thickness: 2
          },
-         {
-         label: 'Germany',
-         type: :data,
-         color: :yellow,
-         thickness: 3
-         },
-         {
-         label: 'Poland',
-         type: :data,
-         color: :blue,
-         thickness: 1
-         },
-         {
-         label: 'Östereich',
-         type: :data,
-         color: :green,
-         thickness: 2
-         },
-       ]
+       }
        #+end_src
+
+       Specifying the position of the vector as keys in the hash
+       will allow us to "leave gaps" in the specification, particulary
+       when the number of entries in that vector become large.
 
 **** fx_data_target
      FOX (and therefor FXRuby) supports data synchronization among components.
