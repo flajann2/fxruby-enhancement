@@ -20,6 +20,8 @@
        - [[#as----adding-new-child-components-to-already-declared-ones][as -- adding new child components to already declared ones]]
        - [[#fox_component-and-fox_instance][fox_component and fox_instance]]
        - [[#fx_app][fx_app]]
+       - [[#fx_chart][fx_chart]]
+         - [[#data-format-and-labeling][Data Format and Labeling]]
        - [[#fx_data_target][fx_data_target]]
        - [[#instance][instance]]
        - [[#ingress_handler][ingress_handler]]
@@ -452,6 +454,66 @@
 
      Typeically you'd do this inside of a module, but you could do it also
      in a class body. Please see the examples.
+
+**** fx_chart
+     fx_chart is a custom widget supplied by Enhancement,
+     and provides very simple charting abilities. We have mainly created
+     this with the needs of RubyNEAT in mind, but hopefully we will
+     eventually grow the scope of what fx_chart can do.
+
+     Initally, we provide basic x-y Cartesian charting suitable for
+     representing time series, etc. 
+***** Data Format and Labeling
+      Data is in the format of an array of vectors,
+      with each update adding a new vector to the array. For example:
+      #+begin_src ruby
+      [
+      [1, 22.1, 34.2, 11],
+      [2, 23.4, 25.0, 14],
+      [3, 25.2, 35.2, 12],
+      [4, 21.9, 63.3, 11],
+      [5, 11.4, 50.1, 20],
+      ]
+      #+end_src
+
+      Even though the "vectors" are themselves arrays, we shall refer
+      to them as such for the sake of this discussion.
+
+      You may specify the first entry in the vector as the range, 
+      in which case it will be used to plot the rest of the vector
+      as the "range" on the chart.
+****** Labeling
+       Each entry in the vectors must have some sort of 
+       designation to describe how the chart will display them.
+       So we represent this as a vector of labels, and each
+       label will define how the data from that position in the
+       vector will be drawn and labeled. For example:
+       #+begin_src ruby
+       [
+         {
+         label: 'x-axis',
+         type: :range
+         },
+         {
+         label: 'Germany',
+         type: :data,
+         color: :yellow,
+         thickness: 3
+         },
+         {
+         label: 'Poland',
+         type: :data,
+         color: :blue,
+         thickness: 1
+         },
+         {
+         label: 'Östereich',
+         type: :data,
+         color: :green,
+         thickness: 2
+         },
+       ]
+       #+end_src
 
 **** fx_data_target
      FOX (and therefor FXRuby) supports data synchronization among components.

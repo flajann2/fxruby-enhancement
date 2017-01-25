@@ -1,6 +1,17 @@
 # coding: utf-8
 module Fox
   module Enhancement
+    module Xtras
+      class Chart
+        def initialize canvas
+          @canvas = canvas
+        end
+        
+        def draw(dc)
+        end
+      end
+    end
+    
     module Mapper
       def fx_chart name = nil, ii: 0, pos: Enhancement.stack.last, reuse: nil, &block
         Enhancement.stack << (@os = os =
@@ -50,15 +61,26 @@ module Fox
         def background **kv; kv.each{ |k,v| @os.background[k] = v }; end
 
         # What will be executed after FXCanvas is created.
-        def instance a=nil, &block
-          @os.instance_name = a
+        def instance aname=nil, &block
+          @os.instance_name = aname
           @os.instance_block ||= []
-          @os.instance_block << [a, block]
+          @os.instance_block << [aname, block]
+        end
+        
+        def chart_instance os, &block
+          os.instance_name = nil
+          os.instance_block ||= []
+          os.instance_block << [nil, block]
         end
         
         self.instance_eval &block
         
         os.fx = ->(){
+          chart_instance (os) { |c|
+            puts "**** chart_instance called ****"
+            os.chart = Xtras::Chart.new c
+          }
+          
           FXCanvas.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1]
                                       .map{ |v| (v.is_a?(OpenStruct) ? v.inst : v)
                          } ))
