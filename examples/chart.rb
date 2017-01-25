@@ -135,6 +135,31 @@ fx_app :app do
       background color: :white, grid: true, grid_color: :blue      
       axis :x, type: :linear, color: :black, name: "Time"
       axis :y, type: :linear, color: :black, name: "Price"
+      data [1, 22.1, 34.2, 11],
+           [2, 23.4, 25.0, 14],
+           [3, 25.2, 35.2, 12],
+           [4, 21.9, 63.3, 11],
+           [5, 11.4, 50.1, 20]
+      series({ 0 => {
+                 label: 'x-axis',
+                 type: :range },
+               1 => {
+                 label: 'Germany',
+                 type: :data,
+                 color: :yellow,
+                 thickness: 3 },
+               2 => {
+                 label: 'Poland',
+                 type: :data,
+                 color: :blue,
+                 thickness: 1 },
+               3 => {
+                 label: 'Östereich',
+                 type: :data,
+                 color: :green,
+                 thickness: 2 }})
+      domain 0, 5
+      range 0.0, 50.0
       
       instance { |c|
         c.sel_paint { |sender, sel, event|

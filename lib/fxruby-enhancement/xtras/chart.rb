@@ -55,9 +55,14 @@ module Fox
         def type var; @os.type = var; end
 
         def axis ax, **kv
-          ap @os.axial[ax] = OpenStruct.new(**kv)
+          @os.axial[ax] = OpenStruct.new(**kv)
         end
 
+        def data *dat; @os.data = dat; end        
+        def series ser; @os.series = ser; end
+        def domain a, b; @os.domain = [a, b]; end
+        def range a, b; @os.range = [a, b]; end
+        
         def background **kv; kv.each{ |k,v| @os.background[k] = v }; end
 
         # What will be executed after FXCanvas is created.
@@ -66,7 +71,8 @@ module Fox
           @os.instance_block ||= []
           @os.instance_block << [aname, block]
         end
-        
+
+        # Internal use only.
         def chart_instance os, &block
           os.instance_name = nil
           os.instance_block ||= []

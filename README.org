@@ -482,7 +482,7 @@
       You may specify the first entry in the vector as the range, 
       in which case it will be used to plot the rest of the vector
       as the "range" on the chart.
-****** Labeling
+****** Labeling Series Data
        Each entry in the vectors must have some sort of 
        designation to describe how the chart will display them.
        So we represent this as an association of labels, and each
