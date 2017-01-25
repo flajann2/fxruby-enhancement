@@ -88,8 +88,7 @@ module Fox
           }
           
           FXCanvas.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1]
-                                      .map{ |v| (v.is_a?(OpenStruct) ? v.inst : v)
-                         } ))
+                                      .map{ |v| (v.is_a?(OpenStruct) ? v.inst : v)} ))
         }
         
         Enhancement.stack.pop                                                  
