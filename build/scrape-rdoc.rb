@@ -18,10 +18,12 @@ TARGET = File.expand_path("../lib/fxruby-enhancement/api-mapper.rb", File.dirnam
 TEMPLATE = File.expand_path("api-mapper.rb.erb", File.dirname(TARGET))
 
 TARGET_RGB = File.expand_path("../lib/fxruby-enhancement/color-mapper.rb", File.dirname(__FILE__))
-TEMPLATE_RGB = File.expand_path("color-mapper.rb.erb", File.dirname(TARGET))
+TEMPLATE_RGB = File.expand_path("color-mapper.rb.erb", File.dirname(TARGET_RGB))
 
 File.delete TARGET unless not File.exists? TARGET
+File.delete TARGET_RGB unless not File.exists? TARGET_RGB
 File.open(TARGET, 'w') {}
+File.open(TARGET_RGB, 'w') {}
 
 require 'fxruby-enhancement'
 require 'erb'

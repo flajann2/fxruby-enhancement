@@ -46,12 +46,9 @@ color.to_rgb
 
 =end
 
-require_relative "color-mapper"
-
 module RGB
   class Color
     def to_fx
     end
   end
 end
-

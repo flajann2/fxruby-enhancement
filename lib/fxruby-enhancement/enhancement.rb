@@ -1,4 +1,3 @@
-# coding: utf-8
 module Fox 
 
   # Include this in your top class objects.
@@ -169,7 +168,7 @@ module Fox
       # TODO: Not sure we need this. This may go away.
       def deferred_setup &block
         Enhancement.deferred_setups << block
-      end      
+      end
     end
   end
 end
