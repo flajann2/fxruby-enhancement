@@ -98,6 +98,7 @@ module Fox
       end
 
       def rgb
+      end
       
       # Find the referenced component's wrapper object
       def refc sym, &block

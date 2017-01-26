@@ -1,12 +1,14 @@
 # coding: utf-8
+
 module Fox
   module Enhancement
     module Xtras
       class Chart
         include Forwardable
+
         def_delegators :@canvas, :width, :height, :visual
         def_delegators :@cos, :type, :axial, :data, :series, :domain, :range, :background
-                       
+        
         def initialize cos, canvas
           @cos = cos
           @canvas = canvas

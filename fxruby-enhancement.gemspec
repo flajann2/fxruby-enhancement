@@ -41,6 +41,7 @@ Gem::Specification.new do |s|
     "lib/fxruby-enhancement.rb",
     "lib/fxruby-enhancement/api-mapper.rb",
     "lib/fxruby-enhancement/api-mapper.rb.erb",
+    "lib/fxruby-enhancement/color-mapper.rb",
     "lib/fxruby-enhancement/color-mapper.rb.erb",
     "lib/fxruby-enhancement/core-monkey.rb",
     "lib/fxruby-enhancement/enhancement.rb",
