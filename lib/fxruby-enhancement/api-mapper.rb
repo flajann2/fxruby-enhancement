@@ -1210,7 +1210,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -1273,7 +1273,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -1322,7 +1322,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -1341,7 +1341,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -1360,7 +1360,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -1391,7 +1391,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -1442,7 +1442,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -1481,7 +1481,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -1518,7 +1518,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -1555,7 +1555,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -1604,7 +1604,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -1649,7 +1649,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -1704,7 +1704,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -1735,7 +1735,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -1778,7 +1778,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -1831,7 +1831,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -1878,7 +1878,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -1929,7 +1929,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -1970,7 +1970,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -2003,7 +2003,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -2046,7 +2046,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -2097,7 +2097,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -2140,7 +2140,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -2193,7 +2193,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -2244,7 +2244,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -2297,7 +2297,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -2336,7 +2336,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -2407,7 +2407,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -2426,7 +2426,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -2445,7 +2445,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -2474,7 +2474,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -2493,7 +2493,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -2512,7 +2512,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -2541,7 +2541,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -2572,7 +2572,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -2605,7 +2605,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -2624,7 +2624,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -2653,7 +2653,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -2704,7 +2704,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -2757,7 +2757,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -2776,7 +2776,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -2827,7 +2827,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -2868,7 +2868,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -2903,7 +2903,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -2946,7 +2946,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -2989,7 +2989,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -3074,7 +3074,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -3125,7 +3125,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -3176,7 +3176,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -3229,7 +3229,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -3248,7 +3248,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -3277,7 +3277,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -3296,7 +3296,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -3347,7 +3347,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -3404,7 +3404,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -3461,7 +3461,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -3502,7 +3502,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -3521,7 +3521,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -3552,7 +3552,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -3587,7 +3587,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -3630,7 +3630,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -3673,7 +3673,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -3702,7 +3702,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -3737,7 +3737,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -3780,7 +3780,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -3799,7 +3799,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -3866,7 +3866,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -3907,7 +3907,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -3950,7 +3950,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -3997,7 +3997,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -4032,7 +4032,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -4071,7 +4071,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -4108,7 +4108,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -4181,7 +4181,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -4214,7 +4214,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -4233,7 +4233,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -4272,7 +4272,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -4291,7 +4291,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -4310,7 +4310,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -4329,7 +4329,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -4402,7 +4402,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -4433,7 +4433,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -4452,7 +4452,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -4503,7 +4503,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -4556,7 +4556,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -4591,7 +4591,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -4642,7 +4642,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -4693,7 +4693,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -4732,7 +4732,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -4769,7 +4769,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -4808,7 +4808,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -4827,7 +4827,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -4862,7 +4862,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -4905,7 +4905,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -4934,7 +4934,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -4953,7 +4953,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -4990,7 +4990,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -5039,7 +5039,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -5084,7 +5084,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -5129,7 +5129,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -5170,7 +5170,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -5209,7 +5209,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -5260,7 +5260,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -5311,7 +5311,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -5344,7 +5344,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -5387,7 +5387,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -5438,7 +5438,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -5481,7 +5481,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -5524,7 +5524,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -5567,7 +5567,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -5610,7 +5610,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -5655,7 +5655,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -5686,7 +5686,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -5731,7 +5731,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -5770,7 +5770,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -5827,7 +5827,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -5880,7 +5880,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -5909,7 +5909,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -5938,7 +5938,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -6023,7 +6023,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -6076,7 +6076,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -6111,7 +6111,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -6148,7 +6148,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -6185,7 +6185,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -6224,7 +6224,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -6255,7 +6255,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -6292,7 +6292,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -6323,7 +6323,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -6360,7 +6360,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -6401,7 +6401,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -6420,7 +6420,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -6475,7 +6475,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -6524,7 +6524,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -6563,7 +6563,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -6600,7 +6600,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -6639,7 +6639,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -6676,7 +6676,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -6715,7 +6715,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -6752,7 +6752,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -6803,7 +6803,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -6858,7 +6858,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -6897,7 +6897,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -6938,7 +6938,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -6989,7 +6989,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -7032,7 +7032,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -7117,7 +7117,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -7202,7 +7202,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -7241,7 +7241,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -7278,7 +7278,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -7331,7 +7331,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -7390,7 +7390,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -7449,7 +7449,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -7500,7 +7500,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -7553,7 +7553,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -7598,7 +7598,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -7657,7 +7657,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -7724,7 +7724,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -7755,7 +7755,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -7798,7 +7798,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -7829,7 +7829,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -7880,7 +7880,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -7923,7 +7923,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -7942,7 +7942,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -7961,7 +7961,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -7994,7 +7994,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -8037,7 +8037,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -8076,7 +8076,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -8119,7 +8119,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -8148,7 +8148,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -8181,7 +8181,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -8220,7 +8220,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -8263,7 +8263,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -8310,7 +8310,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -8357,7 +8357,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -8404,7 +8404,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -8423,7 +8423,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -8442,7 +8442,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -8497,7 +8497,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -8552,7 +8552,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -8593,7 +8593,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -8644,7 +8644,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -8711,7 +8711,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -8778,7 +8778,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -8831,7 +8831,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -8866,7 +8866,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -8929,7 +8929,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -8984,7 +8984,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -9035,7 +9035,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -9068,7 +9068,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -9097,7 +9097,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -9116,7 +9116,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -9163,7 +9163,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -9202,7 +9202,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -9239,7 +9239,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -9278,7 +9278,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -9315,7 +9315,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -9366,7 +9366,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -9417,7 +9417,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -9468,7 +9468,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -9487,7 +9487,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -9506,7 +9506,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -9539,7 +9539,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -9590,7 +9590,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -9609,7 +9609,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -9628,7 +9628,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -9679,7 +9679,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -9732,7 +9732,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -9791,7 +9791,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -9876,7 +9876,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -9919,7 +9919,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -9962,7 +9962,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -10005,7 +10005,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -10044,7 +10044,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -10063,7 +10063,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -10092,7 +10092,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -10127,7 +10127,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -10170,7 +10170,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -10221,7 +10221,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -10284,7 +10284,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -10315,7 +10315,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -10346,7 +10346,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -10379,7 +10379,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -10412,7 +10412,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -10459,7 +10459,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -10506,7 +10506,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -10557,7 +10557,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -10590,7 +10590,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -10663,7 +10663,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -10718,7 +10718,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -10759,7 +10759,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -10798,7 +10798,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
@@ -10837,7 +10837,7 @@ module Fox
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
            pos.kinder << os 
-         els
+         else
            Enhancement.base = os
          end
          
