@@ -4,8 +4,8 @@ module Fox
   module Enhancement
     module Xtras
       class Chart
-        include Forwardable
-
+        extend Forwardable
+        
         def_delegators :@canvas, :width, :height, :visual
         def_delegators :@cos, :type, :axial, :data, :series, :domain, :range, :background
         
