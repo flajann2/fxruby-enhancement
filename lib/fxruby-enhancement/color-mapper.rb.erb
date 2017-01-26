@@ -1,3 +1,4 @@
+# coding: utf-8
 =begin rdoc
 This is a color map for Enhancement to make it
 easier to deal with colors in FXRuby.
@@ -12,6 +13,7 @@ To use, just do:
 =end
 
 module RGB
-<% for @fxcolor,  %>
+<% for @fxcolor, @fxstring in @fxc  %>
+  def <%= @fxcolor.snake %>; <%= @fxstring %>; end
 <% end %>
 end
