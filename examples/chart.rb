@@ -135,6 +135,7 @@ fx_app :app do
       background color: :white, grid: true, grid_color: :blue      
       axis :x, type: :linear, color: :black, name: "Time"
       axis :y, type: :linear, color: :black, name: "Price"
+      
       data [1, 22.1, 34.2, 11],
            [2, 23.4, 25.0, 14],
            [3, 25.2, 35.2, 12],

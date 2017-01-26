@@ -3,11 +3,24 @@ module Fox
   module Enhancement
     module Xtras
       class Chart
-        def initialize canvas
+        include Forwardable
+        def_delegators :@canvas, :width, :height, :visual
+        def_delegators :@cos, :type, :axial, :data, :series, :domain, :range, :background
+                       
+        def initialize cos, canvas
+          @cos = cos
           @canvas = canvas
+          as (:app) {
+            fx_image(:fx_chart_buffer) { opts IMAGE_KEEP }
+          }
+          @drawable = ref(:fx_chart_buffer)
         end
         
-        def draw(dc)
+        def draw_dc &block
+          FXDCWindow.new(@drawable) { |dc| block.(dc) }
+        end
+
+        def update_chart
         end
       end
     end
@@ -77,14 +90,14 @@ module Fox
           os.instance_name = nil
           os.instance_block ||= []
           os.instance_block << [nil, block]
+          return os
         end
         
         self.instance_eval &block
         
         os.fx = ->(){
           chart_instance (os) { |c|
-            puts "**** chart_instance called ****"
-            os.chart = Xtras::Chart.new c
+            os.chart = Xtras::Chart.new os, c
           }
           
           FXCanvas.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1]

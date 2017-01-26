@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new(">= 0".freeze) if s.respond_to? :required_rubygems_version=
   s.require_paths = ["lib".freeze]
   s.authors = ["Fred Mitchell".freeze]
-  s.date = "2017-01-25"
+  s.date = "2017-01-26"
   s.description = "The fxruby library is an excellent wrapper for the FOX toolkit. However, it reflects the\n  C++-ness of FOX, rather than being more Ruby-like. As such, creating composed objects with\n  it tends to be rather ugly and cumbersome.\n\n  fxruby-enhancement is a wrapper for the wrapper, to \"rubyfy\" it and make it more easy to \n  use for Rubyists. \n\n  fxruby-enhancement is basically a DSL of sorts, and every effort has been taken to make \n  it intuitive to use. Once you get the hang of it, you should be able to look at the FXRuby\n  API documentation and infer the DSL construct for fxruby-enhancement.".freeze
   s.email = "fred.mitchell@gmx.de".freeze
   s.extra_rdoc_files = [
@@ -64,6 +64,7 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<awesome_print>.freeze, [">= 1"])
       s.add_runtime_dependency(%q<json>.freeze, [">= 2.0.2", "~> 2.0"])
       s.add_runtime_dependency(%q<queue_ding>.freeze, ["~> 0"])
+      s.add_runtime_dependency(%q<rgb>.freeze, ["~> 0"])
       s.add_development_dependency(%q<rspec>.freeze, ["~> 3"])
       s.add_development_dependency(%q<yard>.freeze, ["~> 0.7"])
       s.add_development_dependency(%q<rdoc>.freeze, ["~> 5"])
@@ -82,6 +83,7 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<awesome_print>.freeze, [">= 1"])
       s.add_dependency(%q<json>.freeze, [">= 2.0.2", "~> 2.0"])
       s.add_dependency(%q<queue_ding>.freeze, ["~> 0"])
+      s.add_dependency(%q<rgb>.freeze, ["~> 0"])
       s.add_dependency(%q<rspec>.freeze, ["~> 3"])
       s.add_dependency(%q<yard>.freeze, ["~> 0.7"])
       s.add_dependency(%q<rdoc>.freeze, ["~> 5"])
@@ -101,6 +103,7 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<awesome_print>.freeze, [">= 1"])
     s.add_dependency(%q<json>.freeze, [">= 2.0.2", "~> 2.0"])
     s.add_dependency(%q<queue_ding>.freeze, ["~> 0"])
+    s.add_dependency(%q<rgb>.freeze, ["~> 0"])
     s.add_dependency(%q<rspec>.freeze, ["~> 3"])
     s.add_dependency(%q<yard>.freeze, ["~> 0.7"])
     s.add_dependency(%q<rdoc>.freeze, ["~> 5"])

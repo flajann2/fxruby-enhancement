@@ -5,6 +5,7 @@ gem "fxruby", "~> 1.6"
 gem "awesome_print", ">= 1"
 gem "json", "~> 2.0", ">= 2.0.2"
 gem "queue_ding", "~> 0"
+gem "rgb", "~> 0"
 
 group :development do
   gem "rspec", "~> 3"

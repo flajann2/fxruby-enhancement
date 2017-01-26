@@ -4,9 +4,11 @@ require 'ostruct'
 require 'awesome_print'
 require 'forwardable'
 require 'queue_ding'
+require 'rgb'
 
 include QueueDing
 
+require_relative 'fxruby-enhancement/rgb-monkey.rb'
 require_relative 'fxruby-enhancement/core-monkey.rb'
 require_relative 'fxruby-enhancement/enhancement'
 require_relative 'fxruby-enhancement/ostruct-monkey'
