@@ -13,13 +13,12 @@ module Fox
           @cos = cos
           @canvas = canvas
           as (:app) {
-            fx_image(:fx_chart_buffer) { opts IMAGE_KEEP }
+            @buffer = fx_image { opts IMAGE_KEEP }
           }
-          @drawable = ref(:fx_chart_buffer)
         end
         
         def draw_dc &block
-          FXDCWindow.new(@drawable) { |dc| block.(dc) }
+          FXDCWindow.new(@buffer.inst) { |dc| block.(dc) }
         end
 
         def update_chart
@@ -100,10 +99,14 @@ module Fox
         os.fx = ->(){
           chart_instance (os) { |c|
             os.chart = Xtras::Chart.new os, c
+            os.inst.instance_variable_set(:@chart, os.chart)
           }
           
-          FXCanvas.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1]
-                                      .map{ |v| (v.is_a?(OpenStruct) ? v.inst : v)} ))
+          c = FXCanvas.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1]
+                                          .map{ |v| (v.is_a?(OpenStruct) ? v.inst : v)} ))
+          c.extend SingleForwardable
+          c.def_delegators :@chart, :update_chart
+          c
         }
         
         Enhancement.stack.pop                                                  
