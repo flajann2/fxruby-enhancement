@@ -42,6 +42,9 @@ fx_app :app do
       background color: :white, grid: true, grid_color: :blue      
       axis :x, type: :linear, color: :black, name: "Time"
       axis :y, type: :linear, color: :black, name: "Price"
+
+      caption text: "This illustrates how easy the chart is to use."
+      title text: "Demo chart"
       
       data [1, 22.1, 34.2, 11],
            [2, 23.4, 25.0, 14],

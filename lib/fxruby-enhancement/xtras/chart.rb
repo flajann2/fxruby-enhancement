@@ -7,7 +7,9 @@ module Fox
         extend Forwardable
         
         def_delegators :@canvas, :width, :height, :visual
-        def_delegators :@cos, :type, :axial, :data, :series, :domain, :range, :background
+        def_delegators :@cos, :type,
+                       :axial, :data, :series, :domain, :range,
+                       :background, :caption, :title
         
         def initialize cos, canvas
           @cos = cos
@@ -15,6 +17,13 @@ module Fox
           as (:app) {
             @buffer = fx_image { opts IMAGE_KEEP }
           }
+          # detailed chart parameters
+          @x_ruler_width = 20
+          @y_ruler_height = 20
+          @font_title = nil
+          @font_caption = nil
+          @font_ledgend = nil
+          @font_axis_name = nil          
         end
         
         def draw_dc &block
@@ -22,6 +31,9 @@ module Fox
         end
 
         def update_chart
+          draw_dc { |dc|
+            dc.drawImage @buffer, 0, 0
+          }
         end
       end
     end
@@ -38,8 +50,10 @@ module Fox
                                              instance_result: nil,
                                              reusable: reuse,
                                              type: :cartesian,
-                                             axial: OpenStruct.new, #TODO: bug/ruby240 branch
-                                             background: OpenStruct.new))
+                                             axial: OpenStruct.new,
+                                             background: OpenStruct.new,
+                                             caption: OpenStruct.new,
+                                             title: OpenStruct.new))
         Enhancement.components[name] = os unless name.nil?
         unless pos.nil?
           pos.kinder << os 
@@ -78,6 +92,8 @@ module Fox
         def range a, b; @os.range = [a, b]; end
         
         def background **kv; kv.each{ |k,v| @os.background[k] = v }; end
+        def caption **kv; kv.each{ |k,v| @os.caption[k] = v }; end
+        def title **kv; kv.each{ |k,v| @os.title[k] = v }; end
 
         # What will be executed after FXCanvas is created.
         def instance aname=nil, &block
