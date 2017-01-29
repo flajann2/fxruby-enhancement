@@ -42,7 +42,7 @@ class OpenStruct
   # We can have as many instances as we like.
   def instance_final_activate
     self.instance_result =
-      self.instance_block.each{ |name, inst|
+      self.instance_block.map{ |name, inst|
       inst.(self.inst)
     } unless self.instance_block.nil?
     self.kinder

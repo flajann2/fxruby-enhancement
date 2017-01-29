@@ -5,11 +5,14 @@ module Fox
     module Xtras
       class Chart
         extend Forwardable
+        include RGB
         
         def_delegators :@canvas, :width, :height, :visual
         def_delegators :@cos, :type,
                        :axial, :data, :series, :domain, :range,
                        :background, :caption, :title
+
+        attr_accessor :buffer
         
         def initialize cos, canvas
           @cos = cos
@@ -27,13 +30,17 @@ module Fox
         end
         
         def draw_dc &block
+          @buffer.starten if @buffer.inst.nil?
           FXDCWindow.new(@buffer.inst) { |dc| block.(dc) }
         end
 
         def update_chart
           draw_dc { |dc|
-            dc.drawImage @buffer, 0, 0
+            dc.setForeground white
+            dc.fillRectangle 0, 0, width, height
+            dc.drawImage @buffer.inst, 0, 0
           }
+          @canvas.update
         end
       end
     end
@@ -122,6 +129,18 @@ module Fox
                                           .map{ |v| (v.is_a?(OpenStruct) ? v.inst : v)} ))
           c.extend SingleForwardable
           c.def_delegators :@chart, :update_chart
+          c.sel_configure { |sender, sel, event|
+            os.chart.buffer.starten if os.chart.buffer.inst.nil?
+            bb = os.chart.buffer.inst
+            bb.create unless bb.created?
+            bb.resize sender.width, sender.height
+          }
+          c.sel_paint { |sender, sel, event|
+            FXDCWindow.new(sender, event) { |dc|
+              os.chart.buffer.starten if os.chart.buffer.inst.nil?
+              dc.drawImage(os.chart.buffer.inst, 0, 0)
+            }
+          }
           c
         }
         
