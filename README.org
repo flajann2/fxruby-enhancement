@@ -2,11 +2,6 @@
 * FXRuby Enhancement Table of Contents                             :TOC_5_gh:
  - [[#fxruby-enhancement][fxruby-enhancement]]
    - [[#showcase][Showcase]]
-     - [[#hello-world][Hello World]]
-     - [[#bounce-animation][Bounce Animation]]
-     - [[#data-target][Data Target]]
-     - [[#dialog-box][Dialog Box]]
-     - [[#scribble][Scribble]]
    - [[#introduction][Introduction]]
    - [[#installation][Installation]]
    - [[#documentation][Documentation]]
@@ -58,17 +53,14 @@
   - On the left: Enhancement version of hello world.
   - On the right: FXRuby version.
 ** Showcase
-*** Hello World
-    | [[./examples/images/hello.rb.png]]    | [[file:./examples/hello.rb][Hello World example]] |
-    | [[./examples/images/bounce.rb.png]]   | [[file:./examples/bounce.rb][Bounce example]]      |
-    | [[./examples/images/scribble.rb.png]] | [[file:./examples/scribble.rb][Scribble example]]    |
-    |                                   |                     |
+   | Screenshot                          | Code Links  |
+   |-------------------------------------+-------------|
+   | [[./examples/images/hello.rb.png]]      | [[file:./examples/hello.rb][Hello World]] |
+   | [[./examples/images/dialog_box.rb.png]] | [[file:,/examples/dialog_box.rb][Dialog Box]]  |
+   | [[./examples/images/bounce.rb.png]]     | [[file:./examples/bounce.rb][Bounce]]      |
+   | [[./examples/images/scribble.rb.png]]   | [[file:./examples/scribble.rb][Scribblee]]   |
+   | [[./examples/images/chart.rb.png]]      | [[file:./examples/chart.rb][Chart]]       |
 
-
-*** Bounce Animation
-*** Data Target
-*** Dialog Box
-*** Scribble
 ** Introduction
    The fxruby library is an excellent wrapper for the FOX Toolkit.
    However, it reflects the C++-ness of FOX, rather than being more
