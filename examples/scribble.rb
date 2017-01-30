@@ -57,7 +57,6 @@ fx_app :app do
                   dc.foreground = @drawColor
                   
                   # Draw a line from the previous mouse coordinates to the current ones
-                  ap ref(:mirror_mode).value
                   if ref(:mirror_mode).value
                     cW = ref(:canvas).width
                     cH = ref(:canvas).height
