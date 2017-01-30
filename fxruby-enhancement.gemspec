@@ -37,6 +37,7 @@ Gem::Specification.new do |s|
     "examples/dialog_box.rb",
     "examples/hello.rb",
     "examples/images/hello-world-new-and-old.png",
+    "examples/scribble.rb",
     "fxruby-enhancement.gemspec",
     "lib/fxruby-enhancement.rb",
     "lib/fxruby-enhancement/api-mapper.rb",
