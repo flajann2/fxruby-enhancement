@@ -57,7 +57,7 @@ fx_app :app do
                   dc.foreground = @drawColor
                   
                   # Draw a line from the previous mouse coordinates to the current ones
-                  if @mirrorMode.value
+                  if ref(:mirror_mode).value
                     cW = ref(:canvas).width
                     cH = ref(:canvas).height
                     dc.drawLine(cW-event.last_x, event.last_y,
@@ -148,7 +148,7 @@ fx_app :app do
 
         fx_button {
           text "&Exit"
-          target FXApp::ID_QUIT
+          selector FXApp::ID_QUIT
           opts FRAME_THICK|FRAME_RAISED|LAYOUT_FILL_X|LAYOUT_TOP|LAYOUT_LEFT
           pad_left 10
           pad_right 10
