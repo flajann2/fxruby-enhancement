@@ -59,8 +59,11 @@
   - On the right: FXRuby version.
 ** Showcase
 *** Hello World
-    | [[./examples/images/hello.rb.png]]  | [[file:./examples/hello.rb][Hello World example]] |
-    | [[./examples/images/bounce.rb.png]] | [[file:./examples/bounce.rb][Bounce example]]      |
+    | [[./examples/images/hello.rb.png]]    | [[file:./examples/hello.rb][Hello World example]] |
+    | [[./examples/images/bounce.rb.png]]   | [[file:./examples/bounce.rb][Bounce example]]      |
+    | [[./examples/images/scribble.rb.png]] | [[file:./examples/scribble.rb][Scribble example]]    |
+    |                                   |                     |
+
 
 *** Bounce Animation
 *** Data Target
