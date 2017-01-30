@@ -57,6 +57,7 @@ fx_app :app do
                   dc.foreground = @drawColor
                   
                   # Draw a line from the previous mouse coordinates to the current ones
+                  ap ref(:mirror_mode).value
                   if ref(:mirror_mode).value
                     cW = ref(:canvas).width
                     cH = ref(:canvas).height
@@ -111,8 +112,9 @@ fx_app :app do
         }
 
         fx_horizontal_separator {opts SEPARATOR_RIDGE|LAYOUT_FILL_X }
+
         as (:app) {
-          fx_data_target (:mirror_mode) { value false }
+          fx_data_target (:mirror_mode) { value true }
         }
         
         fx_check_button {
@@ -149,6 +151,7 @@ fx_app :app do
         fx_button {
           text "&Exit"
           selector FXApp::ID_QUIT
+          target refc(:app)
           opts FRAME_THICK|FRAME_RAISED|LAYOUT_FILL_X|LAYOUT_TOP|LAYOUT_LEFT
           pad_left 10
           pad_right 10
