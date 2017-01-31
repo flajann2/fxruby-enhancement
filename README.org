@@ -45,6 +45,7 @@
      - [[#junkyard-resuable-components-and-data-targets][JUNKYARD Resuable components and data targets]]
        - [[#junkyard-data-targets][JUNKYARD Data Targets]]
      - [[#junkyard-subtle-ruby-bug-detected-chartrb-ruby-240][JUNKYARD Subtle Ruby Bug detected. (chart.rb) Ruby 2.4.0]]
+     - [[#junkyard-as-execution-issue-arosed][JUNKYARD 'as' execution issue arosed]]
 
 * fxruby-enhancement
   #+caption: Enhancement vs. FXRuby versions of Hello World.
@@ -1441,3 +1442,12 @@ end
     back to Matz.
 
     Oh, the time...
+*** JUNKYARD 'as' execution issue arosed
+    It is critical where the 'as' clause is executed, and we
+    need to alter that, because the fx_data_target instance
+    is not established at the time it's needed.
+
+    It is thought that the execution must take place before
+    kinder create_fox_components, but I need to think about this.
+    It's execution time is critical to the proper flow of Enhancement.
+

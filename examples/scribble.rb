@@ -60,12 +60,9 @@ fx_app :app do
                   if ref(:mirror_mode).value
                     cW = ref(:canvas).width
                     cH = ref(:canvas).height
-                    dc.drawLine(cW-event.last_x, event.last_y,
-                                cW-event.win_x, event.win_y)
-                    dc.drawLine(event.last_x, cH-event.last_y,
-                                event.win_x, cH-event.win_y)
-                    dc.drawLine(cW-event.last_x, cH-event.last_y,
-                                cW-event.win_x, cH-event.win_y)
+                    dc.drawLine(cW-event.last_x, event.last_y, cW-event.win_x, event.win_y)
+                    dc.drawLine(event.last_x, cH-event.last_y, event.win_x, cH-event.win_y)
+                    dc.drawLine(cW-event.last_x, cH-event.last_y, cW-event.win_x, cH-event.win_y)
                   end
                   dc.drawLine(event.last_x, event.last_y, event.win_x, event.win_y)
                   

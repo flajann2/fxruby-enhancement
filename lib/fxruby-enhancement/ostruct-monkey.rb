@@ -16,6 +16,7 @@ class OpenStruct
   def create_fox_components use_as_base = nil
     if use_as_base.nil?
       self.inst = fx.() if self.inst.nil?
+      self.as_tasks.map{ |a| a.() } unless self.as_tasks.nil?
       self.kinder.each{ |os|
         os.create_fox_components unless os.reusable?
       }

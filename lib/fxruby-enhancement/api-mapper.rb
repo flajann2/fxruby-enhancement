@@ -1773,7 +1773,11 @@ module Fox
          os
        end
     
-       def fx_check_button name = nil, ii: 0, pos: Enhancement.stack.last, reuse: nil, &block
+       def fx_check_button name = nil,
+                           ii: 0,
+                           pos: Enhancement.stack.last,
+                           reuse: nil,
+                           &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXCheckButton, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil, reusable: reuse))
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
@@ -1789,9 +1793,15 @@ module Fox
              
              def text var; @os.op[@os.ii].text = var; end
              
-             def target var; @os.op[@os.ii].target = var; end
+             def target var
+               require 'pry'; binding.pry #DEBUGGING
+               @os.op[@os.ii].target = var
+             end
              
-             def selector var; @os.op[@os.ii].selector = var; end
+             def selector var
+               require 'pry'; binding.pry #DEBUGGING
+               @os.op[@os.ii].selector = var
+             end
              
              def opts var; @os.op[@os.ii].opts = var; end
              
@@ -1819,7 +1829,15 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXCheckButton.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){
+           require 'pry'; binding.pry #DEBUGGING           
+           FXCheckButton.new(*([pos.inst] +
+                               os.op[os.ii]
+                                 .to_h
+                                 .values[1..-1]
+                                 .map{ |v|
+                                 (v.is_a?(OpenStruct)? v.inst : v)
+                               }))}
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
