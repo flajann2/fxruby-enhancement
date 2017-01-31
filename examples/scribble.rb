@@ -1,8 +1,37 @@
 #!/usr/bin/env ruby
+# coding: utf-8
 require 'fxruby-enhancement'
 
 include Fox
 include Fox::Enhancement::Mapper
+
+### debugging
+TRACE_FILES = %w{
+api-mapper.rb:1776-1845
+enhancement.rb
+scribble.rb
+}
+
+TFILES = TRACE_FILES.map{ |s| s.split(':').first }
+
+set_trace_func proc { |event, file, line, id, binding, classname|
+  base, srange = File.basename(file).split(':')
+  stnum, endnum = srange.split('-') unless srange.nil?
+  stnum  = srange.nil? ? nil : stnum.to_i
+  endnum = srange.nil? && endnum.nil? ? nil : endnum.to_i
+  if TFILES.member?(base) && (srange.nil? ||
+                                  (endnum.nil? && line == stnum) ||
+                                  (stnum <= line && line <= endnum))
+    printf "%8s %s:%-2d %10s %8s %s\n",
+           event,
+           base,
+           line,
+           id,
+           classname,
+           binding.receiver
+  end
+}
+### end debugging
 
 fx_app :app do
   app_name "Scribble"
