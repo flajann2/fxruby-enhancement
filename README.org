@@ -53,13 +53,15 @@
   - On the left: Enhancement version of hello world.
   - On the right: FXRuby version.
 ** Showcase
-   | Screenshot                          | Code Links  |
-   |-------------------------------------+-------------|
-   | [[./examples/images/hello.rb.png]]      | [[file:./examples/hello.rb][Hello World]] |
-   | [[./examples/images/dialog_box.rb.png]] | [[file:,/examples/dialog_box.rb][Dialog Box]]  |
-   | [[./examples/images/bounce.rb.png]]     | [[file:./examples/bounce.rb][Bounce]]      |
-   | [[./examples/images/scribble.rb.png]]   | [[file:./examples/scribble.rb][Scribble]]    |
-   | [[./examples/images/chart.rb.png]]      | [[file:./examples/chart.rb][Chart]]       |
+   | Screenshot                           | Code Links     |
+   |--------------------------------------+----------------|
+   | [[./examples/images/hello.rb.png]]       | [[file:./examples/hello.rb][Hello World]]    |
+   | [[./examples/images/dialog_box.rb.png]]  | [[file:,/examples/dialog_box.rb][Dialog Box]]     |
+   | [[./examples/images/bounce.rb.png]]      | [[file:./examples/bounce.rb][Bounce]]         |
+   | [[./examples/images/scribble.rb.png]]    | [[file:./examples/scribble.rb][Scribble]]       |
+   | [[./examples/images/chart.rb.png]]       | [[file:./examples/chart.rb][Chart]]          |
+   | [[./examples/images/rubyneat-panel.png]] | [[https://github.com/flajann2/rubyneat-panel/tree/master/lib/rubyneat-panel][RubyNEAT Panel]] |
+
 
 ** Introduction
    The fxruby library is an excellent wrapper for the FOX Toolkit.
