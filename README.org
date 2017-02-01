@@ -45,7 +45,7 @@
      - [[#junkyard-resuable-components-and-data-targets][JUNKYARD Resuable components and data targets]]
        - [[#junkyard-data-targets][JUNKYARD Data Targets]]
      - [[#junkyard-subtle-ruby-bug-detected-chartrb-ruby-240][JUNKYARD Subtle Ruby Bug detected. (chart.rb) Ruby 2.4.0]]
-     - [[#junkyard-as-execution-issue-arosed][JUNKYARD 'as' execution issue arosed]]
+     - [[#junkyard-as-execution-issue-debugging-code][JUNKYARD 'as' execution issue DEBUGGING CODE]]
 
 * fxruby-enhancement
   #+caption: Enhancement vs. FXRuby versions of Hello World.
@@ -1442,7 +1442,7 @@ end
     back to Matz.
 
     Oh, the time...
-*** JUNKYARD 'as' execution issue arosed
+*** JUNKYARD 'as' execution issue DEBUGGING CODE
     It is critical where the 'as' clause is executed, and we
     need to alter that, because the fx_data_target instance
     is not established at the time it's needed.
@@ -1451,6 +1451,10 @@ end
     kinder create_fox_components, but I need to think about this.
     It's execution time is critical to the proper flow of Enhancement.
 
+    The following debug code allows you to specify
+    not only which files to trace, but also a line
+    range. And colored to. Massively useful. Maybe should
+    be a gem in its own right?
     #+begin_src ruby
 ### debugging
 TRACE_FILES = %w{
@@ -1481,3 +1485,14 @@ set_trace_func proc { |event, file, line, id, binding, classname|
 }
 ### end debugging
     #+end_src
+
+    It is now indeed clear that the 'as' must stick its
+    kinder in the kinder list of 'as'es parent component,
+    NOT the referred 'as' component itself. This is conceptually
+    tricky from the code point of view, BUT it is the intuitive
+    assumption from the programmer's point of view. From his
+    perspective, 'as' "executes" at the place he put it.
+
+    And so let us do the "hard" thing here to make the lives
+    of our users happy. :D
+
