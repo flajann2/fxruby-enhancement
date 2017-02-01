@@ -10,6 +10,7 @@ TRACE_FILES = %w{
 api-mapper.rb:1776-1845
 enhancement.rb
 scribble.rb
+ostruct-monkey.rb:16-29
 }
 
 TFILES = TRACE_FILES.map{ |s| s.split(':').first }
@@ -22,7 +23,7 @@ set_trace_func proc { |event, file, line, id, binding, classname|
   if TFILES.member?(base) && (srange.nil? ||
                                   (endnum.nil? && line == stnum) ||
                                   (stnum <= line && line <= endnum))
-    printf "%8s %s:%-2d %10s %8s %s\n",
+    printf "%8s %s:%-2d %10s (%.50s) [%.50s]\n",
            event,
            base,
            line,
