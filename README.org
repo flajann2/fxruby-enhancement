@@ -1458,7 +1458,7 @@ end
     #+begin_src ruby
 ### debugging
 TRACE_FILES = %w{
-api-mapper.rb:1776-1827
+api-mapper.rb:1832-1887
 enhancement.rb
 scribble.rb
 ostruct-monkey.rb:16-29
@@ -1495,4 +1495,17 @@ set_trace_func proc { |event, file, line, id, binding, classname|
 
     And so let us do the "hard" thing here to make the lives
     of our users happy. :D
+
+    We have solution. We simply will put the kinder parent
+    in a hash with the Enhancement.stack level that
+    this kinder parent as opposed to the "real" parent is to be
+    used. When the owner 'as' completes, it removes that entry
+    from the hash.
+
+    This will allow for nesting of 'as' declerations as well,
+    with the intituively expected result. I do not recommend
+    nesting 'as' declarations, but at the same time I do not
+    wish to restrict our users from doing so. I simply cannot
+    conceive of all the possible ways Enhancement will be 
+    leveraged.
 

@@ -8,6 +8,7 @@ module Fox
     @stack = []
     @base = nil
     @components = {}
+    @kinder_parents = {}
     SPECIAL = [:FXApp,
                :FXColorItem,
                :FXRegion,
@@ -22,6 +23,7 @@ module Fox
     # Module-level    
     class << self
       attr_accessor :stack,
+                    :kinder_parents, # this is to make 'as' delecrations work intuitively.
                     :base, # the very first component declared, usually the app.
                     :components,
                     :deferred_setups,
@@ -132,9 +134,14 @@ module Fox
 
       # To allow for adding new components at
       # other places other than the immediate
-      # parental nesting
-      def as tag, &block
+      # parental nesting.
+      def as tag, kpos: Enhancement.stack.last, &block
         Enhancement.stack << (@os = os = refc(tag))
+
+        # We must add our actual parent to the kinder parent
+        # registry, and remove it before we're done here.
+        kstacklvl = Enhancement.stack.size + 1
+        Enhancement.kinder_parents[kstacklvl] = kpos
         
         def instance a=nil, &block
           @os.instance_name = a
@@ -144,6 +151,7 @@ module Fox
         
         self.instance_eval &block
 
+        Enhancement.kinder_parents.delete kstacklvl
         Enhancement.stack.pop                                                  
         @os = Enhancement.stack.last
         return os

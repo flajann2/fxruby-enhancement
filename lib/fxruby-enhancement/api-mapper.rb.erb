@@ -53,24 +53,28 @@ module Fox
        def <%= @class.snake %> name = nil, ii: <%= (Fox::Enhancement::INITFORCE.member? @class) ? Fox::Enhancement::INITFORCE[@class] : 0 %>, pos: Enhancement.stack.last, reuse: nil, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: <%= @class %>, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil, reusable: reuse))
          Enhancement.components[name] = os unless name.nil?
-         unless pos.nil?
-           pos.kinder << os 
+         unless Enhancement.kinder_parents[Enhancement.stack.size].nil?
+            Enhancement.kinder_parents[Enhancement.stack.size].kinder << os
          else
-           Enhancement.base = os
+           unless pos.nil?
+             pos.kinder << os 
+           else
+             Enhancement.base = os
+           end
          end
          <% @i=0 %>
          <% for @iniparams in @details[:initialize].compact %>
-             <%= "@os.op[#{@i}]" %> = OpenStruct.new({<%= @iniparams.map{ |p,d| [p, d ? d : ":required"] }
-                                                                 .map{ |p,d| ":#{p} => #{d}"}
-                                                                 .join(', ') %>})
+         <%= "@os.op[#{@i}]" %> = OpenStruct.new({<%= @iniparams.map{ |p,d| [p, d ? d : ":required"] }
+                                                                .map{ |p,d| ":#{p} => #{d}"}
+                                                                .join(', ') %>})
              <% for @param, @default in @iniparams %>
-             def <%= "#{@param.snake}" %> var; @os.op[@os.ii].<%= "#{@param}" %> = var; end
+         def <%= "#{@param.snake}" %> var; @os.op[@os.ii].<%= "#{@param}" %> = var; end
              <% end %>
-             def instance a=nil, &block
-               @os.instance_name = a
-               @os.instance_block ||= []
-               @os.instance_block << [a, block]
-             end
+         def instance a=nil, &block
+           @os.instance_name = a
+           @os.instance_block ||= []
+           @os.instance_block << [a, block]
+         end
          <% @i+=1; end unless @details[:initialize].nil? %>     
          self.instance_eval &block
          <% unless Fox::Enhancement::SPECIAL.member? @class %>

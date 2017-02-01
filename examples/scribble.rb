@@ -5,35 +5,6 @@ require 'fxruby-enhancement'
 include Fox
 include Fox::Enhancement::Mapper
 
-### debugging
-TRACE_FILES = %w{
-api-mapper.rb:1776-1827
-enhancement.rb
-scribble.rb
-ostruct-monkey.rb:16-29
-}
-
-TFILES = TRACE_FILES.map{ |s| s.split(':').first }
-
-set_trace_func proc { |event, file, line, id, binding, classname|
-  base, srange = File.basename(file).split(':')
-  stnum, endnum = srange.split('-') unless srange.nil?
-  stnum  = srange.nil? ? nil : stnum.to_i
-  endnum = srange.nil? && endnum.nil? ? nil : endnum.to_i
-  if TFILES.member?(base) && (srange.nil? ||
-                                  (endnum.nil? && line == stnum) ||
-                                  (stnum <= line && line <= endnum))
-    printf "%8s \033[32m%s:%-2d\033[0m %10s \033[33m%.50s\033[0m \033[36m%.50s\033[0m\n",
-           event,
-           base,            #green
-           line,            #green
-           id,
-           classname,       #yellow
-           binding.receiver #cyan
-  end
-}
-### end debugging
-
 fx_app :app do
   app_name "Scribble"
   vendor_name "Example"
@@ -140,7 +111,7 @@ fx_app :app do
         fx_horizontal_separator {opts SEPARATOR_RIDGE|LAYOUT_FILL_X }
 
         as (:app) {
-          fx_data_target (:mirror_mode) { value true }
+          fx_data_target (:mirror_mode) { value false }
         }
         
         fx_check_button {
