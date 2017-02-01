@@ -25,11 +25,11 @@ set_trace_func proc { |event, file, line, id, binding, classname|
                                   (stnum <= line && line <= endnum))
     printf "%8s \033[32m%s:%-2d\033[0m %10s \033[33m%.50s\033[0m \033[36m%.50s\033[0m\n",
            event,
-           base,
-           line,
+           base,            #green
+           line,            #green
            id,
-           classname,
-           binding.receiver
+           classname,       #yellow
+           binding.receiver #cyan
   end
 }
 ### end debugging
