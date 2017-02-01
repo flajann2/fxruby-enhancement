@@ -39,7 +39,7 @@ fx_app :app do
 
           instance { |c|
             c.sel_paint { |sender, sel, event|
-              FXDCWindow.new(ref(:canvas), event) do |dc|
+              fx_dc :canvas, event do |dc|
                 dc.foreground = ref(:canvas).backColor
                 dc.fillRectangle(event.rect.x, event.rect.y, event.rect.w, event.rect.h)
               end
@@ -53,7 +53,7 @@ fx_app :app do
             c.sel_motion { |sender, sel, event|
               if @mouseDown
                 # Get device context for the canvas
-                FXDCWindow.new(ref(:canvas)) { |dc|
+                fx_dc (:canvas) { |dc|
                   # Set the foreground color for drawing
                   dc.foreground = @drawColor
                   
@@ -77,7 +77,7 @@ fx_app :app do
               ref(:canvas).ungrab
               if @mouseDown
                 # Get device context for the canvas
-                FXDCWindow.new(ref(:canvas)) { |dc|                
+                fx_dc (:canvas) { |dc|                
                   # Set the foreground color for drawing
                   dc.foreground = @drawColor
                   
@@ -131,7 +131,7 @@ fx_app :app do
 
           instance { |b|
             b.sel_command {
-              FXDCWindow.new(ref(:canvas)) do |dc|
+              fx_dc :canvas do |dc|
                 dc.foreground = ref(:canvas).backColor
                 dc.fillRectangle(0, 0, ref(:canvas).width, ref(:canvas).height)
                 @dirty = false

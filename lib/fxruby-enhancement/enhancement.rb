@@ -178,6 +178,15 @@ module Fox
       def deferred_setup &block
         Enhancement.deferred_setups << block
       end
+
+      # This simplifies creating the FXDCWindow object.
+      def fx_dc tag, event=nil, &block
+        unless event.nil?
+          FXDCWindow.new(ref(tag), event) { |dc| block.(dc) }
+        else
+          FXDCWindow.new(ref(tag)) { |dc| block.(dc) }
+        end
+      end
     end
   end
 end

@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new(">= 0".freeze) if s.respond_to? :required_rubygems_version=
   s.require_paths = ["lib".freeze]
   s.authors = ["Fred Mitchell".freeze]
-  s.date = "2017-01-30"
+  s.date = "2017-02-01"
   s.description = "The fxruby library is an excellent wrapper for the FOX toolkit. However, it reflects the\n  C++-ness of FOX, rather than being more Ruby-like. As such, creating composed objects with\n  it tends to be rather ugly and cumbersome.\n\n  fxruby-enhancement is a wrapper for the wrapper, to \"rubyfy\" it and make it more easy to \n  use for Rubyists. \n\n  fxruby-enhancement is basically a DSL of sorts, and every effort has been taken to make \n  it intuitive to use. Once you get the hang of it, you should be able to look at the FXRuby\n  API documentation and infer the DSL construct for fxruby-enhancement.".freeze
   s.email = "fred.mitchell@gmx.de".freeze
   s.extra_rdoc_files = [
@@ -36,7 +36,13 @@ Gem::Specification.new do |s|
     "examples/data_target.rb",
     "examples/dialog_box.rb",
     "examples/hello.rb",
+    "examples/images/bounce.rb.png",
+    "examples/images/data_target.rb.png",
+    "examples/images/dialog_box.rb.png",
     "examples/images/hello-world-new-and-old.png",
+    "examples/images/hello.rb.png",
+    "examples/images/rubyneat-panel.png",
+    "examples/images/scribble.rb.png",
     "examples/scribble.rb",
     "fxruby-enhancement.gemspec",
     "lib/fxruby-enhancement.rb",
