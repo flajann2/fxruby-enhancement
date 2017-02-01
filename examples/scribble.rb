@@ -7,7 +7,7 @@ include Fox::Enhancement::Mapper
 
 ### debugging
 TRACE_FILES = %w{
-api-mapper.rb:1776-1845
+api-mapper.rb:1776-1827
 enhancement.rb
 scribble.rb
 ostruct-monkey.rb:16-29
@@ -23,7 +23,7 @@ set_trace_func proc { |event, file, line, id, binding, classname|
   if TFILES.member?(base) && (srange.nil? ||
                                   (endnum.nil? && line == stnum) ||
                                   (stnum <= line && line <= endnum))
-    printf "%8s %s:%-2d %10s (%.50s) [%.50s]\n",
+    printf "%8s \033[32m%s:%-2d\033[0m %10s \033[33m%.50s\033[0m \033[36m%.50s\033[0m\n",
            event,
            base,
            line,
