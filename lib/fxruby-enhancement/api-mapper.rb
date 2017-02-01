@@ -1261,7 +1261,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FX4Splitter.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FX4Splitter.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -1310,7 +1310,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FX7Segment.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FX7Segment.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -1329,7 +1329,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXAccelTable.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXAccelTable.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -1430,7 +1430,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXArrowButton.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXArrowButton.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -1469,7 +1469,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXBMPIcon.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXBMPIcon.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -1506,7 +1506,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXBMPImage.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXBMPImage.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -1543,7 +1543,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXBitmap.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXBitmap.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -1592,7 +1592,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXBitmapFrame.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXBitmapFrame.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -1637,7 +1637,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXBitmapView.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXBitmapView.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -1692,7 +1692,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXButton.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXButton.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -1723,7 +1723,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXCURCursor.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXCURCursor.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -1766,18 +1766,14 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXCanvas.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXCanvas.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
          os
        end
     
-       def fx_check_button name = nil,
-                           ii: 0,
-                           pos: Enhancement.stack.last,
-                           reuse: nil,
-                           &block
+       def fx_check_button name = nil, ii: 0, pos: Enhancement.stack.last, reuse: nil, &block
          Enhancement.stack << (@os = os = OpenStruct.new(klass: FXCheckButton, op: [], ii: ii, fx: nil, kinder: [], inst: nil, instance_result: nil, reusable: reuse))
          Enhancement.components[name] = os unless name.nil?
          unless pos.nil?
@@ -1793,15 +1789,9 @@ module Fox
              
              def text var; @os.op[@os.ii].text = var; end
              
-             def target var
-               require 'pry'; binding.pry #DEBUGGING
-               @os.op[@os.ii].target = var
-             end
+             def target var; @os.op[@os.ii].target = var; end
              
-             def selector var
-               require 'pry'; binding.pry #DEBUGGING
-               @os.op[@os.ii].selector = var
-             end
+             def selector var; @os.op[@os.ii].selector = var; end
              
              def opts var; @os.op[@os.ii].opts = var; end
              
@@ -1829,15 +1819,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){
-           require 'pry'; binding.pry #DEBUGGING           
-           FXCheckButton.new(*([pos.inst] +
-                               os.op[os.ii]
-                                 .to_h
-                                 .values[1..-1]
-                                 .map{ |v|
-                                 (v.is_a?(OpenStruct)? v.inst : v)
-                               }))}
+         os.fx = ->(){ FXCheckButton.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -1884,7 +1866,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXChoiceBox.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXChoiceBox.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -1935,7 +1917,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXColorBar.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXColorBar.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -1976,7 +1958,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXColorDialog.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXColorDialog.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -2052,7 +2034,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXColorList.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXColorList.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -2103,7 +2085,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXColorRing.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXColorRing.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -2146,7 +2128,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXColorSelector.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXColorSelector.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -2199,7 +2181,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXColorWell.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXColorWell.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -2250,7 +2232,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXColorWheel.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXColorWheel.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -2303,7 +2285,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXComboBox.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXComboBox.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -2342,7 +2324,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXComposite.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXComposite.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -2413,7 +2395,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXCursor.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXCursor.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -2432,7 +2414,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXSegment.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXSegment.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -2451,7 +2433,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXArc.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXArc.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -2480,7 +2462,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXDC.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXDC.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -2499,7 +2481,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXPSBounds.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXPSBounds.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -2518,7 +2500,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXPrinter.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXPrinter.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -2547,7 +2529,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXDCPrint.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXDCPrint.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -2578,7 +2560,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXDCWindow.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXDCWindow.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -2630,7 +2612,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXDebugTarget.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXDebugTarget.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -2659,7 +2641,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXDelegator.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXDelegator.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -2710,7 +2692,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXDial.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXDial.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -2763,7 +2745,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXDialogBox.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXDialogBox.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -2782,7 +2764,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXDict.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXDict.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -2833,7 +2815,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXDirBox.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXDirBox.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -2874,7 +2856,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXDirDialog.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXDirDialog.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -2909,7 +2891,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXDirItem.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXDirItem.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -2952,7 +2934,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXDirList.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXDirList.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -2995,7 +2977,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXDirSelector.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXDirSelector.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -3080,7 +3062,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXDockBar.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXDockBar.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -3131,7 +3113,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXDockHandler.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXDockHandler.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -3182,7 +3164,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXDockSite.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXDockSite.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -3235,7 +3217,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXDockTitle.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXDockTitle.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -3254,7 +3236,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXDocument.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXDocument.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -3283,7 +3265,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXDragCorner.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXDragCorner.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -3302,7 +3284,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXDrawable.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXDrawable.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -3353,7 +3335,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXDriveBox.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXDriveBox.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -3467,7 +3449,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXExtentf.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXExtentf.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -3508,7 +3490,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXFileDialog.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXFileDialog.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -3527,7 +3509,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXFileAssoc.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXFileAssoc.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -3558,7 +3540,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXFileDict.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXFileDict.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -3593,7 +3575,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXFileItem.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXFileItem.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -3636,7 +3618,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXFileList.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXFileList.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -3679,7 +3661,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXFileSelector.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXFileSelector.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -3743,7 +3725,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXFoldingItem.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXFoldingItem.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -3786,7 +3768,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXFoldingList.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXFoldingList.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -3805,7 +3787,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXFontDesc.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXFontDesc.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -3872,7 +3854,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXFont.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXFont.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -3913,7 +3895,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXFontDialog.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXFontDialog.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -3956,7 +3938,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXFontSelector.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXFontSelector.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -4003,7 +3985,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXFrame.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXFrame.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -4038,7 +4020,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXGIFCursor.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXGIFCursor.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -4077,7 +4059,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXGIFIcon.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXGIFIcon.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -4114,7 +4096,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXGIFImage.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXGIFImage.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -4187,7 +4169,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXGLCanvas.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXGLCanvas.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -4220,7 +4202,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXGLContext.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXGLContext.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -4239,7 +4221,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXGLObject.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXGLObject.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -4278,7 +4260,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXGLShape.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXGLShape.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -4297,7 +4279,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXViewport.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXViewport.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -4316,7 +4298,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXLight.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXLight.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -4335,7 +4317,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXMaterial.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXMaterial.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -4408,7 +4390,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXGLViewer.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXGLViewer.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -4439,7 +4421,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXGLVisual.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXGLVisual.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -4509,7 +4491,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXGradientBar.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXGradientBar.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -4562,7 +4544,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXGroupBox.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXGroupBox.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -4597,7 +4579,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXHeaderItem.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXHeaderItem.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -4648,7 +4630,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXHeader.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXHeader.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -4699,7 +4681,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXHorizontalFrame.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXHorizontalFrame.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -4738,7 +4720,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXICOIcon.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXICOIcon.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -4775,7 +4757,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXICOImage.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXICOImage.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -4814,7 +4796,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXIcon.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXIcon.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -4833,7 +4815,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXIconDict.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXIconDict.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -4868,7 +4850,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXIconItem.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXIconItem.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -4911,7 +4893,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXIconList.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXIconList.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -4940,7 +4922,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXIconSource.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXIconSource.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -4959,7 +4941,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXId.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXId.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -4996,7 +4978,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXImage.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXImage.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -5045,7 +5027,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXImageFrame.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXImageFrame.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -5090,7 +5072,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXImageView.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXImageView.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -5135,7 +5117,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXInputDialog.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXInputDialog.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -5176,7 +5158,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXJPGIcon.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXJPGIcon.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -5215,7 +5197,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXJPGImage.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXJPGImage.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -5266,7 +5248,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXKnob.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXKnob.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -5317,7 +5299,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXLabel.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXLabel.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -5350,7 +5332,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXListItem.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXListItem.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -5393,7 +5375,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXList.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXList.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -5444,7 +5426,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXListBox.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXListBox.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -5487,7 +5469,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXMDIDeleteButton.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXMDIDeleteButton.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -5530,7 +5512,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXMDIRestoreButton.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXMDIRestoreButton.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -5573,7 +5555,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXMDIMaximizeButton.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXMDIMaximizeButton.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -5616,7 +5598,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXMDIMinimizeButton.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXMDIMinimizeButton.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -5661,7 +5643,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXMDIWindowButton.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXMDIWindowButton.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -5692,7 +5674,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXMDIMenu.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXMDIMenu.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -5737,7 +5719,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXMDIChild.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXMDIChild.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -5776,7 +5758,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXMDIClient.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXMDIClient.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -5833,7 +5815,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXMainWindow.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXMainWindow.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -5886,7 +5868,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXMatrix.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXMatrix.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -5915,7 +5897,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXMemoryBuffer.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXMemoryBuffer.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -5944,7 +5926,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXMemoryStream.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXMemoryStream.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -6029,7 +6011,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXMenuBar.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXMenuBar.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -6082,7 +6064,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXMenuButton.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXMenuButton.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -6117,7 +6099,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXMenuCaption.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXMenuCaption.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -6154,7 +6136,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXMenuCascade.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXMenuCascade.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -6191,7 +6173,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXMenuCheck.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXMenuCheck.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -6230,7 +6212,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXMenuCommand.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXMenuCommand.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -6261,7 +6243,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXMenuPane.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXMenuPane.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -6298,7 +6280,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXMenuRadio.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXMenuRadio.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -6329,7 +6311,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXMenuSeparator.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXMenuSeparator.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -6366,7 +6348,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXMenuTitle.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXMenuTitle.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -6407,7 +6389,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXMessageBox.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXMessageBox.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -6426,7 +6408,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXObject.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXObject.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -6481,7 +6463,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXOption.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXOption.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -6530,7 +6512,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXOptionMenu.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXOptionMenu.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -6569,7 +6551,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXPCXIcon.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXPCXIcon.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -6606,7 +6588,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXPCXImage.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXPCXImage.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -6645,7 +6627,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXPNGIcon.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXPNGIcon.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -6682,7 +6664,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXPNGImage.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXPNGImage.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -6721,7 +6703,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXPPMIcon.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXPPMIcon.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -6758,7 +6740,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXPPMImage.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXPPMImage.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -6809,7 +6791,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXPacker.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXPacker.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -6864,7 +6846,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXPicker.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXPicker.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -6903,7 +6885,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXPopup.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXPopup.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -6944,7 +6926,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXPrintDialog.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXPrintDialog.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -6995,7 +6977,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXProgressBar.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXProgressBar.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -7038,7 +7020,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXProgressDialog.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXProgressDialog.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -7123,7 +7105,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXQuatd.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXQuatd.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -7208,7 +7190,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXQuatf.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXQuatf.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -7247,7 +7229,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXRGBIcon.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXRGBIcon.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -7284,7 +7266,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXRGBImage.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXRGBImage.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -7337,7 +7319,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXRadioButton.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXRadioButton.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -7396,7 +7378,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXRanged.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXRanged.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -7455,7 +7437,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXRangef.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXRangef.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -7506,7 +7488,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXRealSlider.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXRealSlider.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -7559,7 +7541,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXRealSpinner.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXRealSpinner.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -7604,7 +7586,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXRecentFiles.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXRecentFiles.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -7761,7 +7743,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXRegistry.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXRegistry.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -7804,7 +7786,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXReplaceDialog.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXReplaceDialog.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -7835,7 +7817,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXRootWindow.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXRootWindow.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -7886,7 +7868,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXRuler.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXRuler.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -7929,7 +7911,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXRulerView.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXRulerView.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -7948,7 +7930,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ NotifyHeader.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ NotifyHeader.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -7967,7 +7949,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ SCNotification.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ SCNotification.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -8000,7 +7982,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ TextRange.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ TextRange.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -8043,7 +8025,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXScintilla.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXScintilla.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -8082,7 +8064,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXScrollArea.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXScrollArea.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -8125,7 +8107,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXScrollBar.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXScrollBar.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -8154,7 +8136,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXScrollCorner.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXScrollCorner.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -8187,7 +8169,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXScrollPane.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXScrollPane.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -8226,7 +8208,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXScrollWindow.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXScrollWindow.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -8269,7 +8251,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXSearchDialog.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXSearchDialog.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -8316,7 +8298,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXSeparator.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXSeparator.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -8363,7 +8345,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXHorizontalSeparator.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXHorizontalSeparator.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -8410,7 +8392,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXVerticalSeparator.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXVerticalSeparator.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -8429,7 +8411,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXSettings.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXSettings.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -8448,7 +8430,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXShell.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXShell.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -8503,7 +8485,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXShutterItem.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXShutterItem.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -8558,7 +8540,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXShutter.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXShutter.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -8599,7 +8581,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXSize.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXSize.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -8650,7 +8632,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXSlider.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXSlider.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -8717,7 +8699,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXSphered.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXSphered.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -8784,7 +8766,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXSpheref.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXSpheref.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -8837,7 +8819,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXSpinner.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXSpinner.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -8872,7 +8854,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXSplashWindow.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXSplashWindow.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -8935,7 +8917,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXSplitter.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXSplitter.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -8990,7 +8972,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXSpring.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXSpring.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -9041,7 +9023,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXStatusBar.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXStatusBar.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -9074,7 +9056,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXStatusLine.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXStatusLine.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -9103,7 +9085,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXStream.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXStream.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -9122,7 +9104,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXStringDict.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXStringDict.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -9169,7 +9151,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXSwitcher.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXSwitcher.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -9208,7 +9190,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXTGAIcon.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXTGAIcon.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -9245,7 +9227,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXTGAImage.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXTGAImage.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -9284,7 +9266,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXTIFIcon.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXTIFIcon.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -9321,7 +9303,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXTIFImage.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXTIFImage.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -9372,7 +9354,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXTabBar.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXTabBar.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -9423,7 +9405,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXTabBook.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXTabBook.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -9474,7 +9456,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXTabItem.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXTabItem.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -9493,7 +9475,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXTablePos.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXTablePos.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -9512,7 +9494,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXTableRange.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXTableRange.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -9545,7 +9527,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXTableItem.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXTableItem.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -9596,7 +9578,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXTable.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXTable.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -9615,7 +9597,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXHiliteStyle.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXHiliteStyle.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -9634,7 +9616,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXTextChange.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXTextChange.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -9685,7 +9667,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXText.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXText.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -9738,7 +9720,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXTextField.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXTextField.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -9797,7 +9779,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXToggleButton.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXToggleButton.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -9882,7 +9864,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXToolBar.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXToolBar.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -9925,7 +9907,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXToolBarGrip.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXToolBarGrip.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -9968,7 +9950,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXToolBarShell.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXToolBarShell.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -10011,7 +9993,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXToolBarTab.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXToolBarTab.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -10050,7 +10032,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXToolTip.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXToolTip.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -10069,7 +10051,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXTopWindow.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXTopWindow.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -10098,7 +10080,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXTranslator.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXTranslator.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -10133,7 +10115,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXTreeItem.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXTreeItem.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -10176,7 +10158,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXTreeList.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXTreeList.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -10227,7 +10209,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXTreeListBox.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXTreeListBox.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -10290,7 +10272,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXTriStateButton.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXTriStateButton.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -10321,7 +10303,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXVec2d.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXVec2d.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -10352,7 +10334,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXVec2f.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXVec2f.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -10385,7 +10367,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXVec3d.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXVec3d.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -10418,7 +10400,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXVec3f.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXVec3f.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -10465,7 +10447,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXVec4d.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXVec4d.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -10512,7 +10494,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXVec4f.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXVec4f.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -10563,7 +10545,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXVerticalFrame.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXVerticalFrame.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -10596,7 +10578,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXVisual.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXVisual.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -10669,7 +10651,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXWindow.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXWindow.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -10724,7 +10706,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXWizard.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXWizard.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -10765,7 +10747,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXXBMIcon.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXXBMIcon.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -10804,7 +10786,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXXBMImage.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXXBMImage.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -10843,7 +10825,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXXPMIcon.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXXPMIcon.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last
@@ -10880,7 +10862,7 @@ module Fox
               
          self.instance_eval &block
          
-         os.fx = ->(){ FXXPMImage.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ FXXPMImage.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          
          Enhancement.stack.pop                                                  
          @os = Enhancement.stack.last

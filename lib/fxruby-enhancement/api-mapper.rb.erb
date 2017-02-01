@@ -74,7 +74,7 @@ module Fox
          <% @i+=1; end unless @details[:initialize].nil? %>     
          self.instance_eval &block
          <% unless Fox::Enhancement::SPECIAL.member? @class %>
-         os.fx = ->(){ <%= @class %>.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.inst : v)} )) }
+         os.fx = ->(){ <%= @class %>.new(*([pos.inst] + os.op[os.ii].to_h.values[1..-1].map{|v| (v.is_a?(OpenStruct)? v.instance : v)} )) }
          <% else %>
          os.fx = ->(){ <%= @class %>.new(*(os.op[os.ii].to_h.values)) }
          <% end %>

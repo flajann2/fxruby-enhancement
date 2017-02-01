@@ -53,6 +53,13 @@ class OpenStruct
     self
   end
 
+  # We must insure that instance actually is something
+  # other than nil.
+  def instance
+    raise "Instance is not set for #{self.klass}" if self.inst.nil?
+    self.inst
+  end
+
   # launch the application
   def launch ingress: false
     create_fox_components
