@@ -24,6 +24,7 @@
        - [[#fx_chart][fx_chart]]
          - [[#data-format-and-labeling][Data Format and Labeling]]
        - [[#fx_data_target][fx_data_target]]
+       - [[#fx_dc][fx_dc]]
        - [[#instance][instance]]
        - [[#ingress_handler][ingress_handler]]
        - [[#starten-and-stoppen-with-resuable-components][#starten and #stoppen with resuable components]]
@@ -46,6 +47,7 @@
        - [[#junkyard-data-targets][JUNKYARD Data Targets]]
      - [[#junkyard-subtle-ruby-bug-detected-chartrb-ruby-240][JUNKYARD Subtle Ruby Bug detected. (chart.rb) Ruby 2.4.0]]
      - [[#junkyard-as-execution-issue-debugging-code][JUNKYARD 'as' execution issue DEBUGGING CODE]]
+     - [[#scratchpad-fxdcwindow][SCRATCHPAD FXDCWindow]]
 
 * fxruby-enhancement
   #+caption: Enhancement vs. FXRuby versions of Hello World.
@@ -562,6 +564,33 @@
 
      Otherwise, you can deal with fx_data_target as expected. See
      the [[#datatarget-example][DataTarget Example]].
+
+**** fx_dc
+     For canvas work, you typically have to create and
+     destory the FXDCWindow object. To ease this, use the
+     fx_dc instead. For example:
+     #+begin_src ruby
+     button.sel_command {
+       fx_dc :canvas do |dc|
+         dc.foreground = ref(:canvas).backColor
+         dc.fillRectangle(0, 0, ref(:canvas).width, ref(:canvas).height)
+         @dirty = false
+       end
+     }
+     #+end_src
+
+     instead of:
+     #+begin_src ruby
+     button.sel_command {
+       FXDCWindow.new(ref(:canvas)) do |dc|
+         dc.foreground = ref(:canvas).backColor
+         dc.fillRectangle(0, 0, ref(:canvas).width, ref(:canvas).height)
+         @dirty = false
+       end
+     }
+     #+end_src
+     
+     This example has been borrowed from [[file:./examples/scribble.rb][Scribble]].
 
 **** instance
      Inside of your component declaration, you will undoubtly
@@ -1508,4 +1537,9 @@ set_trace_func proc { |event, file, line, id, binding, classname|
     wish to restrict our users from doing so. I simply cannot
     conceive of all the possible ways Enhancement will be 
     leveraged.
+
+*** SCRATCHPAD FXDCWindow 
+    Passing in a nil for the event is not the same
+    as passing in nothing at all. Probably has to
+    do with how the C interface is implemented or works.
 
