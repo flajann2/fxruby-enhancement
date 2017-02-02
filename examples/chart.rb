@@ -73,10 +73,6 @@ fx_app :app do
       range 0.0, 50.0
       
       instance { |c|
-
-        c.sel_configure{ |sender, sel, event|
-          
-        }
       }
     }
   }
