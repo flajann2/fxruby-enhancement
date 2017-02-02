@@ -86,30 +86,27 @@ module Fox
             @font_axis_name = nil
 
             # chart layout
-            @layout = lyt = OpenStruct.new(title: Title.new,
-                                           top_ruler: TopRuler.new,
-                                           bottom_ruler: BottomRuler.new,
-                                           left_ruler: LeftRuler.new,
-                                           right_ruler: RightRuler.new,
-                                           caption: Caption.new,
-                                           legend: Legend.new,
-                                           graph: Graph.new)
+            @layout = lyt = {title: Title.new,
+                             top_ruler: TopRuler.new,
+                             bottom_ruler: BottomRuler.new,
+                             left_ruler: LeftRuler.new,
+                             right_ruler: RightRuler.new,
+                             caption: Caption.new,
+                             legend: Legend.new,
+                             graph: Graph.new}
             # bottom connections
-            require 'pry'; binding.pry #DEBUGGING
-            lyt.title.bottom_box        = [lyt.top_ruler, :spring]
-            lyt.top_ruler.bottom_box    = [lyt.graph, 1]
-            lyt.graph.bottom_box        = [lyt.bottom_ruler, 1]
-            lyt.bottom_ruler.bottom_box = [lyt.caption, :spring]
-
-            # right connections
-            lyt.left_ruler.right_box    = [lyt.graph, 1]
-            lyt.graph.right_box         = [lyt.right_ruler, 1]
-            lyt.right_ruler.right_box   = [lyt.legend, :spring]
+            lyt[:title].bottom_box        = [lyt[:top_ruler], :spring]
+            lyt[:top_ruler].bottom_box    = [lyt[:graph], 1]
+            lyt[:graph].bottom_box        = [lyt[:bottom_ruler], 1]
+            lyt[:bottom_ruler].bottom_box = [lyt[:caption], :spring]
+            lyt[:left_ruler].right_box    = [lyt[:graph], 1]
+            lyt[:graph].right_box         = [lyt[:right_ruler], 1]
+            lyt[:right_ruler].right_box   = [lyt[:legend], :spring]
             backlink_boxes
           end
 
           def backlink_boxes
-            @layout.to_h.each{ |name, box|
+            @layout.each{ |name, box|
               box.bottom_box.first.top_box = [box, box.bottom_box.last] unless box.bottom_box.nil?
               box.right_box.first.left_box = [box, box.right_box.last] unless box.right_box.nil?
             }
@@ -144,18 +141,18 @@ module Fox
                    &block
         Enhancement.stack << (@os = os =
                               OpenStruct.new(klass: FXCanvas,
-                                             op: [],
-                                             ii: ii,
-                                             fx: nil,
-                                             kinder: [],
-                                             inst: nil,
-                                             instance_result: nil,
-                                             reusable: reuse,
-                                             type: :cartesian,
-                                             axial: OpenStruct.new,
-                                             background: OpenStruct.new,
-                                             caption: OpenStruct.new,
-                                             title: OpenStruct.new))
+                                               op: [],
+                                               ii: ii,
+                                               fx: nil,
+                                               kinder: [],
+                                               inst: nil,
+                                               instance_result: nil,
+                                               reusable: reuse,
+                                               type: :cartesian,
+                                               axial: OpenStruct.new,
+                                               background: OpenStruct.new,
+                                               caption: OpenStruct.new,
+                                               title: OpenStruct.new))
         Enhancement.components[name] = os unless name.nil?
         unless pos.nil?
           pos.kinder << os 
@@ -164,13 +161,13 @@ module Fox
         end
         
         @os.op[0] = OpenStruct.new(:parent => :required,
-                                   :target => nil,
-                                   :selector => 0,
-                                   :opts => FRAME_NORMAL,
-                                   :x => 0,
-                                   :y => 0,
-                                   :width => 0,
-                                   :height => 0)
+                                     :target => nil,
+                                     :selector => 0,
+                                     :opts => FRAME_NORMAL,
+                                     :x => 0,
+                                     :y => 0,
+                                     :width => 0,
+                                     :height => 0)
         
         # Initializers for the underlying 
         def target var; @os.op[@os.ii].target = var; end
