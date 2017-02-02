@@ -48,6 +48,7 @@
      - [[#junkyard-subtle-ruby-bug-detected-chartrb-ruby-240][JUNKYARD Subtle Ruby Bug detected. (chart.rb) Ruby 2.4.0]]
      - [[#junkyard-as-execution-issue-debugging-code][JUNKYARD 'as' execution issue DEBUGGING CODE]]
      - [[#scratchpad-fxdcwindow][SCRATCHPAD FXDCWindow]]
+     - [[#junkyard-thoughs-on-doing-the-layout][JUNKYARD Thoughs on doing the layout]]
 
 * fxruby-enhancement
   #+caption: Enhancement vs. FXRuby versions of Hello World.
@@ -1544,4 +1545,39 @@ set_trace_func proc { |event, file, line, id, binding, classname|
     Passing in a nil for the event is not the same
     as passing in nothing at all. Probably has to
     do with how the C interface is implemented or works.
+
+*** JUNKYARD Thoughs on doing the layout
+    As such, we have the components of the chart laid out
+    as boxes linking to each other to represent their relative 
+    positions to each other. As such:
+
+    |               | Title        -1 |                |           |
+    |               | Top Ruler    -2 |                |           |
+    | Left Ruler -2 | Graph        -3 | Right Ruler -2 | Legend -1 |
+    |               | Bottom Ruler -2 |                |           |
+    |               | Caption      -1 |                |           |
+
+    And so, given the initial width and height of the
+    canvas, we work to determine everything else. For
+    those boxes that contain text, we know what the
+    text will be, and therefore how long and tall -- minimum --
+    they will need to be. And thusly we use the hints.
+    
+    Some adjacent boxes are at a fixed distance from
+    their neigbor, and some can be "springy", and so
+    we denote this aspect in the linkages.
+
+    Since the chart will have the same basic layout, with
+    some components enabled and disabled and like, we shall
+    work our way from the outside in.
+
+    Some boxes, like the Rulers, will take their with
+    and hight based on the dominate they are connected to.
+    Others, like the title and caption and legend boxes,
+    are floating.
+
+    And so we have the following box states:
+    - floating - if not floating, will get either its width
+      or height from the dominate neighbor.
+    - spring - in relation to neighbor, spring or fixed
 

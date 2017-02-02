@@ -10,11 +10,14 @@ module Fox
         # Box area of drawing interest. This is
         # more virtual than actual, i.e. no clipping
         # is performed.
-        class CBox
+        class Box
           include RGB
           
           # coordinate and dimensions of the box
           attr_accessor :x, :y, :width, :height
+
+          # hints on width and heigt, if meaningful, otherwise nil
+          attr_accessor :hint_width, :hint_height
           
           # textual orientation :horizontal, :vertical
           attr_accessor :orientation
@@ -23,7 +26,10 @@ module Fox
           # [other_box, :spring] oder [other_box, 24], etc
           attr_accessor :top_box, :bottom_box, :left_box, :right_box
 
-          attr_accessor :enabled
+          attr_accessor :enabled, :floating
+
+          # dominance rating (must be supplied)
+          attr_accessor :dominance
 
           # always overide this the default simply renders a box
           def render dc
@@ -32,12 +38,24 @@ module Fox
           end
           
           def enabled? ; enabled ; end
+          def floating? ; floating ; end
+
+          def initialize
+            @dominance = 1
+          end
         end
 
-        class Title < CBox
+        class PureText < Box
         end
         
-        class Ruler < CBox
+        class Title < PureText
+        end
+        
+        class Ruler < Box
+          def initialize
+            super
+            @dominance = 2
+          end
         end
         
         class TopRuler < Ruler
@@ -52,14 +70,18 @@ module Fox
         class RightRuler < Ruler
         end
         
-        class Caption < CBox
+        class Caption < PureText
         end
 
-        class Legend < CBox
+        class Legend < Box
         end
 
         # main charting area.
-        class Graph < CBox
+        class Graph < Box
+          def initialize
+            super
+            @dominance = 3
+          end
         end
         
         class Chart
@@ -114,7 +136,7 @@ module Fox
             }
           end
 
-          # call inially and when there's an update
+          # call inially and when there's an update.
           def layout_boxes
           end
           
