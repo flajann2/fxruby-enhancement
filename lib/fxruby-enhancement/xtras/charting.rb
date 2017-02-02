@@ -11,6 +11,8 @@ module Fox
         # more virtual than actual, i.e. no clipping
         # is performed.
         class CBox
+          include RGB
+          
           # coordinate and dimensions of the box
           attr_accessor :x, :y, :width, :height
           
@@ -122,10 +124,12 @@ module Fox
           end
           
           def update_chart
+            layout_boxes
             draw_dc { |dc|
               dc.setForeground white
               dc.fillRectangle 0, 0, width, height
               dc.drawImage @buffer.inst, 0, 0
+              @layout.each{ |name, box| box.render(dc) }
             }
             @canvas.update
           end
