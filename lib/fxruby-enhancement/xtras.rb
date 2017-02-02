@@ -1,1 +1,1 @@
-require_relative 'xtras/chart.rb'
+require_relative 'xtras/charting.rb'
