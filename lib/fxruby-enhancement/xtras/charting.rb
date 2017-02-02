@@ -22,9 +22,11 @@ module Fox
           # textual orientation :horizontal, :vertical
           attr_accessor :orientation
 
-          # adjoining boxes and connection type
-          # [other_box, :spring] oder [other_box, 24], etc
+          # adjoining boxes 
           attr_accessor :top_box, :bottom_box, :left_box, :right_box
+
+          # margins (nil implies zero)
+          attr_accessor :top_margin, :bottom_margin, :left_margin, :right_margin
 
           attr_accessor :enabled, :floating
 
@@ -119,20 +121,20 @@ module Fox
                              legend: Legend.new,
                              graph: Graph.new}
             # bottom connections
-            lyt[:title].bottom_box        = [lyt[:top_ruler], :spring]
-            lyt[:top_ruler].bottom_box    = [lyt[:graph], 1]
-            lyt[:graph].bottom_box        = [lyt[:bottom_ruler], 1]
-            lyt[:bottom_ruler].bottom_box = [lyt[:caption], :spring]
-            lyt[:left_ruler].right_box    = [lyt[:graph], 1]
-            lyt[:graph].right_box         = [lyt[:right_ruler], 1]
-            lyt[:right_ruler].right_box   = [lyt[:legend], :spring]
+            lyt[:title].bottom_box        = lyt[:top_ruler]
+            lyt[:top_ruler].bottom_box    = lyt[:graph]
+            lyt[:graph].bottom_box        = lyt[:bottom_ruler]
+            lyt[:bottom_ruler].bottom_box = lyt[:caption]
+            lyt[:left_ruler].right_box    = lyt[:graph]
+            lyt[:graph].right_box         = lyt[:right_ruler]
+            lyt[:right_ruler].right_box   = lyt[:legend]
             backlink_boxes
           end
 
           def backlink_boxes
             @layout.each{ |name, box|
-              box.bottom_box.first.top_box = [box, box.bottom_box.last] unless box.bottom_box.nil?
-              box.right_box.first.left_box = [box, box.right_box.last] unless box.right_box.nil?
+              box.bottom_box.top_box = box unless box.bottom_box.nil?
+              box.right_box.left_box = box unless box.right_box.nil?
             }
           end
 

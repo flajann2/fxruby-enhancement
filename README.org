@@ -1551,11 +1551,11 @@ set_trace_func proc { |event, file, line, id, binding, classname|
     as boxes linking to each other to represent their relative 
     positions to each other. As such:
 
-    |               | Title        -1 |                |           |
-    |               | Top Ruler    -2 |                |           |
-    | Left Ruler -2 | Graph        -3 | Right Ruler -2 | Legend -1 |
-    |               | Bottom Ruler -2 |                |           |
-    |               | Caption      -1 |                |           |
+    |               | Title        F-1 |                |            |
+    |               | Top Ruler     -2 |                |            |
+    | Left Ruler -2 | Graph        F-3 | Right Ruler -2 | Legend F-1 |
+    |               | Bottom Ruler  -2 |                |            |
+    |               | Caption      F-1 |                |            |
 
     And so, given the initial width and height of the
     canvas, we work to determine everything else. For
@@ -1563,9 +1563,11 @@ set_trace_func proc { |event, file, line, id, binding, classname|
     text will be, and therefore how long and tall -- minimum --
     they will need to be. And thusly we use the hints.
     
-    Some adjacent boxes are at a fixed distance from
-    their neigbor, and some can be "springy", and so
-    we denote this aspect in the linkages.
+    Boxes can define their margins, and therefore, coupled
+    with the float factor, determine their relationship
+    with their neighors. a dominance score as shown
+    in the diagram above determins how the layout will
+    proceed.
 
     Since the chart will have the same basic layout, with
     some components enabled and disabled and like, we shall
@@ -1575,9 +1577,4 @@ set_trace_func proc { |event, file, line, id, binding, classname|
     and hight based on the dominate they are connected to.
     Others, like the title and caption and legend boxes,
     are floating.
-
-    And so we have the following box states:
-    - floating - if not floating, will get either its width
-      or height from the dominate neighbor.
-    - spring - in relation to neighbor, spring or fixed
 
