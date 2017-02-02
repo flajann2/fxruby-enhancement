@@ -47,6 +47,11 @@ module Fox
           end
         end
 
+        # The null box represents the side of the container -- the
+        # canvas -- and will simplify layout.
+        class NullBox < Box
+        end
+        
         class PureText < Box
         end
         
@@ -112,22 +117,28 @@ module Fox
             @font_axis_name = nil
 
             # chart layout
-            @layout = lyt = {title: Title.new,
-                             top_ruler: TopRuler.new,
-                             bottom_ruler: BottomRuler.new,
-                             left_ruler: LeftRuler.new,
-                             right_ruler: RightRuler.new,
-                             caption: Caption.new,
-                             legend: Legend.new,
-                             graph: Graph.new}
+            @layout = lyt = { null_box: NullBox.new,
+                              title: Title.new,
+                              top_ruler: TopRuler.new,
+                              bottom_ruler: BottomRuler.new,
+                              left_ruler: LeftRuler.new,
+                              right_ruler: RightRuler.new,
+                              caption: Caption.new,
+                              legend: Legend.new,
+                              graph: Graph.new }
             # bottom connections
+            lyt[:null_box].bottom_box     = lyt[:title]
             lyt[:title].bottom_box        = lyt[:top_ruler]
             lyt[:top_ruler].bottom_box    = lyt[:graph]
             lyt[:graph].bottom_box        = lyt[:bottom_ruler]
             lyt[:bottom_ruler].bottom_box = lyt[:caption]
+
+            # right connections
+            lyt[:null_box].right_box      = lyt[:left_ruler]
             lyt[:left_ruler].right_box    = lyt[:graph]
             lyt[:graph].right_box         = lyt[:right_ruler]
             lyt[:right_ruler].right_box   = lyt[:legend]
+            
             backlink_boxes
           end
 
