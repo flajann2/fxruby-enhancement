@@ -132,12 +132,14 @@ module Fox
             lyt[:top_ruler].bottom_box    = lyt[:graph]
             lyt[:graph].bottom_box        = lyt[:bottom_ruler]
             lyt[:bottom_ruler].bottom_box = lyt[:caption]
+            lyt[:caption].bottom_box      = lyt[:null_box]
 
             # right connections
             lyt[:null_box].right_box      = lyt[:left_ruler]
             lyt[:left_ruler].right_box    = lyt[:graph]
             lyt[:graph].right_box         = lyt[:right_ruler]
             lyt[:right_ruler].right_box   = lyt[:legend]
+            lyt[:legend].right_box        = lyt[:null_box]
             
             backlink_boxes
           end
