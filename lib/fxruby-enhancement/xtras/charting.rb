@@ -3,7 +3,63 @@
 module Fox
   module Enhancement
     module Xtras
+      # Charting constructs. Note that the
+      # rulers have built-in their own labeling, with orientation.
       module Charting
+        
+        # Box area of drawing interest. This is
+        # more virtual than actual, i.e. no clipping
+        # is performed.
+        class CBox
+          # coordinate and dimensions of the box
+          attr_accessor :x, :y, :width, :height
+          
+          # textual orientation :horizontal, :vertical
+          attr_accessor :orientation
+
+          # adjoining boxes and connection type
+          # [other_box, :spring] oder [other_box, 24], etc
+          attr_accessor :top_box, :bottom_box, :left_box, :right_box
+
+          attr_accessor :enabled
+
+          # always overide this the default simply renders a box
+          def render dc
+            dc.foreground = black
+            dc.drawRectangle x, y, width, height
+          end
+          
+          def enabled? ; enabled ; end
+        end
+
+        class Title < CBox
+        end
+        
+        class Ruler < CBox
+        end
+        
+        class TopRuler < Ruler
+        end
+        
+        class BottomRuler < Ruler
+        end
+        
+        class LeftRuler < Ruler
+        end
+        
+        class RightRuler < Ruler
+        end
+        
+        class Caption < CBox
+        end
+
+        class Legend < CBox
+        end
+
+        # main charting area.
+        class Graph < CBox
+        end
+        
         class Chart
           extend Forwardable
           include RGB
@@ -27,7 +83,40 @@ module Fox
             @font_title = nil
             @font_caption = nil
             @font_ledgend = nil
-            @font_axis_name = nil          
+            @font_axis_name = nil
+
+            # chart layout
+            @layout = lyt = OpenStruct.new(title: Title.new,
+                                           top_ruler: TopRuler.new,
+                                           bottom_ruler: BottomRuler.new,
+                                           left_ruler: LeftRuler.new,
+                                           right_ruler: RightRuler.new,
+                                           caption: Caption.new,
+                                           legend: Legend.new,
+                                           graph: Graph.new)
+            # bottom connections
+            require 'pry'; binding.pry #DEBUGGING
+            lyt.title.bottom_box        = [lyt.top_ruler, :spring]
+            lyt.top_ruler.bottom_box    = [lyt.graph, 1]
+            lyt.graph.bottom_box        = [lyt.bottom_ruler, 1]
+            lyt.bottom_ruler.bottom_box = [lyt.caption, :spring]
+
+            # right connections
+            lyt.left_ruler.right_box    = [lyt.graph, 1]
+            lyt.graph.right_box         = [lyt.right_ruler, 1]
+            lyt.right_ruler.right_box   = [lyt.legend, :spring]
+            backlink_boxes
+          end
+
+          def backlink_boxes
+            @layout.to_h.each{ |name, box|
+              box.bottom_box.first.top_box = [box, box.bottom_box.last] unless box.bottom_box.nil?
+              box.right_box.first.left_box = [box, box.right_box.last] unless box.right_box.nil?
+            }
+          end
+
+          # call inially and when there's an update
+          def layout_boxes
           end
           
           def draw_dc &block
