@@ -42,14 +42,22 @@ module Fox
           def enabled? ; enabled ; end
           def floating? ; floating ; end
 
-          def initialize
+          def initialize float: false, enabled: true
             @dominance = 1
+            @floating = float
+            @top_margin = @bottom_margin = @left_margin = @right_margin = 0
+            @orientation = :horizontal
+            @enabled = enabled
           end
         end
 
         # The null box represents the side of the container -- the
         # canvas -- and will simplify layout.
         class NullBox < Box
+          def initialize
+            super
+            @dominance = 0
+          end
         end
         
         class PureText < Box
@@ -153,6 +161,8 @@ module Fox
 
           # call inially and when there's an update.
           def layout_boxes
+            nb = @layout[:null_box]
+            
           end
           
           def draw_dc &block
