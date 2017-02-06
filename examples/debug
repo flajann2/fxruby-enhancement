@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+
+FX_PATH = File.expand_path '..', File.dirname(__FILE__)
+$:.unshift File.join([FX_PATH, 'lib'])
+
+load ARGV[0]
+
+fox_component :app do |app|
+  app.launch
+end

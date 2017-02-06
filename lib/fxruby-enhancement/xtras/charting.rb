@@ -23,9 +23,10 @@ module Fox
           attr_accessor :orientation
 
           # adjoining boxes 
-          attr_accessor :top_box, :bottom_box, :left_box, :right_box
+          attr_accessor :top_box, :bottom_box
+          attr_accessor :left_box, :right_box
 
-          # margins (nil implies zero)
+          # margins
           attr_accessor :top_margin, :bottom_margin, :left_margin, :right_margin
 
           attr_accessor :enabled, :floating
@@ -35,6 +36,7 @@ module Fox
 
           # always overide this the default simply renders a box
           def render dc
+            raise "layout error" if x.nil? or y.nil? or width.nil? or heigth.nil?
             dc.foreground = black
             dc.drawRectangle x, y, width, height
           end
@@ -42,8 +44,8 @@ module Fox
           def enabled? ; enabled ; end
           def floating? ; floating ; end
 
-          def initialize float: false, enabled: true
-            @dominance = 1
+          def initialize float: false, enabled: true, dom: 1
+            @dominance = dom
             @floating = float
             @top_margin = @bottom_margin = @left_margin = @right_margin = 0
             @orientation = :horizontal
@@ -57,6 +59,10 @@ module Fox
           def initialize
             super
             @dominance = 0
+          end
+
+          # null box is never rendered.
+          def render dc
           end
         end
         
@@ -162,7 +168,9 @@ module Fox
           # call inially and when there's an update.
           def layout_boxes
             nb = @layout[:null_box]
-            
+            nb.x = nb.y = 0
+            nb.width = width
+            nb.height = height
           end
           
           def draw_dc &block
