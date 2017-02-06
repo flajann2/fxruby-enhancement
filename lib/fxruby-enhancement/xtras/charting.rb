@@ -12,6 +12,7 @@ module Fox
         # is performed.
         class Box
           include RGB
+          NÄHE = [:top_box, :bottom_box, :left_box, :right_box]
           
           # coordinate and dimensions of the box
           attr_accessor :x, :y, :width, :height
@@ -36,7 +37,7 @@ module Fox
 
           # always overide this the default simply renders a box
           def render dc
-            raise "layout error" if x.nil? or y.nil? or width.nil? or heigth.nil?
+            raise "layout error in #{self.class}" if x.nil? or y.nil? or width.nil? or heigth.nil?
             dc.foreground = black
             dc.drawRectangle x, y, width, height
           end
@@ -172,6 +173,23 @@ module Fox
             nb.width = width
             nb.height = height
           end
+
+          # Layout given box, as much as possible, given neighbors.
+          # may be called twice per box
+          def layout_box box
+          end
+
+          # Give a list of subordinates
+          def subordinates box
+            Box::NÄHE.map{ |b| box.send(b) }
+              .select { |nbox| box.dominance > nbox.dominance }            
+          end
+          
+          # Give a list of superiors
+          def superiors box
+            Box::NÄHE.map{ |b| box.send(b) }
+              .select { |nbox| box.dominance < nbox.dominance }            
+          end          
           
           def draw_dc &block
             @buffer.starten if @buffer.inst.nil?

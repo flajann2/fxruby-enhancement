@@ -1575,8 +1575,8 @@ set_trace_func proc { |event, file, line, id, binding, classname|
     some components enabled and disabled and like, we shall
     work our way from the outside in.
 
-    Some boxes, like the Rulers, will take their with
-    and hight based on the dominate they are connected to.
+    Some boxes, like the Rulers, will take their width
+    and height based on the dominate they are connected to.
     Others, like the title and caption and legend boxes,
     are floating.
 
@@ -1584,3 +1584,25 @@ set_trace_func proc { |event, file, line, id, binding, classname|
     the "NullBox" -- basically the equivalent of having
     zero or the empty set. It will simplify the layout
     algorithm
+
+    The layout algorithm shall procede as follows:
+    - nil out all x,y, with, and heigts of all boxes
+    - set up the NullBox with the intitals
+    - work from the null box to its superiors, and so on,
+      setting what can be set, leaving the rest for later.
+    - when you reach the most dominant box (with no 
+      superiors of its own), you should be able to fully
+      determine its dimensions.
+    - work back down the chain and fill in anything that's
+      missing.
+
+    For the float layout:
+    - We really want to keep this simple (for now), so
+      its with and height is already set by the hints.
+    - for the most superior, it will have no superiors, just
+      subordinates only, so its dimensions will be determined
+      thusly.
+
+    In all of this, this layout will take place everytime the application
+    window is resized, so be aware of this. The computaitons shall be swift,
+    just basic MDAS arithemtic. Nothing heavy-duty or fancy.
