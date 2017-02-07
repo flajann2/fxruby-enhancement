@@ -206,15 +206,19 @@ module Fox
             else # we do what we can.
               box.calculate_dimensions
               subordinates(box).each{ |sub|
-                case sub
-                when box.left_box
-                  box.x = sub.x + sub.width + sub.right_margin + box.left_margin
-                when box.right_box
-                  box.x = sub.x - sub.left_margin - box.right_margin - box.width
-                when box.top_box
-                  box.y = sub.y + sub.height + sub.bottom_margin + box.top_margin
-                when box.bottom_box                  
-                  box.y = sub.y - sub.top_margin - box.bottom_margin - box.height
+                begin
+                  case sub
+                  when box.left_box
+                    box.x = sub.x + sub.width + sub.right_margin + box.left_margin
+                  when box.right_box
+                    box.x = sub.x - sub.left_margin - box.right_margin - box.width
+                  when box.top_box
+                    box.y = sub.y + sub.height + sub.bottom_margin + box.top_margin
+                  when box.bottom_box                  
+                    box.y = sub.y - sub.top_margin - box.bottom_margin - box.height
+                  end
+                rescue NoMethodError, TypeError => e
+                  puts "-->unresolved: #{e}"
                 end
               }
               
