@@ -168,12 +168,20 @@ module Fox
 
           # call inially and when there's an update.
           def layout_boxes
+            clear_all_boxes
             nb = @layout[:null_box]
             nb.x = nb.y = 0
             nb.width = width
             nb.height = height
           end
 
+          # All x,y,width,height are nilled for all boxes
+          def clear_all_boxes
+            @layout.each {|name, box|
+              box.x = box.y = box.width = box.height = nil
+            }
+          end
+          
           # Layout given box, as much as possible, given neighbors.
           # may be called twice per box
           def layout_box box
