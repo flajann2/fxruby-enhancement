@@ -12,6 +12,7 @@ module Fox
         # is performed.
         class Box
           include RGB
+          MAX_DOMINANCE = 3
           NÄHE = [:top_box, :bottom_box, :left_box, :right_box]
           
           # coordinate and dimensions of the box
@@ -45,6 +46,12 @@ module Fox
           def enabled? ; enabled ; end
           def floating? ; floating ; end
 
+          # calc the width and height of this box. Override!
+          def calculate_dimensions
+            width  = hint_width  if width.nil?
+            height = hint_height if height.nil?
+          end
+          
           def initialize float: false, enabled: true, dom: 1
             @dominance = dom
             @floating = float
@@ -169,35 +176,77 @@ module Fox
           # call inially and when there's an update.
           def layout_boxes
             clear_all_boxes
-            nb = @layout[:null_box]
-            nb.x = nb.y = 0
-            nb.width = width
-            nb.height = height
+            
+            # first pass -- out to in
+            (0..Box::MAX_DOMINANCE).each do |dom|
+              boxes_of_dominance(dom).each{ |box| layout_box box }
+            end
+
+            # second pass -- in to out
+            (1..Box::MAX_DOMINANCE).to_a.reverse.each do |dom|
+              boxes_of_dominance(dom).each{ |box| layout_box box }
+            end
           end
 
           # All x,y,width,height are nilled for all boxes
           def clear_all_boxes
-            @layout.each {|name, box|
+            @layout.each { |name, box|
               box.x = box.y = box.width = box.height = nil
             }
           end
           
           # Layout given box, as much as possible, given neighbors.
-          # may be called twice per box
+          # may be called twice per box.
+          # 
           def layout_box box
+            if box.dominance == 0 # the only box with a dom of 0 is the null box
+              box.x = box.y = 0
+              box.width = width
+              box.height = height
+            else # we do what we can.
+              box.calculate_dimensions
+              subordinates(box).each{ |sub|
+                case sub
+                when box.left_box
+                  box.x = sub.x + sub.width + sub.right_margin + box.left_margin
+                when box.right_box
+                  box.x = sub.x - sub.left_margin - box.right_margin - box.width
+                when box.top_box
+                  box.y = sub.y + sub.height + sub.bottom_margin + box.top_margin
+                when box.bottom_box                  
+                  box.y = sub.y - sub.top_margin - box.bottom_margin - box.height
+                end
+              }
+              
+              superiors(box).each{ |sup|
+                case sup
+                when box.left_box
+                when box.right_box
+                when box.top_box
+                when box.bottom_box                  
+                end
+              }
+            end
           end
 
           # Give a list of subordinates
           def subordinates box
             Box::NÄHE.map{ |b| box.send(b) }
+              .compact
               .select { |nbox| box.dominance > nbox.dominance }            
           end
           
           # Give a list of superiors
           def superiors box
             Box::NÄHE.map{ |b| box.send(b) }
+              .compact
               .select { |nbox| box.dominance < nbox.dominance }            
           end          
+
+          # return all boxes with the proscribed dominance
+          def boxes_of_dominance dom
+            @layout.map{ |name, box| box }.select{ |box| box.dominance == dom }
+          end
           
           def draw_dc &block
             @buffer.starten if @buffer.inst.nil?
