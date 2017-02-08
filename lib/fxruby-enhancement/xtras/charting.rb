@@ -196,18 +196,18 @@ module Fox
             @font_axis_name = nil
 
             # chart layout
-            @layout = lyt = { null_left: NullBox.new(:left),
-                              null_right: NullBox.new(:right),
-                              null_top: NullBox.new(:top),
-                              null_bottom: NullBox.new(:bottom),
-                              title: Title.new,
-                              top_ruler: TopRuler.new,
+            @layout = lyt = { null_left:    NullBox.new(:left),
+                              null_right:   NullBox.new(:right),
+                              null_top:     NullBox.new(:top),
+                              null_bottom:  NullBox.new(:bottom),
+                              title:        Title.new(float: true),
+                              top_ruler:    TopRuler.new,
                               bottom_ruler: BottomRuler.new,
-                              left_ruler: LeftRuler.new,
-                              right_ruler: RightRuler.new,
-                              caption: Caption.new,
-                              legend: Legend.new,
-                              graph: Graph.new }
+                              left_ruler:   LeftRuler.new,
+                              right_ruler:  RightRuler.new,
+                              caption:      Caption.new(float: true),
+                              legend:       Legend.new(float: true),
+                              graph:        Graph.new }
             # bottom connections
             lyt[:null_top].bottom_box     = lyt[:title]
             lyt[:title].bottom_box        = lyt[:top_ruler]
@@ -330,10 +330,11 @@ module Fox
                 end unless box.floating?
               }
             end
-            printf "%50s dom=%s xywh=%-17s LRTB=%-17s\n" % [box.name,
+            printf "%50s dom=%s xywh=%-17s LRTB=%-14s %s\n" % [box.name,
                                                             "#{box.dominance}",
                                                             "[#{box.x||'NIL'},#{box.y||'NIL'},#{box.width||'NIL'},#{box.height||'NIL'}]",
-                                                            "[#{box.left_margin},#{box.right_margin},#{box.top_margin},#{box.bottom_margin}]"
+                                                            "[#{box.left_margin},#{box.right_margin},#{box.top_margin},#{box.bottom_margin}]",
+                                                            "#{box.floating? ? 'floater' : ''}"
                                                            ]
           end
 
