@@ -304,7 +304,7 @@ module Fox
                     box.y = sub.y - sub.top_margin - box.bottom_margin - box.height
                   end
                 rescue NoMethodError, TypeError => e
-                  puts "-->subortinate unresolved: #{e}"
+                  #puts "-->subortinate unresolved: #{e}"
                 end
               }
               
@@ -326,11 +326,15 @@ module Fox
                     box.x = sup.x
                   end
                 rescue NoMethodError, TypeError => e
-                  puts "-->superior unresolved: #{e}"
+                  #puts "-->superior unresolved: #{e}"
                 end unless box.floating?
               }
             end
-            puts "#{box.name} dom=#{box.dominance} x=#{box.x||'NIL'} y=#{box.y||'NIL'} width=#{box.width||'NIL'} height=#{box.height||'NIL'}"
+            printf "%50s dom=%s xywh=%-17s LRTB=%-17s\n" % [box.name,
+                                                            "#{box.dominance}",
+                                                            "[#{box.x||'NIL'},#{box.y||'NIL'},#{box.width||'NIL'},#{box.height||'NIL'}]",
+                                                            "[#{box.left_margin},#{box.right_margin},#{box.top_margin},#{box.bottom_margin}]"
+                                                           ]
           end
 
           # Give a list of subordinates
