@@ -329,13 +329,13 @@ module Fox
                   #puts "-->superior unresolved: #{e}"
                 end unless box.floating?
               }
-            end
-            printf "%50s dom=%s xywh=%-17s LRTB=%-14s %s\n" % [box.name,
-                                                            "#{box.dominance}",
-                                                            "[#{box.x||'NIL'},#{box.y||'NIL'},#{box.width||'NIL'},#{box.height||'NIL'}]",
-                                                            "[#{box.left_margin},#{box.right_margin},#{box.top_margin},#{box.bottom_margin}]",
-                                                            "#{box.floating? ? 'floater' : ''}"
-                                                           ]
+            end            
+            #printf "%50s dom=%s xywh=%-17s LRTB=%-14s %s\n" % [box.name,
+            #                                                "#{box.dominance}",
+            #                                                "[#{box.x||'NIL'},#{box.y||'NIL'},#{box.width||'NIL'},#{box.height||'NIL'}]",
+            #                                                "[#{box.left_margin},#{box.right_margin},#{box.top_margin},#{box.bottom_margin}]",
+            #                                                "#{box.floating? ? 'floater' : ''}"
+            #                                               ]
           end
 
           # Give a list of subordinates
