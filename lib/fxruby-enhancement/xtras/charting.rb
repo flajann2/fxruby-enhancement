@@ -6,8 +6,7 @@ module Fox
     module Xtras
       # Charting constructs. Note that the
       # rulers have built-in their own labeling, with orientation.
-      module Charting
-        
+      module Charting        
         class Chart
           extend Forwardable
           include RGB
@@ -34,18 +33,18 @@ module Fox
             @font_axis_name = nil
 
             # chart layout
-            @layout = lyt = { null_left:    NullBox.new(:left),
-                              null_right:   NullBox.new(:right),
-                              null_top:     NullBox.new(:top),
-                              null_bottom:  NullBox.new(:bottom),
-                              title:        Title.new(float: true),
-                              top_ruler:    TopRuler.new,
-                              bottom_ruler: BottomRuler.new,
-                              left_ruler:   LeftRuler.new,
-                              right_ruler:  RightRuler.new,
-                              caption:      Caption.new(float: true),
-                              legend:       Legend.new(float: true),
-                              graph:        Graph.new }
+            @layout = lyt = { null_left:        NullBox.new(self, :left),
+                              null_right:       NullBox.new(self, :right),
+                              null_top:         NullBox.new(self, :top),
+                              null_bottom:      NullBox.new(self, :bottom),
+                              title:              Title.new(self, float: true),
+                              top_ruler:       TopRuler.new(self),
+                              bottom_ruler: BottomRuler.new(self),
+                              left_ruler:     LeftRuler.new(self),
+                              right_ruler:   RightRuler.new(self),
+                              caption:          Caption.new(self, float: true),
+                              legend:            Legend.new(self, float: true),
+                              graph:              Graph.new(self)}
             # bottom connections
             lyt[:null_top].bottom_box     = lyt[:title]
             lyt[:title].bottom_box        = lyt[:top_ruler]

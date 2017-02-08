@@ -4,8 +4,7 @@ module Fox
     module Xtras
       # Charting constructs. Note that the
       # rulers have built-in their own labeling, with orientation.
-      module Charting
-        
+      module Charting        
         # Box area of drawing interest. This is
         # more virtual than actual, i.e. no clipping
         # is performed.
@@ -57,7 +56,8 @@ module Fox
             self.height ||= (hint_height || 10)
           end
           
-          def initialize float: false, enabled: true, dom: 1
+          def initialize chart, float: false, enabled: true, dom: 1
+            @chart = chart
             @name = self.class 
             @dominance = dom
             @floating = float
@@ -79,8 +79,8 @@ module Fox
         # The null box represents the side of the container -- the
         # canvas -- and will simplify layout.
         class NullBox < Box
-          def initialize name = nil
-            super()
+          def initialize chart, name = nil
+            super(chart)
             @name = name unless name.nil?
             @dominance = 0
           end
@@ -91,7 +91,7 @@ module Fox
         end              
         
         class Ruler < Box
-          def initialize
+          def initialize chart, **kv
             super
             @dominance = 2
           end
@@ -172,7 +172,7 @@ module Fox
             end
           end
           
-          def initialize
+          def initialize chart
             super
             @dominance = 3
           end
@@ -181,4 +181,3 @@ module Fox
     end
   end
 end
-
