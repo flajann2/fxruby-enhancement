@@ -167,7 +167,6 @@ module Fox
                 end unless box.floating?
               }
             end
-            puts box
           end
 
           # Give a list of subordinates
