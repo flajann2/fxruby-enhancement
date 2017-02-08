@@ -14,6 +14,9 @@ module Fox
           include RGB
           MAX_DOMINANCE = 3
           NÄHE = [:top_box, :bottom_box, :left_box, :right_box]
+
+          # Name of this box -- we use this in some cases to avoid class polution
+          attr_reader :name
           
           # coordinate and dimensions of the box
           attr_accessor :x, :y, :width, :height
@@ -48,11 +51,12 @@ module Fox
 
           # calc the width and height of this box. Override!
           def calculate_dimensions
-            width  = hint_width  if width.nil?
-            height = hint_height if height.nil?
+            self.width  ||= (hint_width || 20) #TODO: remove the cheats
+            self.height ||= (hint_height || 10)
           end
           
           def initialize float: false, enabled: true, dom: 1
+            @name = self.class 
             @dominance = dom
             @floating = float
             @top_margin = @bottom_margin = @left_margin = @right_margin = 0
@@ -64,8 +68,9 @@ module Fox
         # The null box represents the side of the container -- the
         # canvas -- and will simplify layout.
         class NullBox < Box
-          def initialize
-            super
+          def initialize name = nil
+            super()
+            @name = name unless name.nil?
             @dominance = 0
           end
 
@@ -107,6 +112,24 @@ module Fox
 
         # main charting area.
         class Graph < Box
+          def calculate_dimensions
+            super
+            begin
+              self.width = right_box.x
+                           - right_box.left_margin
+                           - left_box.x
+                           + left_box.width
+                           + left_box.right_margin
+              self.height = bottom_box.y
+                           - bottom_box.top_margin
+                           - top_box.y
+                           + top_box.height
+                           + top_box.bottom_margin
+            rescue NoMethodError, TypeError => e
+              puts "-->Graph: unresolved: #{e}"
+            end
+          end
+          
           def initialize
             super
             @dominance = 3
@@ -139,7 +162,10 @@ module Fox
             @font_axis_name = nil
 
             # chart layout
-            @layout = lyt = { null_box: NullBox.new,
+            @layout = lyt = { null_left: NullBox.new(:left),
+                              null_right: NullBox.new(:right),
+                              null_top: NullBox.new(:top),
+                              null_bottom: NullBox.new(:bottom),
                               title: Title.new,
                               top_ruler: TopRuler.new,
                               bottom_ruler: BottomRuler.new,
@@ -149,19 +175,19 @@ module Fox
                               legend: Legend.new,
                               graph: Graph.new }
             # bottom connections
-            lyt[:null_box].bottom_box     = lyt[:title]
+            lyt[:null_top].bottom_box     = lyt[:title]
             lyt[:title].bottom_box        = lyt[:top_ruler]
             lyt[:top_ruler].bottom_box    = lyt[:graph]
             lyt[:graph].bottom_box        = lyt[:bottom_ruler]
             lyt[:bottom_ruler].bottom_box = lyt[:caption]
-            lyt[:caption].bottom_box      = lyt[:null_box]
+            lyt[:caption].bottom_box      = lyt[:null_bottom]
 
             # right connections
-            lyt[:null_box].right_box      = lyt[:left_ruler]
+            lyt[:null_left].right_box     = lyt[:left_ruler]
             lyt[:left_ruler].right_box    = lyt[:graph]
             lyt[:graph].right_box         = lyt[:right_ruler]
             lyt[:right_ruler].right_box   = lyt[:legend]
-            lyt[:legend].right_box        = lyt[:null_box]
+            lyt[:legend].right_box        = lyt[:null_right]
             
             backlink_boxes
           end
@@ -176,12 +202,13 @@ module Fox
           # call inially and when there's an update.
           def layout_boxes
             clear_all_boxes
+            recalculate_dimensions
             
             # first pass -- out to in
             (0..Box::MAX_DOMINANCE).each do |dom|
               boxes_of_dominance(dom).each{ |box| layout_box box }
             end
-
+            
             # second pass -- in to out
             (1..Box::MAX_DOMINANCE).to_a.reverse.each do |dom|
               boxes_of_dominance(dom).each{ |box| layout_box box }
@@ -194,18 +221,43 @@ module Fox
               box.x = box.y = box.width = box.height = nil
             }
           end
+
+          def recalculate_dimensions
+            @layout.each { |name, box|
+              box.calculate_dimensions
+            }
+          end
           
           # Layout given box, as much as possible, given neighbors.
           # may be called twice per box.
           # 
           def layout_box box
-            if box.dominance == 0 # the only box with a dom of 0 is the null box
-              box.x = box.y = 0
-              box.width = width
-              box.height = height
+            if box.dominance == 0 # the only box with a dom of 0 are the null boxes
+              case box.name
+              when :left
+                box.x = 0
+                box.y = 0
+                box.width = 0
+                box.height = height
+              when :right
+                box.x = width
+                box.y = 0
+                box.width = 0
+                box.height = height
+              when :top
+                box.x = 0
+                box.y = 0
+                box.width = width
+                box.height = 0
+              when :bottom
+                box.x = 0
+                box.y = height
+                box.width = width
+                box.height = 0
+              end              
             else # we do what we can.
               box.calculate_dimensions
-              subordinates(box).each{ |sub|
+              subordinates(box).each { |sub|
                 begin
                   case sub
                   when box.left_box
@@ -222,7 +274,7 @@ module Fox
                 end
               }
               
-              superiors(box).each{ |sup|
+              superiors(box).each { |sup|
                 case sup
                 when box.left_box
                 when box.right_box
@@ -231,6 +283,7 @@ module Fox
                 end
               }
             end
+            puts "#{box.name} dom=#{box.dominance} x=#{box.x||'NIL'} y=#{box.y||'NIL'} width=#{box.width||'NIL'} height=#{box.height||'NIL'}"
           end
 
           # Give a list of subordinates

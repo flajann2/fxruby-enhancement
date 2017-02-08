@@ -1551,13 +1551,13 @@ set_trace_func proc { |event, file, line, id, binding, classname|
     as boxes linking to each other to represent their relative 
     positions to each other. As such:
 
-    |             |               | Null Box      -0 |                |            |             |
-    |             |               | Title        F-1 |                |            |             |
-    |             |               | Top Ruler     -2 |                |            |             |
-    | Null Box -0 | Left Ruler -2 | Graph        F-3 | Right Ruler -2 | Legend F-1 | Null Box -0 |
-    |             |               | Bottom Ruler  -2 |                |            |             |
-    |             |               | Caption      F-1 |                |            |             |
-    |             |               | Null Box      -0 |                |            |             |
+    |             |               | Null Top      -0 |                |            |               |
+    |             |               | Title        F-1 |                |            |               |
+    |             |               | Top Ruler     -2 |                |            |               |
+    | Null Left-0 | Left Ruler -2 | Graph        F-3 | Right Ruler -2 | Legend F-1 | Null Right -0 |
+    |             |               | Bottom Ruler  -2 |                |            |               |
+    |             |               | Caption      F-1 |                |            |               |
+    |             |               | Null Bottom   -0 |                |            |               |
 
     And so, given the initial width and height of the
     canvas, we work to determine everything else. For
