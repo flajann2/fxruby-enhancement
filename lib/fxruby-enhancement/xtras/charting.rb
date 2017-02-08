@@ -41,7 +41,7 @@ module Fox
 
           # always overide this the default simply renders a box
           def render dc
-            raise "layout error in #{self.class}" if x.nil? or y.nil? or width.nil? or heigth.nil?
+            raise "layout error in #{self.class}" if x.nil? or y.nil? or width.nil? or height.nil?
             dc.foreground = black
             dc.drawRectangle x, y, width, height
           end
@@ -77,13 +77,7 @@ module Fox
           # null box is never rendered.
           def render dc
           end
-        end
-        
-        class PureText < Box
-        end
-        
-        class Title < PureText
-        end
+        end              
         
         class Ruler < Box
           def initialize
@@ -103,11 +97,48 @@ module Fox
         
         class RightRuler < Ruler
         end
-        
+
+        # For now, we assume that the placement
+        # of PureText boxes shall be above and
+        # below the GraphBox.
+        class PureText < Box
+          def calculate_wh
+          end
+          
+          def calculate_dimensions
+            super
+            calculate_wh
+            begin
+              self.x = [top_box.width, bottom_box.width].max / 2 - self.width / 2
+            rescue ArgumentError, NoMethodError, TypeError => e
+              puts "-->PureText unresolved: #{e}"
+            end
+          end
+        end
+
+        class Title < PureText
+        end
+
         class Caption < PureText
         end
 
         class Legend < Box
+          # We calculate this on the basis
+          # of our actual content.
+          def calculate_wh
+            self.width = 50 # TODO: we're cheating again.
+            self.height = 30
+          end
+          
+          def calculate_dimensions
+            super
+            calculate_wh
+            
+            # This is a nasty hard-coding, which will not
+            # allow us to change the location of this box.
+            # Later, we'll want to add that flexibility.
+            self.y = right_box.height / 2 - self.height / 2
+          end
         end
 
         # main charting area.
@@ -270,17 +301,23 @@ module Fox
                     box.y = sub.y - sub.top_margin - box.bottom_margin - box.height
                   end
                 rescue NoMethodError, TypeError => e
-                  puts "-->unresolved: #{e}"
+                  puts "-->subortinate unresolved: #{e}"
                 end
               }
               
               superiors(box).each { |sup|
-                case sup
-                when box.left_box
-                when box.right_box
-                when box.top_box
-                when box.bottom_box                  
-                end
+                begin
+                  case sup
+                  when box.left_box
+                    box.height = sup.height 
+                    box.x
+                  when box.right_box
+                  when box.top_box
+                  when box.bottom_box                  
+                  end
+                rescue NoMethodError, TypeError => e
+                  puts "-->superior unresolved: #{e}"
+                end unless box.floating?
               }
             end
             puts "#{box.name} dom=#{box.dominance} x=#{box.x||'NIL'} y=#{box.y||'NIL'} width=#{box.width||'NIL'} height=#{box.height||'NIL'}"

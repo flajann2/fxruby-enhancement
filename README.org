@@ -49,6 +49,7 @@
      - [[#junkyard-as-execution-issue-debugging-code][JUNKYARD 'as' execution issue DEBUGGING CODE]]
      - [[#scratchpad-fxdcwindow][SCRATCHPAD FXDCWindow]]
      - [[#junkyard-thoughs-on-doing-the-layout][JUNKYARD Thoughs on doing the layout]]
+       - [[#junkyard-superior-layout-calculations][JUNKYARD Superior layout calculations]]
 
 * fxruby-enhancement
   #+caption: Enhancement vs. FXRuby versions of Hello World.
@@ -1606,3 +1607,11 @@ set_trace_func proc { |event, file, line, id, binding, classname|
     In all of this, this layout will take place everytime the application
     window is resized, so be aware of this. The computaitons shall be swift,
     just basic MDAS arithemtic. Nothing heavy-duty or fancy.
+    
+**** JUNKYARD Superior layout calculations
+     For the superior layout, we calculate the x and height,
+     or the y and width respectively, for the boxes. Floating
+     status becomes critical here, for the above will only
+     need to be determined thusly for the non-floating cases,
+     where there is dependency on the superior's dimensions
+     and position.
