@@ -152,11 +152,12 @@ module Fox
               self.width = right_box.x \
                            - right_box.left_margin \
                            - left_box.x \
-                           + left_box.width \
+                           - left_box.width \
                            + left_box.right_margin
               self.height = bottom_box.y \
                             - bottom_box.top_margin \
-                            - top_box.y + top_box.height \
+                            - top_box.y \
+                            - top_box.height \
                             + top_box.bottom_margin
             rescue NoMethodError, TypeError => e
               puts "-->Graph: unresolved: #{e}"
