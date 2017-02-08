@@ -42,6 +42,9 @@ module Fox
           # always overide this the default simply renders a box
           def render dc
             raise "layout error in #{self.class}" if x.nil? or y.nil? or width.nil? or height.nil?
+
+            #dc.foreground = blue
+            #dc.fillRectangle x, y, width, height
             dc.foreground = black
             dc.drawRectangle x, y, width, height
           end
@@ -310,10 +313,17 @@ module Fox
                   case sup
                   when box.left_box
                     box.height = sup.height 
-                    box.x
+                    box.y = sup.y
+                    box.x = sup.x + sup.width + sup.right_margin + box.left_margin
                   when box.right_box
+                    box.height = sup.height
+                    box.y = sup.y                                        
                   when box.top_box
-                  when box.bottom_box                  
+                    box.width = sup.width
+                    box.x = sup.x
+                  when box.bottom_box
+                    box.width = sup.width
+                    box.x = sup.x
                   end
                 rescue NoMethodError, TypeError => e
                   puts "-->superior unresolved: #{e}"
