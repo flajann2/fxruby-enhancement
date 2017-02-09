@@ -40,13 +40,11 @@ module Fox
           # always overide this the default simply renders a box
           def render dc
             raise "layout error in #{self.class}" if x.nil? or y.nil? or width.nil? or height.nil?
-
-            #dc.foreground = blue
-            #dc.fillRectangle x, y, width, height
+            dc.setClipRectangle FXRectangle.new(x,y,width,height)
             dc.foreground = black
-            dc.drawRectangle x, y, width, height
+            dc.drawRectangle x, y, width-1, height-1
           end
-          
+
           def enabled? ; enabled ; end
           def floating? ; floating ; end
 
@@ -86,11 +84,15 @@ module Fox
           end
 
           # null box is never rendered.
-          def render dc
-          end
+          def render dc ; end
         end              
         
         class Ruler < Box
+          def render dc
+            super
+            #dc.
+          end
+          
           def initialize chart, **kv
             super
             @dominance = 2
@@ -122,7 +124,7 @@ module Fox
             begin
               self.x = [top_box.width, bottom_box.width].max / 2 - self.width / 2
             rescue ArgumentError, NoMethodError, TypeError => e
-              puts "-->PureText unresolved: #{e}"
+              #puts "-->PureText unresolved: #{e}"
             end
           end
         end

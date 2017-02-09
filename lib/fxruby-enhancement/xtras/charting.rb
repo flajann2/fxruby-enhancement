@@ -6,7 +6,19 @@ module Fox
     module Xtras
       # Charting constructs. Note that the
       # rulers have built-in their own labeling, with orientation.
-      module Charting        
+      module Charting
+        # range in real coordinates, beginning and end points
+        class Range
+          attr_accessor :x1, :y1, :x2, :y2
+          
+          def initialize x1, y1, x2, y2
+            @x1 = x1
+            @y1 = y1
+            @x2 = x2
+            @y2 = y2
+          end
+        end
+        
         class Chart
           extend Forwardable
           include RGB
@@ -16,7 +28,7 @@ module Fox
                          :axial, :data, :series, :domain, :range,
                          :background, :caption, :title
           
-          attr_accessor :buffer
+          attr_accessor :buffer, :x_range, :y_range
           
           def initialize cos, canvas
             @cos = cos
@@ -181,7 +193,7 @@ module Fox
             Box::NÄHE.map{ |b| box.send(b) }
               .compact
               .select { |nbox| box.dominance < nbox.dominance }            
-          end          
+          end
 
           # return all boxes with the proscribed dominance
           def boxes_of_dominance dom
