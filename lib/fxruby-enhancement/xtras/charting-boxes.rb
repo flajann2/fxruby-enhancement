@@ -168,7 +168,7 @@ module Fox
                             - top_box.height \
                             + top_box.bottom_margin
             rescue NoMethodError, TypeError => e
-              puts "-->Graph: unresolved: #{e}"
+              #puts "-->Graph: unresolved: #{e}"
             end
           end
           

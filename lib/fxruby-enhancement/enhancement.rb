@@ -13,6 +13,7 @@ module Fox
                :FXColorItem,
                :FXRegion,
                :FXRectangle,
+               :FXPoint,
                :FXGradient,
                :FXEvent,
                :FXDataTarget,
