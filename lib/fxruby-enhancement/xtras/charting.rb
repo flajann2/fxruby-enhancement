@@ -45,18 +45,20 @@ module Fox
             @font_axis_name = nil
 
             # chart layout
-            @layout = lyt = { null_left:        NullBox.new(self, :left),
-                              null_right:       NullBox.new(self, :right),
-                              null_top:         NullBox.new(self, :top),
-                              null_bottom:      NullBox.new(self, :bottom),
-                              title:              Title.new(self, float: true),
-                              top_ruler:          Ruler.new(self, orient: :horizontal, placement: :top),
-                              bottom_ruler:       Ruler.new(self, orient: :horizontal, placement: :bottom),
-                              left_ruler:         Ruler.new(self, orient: :vertical, placement: :left),
-                              right_ruler:        Ruler.new(self, orient: :vertical, placement: :right),
-                              caption:          Caption.new(self, float: true),
-                              legend:            Legend.new(self, float: true),
-                              graph:              Graph.new(self)}
+            lytbox = ->(klass, **kv){ [kv[:name], klass.new(self, **kv)] }
+            @layout = lyt = [ lytbox.(NullBox, name: :null_left,    placement: :left),
+                              lytbox.(NullBox, name: :null_right,   placement: :right),
+                              lytbox.(NullBox, name: :null_top,     placement: :top),
+                              lytbox.(NullBox, name: :null_bottom,  placement: :bottom),
+                              lytbox.(  Title, name: :title,        float: true),
+                              lytbox.(  Ruler, name: :top_ruler,    orient: :horizontal, placement: :top),
+                              lytbox.(  Ruler, name: :bottom_ruler, orient: :horizontal, placement: :bottom),
+                              lytbox.(  Ruler, name: :left_ruler,   orient: :vertical, placement: :left),
+                              lytbox.(  Ruler, name: :right_ruler,  orient: :vertical, placement: :right),
+                              lytbox.(Caption, name: :caption,      float: true),
+                              lytbox.( Legend, name: :legend,       float: true),
+                              lytbox.(  Graph, name: :graph)
+                                     ].to_h
             # bottom connections
             lyt[:null_top].bottom_box     = lyt[:title]
             lyt[:title].bottom_box        = lyt[:top_ruler]
@@ -117,22 +119,22 @@ module Fox
           def layout_box box
             if box.dominance == 0 # the only box with a dom of 0 are the null boxes
               case box.name
-              when :left
+              when :null_left
                 box.x = 0
                 box.y = 0
                 box.width = 0
                 box.height = height
-              when :right
+              when :null_right
                 box.x = width
                 box.y = 0
                 box.width = 0
                 box.height = height
-              when :top
+              when :null_top
                 box.x = 0
                 box.y = 0
                 box.width = width
                 box.height = 0
-              when :bottom
+              when :null_bottom
                 box.x = 0
                 box.y = height
                 box.width = width

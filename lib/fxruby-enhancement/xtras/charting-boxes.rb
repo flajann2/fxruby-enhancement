@@ -56,13 +56,14 @@ module Fox
           end
           
           def initialize chart,
+                         name: self.class,
                          float: false,
                          enabled: true,
                          dom: 1,
                          orient: :none,
                          placement: :unspecified
             @chart = chart
-            @name = self.class 
+            @name = name
             @dominance = dom
             @floating = float
             @top_margin = @bottom_margin = @left_margin = @right_margin = 0
@@ -83,9 +84,8 @@ module Fox
         # The null box represents the side of the container -- the
         # canvas -- and will simplify layout.
         class NullBox < Box
-          def initialize chart, name = nil
-            super(chart)
-            @name = name unless name.nil?
+          def initialize chart, **kv
+            super(chart, **kv)
             @dominance = 0
           end
 
@@ -168,7 +168,7 @@ module Fox
             end
           end
           
-          def initialize chart
+          def initialize chart, **kv
             super
             @dominance = 3
           end
