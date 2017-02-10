@@ -22,8 +22,9 @@ module Fox
           # hints on width and heigt, if meaningful, otherwise nil
           attr_accessor :hint_width, :hint_height
           
-          # textual orientation :horizontal, :vertical
-          attr_accessor :orientation
+          # textual / apperance orientation :horizontal, :vertical, :none
+          # placement :top, :bottom, :left, :right
+          attr_accessor :orientation, :placement
 
           # adjoining boxes 
           attr_accessor :top_box, :bottom_box
@@ -54,13 +55,17 @@ module Fox
             self.height ||= (hint_height || 10)
           end
           
-          def initialize chart, float: false, enabled: true, dom: 1
+          def initialize chart,
+                         float: false,
+                         enabled: true,
+                         dom: 1,
+                         orient: :none
             @chart = chart
             @name = self.class 
             @dominance = dom
             @floating = float
             @top_margin = @bottom_margin = @left_margin = @right_margin = 0
-            @orientation = :horizontal
+            @orientation = orient
             @enabled = enabled
           end
 
@@ -90,7 +95,7 @@ module Fox
         class Ruler < Box
           def render dc
             super
-            #dc.
+            dc.
           end
           
           def initialize chart, **kv
