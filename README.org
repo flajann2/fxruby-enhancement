@@ -68,7 +68,6 @@
    | [[./examples/images/chart.rb.png]]       | [[file:./examples/chart.rb][Chart]]          |
    | [[./examples/images/rubyneat-panel.png]] | [[https://github.com/flajann2/rubyneat-panel/tree/master/lib/rubyneat-panel][RubyNEAT Panel]] |
 
-
 ** Introduction
    The fxruby library is an excellent wrapper for the FOX Toolkit.
    However, it reflects the C++-ness of FOX, rather than being more

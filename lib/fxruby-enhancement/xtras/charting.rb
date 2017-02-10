@@ -50,10 +50,10 @@ module Fox
                               null_top:         NullBox.new(self, :top),
                               null_bottom:      NullBox.new(self, :bottom),
                               title:              Title.new(self, float: true),
-                              top_ruler:       TopRuler.new(self, orient: :horizontal, placement: :top),
-                              bottom_ruler: BottomRuler.new(self, orient: :horizontal, placement: :bottom),
-                              left_ruler:     LeftRuler.new(self, orient: :vertical, placement: :left),
-                              right_ruler:   RightRuler.new(self, orient: :vertical, placement: :right),
+                              top_ruler:          Ruler.new(self, orient: :horizontal, placement: :top),
+                              bottom_ruler:       Ruler.new(self, orient: :horizontal, placement: :bottom),
+                              left_ruler:         Ruler.new(self, orient: :vertical, placement: :left),
+                              right_ruler:        Ruler.new(self, orient: :vertical, placement: :right),
                               caption:          Caption.new(self, float: true),
                               legend:            Legend.new(self, float: true),
                               graph:              Graph.new(self)}
@@ -329,3 +329,4 @@ module Fox
     end
   end
 end
+

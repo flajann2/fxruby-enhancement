@@ -59,7 +59,8 @@ module Fox
                          float: false,
                          enabled: true,
                          dom: 1,
-                         orient: :none
+                         orient: :none,
+                         placement: :unspecified
             @chart = chart
             @name = self.class 
             @dominance = dom
@@ -95,7 +96,7 @@ module Fox
         class Ruler < Box
           def render dc
             super
-            dc.
+            #dc.
           end
           
           def initialize chart, **kv
@@ -104,18 +105,6 @@ module Fox
           end
         end
         
-        class TopRuler < Ruler
-        end
-        
-        class BottomRuler < Ruler
-        end
-        
-        class LeftRuler < Ruler
-        end
-        
-        class RightRuler < Ruler
-        end
-
         # For now, we assume that the placement
         # of PureText boxes shall be above and
         # below the GraphBox.
