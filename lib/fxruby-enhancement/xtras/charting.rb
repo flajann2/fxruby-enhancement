@@ -46,19 +46,21 @@ module Fox
 
             # chart layout
             lytbox = ->(klass, **kv){ [kv[:name], klass.new(self, **kv)] }
-            @layout = lyt = [ lytbox.(NullBox, name: :null_left,    placement: :left),
-                              lytbox.(NullBox, name: :null_right,   placement: :right),
-                              lytbox.(NullBox, name: :null_top,     placement: :top),
-                              lytbox.(NullBox, name: :null_bottom,  placement: :bottom),
-                              lytbox.(  Title, name: :title,        float: true),
-                              lytbox.(  Ruler, name: :top_ruler,    orient: :horizontal, placement: :top),
-                              lytbox.(  Ruler, name: :bottom_ruler, orient: :horizontal, placement: :bottom),
-                              lytbox.(  Ruler, name: :left_ruler,   orient: :vertical, placement: :left),
-                              lytbox.(  Ruler, name: :right_ruler,  orient: :vertical, placement: :right),
-                              lytbox.(Caption, name: :caption,      float: true),
-                              lytbox.( Legend, name: :legend,       float: true),
-                              lytbox.(  Graph, name: :graph)
-                                     ].to_h
+            @layout = lyt = [
+              lytbox.(NullBox, name: :null_left,    placement: :left),
+              lytbox.(NullBox, name: :null_right,   placement: :right),
+              lytbox.(NullBox, name: :null_top,     placement: :top),
+              lytbox.(NullBox, name: :null_bottom,  placement: :bottom),
+              lytbox.(Title,   name: :title,        float: true),
+              lytbox.(Ruler,   name: :top_ruler,    orient: :horizontal, placement: :top),
+              lytbox.(Ruler,   name: :bottom_ruler, orient: :horizontal, placement: :bottom),
+              lytbox.(Ruler,   name: :left_ruler,   orient: :vertical, placement: :left),
+              lytbox.(Ruler,   name: :right_ruler,  orient: :vertical, placement: :right),
+              lytbox.(Caption, name: :caption,      float: true),
+              lytbox.(Legend,  name: :legend,       float: true),
+              lytbox.(Graph,   name: :graph)
+            ].to_h
+            
             # bottom connections
             lyt[:null_top].bottom_box     = lyt[:title]
             lyt[:title].bottom_box        = lyt[:top_ruler]
