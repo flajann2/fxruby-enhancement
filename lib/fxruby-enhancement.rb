@@ -5,8 +5,10 @@ require 'awesome_print'
 require 'forwardable'
 require 'queue_ding'
 require 'rgb'
+require 'tickmarks'
 
 include QueueDing
+include Tickmarks
 
 require_relative 'fxruby-enhancement/rgb-monkey'
 require_relative 'fxruby-enhancement/color-mapper'
