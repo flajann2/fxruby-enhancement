@@ -69,6 +69,7 @@ module Fox
             @top_margin = @bottom_margin = @left_margin = @right_margin = 0
             @orientation = orient
             @enabled = enabled
+            @placement = placement
           end
 
           def to_s
@@ -97,7 +98,7 @@ module Fox
           def render dc
             super
             # coord is normalized, 0 .. 1
-            Ticks.new(0, 100) do |t|
+            Ticks.new(0, 1000) do |t|
               dc.foreground = black
               
               t.tick_lambda = ->(coord, value, major) {
@@ -114,7 +115,7 @@ module Fox
                          raise "unknown placement :#{placement}"
                        end
                      else
-                       raise "unknown orientation :#{orient}"
+                       raise "unknown orientation :#{orientation}"
                      end
                 
                 y1 = if orientation == :horizontal
@@ -128,7 +129,7 @@ module Fox
                      elsif orientation == :vertical
                        y + height * coord
                      else
-                       raise "unknown orientation :#{orient}"                       
+                       raise "unknown orientation :#{orientation}"                       
                      end
                 
                 x2 = if orientation == :horizontal
@@ -142,7 +143,7 @@ module Fox
                          raise "unknown placement :#{placement}"
                        end
                      else
-                       raise "unknown orientation :#{orient}"                       
+                       raise "unknown orientation :#{orientation}"                       
                      end
 
                 y2 = if orientation == :horizontal
@@ -156,7 +157,7 @@ module Fox
                      elsif orientation == :vertical
                        y1
                      else
-                       raise "unknown orientation :#{orient}"                       
+                       raise "unknown orientation :#{orientation}"                       
                      end
                 dc.drawLine x1, y1, x2, y2
               }

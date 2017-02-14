@@ -54,8 +54,8 @@ module Fox
               lytbox.(Title,   name: :title,        float: true),
               lytbox.(Ruler,   name: :top_ruler,    orient: :horizontal, placement: :top),
               lytbox.(Ruler,   name: :bottom_ruler, orient: :horizontal, placement: :bottom),
-              lytbox.(Ruler,   name: :left_ruler,   orient: :vertical, placement: :left),
-              lytbox.(Ruler,   name: :right_ruler,  orient: :vertical, placement: :right),
+              lytbox.(Ruler,   name: :left_ruler,   orient: :vertical,   placement: :left),
+              lytbox.(Ruler,   name: :right_ruler,  orient: :vertical,   placement: :right),
               lytbox.(Caption, name: :caption,      float: true),
               lytbox.(Legend,  name: :legend,       float: true),
               lytbox.(Graph,   name: :graph)
