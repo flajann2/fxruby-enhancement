@@ -6,7 +6,6 @@ gem "awesome_print", ">= 1"
 gem "json",          "~> 2.0", ">= 2.0.2"
 gem "queue_ding",    "~> 0"
 gem "rgb",           "~> 0"
-gem "tickmarks",     "~> 0"
 
 group :development do
   gem "rspec", "~> 3"

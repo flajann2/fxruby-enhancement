@@ -1281,21 +1281,22 @@ end
      #+end_src
 
 ** Release Notes
-   | Version |       Date | Notes                                                       |
-   |---------+------------+-------------------------------------------------------------|
-   |   0.0.2 | 2017-01-11 | Initial release                                             |
-   |   0.0.3 | 2017-01-15 | Needed to require fox16/colors for FXColor to be loaded     |
-   |   0.0.4 | 2017-01-16 | ingress_handler now handles multiple tags.                  |
-   |   0.1.0 | 2017-01-18 | special handling for fx_data_target and resuable components |
+   | Version |       Date | Notes                                                        |
+   |---------+------------+--------------------------------------------------------------|
+   |   0.2.0 | 2017-02-16 | releasing xtras without charting, which is still in progress |
+   |   0.1.0 | 2017-01-18 | special handling for fx_data_target and resuable components  |
+   |   0.0.3 | 2017-01-15 | Needed to require fox16/colors for FXColor to be loaded      |
+   |   0.0.4 | 2017-01-16 | ingress_handler now handles multiple tags.                   |
+   |   0.0.2 | 2017-01-11 | Initial release                                              |
 
 ** Known Issues
    | Version | Date                   | Issues                                                                   |
    |---------+------------------------+--------------------------------------------------------------------------|
-   |   0.0.2 | 2017-01-11             | Not enough example code!!! Need more documentation!!!                    |
-   |   0.1.0 | Trump Inaguration Day, | deferred_setup not fully implemented, and may go away.                   |
-   |         | 2017-01-20             | compose is not really needed, and is not fully implemented anyway.       |
    |   0.2.0 | Subtle Ruby Bug        | There are TODO notes in chart.rb, and there is something in The Junkyard |
    |         |                        | Bug moved into bug/ruby240 branch. Workaround now in place here.         |
+   |   0.1.0 | Trump Inaguration Day, | deferred_setup not fully implemented, and may go away.                   |
+   |         | 2017-01-20             | compose is not really needed, and is not fully implemented anyway.       |
+   |   0.0.2 | 2017-01-11             | Not enough example code!!! Need more documentation!!!                    |
 
 ** Contributing to fxruby-enhancement
  
