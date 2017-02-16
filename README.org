@@ -21,8 +21,8 @@
        - [[#as----adding-new-child-components-to-already-declared-ones][as -- adding new child components to already declared ones]]
        - [[#fox_component-and-fox_instance][fox_component and fox_instance]]
        - [[#fx_app][fx_app]]
-       - [[#fx_chart][fx_chart]]
-         - [[#data-format-and-labeling][Data Format and Labeling]]
+       - [[#fx_chart----not-implemented-yet-still-in-development][fx_chart -- NOT IMPLEMENTED YET! STILL IN DEVELOPMENT!]]
+         - [[#data-format-and-labeling----not-implemented-yet][Data Format and Labeling -- NOT IMPLEMENTED YET!]]
        - [[#fx_data_target][fx_data_target]]
        - [[#fx_dc][fx_dc]]
        - [[#instance][instance]]
@@ -474,7 +474,14 @@
      Typeically you'd do this inside of a module, but you could do it also
      in a class body. Please see the examples.
 
-**** fx_chart
+**** TODO fx_chart -- NOT IMPLEMENTED YET! STILL IN DEVELOPMENT!
+     - NOTE WELL: fx_chart is still under development, and
+       has not been released yet for general usage. The
+       documentation in this section will change, I promise,
+       so please be aware of that. I am open to your suggestions
+       and input diring development, so feel free to raise
+       issues.
+
      fx_chart is a custom widget supplied by Enhancement,
      and provides very simple charting abilities. We have mainly created
      this with the needs of RubyNEAT in mind, but hopefully we will
@@ -482,7 +489,7 @@
 
      Initally, we provide basic x-y Cartesian charting suitable for
      representing time series, etc. 
-***** Data Format and Labeling
+***** Data Format and Labeling -- NOT IMPLEMENTED YET!
       Data is in the format of an array of vectors,
       with each update adding a new vector to the array. For example:
       #+begin_src ruby
@@ -501,7 +508,7 @@
       You may specify the first entry in the vector as the range, 
       in which case it will be used to plot the rest of the vector
       as the "range" on the chart.
-****** Labeling Series Data
+****** Labeling Series Data -- NOT IMPLEMENTED YET!!!
        Each entry in the vectors must have some sort of 
        designation to describe how the chart will display them.
        So we represent this as an association of labels, and each
@@ -707,7 +714,9 @@
      FOX component, not within the FXRuby object itself.
 
 **** TODO deferred_setup
+     This feature is still under development, and is not fully implemented yet.
 **** TODO Mapping between fx_* declarations and the FX* FXRuby objects
+     To be documented.
 **** binding.fx   
      This is a way to split up your layouts into different .fx "modules", purely for
      organizational reasons. For example,
@@ -1281,13 +1290,13 @@ end
      #+end_src
 
 ** Release Notes
-   | Version |       Date | Notes                                                        |
-   |---------+------------+--------------------------------------------------------------|
-   |   0.2.0 | 2017-02-16 | releasing xtras without charting, which is still in progress |
-   |   0.1.0 | 2017-01-18 | special handling for fx_data_target and resuable components  |
-   |   0.0.3 | 2017-01-15 | Needed to require fox16/colors for FXColor to be loaded      |
-   |   0.0.4 | 2017-01-16 | ingress_handler now handles multiple tags.                   |
-   |   0.0.2 | 2017-01-11 | Initial release                                              |
+   | Version |       Date | Notes                                                                                          |
+   |---------+------------+------------------------------------------------------------------------------------------------|
+   |   0.2.0 | 2017-02-16 | Releasing xtras without charting, which is still in progress. Many bug fixes and enhancements. |
+   |   0.1.0 | 2017-01-18 | special handling for fx_data_target and resuable components                                    |
+   |   0.0.3 | 2017-01-15 | Needed to require fox16/colors for FXColor to be loaded                                        |
+   |   0.0.4 | 2017-01-16 | ingress_handler now handles multiple tags.                                                     |
+   |   0.0.2 | 2017-01-11 | Initial release                                                                                |
 
 ** Known Issues
    | Version | Date                   | Issues                                                                   |
