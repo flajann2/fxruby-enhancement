@@ -1299,13 +1299,14 @@ end
    |   0.0.2 | 2017-01-11 | Initial release                                                                                |
 
 ** Known Issues
-   | Version | Date                   | Issues                                                                   |
-   |---------+------------------------+--------------------------------------------------------------------------|
-   |   0.2.0 | Subtle Ruby Bug        | There are TODO notes in chart.rb, and there is something in The Junkyard |
-   |         |                        | Bug moved into bug/ruby240 branch. Workaround now in place here.         |
-   |   0.1.0 | Trump Inaguration Day, | deferred_setup not fully implemented, and may go away.                   |
-   |         | 2017-01-20             | compose is not really needed, and is not fully implemented anyway.       |
-   |   0.0.2 | 2017-01-11             | Not enough example code!!! Need more documentation!!!                    |
+   | Version | Date                                    | Issues                                                                   |
+   |---------+-----------------------------------------+--------------------------------------------------------------------------|
+   |   0.2.0 | Shudown of a window, dialog box example | Seems to pop the same window to the middle of the screen first.          |
+   |   0.2.0 | Subtle Ruby Bug                         | There are TODO notes in chart.rb, and there is something in The Junkyard |
+   |         |                                         | Bug moved into bug/ruby240 branch. Workaround now in place here.         |
+   |   0.1.0 | Trump Inaguration Day,                  | deferred_setup not fully implemented, and may go away.                   |
+   |         | 2017-01-20                              | compose is not really needed, and is not fully implemented anyway.       |
+   |   0.0.2 | 2017-01-11                              | Not enough example code!!! Need more documentation!!!                    |
 
 ** Contributing to fxruby-enhancement
  
