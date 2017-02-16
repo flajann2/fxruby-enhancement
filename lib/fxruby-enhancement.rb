@@ -7,7 +7,6 @@ require 'queue_ding'
 require 'rgb'
 
 include QueueDing
-include Tickmarks
 
 require_relative 'fxruby-enhancement/rgb-monkey'
 require_relative 'fxruby-enhancement/color-mapper'
