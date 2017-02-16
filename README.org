@@ -479,7 +479,7 @@
        has not been released yet for general usage. The
        documentation in this section will change, I promise,
        so please be aware of that. I am open to your suggestions
-       and input diring development, so feel free to raise
+       and input during development, so feel free to raise
        issues.
 
      fx_chart is a custom widget supplied by Enhancement,
