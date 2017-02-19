@@ -72,6 +72,7 @@ module Fox
             @orientation = orient
             @enabled = enabled
             @placement = placement
+            @top_box = @bottom_box = @left_box = @right_box = NilBox.singular
           end
 
           def to_s
@@ -84,6 +85,33 @@ module Fox
           end
         end
 
+        # The NilBox is distinct from the NullBox. The NilBox
+        # is the functional equivalent of the nil object, but
+        # allows for "intelligent" handling of nil references
+        # in the Box graph!!!!
+        class NilBox
+          attr_reader :top_box, :bottom_box
+          attr_reader :left_box, :right_box
+          
+          def top_box=(_); end 
+          def bottom_box=(_); end 
+          def left_box=(_); end 
+          def right_box=(_); end 
+          
+          def self.singular
+            @nilbox ||= NilBox.new
+          end
+
+          def nil?
+            true
+          end
+          
+          private
+          def initialize
+            @top_box = @bottom_box = @left_box = @right_box = self
+          end
+        end
+        
         # The null box represents the side of the container -- the
         # canvas -- and will simplify layout.
         class NullBox < Box

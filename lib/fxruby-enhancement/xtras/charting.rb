@@ -79,13 +79,6 @@ module Fox
             backlink_boxes
           end
 
-          def backlink_boxes
-            @layout.each{ |name, box|
-              box.bottom_box.top_box = box unless box.bottom_box.nil?
-              box.right_box.left_box = box unless box.right_box.nil?
-            }
-          end
-
           # call inially and when there's an update.
           def layout_boxes
             clear_all_boxes
@@ -188,14 +181,14 @@ module Fox
           # Give a list of subordinates
           def subordinates box
             Box::NÄHE.map{ |b| box.send(b) }
-              .compact
+              .reject { |b| b.nil? }
               .select { |nbox| box.dominance > nbox.dominance }            
           end
           
           # Give a list of superiors
           def superiors box
             Box::NÄHE.map{ |b| box.send(b) }
-              .compact
+              .reject { |b| b.nil? }
               .select { |nbox| box.dominance < nbox.dominance }            
           end
 
@@ -215,9 +208,33 @@ module Fox
               dc.setForeground white
               dc.fillRectangle 0, 0, width, height
               dc.drawImage @buffer.inst, 0, 0
-              @layout.each{ |name, box| box.render(dc) }
+              @layout.map{ |name, box| box }
+                .reject{ |box| box.nil? }
+                .select{ |box| box.enabled? }
+                .each{ |box| box.render(dc) }
             }
             @canvas.update
+          end
+
+          private
+          
+          def backlink_boxes
+            @layout.each{ |name, box|
+              box.bottom_box.top_box = box unless box.bottom_box.nil?
+              box.right_box.left_box = box unless box.right_box.nil?
+            }
+            unlink_disabled_boxes
+          end
+
+          def unlink_disabled_boxes
+            @layout.map{ |name, box| box }
+              .reject{ |box| box.enabled? }
+              .each{ |box|
+              box.top_box.bottom_box = box.bottom_box
+              box.bottom_box.top_box = box.top_box
+              box.left_box.right_box = box.right_box
+              box.right_box.left_box = box.left_box
+            }
           end
         end
       end
