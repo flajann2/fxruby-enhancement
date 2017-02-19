@@ -3,7 +3,7 @@ module Fox
     module Xtras
       module Charting        
         class Ruler < Box
-          attr_accessor :axial
+          attr_accessor :rconf
           
           def render dc
             super
@@ -73,13 +73,13 @@ module Fox
               }
               
               t.tick_label_lambda = ->(coord, label) {}
-            end.compute_ticks
-            
+            end.compute_ticks if enabled           
           end
           
           def initialize chart, **kv
             super
-            @axial = kv[:axial]
+            @rconf = kv[:axial][@name]
+            @enabled = ! @rconf.nil?
             @dominance = 2
           end
         end
