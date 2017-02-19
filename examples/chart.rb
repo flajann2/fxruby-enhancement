@@ -40,8 +40,8 @@ fx_app :app do
       opts LAYOUT_FILL_X|LAYOUT_FILL_Y
       type :cartesian
       background color: :white, grid: true, grid_color: :blue      
-      axis :x, type: :linear, color: :black, name: "Time"
-      axis :y, type: :linear, color: :black, name: "Price"
+      axis :x, :bottom, type: :linear, color: :black, name: "Time"
+      axis :y, :left,   type: :linear, color: :black, name: "Price"
 
       caption text: "This illustrates how easy the chart is to use."
       title text: "Demo chart"
