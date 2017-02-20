@@ -4,6 +4,7 @@ require 'fxruby-enhancement'
 
 include Fox
 include Fox::Enhancement::Mapper
+include RGB
 
 CHART_UPDATE_TIME = 100
 
@@ -39,12 +40,12 @@ fx_app :app do
     fx_chart(:chart) {
       opts LAYOUT_FILL_X|LAYOUT_FILL_Y
       type :cartesian
-      background color: :white, grid: true, grid_color: :blue      
-      axis :x, :bottom, type: :linear, color: :black, name: "Time"
-      axis :y, :left,   type: :linear, color: :black, name: "Price"
+      background color: light_cyan4, grid: true, grid_color: blue
+      axis :x, :bottom, type: :linear, color: red, name: "Time"
+      axis :y, :left,   type: :linear, color: blue, name: "Price"
 
       caption text: "This illustrates how easy the chart is to use."
-      title text: "Demo chart"
+      title   text: "Demo chart"
       
       data [1, 22.1, 34.2, 11],
            [2, 23.4, 25.0, 14],

@@ -9,7 +9,7 @@ module Fox
             super
             # coord is normalized, 0 .. 1
             Ticks.new(0, 1000) do |t|
-              dc.foreground = black
+              dc.foreground = @rconf.color || black
               
               t.tick_lambda = ->(coord, value, major) {
                 tick_length = (orientation == :horizontal ? height : width) / (major ? 2 : 4)

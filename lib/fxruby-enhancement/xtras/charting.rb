@@ -205,7 +205,7 @@ module Fox
           def update_chart
             layout_boxes
             draw_dc { |dc|
-              dc.setForeground white
+              dc.setForeground @cos.background.color || white
               dc.fillRectangle 0, 0, width, height
               dc.drawImage @buffer.inst, 0, 0
               @layout.map{ |name, box| box }
@@ -248,7 +248,7 @@ module Fox
                    pos: Enhancement.stack.last,
                    reuse: nil,
                    &block
-        Enhancement.stack << (@os = os =
+        Enhancement.stack << (os =
                               OpenStruct.new(klass: FXCanvas,
                                              op: [],
                                              ii: ii,
@@ -269,7 +269,7 @@ module Fox
           Enhancement.base = os
         end
         
-        @os.op[0] = OpenStruct.new(:parent => :required,
+        os.op[0] = OpenStruct.new(:parent => :required,
                                    :target => nil,
                                    :selector => 0,
                                    :opts => FRAME_NORMAL,
@@ -277,38 +277,39 @@ module Fox
                                    :y => 0,
                                    :width => 0,
                                    :height => 0)
+
+        dsl = OpenStruct.new os: os
         
         # Initializers for the underlying 
-        def target var; @os.op[@os.ii].target = var; end
-        def selector var; @os.op[@os.ii].selector = var; end
-        def opts var; @os.op[@os.ii].opts = var; end
-        def x var; @os.op[@os.ii].x = var; end
-        def y var; @os.op[@os.ii].y = var; end
-        def width var; @os.op[@os.ii].width = var; end
-        def height var; @os.op[@os.ii].height = var; end
+        def dsl.target var; os.op[os.ii].target = var; end
+        def dsl.selector var; os.op[os.ii].selector = var; end
+        def dsl.opts var; os.op[os.ii].opts = var; end
+        def dsl.x var; os.op[os.ii].x = var; end
+        def dsl.y var; os.op[os.ii].y = var; end
+        def dsl.width var; os.op[os.ii].width = var; end
+        def dsl.height var; os.op[os.ii].height = var; end
         
         # Chart specific
-        def type var; @os.type = var; end
+        def dsl.type var; os.type = var; end
         
-        def axis ax, placement=nil, **kv
+        def dsl.axis ax, placement=nil, **kv
           placement ||= (ax == :x) ? :bottom : ((ax == :y) ? :left : :error_axis)
-          @os.axial[FX_CHART_RULER_NAMES[ax][placement]] = OpenStruct.new(**(kv.merge({placement: placement})))
+          os.axial[FX_CHART_RULER_NAMES[ax][placement]] = OpenStruct.new(**(kv.merge({placement: placement})))
         end
         
-        def data *dat; @os.data = dat; end        
-        def series ser; @os.series = ser; end
-        def domain a, b; @os.domain = [a, b]; end
-        def range a, b; @os.range = [a, b]; end
+        def dsl.data *dat; os.data = dat; end        
+        def dsl.series ser; os.series = ser; end
+        def dsl.domain a, b; os.domain = [a, b]; end
+        def dsl.range a, b; os.range = [a, b]; end        
+        def dsl.background **kv; kv.each{ |k,v| os.background[k] = v }; end
+        def dsl.caption **kv; kv.each{ |k,v| os.caption[k] = v }; end
+        def dsl.title **kv; os.title = OpenStruct.new **kv; end
         
-        def background **kv; kv.each{ |k,v| @os.background[k] = v }; end
-        def caption **kv; kv.each{ |k,v| @os.caption[k] = v }; end
-        def title **kv; kv.each{ |k,v| @os.title[k] = v }; end
-        
-          # What will be executed after FXCanvas is created.
-        def instance aname=nil, &block
-          @os.instance_name = aname
-          @os.instance_block ||= []
-          @os.instance_block << [aname, block]
+        # What will be executed after FXCanvas is created.
+        def dsl.instance aname=nil, &block
+          os.instance_name = aname
+          os.instance_block ||= []
+          os.instance_block << [aname, block]
         end
         
         # Internal use only.
@@ -319,7 +320,7 @@ module Fox
           return os
         end
         
-        self.instance_eval &block
+        dsl.instance_eval &block
         
         os.fx = ->(){
           chart_instance (os) { |c|
@@ -347,8 +348,7 @@ module Fox
         }
         
         Enhancement.stack.pop                                                  
-        @os = Enhancement.stack.last
-        return os
+        return Enhancement.stack.last
       end
     end
   end
