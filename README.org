@@ -31,6 +31,7 @@
        - [[#deferred_setup][deferred_setup]]
        - [[#mapping-between-fx_-declarations-and-the-fx-fxruby-objects][Mapping between fx_* declarations and the FX* FXRuby objects]]
        - [[#bindingfx][binding.fx]]
+     - [[#color-directives][Color Directives]]
      - [[#examples][Examples]]
        - [[#hello-world-example-full-the-enhancement-way][Hello World example (full) the Enhancement Way]]
        - [[#hello-world-the-old-fxruby-way][Hello World the old fxruby way:]]
@@ -737,6 +738,12 @@
      ...
      #+end_src
     
+*** Color Directives
+    For convience, when dealing with colors in the device context or any
+    other situation, we provide you with a nice set of predefined colors.
+    @@html:<b>@@bold text@@html:</b>@@
+    
+
 *** Examples
     Because this is a spinoff project of the ongoing RubyNEAT
     effort, there is a splendid RubyNEAT Panel example, that

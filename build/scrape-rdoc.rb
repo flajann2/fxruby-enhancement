@@ -127,6 +127,16 @@ File.open(TEMPLATE, 'r') do |template|
 end
 
 FXC = {
+  White: "Fox.FXRGB(255, 255, 255)",
+  Black: "Fox.FXRGB(0, 0, 0)",
+  Red: "Fox.FXRGB(255, 0, 0)",
+  Pink: "Fox.FXRGB(255, 175, 175)",
+  Orange: "Fox.FXRGB(255, 200, 0)",
+  Yellow: "Fox.FXRGB(255, 255, 0)",
+  Green: "Fox.FXRGB(0, 255, 0)",
+  Magenta: "Fox.FXRGB(255, 0, 255)",
+  Cyan: "Fox.FXRGB(0, 255, 255)",
+  Blue: "Fox.FXRGB(0, 0, 255) ",
   GhostWhite: "Fox.FXRGB(248, 248, 255)",
   WhiteSmoke: "Fox.FXRGB(245, 245, 245)",
   FloralWhite: "Fox.FXRGB(255, 250, 240)",
@@ -141,11 +151,8 @@ FXC = {
   AliceBlue: "Fox.FXRGB(240, 248, 255)",
   LavenderBlush: "Fox.FXRGB(255, 240, 245)",
   MistyRose: "Fox.FXRGB(255, 228, 225)",
-  DarkSlateGray: "Fox.FXRGB( 47,  79,  79)",
   DarkSlateGrey: "Fox.FXRGB( 47,  79,  79)",
-  DimGray: "Fox.FXRGB(105, 105, 105)",
   DimGrey: "Fox.FXRGB(105, 105, 105)",
-  SlateGray: "Fox.FXRGB(112, 128, 144)",
   SlateGrey: "Fox.FXRGB(112, 128, 144)",
   LightSlateGrey: "Fox.FXRGB(119, 136, 153)",
   LightGray: "Fox.FXRGB(211, 211, 211)",
@@ -388,16 +395,6 @@ FXC = {
   DarkMagenta: "Fox.FXRGB(139,   0, 139)",
   DarkRed: "Fox.FXRGB(139,   0,   0)",
   LightGreen: "Fox.FXRGB(144, 238, 144)",
-  White: "Fox.FXRGB(255, 255, 255)",
-  Black: "Fox.FXRGB(0, 0, 0)",
-  Red: "Fox.FXRGB(255, 0, 0)",
-  Pink: "Fox.FXRGB(255, 175, 175)",
-  Orange: "Fox.FXRGB(255, 200, 0)",
-  Yellow: "Fox.FXRGB(255, 255, 0)",
-  Green: "Fox.FXRGB(0, 255, 0)",
-  Magenta: "Fox.FXRGB(255, 0, 255)",
-  Cyan: "Fox.FXRGB(0, 255, 255)",
-  Blue: "Fox.FXRGB(0, 0, 255) ",
 }
 
 File.open(TEMPLATE_RGB, 'r') do |template|

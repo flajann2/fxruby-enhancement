@@ -40,7 +40,7 @@ fx_app :app do
     fx_chart(:chart) {
       opts LAYOUT_FILL_X|LAYOUT_FILL_Y
       type :cartesian
-      background color: light_cyan4, grid: true, grid_color: blue
+      background color: sea_green1, grid: true, grid_color: blue
       axis :x, :bottom, type: :linear, color: red, name: "Time"
       axis :y, :left,   type: :linear, color: blue, name: "Price"
 
