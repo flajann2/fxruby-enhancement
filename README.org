@@ -743,7 +743,7 @@
     other situation, we provide you with a nice set of predefined colors.
     
     | @@html:<b>@@bold text in a table@@html:</b>@@                   |   |
-    | @@html:<div style="background_color: red">Color Testing</div>@@ |   |
+    | @@html:<div style="background_color:red">@@Color Testing@@html:</div>@@ |   |
 
 *** Examples
     Because this is a spinoff project of the ongoing RubyNEAT
