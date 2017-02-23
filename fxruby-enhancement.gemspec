@@ -33,6 +33,7 @@ Gem::Specification.new do |s|
     "examples/.ruby-version",
     "examples/bounce.rb",
     "examples/chart.rb",
+    "examples/color_chart.rb",
     "examples/data_target.rb",
     "examples/debug",
     "examples/dialog_box.rb",

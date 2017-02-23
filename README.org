@@ -741,7 +741,21 @@
 *** Color Directives
     For convience, when dealing with colors in the device context or any
     other situation, we provide you with a nice set of predefined colors.
+    [[./examples/images/color_chart.rb]]
     
+    A code snippet example for using the color directives:
+    #+begin_src ruby
+    fx_button {
+      text "Red Button"
+      instance { |b|
+        b.backColor = red
+        b.textColor = black
+      }
+    }
+    #+end_src
+
+    Look to [[./examples/color_chart.rb][Color Chart]] for a
+    more extensive example.
 
 *** Examples
     Because this is a spinoff project of the ongoing RubyNEAT
