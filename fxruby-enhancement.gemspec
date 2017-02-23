@@ -39,6 +39,7 @@ Gem::Specification.new do |s|
     "examples/dialog_box.rb",
     "examples/hello.rb",
     "examples/images/bounce.rb.png",
+    "examples/images/color_chart.png",
     "examples/images/data_target.rb.png",
     "examples/images/dialog_box.rb.png",
     "examples/images/hello-world-new-and-old.png",
