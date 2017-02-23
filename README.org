@@ -68,6 +68,7 @@
    | [[./examples/images/scribble.rb.png]]    | [[file:./examples/scribble.rb][Scribble]]       |
    | [[./examples/images/chart.rb.png]]       | [[file:./examples/chart.rb][Chart]]          |
    | [[./examples/images/rubyneat-panel.png]] | [[https://github.com/flajann2/rubyneat-panel/tree/master/lib/rubyneat-panel][RubyNEAT Panel]] |
+   | [[./examples/images/color_chart.png]]    | [[./examples/color_chart.rb][Color Chart]]    |
 
 ** Introduction
    The fxruby library is an excellent wrapper for the FOX Toolkit.
