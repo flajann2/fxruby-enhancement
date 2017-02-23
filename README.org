@@ -742,8 +742,6 @@
     For convience, when dealing with colors in the device context or any
     other situation, we provide you with a nice set of predefined colors.
     
-    | @@html:<b>@@bold text in a table@@html:</b>@@                           |   |
-    | @@html:<b style="background-color:red">@@Color Testing@@html:</b>@@     |   |
 
 *** Examples
     Because this is a spinoff project of the ongoing RubyNEAT
