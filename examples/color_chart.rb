@@ -7,7 +7,7 @@ include Fox::Enhancement::Mapper
 include RGB
 
 # Here we show a list of colors. This is for illustrative
-# purposes. See the code starting from line 284. :)
+# purposes. See the code starting from line 283. :)
 
 LIST_OF_COLORS = { 
   white: white,
@@ -280,10 +280,10 @@ LIST_OF_COLORS = {
   light_green: light_green, 
 }
 
+# color chart code begins here!
 fx_app :app do
   app_name "Color Chart"
   vendor_name "Example"
-  
 
   fx_main_window(:main) {
     title "Color Chart"
@@ -313,6 +313,6 @@ fx_app :app do
 end
 
 # alias for fox_component is fxc
-fox_component :app do |app|
+fxc :app do |app|
   app.launch
 end
