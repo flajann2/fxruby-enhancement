@@ -33,6 +33,121 @@ module Fox
           def initialize cos, canvas
             @cos = cos
             @canvas = canvas
+            
+            initial_parameter_setup
+            initial_chart_layout            
+            backlink_boxes
+          end
+
+          
+          # Layout given box, as much as possible, given neighbors.
+          # may be called twice per box.
+          # 
+          def layout_box box
+            if box.dominance == 0 # the only box with a dom of 0 are the null boxes
+              null_box_layout box
+            else # we do what we can.
+              general_box_layout box
+            end
+          end
+
+          
+          def draw_dc &block
+            @buffer.starten if @buffer.inst.nil?
+            FXDCWindow.new(@buffer.inst) { |dc| block.(dc) }
+          end
+          
+          def update_chart
+            layout_boxes
+            draw_dc { |dc|
+              dc.setForeground @cos.background.color || white
+              dc.fillRectangle 0, 0, width, height
+              dc.drawImage @buffer.inst, 0, 0
+              @layout.map{ |name, box| box }
+                .reject{ |box| box.nil? }
+                .select{ |box| box.enabled? }
+                .each{ |box| box.render(dc) }
+            }
+            @canvas.update
+          end
+
+          private
+
+          def general_box_layout box
+            box.calculate_dimensions
+            subordinate_box_layout box
+            superior_box_layout box
+          end
+
+          def subordinate_box_layout box
+            subordinates(box).each { |sub|
+              begin
+                case sub
+                when box.left_box
+                  box.x = sub.x + sub.width + sub.right_margin + box.left_margin
+                when box.right_box
+                  box.x = sub.x - sub.left_margin - box.right_margin - box.width
+                when box.top_box
+                  box.y = sub.y + sub.height + sub.bottom_margin + box.top_margin
+                when box.bottom_box                  
+                  box.y = sub.y - sub.top_margin - box.bottom_margin - box.height
+                end
+              rescue NoMethodError, TypeError => e
+                #puts "-->subortinate unresolved: #{e}"
+              end
+            }
+          end
+
+          def superior_box_layout box
+            superiors(box).each { |sup|
+              begin
+                case sup
+                when box.left_box
+                  box.height = sup.height 
+                  box.y = sup.y
+                  box.x = sup.x + sup.width + sup.right_margin + box.left_margin
+                when box.right_box
+                  box.height = sup.height
+                  box.y = sup.y                                        
+                when box.top_box
+                  box.width = sup.width
+                  box.x = sup.x
+                when box.bottom_box
+                  box.width = sup.width
+                  box.x = sup.x
+                end
+              rescue NoMethodError, TypeError => e
+                #puts "-->superior unresolved: #{e}"
+              end unless box.floating?
+            }
+          end
+          
+          def null_box_layout box
+            case box.name
+            when :null_left
+              box.x = 0
+              box.y = 0
+              box.width = 0
+              box.height = height
+            when :null_right
+              box.x = width
+              box.y = 0
+              box.width = 0
+              box.height = height
+            when :null_top
+              box.x = 0
+              box.y = 0
+              box.width = width
+              box.height = 0
+            when :null_bottom
+              box.x = 0
+              box.y = height
+              box.width = width
+              box.height = 0
+            end              
+          end
+          
+          def initial_parameter_setup
             as (:app) {
               @buffer = fx_image { opts IMAGE_KEEP }
             }
@@ -43,8 +158,9 @@ module Fox
             @font_caption = nil
             @font_ledgend = nil
             @font_axis_name = nil
-
-            # chart layout
+          end
+          
+          def initial_chart_layout
             lytbox = ->(klass, **kv){ [kv[:name], klass.new(self, **kv)] }
             @layout = lyt = [
               lytbox.(NullBox, name: :null_left,    placement: :left),
@@ -75,102 +191,7 @@ module Fox
             lyt[:graph].right_box         = lyt[:right_ruler]
             lyt[:right_ruler].right_box   = lyt[:legend]
             lyt[:legend].right_box        = lyt[:null_right]
-            
-            backlink_boxes
           end
-
-          
-          # Layout given box, as much as possible, given neighbors.
-          # may be called twice per box.
-          # 
-          def layout_box box
-            if box.dominance == 0 # the only box with a dom of 0 are the null boxes
-              case box.name
-              when :null_left
-                box.x = 0
-                box.y = 0
-                box.width = 0
-                box.height = height
-              when :null_right
-                box.x = width
-                box.y = 0
-                box.width = 0
-                box.height = height
-              when :null_top
-                box.x = 0
-                box.y = 0
-                box.width = width
-                box.height = 0
-              when :null_bottom
-                box.x = 0
-                box.y = height
-                box.width = width
-                box.height = 0
-              end              
-            else # we do what we can.
-              box.calculate_dimensions
-              subordinates(box).each { |sub|
-                begin
-                  case sub
-                  when box.left_box
-                    box.x = sub.x + sub.width + sub.right_margin + box.left_margin
-                  when box.right_box
-                    box.x = sub.x - sub.left_margin - box.right_margin - box.width
-                  when box.top_box
-                    box.y = sub.y + sub.height + sub.bottom_margin + box.top_margin
-                  when box.bottom_box                  
-                    box.y = sub.y - sub.top_margin - box.bottom_margin - box.height
-                  end
-                rescue NoMethodError, TypeError => e
-                  #puts "-->subortinate unresolved: #{e}"
-                end
-              }
-              
-              superiors(box).each { |sup|
-                begin
-                  case sup
-                  when box.left_box
-                    box.height = sup.height 
-                    box.y = sup.y
-                    box.x = sup.x + sup.width + sup.right_margin + box.left_margin
-                  when box.right_box
-                    box.height = sup.height
-                    box.y = sup.y                                        
-                  when box.top_box
-                    box.width = sup.width
-                    box.x = sup.x
-                  when box.bottom_box
-                    box.width = sup.width
-                    box.x = sup.x
-                  end
-                rescue NoMethodError, TypeError => e
-                  #puts "-->superior unresolved: #{e}"
-                end unless box.floating?
-              }
-            end
-          end
-
-          
-          def draw_dc &block
-            @buffer.starten if @buffer.inst.nil?
-            FXDCWindow.new(@buffer.inst) { |dc| block.(dc) }
-          end
-          
-          def update_chart
-            layout_boxes
-            draw_dc { |dc|
-              dc.setForeground @cos.background.color || white
-              dc.fillRectangle 0, 0, width, height
-              dc.drawImage @buffer.inst, 0, 0
-              @layout.map{ |name, box| box }
-                .reject{ |box| box.nil? }
-                .select{ |box| box.enabled? }
-                .each{ |box| box.render(dc) }
-            }
-            @canvas.update
-          end
-
-          private
           
           # call inially and when there's an update.
           def layout_boxes
