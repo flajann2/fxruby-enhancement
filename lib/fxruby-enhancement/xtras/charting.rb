@@ -49,9 +49,18 @@ module Fox
           # vector must be nil. If no more data is expected on an element,
           # make it :eos (end of stream)
           def add_to_series data
+            unless data.first.is_a? Array
+              ap data
+            else
+              data.each do |datum|
+                add_to_series datum
+              end
+            end
+            update_chart
           end
           
           def update_chart
+            compute_data_ranges
             layout_boxes
             draw_dc { |dc|
               dc.setForeground @cos.background.color || white
@@ -66,6 +75,9 @@ module Fox
           end
 
           private
+
+          def compute_data_ranges
+          end
           
           def layout_box box
             if box.dominance == 0
