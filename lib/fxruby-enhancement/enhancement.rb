@@ -101,8 +101,9 @@ module Fox
       end
 
       def rgb
+        raise "Not Implemented Yet!"
       end
-      
+            
       # Find the referenced component's wrapper object
       def refc sym, &block
         raise "No reference component for #{sym} found" if Enhancement.components[sym].nil?

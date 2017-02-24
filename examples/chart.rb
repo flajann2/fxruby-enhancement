@@ -6,7 +6,7 @@ include Fox
 include Fox::Enhancement::Mapper
 include RGB
 
-CHART_UPDATE_TIME = 100
+CHART_UPDATE_TIME = 1000
 
 fx_app :app do
   app_name "Chart"
@@ -52,6 +52,7 @@ fx_app :app do
            [3, 25.2, 35.2, 12],
            [4, 21.9, 63.3, 11],
            [5, 11.4, 50.1, 20]
+      
       series({ 0 => {
                  label: 'x-axis',
                  type: :range },
@@ -74,6 +75,19 @@ fx_app :app do
       range 0.0, 50.0
       
       instance { |c|
+        prng = Random.new
+        i = 5
+        germany = 11.5
+        poland = 50.0
+        österich = 21
+        ref(:app).addTimeout(CHART_UPDATE_TIME, repeat: true) {
+          i += 1
+          germany  += prng.rand(0.0...6.0) - 3.0 
+          poland   += prng.rand(0.0...6.0) - 3.0 
+          österich += prng.rand(0.0...6.0) - 3.0 
+          puts "i=#{i} DEU=#{germany} POL=#{poland} ÖST=#{österich}"
+          refc(:chart).chart.add_to_series [i, germany, poland, österich]
+        }        
       }
     }
   }

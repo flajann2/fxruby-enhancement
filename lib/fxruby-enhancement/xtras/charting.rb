@@ -43,6 +43,13 @@ module Fox
             @buffer.starten if @buffer.inst.nil?
             FXDCWindow.new(@buffer.inst) { |dc| block.(dc) }
           end
+
+          # Data is expected to be a vector (Array) or an Array of vectors,
+          # in the same format as configured. Any missing elements in the
+          # vector must be nil. If no more data is expected on an element,
+          # make it :eos (end of stream)
+          def add_to_series data
+          end
           
           def update_chart
             layout_boxes
