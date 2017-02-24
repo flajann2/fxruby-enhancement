@@ -146,7 +146,7 @@ module Fox
             as (:app) {
               @buffer = fx_image { opts IMAGE_KEEP }
             }
-            # detailed chart parameters
+            
             @x_ruler_width = 20
             @y_ruler_height = 20
             @font_title = nil
