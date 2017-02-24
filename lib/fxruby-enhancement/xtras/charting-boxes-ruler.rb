@@ -7,8 +7,16 @@ module Fox
           
           def render dc
             super
+            range = case orientation
+                    when :horizontal
+                      @chart.x_range
+                    when :vertical
+                      @chart.y_range
+                    else raise "unknown orientation :#{orientation}"
+                    end
+            
             # coord is normalized, 0 .. 1
-            Ticks.new(0, 1000) do |t|
+            Ticks.new(range) do |t|
               dc.foreground = @rconf.color || black
               
               t.tick_lambda = ->(coord, value, major) {

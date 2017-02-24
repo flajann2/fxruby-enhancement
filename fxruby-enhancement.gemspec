@@ -60,6 +60,7 @@ Gem::Specification.new do |s|
     "lib/fxruby-enhancement/xtras.rb",
     "lib/fxruby-enhancement/xtras/charting-boxes-ruler.rb",
     "lib/fxruby-enhancement/xtras/charting-boxes.rb",
+    "lib/fxruby-enhancement/xtras/charting-mapper.rb",
     "lib/fxruby-enhancement/xtras/charting.rb",
     "spec/fxruby-enhancement_spec.rb",
     "spec/spec_helper.rb"

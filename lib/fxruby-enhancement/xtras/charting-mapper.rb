@@ -59,8 +59,8 @@ module Fox
         
         def dsl.data *dat; os.data = dat; end        
         def dsl.series ser; os.series = ser; end
-        def dsl.domain a, b; os.domain = [a, b]; end
-        def dsl.range a, b; os.range = [a, b]; end        
+        def dsl.domain a, b; os.domain = (a...b); end
+        def dsl.range a, b; os.range = (a...b); end        
         def dsl.background **kv; kv.each{ |k,v| os.background[k] = v }; end
         def dsl.caption **kv; kv.each{ |k,v| os.caption[k] = v }; end
         def dsl.title **kv; os.title = OpenStruct.new **kv; end

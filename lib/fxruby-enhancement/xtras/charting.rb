@@ -7,19 +7,7 @@ module Fox
     module Xtras
       # Charting constructs. Note that the
       # rulers have built-in their own labeling, with orientation.
-      module Charting
-        # range in real coordinates, beginning and end points
-        class Range
-          attr_accessor :x1, :y1, :x2, :y2
-          
-          def initialize x1, y1, x2, y2
-            @x1 = x1
-            @y1 = y1
-            @x2 = x2
-            @y2 = y2
-          end
-        end
-        
+      module Charting        
         class Chart
           extend Forwardable
           include RGB
@@ -34,6 +22,8 @@ module Fox
           def initialize cos, canvas
             @cos = cos
             @canvas = canvas
+            @x_range = domain
+            @y_range = range
             
             initial_parameter_setup
             initial_chart_layout            
@@ -49,13 +39,11 @@ module Fox
           # in the same format as configured. Any missing elements in the
           # vector must be nil. If no more data is expected on an element,
           # make it :eos (end of stream)
-          def add_to_series data
-            unless data.first.is_a? Array
-              ap data
+          def add_to_series newdata
+            unless newdata.first.is_a? Array
+              data << newdata
             else
-              data.each do |datum|
-                add_to_series datum
-              end
+              data += newdata
             end
             update_chart
           end
@@ -78,6 +66,7 @@ module Fox
           private
 
           def compute_data_ranges
+            pp data
           end
           
           def layout_box box
