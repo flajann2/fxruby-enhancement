@@ -79,34 +79,6 @@ module Fox
             backlink_boxes
           end
 
-          # call inially and when there's an update.
-          def layout_boxes
-            clear_all_boxes
-            recalculate_dimensions
-            
-            # first pass -- out to in
-            (0..Box::MAX_DOMINANCE).each do |dom|
-              boxes_of_dominance(dom).each{ |box| layout_box box }
-            end
-            
-            # second pass -- in to out
-            (1..Box::MAX_DOMINANCE).to_a.reverse.each do |dom|
-              boxes_of_dominance(dom).each{ |box| layout_box box }
-            end
-          end
-
-          # All x,y,width,height are nilled for all boxes
-          def clear_all_boxes
-            @layout.each { |name, box|
-              box.x = box.y = box.width = box.height = nil
-            }
-          end
-
-          def recalculate_dimensions
-            @layout.each { |name, box|
-              box.calculate_dimensions
-            }
-          end
           
           # Layout given box, as much as possible, given neighbors.
           # may be called twice per box.
@@ -178,24 +150,6 @@ module Fox
             end
           end
 
-          # Give a list of subordinates
-          def subordinates box
-            Box::NÄHE.map{ |b| box.send(b) }
-              .reject { |b| b.nil? }
-              .select { |nbox| box.dominance > nbox.dominance }            
-          end
-          
-          # Give a list of superiors
-          def superiors box
-            Box::NÄHE.map{ |b| box.send(b) }
-              .reject { |b| b.nil? }
-              .select { |nbox| box.dominance < nbox.dominance }            
-          end
-
-          # return all boxes with the proscribed dominance
-          def boxes_of_dominance dom
-            @layout.map{ |name, box| box }.select{ |box| box.dominance == dom }
-          end
           
           def draw_dc &block
             @buffer.starten if @buffer.inst.nil?
@@ -217,6 +171,54 @@ module Fox
           end
 
           private
+          
+          # call inially and when there's an update.
+          def layout_boxes
+            clear_all_boxes
+            recalculate_dimensions
+            
+            # first pass -- out to in
+            (0..Box::MAX_DOMINANCE).each do |dom|
+              boxes_of_dominance(dom).each{ |box| layout_box box }
+            end
+            
+            # second pass -- in to out
+            (1..Box::MAX_DOMINANCE).to_a.reverse.each do |dom|
+              boxes_of_dominance(dom).each{ |box| layout_box box }
+            end
+          end
+
+          # All x,y,width,height are nilled for all boxes
+          def clear_all_boxes
+            @layout.each { |name, box|
+              box.x = box.y = box.width = box.height = nil
+            }
+          end
+
+          def recalculate_dimensions
+            @layout.each { |name, box|
+              box.calculate_dimensions
+            }
+          end
+          
+          # Give a list of subordinates
+          def subordinates box
+            Box::NÄHE.map{ |b| box.send(b) }
+              .reject { |b| b.nil? }
+              .select { |nbox| box.dominance > nbox.dominance }            
+          end
+          
+          # Give a list of superiors
+          def superiors box
+            Box::NÄHE.map{ |b| box.send(b) }
+              .reject { |b| b.nil? }
+              .select { |nbox| box.dominance < nbox.dominance }            
+          end
+
+          # return all boxes with the proscribed dominance
+          def boxes_of_dominance dom
+            @layout.map{ |name, box| box }.select{ |box| box.dominance == dom }
+          end
           
           def backlink_boxes
             @layout.each{ |name, box|
