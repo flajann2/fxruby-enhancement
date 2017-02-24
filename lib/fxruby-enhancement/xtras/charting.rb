@@ -38,20 +38,7 @@ module Fox
             initial_chart_layout            
             backlink_boxes
           end
-
-          
-          # Layout given box, as much as possible, given neighbors.
-          # may be called twice per box.
-          # 
-          def layout_box box
-            if box.dominance == 0 # the only box with a dom of 0 are the null boxes
-              null_box_layout box
-            else # we do what we can.
-              general_box_layout box
-            end
-          end
-
-          
+                    
           def draw_dc &block
             @buffer.starten if @buffer.inst.nil?
             FXDCWindow.new(@buffer.inst) { |dc| block.(dc) }
@@ -72,6 +59,14 @@ module Fox
           end
 
           private
+          
+          def layout_box box
+            if box.dominance == 0
+              null_box_layout box
+            else
+              general_box_layout box
+            end
+          end
 
           def general_box_layout box
             box.calculate_dimensions
