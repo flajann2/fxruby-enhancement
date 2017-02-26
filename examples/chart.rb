@@ -42,8 +42,19 @@ fx_app :app do
       opts LAYOUT_FILL_X|LAYOUT_FILL_Y
       type :cartesian
       background color: sea_green1, grid: true, grid_color: blue
-      axis :x, :bottom, type: :linear, color: red, name: "Time"
-      axis :y, :left,   type: :linear, color: blue, name: "Price"
+
+      axis :x, :bottom,
+           type: :linear,
+           color: red,
+           name: "Time",
+           cfont:  "helvetica,120,bold",
+           tfont:  "arial,120,bold"
+
+      axis :y, :left,
+           type: :linear,
+           color: blue,
+           name: "Price",
+           cfont:  "helvetica [bitstream],12,bold,italic,normal,iso8859-1,0"
 
       caption text: "This illustrates how easy the chart is to use."
       title   text: "Demo chart"

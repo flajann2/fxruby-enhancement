@@ -23,6 +23,7 @@
        - [[#fx_app][fx_app]]
        - [[#fx_chart][fx_chart]]
          - [[#data-format-and-labeling][Data Format and Labeling]]
+         - [[#fonts][Fonts]]
        - [[#fx_data_target][fx_data_target]]
        - [[#fx_dc][fx_dc]]
        - [[#instance][instance]]
@@ -539,6 +540,9 @@
        Specifying the position of the vector as keys in the hash
        will allow us to "leave gaps" in the specification, particulary
        when the number of entries in that vector become large.
+
+***** Fonts
+      Here are a list of fonts across all the major platforms: [[http://www.apaddedcell.com/sites/www.apaddedcell.com/files/fonts-article/final/index.html][Preinstalled Fonts]]
 
 **** fx_data_target
      FOX (and therefor FXRuby) supports data synchronization among components.

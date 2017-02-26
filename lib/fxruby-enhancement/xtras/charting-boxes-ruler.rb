@@ -1,9 +1,11 @@
 module Fox
   module Enhancement
     module Xtras
-      module Charting        
+      module Charting
+        
+        # This handles rules of all orientations and positionings.
         class Ruler < Box
-          attr_accessor :rconf
+          attr_accessor :rconf, :cfont, :tfont
           
           def render dc
             super
@@ -89,10 +91,67 @@ module Fox
             @rconf = kv[:axial][@name]
             @enabled = ! @rconf.nil?
             @dominance = 2
+            
+            configure_ruler unless @rconf.nil?
+          end
+
+          # The "height" of the ruler (not the length)
+          # is determined according to the following formula:
+          ## R = 2a + C + 2b + L + T
+          ## where:
+          ### R - ruler height
+          ### a - ruler caption box margin
+          ### C - ruler caption box height
+          ### b - tickmarks label box margin
+          ### L - tickmarks label height
+          ### T - tickmarks height
+          # Note that this assumes a horizontal orientation. Since
+          # in the vertical orientation the text will be so-oriented,
+          # "height" would actually be visually the width.
+          def calculate_dimensions
+            self.width  ||= (hint_width || 30)
+            self.height ||= (hint_height || 30)
+          end
+          
+          private
+          def configure_ruler
+            configure_ruler_fonts
+            configure_margins
+            configure_tickmark_height
+            configure_tickmark_labels
+            configure_ruler_caption
+          end
+
+          def configure_ruler_fonts
+            @cfont = load_font( rconf[:cfont] || "arial,120" )
+            @tfont = load_font( rconf[:tfont] || "arial,120" )
+          end
+
+          def load_font font
+            f = FXFont.new ref(:app), font
+            f.create
+            return f
+          end
+
+          def configure_margins
+            @rc_margin = rconf[:rc_margin] || 2
+            @tml_margin = rconf[:tml_margin] || 3
+          end
+
+          def configure_tickmark_height
+            @tm_height = rconf[:tm_height] || 12
+            @tm_minor_height = rconf[:tm_minor_height] || (@tm_height / (rconf[:tm_minor_divisor] || 2))
+          end
+
+          def configure_tickmark_labels
+            @tml_height = @tfont.getTextHeight "012345679.0-+"
+          end
+
+          def configure_ruler_caption
+            @rc_height = @cfont.getTextHeight rconf[:name]
           end
         end
       end
     end
   end
 end
-

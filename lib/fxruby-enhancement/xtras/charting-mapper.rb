@@ -29,14 +29,15 @@ module Fox
           Enhancement.base = os
         end
         
-        os.op[0] = OpenStruct.new(:parent => :required,
-                                   :target => nil,
-                                   :selector => 0,
-                                   :opts => FRAME_NORMAL,
-                                   :x => 0,
-                                   :y => 0,
-                                   :width => 0,
-                                   :height => 0)
+        os.op[0] = OpenStruct.new(parent: :required,
+                                  target:  nil,
+                                  selector: 0,
+                                  opts: FRAME_NORMAL,
+                                  x: 0,
+                                  y: 0,
+                                  width: 0,
+                                  height: 0,
+                                  axial: {})
 
         dsl = OpenStruct.new os: os
         
