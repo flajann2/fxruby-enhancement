@@ -109,11 +109,12 @@ module Fox
           # in the vertical orientation the text will be so-oriented,
           # "height" would actually be visually the width.
           def calculate_dimensions
-            self.width  ||= (hint_width || 30)
-            self.height ||= (hint_height || 30)
+            self.width  = (orientation == :vertical)   ? ruler_height : 0
+            self.height = (orientation == :horizontal) ? ruler_height : 0
           end
           
           private
+          
           def configure_ruler
             configure_ruler_fonts
             configure_margins
@@ -149,6 +150,14 @@ module Fox
 
           def configure_ruler_caption
             @rc_height = @cfont.getTextHeight rconf[:name]
+          end
+
+          def ruler_height
+            if enabled?
+              2 * @rc_margin + @rc_height + 2 * @tml_margin + @tml_height + @tml_height
+            else
+              0
+            end
           end
         end
       end
