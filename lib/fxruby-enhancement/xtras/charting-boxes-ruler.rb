@@ -7,9 +7,6 @@ module Fox
         class Ruler < Box
           attr_accessor :rconf, :cfont, :tfont
 
-
-          def draw_text
-          
           def render dc
             super
             range = case orientation
@@ -25,70 +22,19 @@ module Fox
               dc.foreground = @rconf.color || black
               
               t.tick_lambda = ->(coord, value, major) {
-                tick_length = (orientation == :horizontal ? height : width) / (major ? 2 : 4)
-                
-                x1 = if orientation == :horizontal
-                       x + width * coord  
-                     elsif orientation == :vertical
-                       if placement == :left
-                         x + width
-                       elsif placement == :right
-                         x
-                       else
-                         raise "unknown placement :#{placement}"
-                       end
-                     else
-                       raise "unknown orientation :#{orientation}"
-                     end
-                
-                y1 = if orientation == :horizontal
-                       if placement == :top
-                         y + height
-                       elsif placement == :bottom
-                         y
-                       else
-                         raise "unknown placement :#{placement}"
-                       end
-                     elsif orientation == :vertical
-                       y + height * coord
-                     else
-                       raise "unknown orientation :#{orientation}"                       
-                     end
-                
-                x2 = if orientation == :horizontal
-                       x1
-                     elsif orientation == :vertical
-                       if placement == :left
-                         x1 - tick_length
-                       elsif placement == :right
-                         x1 + tick_length
-                       else
-                         raise "unknown placement :#{placement}"
-                       end
-                     else
-                       raise "unknown orientation :#{orientation}"                       
-                     end
-
-                y2 = if orientation == :horizontal
-                       if placement == :top
-                         y1 - tick_length
-                       elsif placement == :bottom
-                         y1 + tick_length
-                       else
-                         raise "unknown placement :#{placement}"
-                       end
-                     elsif orientation == :vertical
-                       y1
-                     else
-                       raise "unknown orientation :#{orientation}"                       
-                     end
-                dc.drawLine x1, y1, x2, y2
+                dc.drawLine *compute_tick_coords(coord, major)
               }
               
-              t.tick_label_lambda = ->(coord, label) {}
+              t.tick_label_lambda = ->(coord, label) {
+                xx, yy = compute_label_coords coord
+                dc.font = @tfont
+                dc.drawText xx, yy, label
+                puts "#{xx} #{yy} #{label} #{orientation}"
+              }
+              
             end.compute_ticks if enabled           
           end
-          
+
           def initialize chart, **kv
             super
             @rconf = kv[:axial][@name]
@@ -118,6 +64,71 @@ module Fox
           
           private
           
+          def compute_label_coords coord
+            x1, y1, x2, y2 = compute_tick_coords coord
+            [x1-25, y1]
+          end
+          
+          def compute_tick_coords coord, major = false
+            tick_length = (orientation == :horizontal ? height : width) / (major ? 2 : 4)
+            x1 = if orientation == :horizontal
+                   x + width * coord  
+                 elsif orientation == :vertical
+                   if placement == :left
+                     x + width
+                   elsif placement == :right
+                     x
+                   else
+                     raise "unknown placement :#{placement}"
+                   end
+                 else
+                   raise "unknown orientation :#{orientation}"
+                 end
+            
+            y1 = if orientation == :horizontal
+                   if placement == :top
+                     y + height
+                   elsif placement == :bottom
+                     y
+                   else
+                     raise "unknown placement :#{placement}"
+                   end
+                 elsif orientation == :vertical
+                   y + height * coord
+                 else
+                   raise "unknown orientation :#{orientation}"                       
+                 end
+            
+            x2 = if orientation == :horizontal
+                   x1
+                 elsif orientation == :vertical
+                   if placement == :left
+                     x1 - tick_length
+                   elsif placement == :right
+                     x1 + tick_length
+                   else
+                     raise "unknown placement :#{placement}"
+                   end
+                 else
+                   raise "unknown orientation :#{orientation}"                       
+                 end
+            
+            y2 = if orientation == :horizontal
+                   if placement == :top
+                     y1 - tick_length
+                   elsif placement == :bottom
+                     y1 + tick_length
+                   else
+                     raise "unknown placement :#{placement}"
+                   end
+                 elsif orientation == :vertical
+                   y1
+                 else
+                   raise "unknown orientation :#{orientation}"                       
+                 end
+            return [x1, y1, x2, y2]
+          end        
+          
           def configure_ruler
             configure_ruler_fonts
             configure_margins
@@ -127,12 +138,13 @@ module Fox
           end
 
           def configure_ruler_fonts
-            @cfont = load_font( rconf[:cfont] || "arial,120" )
-            @tfont = load_font( rconf[:tfont] || "arial,120" )
+            @cfont = load_font((rconf[:cfont] || "arial,100" ), 60)
+            @tfont = load_font((rconf[:tfont] || "arial,100" ), 90)
           end
 
-          def load_font font
+          def load_font font, angle=0
             f = FXFont.new ref(:app), font
+            f.setAngle (angle * 64).to_i
             f.create
             return f
           end
