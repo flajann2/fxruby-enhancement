@@ -6,6 +6,9 @@ module Fox
         # This handles rules of all orientations and positionings.
         class Ruler < Box
           attr_accessor :rconf, :cfont, :tfont
+
+
+          def draw_text
           
           def render dc
             super
@@ -145,7 +148,7 @@ module Fox
           end
 
           def configure_tickmark_labels
-            @tml_height = @tfont.getTextHeight "012345679.0-+"
+            @tml_height = @tfont.fontHeight
           end
 
           def configure_ruler_caption

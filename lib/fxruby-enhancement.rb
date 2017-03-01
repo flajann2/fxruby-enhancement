@@ -13,6 +13,7 @@ include Tickmarks
 require_relative 'fxruby-enhancement/rgb-monkey'
 require_relative 'fxruby-enhancement/color-mapper'
 require_relative 'fxruby-enhancement/core-monkey'
+require_relative 'fxruby-enhancement/dc-monkey'
 require_relative 'fxruby-enhancement/enhancement'
 require_relative 'fxruby-enhancement/ostruct-monkey'
 require_relative 'fxruby-enhancement/api-mapper'

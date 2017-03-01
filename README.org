@@ -51,8 +51,6 @@
      - [[#junkyard-as-execution-issue-debugging-code][JUNKYARD 'as' execution issue DEBUGGING CODE]]
      - [[#scratchpad-fxdcwindow][SCRATCHPAD FXDCWindow]]
      - [[#junkyard-thoughs-on-doing-the-layout][JUNKYARD Thoughs on doing the layout]]
-       - [[#junkyard-superior-layout-calculations][JUNKYARD Superior layout calculations]]
-       - [[#junkyard-debug-layout-dump][JUNKYARD Debug layout dump]]
 
 * fxruby-enhancement
   #+caption: Enhancement vs. FXRuby versions of Hello World.
@@ -1632,40 +1630,4 @@ set_trace_func proc { |event, file, line, id, binding, classname|
     In all of this, this layout will take place everytime the application
     window is resized, so be aware of this. The computaitons shall be swift,
     just basic MDAS arithemtic. Nothing heavy-duty or fancy.
-    
-**** JUNKYARD Superior layout calculations
-     For the superior layout, we calculate the x and height,
-     or the y and width respectively, for the boxes. Floating
-     status becomes critical here, for the above will only
-     need to be determined thusly for the non-floating cases,
-     where there is dependency on the superior's dimensions
-     and position.
-**** JUNKYARD Debug layout dump
-     #+begin_src
--->PureText unresolved: comparison of NilClass with 20 failed
--->Graph: unresolved: undefined method `-' for nil:NilClass
-                                              left dom=0 xywh=[0,0,0,300]       LRTB=[0,0,0,0]
-                                             right dom=0 xywh=[400,0,0,300]     LRTB=[0,0,0,0]
-                                               top dom=0 xywh=[0,0,400,0]       LRTB=[0,0,0,0]
-                                            bottom dom=0 xywh=[0,300,400,0]     LRTB=[0,0,0,0]
-          Fox::Enhancement::Xtras::Charting::Title dom=1 xywh=[190,0,20,10]     LRTB=[0,0,0,0]      floater
-        Fox::Enhancement::Xtras::Charting::Caption dom=1 xywh=[190,290,20,10]   LRTB=[0,0,0,0]      floater
-         Fox::Enhancement::Xtras::Charting::Legend dom=1 xywh=[350,135,50,30]   LRTB=[0,0,0,0]      floater
 
-       Fox::Enhancement::Xtras::Charting::TopRuler dom=2 xywh=[NIL,10,20,10]    LRTB=[0,0,0,0]
-    Fox::Enhancement::Xtras::Charting::BottomRuler dom=2 xywh=[NIL,280,20,10]   LRTB=[0,0,0,0]
-      Fox::Enhancement::Xtras::Charting::LeftRuler dom=2 xywh=[0,NIL,20,10]     LRTB=[0,0,0,0]
-     Fox::Enhancement::Xtras::Charting::RightRuler dom=2 xywh=[330,NIL,20,10]   LRTB=[0,0,0,0]
-
-          Fox::Enhancement::Xtras::Charting::Graph dom=3 xywh=[-20,0,350,280]   LRTB=[0,0,0,0]
-          Fox::Enhancement::Xtras::Charting::Graph dom=3 xywh=[-20,0,350,280]   LRTB=[0,0,0,0]
-
-       Fox::Enhancement::Xtras::Charting::TopRuler dom=2 xywh=[-20,10,350,10]   LRTB=[0,0,0,0]
-    Fox::Enhancement::Xtras::Charting::BottomRuler dom=2 xywh=[-20,280,350,10]  LRTB=[0,0,0,0]
-      Fox::Enhancement::Xtras::Charting::LeftRuler dom=2 xywh=[0,0,20,280]      LRTB=[0,0,0,0]
-     Fox::Enhancement::Xtras::Charting::RightRuler dom=2 xywh=[330,0,20,280]    LRTB=[0,0,0,0]
-
-          Fox::Enhancement::Xtras::Charting::Title dom=1 xywh=[190,0,20,10]     LRTB=[0,0,0,0]      floater
-        Fox::Enhancement::Xtras::Charting::Caption dom=1 xywh=[190,290,20,10]   LRTB=[0,0,0,0]      floater
-         Fox::Enhancement::Xtras::Charting::Legend dom=1 xywh=[350,135,50,30]   LRTB=[0,0,0,0]      floater
-     #+end_src
