@@ -190,16 +190,19 @@ module Fox
         end
       end
 
+      # order is important here.
       FONT_DESC_PARAMS = {
         font:     ->(f) { f },
-        foundry:  ->(f) { f }
+        foundry:  ->(f) { f },
         size:     ->(s) { (s * 10).to_i },
-        weight:   ->(w) { w },
+        weight:   ->(w) { weight w },
         slant:    ->(s) { s },
         width:    ->(w) { w },
         encoding: ->(e) { e },
-        hints:    ->(h) { h }
+        hints:    ->(h) { hints h }
       }
+      private_constant :FONT_DESC_PARAMS
+      
       # Convert the given hash to the following:
       #   fontname [ "[" foundry "]" ]
       #      ["," size
@@ -211,8 +214,63 @@ module Fox
       # return either the string or nil, if no hash is given
       # or is empty.
       def font_desc **desc
-        
-        nil
+        unless desc.empty?
+          resolve_font_string **desc.map{ |k, v| [k, FONT_DESC_PARAMS[k].(v)] }.to_h
+        else
+          nil
+        end
+      end
+
+      FONT_HINTS = {
+        decorative:  4,    # Fancy fonts
+        modern:      8,    # Monospace typewriter font
+        roman:       16,   # Variable width times-like font, serif
+        script:      32,   # Script or cursive
+        swiss:       64,   # Helvetica/swiss type font, sans-serif
+        system:      128,  # System font
+        x11:         256,  # Raw X11 font string
+        scalable:    512,  # Scalable fonts
+        polymorphic: 1024, # Polymorphic fonts, e.g. parametric weight, slant, etc.                                                                                       Rotatable      = 2048       /// Rotatable fonts
+      }
+      private_constant :FONT_HINTS
+      
+      private_class_method def hints h
+        # h can either be a single declaration
+        # or a list (Array) of declarations.
+        # They all translate to bits that will
+        # be ORed together.
+        unless h.is_a? Array
+          FONT_HINTS[h]
+        else
+          h.map{ |hint| FONT_HINTS[hint] }.reduce(:|)
+        end
+      end
+
+      FONT_WEIGHTS {
+        bold: 'bold',
+        black: 'black',
+        demi: 'demibold',
+        light: 'light',
+        medium: 'medium'
+      }
+      private_constant :FONT_WEIGHTS
+      
+      private_class_method def weight w
+        # w can either be a number or a symbol,
+        # from which we'll just pass on.
+        unless w.is_a? Numeric
+          FONT_WEIGHTS[w]
+        else
+          w.to_i
+        end
+      end
+
+      private_class_method def resolve_font_string font: nil, foundry: nil, size: nil, **rest
+        raise "either font or size was not specified" if font.nil? or size.nil?
+        fdry = foundry.nil? ? nil : " [#{foundry}] "
+        ["#{font}#{fdry},#{size}",
+         FONT_DESC_PARAMS.keys.map{ |k| rest[k] }.join(',')
+        ].join(',')
       end
     end
   end

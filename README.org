@@ -1658,13 +1658,14 @@ set_trace_func proc { |event, file, line, id, binding, classname|
     - A sample of the string that needs to be supplied is:
       "helvetica,90,bold,italic,normal,iso8859-1,2048"
     - The format is given by the following:
-      fontname [ "[" foundry "]" ]
-               ["," size
-               ["," weight
-               ["," slant 
-               ["," setwidth 
-               ["," encoding 
-               ["," hints]]]]]]
+        fontname
+        [ "[" foundry "]" ]
+        ["," size
+        ["," weight
+        ["," slant 
+        ["," setwidth 
+        ["," encoding 
+        ["," hints]]]]]]
 
     The "entire" FXFont.h for reference is included here:
     #+begin_src C++

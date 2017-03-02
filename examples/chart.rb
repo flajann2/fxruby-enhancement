@@ -56,7 +56,7 @@ fx_app :app do
            name: "Price",
            cfont: { font: "helvetica",
                     foundry: "bitstream"
-                    size: 90,
+                    size: 9.1,
                     weight: :bold,
                     slant: :italic,
                     width: :normal,
@@ -64,7 +64,7 @@ fx_app :app do
                     hints: :rotatable },
            tfont: { font: "helvetica",
                     foundry: "bitstream"
-                    size: 90,
+                    size: 9.0,
                     weight: :bold,
                     slant: :italic,
                     width: :normal,
