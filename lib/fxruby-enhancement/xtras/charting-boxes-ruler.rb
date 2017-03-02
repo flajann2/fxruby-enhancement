@@ -29,7 +29,7 @@ module Fox
                 xx, yy = compute_label_coords coord
                 dc.font = @tfont
                 dc.drawText xx, yy, label
-                puts "#{xx} #{yy} #{label} #{orientation}"
+                puts "#{xx} #{yy} #{label} #{orientation} #{@tfont.angle}"
               }
               
             end.compute_ticks if enabled           
@@ -42,6 +42,8 @@ module Fox
             @dominance = 2
             
             configure_ruler unless @rconf.nil?
+            as :app {
+            }
           end
 
           # The "height" of the ruler (not the length)
@@ -66,7 +68,7 @@ module Fox
           
           def compute_label_coords coord
             x1, y1, x2, y2 = compute_tick_coords coord
-            [x1-25, y1]
+            [x1-25, y1+25]
           end
           
           def compute_tick_coords coord, major = false
