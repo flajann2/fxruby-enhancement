@@ -189,6 +189,31 @@ module Fox
           FXDCWindow.new(ref(tag)) { |dc| block.(dc) }
         end
       end
+
+      FONT_DESC_PARAMS = {
+        font:     ->(f) { f },
+        foundry:  ->(f) { f }
+        size:     ->(s) { (s * 10).to_i },
+        weight:   ->(w) { w },
+        slant:    ->(s) { s },
+        width:    ->(w) { w },
+        encoding: ->(e) { e },
+        hints:    ->(h) { h }
+      }
+      # Convert the given hash to the following:
+      #   fontname [ "[" foundry "]" ]
+      #      ["," size
+      #      ["," weight
+      #      ["," slant 
+      #      ["," setwidth 
+      #      ["," encoding 
+      #      ["," hints]]]]]]
+      # return either the string or nil, if no hash is given
+      # or is empty.
+      def font_desc **desc
+        
+        nil
+      end
     end
   end
 end

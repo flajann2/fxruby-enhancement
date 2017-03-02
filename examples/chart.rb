@@ -54,8 +54,22 @@ fx_app :app do
            type: :linear,
            color: blue,
            name: "Price",
-           cfont:  "helvetica,90,bold,italic,normal,iso8859-1,2048",
-           tfont:  "helvetica,90,bold,italic,normal,iso8859-1,2048"
+           cfont: { font: "helvetica",
+                    foundry: "bitstream"
+                    size: 90,
+                    weight: :bold,
+                    slant: :italic,
+                    width: :normal,
+                    encoding: "iso8859-1",
+                    hints: :rotatable },
+           tfont: { font: "helvetica",
+                    foundry: "bitstream"
+                    size: 90,
+                    weight: :bold,
+                    slant: :italic,
+                    width: :normal,
+                    encoding: "iso8859-1",
+                    hints: :rotatable},
       caption text: "This illustrates how easy the chart is to use."
       title   text: "Demo chart"
       
