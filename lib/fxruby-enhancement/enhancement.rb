@@ -214,10 +214,11 @@ module Fox
       # return either the string or nil, if no hash is given
       # or is empty.
       def font_desc **desc
-        Mapper.font_desc **desc
+        Mapper._font_desc **desc
       end
-      
-      def self.font_desc **desc
+
+      # Internal allowed 
+      def self._font_desc **desc
         unless desc.empty?
           resolve_font_string **desc.map{ |k, v| [k, FONT_DESC_PARAMS[k].(v)] }.to_h
         else
@@ -234,7 +235,8 @@ module Fox
         system:      128,  # System font
         x11:         256,  # Raw X11 font string
         scalable:    512,  # Scalable fonts
-        polymorphic: 1024, # Polymorphic fonts, e.g. parametric weight, slant, etc.                                                                                       Rotatable      = 2048       /// Rotatable fonts
+        polymorphic: 1024, # Polymorphic fonts, e.g. parametric weight, slant, etc.
+        rotatable:   2048  # Rotatable fonts
       }
       private_constant :FONT_HINTS
 
@@ -276,11 +278,10 @@ module Fox
         raise "either font or size was not specified" if font.nil? or size.nil?
         fdry = foundry.nil? ? nil : " [#{foundry}] "
         ["#{font}#{fdry},#{size}",
-         FONT_DESC_PARAMS.keys.map{ |k| rest[k] }.join(',')
+         FONT_DESC_PARAMS.keys[3..-1].map{ |k| rest[k] }.join(',')
         ].join(',')
       end
-      private_class_method :resolve_font_string
-      
+      private_class_method :resolve_font_string      
     end
   end
 end

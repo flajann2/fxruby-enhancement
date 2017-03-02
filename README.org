@@ -1666,7 +1666,7 @@ set_trace_func proc { |event, file, line, id, binding, classname|
         ["," setwidth 
         ["," encoding 
         ["," hints]]]]]]
-
+          helvetica [bitstream] ,91,weight,slant,wid,enc,hints,,,2048
     The "entire" FXFont.h for reference is included here:
     #+begin_src C++
 
