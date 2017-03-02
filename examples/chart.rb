@@ -47,15 +47,20 @@ fx_app :app do
            type: :linear,
            color: red,
            name: "Time",
-           cfont:  "helvetica,120,bold",
-           tfont:  "arial,120,bold"
+           cfont:   { font: "helvetica",
+                      foundry: "bitstream",
+                      size: 9.1,
+                      hints: :rotatable },
+           tfont:   { font: "arial",
+                      size: 9.1,
+                      hints: :rotatable }
 
       axis :y, :left,
            type: :linear,
            color: blue,
            name: "Price",
            cfont: { font: "helvetica",
-                    foundry: "bitstream"
+                    foundry: "bitstream",
                     size: 9.1,
                     weight: :bold,
                     slant: :italic,
@@ -63,13 +68,14 @@ fx_app :app do
                     encoding: "iso8859-1",
                     hints: :rotatable },
            tfont: { font: "helvetica",
-                    foundry: "bitstream"
+                    foundry: "bitstream",
                     size: 9.0,
                     weight: :bold,
                     slant: :italic,
                     width: :normal,
                     encoding: "iso8859-1",
-                    hints: :rotatable},
+                    hints: :rotatable }
+      
       caption text: "This illustrates how easy the chart is to use."
       title   text: "Demo chart"
       

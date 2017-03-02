@@ -214,6 +214,10 @@ module Fox
       # return either the string or nil, if no hash is given
       # or is empty.
       def font_desc **desc
+        Mapper.font_desc **desc
+      end
+      
+      def self.font_desc **desc
         unless desc.empty?
           resolve_font_string **desc.map{ |k, v| [k, FONT_DESC_PARAMS[k].(v)] }.to_h
         else
@@ -233,8 +237,9 @@ module Fox
         polymorphic: 1024, # Polymorphic fonts, e.g. parametric weight, slant, etc.                                                                                       Rotatable      = 2048       /// Rotatable fonts
       }
       private_constant :FONT_HINTS
+
       
-      private_class_method def hints h
+      def self.hints h
         # h can either be a single declaration
         # or a list (Array) of declarations.
         # They all translate to bits that will
@@ -245,8 +250,9 @@ module Fox
           h.map{ |hint| FONT_HINTS[hint] }.reduce(:|)
         end
       end
-
-      FONT_WEIGHTS {
+      private_class_method :hints
+      
+      FONT_WEIGHTS = {
         bold: 'bold',
         black: 'black',
         demi: 'demibold',
@@ -255,7 +261,7 @@ module Fox
       }
       private_constant :FONT_WEIGHTS
       
-      private_class_method def weight w
+      def self.weight w
         # w can either be a number or a symbol,
         # from which we'll just pass on.
         unless w.is_a? Numeric
@@ -264,14 +270,17 @@ module Fox
           w.to_i
         end
       end
-
-      private_class_method def resolve_font_string font: nil, foundry: nil, size: nil, **rest
+      private_class_method :weight
+      
+      def self.resolve_font_string font: nil, foundry: nil, size: nil, **rest
         raise "either font or size was not specified" if font.nil? or size.nil?
         fdry = foundry.nil? ? nil : " [#{foundry}] "
         ["#{font}#{fdry},#{size}",
          FONT_DESC_PARAMS.keys.map{ |k| rest[k] }.join(',')
         ].join(',')
       end
+      private_class_method :resolve_font_string
+      
     end
   end
 end

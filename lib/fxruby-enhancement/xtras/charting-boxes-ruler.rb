@@ -140,8 +140,10 @@ module Fox
           end
 
           def configure_ruler_fonts
-            @cfont = load_font((font_desc(rconf[:cfont]) || font_desc(font: 'arial', size: 10) ), 60)
-            @tfont = load_font((font_desc(rconf[:tfont]) || "arial,100" ), 60)
+            @cfont = load_font(
+              (font_desc(**rconf[:cfont]) || font_desc(font: 'arial', size: 10)),
+              60)
+            @tfont = load_font((font_desc(**rconf[:tfont]) || font_desc(font: 'arial', size: 10)), 60)
           end
 
           def load_font font, angle=0
