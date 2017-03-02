@@ -54,9 +54,8 @@ fx_app :app do
            type: :linear,
            color: blue,
            name: "Price",
-           cfont:  "helvetica,90,normal",
-           tfont:  "helvetica,90,normal"
-
+           cfont:  "helvetica,90,bold,italic,normal,iso8859-1,2048",
+           tfont:  "helvetica,90,bold,italic,normal,iso8859-1,2048"
       caption text: "This illustrates how easy the chart is to use."
       title   text: "Demo chart"
       

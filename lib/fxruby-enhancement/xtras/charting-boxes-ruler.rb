@@ -68,7 +68,7 @@ module Fox
           
           def compute_label_coords coord
             x1, y1, x2, y2 = compute_tick_coords coord
-            [x1-25, y1+25]
+            [x1-25, y1+20]
           end
           
           def compute_tick_coords coord, major = false
@@ -141,7 +141,7 @@ module Fox
 
           def configure_ruler_fonts
             @cfont = load_font((rconf[:cfont] || "arial,100" ), 60)
-            @tfont = load_font((rconf[:tfont] || "arial,100" ), 90)
+            @tfont = load_font((rconf[:tfont] || "arial,100" ), 60)
           end
 
           def load_font font, angle=0

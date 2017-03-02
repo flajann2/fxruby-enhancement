@@ -51,6 +51,7 @@
      - [[#junkyard-as-execution-issue-debugging-code][JUNKYARD 'as' execution issue DEBUGGING CODE]]
      - [[#scratchpad-fxdcwindow][SCRATCHPAD FXDCWindow]]
      - [[#junkyard-thoughs-on-doing-the-layout][JUNKYARD Thoughs on doing the layout]]
+     - [[#scratchpad-fxfont-hints][SCRATCHPAD FXFont Hints]]
 
 * fxruby-enhancement
   #+caption: Enhancement vs. FXRuby versions of Hello World.
@@ -1630,4 +1631,27 @@ set_trace_func proc { |event, file, line, id, binding, classname|
     In all of this, this layout will take place everytime the application
     window is resized, so be aware of this. The computaitons shall be swift,
     just basic MDAS arithemtic. Nothing heavy-duty or fancy.
+
+*** SCRATCHPAD FXFont Hints
+    These are not documented anywhere as far as I can tell.
+    I had to pull them from the FOX Toolkit source.
+    #+begin_src C
+    /// Font style hints
+    enum {
+      Decorative     = 4,         /// Fancy fonts
+      Modern         = 8,         /// Monospace typewriter font
+      Roman          = 16,        /// Variable width times-like font, serif
+      Script         = 32,        /// Script or cursive
+      Swiss          = 64,        /// Helvetica/swiss type font, sans-serif
+      System         = 128,       /// System font
+      X11            = 256,       /// Raw X11 font string
+      Scalable       = 512,       /// Scalable fonts
+      Polymorphic    = 1024,      /// Polymorphic fonts, e.g. parametric weight, slant, etc.
+      Rotatable      = 2048       /// Rotatable fonts
+    };
+    #+end_src
+
+    I will wrap this -- and the other parameters -- up to make it more friendly
+    for Rubyist, who should NOT have to go splunking through C++ code to 
+    figure out how to do something!!!!!!!!!!!!!!
 
