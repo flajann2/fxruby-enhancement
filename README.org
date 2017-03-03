@@ -70,6 +70,9 @@
    | [[./examples/images/rubyneat-panel.png]] | [[https://github.com/flajann2/rubyneat-panel/tree/master/lib/rubyneat-panel][RubyNEAT Panel]] |
    | [[./examples/images/color_chart.png]]    | [[./examples/color_chart.rb][Color Chart]]    |
 
+   To see even more examples of what is capable with the FOX Toolkit --
+   all of which are doable in Enhancement, see http://www.fox-toolkit.org/projects.html.
+
 ** Introduction
    The fxruby library is an excellent wrapper for the FOX Toolkit.
    However, it reflects the C++-ness of FOX, rather than being more
@@ -105,7 +108,17 @@
    [[https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=4AZLVF9WH9J3C&lc=US&item_name=FXRuby%20Enhancement&item_number=enhancement&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted][Donations are appreciated.]]
 
 ** Installation
-   To install the gem from commandline:
+   Requirements: You must have Fox16 installed on your system. Depending on your operating system, the details will vary. And currently on MacOSX you will also need to install X-Windows. Here, we link you to the details provided by FXRuby for your particular environment:
+
+   OS	Details
+   | Linux	 | https://github.com/lylejohnson/fxruby/wiki/Setting-Up-a-Linux-Build-Environment          |
+   | Mac OSX | https://github.com/lylejohnson/fxruby/wiki/Setting-Up-a-Mac-OS-X-Development-Environment |
+   | Windows | https://github.com/lylejohnson/fxruby/wiki/Setting-Up-a-Windows-Build-Environment        |
+
+   For Macs, you will also have to install X-Windows. For information on how to do that,
+   https://www.xquartz.org/.
+
+   To install the Enhancement gem from commandline:
 
    #+begin_src bash
    gem install fxruby-enhancement
