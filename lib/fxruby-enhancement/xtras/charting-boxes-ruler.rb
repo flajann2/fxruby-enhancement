@@ -145,7 +145,7 @@ module Fox
           def load_font font, angle=0
             f = FXFont.new ref(:app), font
             f.setAngle (angle * 64).to_i
-            f.create
+            f.smart_create
             return f
           end
 
@@ -160,7 +160,7 @@ module Fox
           end
 
           def configure_tickmark_labels
-            @tml_height = @tfont.fontHeight
+            @tml_height = @tfont.realFontHeight
             require 'pry'; binding.pry #DEBUGGING
           end
 
