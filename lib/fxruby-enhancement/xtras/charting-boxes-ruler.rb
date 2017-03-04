@@ -53,11 +53,11 @@ module Fox
           private
           
           def compute_label_coords coord
-            x1, y1, _x2, _y2 = compute_tick_coords coord
+            x1, y1, x2, y2 = compute_tick_coords coord
             if orientation == :vertical
               [x1 - @tm_height - @tml_margin, y1]
             elsif orientation == :horizontal
-              [x1, y1]
+              [x1, y2 + @tm_height + @tml_margin]
             else
               raise "Unknown orientation #{orientation}"
             end
@@ -65,7 +65,7 @@ module Fox
 
           # [x1, y1] is always flush to the edge nearest chart!
           def compute_tick_coords coord, major = false
-            tick_length = (orientation == :horizontal ? height : width) / (major ? 2 : 4)
+            tick_length = major ? @tm_height : @tm_minor_height
             x1 = if orientation == :horizontal
                    x + width * coord  
                  elsif orientation == :vertical
@@ -161,7 +161,6 @@ module Fox
 
           def configure_tickmark_labels
             @tml_height = @tfont.realFontHeight
-            require 'pry'; binding.pry #DEBUGGING
           end
 
           def configure_ruler_caption
