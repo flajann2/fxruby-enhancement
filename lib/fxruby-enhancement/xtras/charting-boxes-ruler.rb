@@ -21,10 +21,12 @@ module Fox
               dc.foreground = @rconf.color || black
               
               t.tick_lambda = ->(coord, value, major) {
+                coord = 1.0 - coord if orientation == :vertical
                 dc.drawLine *compute_tick_coords(coord, major)
               }
               
               t.tick_label_lambda = ->(coord, label) {
+                coord = 1.0 - coord if orientation == :vertical
                 xx, yy = compute_label_coords coord
                 dc.font = @tfont
                 dc.drawText xx, yy, label
@@ -57,7 +59,7 @@ module Fox
             if orientation == :vertical
               [x1 - @tm_height - @tml_margin, y1]
             elsif orientation == :horizontal
-              [x1, y2 + @tm_height + @tml_margin]
+              [x1, y2 + @tml_margin + @tml_height]
             else
               raise "Unknown orientation #{orientation}"
             end
