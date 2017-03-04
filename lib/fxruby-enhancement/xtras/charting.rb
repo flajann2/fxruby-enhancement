@@ -61,12 +61,15 @@ module Fox
                 .each{ |box| box.render(dc) }
             }
             @canvas.update
+            @canvas.repaint
           end
 
           private
 
           def compute_data_ranges
             pp data
+            require 'pry'; binding.pry #DEBUGGING
+            
           end
           
           def layout_box box
