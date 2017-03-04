@@ -10,6 +10,7 @@ module Fox
     # problems with getting height and width
     # on a rotated font!!!!
     attr_reader :realFontWidth, :realFontHeight
+    attr_reader :realFontAscent, :realFontDescent
     
     def smart_create
       old_angle = angle
@@ -17,6 +18,8 @@ module Fox
       create
       @realFontWidth = getFontWidth
       @realFontHeight = getFontHeight
+      @realFontAscent = getFontAscent
+      @realFontDescent = getFontDescent
       destroy
       setAngle old_angle
       create

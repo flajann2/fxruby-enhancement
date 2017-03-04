@@ -59,7 +59,7 @@ module Fox
             if orientation == :vertical
               [x1 - @tm_height - @tml_margin, y1]
             elsif orientation == :horizontal
-              [x1, y2 + @tml_margin + @tml_height]
+              [x1, y1 + @tm_height + @tml_margin + @tfont.realFontAscent]
             else
               raise "Unknown orientation #{orientation}"
             end
