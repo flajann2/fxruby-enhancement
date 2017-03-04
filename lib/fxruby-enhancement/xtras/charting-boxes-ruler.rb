@@ -30,21 +30,18 @@ module Fox
                 xx, yy = compute_label_coords coord
                 dc.font = @tfont
                 dc.drawText xx, yy, label
-                puts "#{xx} #{yy} #{label} #{orientation} #{@tfont.angle}"
               }
               
-            end.compute_ticks if enabled           
+            end.compute_ticks if enabled
+            draw_caption dc
           end
 
           def initialize chart, **kv
             super
             @rconf = kv[:axial][@name]
             @enabled = ! @rconf.nil?
-            @dominance = 2
-            
+            @dominance = 2            
             configure_ruler unless @rconf.nil?
-            as :app {
-            }
           end
 
           def calculate_dimensions
@@ -53,6 +50,33 @@ module Fox
           end
           
           private
+          
+          def draw_caption dc
+            unless rconf.name.nil?
+              tx_length = cfont.getTextWidth rconf.name
+              
+              xx = case orientation
+                   when :horizontal
+                     x + width / 2 - tx_length / 2
+                   when :vertical
+                     x + @rc_margin + @rc_height
+                   else
+                     raise "Unknown orientation #{orientation}"
+                   end
+              
+              yy = case orientation
+                   when :horizontal
+                     y + @tm_height + 2*@tml_margin + @tml_height + @rc_margin
+                   when :vertical
+                     y + height / 2 + tx_length / 2
+                   else
+                     raise "Unknown orientation #{orientation}"
+                   end
+              dc.font = cfont
+              dc.foreground = rconf.color
+              dc.drawText xx, yy, rconf.name
+            end
+          end
           
           def compute_label_coords coord
             x1, y1, x2, y2 = compute_tick_coords coord
@@ -146,8 +170,7 @@ module Fox
 
           def load_font font, angle=0
             f = FXFont.new ref(:app), font
-            f.setAngle (angle * 64).to_i
-            f.smart_create
+            f.smart_create angle
             return f
           end
 
@@ -162,11 +185,11 @@ module Fox
           end
 
           def configure_tickmark_labels
-            @tml_height = @tfont.realFontHeight
+            @tml_height = tfont.realFontHeight
           end
 
           def configure_ruler_caption
-            @rc_height = @cfont.getTextHeight rconf[:name]
+            @rc_height = cfont.realFontHeight
           end
 
           # The "height" of the ruler (not the length)

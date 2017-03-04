@@ -12,8 +12,8 @@ module Fox
     attr_reader :realFontWidth, :realFontHeight
     attr_reader :realFontAscent, :realFontDescent
     
-    def smart_create
-      old_angle = angle
+    def smart_create angle
+      destroy if created?
       setAngle 0      
       create
       @realFontWidth = getFontWidth
@@ -21,7 +21,7 @@ module Fox
       @realFontAscent = getFontAscent
       @realFontDescent = getFontDescent
       destroy
-      setAngle old_angle
+      setAngle (angle * 64).to_i
       create
     end
   end
