@@ -1,8 +1,7 @@
 module Fox
   module Enhancement
     module Xtras
-      module Charting
-        
+      module Charting        
         # This handles rules of all orientations and positionings.
         class Ruler < Box
           attr_accessor :rconf, :cfont, :tfont
@@ -46,19 +45,6 @@ module Fox
             }
           end
 
-          # The "height" of the ruler (not the length)
-          # is determined according to the following formula:
-          ## R = 2a + C + 2b + L + T
-          ## where:
-          ### R - ruler height
-          ### a - ruler caption box margin
-          ### C - ruler caption box height
-          ### b - tickmarks label box margin
-          ### L - tickmarks label height
-          ### T - tickmarks height
-          # Note that this assumes a horizontal orientation. Since
-          # in the vertical orientation the text will be so-oriented,
-          # "height" would actually be visually the width.
           def calculate_dimensions
             self.width  = (orientation == :vertical)   ? ruler_height : 0
             self.height = (orientation == :horizontal) ? ruler_height : 0
@@ -67,10 +53,17 @@ module Fox
           private
           
           def compute_label_coords coord
-            x1, y1, x2, y2 = compute_tick_coords coord
-            [x1-25, y1+20]
+            x1, y1, _x2, _y2 = compute_tick_coords coord
+            if orientation == :vertical
+              [x1 - @tm_height - @tml_margin, y1]
+            elsif orientation == :horizontal
+              [x1, y1]
+            else
+              raise "Unknown orientation #{orientation}"
+            end
           end
-          
+
+          # [x1, y1] is always flush to the edge nearest chart!
           def compute_tick_coords coord, major = false
             tick_length = (orientation == :horizontal ? height : width) / (major ? 2 : 4)
             x1 = if orientation == :horizontal
@@ -140,10 +133,13 @@ module Fox
           end
 
           def configure_ruler_fonts
-            @cfont = load_font(
-              (font_desc(**rconf[:cfont]) || font_desc(font: 'arial', size: 10)),
-              60)
-            @tfont = load_font((font_desc(**rconf[:tfont]) || font_desc(font: 'arial', size: 10)), 60)
+            @font_angle = if orientation == :vertical
+                            90
+                          else
+                            0
+                          end
+            @cfont = load_font((font_desc(**rconf[:cfont]) || font_desc(font: 'arial', size: 10)), @font_angle)
+            @tfont = load_font((font_desc(**rconf[:tfont]) || font_desc(font: 'arial', size: 10)), @font_angle)
           end
 
           def load_font font, angle=0
@@ -165,15 +161,29 @@ module Fox
 
           def configure_tickmark_labels
             @tml_height = @tfont.fontHeight
+            require 'pry'; binding.pry #DEBUGGING
           end
 
           def configure_ruler_caption
             @rc_height = @cfont.getTextHeight rconf[:name]
           end
 
+          # The "height" of the ruler (not the length)
+          # is determined according to the following formula:
+          ## R = 2a + C + 2b + L + T
+          ## where:
+          ### R - ruler height
+          ### a - ruler caption box margin
+          ### C - ruler caption box height
+          ### b - tickmarks label box margin
+          ### L - tickmarks label height
+          ### T - tickmarks height
+          # Note that this assumes a horizontal orientation. Since
+          # in the vertical orientation the text will be so-oriented,
+          # "height" would actually be visually the width.
           def ruler_height
             if enabled?
-              2 * @rc_margin + @rc_height + 2 * @tml_margin + @tml_height + @tml_height
+              2 * @rc_margin + @rc_height + 2 * @tml_margin + @tml_height + @tm_height
             else
               0
             end

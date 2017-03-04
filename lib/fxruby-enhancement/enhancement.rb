@@ -1,5 +1,4 @@
 module Fox 
-
   # Include this in your top class objects.
   # If for a module, you want to extend, rather
   # than include.

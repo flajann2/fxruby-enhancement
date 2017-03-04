@@ -5,4 +5,7 @@ module Fox
       self.foreground = color
     end
   end
+
+  class FXFont
+  end
 end
