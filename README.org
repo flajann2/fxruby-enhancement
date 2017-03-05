@@ -50,6 +50,7 @@
      - [[#junkyard-subtle-ruby-bug-detected-chartrb-ruby-240][JUNKYARD Subtle Ruby Bug detected. (chart.rb) Ruby 2.4.0]]
      - [[#junkyard-as-execution-issue-debugging-code][JUNKYARD 'as' execution issue DEBUGGING CODE]]
      - [[#scratchpad-fxdcwindow][SCRATCHPAD FXDCWindow]]
+     - [[#scratchpad-debugging-commands][SCRATCHPAD Debugging commands]]
      - [[#junkyard-thoughs-on-doing-the-layout][JUNKYARD Thoughs on doing the layout]]
      - [[#scratchpad-fxfont-hints][SCRATCHPAD FXFont Hints]]
 
@@ -1587,6 +1588,11 @@ set_trace_func proc { |event, file, line, id, binding, classname|
     Passing in a nil for the event is not the same
     as passing in nothing at all. Probably has to
     do with how the C interface is implemented or works.
+
+*** SCRATCHPAD Debugging commands
+    #+begin_src bash
+    rescue examples/debug examples/chart.rb
+    #+end_src
 
 *** JUNKYARD Thoughs on doing the layout
     As such, we have the components of the chart laid out
