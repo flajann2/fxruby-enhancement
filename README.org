@@ -22,6 +22,7 @@
        - [[#fox_component-and-fox_instance][fox_component and fox_instance]]
        - [[#fx_app][fx_app]]
        - [[#fx_chart][fx_chart]]
+         - [[#fx_chart-specific-dsl][fx_chart specific DSL]]
          - [[#data-format-and-labeling][Data Format and Labeling]]
          - [[#fonts][Fonts]]
        - [[#fx_data_target][fx_data_target]]
@@ -502,6 +503,70 @@
 
      Initally, we provide basic x-y Cartesian charting suitable for
      representing time series, etc. 
+***** fx_chart specific DSL
+****** type
+       Type of chart. Currently, only :cartesian is supported.
+****** background
+       Charteristics of the background of the chart.
+       - color: color of the background.
+       - grid: true or false, create a grid.
+       - grid_color: color of the grid, if enabled.
+       Example:
+       #+begin_src ruby
+       fx_chart(:chart) {
+         ...
+         background color: sea_green1, grid: true, grid_color: blue
+         ...
+       }
+       #+end_src
+
+****** axis
+       Defines the charistics of the x or y axis of the chart.
+       - axis AXIS, PLACEMENT, attributes...
+       - AXIS can be either :x or :y
+       - PLACEMENT can be either :top, :bottom for :y, :left, or :right for :x
+       - type:  - :linear or :logrithmic (:linear currently only supported)
+       - color: - color of the tickmarks
+       - name:
+       - cfont: and tfont:
+         - font:
+         - foundry:
+         - size:
+         - weight:
+         - slant:
+         - width:
+         - encoding:
+         - hints:
+       Example (extensive, most attributes are optional): 
+       #+begin_src ruby
+      axis :x, :bottom,
+           type: :linear,
+           color: red,
+           name: "Time Transpired",
+           cfont: { font: "helvetica",
+                    foundry: "bitstream",
+                    size: 20,
+                    weight: :bold,
+                    slant: :italic,
+                    width: :normal,
+                    encoding: "iso8859-1",
+                    hints: :rotatable },
+           tfont: { font: "helvetica",
+                    foundry: "bitstream",
+                    size: 12,
+                    weight: :bold,
+                    slant: :italic,
+                    width: :normal,
+                    encoding: "iso8859-1",
+                    hints: :rotatable }
+       #+end_src
+
+****** caption
+****** title
+****** data
+****** series
+****** domain & range
+
 ***** Data Format and Labeling
       Data is in the format of an array of vectors,
       with each update adding a new vector to the array. For example:
