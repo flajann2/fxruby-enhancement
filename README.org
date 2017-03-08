@@ -522,7 +522,8 @@
 
 ****** axis
        Defines the charistics of the x or y axis of the chart.
-       - axis AXIS, PLACEMENT, attributes...
+       
+       axis AXIS, PLACEMENT, attributes...
        - AXIS can be either :x or :y
        - PLACEMENT can be either :top, :bottom for :y, :left, or :right for :x
        - type:  - :linear or :logrithmic (:linear currently only supported)
@@ -565,6 +566,11 @@
 ****** title
 ****** data
 ****** series
+       series is a hash list of attributes to define
+       each position in the stream (data) vector. We define
+       position 0 to always be the the x axis "key" for the
+       rest of the data.
+
 ****** domain & range
 
 ***** Data Format and Labeling
