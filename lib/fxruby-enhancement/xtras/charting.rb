@@ -40,16 +40,18 @@ module Fox
           # vector must be nil. If no more data is expected on an element,
           # make it :eos (end of stream)
           def add_to_series newdata
-            unless newdata.first.is_a? Array
+            unless newdata.first.is_a? Array # array of vectors
               data << newdata
-            else
+              compute_data_range newdata
+            else # single vector
               data += newdata
+              compute_data_range [newdata]
             end
-            update_chart
+            update_chart newrange: false
           end
           
-          def update_chart
-            compute_data_ranges
+          def update_chart newrange: true
+            compute_data_ranges if newrange
             layout_boxes
             draw_dc { |dc|
               dc.setForeground @cos.background.color || white
@@ -66,10 +68,16 @@ module Fox
 
           private
 
-          def compute_data_ranges
-            pp data
-            require 'pry'; binding.pry #DEBUGGING
-            
+          # TODO: for some strange reason, we needed to do
+          # TODO: the assignment of the ranges seperately
+          # TODO: from incorporation.
+          def compute_data_ranges dat = data
+            pp dat, x_range, y_range
+            dat.map{ |a| [a.first, a[1..-1]]}
+              .each{ |x, vec|
+              _x_range = x_range.incorporate(x); x_range = _x_range
+            }
+            require 'pry'; binding.pry #DEBUGGING            
           end
           
           def layout_box box
