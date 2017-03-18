@@ -40,12 +40,12 @@ module Fox
           # vector must be nil. If no more data is expected on an element,
           # make it :eos (end of stream)
           def add_to_series newdata
-            unless newdata.first.is_a? Array # array of vectors
+            if newdata.first.is_a? Array # array of vectors
               data << newdata
-              compute_data_range newdata
+              compute_data_ranges newdata
             else # single vector
               data += newdata
-              compute_data_range [newdata]
+              compute_data_ranges [newdata]
             end
             update_chart newrange: false
           end
@@ -76,8 +76,8 @@ module Fox
             dat.map{ |a| [a.first, a[1..-1]]}
               .each{ |x, vec|
               _x_range = x_range.incorporate(x); x_range = _x_range
+              vec.each{ |y| _y_range = y_range.incorporate(y); y_range = _y_range }
             }
-            require 'pry'; binding.pry #DEBUGGING            
           end
           
           def layout_box box
