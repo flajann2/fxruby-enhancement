@@ -28,6 +28,14 @@ module Fox
         else
           Enhancement.base = os
         end
+
+        def os.set_data data
+          self.data = data
+        end
+        
+        def os.add_to_data data
+          self.data += data
+        end        
         
         os.op[0] = OpenStruct.new(parent: :required,
                                   target:  nil,

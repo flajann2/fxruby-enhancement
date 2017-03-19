@@ -54,6 +54,7 @@
      - [[#scratchpad-debugging-commands][SCRATCHPAD Debugging commands]]
      - [[#junkyard-thoughs-on-doing-the-layout][JUNKYARD Thoughs on doing the layout]]
      - [[#scratchpad-fxfont-hints][SCRATCHPAD FXFont Hints]]
+     - [[#junkyard-use-of-def_delegate][JUNKYARD use of def_delegate]]
 
 * fxruby-enhancement
   #+caption: Enhancement vs. FXRuby versions of Hello World.
@@ -4441,3 +4442,12 @@ FXString FXFont::getFont() const {
   }
 }
     #+end_src
+*** JUNKYARD use of def_delegate
+    We cannot use def_delage methods on attributes that will receive
+    assignments. Simply doesn't work. An attempt at this will cause
+    Ruby to create a local variable with the same name, with the
+    expected cataclysmic outcomes.
+
+    To do assignmnets, therefore, we must implement seperate methods 
+    for that (akin to the old C++-style of sex_X). Not happy with this,
+    but do not see a clear way around this.

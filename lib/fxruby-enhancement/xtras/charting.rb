@@ -13,8 +13,9 @@ module Fox
           include RGB
           
           def_delegators :@canvas, :width, :height, :visual
-          def_delegators :@cos, :type,
-                         :axial, :data, :series, :domain, :range,
+          def_delegators :@cos, :type, :axial,
+                         :data, :set_data, :add_to_data,
+                         :series, :domain, :range,
                          :background, :caption, :title
           
           attr_accessor :buffer, :x_range, :y_range
@@ -29,7 +30,15 @@ module Fox
             initial_chart_layout            
             backlink_boxes
           end
-                    
+
+          def set_x_range range
+            @x_range = range
+          end
+          
+          def set_y_range range
+            @y_range = range
+          end
+
           def draw_dc &block
             @buffer.starten if @buffer.inst.nil?
             FXDCWindow.new(@buffer.inst) { |dc| block.(dc) }
@@ -41,10 +50,10 @@ module Fox
           # make it :eos (end of stream)
           def add_to_series newdata
             if newdata.first.is_a? Array # array of vectors
-              data << newdata
+              add_to_data newdata
               compute_data_ranges newdata
             else # single vector
-              data += newdata
+              add_to_data [newdata]
               compute_data_ranges [newdata]
             end
             update_chart newrange: false
@@ -75,8 +84,8 @@ module Fox
             pp dat, x_range, y_range
             dat.map{ |a| [a.first, a[1..-1]]}
               .each{ |x, vec|
-              _x_range = x_range.incorporate(x); x_range = _x_range
-              vec.each{ |y| _y_range = y_range.incorporate(y); y_range = _y_range }
+              set_x_range x_range.incorporate(x)
+              vec.each{ |y| set_y_range y_range.incorporate(y) }
             }
           end
           
